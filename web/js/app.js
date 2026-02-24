@@ -196,9 +196,7 @@ function initScrollytelling() {
     // Lazy-rendered new visualizations
     const lazyViz = {
         'network': { rendered: false, fn: () => { if (typeof renderNetwork === 'function') renderNetwork(DATA); } },
-        'dendrogram': { rendered: false, fn: () => { if (typeof renderDendrogram === 'function') renderDendrogram(DATA); } },
         'sankey': { rendered: false, fn: () => { if (typeof renderSankey === 'function') renderSankey(DATA); } },
-        'parallel': { rendered: false, fn: () => { if (typeof renderParallelCoords === 'function') renderParallelCoords(DATA); } },
     };
 
     const pairSection = document.getElementById('pairs');
@@ -254,7 +252,7 @@ function initScrollytelling() {
     if (methSection) observer.observe(methSection);
 
     // Observe new visualization sections
-    ['network', 'dendrogram', 'sankey', 'parallel'].forEach(id => {
+    ['network', 'sankey'].forEach(id => {
         const el = document.getElementById(id);
         if (el) observer.observe(el);
     });
@@ -276,6 +274,23 @@ const POLICY_TYPES = {
     australia_ai_action_plan_2021: 'Plan de acción',
     unesco_genai_guidance_2023: 'Guía sectorial',
     wef_future_of_jobs_2020: 'Reporte',
+};
+
+const POLICY_URLS = {
+    eu_ai_act_2024: 'https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R1689',
+    espana_enia_2020: 'https://portal.mineco.gob.es/RecursosArticulo/mineco/ministerio/ficheros/201202_ENIA_V1_0.pdf',
+    francia_villani_report_2018: 'https://www.aiforhumanity.fr/pdfs/MissionVillani_Report_ENG-VF.pdf',
+    canada_pan_canadian_ai_strategy_2017: 'https://cifar.ca/wp-content/uploads/2020/11/Pan-Canadian-AI-Strategy.pdf',
+    brasil_ebia_2021: 'https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/arquivosinteligenciaartificial/ebia-diagramacao_4-0_en.pdf',
+    colombia_conpes_3975_2019: 'https://colaboracion.dnp.gov.co/CDT/Conpes/Econ%C3%B3micos/3975.pdf',
+    japon_ai_strategy_2019: 'https://www.cas.go.jp/jp/seisaku/jinkouchinou/pdf/aistrategyfinal.pdf',
+    corea_ai_strategy_2019: 'https://wp.oecd.ai/app/uploads/2021/12/Korea_National_Strategy_for_Artificial_Intelligence_2019.pdf',
+    singapur_nais_2019: 'https://www.smartnation.gov.sg/files/publications/national-ai-strategy.pdf',
+    india_aiforall_2018: 'https://niti.gov.in/sites/default/files/2023-03/National-Strategy-for-Artificial-Intelligence.pdf',
+    india_nep_2020: 'https://www.education.gov.in/sites/upload_files/mhrd/files/NEP_Final_English.pdf',
+    australia_ai_action_plan_2021: 'https://storage.googleapis.com/converlens-au-industry/industry/p/prj2452c8e24d7a400c72429/public_assets/Australias-AI-Action-Plan.pdf',
+    unesco_genai_guidance_2023: 'https://unesdoc.unesco.org/ark:/48223/pf0000386693',
+    wef_future_of_jobs_2020: 'https://www3.weforum.org/docs/WEF_Future_of_Jobs_2020.pdf',
 };
 
 const POLICY_LANGS = {
@@ -331,6 +346,7 @@ function renderPolicyGrid() {
         const docType = POLICY_TYPES[p.id] || 'Documento';
         const lang = POLICY_LANGS[p.id] || 'en';
 
+        const docUrl = POLICY_URLS[p.id] || '';
         card.innerHTML = `
             <div class="pc-country">${p.country}</div>
             <div class="pc-meta-row">
@@ -338,7 +354,10 @@ function renderPolicyGrid() {
                 <span class="policy-lang">${lang}</span>
             </div>
             <div class="pc-title">${p.title}</div>
-            <div class="policy-type" style="border-color:${p.region_color};color:${p.region_color}">${docType}</div>
+            <div class="pc-bottom-row">
+                <span class="policy-type" style="border-color:${p.region_color};color:${p.region_color}">${docType}</span>
+                ${docUrl ? `<a href="${docUrl}" target="_blank" rel="noopener" class="pc-doc-link" title="Abrir documento original" onclick="event.stopPropagation()">Ver documento &#8599;</a>` : ''}
+            </div>
         `;
         card.addEventListener('click', () => navigateToProfile(p.id));
         grid.appendChild(card);
@@ -453,9 +472,15 @@ function showProfile(policyId) {
     const mostP = DATA.policies.find(p => p.id === mostSimilar.id);
     const leastP = DATA.policies.find(p => p.id === leastSimilar.id);
 
+    const docUrl = POLICY_URLS[policyId] || '';
+    const docLink = docUrl
+        ? `<a href="${docUrl}" target="_blank" rel="noopener" class="pc-doc-link" style="font-size:0.75rem;margin-top:0.5rem;display:inline-block">Ver documento original &#8599;</a>`
+        : '';
+
     info.innerHTML = `
         <h3 style="color:${policy.region_color}">${policy.country}</h3>
         <div class="profile-meta">${policy.title} (${policy.year})</div>
+        ${docLink}
         <div class="profile-stats">
             <div class="ps-item">
                 <div class="ps-value">${avgSim.toFixed(3)}</div>
@@ -476,9 +501,8 @@ function showProfile(policyId) {
         </div>
     `;
 
-    // Render profile charts
+    // Render profile radar chart
     if (typeof renderProfileRadar === 'function') renderProfileRadar(policyId, DATA);
-    if (typeof renderProfileBar === 'function') renderProfileBar(policyId, DATA);
 }
 
 // ── Explainer Tabs ──

@@ -934,6 +934,44 @@ footer.dark-footer {
   max-width: 350px;
 }
 
+/* ── Implications section ── */
+.implications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.impl-card {
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.12);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.impl-card .impl-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--yellow);
+  opacity: 0.4;
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+}
+
+.impl-card h3 {
+  color: var(--yellow);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding-right: 2rem;
+}
+
+.impl-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
 /* ── Plotly container overrides ── */
 .chart-wrap [id$="-chart"] .plotly {
   font-family: var(--font-body) !important;
@@ -971,6 +1009,45 @@ footer.dark-footer {
   stroke-linecap: round;
 }
 
+/* ── Finding highlights (replacing bar charts) ── */
+.finding-highlight {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.8rem 1rem;
+  background: var(--yellow);
+  border: var(--border);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.08);
+  color: var(--fg);
+  letter-spacing: 0.02em;
+}
+
+/* ── Policy card bottom row ── */
+.pc-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* ── Policy card document link ── */
+.pc-doc-link {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 2px solid var(--yellow);
+  padding-bottom: 1px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.pc-doc-link:hover {
+  background: var(--yellow);
+  color: var(--fg);
+}
+
 /* ── Clickable policy cards ── */
 .policy-card.clickable {
   cursor: pointer;
@@ -990,6 +1067,7 @@ footer.dark-footer {
   .finding-header { flex-direction: column; gap: 0.5rem; }
   .finding-number { font-size: 2rem; }
   .explainer-grid { grid-template-columns: 1fr; }
+  .implications-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {

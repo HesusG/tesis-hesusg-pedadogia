@@ -61,6 +61,175 @@
     </div>
 </section>
 
+<!-- ═══ How to Read (Explainer — moved up) ═══ -->
+<section id="explainer" class="dark-section">
+    <div class="container">
+        <h2 class="rv">Antes de Empezar: ¿Cómo Funciona Este Análisis?</h2>
+        <p class="rv" style="opacity:0.7;margin-bottom:2rem;max-width:750px">Esta investigación usa procesamiento de lenguaje natural para comparar documentos de política pública. Antes de ver los resultados, conviene entender las herramientas. Cada pestaña explica un concepto clave.</p>
+
+        <div class="explainer-tabs rv" id="explainer-tabs">
+            <button class="active" data-tab="embeddings">¿Qué son los embeddings?</button>
+            <button data-tab="similarity">¿Qué es la similitud coseno?</button>
+            <button data-tab="dimensions">¿Cómo se definieron las 7 dimensiones?</button>
+            <button data-tab="example">Ejemplo paso a paso</button>
+            <button data-tab="umap">¿Qué es UMAP?</button>
+            <button data-tab="radar">¿Cómo leer un radar?</button>
+        </div>
+
+        <div class="explainer-panels rv" id="explainer-panels">
+            <!-- Panel 1: Embeddings -->
+            <div class="explainer-panel active" data-panel="embeddings">
+                <div class="explainer-grid">
+                    <div class="explainer-text">
+                        <h3 style="color:var(--yellow);margin-bottom:1rem">Embeddings: de palabras a números</h3>
+                        <p>Un <strong>embedding</strong> es una forma de convertir texto en una lista de números (un vector) que captura su significado. Dos textos que hablan de temas parecidos tendrán vectores parecidos, aunque estén escritos en idiomas distintos.</p>
+                        <p style="margin-top:0.75rem">Usamos el modelo <code style="color:var(--yellow)">paraphrase-multilingual-MiniLM-L12-v2</code>, que entiende 50+ idiomas. Cada fragmento de texto se convierte en un vector de <strong>384 dimensiones</strong>.</p>
+                        <p style="margin-top:0.75rem;opacity:0.7;font-size:0.9rem">Imagina que cada documento es un punto en un espacio de 384 dimensiones. Los documentos que dicen cosas parecidas quedan cerca; los que dicen cosas distintas, lejos.</p>
+                        <div style="margin-top:1rem;padding:0.8rem;border:1px solid rgba(255,255,255,0.15);font-size:0.85rem;line-height:1.7">
+                            <strong style="color:var(--yellow)">Proceso:</strong><br>
+                            1. Cada documento se divide en fragmentos de ~800 caracteres<br>
+                            2. Cada fragmento se convierte en un vector de 384 números<br>
+                            3. Los vectores de todos los fragmentos se promedian para obtener un vector representativo del documento completo
+                        </div>
+                    </div>
+                    <div class="explainer-viz">
+                        <canvas id="explainer-embed-viz" height="220"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 2: Similarity -->
+            <div class="explainer-panel" data-panel="similarity">
+                <div class="explainer-grid">
+                    <div class="explainer-text">
+                        <h3 style="color:var(--yellow);margin-bottom:1rem">Similitud coseno: midiendo parecido</h3>
+                        <p>La <strong>similitud coseno</strong> mide qué tan alineados están dos vectores, en una escala de 0 a 1:</p>
+                        <ul style="margin:0.75rem 0;padding-left:1.2rem;line-height:2">
+                            <li><strong style="color:#ef5350">0.40–0.55</strong> — Muy diferentes (el EU AI Act vs. casi todos)</li>
+                            <li><strong style="color:#FFD54F">0.60–0.75</strong> — Vocabulario base compartido (la mayoría de los pares)</li>
+                            <li><strong style="color:#66bb6a">0.80–0.90</strong> — Alta convergencia temática</li>
+                            <li><strong style="color:#4caf50">0.90–1.00</strong> — Documentos casi idénticos en contenido (España-Brasil: 0.965)</li>
+                        </ul>
+                        <p style="opacity:0.7;font-size:0.9rem">No mide si están de acuerdo, sino si hablan de los mismos temas con vocabulario similar.</p>
+                    </div>
+                    <div class="explainer-viz">
+                        <canvas id="explainer-sim-viz" height="220"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 3: Dimensions — expanded -->
+            <div class="explainer-panel" data-panel="dimensions">
+                <div class="explainer-text" style="max-width:800px">
+                    <h3 style="color:var(--yellow);margin-bottom:1rem">¿Cómo se definieron las 7 dimensiones?</h3>
+                    <p>Las dimensiones se derivaron de la <strong>revisión de literatura</strong> sobre gobernanza de IA en educación (UNESCO, OCDE, Holmes et al., 2019; Pedro et al., 2019). Son los temas que la investigación previa identifica como los ejes centrales de cualquier política de IA educativa.</p>
+                    <p style="margin-top:0.75rem">Para medir cuánto habla cada documento sobre cada dimensión, usamos <strong>embeddings</strong>:</p>
+                    <div style="margin:1rem 0;display:grid;gap:0.6rem">
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.6rem 0.8rem;display:flex;gap:0.8rem;align-items:start">
+                            <span style="color:var(--yellow);font-weight:bold;min-width:20px">1.</span>
+                            <span>Se redacta una <strong>frase semilla</strong> para cada dimensión. Ejemplo para <em>Formación docente</em>: <code style="color:var(--yellow);font-size:0.8rem">"Formación de profesores en IA, capacitación docente, desarrollo profesional, competencias pedagógicas digitales"</code></span>
+                        </div>
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.6rem 0.8rem;display:flex;gap:0.8rem;align-items:start">
+                            <span style="color:var(--yellow);font-weight:bold;min-width:20px">2.</span>
+                            <span>Esa frase se convierte en un <strong>vector embedding</strong> (384 números)</span>
+                        </div>
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.6rem 0.8rem;display:flex;gap:0.8rem;align-items:start">
+                            <span style="color:var(--yellow);font-weight:bold;min-width:20px">3.</span>
+                            <span>Se mide la <strong>similitud coseno</strong> entre el vector de cada fragmento del documento y el vector de la frase semilla</span>
+                        </div>
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.6rem 0.8rem;display:flex;gap:0.8rem;align-items:start">
+                            <span style="color:var(--yellow);font-weight:bold;min-width:20px">4.</span>
+                            <span>El puntaje final es el <strong>promedio de similitud</strong> de los fragmentos más relevantes. Un puntaje alto (e.g. 0.65) significa que el documento dedica mucho contenido a ese tema</span>
+                        </div>
+                    </div>
+                    <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;font-size:0.85rem">
+                        <span>&#9670; Gobernanza y regulación</span>
+                        <span>&#9670; Currículo educativo</span>
+                        <span>&#9670; Formación docente</span>
+                        <span>&#9670; Infraestructura</span>
+                        <span>&#9670; Ética y valores</span>
+                        <span>&#9670; Investigación</span>
+                        <span>&#9670; Equidad e inclusión</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel 4: Step-by-step example -->
+            <div class="explainer-panel" data-panel="example">
+                <div class="explainer-text" style="max-width:800px">
+                    <h3 style="color:var(--yellow);margin-bottom:1rem">Ejemplo simplificado: ¿Cómo se calcula la similitud?</h3>
+                    <p style="margin-bottom:1rem">Imaginemos que el modelo solo usa <strong>3 dimensiones</strong> (en realidad son 384). Veamos cómo se compararían dos fragmentos:</p>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem">
+                        <div style="border:2px solid #388e3c;padding:1rem">
+                            <div style="color:#388e3c;font-weight:bold;font-family:var(--font-display);margin-bottom:0.5rem">Fragmento de España</div>
+                            <p style="font-size:0.85rem;font-style:italic;opacity:0.8;margin-bottom:0.5rem">"La formación docente en competencias digitales es prioritaria para la integración de la IA en el aula."</p>
+                            <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--yellow)">Vector: [0.82, 0.45, 0.71]</div>
+                        </div>
+                        <div style="border:2px solid #388e3c;padding:1rem">
+                            <div style="color:#388e3c;font-weight:bold;font-family:var(--font-display);margin-bottom:0.5rem">Fragmento de Brasil</div>
+                            <p style="font-size:0.85rem;font-style:italic;opacity:0.8;margin-bottom:0.5rem">"A capacitação de professores em habilidades digitais é essencial para o uso da IA na educação."</p>
+                            <div style="font-family:var(--font-mono);font-size:0.8rem;color:var(--yellow)">Vector: [0.80, 0.48, 0.69]</div>
+                        </div>
+                    </div>
+
+                    <div style="border:2px solid var(--yellow);padding:1rem;margin-bottom:1rem">
+                        <div style="font-family:var(--font-mono);font-size:0.85rem;line-height:2">
+                            <strong style="color:var(--yellow)">Similitud coseno =</strong> (0.82 x 0.80 + 0.45 x 0.48 + 0.71 x 0.69) /<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;(raíz(0.82<sup>2</sup> + 0.45<sup>2</sup> + 0.71<sup>2</sup>) x raíz(0.80<sup>2</sup> + 0.48<sup>2</sup> + 0.69<sup>2</sup>))<br>
+                            <strong style="color:var(--yellow)">= 0.999</strong> (casi idénticos en significado, aunque en idiomas distintos)
+                        </div>
+                    </div>
+
+                    <p style="opacity:0.7;font-size:0.85rem">En la realidad, el modelo multilingüe genera vectores de 384 dimensiones, capturando matices semánticos que este ejemplo simplificado no muestra. Pero el principio es el mismo: textos con significados parecidos producen vectores con alta similitud coseno.</p>
+                </div>
+            </div>
+
+            <!-- Panel 5: UMAP -->
+            <div class="explainer-panel" data-panel="umap">
+                <div class="explainer-text" style="max-width:800px">
+                    <h3 style="color:var(--yellow);margin-bottom:1rem">UMAP: viendo 384 dimensiones en 2D</h3>
+                    <p>Cada documento vive en un espacio de <strong>384 dimensiones</strong> — imposible de visualizar directamente. <strong>UMAP</strong> (Uniform Manifold Approximation and Projection) es un algoritmo que "aplasta" esas 384 dimensiones en solo 2, preservando las relaciones de proximidad.</p>
+                    <div style="margin:1rem 0;display:grid;gap:0.5rem">
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.5rem 0.8rem;font-size:0.9rem">
+                            <strong style="color:var(--yellow)">Lo que preserva:</strong> Si dos documentos son similares en 384D, UMAP los coloca cerca en 2D. Los clusters visibles son reales.
+                        </div>
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.5rem 0.8rem;font-size:0.9rem">
+                            <strong style="color:var(--yellow)">Lo que NO significa:</strong> Los ejes X e Y no representan nada específico. Solo importa la distancia relativa entre puntos, no la posición absoluta.
+                        </div>
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.5rem 0.8rem;font-size:0.9rem">
+                            <strong style="color:var(--yellow)">¿Por qué UMAP y no t-SNE?</strong> UMAP preserva mejor la estructura global del espacio. Con solo 14 documentos, t-SNE tiende a distorsionar las distancias entre grupos. UMAP es más confiable para datasets pequeños.
+                        </div>
+                    </div>
+                    <p style="margin-top:0.75rem;opacity:0.7;font-size:0.85rem">Referencia: McInnes, L., Healy, J., & Melville, J. (2018). UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction.</p>
+                </div>
+            </div>
+
+            <!-- Panel 6: Radar -->
+            <div class="explainer-panel" data-panel="radar">
+                <div class="explainer-text" style="max-width:800px">
+                    <h3 style="color:var(--yellow);margin-bottom:1rem">Gráficas de radar: el perfil dimensional</h3>
+                    <p>Cada gráfica de radar muestra el <strong>perfil temático</strong> de una política a través de las 7 dimensiones de análisis. Funciona así:</p>
+                    <div style="margin:1rem 0;display:grid;gap:0.5rem">
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.5rem 0.8rem;font-size:0.9rem">
+                            <strong style="color:var(--yellow)">Cada eje</strong> representa una dimensión (gobernanza, currículo, etc.). La distancia desde el centro indica el puntaje (0 = nada, 0.8 = máximo).
+                        </div>
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.5rem 0.8rem;font-size:0.9rem">
+                            <strong style="color:var(--yellow)">Un polígono grande y regular</strong> indica una política que cubre todos los temas de manera equilibrada (ej: España, Brasil).
+                        </div>
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.5rem 0.8rem;font-size:0.9rem">
+                            <strong style="color:var(--yellow)">Un polígono irregular</strong> indica una política especializada que enfatiza ciertos temas sobre otros (ej: el EU AI Act, fuerte en gobernanza, débil en currículo).
+                        </div>
+                        <div style="border:1px solid rgba(255,255,255,0.12);padding:0.5rem 0.8rem;font-size:0.9rem">
+                            <strong style="color:var(--yellow)">Superponer dos radares</strong> permite comparar visualmente: donde los polígonos se solapan hay convergencia; donde divergen hay diferencias de enfoque.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ═══ 3. Policy Overview ═══ -->
 <section id="overview" class="container">
     <h2 class="rv">Las 14 Políticas</h2>
@@ -118,7 +287,7 @@
 <!-- ═══ 8. Radar Comparison ═══ -->
 <section id="radar" class="container">
     <h2 class="rv">Comparación por Dimensiones</h2>
-    <p class="rv" style="max-width:700px;margin-bottom:1rem;color:#555">Los perfiles radar revelan cómo cada política distribuye su atención entre las 7 dimensiones. Los preajustes muestran las comparaciones más interesantes.</p>
+    <p class="rv" style="max-width:700px;margin-bottom:1rem;color:#555">Cada polígono es el perfil temático de una política. Un polígono grande y regular indica cobertura equilibrada; uno irregular indica especialización. Superponer dos perfiles revela convergencias y divergencias. <a href="#explainer" style="color:var(--fg);text-decoration:underline">¿Cómo leer un radar?</a></p>
     <div class="radar-presets rv" id="radar-presets">
         <button class="active" data-preset="iberoamerica">Iberoamérica</button>
         <button data-preset="asia-tech">Asia Tech</button>
@@ -139,7 +308,7 @@
 <!-- ═══ 9. UMAP Scatter ═══ -->
 <section id="umap" class="container">
     <h2 class="rv">Mapa de Proximidad (UMAP)</h2>
-    <p class="rv" style="max-width:700px;margin-bottom:1rem;color:#555">Cada punto es una política proyectada en 2D mediante UMAP, que preserva tanto la estructura local como global de las relaciones entre documentos. Los colores indican cluster temático.</p>
+    <p class="rv" style="max-width:700px;margin-bottom:1rem;color:#555">Cada punto es una política. El algoritmo UMAP comprime 384 dimensiones en un plano 2D preservando las distancias relativas: documentos que comparten vocabulario temático quedan cerca. Los colores indican cluster. <a href="#explainer" style="color:var(--fg);text-decoration:underline">¿Qué es UMAP?</a></p>
     <div class="chart-wrap rv">
         <div id="umap-chart" style="width:100%;height:520px"></div>
     </div>
@@ -171,19 +340,7 @@
     </div>
 </section>
 
-<!-- ═══ 12. Dendrogram ═══ -->
-<section id="dendrogram" class="container">
-    <h2 class="rv">Dendrograma Jerárquico</h2>
-    <p class="rv" style="max-width:700px;margin-bottom:1rem;color:#555">El árbol muestra el orden en que las políticas se fusionan por similitud. España y Brasil se unen primero (menor distancia); el EU AI Act se une al final.</p>
-    <div class="chart-wrap rv">
-        <div id="dendrogram-chart" style="width:100%;height:500px;overflow-x:auto"></div>
-    </div>
-    <div class="tk rv">
-        <strong>Lectura:</strong> La altura de cada unión indica la distancia entre los grupos fusionados. La línea punteada marca el umbral de 3 clusters.
-    </div>
-</section>
-
-<!-- ═══ 13. Sankey: Region → Cluster (DARK) ═══ -->
+<!-- ═══ Sankey: Region → Cluster (DARK) ═══ -->
 <section id="sankey" class="dark-section">
     <div class="container">
         <h2 class="rv">Flujo Región → Cluster</h2>
@@ -197,19 +354,7 @@
     </div>
 </section>
 
-<!-- ═══ 14. Parallel Coordinates ═══ -->
-<section id="parallel" class="container">
-    <h2 class="rv">Coordenadas Paralelas</h2>
-    <p class="rv" style="max-width:700px;margin-bottom:1rem;color:#555">Las 14 políticas trazadas simultáneamente sobre las 7 dimensiones de análisis. Cada línea es una política, coloreada por su cluster.</p>
-    <div class="chart-wrap rv">
-        <div id="parallel-chart" style="width:100%;height:480px"></div>
-    </div>
-    <div class="tk rv">
-        <strong>Patrón:</strong> El Cluster 1 (tecnológico) muestra puntajes altos en currículo e investigación. El Cluster 2 (integral) es más balanceado en todas las dimensiones.
-    </div>
-</section>
-
-<!-- ═══ 11. Key Findings (Scrollytelling) ═══ -->
+<!-- ═══ Key Findings (Scrollytelling) ═══ -->
 <section id="findings" class="container">
     <h2 class="rv">Hallazgos Principales</h2>
 
@@ -222,9 +367,7 @@
             </div>
         </div>
         <div class="finding-body">España, Brasil y Colombia forman un triángulo de alta similitud semántica (0.925–0.965). Comparten estructura, prioridades de equidad y marcos de referencia comunes (UNESCO, OCDE). Los tres son hispanohablantes o lusófonos con tradiciones regulatorias similares.</div>
-        <div class="finding-viz">
-            <canvas id="finding-triangle" height="250"></canvas>
-        </div>
+        <div class="finding-highlight rv">ES↔BR: 0.965 · ES↔CO: 0.934 · BR↔CO: 0.925</div>
     </div>
 
     <!-- Finding 2 -->
@@ -236,9 +379,7 @@
             </div>
         </div>
         <div class="finding-body">Japón, Corea del Sur, Singapur e India NITI priorizan investigación, innovación y formación de talento. Su similitud oscila entre 0.870 y 0.930. Canadá y Australia también se agrupan aquí, sugiriendo que la orientación supera la geografía.</div>
-        <div class="finding-viz">
-            <canvas id="finding-cluster1" height="250"></canvas>
-        </div>
+        <div class="finding-highlight rv">JP↔KR: 0.930 · JP↔IN₁: 0.926 · KR↔SG: 0.897 · CA↔AU: 0.707</div>
     </div>
 
     <!-- Finding 3 -->
@@ -250,9 +391,7 @@
             </div>
         </div>
         <div class="finding-body">Francia se agrupa con Brasil y Colombia (no con la UE). Canadá se agrupa con Japón y Corea. Los clusters se definen por el enfoque estratégico del documento, no por la ubicación del país que lo publicó.</div>
-        <div class="finding-viz">
-            <canvas id="finding-geography" height="250"></canvas>
-        </div>
+        <div class="finding-highlight rv">FR↔BR: 0.914 (mismo cluster) · FR↔UE: 0.595 (distinto cluster)</div>
     </div>
 
     <!-- Finding 4 -->
@@ -264,9 +403,7 @@
             </div>
         </div>
         <div class="finding-body">10 de 14 políticas mencionan la formación docente, pero solo 3 proponen mecanismos concretos. Es la dimensión con mayor desfase entre discurso e implementación. India NEP, UNESCO y Corea lideran; el EU AI Act casi no la menciona.</div>
-        <div class="finding-viz">
-            <canvas id="finding-teacher" height="350"></canvas>
-        </div>
+        <div class="finding-highlight rv">Líderes: IN₂ (0.615) · UN (0.600) · KR (0.556) — Rezagado: UE (0.241)</div>
     </div>
 
     <!-- Finding 5 -->
@@ -278,13 +415,47 @@
             </div>
         </div>
         <div class="finding-body">Su naturaleza legislativa y extensión (620,000 caracteres) lo separan del resto del corpus. Registra la media de similitud más baja (0.526) y forma un cluster unitario. Es un documento de regulación, no de estrategia educativa.</div>
-        <div class="finding-viz">
-            <canvas id="finding-outlier" height="350"></canvas>
+        <div class="finding-highlight rv">Similitud media del EU AI Act: 0.526 — El más bajo de las 14 políticas</div>
+    </div>
+</section>
+
+<!-- ═══ Implications for Policy ═══ -->
+<section id="implications" class="dark-section">
+    <div class="container">
+        <h2 class="rv">Implicaciones para la Política Pública</h2>
+        <p class="rv" style="opacity:0.7;margin-bottom:2rem;max-width:750px">¿Qué significan estos hallazgos para quienes diseñan política educativa sobre IA? Cinco líneas de acción derivadas del análisis.</p>
+
+        <div class="implications-grid rv">
+            <div class="impl-card">
+                <div class="impl-num">I</div>
+                <h3>Aprender del bloque iberoamericano</h3>
+                <p>La alta convergencia entre España, Brasil y Colombia sugiere que estos países pueden funcionar como <strong>red de aprendizaje mutuo</strong>. Compartir buenas prácticas y errores entre marcos iberoamericanos es más eficiente que importar modelos asiáticos o anglosajones.</p>
+            </div>
+            <div class="impl-card">
+                <div class="impl-num">II</div>
+                <h3>La formación docente necesita mecanismos concretos</h3>
+                <p>Todas las políticas la mencionan, pocas la operacionalizan. Un país que quiera diferenciarse debe ir más allá de la declaración de intenciones: <strong>programas de certificación, incentivos salariales, acceso a plataformas de práctica con IA</strong>.</p>
+            </div>
+            <div class="impl-card">
+                <div class="impl-num">III</div>
+                <h3>La regulación sola no es estrategia educativa</h3>
+                <p>El EU AI Act es valioso como marco legal, pero su perfil dimensional revela que <strong>no sustituye a una política educativa específica</strong>. Los países con leyes de IA necesitan, además, estrategias sectoriales para educación.</p>
+            </div>
+            <div class="impl-card">
+                <div class="impl-num">IV</div>
+                <h3>La orientación importa más que la geografía</h3>
+                <p>Al diseñar política, es más útil buscar referentes por <strong>tipo de enfoque</strong> (tecnológico vs. integral) que por proximidad geográfica. Un país latinoamericano con orientación tecnológica puede aprender más de Singapur que de su vecino.</p>
+            </div>
+            <div class="impl-card">
+                <div class="impl-num">V</div>
+                <h3>Los organismos internacionales como puente</h3>
+                <p>UNESCO y WEF se ubican en el cluster integral pero con perfiles distintos. Sus documentos funcionan como <strong>marcos de referencia transversales</strong> que conectan enfoques nacionales diversos.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ═══ 12. Country Profiles ═══ -->
+<!-- ═══ Country Profiles ═══ -->
 <section id="profiles" class="container">
     <h2 class="rv">Perfiles por Política</h2>
     <p class="rv" style="max-width:700px;margin-bottom:1.5rem;color:#555">Selecciona una política para ver su perfil dimensional, su similitud con el resto del corpus, y sus estadísticas clave.</p>
@@ -296,87 +467,12 @@
             <p style="color:#888;font-style:italic">Selecciona una política para ver su perfil.</p>
         </div>
         <div class="chart-wrap" id="profile-charts">
-            <canvas id="profile-radar" height="250"></canvas>
-            <canvas id="profile-bar" height="200" style="margin-top:1rem"></canvas>
+            <canvas id="profile-radar" height="300"></canvas>
         </div>
     </div>
 </section>
 
-<!-- ═══ 13. Understanding the Numbers ═══ -->
-<section id="explainer" class="dark-section">
-    <div class="container">
-        <h2 class="rv">¿Cómo Leer los Números?</h2>
-        <p class="rv" style="opacity:0.7;margin-bottom:2rem;max-width:700px">Los resultados de esta investigación usan técnicas de procesamiento de lenguaje natural. Esta sección explica, en palabras simples, qué significan.</p>
-
-        <div class="explainer-tabs rv" id="explainer-tabs">
-            <button class="active" data-tab="embeddings">¿Qué son los embeddings?</button>
-            <button data-tab="similarity">¿Qué significa la similitud?</button>
-            <button data-tab="dimensions">¿Qué son las dimensiones?</button>
-        </div>
-
-        <div class="explainer-panels rv" id="explainer-panels">
-            <!-- Panel 1: Embeddings -->
-            <div class="explainer-panel active" data-panel="embeddings">
-                <div class="explainer-grid">
-                    <div class="explainer-text">
-                        <h3 style="color:var(--yellow);margin-bottom:1rem">Embeddings: de palabras a números</h3>
-                        <p>Un <strong>embedding</strong> es una forma de convertir texto en una lista de números (un vector) que captura su significado. Dos textos que hablan de temas parecidos tendrán vectores parecidos, aunque estén escritos en idiomas distintos.</p>
-                        <p style="margin-top:0.75rem">Usamos el modelo <code style="color:var(--yellow)">paraphrase-multilingual-MiniLM-L12-v2</code>, que entiende 50+ idiomas. Cada fragmento de texto se convierte en un vector de <strong>384 dimensiones</strong>.</p>
-                        <p style="margin-top:0.75rem;opacity:0.7;font-size:0.9rem">Imagina que cada documento es un punto en un espacio de 384 dimensiones. Los documentos que dicen cosas parecidas quedan cerca; los que dicen cosas distintas, lejos.</p>
-                    </div>
-                    <div class="explainer-viz">
-                        <canvas id="explainer-embed-viz" height="220"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 2: Similarity -->
-            <div class="explainer-panel" data-panel="similarity">
-                <div class="explainer-grid">
-                    <div class="explainer-text">
-                        <h3 style="color:var(--yellow);margin-bottom:1rem">Similitud coseno: midiendo parecido</h3>
-                        <p>La <strong>similitud coseno</strong> mide qué tan alineados están dos vectores, en una escala de 0 a 1:</p>
-                        <ul style="margin:0.75rem 0;padding-left:1.2rem;line-height:2">
-                            <li><strong style="color:#ef5350">0.40–0.55</strong> → Muy diferentes (el EU AI Act vs. casi todos)</li>
-                            <li><strong style="color:#FFD54F">0.60–0.75</strong> → Vocabulario base compartido (la mayoría de los pares)</li>
-                            <li><strong style="color:#66bb6a">0.80–0.90</strong> → Alta convergencia temática</li>
-                            <li><strong style="color:#4caf50">0.90–1.00</strong> → Documentos casi idénticos en contenido (España-Brasil: 0.965)</li>
-                        </ul>
-                        <p style="opacity:0.7;font-size:0.9rem">No mide si están de acuerdo, sino si hablan de los mismos temas con vocabulario similar.</p>
-                    </div>
-                    <div class="explainer-viz">
-                        <canvas id="explainer-sim-viz" height="220"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panel 3: Dimensions -->
-            <div class="explainer-panel" data-panel="dimensions">
-                <div class="explainer-grid">
-                    <div class="explainer-text">
-                        <h3 style="color:var(--yellow);margin-bottom:1rem">7 dimensiones de análisis</h3>
-                        <p>Cada documento fue analizado en <strong>7 temas clave</strong> de la educación en IA. El puntaje de cada dimensión (0 a 1) indica qué tanto habla ese documento sobre ese tema:</p>
-                        <div style="margin:0.75rem 0;display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;font-size:0.85rem">
-                            <span>◆ Gobernanza y regulación</span>
-                            <span>◆ Currículo educativo</span>
-                            <span>◆ Formación docente</span>
-                            <span>◆ Infraestructura</span>
-                            <span>◆ Ética y valores</span>
-                            <span>◆ Investigación</span>
-                            <span>◆ Equidad e inclusión</span>
-                        </div>
-                        <p style="margin-top:0.75rem;opacity:0.7;font-size:0.9rem">Estos puntajes se calculan midiendo la similitud entre los fragmentos de cada documento y frases representativas de cada dimensión.</p>
-                    </div>
-                    <div class="explainer-viz">
-                        <canvas id="explainer-dim-viz" height="220"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══ 14. Methodology ═══ -->
+<!-- ═══ Methodology ═══ -->
 <section id="methodology" class="container">
     <h2 class="rv">Metodología</h2>
     <div class="rv" id="methodology-steps">
