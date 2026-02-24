@@ -1,0 +1,1238 @@
+{
+  "policies": [
+    {
+      "id": "eu_ai_act_2024",
+      "country_id": "eu",
+      "country": "Unión Europea",
+      "region": "europa",
+      "region_color": "#1976d2",
+      "year": 2024,
+      "language": "en",
+      "title": "EU AI Act — Regulation 2024/1689",
+      "raw_file": "eu/ai_act_2024.pdf",
+      "bib_key": "eu2024aiact"
+    },
+    {
+      "id": "espana_enia_2020",
+      "country_id": "espana",
+      "country": "España",
+      "region": "europa",
+      "region_color": "#1976d2",
+      "year": 2020,
+      "language": "es",
+      "title": "Estrategia Nacional de Inteligencia Artificial",
+      "raw_file": "spain/enia_2020.pdf",
+      "bib_key": "spain2020enia"
+    },
+    {
+      "id": "francia_villani_report_2018",
+      "country_id": "francia",
+      "country": "Francia",
+      "region": "europa",
+      "region_color": "#1976d2",
+      "year": 2018,
+      "language": "en",
+      "title": "For a Meaningful AI (Villani Report)",
+      "raw_file": "france/villani_report_2018.pdf",
+      "bib_key": "villani2018ai"
+    },
+    {
+      "id": "canada_pan_canadian_ai_strategy_2017",
+      "country_id": "canada",
+      "country": "Canadá",
+      "region": "americas",
+      "region_color": "#388e3c",
+      "year": 2017,
+      "language": "en",
+      "title": "Pan-Canadian AI Strategy",
+      "raw_file": "canada/pan_canadian_ai_strategy_2017.pdf",
+      "bib_key": "canada2017ai"
+    },
+    {
+      "id": "brasil_ebia_2021",
+      "country_id": "brasil",
+      "country": "Brasil",
+      "region": "americas",
+      "region_color": "#388e3c",
+      "year": 2021,
+      "language": "pt",
+      "title": "Estratégia Brasileira de Inteligência Artificial",
+      "raw_file": "brazil/ebia_2021.pdf",
+      "bib_key": "brasil2021ebia"
+    },
+    {
+      "id": "colombia_conpes_3975_2019",
+      "country_id": "colombia",
+      "country": "Colombia",
+      "region": "americas",
+      "region_color": "#388e3c",
+      "year": 2019,
+      "language": "es",
+      "title": "CONPES 3975 — Política Nacional para la Transformación Digital e IA",
+      "raw_file": "colombia/conpes_3975_2019.pdf",
+      "bib_key": "colombia2019conpes"
+    },
+    {
+      "id": "japon_ai_strategy_2019",
+      "country_id": "japon",
+      "country": "Japón",
+      "region": "asia_pacifico",
+      "region_color": "#d32f2f",
+      "year": 2019,
+      "language": "en",
+      "title": "AI Strategy 2019: AI for Everyone",
+      "raw_file": "japan/ai_strategy_2019.pdf",
+      "bib_key": "japan2019ai"
+    },
+    {
+      "id": "corea_ai_strategy_2019",
+      "country_id": "corea",
+      "country": "Corea del Sur",
+      "region": "asia_pacifico",
+      "region_color": "#d32f2f",
+      "year": 2019,
+      "language": "en",
+      "title": "National Strategy for Artificial Intelligence",
+      "raw_file": "korea/ai_strategy_2019.pdf",
+      "bib_key": "korea2019ai"
+    },
+    {
+      "id": "singapur_nais_2019",
+      "country_id": "singapur",
+      "country": "Singapur",
+      "region": "asia_pacifico",
+      "region_color": "#d32f2f",
+      "year": 2019,
+      "language": "en",
+      "title": "National AI Strategy",
+      "raw_file": "singapore/nais_2019.pdf",
+      "bib_key": "singapore2019nais"
+    },
+    {
+      "id": "india_aiforall_2018",
+      "country_id": "india",
+      "country": "India (NITI)",
+      "region": "asia_pacifico",
+      "region_color": "#d32f2f",
+      "year": 2018,
+      "language": "en",
+      "title": "National Strategy for AI: #AIForAll",
+      "raw_file": "india/aiforall_2018.pdf",
+      "bib_key": "india2018niti"
+    },
+    {
+      "id": "india_nep_2020",
+      "country_id": "india",
+      "country": "India (NEP)",
+      "region": "asia_pacifico",
+      "region_color": "#d32f2f",
+      "year": 2020,
+      "language": "en",
+      "title": "National Education Policy 2020",
+      "raw_file": "india/nep_2020.pdf",
+      "bib_key": "india2020nep"
+    },
+    {
+      "id": "australia_ai_action_plan_2021",
+      "country_id": "australia",
+      "country": "Australia",
+      "region": "asia_pacifico",
+      "region_color": "#d32f2f",
+      "year": 2021,
+      "language": "en",
+      "title": "Australia's AI Action Plan",
+      "raw_file": "australia/ai_action_plan_2021.pdf",
+      "bib_key": "australia2021aiaction"
+    },
+    {
+      "id": "unesco_genai_guidance_2023",
+      "country_id": "unesco",
+      "country": "UNESCO",
+      "region": "internacional",
+      "region_color": "#7b1fa2",
+      "year": 2023,
+      "language": "en",
+      "title": "Guidance for Generative AI in Education and Research",
+      "raw_file": "unesco/genai_guidance_2023.pdf",
+      "bib_key": "unesco2023genai"
+    },
+    {
+      "id": "wef_future_of_jobs_2020",
+      "country_id": "wef",
+      "country": "Foro Económico Mundial",
+      "region": "internacional",
+      "region_color": "#7b1fa2",
+      "year": 2020,
+      "language": "en",
+      "title": "The Future of Jobs Report 2020",
+      "raw_file": "wef/future_of_jobs_2020.pdf",
+      "bib_key": "wef2020future"
+    }
+  ],
+  "similarity_matrix": [
+    [
+      1.0,
+      0.5542694283475148,
+      0.5951755592445057,
+      0.4741407508234239,
+      0.5689968355715412,
+      0.47489152503725873,
+      0.618338808725399,
+      0.5325016368730383,
+      0.5182046884660589,
+      0.5916750887719723,
+      0.5123826063629325,
+      0.4738077404165528,
+      0.6182715266711744,
+      0.41605159301168215
+    ],
+    [
+      0.5542694283475148,
+      1.0,
+      0.9158313844208622,
+      0.6692437408750512,
+      0.9646458585452354,
+      0.9343182721607804,
+      0.8600243874073225,
+      0.8230981897564323,
+      0.7775404031944239,
+      0.85390050348599,
+      0.6820609464313755,
+      0.7379012869747371,
+      0.7108271953273653,
+      0.7234026304359454
+    ],
+    [
+      0.5951755592445057,
+      0.9158313844208622,
+      1.0,
+      0.6968119631980156,
+      0.9144586470243439,
+      0.8209912222248069,
+      0.8685280854656182,
+      0.8442600322676601,
+      0.8079309332982145,
+      0.9157373134044374,
+      0.6768443007983813,
+      0.7790472378349185,
+      0.7643599599342294,
+      0.7262202854451943
+    ],
+    [
+      0.4741407508234239,
+      0.6692437408750512,
+      0.6968119631980156,
+      1.0,
+      0.661781990608815,
+      0.5918916055084404,
+      0.7282554187493229,
+      0.736815176203546,
+      0.7179373385568301,
+      0.7341952559064965,
+      0.5210112419470919,
+      0.7068085381196698,
+      0.6161967920618685,
+      0.5209210332910674
+    ],
+    [
+      0.5689968355715412,
+      0.9646458585452354,
+      0.9144586470243439,
+      0.661781990608815,
+      1.0,
+      0.9250688468643296,
+      0.8496861506556957,
+      0.8280078792497609,
+      0.7718630970806349,
+      0.8676657068247481,
+      0.6484428888740901,
+      0.7514788745442273,
+      0.7504550669060719,
+      0.7337844546641982
+    ],
+    [
+      0.47489152503725873,
+      0.9343182721607804,
+      0.8209912222248069,
+      0.5918916055084404,
+      0.9250688468643296,
+      1.0,
+      0.7844114853844651,
+      0.7637760026251583,
+      0.6947308901447262,
+      0.7668460832919848,
+      0.6472534718651574,
+      0.6688553931431925,
+      0.6540907370958194,
+      0.7140442860538523
+    ],
+    [
+      0.618338808725399,
+      0.8600243874073225,
+      0.8685280854656182,
+      0.7282554187493229,
+      0.8496861506556957,
+      0.7844114853844651,
+      1.0,
+      0.9295482721578466,
+      0.8698781830007418,
+      0.9258241919637672,
+      0.7089733121276641,
+      0.8114849241446614,
+      0.7877706337472007,
+      0.7006250582851999
+    ],
+    [
+      0.5325016368730383,
+      0.8230981897564323,
+      0.8442600322676601,
+      0.736815176203546,
+      0.8280078792497609,
+      0.7637760026251583,
+      0.9295482721578466,
+      1.0,
+      0.896805074026764,
+      0.9284585036080013,
+      0.6173737506310509,
+      0.8234343054210731,
+      0.7364902135750522,
+      0.6921349373838196
+    ],
+    [
+      0.5182046884660589,
+      0.7775404031944239,
+      0.8079309332982145,
+      0.7179373385568301,
+      0.7718630970806349,
+      0.6947308901447262,
+      0.8698781830007418,
+      0.896805074026764,
+      1.0,
+      0.8902129722628525,
+      0.6001214553592794,
+      0.8388231057216415,
+      0.7220018414277141,
+      0.6144651525189075
+    ],
+    [
+      0.5916750887719723,
+      0.85390050348599,
+      0.9157373134044374,
+      0.7341952559064965,
+      0.8676657068247481,
+      0.7668460832919848,
+      0.9258241919637672,
+      0.9284585036080013,
+      0.8902129722628525,
+      1.0,
+      0.6632133375926954,
+      0.843480390908919,
+      0.7810405531050387,
+      0.6966166962890182
+    ],
+    [
+      0.5123826063629325,
+      0.6820609464313755,
+      0.6768443007983813,
+      0.5210112419470919,
+      0.6484428888740901,
+      0.6472534718651574,
+      0.7089733121276641,
+      0.6173737506310509,
+      0.6001214553592794,
+      0.6632133375926954,
+      1.0,
+      0.5426185045563093,
+      0.7245386439937128,
+      0.5749353606609166
+    ],
+    [
+      0.4738077404165528,
+      0.7379012869747371,
+      0.7790472378349185,
+      0.7068085381196698,
+      0.7514788745442273,
+      0.6688553931431925,
+      0.8114849241446614,
+      0.8234343054210731,
+      0.8388231057216415,
+      0.843480390908919,
+      0.5426185045563093,
+      1.0,
+      0.6641331273827306,
+      0.5840841530891095
+    ],
+    [
+      0.6182715266711744,
+      0.7108271953273653,
+      0.7643599599342294,
+      0.6161967920618685,
+      0.7504550669060719,
+      0.6540907370958194,
+      0.7877706337472007,
+      0.7364902135750522,
+      0.7220018414277141,
+      0.7810405531050387,
+      0.7245386439937128,
+      0.6641331273827306,
+      1.0,
+      0.5953076282859849
+    ],
+    [
+      0.41605159301168215,
+      0.7234026304359454,
+      0.7262202854451943,
+      0.5209210332910674,
+      0.7337844546641982,
+      0.7140442860538523,
+      0.7006250582851999,
+      0.6921349373838196,
+      0.6144651525189075,
+      0.6966166962890182,
+      0.5749353606609166,
+      0.5840841530891095,
+      0.5953076282859849,
+      1.0
+    ]
+  ],
+  "policy_ids": [
+    "eu_ai_act_2024",
+    "espana_enia_2020",
+    "francia_villani_report_2018",
+    "canada_pan_canadian_ai_strategy_2017",
+    "brasil_ebia_2021",
+    "colombia_conpes_3975_2019",
+    "japon_ai_strategy_2019",
+    "corea_ai_strategy_2019",
+    "singapur_nais_2019",
+    "india_aiforall_2018",
+    "india_nep_2020",
+    "australia_ai_action_plan_2021",
+    "unesco_genai_guidance_2023",
+    "wef_future_of_jobs_2020"
+  ],
+  "dimension_scores": {
+    "eu_ai_act_2024": {
+      "gobernanza": 0.4966148125653964,
+      "curriculo": 0.3919315370711878,
+      "formacion_docente": 0.24146652217986464,
+      "infraestructura": 0.18870720621787795,
+      "etica": 0.3573554826704519,
+      "investigacion": 0.33213346664536414,
+      "equidad": 0.29982219977898783
+    },
+    "espana_enia_2020": {
+      "gobernanza": 0.6327583102062347,
+      "curriculo": 0.6267936443469496,
+      "formacion_docente": 0.4526130354406448,
+      "infraestructura": 0.571140127258869,
+      "etica": 0.5226799845875933,
+      "investigacion": 0.5802620202748294,
+      "equidad": 0.6424118731988538
+    },
+    "francia_villani_report_2018": {
+      "gobernanza": 0.6094763308303369,
+      "curriculo": 0.6565600626681768,
+      "formacion_docente": 0.5133030004315609,
+      "infraestructura": 0.5215818420147513,
+      "etica": 0.565519467641582,
+      "investigacion": 0.6126993677947623,
+      "equidad": 0.6153991443962187
+    },
+    "canada_pan_canadian_ai_strategy_2017": {
+      "gobernanza": 0.46219178248355075,
+      "curriculo": 0.5962190412195713,
+      "formacion_docente": 0.4935404970866455,
+      "infraestructura": 0.38177239395073337,
+      "etica": 0.4198553866108765,
+      "investigacion": 0.6087133299929847,
+      "equidad": 0.40678999183340536
+    },
+    "brasil_ebia_2021": {
+      "gobernanza": 0.633324897211674,
+      "curriculo": 0.6283882160139687,
+      "formacion_docente": 0.4721724305396171,
+      "infraestructura": 0.5144631972751404,
+      "etica": 0.5734206354086797,
+      "investigacion": 0.5767523266921792,
+      "equidad": 0.6277509761435374
+    },
+    "colombia_conpes_3975_2019": {
+      "gobernanza": 0.6058549236895113,
+      "curriculo": 0.5552132208877576,
+      "formacion_docente": 0.42515488970683135,
+      "infraestructura": 0.5913093611297568,
+      "etica": 0.45813009552893247,
+      "investigacion": 0.5139779294814371,
+      "equidad": 0.639725200368054
+    },
+    "japon_ai_strategy_2019": {
+      "gobernanza": 0.5909244754829088,
+      "curriculo": 0.7078153018218698,
+      "formacion_docente": 0.5449403109983371,
+      "infraestructura": 0.603641717552451,
+      "etica": 0.5461421158215078,
+      "investigacion": 0.6903034986148808,
+      "equidad": 0.6096018108892015
+    },
+    "corea_ai_strategy_2019": {
+      "gobernanza": 0.6274232575285018,
+      "curriculo": 0.7167355650441947,
+      "formacion_docente": 0.5556688554353749,
+      "infraestructura": 0.5451786293317274,
+      "etica": 0.5470394994463256,
+      "investigacion": 0.6957488740868355,
+      "equidad": 0.5805199394223919
+    },
+    "singapur_nais_2019": {
+      "gobernanza": 0.5350232016962686,
+      "curriculo": 0.6637197378875326,
+      "formacion_docente": 0.5296579430040009,
+      "infraestructura": 0.48978930001232956,
+      "etica": 0.5095658534096343,
+      "investigacion": 0.6421526361331187,
+      "equidad": 0.5272566215005587
+    },
+    "india_aiforall_2018": {
+      "gobernanza": 0.5928833109249143,
+      "curriculo": 0.7226023671696993,
+      "formacion_docente": 0.551331778273421,
+      "infraestructura": 0.5357689570263887,
+      "etica": 0.5709679324635456,
+      "investigacion": 0.6919964897245453,
+      "equidad": 0.5928779087576933
+    },
+    "india_nep_2020": {
+      "gobernanza": 0.5982254308065094,
+      "curriculo": 0.6786427293226056,
+      "formacion_docente": 0.6148767371724242,
+      "infraestructura": 0.6463459137682646,
+      "etica": 0.5230419261944286,
+      "investigacion": 0.6459250888853753,
+      "equidad": 0.6140602567603758
+    },
+    "australia_ai_action_plan_2021": {
+      "gobernanza": 0.4758364719255139,
+      "curriculo": 0.588199597367171,
+      "formacion_docente": 0.4622048035382088,
+      "infraestructura": 0.4302998657953321,
+      "etica": 0.4554091537830294,
+      "investigacion": 0.5791635864852938,
+      "equidad": 0.5347870013489059
+    },
+    "unesco_genai_guidance_2023": {
+      "gobernanza": 0.5578736775306836,
+      "curriculo": 0.7013022009828709,
+      "formacion_docente": 0.6001909812350751,
+      "infraestructura": 0.4901232050456047,
+      "etica": 0.6416269152038689,
+      "investigacion": 0.649237701341981,
+      "equidad": 0.5705023180463757
+    },
+    "wef_future_of_jobs_2020": {
+      "gobernanza": 0.45806113640295043,
+      "curriculo": 0.5069712167894578,
+      "formacion_docente": 0.49986566261819854,
+      "infraestructura": 0.4887554213826828,
+      "etica": 0.4081927660360184,
+      "investigacion": 0.4679231129408592,
+      "equidad": 0.5267792779279076
+    }
+  },
+  "dimension_labels": {
+    "gobernanza": "Gobernanza y regulación",
+    "curriculo": "Currículo e integración educativa",
+    "formacion_docente": "Formación docente",
+    "infraestructura": "Infraestructura y acceso",
+    "etica": "Ética y valores",
+    "investigacion": "Investigación e innovación",
+    "equidad": "Equidad e inclusión"
+  },
+  "clusters": {
+    "3": [
+      "eu_ai_act_2024"
+    ],
+    "2": [
+      "espana_enia_2020",
+      "francia_villani_report_2018",
+      "brasil_ebia_2021",
+      "colombia_conpes_3975_2019",
+      "india_nep_2020",
+      "unesco_genai_guidance_2023",
+      "wef_future_of_jobs_2020"
+    ],
+    "1": [
+      "canada_pan_canadian_ai_strategy_2017",
+      "japon_ai_strategy_2019",
+      "corea_ai_strategy_2019",
+      "singapur_nais_2019",
+      "india_aiforall_2018",
+      "australia_ai_action_plan_2021"
+    ]
+  },
+  "region_colors": {
+    "europa": "#1976d2",
+    "americas": "#388e3c",
+    "asia_pacifico": "#d32f2f",
+    "internacional": "#7b1fa2"
+  },
+  "metadata": {
+    "generated_at": "2026-02-23T18:49:39.830009",
+    "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+    "num_policies": 14
+  },
+  "tsne": [
+    [
+      28.634992599487305,
+      30.731483459472656
+    ],
+    [
+      68.19131469726562,
+      10.681151390075684
+    ],
+    [
+      59.266937255859375,
+      18.412763595581055
+    ],
+    [
+      22.446502685546875,
+      5.7217698097229
+    ],
+    [
+      71.29143524169922,
+      19.467615127563477
+    ],
+    [
+      78.351318359375,
+      10.918468475341797
+    ],
+    [
+      44.131317138671875,
+      16.878999710083008
+    ],
+    [
+      44.95128631591797,
+      5.920652866363525
+    ],
+    [
+      37.095123291015625,
+      -1.5091609954833984
+    ],
+    [
+      37.051387786865234,
+      10.982523918151855
+    ],
+    [
+      50.02424621582031,
+      39.941654205322266
+    ],
+    [
+      44.16044998168945,
+      -10.863062858581543
+    ],
+    [
+      42.24428176879883,
+      30.372577667236328
+    ],
+    [
+      79.74425506591797,
+      29.409278869628906
+    ]
+  ],
+  "dendrogram": {
+    "linkage_matrix": [
+      [
+        1.0,
+        4.0,
+        0.035354141454764565,
+        2.0
+      ],
+      [
+        6.0,
+        7.0,
+        0.07045172784215337,
+        2.0
+      ],
+      [
+        9.0,
+        15.0,
+        0.07365918465410813,
+        3.0
+      ],
+      [
+        5.0,
+        14.0,
+        0.07875620366330877,
+        3.0
+      ],
+      [
+        8.0,
+        16.0,
+        0.13122406552389862,
+        4.0
+      ],
+      [
+        2.0,
+        17.0,
+        0.14614991271166208,
+        4.0
+      ],
+      [
+        11.0,
+        18.0,
+        0.20335714317415873,
+        5.0
+      ],
+      [
+        10.0,
+        12.0,
+        0.2754613560062872,
+        2.0
+      ],
+      [
+        3.0,
+        20.0,
+        0.3390194718853203,
+        6.0
+      ],
+      [
+        13.0,
+        19.0,
+        0.340409575604924,
+        5.0
+      ],
+      [
+        21.0,
+        23.0,
+        0.473490965389896,
+        7.0
+      ],
+      [
+        22.0,
+        24.0,
+        0.5026921586514611,
+        13.0
+      ],
+      [
+        0.0,
+        25.0,
+        0.5885025046301772,
+        14.0
+      ]
+    ],
+    "labels": [
+      "eu_ai_act_2024",
+      "espana_enia_2020",
+      "francia_villani_report_2018",
+      "canada_pan_canadian_ai_strategy_2017",
+      "brasil_ebia_2021",
+      "colombia_conpes_3975_2019",
+      "japon_ai_strategy_2019",
+      "corea_ai_strategy_2019",
+      "singapur_nais_2019",
+      "india_aiforall_2018",
+      "india_nep_2020",
+      "australia_ai_action_plan_2021",
+      "unesco_genai_guidance_2023",
+      "wef_future_of_jobs_2020"
+    ]
+  },
+  "dimension_correlations": {
+    "matrix": [
+      [
+        1.0,
+        0.5677,
+        0.289,
+        0.662,
+        0.6913,
+        0.4517,
+        0.7511
+      ],
+      [
+        0.5677,
+        1.0,
+        0.8729,
+        0.7163,
+        0.8649,
+        0.982,
+        0.671
+      ],
+      [
+        0.289,
+        0.8729,
+        1.0,
+        0.7305,
+        0.7112,
+        0.8714,
+        0.6031
+      ],
+      [
+        0.662,
+        0.7163,
+        0.7305,
+        1.0,
+        0.6105,
+        0.6745,
+        0.9297
+      ],
+      [
+        0.6913,
+        0.8649,
+        0.7112,
+        0.6105,
+        1.0,
+        0.7668,
+        0.707
+      ],
+      [
+        0.4517,
+        0.982,
+        0.8714,
+        0.6745,
+        0.7668,
+        1.0,
+        0.5947
+      ],
+      [
+        0.7511,
+        0.671,
+        0.6031,
+        0.9297,
+        0.707,
+        0.5947,
+        1.0
+      ]
+    ],
+    "labels": [
+      "Gobernanza y regulación",
+      "Currículo e integración educativa",
+      "Formación docente",
+      "Infraestructura y acceso",
+      "Ética y valores",
+      "Investigación e innovación",
+      "Equidad e inclusión"
+    ]
+  },
+  "network_edges": [
+    {
+      "source": "espana_enia_2020",
+      "target": "brasil_ebia_2021",
+      "weight": 0.9646
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "colombia_conpes_3975_2019",
+      "weight": 0.9343
+    },
+    {
+      "source": "japon_ai_strategy_2019",
+      "target": "corea_ai_strategy_2019",
+      "weight": 0.9295
+    },
+    {
+      "source": "corea_ai_strategy_2019",
+      "target": "india_aiforall_2018",
+      "weight": 0.9285
+    },
+    {
+      "source": "japon_ai_strategy_2019",
+      "target": "india_aiforall_2018",
+      "weight": 0.9258
+    },
+    {
+      "source": "brasil_ebia_2021",
+      "target": "colombia_conpes_3975_2019",
+      "weight": 0.9251
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "francia_villani_report_2018",
+      "weight": 0.9158
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "india_aiforall_2018",
+      "weight": 0.9157
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "brasil_ebia_2021",
+      "weight": 0.9145
+    },
+    {
+      "source": "corea_ai_strategy_2019",
+      "target": "singapur_nais_2019",
+      "weight": 0.8968
+    },
+    {
+      "source": "singapur_nais_2019",
+      "target": "india_aiforall_2018",
+      "weight": 0.8902
+    },
+    {
+      "source": "japon_ai_strategy_2019",
+      "target": "singapur_nais_2019",
+      "weight": 0.8699
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "japon_ai_strategy_2019",
+      "weight": 0.8685
+    },
+    {
+      "source": "brasil_ebia_2021",
+      "target": "india_aiforall_2018",
+      "weight": 0.8677
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "japon_ai_strategy_2019",
+      "weight": 0.86
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "india_aiforall_2018",
+      "weight": 0.8539
+    },
+    {
+      "source": "brasil_ebia_2021",
+      "target": "japon_ai_strategy_2019",
+      "weight": 0.8497
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "corea_ai_strategy_2019",
+      "weight": 0.8443
+    },
+    {
+      "source": "india_aiforall_2018",
+      "target": "australia_ai_action_plan_2021",
+      "weight": 0.8435
+    },
+    {
+      "source": "singapur_nais_2019",
+      "target": "australia_ai_action_plan_2021",
+      "weight": 0.8388
+    },
+    {
+      "source": "brasil_ebia_2021",
+      "target": "corea_ai_strategy_2019",
+      "weight": 0.828
+    },
+    {
+      "source": "corea_ai_strategy_2019",
+      "target": "australia_ai_action_plan_2021",
+      "weight": 0.8234
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "corea_ai_strategy_2019",
+      "weight": 0.8231
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "colombia_conpes_3975_2019",
+      "weight": 0.821
+    },
+    {
+      "source": "japon_ai_strategy_2019",
+      "target": "australia_ai_action_plan_2021",
+      "weight": 0.8115
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "singapur_nais_2019",
+      "weight": 0.8079
+    },
+    {
+      "source": "japon_ai_strategy_2019",
+      "target": "unesco_genai_guidance_2023",
+      "weight": 0.7878
+    },
+    {
+      "source": "colombia_conpes_3975_2019",
+      "target": "japon_ai_strategy_2019",
+      "weight": 0.7844
+    },
+    {
+      "source": "india_aiforall_2018",
+      "target": "unesco_genai_guidance_2023",
+      "weight": 0.781
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "australia_ai_action_plan_2021",
+      "weight": 0.779
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "singapur_nais_2019",
+      "weight": 0.7775
+    },
+    {
+      "source": "brasil_ebia_2021",
+      "target": "singapur_nais_2019",
+      "weight": 0.7719
+    },
+    {
+      "source": "colombia_conpes_3975_2019",
+      "target": "india_aiforall_2018",
+      "weight": 0.7668
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "unesco_genai_guidance_2023",
+      "weight": 0.7644
+    },
+    {
+      "source": "colombia_conpes_3975_2019",
+      "target": "corea_ai_strategy_2019",
+      "weight": 0.7638
+    },
+    {
+      "source": "brasil_ebia_2021",
+      "target": "australia_ai_action_plan_2021",
+      "weight": 0.7515
+    },
+    {
+      "source": "brasil_ebia_2021",
+      "target": "unesco_genai_guidance_2023",
+      "weight": 0.7505
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "australia_ai_action_plan_2021",
+      "weight": 0.7379
+    },
+    {
+      "source": "canada_pan_canadian_ai_strategy_2017",
+      "target": "corea_ai_strategy_2019",
+      "weight": 0.7368
+    },
+    {
+      "source": "corea_ai_strategy_2019",
+      "target": "unesco_genai_guidance_2023",
+      "weight": 0.7365
+    },
+    {
+      "source": "canada_pan_canadian_ai_strategy_2017",
+      "target": "india_aiforall_2018",
+      "weight": 0.7342
+    },
+    {
+      "source": "brasil_ebia_2021",
+      "target": "wef_future_of_jobs_2020",
+      "weight": 0.7338
+    },
+    {
+      "source": "canada_pan_canadian_ai_strategy_2017",
+      "target": "japon_ai_strategy_2019",
+      "weight": 0.7283
+    },
+    {
+      "source": "francia_villani_report_2018",
+      "target": "wef_future_of_jobs_2020",
+      "weight": 0.7262
+    },
+    {
+      "source": "india_nep_2020",
+      "target": "unesco_genai_guidance_2023",
+      "weight": 0.7245
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "wef_future_of_jobs_2020",
+      "weight": 0.7234
+    },
+    {
+      "source": "singapur_nais_2019",
+      "target": "unesco_genai_guidance_2023",
+      "weight": 0.722
+    },
+    {
+      "source": "canada_pan_canadian_ai_strategy_2017",
+      "target": "singapur_nais_2019",
+      "weight": 0.7179
+    },
+    {
+      "source": "colombia_conpes_3975_2019",
+      "target": "wef_future_of_jobs_2020",
+      "weight": 0.714
+    },
+    {
+      "source": "espana_enia_2020",
+      "target": "unesco_genai_guidance_2023",
+      "weight": 0.7108
+    },
+    {
+      "source": "japon_ai_strategy_2019",
+      "target": "india_nep_2020",
+      "weight": 0.709
+    },
+    {
+      "source": "canada_pan_canadian_ai_strategy_2017",
+      "target": "australia_ai_action_plan_2021",
+      "weight": 0.7068
+    },
+    {
+      "source": "japon_ai_strategy_2019",
+      "target": "wef_future_of_jobs_2020",
+      "weight": 0.7006
+    }
+  ],
+  "sankey": {
+    "nodes": [
+      {
+        "id": "americas",
+        "label": "Américas"
+      },
+      {
+        "id": "asia_pacifico",
+        "label": "Asia-Pacífico"
+      },
+      {
+        "id": "europa",
+        "label": "Europa"
+      },
+      {
+        "id": "internacional",
+        "label": "Internacional"
+      },
+      {
+        "id": "cluster_1",
+        "label": "Cluster 1: Tecnológico"
+      },
+      {
+        "id": "cluster_2",
+        "label": "Cluster 2: Integral"
+      },
+      {
+        "id": "cluster_3",
+        "label": "Cluster 3: Regulación"
+      }
+    ],
+    "links": [
+      {
+        "source": "europa",
+        "target": "cluster_3",
+        "value": 1,
+        "policies": [
+          "Unión Europea"
+        ]
+      },
+      {
+        "source": "europa",
+        "target": "cluster_2",
+        "value": 2,
+        "policies": [
+          "España",
+          "Francia"
+        ]
+      },
+      {
+        "source": "americas",
+        "target": "cluster_1",
+        "value": 1,
+        "policies": [
+          "Canadá"
+        ]
+      },
+      {
+        "source": "americas",
+        "target": "cluster_2",
+        "value": 2,
+        "policies": [
+          "Brasil",
+          "Colombia"
+        ]
+      },
+      {
+        "source": "asia_pacifico",
+        "target": "cluster_1",
+        "value": 5,
+        "policies": [
+          "Japón",
+          "Corea del Sur",
+          "Singapur",
+          "India (NITI)",
+          "Australia"
+        ]
+      },
+      {
+        "source": "asia_pacifico",
+        "target": "cluster_2",
+        "value": 1,
+        "policies": [
+          "India (NEP)"
+        ]
+      },
+      {
+        "source": "internacional",
+        "target": "cluster_2",
+        "value": 2,
+        "policies": [
+          "UNESCO",
+          "Foro Económico Mundial"
+        ]
+      }
+    ]
+  },
+  "umap": [
+    [
+      18.471343994140625,
+      -3.1493496894836426
+    ],
+    [
+      20.856670379638672,
+      -4.195129871368408
+    ],
+    [
+      20.059715270996094,
+      -3.5789780616760254
+    ],
+    [
+      19.800899505615234,
+      -1.9648911952972412
+    ],
+    [
+      20.368663787841797,
+      -5.196954727172852
+    ],
+    [
+      21.091981887817383,
+      -4.856565475463867
+    ],
+    [
+      19.26188087463379,
+      -2.8164560794830322
+    ],
+    [
+      19.825658798217773,
+      -1.2366446256637573
+    ],
+    [
+      19.095224380493164,
+      -0.8919823169708252
+    ],
+    [
+      18.9271183013916,
+      -2.0081629753112793
+    ],
+    [
+      18.784242630004883,
+      -3.9927072525024414
+    ],
+    [
+      18.460830688476562,
+      -1.3090264797210693
+    ],
+    [
+      18.03199577331543,
+      -3.6392946243286133
+    ],
+    [
+      20.078447341918945,
+      -4.593692302703857
+    ]
+  ]
+}

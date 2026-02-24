@@ -1,0 +1,2558 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es la Comprensión? — 2,400 años de pensamiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ── Variables & Reset ── */
+        :root {
+            --bg: #F5F0E8;
+            --fg: #1a1a1a;
+            --bg-alt: #E8E2D2;
+            --border: 3px solid #1a1a1a;
+            --shadow: 6px 6px 0 #1a1a1a;
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Author Colors */
+            --c1: #d32f2f;
+            /* Plato */
+            --c2: #e64a19;
+            /* Aristotle */
+            --c3: #388e3c;
+            /* Bacon */
+            --c4: #1976d2;
+            /* Wittgenstein */
+            --c5: #7b1fa2;
+            /* Kant */
+            --c6: #0097a7;
+            /* Gadamer */
+            --c7: #f57c00;
+            /* Dewey */
+            --c8: #c2185b;
+            /* Piaget */
+            --c9: #303f9f;
+            /* Vygotsky */
+            --c10: #5d4037;
+            /* Bruner */
+
+            --yellow: #FFD54F;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* ── Base ── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
+            overflow-wrap: break-word;
+            line-height: 1.6;
+        }
+
+        ::selection {
+            background: var(--yellow);
+            color: var(--fg);
+        }
+
+        /* ── Layout Utilities ── */
+        .dv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .dv-l {
+            width: 80px;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        /* ── Progress & Navigation ── */
+        #progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 6px;
+            background: var(--fg);
+            z-index: 9999;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        #tlnav {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .tl-line {
+            width: 2px;
+            height: 16px;
+            background: rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .tl-dot {
+            width: 14px;
+            height: 14px;
+            border: 3px solid rgba(0, 0, 0, 0.2);
+            background: var(--bg);
+            cursor: pointer;
+            transition: all 0.4s var(--ease);
+            position: relative;
+        }
+
+        .tl-dot:hover {
+            border-color: var(--fg);
+            transform: scale(1.4);
+        }
+
+        .tl-dot.active {
+            background: var(--fg);
+            border-color: var(--fg);
+            transform: scale(1.3);
+        }
+
+        .tl-dot[data-label]:hover::after {
+            content: attr(data-label);
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--fg);
+            color: var(--bg);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            padding: 3px 9px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            #tlnav {
+                display: none;
+            }
+        }
+
+        /* ── Hero ── */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: var(--border);
+        }
+
+        .hero-bg-text {
+            position: absolute;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 18vw;
+            line-height: 0.8;
+            opacity: 0.04;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            animation: fadeUp 1s var(--ease);
+        }
+
+        .hero-pre {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: inline-block;
+            border: 2px solid var(--fg);
+            padding: 8px 16px;
+            background: var(--yellow);
+            box-shadow: 4px 4px 0 var(--fg);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(3rem, 9vw, 6.5rem);
+            line-height: 0.95;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            background: linear-gradient(180deg, transparent 60%, var(--yellow) 60%);
+            padding: 0 10px;
+        }
+
+        .hero-sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin: 0 auto 30px;
+            color: #444;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        .hero-intro {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-arrow {
+            width: 50px;
+            height: 50px;
+            border: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            background: var(--bg);
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: var(--fg);
+            margin: 0 auto;
+            transition: transform 0.3s;
+        }
+
+        .hero-arrow:hover {
+            transform: translateY(4px);
+            box-shadow: 2px 2px 0 var(--fg);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Sections ── */
+        .sec {
+            min-height: 100vh;
+            padding: 100px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .sec:nth-child(even) {
+            background: var(--bg-alt);
+        }
+
+        .sec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1400px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .sec-text {
+            order: 1;
+            min-width: 0;
+        }
+
+        .sec-visual {
+            order: 2;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+            min-width: 0;
+            perspective: 1000px;
+        }
+
+        .sec:nth-child(even) .sec-grid .sec-text {
+            order: 2;
+        }
+
+        .sec:nth-child(even) .sec-grid .sec-visual {
+            order: 1;
+        }
+
+        @media (max-width: 900px) {
+            .sec {
+                padding: 60px 20px;
+                min-height: auto;
+            }
+
+            .sec-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .sec-text,
+            .sec:nth-child(even) .sec-grid .sec-text {
+                order: 2;
+            }
+
+            .sec-visual,
+            .sec:nth-child(even) .sec-grid .sec-visual {
+                order: 1;
+                min-height: 250px;
+                flex-direction: column;
+                overflow: hidden;
+            }
+
+            /* Text adjustments for single-column layout */
+            .s-body { font-size: 1rem; margin-bottom: 24px; }
+            .s-thesis { margin-bottom: 24px; }
+            .rb-h { font-size: 1rem; }
+            .tk { margin-top: 24px; }
+            .n-badge { font-size: 4.5rem; }
+
+            /* Diagrams: reflow into column at single-col layout */
+            .diagram {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                max-width: 100%;
+                margin-top: 16px;
+                align-self: center;
+            }
+
+            /* Reduce hover shadow at tablet */
+            .sec:hover .auth-img {
+                box-shadow: 6px 6px 0 var(--fg);
+            }
+
+            /* Synthesis & bonus spacing */
+            .sec-header { margin-bottom: 40px; }
+            .sint-quote { padding: 24px; }
+            .sint-quote p { font-size: 1rem; }
+        }
+
+        @media (max-width: 600px) {
+            /* Layout */
+            .sec { padding: 40px 14px; }
+            .sec-grid { gap: 24px; }
+            .sec-visual { min-height: 200px; flex-direction: column; overflow: hidden; }
+            .n-badge { font-size: 3.5rem; top: -30px; left: -10px; }
+            .auth-img { max-width: 100%; }
+
+            /* Hero */
+            .hero-title { font-size: clamp(1.6rem, 7vw, 2.5rem) !important; }
+            .hero-sub { font-size: 0.95rem; }
+            .hero-intro { font-size: 0.9rem; margin-bottom: 24px; }
+
+            /* Section text — full responsive treatment */
+            .s-thesis { margin-bottom: 16px; padding-left: 14px; border-left-width: 4px; }
+            .s-body { font-size: 0.95rem; margin-bottom: 16px; line-height: 1.6; }
+
+            /* Collapsibles */
+            .rb { margin-bottom: 10px; }
+            .rb-h { font-size: 0.95rem; padding: 12px 14px; }
+            .rb.open .rb-b { padding: 14px; }
+            .rb-b p { font-size: 0.9rem; }
+
+            /* Takeaway box */
+            .tk { margin-top: 16px; padding: 14px; }
+            .tk p { font-size: 0.95rem; }
+
+            /* Links */
+            .s-lk { gap: 8px; }
+            .s-lk a { font-size: 0.7rem; padding: 8px 12px; min-height: 40px; }
+
+            /* Punto-grid cards */
+            .pg { grid-template-columns: 1fr; gap: 16px; }
+            .pc { padding: 18px; }
+            .pc-n { font-size: 1.6rem; }
+
+            /* Synthesis & Bonus */
+            .sec-header { margin-bottom: 30px; }
+            .sint-quote { padding: 16px; }
+            .sint-quote p { font-size: 0.95rem; line-height: 1.7; }
+            .bonus-card { padding: 18px 14px; }
+            .bonus-card .bc-thesis { font-size: 1rem; padding-left: 12px; }
+            .bonus-card .bc-body { font-size: 0.9rem; }
+            .bc-photo { width: 45px; height: 45px; }
+            .bc-name { font-size: 1.1rem; }
+
+            /* Footer */
+            footer { padding: 40px 16px; }
+        }
+
+        /* ── Typography & Content ── */
+        .n-badge {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 6rem;
+            opacity: 0.08;
+            line-height: 1;
+            position: absolute;
+            top: -50px;
+            left: -20px;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .s-era {
+            text-transform: uppercase;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .s-name {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw + 1rem, 4.5rem);
+            font-weight: 800;
+            line-height: 0.9;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .s-thesis {
+            font-family: var(--font-display);
+            font-size: clamp(1rem, 1.5vw + 0.5rem, 1.8rem);
+            line-height: 1.2;
+            margin-bottom: 30px;
+            font-weight: 700;
+            padding-left: 20px;
+            border-left: 6px solid;
+            border-color: inherit;
+            color: #333;
+        }
+
+        .s-body {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .s-body p {
+            margin-bottom: 1rem;
+        }
+
+        /* ── Collapsibles (from index2.html rb/clps) ── */
+        .rb {
+            border: 2px solid var(--fg);
+            background: #fff;
+            margin-bottom: 16px;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            overflow: hidden;
+        }
+
+        .rb:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .rb-h {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            user-select: none;
+            background: #fff;
+            transition: background 0.3s;
+        }
+
+        .rb-h:hover {
+            background: #f9f9f9;
+        }
+
+        .rb-i {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .rb.open .rb-i {
+            transform: rotate(180deg);
+        }
+
+        .rb-b {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.3s;
+            border-top: 1px solid transparent;
+        }
+
+        .rb.open .rb-b {
+            max-height: 1000px;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* Increased max-height for fuller content */
+        .rb-b p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .rb-b ul {
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .rb-b li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .rb-b li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--fg);
+        }
+
+        /* ── Takeaway (tk) & Links (s-lk) ── */
+        .tk {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-left: 6px solid;
+            border-color: inherit;
+        }
+
+        .tk-l {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            opacity: 0.7;
+        }
+
+        .tk p {
+            font-size: 1.05rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .s-lk {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .s-lk a {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-decoration: none;
+            border: 1px solid var(--fg);
+            padding: 10px 14px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            color: var(--fg);
+            transition: all 0.2s;
+            background: transparent;
+        }
+
+        .s-lk a:hover {
+            background: var(--fg);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+
+        /* ── Visual Element (Image + Diagram) ── */
+        .auth-img {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            min-width: 0;
+            border: var(--border);
+            filter: grayscale(100%) contrast(1.1);
+            transition: all 0.5s var(--ease);
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+            background: #fff;
+        }
+
+        .sec:hover .auth-img {
+            filter: grayscale(0%) contrast(1);
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0 var(--fg);
+        }
+
+        .diagram {
+            position: absolute;
+            z-index: 20;
+            bottom: -20px;
+            right: -20px;
+            background: #fff;
+            border: var(--border);
+            padding: 15px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s 0.2s var(--ease);
+            pointer-events: none;
+        }
+
+        .sec.vis .diagram {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .diagram h4 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--fg);
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+        }
+
+        .d-content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+        }
+
+        /* Diagram Specifics - The CSS I added earlier */
+        .d-cave div {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .d-cave span {
+            width: 10px;
+            height: 10px;
+            border: 1px solid #000;
+            border-radius: 50%;
+        }
+
+        .d-cave span.fill {
+            background: #000;
+        }
+
+        .d-square {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            text-align: center;
+            font-size: 0.65rem;
+        }
+
+        .d-square div {
+            border: 1px solid #000;
+            padding: 4px;
+        }
+
+        .d-circle {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed #000;
+            border-radius: 50%;
+            margin: 5px auto;
+            position: relative;
+            animation: rot 10s linear infinite;
+        }
+
+        .d-circle::after {
+            content: '↺';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5rem;
+        }
+
+        @keyframes rot {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .d-family {
+            width: 140px;
+            height: 130px;
+        }
+
+        .d-family-svg {
+            width: 100%;
+            height: 90px;
+        }
+
+        .d-fam-line {
+            stroke: #000;
+            stroke-width: 1.5;
+            opacity: 0;
+        }
+
+        .d-fam-node {
+            fill: #fff;
+            stroke: #000;
+            stroke-width: 2;
+            opacity: 0;
+        }
+
+        .sec.vis .d-fam-node {
+            animation: famNodeIn 0.4s ease-out forwards;
+        }
+
+        .sec.vis .d-fam-node:nth-child(7)  { animation-delay: 0.1s; }
+        .sec.vis .d-fam-node:nth-child(8)  { animation-delay: 0.2s; }
+        .sec.vis .d-fam-node:nth-child(9)  { animation-delay: 0.3s; }
+        .sec.vis .d-fam-node:nth-child(10) { animation-delay: 0.4s; }
+        .sec.vis .d-fam-node:nth-child(11) { animation-delay: 0.5s; }
+        .sec.vis .d-fam-node:nth-child(12) { animation-delay: 0.6s; }
+
+        .sec.vis .d-fam-line {
+            animation: famLineIn 0.3s ease-out forwards;
+        }
+
+        .sec.vis .d-fam-line:nth-child(1) { animation-delay: 0.15s; }
+        .sec.vis .d-fam-line:nth-child(2) { animation-delay: 0.25s; }
+        .sec.vis .d-fam-line:nth-child(3) { animation-delay: 0.35s; }
+        .sec.vis .d-fam-line:nth-child(4) { animation-delay: 0.3s; }
+        .sec.vis .d-fam-line:nth-child(5) { animation-delay: 0.35s; }
+        .sec.vis .d-fam-line:nth-child(6) { animation-delay: 0.4s; }
+        .sec.vis .d-fam-line:nth-child(7) { animation-delay: 0.45s; }
+        .sec.vis .d-fam-line:nth-child(8) { animation-delay: 0.55s; }
+        .sec.vis .d-fam-line:nth-child(9) { animation-delay: 0.6s; }
+
+        @keyframes famNodeIn {
+            from { opacity: 0; r: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes famLineIn {
+            from { opacity: 0; }
+            to   { opacity: 0.4; }
+        }
+
+        .d-lens {
+            width: 80px;
+            height: 40px;
+            border: 3px solid #000;
+            border-radius: 50%;
+            margin: 10px auto;
+            position: relative;
+        }
+
+        .d-lens::after {
+            content: '';
+            width: 120%;
+            height: 2px;
+            background: #000;
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            transform: translateY(-50%);
+        }
+
+        /* Bruner Spiral - Larger and repositioned */
+        .d-spiral {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .d-spiral svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sec.vis .d-spiral svg {
+            animation: spiralSpin 8s linear infinite;
+        }
+
+        @keyframes spiralSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Bacon's 4 Idols */
+        .d-idols {
+            width: 140px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .d-idol {
+            border: 2px solid #000;
+            padding: 8px;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 700;
+            background: #fff;
+            opacity: 0;
+        }
+
+        .sec.vis .d-idol {
+            animation: idolFade 1s ease-in forwards;
+        }
+
+        .sec.vis .d-idol:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .sec.vis .d-idol:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .sec.vis .d-idol:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        .sec.vis .d-idol:nth-child(4) {
+            animation-delay: 1.1s;
+        }
+
+        @keyframes idolFade {
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        /* Vygotsky ZDP - Simple horizontal bars */
+        .d-zdp {
+            width: 180px;
+            margin: 20px auto;
+        }
+
+        .d-zdp-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .d-zdp-bar {
+            height: 18px;
+            border: 2px solid #000;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .d-zdp-bar::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: #000;
+            z-index: 0;
+        }
+
+        .sec.vis .d-zdp-bar::before {
+            animation: barFill 1.5s ease-out forwards;
+        }
+
+        .sec.vis .d-zdp-bar:nth-child(2)::before {
+            animation-delay: 0.2s;
+            width: 60%;
+        }
+
+        .sec.vis .d-zdp-bar:nth-child(3)::before {
+            animation-delay: 0.5s;
+            width: 85%;
+        }
+
+        .sec.vis .d-zdp-bar:nth-child(4)::before {
+            animation-delay: 0.8s;
+            width: 100%;
+        }
+
+        .d-zdp-bar span {
+            position: relative;
+            z-index: 1;
+            mix-blend-mode: difference;
+        }
+
+        @keyframes barFill {
+            from {
+                width: 0;
+            }
+        }
+
+        /* Improved Piaget Stairs */
+        .d-stairs {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            padding: 10px;
+        }
+
+        .d-stairs div {
+            background: #000;
+            height: 14px;
+            transition: width 0.8s var(--ease);
+        }
+
+        .d-stairs div:nth-child(1) {
+            width: 25px;
+        }
+
+        .d-stairs div:nth-child(2) {
+            width: 45px;
+        }
+
+        .d-stairs div:nth-child(3) {
+            width: 65px;
+        }
+
+        .d-stairs div:nth-child(4) {
+            width: 85px;
+        }
+
+        .sec.vis .d-stairs div {
+            animation: stairGrow 1.5s var(--ease) forwards;
+        }
+
+        .sec.vis .d-stairs div:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .sec.vis .d-stairs div:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .sec.vis .d-stairs div:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .sec.vis .d-stairs div:nth-child(4) {
+            animation-delay: 0.7s;
+        }
+
+        @keyframes stairGrow {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+        }
+
+        /* Dewey 5 Phases - Simple list like Plato/Aristotle */
+        .d-phases {
+            width: 200px;
+            margin: 10px auto;
+        }
+
+        .d-phase {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            opacity: 0;
+        }
+
+        .d-phase-num {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        .sec.vis .d-phase {
+            animation: phaseFade 0.5s ease-out forwards;
+        }
+
+        .sec.vis .d-phase:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .sec.vis .d-phase:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .sec.vis .d-phase:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .sec.vis .d-phase:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+
+        .sec.vis .d-phase:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes phaseFade {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Gadamer Fusion - Two horizons meeting */
+        .d-fusion {
+            width: 150px;
+            height: 150px;
+        }
+
+        .d-fusion-circle {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            bottom: 22px;
+            background: rgba(0, 151, 167, 0.1);
+            transition: transform 1s var(--ease);
+        }
+
+        .d-fusion-circle:nth-of-type(1) {
+            left: 10px;
+            transform: translateX(-8px);
+        }
+
+        .d-fusion-circle:nth-of-type(2) {
+            right: 10px;
+            transform: translateX(8px);
+        }
+
+        .sec.vis .d-fusion-circle:nth-of-type(1) {
+            transform: translateX(8px);
+            animation: fusionBreatheLeft 3s 1s ease-in-out infinite;
+        }
+
+        .sec.vis .d-fusion-circle:nth-of-type(2) {
+            transform: translateX(-8px);
+            animation: fusionBreatheRight 3s 1s ease-in-out infinite;
+        }
+
+        .d-fusion-label {
+            position: absolute;
+            bottom: 2px;
+            font-family: var(--font-mono);
+            font-size: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.8s 0.5s var(--ease);
+        }
+
+        .d-fusion-label:nth-of-type(1) {
+            left: 2px;
+        }
+
+        .d-fusion-label:nth-of-type(2) {
+            right: 2px;
+        }
+
+        .sec.vis .d-fusion-label {
+            opacity: 0.7;
+        }
+
+        /* Connection point at center */
+        .d-fusion::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--c6);
+            border-radius: 50%;
+            bottom: 42px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            opacity: 0;
+        }
+
+        .sec.vis .d-fusion::after {
+            animation: fusionPulse 2.5s 0.8s ease-in-out infinite;
+        }
+
+        @keyframes fusionPulse {
+            0%,
+            100% {
+                opacity: 0;
+                transform: translate(-50%, 0) scale(0.5);
+                box-shadow: 0 0 0 rgba(0, 151, 167, 0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translate(-50%, 0) scale(1.3);
+                box-shadow: 0 0 8px rgba(0, 151, 167, 0.4);
+            }
+        }
+
+        @keyframes fusionBreatheLeft {
+            0%, 100% { transform: translateX(8px); }
+            50% { transform: translateX(5px); }
+        }
+
+        @keyframes fusionBreatheRight {
+            0%, 100% { transform: translateX(-8px); }
+            50% { transform: translateX(-5px); }
+        }
+
+        /* Kant Filters */
+        .d-filter {
+            width: 150px;
+            height: 140px;
+        }
+
+        .d-filter-particles {
+            position: absolute;
+            left: 0;
+            bottom: 22px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            width: 30px;
+        }
+
+        .d-filter-particle {
+            width: 7px;
+            height: 7px;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .d-filter-lens {
+            position: absolute;
+            left: 45px;
+            bottom: 12px;
+            width: 35px;
+            height: 50px;
+            border: 3px solid var(--c5);
+            border-radius: 50%;
+            transition: box-shadow 0.5s;
+        }
+
+        .sec.vis .d-filter-lens {
+            animation: lensGlow 2.5s ease-in-out infinite;
+        }
+
+        .d-filter-grid {
+            position: absolute;
+            right: 0;
+            bottom: 16px;
+            display: grid;
+            grid-template-columns: repeat(3, 10px);
+            gap: 3px;
+        }
+
+        .d-filter-grid div {
+            width: 10px;
+            height: 10px;
+            background: var(--c5);
+            opacity: 0;
+        }
+
+        .sec.vis .d-filter-particle {
+            animation: particleFlow 3s ease-in-out infinite;
+        }
+
+        .sec.vis .d-filter-particle:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .sec.vis .d-filter-particle:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        .sec.vis .d-filter-particle:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+
+        .sec.vis .d-filter-particle:nth-child(4) {
+            animation-delay: 0.75s;
+        }
+
+        .sec.vis .d-filter-grid div {
+            animation: gridForm 3s ease-in-out infinite;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(1) {
+            animation-delay: 1.2s;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(2) {
+            animation-delay: 1.35s;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(4) {
+            animation-delay: 1.65s;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(5) {
+            animation-delay: 1.8s;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(6) {
+            animation-delay: 1.95s;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(7) {
+            animation-delay: 2.1s;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(8) {
+            animation-delay: 2.25s;
+        }
+
+        .sec.vis .d-filter-grid div:nth-child(9) {
+            animation-delay: 2.4s;
+        }
+
+        @keyframes particleFlow {
+            0% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            40% {
+                transform: translateX(45px);
+                opacity: 0.5;
+            }
+            60% {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes gridForm {
+            0%, 35% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            80%, 100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+
+        @keyframes lensGlow {
+            0%, 100% {
+                box-shadow: 0 0 0 rgba(123, 31, 162, 0);
+            }
+            50% {
+                box-shadow: 0 0 12px rgba(123, 31, 162, 0.5), inset 0 0 6px rgba(123, 31, 162, 0.15);
+            }
+        }
+
+
+        /* ── Synthesis Cards ── */
+        .pg {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .pc {
+            border: 2px solid var(--fg);
+            background: #fff;
+            padding: 24px;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .pc.vis {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pc:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .pc-n {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 2.5rem;
+            opacity: 0.1;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .pc-t {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .pc-d {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .pc-w {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            margin-top: 15px;
+            color: #888;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ── Synthesis & Bonus Containers ── */
+        .sint-in,
+        .bonus-in {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .sec-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sint-title {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+        }
+
+        .bonus-title {
+            font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+            color: #fff;
+        }
+
+        .sint-quote {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .sint-quote p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* ── Dark Section ── */
+        .sec-dark {
+            background: #1a1a1a !important;
+            color: #F5F0E8;
+            border-bottom-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .sec-dark .pc {
+            background: #2a2a2a;
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 4px 4px 0 rgba(255, 213, 79, 0.15);
+        }
+
+        .sec-dark .pc:hover {
+            box-shadow: 8px 8px 0 rgba(255, 213, 79, 0.2);
+        }
+
+        .sec-dark .pc-d {
+            color: #ccc;
+        }
+
+        .sec-dark .pc-w {
+            color: #999;
+        }
+
+        .sec-dark .pc-n {
+            opacity: 0.15;
+        }
+
+        .sec-dark .pc-t {
+            color: #F5F0E8;
+        }
+
+        .sec-dark .hero-sub {
+            color: #aaa;
+        }
+
+        .sec-dark .sint-quote {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 8px 8px 0 var(--yellow);
+            color: #F5F0E8;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        /* ── Bonus Grid ── */
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .bonus-card {
+            background: #2a2a2a;
+            border-left: 5px solid var(--bc);
+            padding: 35px 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s var(--ease);
+        }
+
+        .bonus-card.vis {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bonus-card .bc-name {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.6rem;
+            color: var(--bc);
+            margin-bottom: 4px;
+        }
+
+        .bonus-card .bc-dates {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 16px;
+        }
+
+        .bonus-card .bc-thesis {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            font-style: italic;
+            color: #ddd;
+            padding-left: 16px;
+            border-left: 3px solid var(--bc);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .bonus-card .bc-body {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        .bonus-card .rb {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: #333;
+            box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .bonus-card .rb:hover {
+            box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.08);
+        }
+
+        .bonus-card .rb-h {
+            background: #333;
+            color: #F5F0E8;
+        }
+
+        .bonus-card .rb-h:hover {
+            background: #3a3a3a;
+        }
+
+        .bonus-card .rb-b {
+            color: #bbb;
+        }
+
+        .bonus-card .rb.open .rb-b {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .bonus-card .tk {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: var(--bc);
+        }
+
+        .bonus-card .tk-l {
+            color: var(--bc);
+        }
+
+        .bonus-card .tk p {
+            color: #ddd;
+        }
+
+        .bonus-card .bc-obra {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .bonus-card .bc-header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 16px;
+        }
+
+        .bonus-card .bc-photo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bc);
+            flex-shrink: 0;
+            filter: grayscale(100%) contrast(1.1);
+            transition: filter 0.4s;
+        }
+
+        .bonus-card:hover .bc-photo {
+            filter: grayscale(0%) contrast(1);
+        }
+
+        .bonus-card .bc-header-text {
+            flex: 1;
+        }
+
+        /* Bruner image crop */
+        #s10 .auth-img {
+            object-fit: cover;
+            object-position: left center;
+            max-height: 480px;
+        }
+
+        /* Property card color accents */
+        .pc[data-accent] {
+            border-left: 5px solid var(--pc-accent);
+        }
+
+        @media (max-width: 900px) {
+            .bonus-card {
+                padding: 25px 20px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            background: #1a1a1a;
+            color: #666;
+        }
+
+        /* Animations */
+        .rv {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease);
+        }
+
+        .rv.vis {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .rv-d1 {
+            transition-delay: 0.1s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="progress"></div>
+    <nav id="tlnav"></nav>
+
+    <section id="hero">
+        <div class="hero-bg-text">UNDERSTANDING</div>
+        <div class="hero-content">
+            <div class="hero-pre">2,400 años · 10 pensadores · 1 pregunta</div>
+            <h1 class="hero-title">¿Qué es la <span>Comprensión</span>?</h1>
+            <p class="hero-sub">Cada época intentó definirla; cada definición amplía la anterior sin reemplazarla.</p>
+            <p class="hero-intro">Lo que sigue es el recorrido completo — de Platón a Bruner — contado para descubrir
+                idea por idea.</p>
+            <a href="#s1" class="hero-arrow">↓</a>
+        </div>
+    </section>
+
+    <!-- 1. PLATO -->
+    <section class="sec" id="s1" data-label="Platón" style="--c: var(--c1)">
+        <div class="n-badge">01</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">c. 428 – 348 a.C.</span>
+                <h2 class="s-name" style="color:var(--c)">Platón</h2>
+                <p class="s-thesis" style="border-color:var(--c)">Comprender NO es opinar correctamente.</p>
+                <div class="s-body">
+                    <p>Platón fue el primero en trazar la línea. Distinguió entre <em>doxa</em> (opinión) y
+                        <em>episteme</em> (conocimiento genuino). La diferencia es brutal: un jurado puede llegar al
+                        veredicto correcto por persuasión emocional sin entender <em>por qué</em> el acusado es
+                        culpable. Tiene razón, pero no comprende.
+                    </p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">La alegoría de la caverna <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>Los prisioneros ven sombras en la pared y creen que eso es la realidad. Comprender es el
+                            proceso doloroso de salir de la caverna — abandonar certezas falsas, enfrentar la luz,
+                            reorganizar toda la visión del mundo.</p>
+                        <p>No es agregar datos a lo que ya sabes; es <strong>transformar cómo ves</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">La línea dividida: niveles de comprensión <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>La comprensión es jerárquica. Va de la <em>eikasia</em> (imaginación) a la <em>noesis</em>
+                            (intuición de los primeros principios). No se salta de la ignorancia al conocimiento de un
+                            salto — hay niveles intermedios, y cada uno requiere esfuerzo.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>Comprender no es tener la respuesta correcta. Es saber <em>por qué</em> es correcta, y ese saber
+                        transforma a quien lo alcanza.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Plat%C3%B3n" target="_blank" rel="noopener noreferrer">Platón</a>
+                    <a href="https://es.wikipedia.org/wiki/Alegor%C3%ADa_de_la_caverna" target="_blank" rel="noopener noreferrer">Alegoría de la
+                        caverna</a>
+                    <a href="https://es.wikipedia.org/wiki/Doxa" target="_blank" rel="noopener noreferrer">Doxa vs Episteme</a>
+                    <a href="https://es.wikipedia.org/wiki/Analog%C3%ADa_de_la_l%C3%ADnea_dividida"
+                        target="_blank" rel="noopener noreferrer">Línea dividida</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Plato_Silanion_Musei_Capitolini_MC1377.jpg"
+                    alt="Plato" class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-cave">
+                    <h4>Eikasia → Noesis</h4>
+                    <div class="d-content">
+                        <div><span class="fill"></span> Sombras</div>
+                        <div><span></span> Objetos</div>
+                        <div><span></span> El Sol</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ARISTOTLE -->
+    <section class="sec" id="s2" data-label="Aristóteles" style="--c: var(--c2)">
+        <div class="n-badge">02</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">384 – 322 a.C.</span>
+                <h2 class="s-name" style="color:var(--c)">Aristóteles</h2>
+                <p class="s-thesis" style="border-color:var(--c)">Comprender es conocer las causas.</p>
+                <div class="s-body">
+                    <p>Aristóteles tomó la pregunta de su maestro y la aterrizó. Comprender algo es poder responder
+                        <em>por qué es como es</em> — conocer sus cuatro causas: de qué está hecho (material), qué forma tiene (formal), quién lo produjo (eficiente) y para qué existe (final).
+                    </p>
+                    <p>El médico que sabe que la miel cura heridas tiene experiencia. El que sabe <em>por qué</em> la
+                        miel tiene propiedades antibacterianas tiene comprensión.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">Tres tipos de saber: Episteme, Techne, Phronesis <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <ul>
+                            <li><strong>Episteme</strong> — saber teórico. Conocer lo que no puede ser de otra manera.
+                                Las matemáticas, la física.</li>
+                            <li><strong>Techne</strong> — saber técnico. Saber cómo hacer algo y por qué se hace así. La
+                                medicina, la arquitectura, la programación.</li>
+                            <li><strong>Phronesis</strong> — sabiduría práctica. Saber qué hacer en <em>esta</em>
+                                situación concreta, con <em>estas</em> personas. No se codifica en reglas — requiere
+                                juicio, experiencia, madurez.</li>
+                        </ul>
+                        <p>Un docente que solo tiene episteme pero no tiene phronesis — que sabe la teoría pero no sabe
+                            leer al grupo, ajustar sobre la marcha — no comprende realmente la enseñanza.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>Comprender es conocer causas, y hay diferentes tipos de comprensión para diferentes tipos de situaciones.
+                    </p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Arist%C3%B3teles" target="_blank" rel="noopener noreferrer">Aristóteles</a>
+                    <a href="https://es.wikipedia.org/wiki/Cuatro_causas" target="_blank" rel="noopener noreferrer">Las 4 causas</a>
+                    <a href="https://es.wikipedia.org/wiki/Phronesis" target="_blank" rel="noopener noreferrer">Phronesis</a>
+                    <a href="https://es.wikipedia.org/wiki/%C3%89tica_nicom%C3%A1quea" target="_blank" rel="noopener noreferrer">Ética Nicomáquea</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Aristotle_Altemps_Inv8575.jpg"
+                    alt="Aristotle" class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-square">
+                    <h4>4 Causas</h4>
+                    <div>Material</div>
+                    <div>Formal</div>
+                    <div>Eficiente</div>
+                    <div>Final</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. BACON -->
+    <section class="sec" id="s3" data-label="Bacon" style="--c: var(--c3)">
+        <div class="n-badge">03</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">1561 – 1626</span>
+                <h2 class="s-name" style="color:var(--c)">Francis Bacon</h2>
+                <p class="s-thesis" style="border-color:var(--c)">Comprender requiere limpiar la mente.</p>
+                <div class="s-body">
+                    <p>Bacon cambió el ángulo: antes de preguntar <em>qué</em> es comprender, preguntó <em>qué nos
+                            impide</em> comprender. Su respuesta son los cuatro ídolos — sesgos sistemáticos que
+                        distorsionan el entendimiento.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">Los cuatro ídolos <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <ul>
+                            <li><strong>De la Tribu</strong> — sesgos inherentes a ser humano. Vemos patrones donde hay azar, buscamos confirmación de lo que ya creemos.</li>
+                            <li><strong>De la Caverna</strong> — sesgos individuales. Tu educación y temperamento te hacen ver todo desde un solo ángulo.</li>
+                            <li><strong>Del Foro</strong> — sesgos del lenguaje. Las palabras crean entidades falsas ("destino", "calidad educativa") y generan disputas vacías.</li>
+                            <li><strong>Del Teatro</strong> — sesgos doctrinales. Aceptamos teorías porque vienen de autoridades respetadas, sin examinarlas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">"El conocimiento es poder" <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>No significa poder político. Significa que si realmente comprendes algo, <strong>puedes actuar
+                                sobre ello</strong>. Si solo puedes repetir información pero no hacer nada con ella, no la
+                            comprendes.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>La comprensión genuina exige primero metacognición — examinar tus propios sesgos. Y si tu "comprensión" no te permite hacer nada, no es comprensión.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Francis_Bacon" target="_blank" rel="noopener noreferrer">Francis Bacon</a>
+                    <a href="https://es.wikipedia.org/wiki/Novum_organum" target="_blank" rel="noopener noreferrer">Novum Organum</a>
+                    <a href="https://es.wikipedia.org/wiki/%C3%8Ddolos_de_Francis_Bacon" target="_blank" rel="noopener noreferrer">Los cuatro ídolos</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F11%2FFrancis_Bacon%252C_Viscount_St_Alban_from_NPG_(2).jpg%2F220px-Francis_Bacon%252C_Viscount_St_Alban_from_NPG_(2).jpg&f=1&nofb=1&ipt=cd6f4bcce14d5292a81e73a868bd3236b52d52e0d7528d71ee85aac53ffb635a"
+                    alt="Bacon" class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-idols">
+                    <h4 style="grid-column: 1/-1; margin: 0;">4 ÍDolos</h4>
+                    <div class="d-idol">Tribu</div>
+                    <div class="d-idol">Caverna</div>
+                    <div class="d-idol">Foro</div>
+                    <div class="d-idol">Teatro</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WITTGENSTEIN -->
+    <section class="sec" id="s4" data-label="Wittgenstein" style="--c: var(--c4)">
+        <div class="n-badge">04</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">1889 – 1951</span>
+                <h2 class="s-name" style="color:var(--c)">Wittgenstein</h2>
+                <p class="s-thesis" style="border-color:var(--c)">Comprender es participar en un juego de lenguaje.</p>
+                <div class="s-body">
+                    <p>Wittgenstein demolió la idea de que hay <em>una</em> definición de comprensión. La palabra funciona
+                        de formas distintas en contextos distintos: "¿comprendiste el tema?" en un examen, "¿comprendiste la
+                        técnica?" en un taller, "te comprendo" en una conversación.</p>
+                    <p>No hay una esencia única — hay una <strong>familia de capacidades</strong> relacionadas por parecidos
+                        superpuestos, como los miembros de una familia que se parecen entre sí sin que ningún rasgo sea
+                        común a todos.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">Comprender es saber continuar <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>"Ahora he comprendido", dice el alumno que capta la serie matemática. ¿Qué pasó? No se
+                            encendió un foco en su cerebro. Simplemente, ahora <em>puede</em> seguir la serie (2, 4, 6,
+                            8...).</p>
+                        <p>Comprender no es un estado mental privado. Es ser capaz de seguir adelante en una práctica
+                            pública. Si fuera algo puramente interno, nadie podría verificarlo.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>No hay una sola comprensión — hay múltiples. Y cualquiera de ellas se demuestra en lo que haces, no en lo que dices que sientes.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Ludwig_Wittgenstein" target="_blank" rel="noopener noreferrer">Wittgenstein</a>
+                    <a href="https://es.wikipedia.org/wiki/Investigaciones_filos%C3%B3ficas"
+                        target="_blank" rel="noopener noreferrer">Investigaciones filosóficas</a>
+                    <a href="https://es.wikipedia.org/wiki/Juego_de_lenguaje" target="_blank" rel="noopener noreferrer">Juegos de lenguaje</a>
+                    <a href="https://es.wikipedia.org/wiki/Parecido_de_familia" target="_blank" rel="noopener noreferrer">Parecido de familia</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.lY1BEPuSQzcbnpBQAjTUygHaJ9%3Fpid%3DApi&f=1&ipt=64495331f6c46e2272a71cdde8523591e43d2062546f86b5a7985bd1a5f875b0"
+                    alt="Wittgenstein" class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-family">
+                    <h4>Parecido de familia</h4>
+                    <svg class="d-family-svg" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Connections (shared traits) -->
+                        <line class="d-fam-line" x1="20" y1="20" x2="60" y2="10"/>
+                        <line class="d-fam-line" x1="60" y1="10" x2="100" y2="20"/>
+                        <line class="d-fam-line" x1="20" y1="20" x2="40" y2="55"/>
+                        <line class="d-fam-line" x1="60" y1="10" x2="40" y2="55"/>
+                        <line class="d-fam-line" x1="60" y1="10" x2="80" y2="55"/>
+                        <line class="d-fam-line" x1="100" y1="20" x2="80" y2="55"/>
+                        <line class="d-fam-line" x1="40" y1="55" x2="80" y2="55"/>
+                        <line class="d-fam-line" x1="40" y1="55" x2="60" y2="82"/>
+                        <line class="d-fam-line" x1="80" y1="55" x2="60" y2="82"/>
+                        <!-- Nodes (concepts/games) -->
+                        <circle class="d-fam-node" cx="20" cy="20" r="7"/>
+                        <circle class="d-fam-node" cx="60" cy="10" r="7"/>
+                        <circle class="d-fam-node" cx="100" cy="20" r="7"/>
+                        <circle class="d-fam-node" cx="40" cy="55" r="7"/>
+                        <circle class="d-fam-node" cx="80" cy="55" r="7"/>
+                        <circle class="d-fam-node" cx="60" cy="82" r="7"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. KANT -->
+    <section class="sec" id="s5" data-label="Kant" style="--c: var(--c5)">
+        <div class="n-badge">05</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">1724 – 1804</span>
+                <h2 class="s-name" style="color:var(--c)">Kant</h2>
+                <p class="s-thesis" style="border-color:var(--c)">La mente estructura la comprensión.</p>
+                <div class="s-body">
+                    <p>Kant provocó una revolución: la mente no se adapta pasivamente al mundo — el mundo se adapta a las
+                        estructuras de la mente. Cuando vemos una manzana caer, nuestra mente automáticamente la identifica
+                        como unidad, la reconoce como sustancia, interpreta la caída como efecto de una causa.</p>
+                    <p>Estas 12 categorías del entendimiento son los lentes que la mente impone sobre toda experiencia.
+                        No podemos quitarnos los lentes — estructuran todo lo que vemos.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">Dos consecuencias enormes <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>1. Nunca comprendemos "la cosa en sí" (el noúmeno). Solo comprendemos fenómenos — la realidad
+                            filtrada por nuestras categorías. Toda comprensión es parcial, mediada, perspectivada.</p>
+                        <p>2. Sin esquemas previos, no hay comprensión posible. Un estudiante que carece del marco
+                            conceptual para un tema no puede simplemente "absorberlo" — hay que construir primero el marco.</p>
+                        <p>Traducido a pedagogía: <em>la información sin marco conceptual es inútil; el marco conceptual sin
+                                información es vacío.</em></p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>Comprender es un acto activo de construcción, no de recepción pasiva. Y siempre es comprensión
+                        <em>desde un punto de vista</em> — no existe la comprensión objetiva y pura.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Immanuel_Kant" target="_blank" rel="noopener noreferrer">Kant</a>
+                    <a href="https://es.wikipedia.org/wiki/Cr%C3%ADtica_de_la_raz%C3%B3n_pura" target="_blank" rel="noopener noreferrer">Crítica
+                        de la razón pura</a>
+                    <a href="https://es.wikipedia.org/wiki/No%C3%BAmeno" target="_blank" rel="noopener noreferrer">Noúmeno</a>
+                    <a href="https://es.wikipedia.org/wiki/Categor%C3%ADas_(Kant)" target="_blank" rel="noopener noreferrer">Categorías</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Immanuel_Kant_%28painted_portrait%29.jpg"
+                    alt="Kant" class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-filter">
+                    <h4>Filtros</h4>
+                    <div class="d-filter-particles">
+                        <div class="d-filter-particle"></div>
+                        <div class="d-filter-particle"></div>
+                        <div class="d-filter-particle"></div>
+                        <div class="d-filter-particle"></div>
+                    </div>
+                    <div class="d-filter-lens"></div>
+                    <div class="d-filter-grid">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GADAMER -->
+    <section class="sec" id="s6" data-label="Gadamer" style="--c: var(--c6)">
+        <div class="n-badge">06</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">1900 – 2002</span>
+                <h2 class="s-name" style="color:var(--c)">Gadamer</h2>
+                <p class="s-thesis" style="border-color:var(--c)">Comprender es interpretar en diálogo.</p>
+                <div class="s-body">
+                    <p>Gadamer fue más allá de Kant: las estructuras que organizan la comprensión no son solo lógicas — son
+                        históricas, culturales y personales. Tu idioma, tu época, tus lecturas, tus experiencias. Todo eso
+                        es tu <strong>horizonte</strong>.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">El círculo hermenéutico <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>Para entender las partes necesitas entender el todo, pero para entender el todo necesitas
+                            entender las partes. Lees un capítulo, te formas una idea del libro. Lees más, ajustas. Con la
+                            nueva idea, reinterpretas los capítulos anteriores.</p>
+                        <p>Cada vuelta profundiza la comprensión. El círculo no es un defecto — es la <strong>estructura
+                                misma</strong> de toda comprensión.</p>
+                    </div>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">El prejuicio como condición de posibilidad <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>La idea más provocadora: el prejuicio no es un obstáculo a la comprensión — es su condición de
+                            posibilidad. Sin pre-comprensiones, no podrías ni formular preguntas. La tarea no es eliminarlos
+                            (imposible) sino distinguir los productivos de los distorsionadores.</p>
+                        <p>Comprender genuinamente a otro no es "ponerse en su lugar" — es <strong>fusionar
+                                horizontes</strong>: tu horizonte se amplía para incluir el del otro, creando una
+                            comprensión nueva que ninguno de los dos tenía antes.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>La comprensión es siempre interpretación. Siempre circular. Siempre desde un horizonte particular. Y cuando es genuina, transforma a quien comprende.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Hans-Georg_Gadamer" target="_blank" rel="noopener noreferrer">Gadamer</a>
+                    <a href="https://es.wikipedia.org/wiki/C%C3%ADrculo_hermen%C3%A9utico" target="_blank" rel="noopener noreferrer">Círculo hermenéutico</a>
+                    <a href="https://es.wikipedia.org/wiki/Verdad_y_m%C3%A9todo" target="_blank" rel="noopener noreferrer">Verdad y método</a>
+                    <a href="https://es.wikipedia.org/wiki/Hermen%C3%A9utica" target="_blank" rel="noopener noreferrer">Hermenéutica</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9f%2FHans-Georg_Gadamer.jpg%2F960px-Hans-Georg_Gadamer.jpg&f=1&nofb=1&ipt=be60b96c07cc6b27d4f8c76febed6347d899338d94a709f197d63de0457e18dd"
+                    alt="Gadamer" class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-fusion">
+                    <h4>Fusión de horizontes</h4>
+                    <div class="d-fusion-circle"></div>
+                    <div class="d-fusion-circle"></div>
+                    <span class="d-fusion-label">Tu horizonte</span>
+                    <span class="d-fusion-label">Otro horizonte</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. DEWEY -->
+    <section class="sec" id="s7" data-label="Dewey" style="--c: var(--c7)">
+        <div class="n-badge">07</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">1859 – 1952</span>
+                <h2 class="s-name" style="color:var(--c)">Dewey</h2>
+                <p class="s-thesis" style="border-color:var(--c)">Comprender es resolver problemas reflexivamente.</p>
+                <div class="s-body">
+                    <p>Dewey aterrizó la filosofía en el barro: la comprensión no es contemplación, ni clasificación, ni
+                        interpretación. Es un <strong>instrumento</strong> para navegar la incertidumbre.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">Las cinco fases del pensamiento genuino <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <ul>
+                            <li><strong>Perplejidad</strong> — algo no cuadra, hay una dificultad real.</li>
+                            <li><strong>Definición del problema</strong> — ¿qué exactamente es lo que falla?</li>
+                            <li><strong>Hipótesis</strong> — podría ser A, B o C.</li>
+                            <li><strong>Razonamiento</strong> — si fuera A, entonces...</li>
+                            <li><strong>Verificación</strong> — probemos... ¿funcionó?</li>
+                        </ul>
+                        <p>Sin dificultad genuina no hay pensamiento genuino. Las actividades sin conexión con problemas
+                            reales producen <em>aprendizaje muerto</em>. Y la experiencia sola no enseña — la experiencia
+                            reflexionada sí.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>Comprender es saber resolver. Y la reflexión es el puente entre la experiencia y la comprensión. No
+                        aprendemos de la experiencia — aprendemos de <em>reflexionar</em> sobre la experiencia.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/John_Dewey" target="_blank" rel="noopener noreferrer">Dewey</a>
+                    <a href="https://es.wikipedia.org/wiki/Pragmatismo" target="_blank" rel="noopener noreferrer">Pragmatismo</a>
+                    <a href="https://en.wikipedia.org/wiki/How_We_Think" target="_blank" rel="noopener noreferrer">How We Think</a>
+                    <a href="https://es.wikipedia.org/wiki/Aprendizaje_experiencial" target="_blank" rel="noopener noreferrer">Aprendizaje
+                        experiencial</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/John_Dewey_in_1902.jpg" alt="Dewey"
+                    class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-phases">
+                    <h4>5 Fases</h4>
+                    <div class="d-phase">
+                        <div class="d-phase-num">1</div><span>Perplejidad</span>
+                    </div>
+                    <div class="d-phase">
+                        <div class="d-phase-num">2</div><span>Definición</span>
+                    </div>
+                    <div class="d-phase">
+                        <div class="d-phase-num">3</div><span>Hipótesis</span>
+                    </div>
+                    <div class="d-phase">
+                        <div class="d-phase-num">4</div><span>Razonamiento</span>
+                    </div>
+                    <div class="d-phase">
+                        <div class="d-phase-num">5</div><span>Verificación</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. PIAGET -->
+    <section class="sec" id="s8" data-label="Piaget" style="--c: var(--c8)">
+        <div class="n-badge">08</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">1896 – 1980</span>
+                <h2 class="s-name" style="color:var(--c)">Piaget</h2>
+                <p class="s-thesis" style="border-color:var(--c)">El sujeto construye su comprensión.</p>
+                <div class="s-body">
+                    <p>Piaget demostró empíricamente lo que Kant postuló filosóficamente: la mente no es una pizarra en
+                        blanco. Construye activamente su conocimiento a través de <strong>esquemas</strong> — patrones de
+                        acción o pensamiento que se aplican a situaciones diversas.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">Asimilación, Acomodación, Equilibración <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <ul>
+                            <li><strong>Asimilación</strong> — incorporar experiencia nueva en un esquema existente. Un niño
+                                que ha aprendido "perro" llama "perro" al gato (cuatro patas, pelo, se mueve).</li>
+                            <li><strong>Acomodación</strong> — modificar el esquema cuando la asimilación falla. El "perro"
+                                maúlla. Hay que crear un esquema nuevo: "gato".</li>
+                            <li><strong>Equilibración</strong> — el proceso dinámico que alterna entre ambos, buscando
+                                equilibrios cada vez más sofisticados.</li>
+                        </ul>
+                        <p>El error no es fracaso — es señal de asimilación en un esquema inadecuado. Es evidencia de
+                            pensamiento activo. El desequilibrio es lo que dispara la comprensión más profunda.</p>
+                        <p>Y la comprensión tiene prerrequisitos cognitivos: un niño en etapa de operaciones concretas no
+                            puede comprender álgebra abstracta — no por falta de esfuerzo, sino porque sus estructuras
+                            mentales aún no lo permiten.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>El conocimiento no se transmite — se construye. El error es productivo. Y la comprensión tiene
+                        niveles que se recorren secuencialmente.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Jean_Piaget" target="_blank" rel="noopener noreferrer">Piaget</a>
+                    <a href="https://es.wikipedia.org/wiki/Constructivismo_(pedagog%C3%ADa)"
+                        target="_blank" rel="noopener noreferrer">Constructivismo</a>
+                    <a href="https://es.wikipedia.org/wiki/Epistemolog%C3%ADa_gen%C3%A9tica" target="_blank" rel="noopener noreferrer">Epistemología genética</a>
+                    <a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_del_desarrollo_cognitivo_de_Piaget" target="_blank" rel="noopener noreferrer">Etapas del desarrollo</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Jean_Piaget_in_Ann_Arbor.png" alt="Piaget"
+                    class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-stairs">
+                    <h4>Etapas</h4>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. VYGOTSKY -->
+    <section class="sec" id="s9" data-label="Vygotsky" style="--c: var(--c9)">
+        <div class="n-badge">09</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">1896 – 1934</span>
+                <h2 class="s-name" style="color:var(--c)">Vygotsky</h2>
+                <p class="s-thesis" style="border-color:var(--c)">Comprender es social antes que individual.</p>
+                <div class="s-body">
+                    <p>Vygotsky invirtió la intuición de Piaget: el pensamiento no produce el habla — <strong>el habla
+                            produce el pensamiento</strong>. Toda función cognitiva aparece dos veces: primero entre
+                        personas (social), luego dentro del individuo (interna).</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">La Zona de Desarrollo Próximo <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <p>La distancia entre lo que puedo hacer solo y lo que puedo hacer con ayuda de alguien más
+                            competente. El aprendizaje real ocurre ahí — en esa zona. Lo que puedo hacer con ayuda hoy,
+                            podré hacer solo mañana.</p>
+                        <p>El pensamiento adulto es habla interna — un diálogo consigo mismo que se ha interiorizado. El
+                            camino va del habla social al habla egocéntrica al habla interna (pensamiento silencioso).</p>
+                        <p>Y el lenguaje no <em>describe</em> la comprensión — la <strong>constituye</strong>. Dar al
+                            estudiante el vocabulario de una disciplina no es un paso previo a la comprensión. Es parte de
+                            la comprensión misma.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>Primero comprendemos con otros; luego interiorizamos esa comprensión. El aula no es un obstáculo a la
+                        comprensión individual — es su condición.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Lev_Vygotski" target="_blank" rel="noopener noreferrer">Vygotsky</a>
+                    <a href="https://es.wikipedia.org/wiki/Zona_de_desarrollo_pr%C3%B3ximo" target="_blank" rel="noopener noreferrer">Zona de Desarrollo Próximo</a>
+                    <a href="https://es.wikipedia.org/wiki/Pensamiento_y_lenguaje" target="_blank" rel="noopener noreferrer">Pensamiento y lenguaje</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Ftotallyhistory.com%2Fwp-content%2Fuploads%2F2014%2F01%2FLev-Vygotsky.jpg&f=1&nofb=1&ipt=8b4b8cfd6d66af843e284a552cf7c234dde5e78646ea43136a3ee69ad5383478"
+                    alt="Vygotsky" class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-zdp">
+                    <h4>Zonas de Desarrollo</h4>
+                    <div class="d-zdp-bar"><span>Sé solo</span></div>
+                    <div class="d-zdp-bar"><span>Con ayuda (ZDP)</span></div>
+                    <div class="d-zdp-bar"><span>Aún no</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. BRUNER -->
+    <section class="sec" id="s10" data-label="Bruner" style="--c: var(--c10)">
+        <div class="n-badge">10</div>
+        <div class="sec-grid">
+            <div class="sec-text rv">
+                <span class="s-era" style="color:var(--c)">1915 – 2016</span>
+                <h2 class="s-name" style="color:var(--c)">Bruner</h2>
+                <p class="s-thesis" style="border-color:var(--c)">La comprensión se enseña en espiral.</p>
+                <div class="s-body">
+                    <p>Bruner tradujo todo esto al diseño curricular. Su idea central: las ideas fundamentales de cualquier
+                        disciplina pueden presentarse de forma accesible a cualquier nivel y profundizarse progresivamente.
+                        No se enseña un tema una vez — <strong>se revisita en niveles de complejidad creciente</strong>. Eso
+                        es el currículo en espiral.</p>
+                </div>
+
+                <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                    <div class="rb-h">Tres modos de representación + andamiaje <span class="rb-i">↓</span></div>
+                    <div class="rb-b">
+                        <ul>
+                            <li><strong>Enactivo</strong> — saber haciendo (laboratorio, manipulación).</li>
+                            <li><strong>Icónico</strong> — saber a través de imágenes (diagramas, mapas).</li>
+                            <li><strong>Simbólico</strong> — saber a través del lenguaje y las fórmulas (lectura, debate).</li>
+                        </ul>
+                        <p>Un concepto comprendido en los tres modos es más resiliente que uno comprendido solo en modo
+                            simbólico.</p>
+                        <p>Y el <strong>andamiaje</strong> (scaffolding) — inspirado en la ZDP de Vygotsky — es el apoyo
+                            temporal que un experto ofrece al novato. Se retira gradualmente a medida que el aprendiz gana
+                            competencia. La ZDP dice <em>dónde</em> enseñar; el andamiaje dice <em>cómo</em>.</p>
+                    </div>
+                </div>
+
+                <div class="tk" style="border-color:var(--c)">
+                    <div class="tk-l" style="color:var(--c)">Lo que queda</div>
+                    <p>La comprensión se profundiza en cada vuelta de la espiral, se fortalece con múltiples
+                        representaciones, y se habilita con apoyo calibrado que se retira gradualmente.</p>
+                </div>
+
+                <div class="s-lk">
+                    <a href="https://es.wikipedia.org/wiki/Jerome_Bruner" target="_blank" rel="noopener noreferrer">Bruner</a>
+                    <a href="https://es.wikipedia.org/wiki/Andamiaje_(educaci%C3%B3n)" target="_blank" rel="noopener noreferrer">Andamiaje</a>
+                    <a href="https://en.wikipedia.org/wiki/Spiral_approach" target="_blank" rel="noopener noreferrer">Currículo en espiral</a>
+                    <a href="https://en.wikipedia.org/wiki/The_Process_of_Education" target="_blank" rel="noopener noreferrer">The Process of Education</a>
+                </div>
+            </div>
+
+            <div class="sec-visual rv rv-d1">
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.wikia.nocookie.net%2Fupaeponline-educacionvirtual%2Fimages%2Fc%2Fc3%2FBRUNER.jpg%2Frevision%2Flatest%3Fcb%3D20200611190322%26path-prefix%3Des&f=1&nofb=1&ipt=3f144dfda5a964947abbeba8ee691474c756327121da960bce607ee688e43011"
+                    alt="Bruner" class="auth-img" loading="lazy" width="380" height="475">
+                <div class="diagram d-spiral">
+                    <h4>Currículo en Espiral</h4>
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Outer spiral -->
+                        <path d="M 100 100 
+                                 C 100 80, 120 80, 120 100
+                                 C 120 125, 75 125, 75 100
+                                 C 75 70, 130 70, 130 100
+                                 C 130 140, 60 140, 60 100
+                                 C 60 55, 145 55, 145 100
+                                 C 145 155, 45 155, 45 100
+                                 C 45 40, 160 40, 160 100" fill="none" stroke="#000" stroke-width="4"
+                            stroke-linecap="round" />
+                        <!-- Center dot -->
+                        <circle cx="100" cy="100" r="6" fill="#000" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYNTHESIS -->
+    <section class="sec sec-dark" id="sint" data-label="Síntesis">
+        <div class="sint-in">
+            <div class="rv sec-header">
+                <h2 class="hero-title sint-title">Las 7 propiedades de la comprensión</h2>
+                <p class="hero-sub">Integrando 2,400 años de reflexión, comprender es:</p>
+            </div>
+
+            <div class="pg">
+                <div class="pc rv rv-d1" data-accent style="--pc-accent:#e91e63">
+                    <div class="pc-n">1</div>
+                    <div class="pc-t">Activo, no pasivo</div>
+                    <div class="pc-d">No se recibe — se construye.</div>
+                    <div class="pc-w">KANT · PIAGET · DEWEY</div>
+                </div>
+                <div class="pc rv rv-d1" data-accent style="--pc-accent:#ff7043">
+                    <div class="pc-n">2</div>
+                    <div class="pc-t">Situado, no abstracto</div>
+                    <div class="pc-d">Ocurre en contextos concretos, con problemas reales, entre personas.</div>
+                    <div class="pc-w">ARISTÓTELES · DEWEY · VYGOTSKY</div>
+                </div>
+                <div class="pc rv rv-d1" data-accent style="--pc-accent:#26a69a">
+                    <div class="pc-n">3</div>
+                    <div class="pc-t">Social, no solitario</div>
+                    <div class="pc-d">Se media a través del lenguaje y la interacción. Primero comprendes con otros; luego interiorizas.</div>
+                    <div class="pc-w">VYGOTSKY · GADAMER · WITTGENSTEIN</div>
+                </div>
+                <div class="pc rv rv-d1" data-accent style="--pc-accent:#7c4dff">
+                    <div class="pc-n">4</div>
+                    <div class="pc-t">Gradual, no instantáneo</div>
+                    <div class="pc-d">Tiene niveles que se recorren progresivamente. No se salta de la ignorancia a la maestría.</div>
+                    <div class="pc-w">PLATÓN · PIAGET · BRUNER</div>
+                </div>
+                <div class="pc rv rv-d1" data-accent style="--pc-accent:#1976d2">
+                    <div class="pc-n">5</div>
+                    <div class="pc-t">Demostrable, no oculto</div>
+                    <div class="pc-d">Se manifiesta en lo que puedes hacer con lo que sabes — explicar, aplicar, crear, resolver.</div>
+                    <div class="pc-w">WITTGENSTEIN · DEWEY</div>
+                </div>
+                <div class="pc rv rv-d1" data-accent style="--pc-accent:#FFD54F">
+                    <div class="pc-n">6</div>
+                    <div class="pc-t">Transformador, no acumulativo</div>
+                    <div class="pc-d">Cambia al que comprende, no solo lo que sabe. Salir de la caverna transforma al prisionero.</div>
+                    <div class="pc-w">PLATÓN · GADAMER</div>
+                </div>
+                <div class="pc rv rv-d1" data-accent style="--pc-accent:#ef5350">
+                    <div class="pc-n">7</div>
+                    <div class="pc-t">Falible, no definitivo</div>
+                    <div class="pc-d">Siempre mediado por sesgos y horizontes. Siempre puede profundizarse. Nunca se llega a "la cosa en sí".</div>
+                    <div class="pc-w">BACON · GADAMER · KANT</div>
+                </div>
+            </div>
+
+            <div class="rv sint-quote">
+                <p>Esa es la comprensión: no un estado mental privado, no una
+                    acumulación de datos, no una respuesta correcta en un examen. Es la capacidad activa, construida socialmente, siempre parcial y siempre
+                    profundizable, de pensar y actuar con flexibilidad a partir de lo que sabes — y de ser transformado
+                    en el proceso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BONUS: TEÓRICAS MUJERES -->
+    <section class="sec sec-dark" id="bonus" data-label="Bonus">
+        <div class="bonus-in">
+            <div class="rv sec-header">
+                <span class="s-era" style="color:var(--yellow)">BONUS</span>
+                <h2 class="hero-title bonus-title">Las voces que faltaban</h2>
+                <p class="hero-sub" style="color:#aaa">Tres teóricas que revolucionan la comprensión desde dimensiones
+                    que el canon clásico no exploró.</p>
+            </div>
+
+            <div class="bonus-grid">
+
+                <!-- B1. Louise Rosenblatt -->
+                <div class="bonus-card rv" style="--bc:#e91e63">
+                    <div class="bc-header">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/Louise_Rosenblatt.jpg"
+                            alt="Louise Rosenblatt" class="bc-photo" loading="lazy" width="70" height="70">
+                        <div class="bc-header-text">
+                            <div class="bc-name">Louise Rosenblatt</div>
+                            <div class="bc-dates">1904 – 2005 · Dimensión afectiva</div>
+                        </div>
+                    </div>
+                    <p class="bc-thesis">"Comprender un texto es vivir una transacción — ni el texto ni el lector solos
+                        crean significado."</p>
+                    <div class="bc-body">
+                        El significado no está "en el texto" esperando ser extraído. La comprensión es una transacción
+                        donde el lector trae emociones, experiencias y propósitos al encuentro. La emoción no estorba a
+                        la comprensión — es parte constitutiva de ella.
+                    </div>
+
+                    <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                        <div class="rb-h">Lectura eferente vs. estética <span class="rb-i">↓</span></div>
+                        <div class="rb-b">
+                            <p>Cuando lees instrucciones médicas, extraes datos (eferente). Cuando lees un poema, vives
+                                la experiencia (estética). La comprensión profunda requiere ambas posturas. Cada lectura
+                                es un evento único.</p>
+                        </div>
+                    </div>
+
+                    <div class="tk" style="border-color:var(--bc)">
+                        <div class="tk-l" style="color:var(--bc)">Por qué buscarla</div>
+                        <p>Ninguno de los 10 pensadores anteriores habla de la emoción como herramienta de comprensión. Rosenblatt llena ese vacío. Si te interesa la lectura, la literatura o la educación, su obra es imprescindible.</p>
+                    </div>
+                    <div class="bc-obra"><em>The Reader, The Text, The Poem</em> (1978)</div>
+                </div>
+
+                <!-- B2. Nel Noddings -->
+                <div class="bonus-card rv" style="--bc:#ff7043">
+                    <div class="bc-header">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Nel_Noddings_2011_%28cropped%29.jpg"
+                            alt="Nel Noddings" class="bc-photo" loading="lazy" width="70" height="70">
+                        <div class="bc-header-text">
+                            <div class="bc-name">Nel Noddings</div>
+                            <div class="bc-dates">1929 – 2022 · Dimensión relacional</div>
+                        </div>
+                    </div>
+                    <p class="bc-thesis">"Comprender al otro requiere cuidado — atención genuina, no solo análisis
+                        racional."</p>
+                    <div class="bc-body">
+                        Comprender no es solo aplicar categorías mentales — es un acto ético de atención. El conocimiento
+                        profundo del otro requiere <em>engrossment</em> (inmersión atenta) y <em>motivational displacement</em>
+                        (ver desde la perspectiva del otro). Un maestro que no cuida, no enseña.
+                    </div>
+
+                    <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                        <div class="rb-h">Engrossment y desplazamiento motivacional <span class="rb-i">↓</span></div>
+                        <div class="rb-b">
+                            <p>Engrossment es recibir al otro completamente. Desplazamiento motivacional es actuar desde
+                                lo que el otro necesita, no desde tu agenda. Estas dos capacidades son la base de toda
+                                comprensión interpersonal — y de toda buena enseñanza.</p>
+                        </div>
+                    </div>
+
+                    <div class="tk" style="border-color:var(--bc)">
+                        <div class="tk-l" style="color:var(--bc)">Por qué buscarla</div>
+                        <p>Kant, Piaget, Vygotsky — todos hablan de la mente. Noddings habla del corazón. Su ética del cuidado es la dimensión que falta en toda teoría puramente cognitiva de la comprensión.</p>
+                    </div>
+                    <div class="bc-obra"><em>Caring: A Relational Approach to Ethics and Moral Education</em> (1984)</div>
+                </div>
+
+                <!-- B3. Maxine Greene -->
+                <div class="bonus-card rv" style="--bc:#26a69a">
+                    <div class="bc-header">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Maxine-greene.jpg"
+                            alt="Maxine Greene" class="bc-photo" loading="lazy" width="70" height="70">
+                        <div class="bc-header-text">
+                            <div class="bc-name">Maxine Greene</div>
+                            <div class="bc-dates">1917 – 2014 · Dimensión imaginativa</div>
+                        </div>
+                    </div>
+                    <p class="bc-thesis">"Comprender exige imaginación — la capacidad de ver las cosas como si pudieran
+                        ser de otra manera."</p>
+                    <div class="bc-body">
+                        La mayoría del tiempo operamos en piloto automático, y eso impide comprender. Greene llamó
+                        <em>wide-awakeness</em> al esfuerzo consciente de prestar atención — especialmente a través del
+                        arte y la literatura. La imaginación es el motor que permite trascender lo dado.
+                    </div>
+
+                    <div class="rb" onclick="tgl(this)" role="button" tabindex="0" aria-expanded="false" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tgl(this)}">
+                        <div class="rb-h">Wide-awakeness y la imaginación social <span class="rb-i">↓</span></div>
+                        <div class="rb-b">
+                            <p>Estar despierto es lo opuesto al hábito. La imaginación social es la capacidad de imaginar
+                                la vida de otros — base de la empatía y la justicia. Sin imaginación, la comprensión se
+                                queda en lo técnico y nunca llega a lo humano.</p>
+                        </div>
+                    </div>
+
+                    <div class="tk" style="border-color:var(--bc)">
+                        <div class="tk-l" style="color:var(--bc)">Por qué buscarla</div>
+                        <p>Donde Piaget veía etapas y Vygotsky veía interacción social, Greene veía posibilidades. Su obra conecta las artes con la comprensión profunda de un modo que ningún otro teórico logra.</p>
+                    </div>
+                    <div class="bc-obra"><em>Releasing the Imagination</em> (1995)</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Hesus Garcia Cobos · 2026 · Hecho con curiosidad y café
+    </footer>
+
+    <script>
+        function tgl(el) { el.classList.toggle('open'); el.setAttribute('aria-expanded', el.classList.contains('open')); }
+
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const d = document.documentElement;
+            const s = d.scrollTop / (d.scrollHeight - d.clientHeight);
+            document.getElementById('progress').style.width = (s * 100) + '%';
+        });
+
+        // Intersection Observer for Animations
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('vis');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.rv, .sec, .pc, .diagram, .bonus-card').forEach(el => obs.observe(el));
+
+        // Nav Dots (squares on left, like index2)
+        const secList = [
+            { id: 'hero', t: 'Inicio' },
+            { id: 's1', t: 'Platón' }, { id: 's2', t: 'Aristóteles' },
+            { id: 's3', t: 'Bacon' }, { id: 's4', t: 'Wittgenstein' },
+            { id: 's5', t: 'Kant' }, { id: 's6', t: 'Gadamer' },
+            { id: 's7', t: 'Dewey' }, { id: 's8', t: 'Piaget' },
+            { id: 's9', t: 'Vygotsky' }, { id: 's10', t: 'Bruner' },
+            { id: 'sint', t: 'Síntesis' }, { id: 'bonus', t: 'Bonus' }
+        ];
+        const nav = document.getElementById('tlnav');
+        const dots = [];
+        secList.forEach((s, i) => {
+            if (i > 0) { const l = document.createElement('div'); l.className = 'tl-line'; nav.appendChild(l); }
+            const d = document.createElement('div');
+            d.className = 'tl-dot';
+            d.setAttribute('data-label', s.t);
+            d.addEventListener('click', () => document.getElementById(s.id).scrollIntoView({ behavior: 'smooth' }));
+            nav.appendChild(d);
+            dots.push(d);
+        });
+        const secEls = secList.map(s => document.getElementById(s.id));
+        const obsNav = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const i = secEls.indexOf(entry.target);
+                    if (i >= 0) dots.forEach((d, j) => d.classList.toggle('active', j === i));
+                }
+            });
+        }, { threshold: 0.3 });
+        secEls.forEach(e => { if (e) obsNav.observe(e); });
+    </script>
+</body>
+
+</html>

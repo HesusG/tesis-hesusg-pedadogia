@@ -1,0 +1,93 @@
+%% apendice-herramienta.tex — Manual de la herramienta de análisis
+\chapter{Manual de la Herramienta de Análisis Semántico}
+\label{ap:herramienta}
+
+Este apéndice documenta la herramienta de análisis semántico desarrollada para esta tesis. El código fuente está disponible en el repositorio del proyecto.
+
+\section{Requisitos}
+
+\begin{itemize}
+\item Python 3.10 o superior
+\item Bibliotecas: \texttt{chromadb}, \texttt{sentence-transformers}, \texttt{pypdf}, \texttt{numpy}, \texttt{scipy}, \texttt{scikit-learn}, \texttt{matplotlib}, \texttt{seaborn}, \texttt{click}, \texttt{tqdm}, \texttt{python-dotenv}
+\item (Opcional) Clave de API de OpenAI para el modelo \texttt{text-embedding-3-small}
+\end{itemize}
+
+\section{Estructura del Pipeline}
+
+El pipeline se organiza en siete módulos:
+
+\begin{description}
+\item[\texttt{config.py}] Configuración central: rutas, modelos de embeddings, parámetros de chunking (800 caracteres, 200 de solapamiento), las siete consultas por dimensión y la lista de 22 países/organismos con sus regiones.
+
+\item[\texttt{preprocess.py}] Extracción de texto desde archivos PDF mediante \texttt{pypdf}. Limpia artefactos (números de página, encabezados, caracteres de control) y guarda el texto resultante en \texttt{policies/processed/\{policy\_id\}.txt}.
+
+\item[\texttt{embeddings.py}] Capa de abstracción que selecciona el modelo de embeddings según la configuración: \texttt{text-embedding-3-small} (OpenAI, 1{,}536 dimensiones) como primario o \texttt{paraphrase-multilingual-MiniLM-L12-v2} (384 dimensiones, local) como alternativa.
+
+\item[\texttt{ingest.py}] Carga los textos procesados en ChromaDB. Cada documento se divide en fragmentos (\textit{chunks}), se generan embeddings y se almacenan con metadatos (país, región, año, idioma, índice del fragmento).
+
+\item[\texttt{similarity.py}] Calcula la similitud coseno entre documentos (promediando los embeddings de sus fragmentos) y puntúa cada política en las siete dimensiones mediante similitud entre el embedding promedio del documento y el embedding de la consulta de cada dimensión.
+
+\item[\texttt{analysis.py}] Realiza clustering jerárquico (método de Ward, distancia = $1 - \text{similitud coseno}$) y proyección t-SNE para visualización bidimensional.
+
+\item[\texttt{export.py}] Exporta todos los resultados a \texttt{web/data/results.json}: metadatos de políticas, matriz de similitud, puntuaciones por dimensión, clusters, coordenadas t-SNE y colores por región.
+\end{description}
+
+\section{Ejecución}
+
+\begin{verbatim}
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Paso 1: Extraer texto de los PDFs
+python3 -m pipeline.preprocess
+
+# Paso 2: Ejecutar pipeline completo
+# (ingesta + similitud + clustering + exportación)
+python3 -m pipeline
+
+# O ejecutar pasos individuales:
+python3 -m pipeline.ingest --all --no-cloud
+python3 -m pipeline.visualize
+\end{verbatim}
+
+\section{Formato de Metadatos}
+
+El archivo \texttt{policies/metadata.json} contiene un registro por política:
+
+\begin{verbatim}
+{
+  "policy_id": "espana_enia_2020",
+  "country": "espana",
+  "region": "europa",
+  "year": 2020,
+  "language": "es",
+  "title": "Estrategia Nacional de Inteligencia Artificial",
+  "raw_file": "spain/enia_2020.pdf",
+  "bib_key": "spain2020enia"
+}
+\end{verbatim}
+
+\section{Formato de Resultados}
+
+El archivo \texttt{web/data/results.json} contiene:
+
+\begin{itemize}
+\item \texttt{policies}: lista de políticas con nombre, región, color y metadatos
+\item \texttt{similarity\_matrix}: matriz $N \times N$ de similitud coseno
+\item \texttt{dimension\_scores}: puntuación de cada política en cada dimensión (0--1)
+\item \texttt{clusters}: agrupaciones por clustering jerárquico
+\item \texttt{tsne}: coordenadas 2D para visualización
+\item \texttt{metadata}: modelo de embeddings utilizado, fecha de generación
+\end{itemize}
+
+\section{Reproducibilidad}
+
+Para reproducir los resultados de esta tesis:
+\begin{enumerate}
+\item Clonar el repositorio y colocar los 14 archivos PDF en \texttt{policies/raw/}
+\item Configurar \texttt{USE\_LOCAL\_EMBEDDINGS=1} en el archivo \texttt{.env}
+\item Ejecutar \texttt{python3 -m pipeline}
+\item Los resultados se generan en \texttt{web/data/results.json}
+\end{enumerate}
+
+El modelo local (\texttt{paraphrase-multilingual-MiniLM-L12-v2}) se descarga automáticamente desde Hugging Face y no requiere claves de API. Los resultados son deterministas dado el mismo corpus y los mismos parámetros de chunking.

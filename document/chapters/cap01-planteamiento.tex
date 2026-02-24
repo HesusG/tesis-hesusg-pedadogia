@@ -1,0 +1,159 @@
+%% cap01-planteamiento.tex — Planteamiento del Problema
+\chapter{Planteamiento del Problema}
+\label{cap:planteamiento}
+
+% Target: ~15 páginas (~3,750 palabras)
+% Iteration 7 — Cap 1 polish: country counts, gender, PLN, writing fixes
+
+\section{Descripción de la Problemática}
+\label{sec:problematica}
+
+La inteligencia artificial (IA) se integra en los sistemas educativos del mundo a un ritmo que supera la capacidad de respuesta de las instituciones encargadas de regularla. ChatGPT alcanzó 100 millones de usuarios activos en dos meses tras su lanzamiento en noviembre de 2022, el ritmo de adopción más rápido registrado para una aplicación de software~\citep{maslej2024aiindex}. Para 2024, el 72\% de las organizaciones ---predominantemente del sector empresarial--- reportaban haber adoptado IA y la inversión corporativa global en el sector alcanzó los 189.6 mil millones de dólares~\citep{maslej2024aiindex}. Esta adopción ha comenzado a modificar las expectativas sobre qué competencias necesitan los estudiantes y cómo deben preparar las instituciones educativas a sus egresados.
+
+Las políticas educativas, sin embargo, avanzan más lentamente. \citet{thierer2018pacing} describió este fenómeno como el \textit{pacing problem}: la tecnología evoluciona de forma exponencial mientras que la regulación progresa de manera lineal, lo que genera una brecha que se amplía con el tiempo. En el caso de la IA en educación, esta brecha es aguda. Según la UNESCO, menos del 10\% de las escuelas y universidades contaban con orientaciones formales sobre el uso de IA a mediados de 2023~\citep{unesco2023genai}. Solo 16 países habían emitido alguna guía oficial sobre IA generativa en educación para septiembre de ese año, pese a que más de 70 países ya tenían estrategias nacionales de IA enfocadas en competitividad económica~\citep{unesco2023genai}. El Observatorio de Políticas de IA de la OCDE registraba más de 1,000 iniciativas en 69 países, pero apenas entre el 5\% y el 8\% se enfocaban en educación~\citep{oecd2021digitaloutlook}.
+
+La brecha se manifiesta en múltiples frentes. En materia curricular, solo entre 7 y 10 países habían publicado marcos curriculares de IA para educación básica hacia 2023, entre ellos China, Corea del Sur, Finlandia, Singapur y los Emiratos Árabes Unidos~\citep{unesco2023genai}. En formación docente, menos del 15\% de los países de la OCDE contaban con programas de capacitación en IA para profesores~\citep{oecd2021digitaloutlook}. En gobernanza, apenas el 16\% de los países tenían legislación que abordara el uso de IA en contextos educativos~\citep{unesco2023gem}. \citet{miao2021guidance} identificaron cinco brechas concretas en la preparación institucional: ausencia de marcos regulatorios, insuficiencia en la formación docente, falta de estándares curriculares, inequidades en infraestructura digital y carencia de directrices éticas para el uso de IA en escuelas.
+
+El ciclo típico de una política educativa toma entre 3 y 7 años desde la identificación del problema hasta la implementación~\citep{pedro2019aieducation}. El cómputo dedicado al entrenamiento de modelos de IA, en contraste, se ha duplicado cada 6 a 12 meses en la última década~\citep{sevilla2022compute}. El desfase tiende a ser estructural: para cuando una política educativa sobre IA alcanza las aulas, la tecnología que pretendía regular suele haber sido superada. \citet{collingridge1980social} anticipó este dilema hace más de cuatro décadas: cuando una tecnología es nueva, sus impactos son difíciles de predecir; cuando sus impactos son claros, la tecnología ya está arraigada.
+
+La respuesta de los países ha sido desigual. Un primer grupo actuó con rapidez. China publicó su Plan de Desarrollo de IA de Nueva Generación en 2017, uno de los primeros documentos nacionales en vincular explícitamente la IA con la reforma educativa; dos años después introdujo cursos de IA en más de 20,000 escuelas piloto~\citep{pedro2019aieducation}. Corea del Sur anunció su Plan de Educación en IA en 2020 e inició la integración curricular obligatoria de IA en primaria y secundaria~\citep{unesco2023genai}. Finlandia lanzó el curso masivo \textit{Elements of AI} en 2018, diseñado para que el 1\% de su población adquiriera conocimientos básicos sobre IA~\citep{tuomi2018impact}. Singapur destinó 500 millones de dólares a investigación en IA e integró la alfabetización en datos e IA en todos los niveles educativos mediante su programa SkillsFuture~\citep{unesco2023genai}. Estonia, con menos de 1.4 millones de habitantes, incorporó la programación y el pensamiento computacional desde educación primaria y se convirtió en referencia europea de digitalización educativa~\citep{oecd2021digitaloutlook}.
+
+Un segundo grupo avanzó con mayor lentitud. Estados Unidos carecía de una política federal unificada de IA en educación a principios de 2025; las iniciativas quedaron fragmentadas entre órdenes ejecutivas, legislaciones estatales y marcos propuestos por organizaciones sin fines de lucro como AI4K12~\citep{maslej2024aiindex}. En América Latina, Chile, Colombia y Brasil publicaron estrategias nacionales de IA con componentes educativos~\citep{chile2021ia, colombia2019conpes, brasil2021ebia}, pero México no había formalizado su estrategia~\citep{cminds2018iamexico}. La mayoría de los países en desarrollo, particularmente en África subsahariana y América Central, aún no habían abordado el tema~\citep{southgate2020aiethics}.
+
+El caso de México ilustra las consecuencias de la inacción. Pese a ser miembro de la OCDE y signatario tanto del Consenso de Beijing~\citep{unesco2019beijing} como de los Principios de IA de la OCDE~\citep{oecd2019ai}, México no cuenta con una estrategia nacional de IA adoptada formalmente~\citep{cminds2018iamexico}. Ni el Programa Sectorial de Educación 2020--2024~\citep{sep2020sectorial} ni la Nueva Escuela Mexicana~\citep{sep2022nem} mencionan la inteligencia artificial. La sección~\ref{sec:justificacion} examina esta brecha con mayor detalle.
+
+La literatura académica refleja vacíos paralelos. \citet{zawacki2019systematic} revisaron 146 estudios sobre IA en educación superior publicados entre 2007 y 2018: más del 70\% fueron realizados por científicos de la computación, no por educadores, y prácticamente ninguno realizó comparaciones sistemáticas entre países sobre políticas de IA en educación. \citet{holmes2019aied} señalaron que el desarrollo de políticas estaba ``conspicuamente ausente'' del discurso sobre IA en educación. Esta ausencia persiste. La investigación se concentra en aplicaciones pedagógicas ---tutores inteligentes, analítica del aprendizaje--- y rara vez examina los marcos de política pública que determinan cómo y bajo qué condiciones se implementa la IA en los sistemas educativos.
+
+Se observa, por lo tanto, una doble brecha: entre la velocidad de la tecnología y la capacidad de respuesta de las políticas educativas, y entre la abundancia de estudios técnicos sobre IA en educación y la escasez de investigación comparativa sobre las políticas que gobiernan su integración. Esta investigación aborda la segunda brecha mediante un análisis comparativo que puede informar la primera.
+
+
+\section{Propósito}
+\label{sec:proposito}
+
+El propósito de esta investigación es analizar comparativamente las políticas públicas sobre educación en inteligencia artificial de 22 unidades de análisis ---17 países, la Unión Europea como entidad supranacional y 4 organismos internacionales---, para identificar patrones de convergencia y divergencia que orienten la formulación de políticas educativas de IA en México. La investigación combina el análisis documental cualitativo propio de la educación comparada con herramientas de análisis semántico computacional (\textit{embeddings} de texto y bases de datos vectoriales) que permiten examinar similitudes entre documentos de política a una escala mayor que la del análisis cualitativo por sí solo.
+
+La selección de casos busca representar la diversidad de enfoques existentes, con países de estrategias consolidadas (China, Corea del Sur, Singapur, Finlandia, Estonia), países con marcos emergentes (Chile, Colombia, Brasil, India) y México como caso focal cuyas brechas y oportunidades se analizan con especial profundidad. Los organismos internacionales (UNESCO, OCDE, Foro Económico Mundial, Banco Mundial) se incluyen porque sus marcos normativos influyen en la formulación de políticas nacionales, particularmente en países en desarrollo. La Unión Europea se analiza como entidad supranacional cuyo AI Act y programas de educación digital marcan pautas para sus estados miembros.
+
+Las herramientas computacionales complementan la lectura atenta y la interpretación contextualizada de los documentos. El análisis semántico permite detectar patrones que una lectura humana podría pasar por alto ---agrupaciones temáticas inesperadas, silencios compartidos entre documentos de regiones distantes--- y estos hallazgos se triangulan con el análisis cualitativo.
+
+
+\section{Objetivo General y Objetivos Específicos}
+\label{sec:objetivos}
+
+\subsection{Objetivo general}
+\label{subsec:objetivo-general}
+
+Analizar comparativamente las políticas públicas sobre educación en inteligencia artificial de 17 países, la Unión Europea y 4 organismos internacionales mediante un enfoque mixto que integre análisis documental cualitativo y análisis semántico computacional, con el fin de identificar tendencias y brechas que contribuyan a la formulación de políticas educativas de IA en el contexto mexicano.
+
+\subsection{Objetivos específicos}
+\label{subsec:objetivos-especificos}
+
+\begin{enumerate}
+  \item[\textbf{OE1.}] Construir un corpus documental sistematizado de políticas públicas sobre educación en IA, con criterios explícitos de selección, recopilación y preprocesamiento, que abarque 5 países europeos y la Unión Europea, 6 americanos, 6 de Asia-Pacífico y 4 organismos internacionales.
+
+  \item[\textbf{OE2.}] Desarrollar un marco analítico de siete dimensiones ---gobernanza y regulación, currículo e integración educativa, formación docente, infraestructura y acceso, ética y valores, investigación e innovación, y equidad e inclusión--- para la comparación estructurada de las políticas.
+
+  \item[\textbf{OE3.}] Implementar una herramienta de análisis semántico basada en \textit{embeddings} de texto y ChromaDB que calcule la similitud entre documentos, puntúe cada política en las siete dimensiones e identifique agrupaciones naturales mediante \textit{clustering} jerárquico.
+
+  \item[\textbf{OE4.}] Identificar patrones de similitud y divergencia entre las políticas analizadas: qué dimensiones concentran mayor atención, qué temas están subrepresentados y cómo se agrupan los países según sus enfoques.
+
+  \item[\textbf{OE5.}] Formular recomendaciones para la política educativa de IA en México a partir de las experiencias internacionales analizadas, las brechas identificadas y las condiciones del sistema educativo mexicano.
+\end{enumerate}
+
+
+\section{Preguntas de Investigación}
+\label{sec:preguntas}
+
+\subsection{Pregunta central}
+\label{subsec:pregunta-central}
+
+¿Qué patrones de convergencia y divergencia existen entre las políticas públicas sobre educación en inteligencia artificial de 17 países, la Unión Europea y 4 organismos internacionales, y qué implicaciones tienen estos patrones para la formulación de políticas educativas de IA en México?
+
+\subsection{Preguntas derivadas}
+\label{subsec:preguntas-derivadas}
+
+\begin{enumerate}
+  \item ¿Cuáles son las dimensiones temáticas que reciben mayor y menor atención en las políticas de educación en IA estudiadas?
+
+  \item ¿Qué similitudes y diferencias semánticas existen entre los documentos de política cuando se analizan mediante \textit{embeddings} de texto, y cómo se comparan estos hallazgos con los del análisis cualitativo?
+
+  \item ¿Qué agrupaciones naturales emergen entre los países según sus enfoques de política educativa en IA, y en qué medida coinciden con las regiones geopolíticas?
+
+  \item ¿Qué brechas y oportunidades del panorama global de políticas de educación en IA resultan relevantes para México?
+\end{enumerate}
+
+
+\section{Justificación}
+\label{sec:justificacion}
+
+La investigación se justifica desde tres vertientes complementarias: pedagógica, política y metodológica. La primera sitúa el estudio en el campo de la educación comparada. La segunda examina su pertinencia para el contexto mexicano. La tercera presenta el enfoque mixto.
+
+\subsection{Justificación pedagógica}
+
+La educación comparada tiene una larga tradición como campo que busca comprender los sistemas educativos mediante el análisis de sus similitudes y diferencias~\citep{bray2014comparative}. Sin embargo, ha sido lenta en incorporar herramientas computacionales de análisis textual. La ciencia política adoptó el análisis computacional de textos desde principios de la década de 2010, con trabajos como el de \citet{grimmer2013text} que se convirtieron en referencia canónica. La educación comparada, en cambio, continúa dependiendo casi exclusivamente de métodos cualitativos. Una búsqueda en las principales revistas del campo (\textit{Comparative Education Review}, \textit{Comparative Education}, \textit{Compare}) entre 2015 y 2024 arroja resultados que sugieren que menos del 5\% de los artículos publicados emplean alguna forma de análisis computacional de textos.\footnote{Estimación basada en una búsqueda exploratoria en Scopus con los términos ``text mining'', ``NLP'', ``topic modeling'' y ``computational text analysis'' filtrada por estas tres revistas. Una revisión sistemática completa excede el alcance de este estudio, pero la baja frecuencia de resultados es indicativa de la brecha metodológica.}
+
+El concepto de ``alfabetización en IA'' (\textit{AI literacy}) ha cobrado relevancia en la literatura pedagógica reciente. \citet{long2020ailiteracy} propusieron un marco de competencias que incluye reconocer la IA en productos cotidianos, comprender sus capacidades y limitaciones, e interactuar con ella de manera crítica. \citet{ng2021ailiteracy} identificaron cuatro dimensiones de la alfabetización en IA: conocer y comprender la IA, usar y aplicar la IA, evaluar y crear con IA, y abordar las cuestiones éticas asociadas. Estos marcos teóricos plantean una pregunta que las políticas públicas deben responder: ¿se enseña la IA como un contenido curricular propio, como una herramienta integrada en otras asignaturas, o como un tema transversal de reflexión crítica? Los países que ya han formulado políticas al respecto han adoptado enfoques distintos, y esta investigación permite compararlos de manera sistemática.
+
+Esta investigación contribuye al campo en dos vertientes. Ofrece un análisis comparativo del estado actual de las políticas de educación en IA, un tema que carece de estudios exhaustivos que abarquen múltiples regiones. Además, demuestra la viabilidad de integrar herramientas de procesamiento de lenguaje natural (PLN) en la investigación educativa comparada, un área metodológica que permanece prácticamente inexplorada. La combinación de lectura cualitativa con análisis semántico computacional permite detectar patrones a una escala que ninguno de los dos métodos podría alcanzar por sí solo, y esta complementariedad distingue el enfoque adoptado en la investigación.
+
+\subsection{Justificación política}
+
+México ocupa el lugar 55 en el Índice de Preparación Gubernamental para la IA de Oxford Insights y el cuarto lugar en América Latina, detrás de Chile, Brasil y Colombia~\citep{oxfordinsights2023}. Entre estos cuatro países, México es el único que carece de una estrategia nacional de IA formalmente adoptada por el gobierno. El proceso iniciado en 2018 con el documento \textit{Hacia una Estrategia de IA en México}~\citep{cminds2018iamexico} no se formalizó como política de Estado; la transición de gobierno del mismo año reorientó las prioridades y el tema quedó sin seguimiento institucional.
+
+En el ámbito educativo, el rezago es mayor. El Programa Sectorial de Educación 2020--2024~\citep{sep2020sectorial} menciona ``nuevas tecnologías'' en términos generales pero omite la inteligencia artificial como prioridad curricular. La Nueva Escuela Mexicana~\citep{sep2022nem} organiza los contenidos en campos formativos con un enfoque comunitario y humanístico, sin abordar la IA como objeto de estudio ni como herramienta pedagógica. Chile, por su parte, publicó su Política Nacional de Inteligencia Artificial en 2021 con un capítulo dedicado a educación~\citep{chile2021ia}. Colombia emitió el CONPES 3975 en 2019 con componentes educativos explícitos~\citep{colombia2019conpes}. Brasil incluyó la educación como uno de los nueve ejes estratégicos de su EBIA~\citep{brasil2021ebia}.
+
+Las condiciones de infraestructura agravan el rezago. Según la ENDUTIH 2023, el 79.5\% de la población mexicana de seis años o más usaba internet, pero la conectividad se distribuye de manera desigual: en zonas urbanas la penetración alcanzaba el 83.8\%, mientras que en zonas rurales se ubicaba en 62.3\%~\citep{inegi2024endutih}. En el ámbito escolar la situación es peor. El equipamiento tecnológico de las escuelas públicas depende en buena medida de programas federales que han sufrido recortes y discontinuidades: el programa \textit{@prende 2.0}, que operaba desde 2016 como la principal estrategia de inclusión digital educativa, fue desfinanciado a partir del ejercicio fiscal 2019 y no fue sustituido por un programa equivalente. Esta interrupción dejó un vacío en tecnología educativa que persiste a la fecha.
+
+La formación docente en tecnologías digitales también presenta carencias. El sistema de educación básica cuenta con más de un millón de profesores, pero los programas de actualización profesional rara vez incluyen contenidos sobre IA, aprendizaje automático o análisis de datos educativos. La distancia entre lo que los docentes conocen sobre IA y lo que necesitarían saber para integrarla en su práctica constituye un obstáculo que ninguna política podrá resolver si no lo aborda directamente.
+
+La discontinuidad entre administraciones federales agrava el problema. Como se describió en la sección~\ref{sec:problematica}, el proceso IA2030MX no se formalizó tras la transición de 2018, y la agenda educativa se reorientó hacia la Nueva Escuela Mexicana. La transición de 2024 no ha alterado esta tendencia: al momento de escribir, no existe un plan público del gobierno federal para abordar la IA en el sistema educativo. Los cambios de gobierno cada seis años generan un riesgo recurrente de discontinuidad que cualquier política futura deberá anticipar.
+
+Esta investigación ofrece a los tomadores de decisiones en México un análisis de las prácticas internacionales, sus resultados y su transferibilidad al contexto local. México aún no ha formulado una política de educación en IA, y un análisis comparativo riguroso puede informar ese proceso con evidencia de lo que otros países han aprendido, qué enfoques han funcionado y qué errores se pueden evitar.
+
+\subsection{Justificación metodológica}
+
+El uso de \textit{embeddings} de texto y bases de datos vectoriales para analizar documentos de política educativa es una contribución metodológica original. El PLN se ha consolidado como herramienta de investigación en ciencia política~\citep{grimmer2013text, rodriguez2022embeddings}, pero su aplicación en educación comparada es incipiente. Los modelos de \textit{topic modeling} como LDA y STM~\citep{roberts2019stm} se han aplicado a textos legislativos y políticos, pero rara vez a documentos de política educativa. El uso de \textit{embeddings} semánticos para medir la similitud entre políticas de diferentes países es, hasta donde esta revisión alcanza, inédito.
+
+La diferencia entre los \textit{topic models} tradicionales y los \textit{embeddings} semánticos es sustancial. Los modelos como LDA tratan los documentos como bolsas de palabras y pierden información sobre el orden y el contexto; los \textit{embeddings} generados por modelos de lenguaje entrenados sobre grandes corpus capturan relaciones semánticas más sutiles~\citep{rodriguez2022embeddings}. En una comparación de políticas educativas escritas en múltiples idiomas, esta capacidad resulta particularmente valiosa: dos documentos pueden abordar el mismo tema con vocabularios diferentes ---uno hablar de ``competencias digitales'' y otro de ``habilidades computacionales''--- y los \textit{embeddings} detectan la proximidad semántica que un análisis por palabras clave pasaría por alto.
+
+La herramienta desarrollada en esta investigación ---un \textit{pipeline} de análisis semántico que utiliza ChromaDB como base vectorial--- es reproducible y extensible. El código y los datos se publican como código abierto para facilitar la replicación y la adaptación a otros temas de política pública. Esta transparencia responde a una demanda creciente en la investigación educativa: que los métodos sean auditables y replicables.
+
+
+\section{Alcances y Limitaciones}
+\label{sec:alcances}
+
+\subsection{Alcances}
+\label{subsec:alcances}
+
+Esta investigación abarca:
+
+\begin{itemize}
+  \item \textbf{Cobertura geográfica}: 22 unidades de análisis organizadas en cuatro grupos. Europa: Unión Europea (como entidad supranacional), España, Francia, Alemania, Finlandia y Estonia. Américas: Estados Unidos, Canadá, México, Brasil, Chile y Colombia. Asia-Pacífico: China, Japón, Corea del Sur, Singapur, India y Australia. Organismos internacionales: UNESCO, OCDE, Foro Económico Mundial y Banco Mundial.
+
+  \item \textbf{Periodo temporal}: documentos de política publicados entre 2017 y 2024, periodo que abarca desde las primeras estrategias nacionales de IA hasta las respuestas regulatorias más recientes.
+
+  \item \textbf{Marco analítico}: siete dimensiones de comparación que cubren aspectos operativos (gobernanza, currículo, infraestructura) y aspectos normativos (ética, equidad, formación docente, investigación).
+
+  \item \textbf{Producto tecnológico}: una herramienta de análisis semántico funcional y una visualización interactiva de los resultados, disponibles como código abierto.
+
+  \item \textbf{Tipo de análisis}: la investigación examina el contenido de los documentos de política ---qué dicen, qué temas abordan, qué priorizan y qué omiten---, no su proceso de elaboración ni su implementación en el terreno. El foco está en las políticas como textos que expresan intenciones, marcos conceptuales y compromisos gubernamentales.
+
+  \item \textbf{Orientación}: los hallazgos se contextualizan para el caso mexicano. El análisis comparativo no es un ejercicio abstracto, sino que busca identificar experiencias relevantes, brechas concretas y lecciones transferibles al sistema educativo de México.
+\end{itemize}
+
+\subsection{Limitaciones}
+\label{subsec:limitaciones}
+
+\begin{itemize}
+  \item \textbf{Sesgo de disponibilidad}: el corpus se limita a documentos de acceso público. Políticas internas, borradores de trabajo o lineamientos no publicados quedan fuera del análisis.
+
+  \item \textbf{Sesgo idiomático}: aunque los modelos de \textit{embeddings} empleados son multilingües, la calidad del análisis semántico puede variar entre idiomas. Los documentos en chino, coreano y japonés presentan desafíos de representación semántica respecto a los documentos en lenguas europeas.
+
+  \item \textbf{No evaluación de impacto}: esta investigación analiza el contenido de las políticas, no su implementación ni su efecto en los sistemas educativos. Que un país tenga una política ambiciosa no implica que la haya ejecutado.
+
+  \item \textbf{Dinamismo del campo}: la IA en educación evoluciona con rapidez. Es probable que algunos países actualicen o publiquen nuevas políticas durante el desarrollo de esta investigación.
+
+  \item \textbf{Alcance del análisis semántico}: los \textit{embeddings} capturan proximidad semántica, no equivalencia conceptual. Dos documentos pueden usar vocabulario similar con intenciones diferentes, y la herramienta no distingue entre retórica y compromiso vinculante. Por esta razón, todo hallazgo del análisis computacional se contrasta con la lectura cualitativa.
+
+  \item \textbf{Representatividad}: los 22 casos seleccionados representan un abanico amplio de enfoques, pero no agotan la diversidad de respuestas existentes. Países de África, Oriente Medio y el Sudeste Asiático quedan fuera del análisis, lo que limita la generalización de los hallazgos a estas regiones.
+\end{itemize}

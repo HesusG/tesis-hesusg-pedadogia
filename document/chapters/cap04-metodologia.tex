@@ -1,0 +1,262 @@
+%% cap04-metodologia.tex — Metodología
+%% Iteración 2: revisión triple (/writing + /weakpoints + /proofread)
+
+\chapter{Metodología}
+\label{cap:metodologia}
+
+Este capítulo describe el diseño metodológico de la investigación. Se presenta el enfoque adoptado, el corpus documental analizado, el marco de siete dimensiones que estructura la comparación, la herramienta de análisis semántico basada en embeddings y ChromaDB, el procedimiento de análisis en tres fases, las consideraciones éticas y la visualización interactiva como producto complementario.
+
+
+\section{Enfoque de la Investigación}
+\label{sec:enfoque}
+
+\subsection{Paradigma interpretativo con apoyo computacional}
+
+Esta investigación se inscribe en el paradigma interpretativo: busca comprender cómo diferentes países y organismos internacionales conceptualizan, priorizan y articulan la relación entre inteligencia artificial y educación en sus documentos de política. El interés no es medir la eficacia de las políticas ni evaluar su implementación, sino analizar el contenido discursivo de los textos oficiales para identificar convergencias, divergencias y patrones temáticos.
+
+El apoyo computacional no modifica el paradigma ni lo convierte en positivista. Las herramientas de procesamiento de lenguaje natural (PLN) funcionan como amplificadores de la capacidad analítica del investigador, no como sustitutos de su juicio interpretativo \citep{grimmer2013text}. Los embeddings detectan proximidad semántica entre fragmentos de texto; la interpretación de qué significa esa proximidad en términos pedagógicos y de política pública corresponde al investigador. Este principio guía todo el diseño: el análisis cualitativo tiene prioridad, y el computacional lo complementa.
+
+El diseño corresponde a lo que \citet{creswell2018mixed} denominan un enfoque de métodos mixtos con prioridad cualitativa (\textit{QUAL-quan}), donde la fase cualitativa orienta la investigación y la fase cuantitativa (en este caso, computacional) aporta una capa adicional de evidencia. \citet{nelson2020computational} propuso un marco similar bajo el nombre de Teoría Fundamentada Computacional, con tres etapas: detección no supervisada de patrones, refinamiento cualitativo y confirmación computacional. El diseño de esta tesis sigue una secuencia análoga, como se detalla en la Sección~\ref{sec:procedimiento}.
+
+
+\subsection{Investigación documental comparativa}
+
+El tipo de investigación es documental y comparativo. Es documental porque la fuente primaria de datos son textos oficiales: estrategias nacionales de IA, planes de acción, marcos regulatorios y lineamientos de organismos internacionales \citep{bowen2009document}. No se realizan entrevistas, encuestas ni observaciones de campo. Los documentos se analizan tanto como portadores de contenido (qué dicen las políticas) como productos discursivos (cómo lo dicen, qué vocabulario utilizan, qué priorizan y qué omiten).
+
+Es comparativo porque el análisis se estructura según la tradición de la educación comparada. El esquema de \citet{bereday1964comparative} organiza la comparación en cuatro etapas: descripción de cada caso, interpretación contextualizada, yuxtaposición sistemática y comparación propiamente dicha. En esta tesis, la descripción corresponde al Capítulo~\ref{cap:marco-contextual}, la interpretación y yuxtaposición se realizan mediante el marco de siete dimensiones (Sección~\ref{sec:dimensiones}), y la comparación integra los resultados cualitativos y computacionales en el Capítulo~\ref{cap:resultados}.
+
+Dentro del marco tridimensional de \citet{bray1995levels}, esta investigación opera en el nivel nacional del eje geográfico, aborda el aspecto de políticas educativas sobre IA, y no se restringe a un grupo demográfico específico. Las siete dimensiones de análisis desagregan el aspecto de ``políticas educativas sobre IA'' en componentes observables y comparables.
+
+
+\section{Corpus Documental}
+\label{sec:corpus}
+
+\subsection{Criterios de selección}
+
+El corpus se compone de 22 unidades de análisis: 17 países, la Unión Europea como entidad supranacional y 4 organismos internacionales (UNESCO, OCDE, Foro Económico Mundial y Banco Mundial). La selección responde a los siguientes criterios:
+
+\begin{enumerate}
+  \item \textbf{Existencia de documento oficial.} Cada unidad debe contar con al menos un documento de política que aborde explícitamente la relación entre IA y educación, ya sea una estrategia nacional de IA con sección educativa, un plan de acción sectorial o lineamientos específicos.
+  \item \textbf{Diversidad geográfica.} La muestra incluye representación de tres regiones: Europa (Unión Europea, España, Francia, Alemania, Finlandia, Estonia), Américas (Estados Unidos, Canadá, México, Brasil, Chile, Colombia) y Asia-Pacífico (China, Japón, Corea del Sur, Singapur, India, Australia).
+  \item \textbf{Diversidad de nivel de desarrollo.} La muestra incluye países de ingresos altos (la mayoría), medios-altos (México, Brasil, Colombia) e intermedios (India), lo que permite observar cómo el nivel de recursos condiciona las políticas.
+  \item \textbf{Disponibilidad pública.} Solo se incluyen documentos de acceso público, descargables de sitios oficiales de gobierno u organismos internacionales.
+  \item \textbf{Periodo temporal.} Los documentos deben haber sido publicados entre 2017 y 2024, periodo que abarca desde las primeras estrategias nacionales de IA (Canadá, China, Finlandia, 2017) hasta las respuestas regulatorias más recientes (EU AI Act, 2024).
+\end{enumerate}
+
+La Tabla~\ref{tab:corpus} presenta el listado completo de documentos incluidos en el corpus.
+
+\begin{table}[htbp]
+\centering
+\caption{Corpus documental: unidades de análisis}
+\label{tab:corpus}
+\small
+\begin{tabular}{llll}
+\hline
+\textbf{Unidad} & \textbf{Documento principal} & \textbf{Año} & \textbf{Idioma} \\
+\hline
+Unión Europea & AI Act; Digital Education Action Plan & 2020--2024 & EN \\
+España & Estrategia Nacional de IA (ENIA) & 2020 & ES \\
+Francia & Informe Villani (\textit{AI for Humanity}) & 2018 & EN/FR \\
+Alemania & KI-Strategie der Bundesregierung & 2018/2020 & DE \\
+Finlandia & Finland's Age of AI & 2017 & EN \\
+Estonia & Report of Estonia's AI Taskforce & 2019 & EN \\
+Estados Unidos & Executive Order 14110 on AI & 2023 & EN \\
+Canadá & Pan-Canadian AI Strategy & 2017 & EN \\
+México & Hacia una Estrategia de IA en México & 2018 & ES \\
+Brasil & Estratégia Brasileira de IA (EBIA) & 2021 & PT \\
+Chile & Política Nacional de IA & 2021 & ES \\
+Colombia & CONPES 3975 & 2019 & ES \\
+China & New Generation AI Development Plan & 2017 & ZH/EN \\
+Japón & AI Strategy 2019 & 2019 & EN/JA \\
+Corea del Sur & National Strategy for AI & 2019 & EN/KO \\
+Singapur & National AI Strategy (NAIS) & 2019 & EN \\
+India & National Strategy for AI: \#AIForAll & 2018 & EN \\
+Australia & AI Action Plan & 2021 & EN \\
+UNESCO & Beijing Consensus; GenAI Guidance & 2019/2023 & EN \\
+OCDE & AI Principles; Digital Ed.\ Outlook & 2019/2021 & EN \\
+FEM & Future of Jobs Report & 2020 & EN \\
+Banco Mundial & Reimagining Human Connections & 2020 & EN \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Procedimiento de recopilación}
+
+Los documentos se recopilaron entre septiembre y noviembre de 2024 mediante búsqueda sistemática en los sitios web oficiales de cada gobierno y organismo. Para los documentos en idiomas distintos del español e inglés, se utilizaron las versiones oficiales en inglés cuando estaban disponibles. En los casos de China, Japón y Corea del Sur, se trabajó con traducciones oficiales al inglés o, en su defecto, con traducciones académicas de referencia (como la traducción del NGAIDP chino realizada por el proyecto DigiChina de la Universidad de Stanford).
+
+Los documentos originales se almacenaron en formato PDF en el directorio \texttt{policies/raw/} del repositorio del proyecto, organizados por país. Los metadatos (país, región, año, idioma, URL de origen) se registraron en un archivo JSON estructurado.
+
+
+\subsection{Preprocesamiento de textos}
+
+El preprocesamiento convierte los documentos PDF en texto plano segmentado, listo para su representación vectorial. El procedimiento incluye los siguientes pasos:
+
+\begin{enumerate}
+  \item \textbf{Extracción de texto.} Se extrae el contenido textual de cada PDF mediante la biblioteca \texttt{pypdf} de Python. Se eliminan encabezados, pies de página, números de página y elementos gráficos.
+  \item \textbf{Limpieza.} Se normalizan espacios, se corrigen caracteres mal codificados y se eliminan secciones no sustantivas (índices, listas de abreviaturas, agradecimientos).
+  \item \textbf{Segmentación (\textit{chunking}).} El texto se divide en fragmentos de aproximadamente 800 caracteres con un solapamiento de 200 caracteres entre fragmentos consecutivos. Este tamaño se eligió para mantener unidades semánticamente coherentes (aproximadamente un párrafo) sin exceder los límites del modelo de embeddings.
+  \item \textbf{Asignación de metadatos.} Cada fragmento hereda los metadatos del documento de origen: país, región, año, idioma e identificador de política. Se añade un índice secuencial que preserva el orden del fragmento dentro del documento.
+\end{enumerate}
+
+El corpus preprocesado produce entre 500 y 2{,}000 fragmentos, dependiendo de la extensión de los documentos. Cada fragmento constituye la unidad mínima de análisis computacional.
+
+
+\section{Marco Analítico: Dimensiones de Comparación}
+\label{sec:dimensiones}
+
+El análisis comparativo se estructura en siete dimensiones que cubren los aspectos centrales de la relación entre IA y educación en los documentos de política. Estas dimensiones se derivaron mediante un proceso inductivo-deductivo: una primera lectura exploratoria del corpus identificó los temas recurrentes, que luego se contrastaron con marcos existentes para asegurar cobertura y evitar omisiones. Los marcos de referencia fueron las cinco áreas del Consenso de Beijing \citep{unesco2019beijing}, las recomendaciones de \citet{miao2021guidance}, los ejes del \textit{OECD Digital Education Outlook} \citep{oecd2021digitaloutlook} y las categorías analíticas de \citet{fatima2020aipolicy}. Las dimensiones 1, 3 y 5 tienen correspondencia directa con áreas del Consenso de Beijing (gestión de IA en educación, apoyo a docentes, uso ético de datos). Las dimensiones 2 y 4 se derivan de las recomendaciones de Miao et al.\ sobre currículo e infraestructura. Las dimensiones 6 y 7 integran ejes de la OCDE (investigación) y de la UNESCO (equidad), respectivamente. Las siete dimensiones resultantes son:
+
+\begin{enumerate}
+  \item \textbf{Gobernanza y regulación.} Estructura institucional para la gestión de la IA en educación: órganos responsables, marcos legales, mecanismos de coordinación entre ministerios, nivel de centralización de las decisiones.
+
+  \item \textbf{Currículo e integración educativa.} Presencia de la IA como contenido curricular: asignaturas, competencias esperadas, niveles educativos cubiertos, distinción entre IA como objeto de estudio y como herramienta pedagógica.
+
+  \item \textbf{Formación docente.} Programas, estrategias o menciones a la capacitación del profesorado en competencias relacionadas con IA: formación inicial, desarrollo profesional continuo, certificaciones, alianzas con universidades o empresas tecnológicas.
+
+  \item \textbf{Infraestructura y acceso.} Inversión en infraestructura tecnológica (conectividad, equipamiento, plataformas), acceso equitativo a herramientas de IA, y condiciones materiales para la implementación de las políticas.
+
+  \item \textbf{Ética y valores.} Principios éticos mencionados en relación con la IA en educación: privacidad de datos estudiantiles, equidad algorítmica, transparencia, supervisión humana, sesgo, integridad académica.
+
+  \item \textbf{Investigación e innovación.} Fomento de la investigación en IA educativa: financiamiento, centros de investigación, colaboración academia-industria, desarrollo de soluciones locales, pilotajes y evaluación de impacto.
+
+  \item \textbf{Equidad e inclusión.} Atención a brechas de acceso y participación: diferencias urbano-rurales, de género, socioeconómicas y lingüísticas en la adopción de IA educativa; mecanismos compensatorios.
+\end{enumerate}
+
+Cada dimensión funciona como una lente analítica que se aplica a los 22 documentos del corpus. En la fase cualitativa, el investigador codifica los fragmentos relevantes de cada documento según estas dimensiones. En la fase computacional, se formulan consultas semánticas específicas para cada dimensión y se mide la similitud entre los documentos en cada eje. La intersección de ambos análisis permite construir una matriz de 22 unidades $\times$ 7 dimensiones con puntuaciones tanto cualitativas como computacionales.
+
+
+\section{Herramienta de Análisis Semántico}
+\label{sec:herramienta}
+
+\subsection{Modelo de embeddings}
+
+Los fragmentos del corpus se representan como vectores numéricos mediante el modelo \texttt{text-embedding-3-small} de OpenAI. Este modelo produce vectores de 1{,}536 dimensiones y ha demostrado capacidad multilingüe adecuada para textos en inglés, español, francés, portugués y alemán, los principales idiomas del corpus.
+
+La elección de este modelo sobre alternativas de código abierto (como \texttt{paraphrase-multilingual-MiniLM-L12-v2} de Sentence Transformers) responde a tres criterios: mayor dimensionalidad del espacio vectorial (1{,}536 vs.\ 384), mejor desempeño en tareas de similitud semántica multilingüe según benchmarks públicos, y estabilidad de la API para garantizar reproducibilidad \citep{rodriguez2022embeddings}. Como respaldo, el modelo de Sentence Transformers se mantiene disponible para operación sin conexión o en caso de indisponibilidad de la API.
+
+
+\subsection{Almacenamiento vectorial con ChromaDB}
+
+Los embeddings generados se almacenan en ChromaDB, una base de datos vectorial de código abierto. Cada registro en ChromaDB contiene tres elementos: el texto del fragmento, su vector de embedding y un diccionario de metadatos (país, región, año, idioma, identificador de política, índice del fragmento).
+
+ChromaDB permite dos operaciones centrales para esta investigación:
+
+\begin{itemize}
+  \item \textbf{Consulta por similitud.} Dada una consulta textual (por ejemplo, ``programas de formación docente en inteligencia artificial''), ChromaDB devuelve los $k$ fragmentos del corpus más cercanos en el espacio vectorial. Esto permite identificar qué países abordan un tema específico y con qué profundidad.
+  \item \textbf{Filtrado por metadatos.} Las consultas pueden restringirse por país, región, idioma o año, lo que permite comparaciones segmentadas (por ejemplo, solo documentos europeos posteriores a 2020).
+\end{itemize}
+
+La base de datos se almacena localmente en el directorio del proyecto y se respalda en Chroma Cloud para garantizar persistencia.
+
+
+\subsection{Cálculo de similitud semántica}
+
+La similitud entre documentos se mide mediante la distancia del coseno entre sus vectores. Para obtener una representación a nivel de documento (en lugar de fragmento), se calcula el vector promedio de todos los fragmentos de cada documento. La similitud entre dos documentos $A$ y $B$ se define como:
+
+\[
+\text{sim}(A, B) = \frac{\vec{A} \cdot \vec{B}}{||\vec{A}|| \; ||\vec{B}||}
+\]
+
+donde $\vec{A}$ y $\vec{B}$ son los vectores promedio de los fragmentos de cada documento. Valores cercanos a 1 indican alta similitud semántica; valores cercanos a 0 indican contenido semánticamente distante.
+
+Además de la similitud global, se calcula una puntuación de relevancia por dimensión para cada documento. El procedimiento es el siguiente: para cada una de las siete dimensiones, se formula una consulta textual en español que sintetiza los conceptos centrales de esa dimensión. ChromaDB devuelve, para cada documento, los $k$ fragmentos más cercanos a la consulta (con $k = 5$) junto con su puntuación de similitud del coseno. El promedio de estas puntuaciones constituye la relevancia de esa dimensión en ese documento. La Tabla~\ref{tab:consultas} presenta las siete consultas utilizadas.
+
+\begin{table}[htbp]
+\centering
+\caption{Consultas semánticas por dimensión de análisis}
+\label{tab:consultas}
+\small
+\begin{tabular}{lp{9cm}}
+\hline
+\textbf{Dimensión} & \textbf{Consulta textual} \\
+\hline
+1. Gobernanza & Gobernanza institucional, regulación de inteligencia artificial, marco legal, coordinación ministerial, órganos responsables \\
+2. Currículo & Currículo escolar, integración de IA en asignaturas, competencias digitales, contenido curricular, niveles educativos \\
+3. Formación docente & Capacitación de profesores, formación docente en IA, desarrollo profesional, certificación, competencias pedagógicas digitales \\
+4. Infraestructura & Infraestructura tecnológica, conectividad, equipamiento escolar, plataformas digitales, acceso a internet, inversión \\
+5. Ética & Ética de la inteligencia artificial, privacidad de datos, sesgo algorítmico, transparencia, supervisión humana, integridad académica \\
+6. Investigación & Investigación en IA educativa, innovación, financiamiento, centros de investigación, colaboración academia-industria, pilotaje \\
+7. Equidad & Equidad digital, inclusión, brecha urbano-rural, género, acceso para poblaciones vulnerables, mecanismos compensatorios \\
+\hline
+\end{tabular}
+\end{table}
+
+Estas consultas se formularon a partir de las definiciones operativas de cada dimensión (Sección~\ref{sec:dimensiones}) y se refinaron iterativamente comparando los fragmentos recuperados con los codificados cualitativamente para la misma dimensión. Este proceso de calibración asegura que las consultas capturan el vocabulario real de los documentos y no solo los términos esperados por el investigador. El resultado es una matriz de 22 $\times$ 7 puntuaciones de relevancia que complementa la codificación cualitativa.
+
+Para identificar agrupaciones entre países, se aplica \textit{clustering} jerárquico aglomerativo sobre la matriz de similitud global, utilizando el método de Ward como criterio de enlace. El número de clusters no se fija a priori; se examina el dendrograma resultante y se selecciona el corte que maximiza la coherencia interpretativa de los grupos (es decir, que las agrupaciones tengan sentido a la luz del contexto geopolítico y de los hallazgos cualitativos). Este enfoque privilegia la interpretabilidad sobre la optimización estadística, en consonancia con la prioridad cualitativa del diseño.
+
+
+\section{Procedimiento de Análisis}
+\label{sec:procedimiento}
+
+El análisis se organiza en tres fases secuenciales con un momento de triangulación al final. Este diseño se inspira en la Teoría Fundamentada Computacional de \citet{nelson2020computational}, adaptada al contexto de la educación comparada.
+
+\subsection{Fase cualitativa: lectura y codificación}
+
+En la primera fase, el investigador realiza una lectura cercana de los 22 documentos del corpus. Cada documento se codifica según las siete dimensiones del marco analítico, identificando:
+
+\begin{itemize}
+  \item Presencia o ausencia de cada dimensión en el documento.
+  \item Nivel de detalle: mención general, sección dedicada o plan de acción con indicadores y presupuesto.
+  \item Vocabulario y marcos conceptuales utilizados.
+  \item Omisiones significativas (dimensiones ausentes o tratadas de forma superficial).
+\end{itemize}
+
+Esta fase produce una matriz cualitativa de 22 $\times$ 7 con descripciones textuales y valoraciones ordinales (0 = ausente, 1 = mención, 2 = desarrollo moderado, 3 = desarrollo extenso) para cada celda. Las valoraciones numéricas no pretenden cuantificar con precisión el tratamiento de cada dimensión, sino proporcionar un ordenamiento que permita comparar su distribución entre documentos y contrastarla con las puntuaciones computacionales de la fase siguiente.
+
+
+\subsection{Fase computacional: análisis semántico}
+
+En la segunda fase, se ejecuta el pipeline de análisis semántico:
+
+\begin{enumerate}
+  \item \textbf{Ingesta.} Los documentos preprocesados se ingestan en ChromaDB con sus embeddings y metadatos.
+  \item \textbf{Matriz de similitud global.} Se calcula la similitud del coseno entre todos los pares de documentos (22 $\times$ 22 = 231 pares únicos).
+  \item \textbf{Matriz de similitud por dimensión.} Para cada dimensión, se formulan consultas semánticas y se registran las puntuaciones de similitud de cada documento (22 $\times$ 7).
+  \item \textbf{\textit{Clustering}.} Se aplica \textit{clustering} jerárquico sobre la matriz de similitud global para identificar agrupaciones.
+  \item \textbf{Exportación.} Los resultados se exportan en formato JSON para alimentar la visualización interactiva y en formato tabular para su inclusión en la tesis.
+\end{enumerate}
+
+Esta fase produce tres productos: una matriz de similitud global (22 $\times$ 22), una matriz de relevancia por dimensión (22 $\times$ 7) y un dendrograma de agrupaciones.
+
+
+\subsection{Triangulación de resultados}
+
+La tercera fase confronta los hallazgos de las dos fases anteriores. La triangulación sigue el principio de que los métodos cualitativos y computacionales iluminan facetas diferentes del mismo corpus \citep{creswell2018mixed}:
+
+\begin{itemize}
+  \item \textbf{Convergencia.} Cuando la codificación cualitativa y la puntuación computacional coinciden en la dirección (por ejemplo, ambos métodos ubican a un país como alto o bajo en una dimensión), el hallazgo se considera robusto. Operativamente, se verifica que los documentos con valoración cualitativa ``extenso'' (3) obtengan puntuaciones de relevancia computacional por encima de la mediana, y viceversa.
+  \item \textbf{Complementariedad.} Cuando el análisis computacional revela patrones no anticipados por la lectura cercana (por ejemplo, alta similitud semántica entre dos países geográficamente distantes), el hallazgo se examina cualitativamente para determinar si refleja una convergencia sustantiva o un artefacto del método.
+  \item \textbf{Divergencia.} Cuando los resultados difieren (por ejemplo, dos documentos obtienen alta similitud semántica pero la codificación cualitativa revela enfoques distintos), la divergencia se analiza como un posible caso de convergencia retórica sin convergencia sustantiva, conforme a la distinción de \citet{ball1998big}. Cada caso de divergencia se documenta y se interpreta a la luz del contexto de política de los países involucrados.
+\end{itemize}
+
+Los resultados triangulados se presentan en el Capítulo~\ref{cap:resultados} organizados por dimensión y por agrupación de países.
+
+
+\section{Consideraciones Éticas}
+\label{sec:etica}
+
+Esta investigación analiza exclusivamente documentos de política pública de acceso abierto, publicados por gobiernos y organismos internacionales para consumo público. No involucra participantes humanos, datos personales ni información confidencial.
+
+Se adoptan tres principios éticos:
+
+\begin{enumerate}
+  \item \textbf{Transparencia.} Todo el código fuente del pipeline de análisis, los parámetros de configuración y los datos intermedios se documentan en un repositorio público. Cualquier investigador puede reproducir los resultados ejecutando el mismo código sobre el mismo corpus.
+  \item \textbf{Reproducibilidad.} Los embeddings se generan con un modelo de versión fija (\texttt{text-embedding-3-small}), los parámetros de chunking son explícitos (800 caracteres, 200 de solapamiento) y los criterios de selección del corpus están documentados. El uso de ChromaDB con almacenamiento local garantiza que los resultados no dependan de servicios externos volátiles.
+  \item \textbf{Honestidad interpretativa.} El análisis computacional no sustituye al juicio del investigador. Las similitudes semánticas se presentan como indicios que requieren interpretación contextualizada, no como conclusiones definitivas. Las limitaciones del método (sesgo idiomático de los embeddings, diferencias en extensión de los documentos, carácter programático vs.\ vinculante de las políticas) se explicitan a lo largo del análisis.
+\end{enumerate}
+
+
+\section{Visualización Interactiva}
+\label{sec:visualizacion}
+
+Como producto complementario de la investigación, se desarrolla una página web interactiva que presenta los resultados del análisis de forma visual y explorable. La visualización cumple tres funciones de investigación:
+
+\begin{enumerate}
+  \item \textbf{Comunicación de resultados complejos.} La matriz de similitud de 22 $\times$ 22 y las puntuaciones por dimensión son difíciles de interpretar en formato tabular. Los mapas de calor, gráficos de radar y dendrogramas interactivos permiten identificar patrones que las tablas ocultan.
+  \item \textbf{Exploración por parte del lector.} La visualización permite al lector filtrar por región, comparar pares de países o explorar dimensiones específicas, lo que extiende el análisis más allá de lo que el texto de la tesis puede cubrir.
+  \item \textbf{Reproducibilidad visual.} Los datos que alimentan la visualización provienen directamente del pipeline de análisis, sin manipulación manual. El archivo \texttt{results.json} que conecta el pipeline con la web constituye un registro auditable.
+\end{enumerate}
+
+La visualización se implementa con tecnologías web estándar (HTML, CSS, JavaScript) y la biblioteca Chart.js 4.x para los gráficos. El diseño sigue un sistema visual neobrutalist coherente con los principios de claridad y accesibilidad. La página se aloja como archivo estático, sin dependencia de servidores, y se incluye como anexo digital de la tesis.

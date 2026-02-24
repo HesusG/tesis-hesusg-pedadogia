@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-02-23",
+  "policies": [
+    {
+      "policy_id": "eu_ai_act_2024",
+      "country": "eu",
+      "region": "europa",
+      "year": 2024,
+      "language": "en",
+      "title": "EU AI Act — Regulation 2024/1689",
+      "raw_file": "eu/ai_act_2024.pdf",
+      "bib_key": "eu2024aiact"
+    },
+    {
+      "policy_id": "espana_enia_2020",
+      "country": "espana",
+      "region": "europa",
+      "year": 2020,
+      "language": "es",
+      "title": "Estrategia Nacional de Inteligencia Artificial",
+      "raw_file": "spain/enia_2020.pdf",
+      "bib_key": "spain2020enia"
+    },
+    {
+      "policy_id": "francia_villani_report_2018",
+      "country": "francia",
+      "region": "europa",
+      "year": 2018,
+      "language": "en",
+      "title": "For a Meaningful AI (Villani Report)",
+      "raw_file": "france/villani_report_2018.pdf",
+      "bib_key": "villani2018ai"
+    },
+    {
+      "policy_id": "alemania_ai_strategy_2018",
+      "country": "alemania",
+      "region": "europa",
+      "year": 2018,
+      "language": "en",
+      "title": "AI Strategy of the German Federal Government",
+      "raw_file": "germany/ai_strategy_2018.pdf",
+      "bib_key": "germany2018aistrategy",
+      "_note": "PENDING: Raw file is HTML not PDF, needs manual redownload"
+    },
+    {
+      "policy_id": "canada_pan_canadian_ai_strategy_2017",
+      "country": "canada",
+      "region": "americas",
+      "year": 2017,
+      "language": "en",
+      "title": "Pan-Canadian AI Strategy",
+      "raw_file": "canada/pan_canadian_ai_strategy_2017.pdf",
+      "bib_key": "canada2017ai"
+    },
+    {
+      "policy_id": "brasil_ebia_2021",
+      "country": "brasil",
+      "region": "americas",
+      "year": 2021,
+      "language": "pt",
+      "title": "Estratégia Brasileira de Inteligência Artificial",
+      "raw_file": "brazil/ebia_2021.pdf",
+      "bib_key": "brasil2021ebia"
+    },
+    {
+      "policy_id": "colombia_conpes_3975_2019",
+      "country": "colombia",
+      "region": "americas",
+      "year": 2019,
+      "language": "es",
+      "title": "CONPES 3975 — Política Nacional para la Transformación Digital e IA",
+      "raw_file": "colombia/conpes_3975_2019.pdf",
+      "bib_key": "colombia2019conpes"
+    },
+    {
+      "policy_id": "japon_ai_strategy_2019",
+      "country": "japon",
+      "region": "asia_pacifico",
+      "year": 2019,
+      "language": "en",
+      "title": "AI Strategy 2019: AI for Everyone",
+      "raw_file": "japan/ai_strategy_2019.pdf",
+      "bib_key": "japan2019ai"
+    },
+    {
+      "policy_id": "corea_ai_strategy_2019",
+      "country": "corea",
+      "region": "asia_pacifico",
+      "year": 2019,
+      "language": "en",
+      "title": "National Strategy for Artificial Intelligence",
+      "raw_file": "korea/ai_strategy_2019.pdf",
+      "bib_key": "korea2019ai"
+    },
+    {
+      "policy_id": "singapur_nais_2019",
+      "country": "singapur",
+      "region": "asia_pacifico",
+      "year": 2019,
+      "language": "en",
+      "title": "National AI Strategy",
+      "raw_file": "singapore/nais_2019.pdf",
+      "bib_key": "singapore2019nais"
+    },
+    {
+      "policy_id": "india_aiforall_2018",
+      "country": "india",
+      "region": "asia_pacifico",
+      "year": 2018,
+      "language": "en",
+      "title": "National Strategy for AI: #AIForAll",
+      "raw_file": "india/aiforall_2018.pdf",
+      "bib_key": "india2018niti"
+    },
+    {
+      "policy_id": "india_nep_2020",
+      "country": "india",
+      "region": "asia_pacifico",
+      "year": 2020,
+      "language": "en",
+      "title": "National Education Policy 2020",
+      "raw_file": "india/nep_2020.pdf",
+      "bib_key": "india2020nep"
+    },
+    {
+      "policy_id": "australia_ai_action_plan_2021",
+      "country": "australia",
+      "region": "asia_pacifico",
+      "year": 2021,
+      "language": "en",
+      "title": "Australia's AI Action Plan",
+      "raw_file": "australia/ai_action_plan_2021.pdf",
+      "bib_key": "australia2021aiaction"
+    },
+    {
+      "policy_id": "unesco_genai_guidance_2023",
+      "country": "unesco",
+      "region": "internacional",
+      "year": 2023,
+      "language": "en",
+      "title": "Guidance for Generative AI in Education and Research",
+      "raw_file": "unesco/genai_guidance_2023.pdf",
+      "bib_key": "unesco2023genai"
+    },
+    {
+      "policy_id": "wef_future_of_jobs_2020",
+      "country": "wef",
+      "region": "internacional",
+      "year": 2020,
+      "language": "en",
+      "title": "The Future of Jobs Report 2020",
+      "raw_file": "wef/future_of_jobs_2020.pdf",
+      "bib_key": "wef2020future"
+    }
+  ]
+}

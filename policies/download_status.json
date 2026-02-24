@@ -1,0 +1,206 @@
+{
+  "downloaded": [
+    {
+      "country": "unesco",
+      "file": "genai_guidance_2023.pdf",
+      "bib_key": "unesco2023genai",
+      "status": "Downloaded (1.8 MB)"
+    },
+    {
+      "country": "wef",
+      "file": "future_of_jobs_2020.pdf",
+      "bib_key": "wef2020future",
+      "status": "Already existed"
+    },
+    {
+      "country": "eu",
+      "file": "ai_act_2024.pdf",
+      "bib_key": "eu2024aiact",
+      "status": "Already existed"
+    },
+    {
+      "country": "spain",
+      "file": "enia_2020.pdf",
+      "bib_key": "spain2020enia",
+      "status": "Already existed"
+    },
+    {
+      "country": "france",
+      "file": "villani_report_2018.pdf",
+      "bib_key": "villani2018ai",
+      "status": "Downloaded (1.7 MB)"
+    },
+    {
+      "country": "germany",
+      "file": "ai_strategy_2018.pdf",
+      "bib_key": "germany2018aistrategy",
+      "status": "Already existed"
+    },
+    {
+      "country": "canada",
+      "file": "pan_canadian_ai_strategy_2017.pdf",
+      "bib_key": "canada2017ai",
+      "status": "Downloaded (0.7 MB)"
+    },
+    {
+      "country": "brazil",
+      "file": "ebia_2021.pdf",
+      "bib_key": "brasil2021ebia",
+      "status": "Downloaded (1.6 MB)"
+    },
+    {
+      "country": "colombia",
+      "file": "conpes_3975_2019.pdf",
+      "bib_key": "colombia2019conpes",
+      "status": "Downloaded (0.5 MB)"
+    },
+    {
+      "country": "japan",
+      "file": "ai_strategy_2019.pdf",
+      "bib_key": "japan2019ai",
+      "status": "Downloaded (0.9 MB)"
+    },
+    {
+      "country": "korea",
+      "file": "ai_strategy_2019.pdf",
+      "bib_key": "korea2019ai",
+      "status": "Downloaded (5.8 MB)"
+    },
+    {
+      "country": "singapore",
+      "file": "nais_2019.pdf",
+      "bib_key": "singapore2019nais",
+      "status": "Downloaded (9.0 MB)"
+    },
+    {
+      "country": "india",
+      "file": "aiforall_2018.pdf",
+      "bib_key": "india2018niti",
+      "status": "Downloaded (4.4 MB)"
+    },
+    {
+      "country": "india",
+      "file": "nep_2020.pdf",
+      "bib_key": "india2020nep",
+      "status": "Already existed"
+    },
+    {
+      "country": "australia",
+      "file": "ai_action_plan_2021.pdf",
+      "bib_key": "australia2021aiaction",
+      "status": "Downloaded (8.8 MB)"
+    }
+  ],
+  "manual": [
+    {
+      "country": "oecd",
+      "file": "ai_principles_2019.pdf",
+      "bib_key": "oecd2019ai",
+      "instructions": "MANUAL: Visit https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449"
+    },
+    {
+      "country": "oecd",
+      "file": "digital_education_outlook_2021.pdf",
+      "bib_key": "oecd2021digitaloutlook",
+      "instructions": "MANUAL: OECD publication, requires purchase or library access"
+    },
+    {
+      "country": "worldbank",
+      "file": "reimagining_human_connections_2020.pdf",
+      "bib_key": "worldbank2020reimagining",
+      "instructions": "MANUAL: Search World Bank Open Knowledge Repository"
+    },
+    {
+      "country": "eu",
+      "file": "digital_education_action_plan_2020.pdf",
+      "bib_key": "eu2020deap",
+      "instructions": "MANUAL: Search EUR-Lex for COM(2020) 624 final"
+    },
+    {
+      "country": "germany",
+      "file": "ai_strategy_update_2020.pdf",
+      "bib_key": "germany2020aiupdate",
+      "instructions": "MANUAL: Search bundesregierung.de for Fortschreibung 2020"
+    },
+    {
+      "country": "finland",
+      "file": "ai_strategy_2017.pdf",
+      "bib_key": "finland2017ai",
+      "instructions": "MANUAL: Search tem.fi for Finland's Age of AI report"
+    },
+    {
+      "country": "estonia",
+      "file": "krattai_2019.pdf",
+      "bib_key": "estonia2019krattai",
+      "instructions": "MANUAL: Search kratid.ee or riigikantselei.ee for AI taskforce report"
+    },
+    {
+      "country": "usa",
+      "file": "executive_order_ai_2023.pdf",
+      "bib_key": "whitehouse2023aeo",
+      "instructions": "MANUAL: Visit federalregister.gov and search for EO 14110 (Oct 30, 2023). Save PDF."
+    },
+    {
+      "country": "mexico",
+      "file": "ia_mexico_2018.pdf",
+      "bib_key": "cminds2018iamexico",
+      "instructions": "MANUAL: Search cminds.co for Hacia una Estrategia de IA en Mexico"
+    },
+    {
+      "country": "mexico",
+      "file": "programa_sectorial_educacion_2020.pdf",
+      "bib_key": "sep2020sectorial",
+      "instructions": "MANUAL: Search DOF or sep.gob.mx for PSE 2020-2024"
+    },
+    {
+      "country": "mexico",
+      "file": "nem_plan_estudios_2022.pdf",
+      "bib_key": "sep2022nem",
+      "instructions": "MANUAL: Search sep.gob.mx for Plan de Estudios NEM 2022"
+    },
+    {
+      "country": "chile",
+      "file": "politica_ia_2021.pdf",
+      "bib_key": "chile2021ia",
+      "instructions": "MANUAL: Search minciencia.gob.cl for Politica Nacional de IA"
+    },
+    {
+      "country": "china",
+      "file": "ngaidp_2017.pdf",
+      "bib_key": "china2017ai",
+      "instructions": "MANUAL: Visit https://digichina.stanford.edu/work/full-translation-chinas-new-generation-artificial-intelligence-development-plan-2017/ and save as PDF"
+    }
+  ],
+  "failed": [
+    {
+      "country": "unesco",
+      "file": "beijing_consensus_2019.pdf",
+      "bib_key": "unesco2019beijing",
+      "error": "HTTP 403: Forbidden | URL: https://unesdoc.unesco.org/ark:/48223/pf0000368303/PDF/368303qaa.pdf.multi"
+    },
+    {
+      "country": "unesco",
+      "file": "ethics_recommendation_2021.pdf",
+      "bib_key": "unesco2021ai",
+      "error": "HTTP 403: Forbidden | URL: https://unesdoc.unesco.org/ark:/48223/pf0000381137/PDF/381137eng.pdf.multi"
+    },
+    {
+      "country": "unesco",
+      "file": "ai_education_guidance_2021.pdf",
+      "bib_key": "miao2021guidance",
+      "error": "Error: [Errno 104] Connection reset by peer | URL: https://discovery.ucl.ac.uk/id/eprint/10130180/1/Miao%20and%20Holmes%20-%202021%20-%20AI%20and%20education%20guidance%20for%20policy-makers.pdf"
+    },
+    {
+      "country": "unesco",
+      "file": "gem_report_2023.pdf",
+      "bib_key": "unesco2023gem",
+      "error": "HTTP 403: Forbidden | URL: https://unesdoc.unesco.org/ark:/48223/pf0000385723/PDF/385723eng.pdf.multi"
+    },
+    {
+      "country": "unesco",
+      "file": "ai_education_challenges_2019.pdf",
+      "bib_key": "pedro2019aieducation",
+      "error": "HTTP 403: Forbidden | URL: https://unesdoc.unesco.org/ark:/48223/pf0000366994/PDF/366994eng.pdf.multi"
+    }
+  ]
+}

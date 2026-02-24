@@ -1,0 +1,161 @@
+%% cap02-marco-teorico.tex — Marco Teórico
+%% Iteración 2: revisión triple (/writing + /weakpoints + /proofread)
+
+\chapter{Marco Teórico}
+\label{cap:marco-teorico}
+
+Este capítulo establece las bases conceptuales que sustentan la investigación. Se articula en cinco ejes: la teoría de políticas públicas educativas, el campo de la inteligencia artificial en educación, los marcos normativos de organismos internacionales, la tradición de la educación comparada y el procesamiento de lenguaje natural como herramienta analítica. La integración de estos ejes permite situar el análisis comparativo de políticas de IA educativa dentro de una perspectiva pedagógica informada por métodos computacionales.
+
+
+\section{Políticas Públicas Educativas}
+\label{sec:politicas-publicas}
+
+\subsection{Definición y tipología}
+
+El estudio sistemático de las políticas públicas como campo académico se remonta a los trabajos de \citet{lasswell1951policy}, quien propuso que la investigación sobre políticas requería tanto conocimiento del proceso político como conocimiento aplicado a problemas concretos. Desde entonces, la noción de política pública ha adquirido múltiples acepciones. En su sentido más operativo, una política pública es un curso de acción deliberado adoptado por actores gubernamentales para abordar un problema percibido como de interés colectivo.
+
+Las políticas educativas constituyen un subconjunto con particularidades propias. \citet{rizvi2010globalizing} las definen como el conjunto de directrices, regulaciones y asignaciones de recursos mediante las cuales los gobiernos organizan y orientan los sistemas de enseñanza. A diferencia de otros ámbitos de la política social, las políticas educativas operan simultáneamente como instrumentos de formación de capital humano, mecanismos de cohesión social y vehículos de transmisión cultural.
+
+Para efectos de esta investigación, conviene distinguir entre tipos de política según su función. Las políticas regulatorias establecen normas y restricciones; por ejemplo, la regulación de herramientas de IA en aulas. Las políticas distributivas asignan recursos; por ejemplo, programas de formación docente en competencias digitales. Las políticas constitutivas definen estructuras institucionales; por ejemplo, la creación de agencias nacionales de IA con mandato educativo \citep{rizvi2010globalizing}. En la práctica, las estrategias nacionales de IA combinan elementos de los tres tipos, lo que complica su clasificación pero enriquece el análisis comparativo.
+
+Un rasgo recurrente de las políticas de IA en educación es su carácter programático más que legislativo. La mayoría de los documentos analizados en esta tesis son estrategias, planes de acción o lineamientos, no leyes en sentido estricto. Esta distinción importa porque los documentos programáticos expresan intenciones y prioridades gubernamentales sin necesariamente contar con mecanismos vinculantes de implementación \citep{fatima2020aipolicy}.
+
+
+\subsection{Transferencia y difusión de políticas educativas}
+
+La globalización ha intensificado los flujos de ideas sobre política educativa entre países. \citet{dolowitz2000learning} propusieron un marco analítico para entender la transferencia de políticas como un proceso en el que conocimientos sobre políticas, arreglos administrativos o instituciones de un sistema político se usan para desarrollar políticas en otro. Este proceso puede ser voluntario (aprendizaje de mejores prácticas) o coercitivo (condiciones impuestas por organismos internacionales).
+
+En el campo educativo, \citet{steiner2004global} ha documentado cómo la transferencia de políticas rara vez es una copia literal. Los países adaptan, recontextualizan y transforman las ideas importadas según sus tradiciones institucionales, restricciones presupuestarias y culturas pedagógicas locales. \citet{steinerkhamsi2014cross} distingue entre tres explicaciones para la similitud entre políticas de diferentes países: el préstamo genuino (un país adopta conscientemente la política de otro), la influencia común (varios países responden al mismo estímulo externo) y la convergencia funcional (presiones similares producen respuestas similares de forma independiente).
+
+Estas distinciones son relevantes para interpretar los resultados del análisis semántico. Cuando el pipeline de ChromaDB identifica alta similitud entre los documentos de dos países, las posibles explicaciones incluyen las tres categorías de Steiner-Khamsi. El análisis cualitativo complementario permite distinguir cuál mecanismo opera en cada caso. Por ejemplo, la similitud entre las estrategias de varios países latinoamericanos podría reflejar la influencia común de marcos de la OCDE, mientras que la similitud entre Finlandia y Estonia podría indicar préstamo genuino dada su proximidad geográfica y colaboración bilateral.
+
+\citet{ball1998big} advirtió que el análisis de políticas educativas en un mundo globalizado requiere atender tanto las convergencias discursivas como las divergencias en implementación. Dos países pueden usar vocabulario idéntico (``habilidades del siglo XXI'', ``alfabetización digital'', ``IA responsable'') pero dar a esas frases significados operativos distintos. El análisis de embeddings opera en el plano textual: puede detectar convergencia retórica entre documentos, pero no evalúa por sí mismo la implementación. Similitud semántica alta entre dos políticas indica que comparten vocabulario y estructura discursiva, no que se ejecuten de forma equivalente. La triangulación con análisis cualitativo, propuesta en el Capítulo~\ref{cap:metodologia}, permite distinguir entre convergencia sustantiva y convergencia meramente discursiva.
+
+
+\section{Inteligencia Artificial en Educación}
+\label{sec:ia-educacion}
+
+\subsection{Definiciones operativas de IA}
+
+El término ``inteligencia artificial'' carece de una definición única aceptada. Para esta investigación se adopta la definición operativa de la OCDE: sistemas basados en máquinas que, a partir de objetivos definidos por humanos, generan predicciones, recomendaciones o decisiones que influyen en entornos reales o virtuales \citep{oecd2019ai}. Esta definición tiene la ventaja de ser lo suficientemente amplia para abarcar desde sistemas expertos hasta modelos generativos, y es la que adoptan la mayoría de los documentos de política analizados.
+
+Conviene distinguir entre inteligencia artificial estrecha (capaz de realizar tareas específicas, como clasificar textos o recomendar contenido) e inteligencia artificial general (capaz de igualar o superar la cognición humana en cualquier dominio). Toda la IA existente es estrecha, y las políticas educativas analizadas se refieren exclusivamente a aplicaciones de IA estrecha, aunque algunos documentos mencionan escenarios prospectivos de IA más autónoma.
+
+Dentro de la IA estrecha, el aprendizaje automático (\textit{machine learning}) y, en particular, el aprendizaje profundo (\textit{deep learning}) son las técnicas que han impulsado los avances recientes. Los modelos de lenguaje de gran escala (\textit{large language models}, LLM), como los que subyacen a ChatGPT, representan la aplicación más visible de estas técnicas y han precipitado la urgencia de respuestas educativas \citep{unesco2023genai}.
+
+
+\subsection{Alfabetización en IA (\textit{AI Literacy})}
+
+El concepto de alfabetización en IA ha emergido como un marco para definir qué debe saber un ciudadano sobre inteligencia artificial. \citet{long2020ailiteracy} la definieron como el conjunto de competencias que permiten a las personas evaluar críticamente las tecnologías de IA, comunicarse y colaborar con sistemas de IA, y usar IA como herramienta en actividades cotidianas y profesionales. Su estudio identificó 17 competencias agrupadas en cinco áreas: reconocer IA, comprender su inteligencia, percibir cómo aprende, evaluar sus implicaciones y actuar de forma ética.
+
+\citet{ng2021ailiteracy} ampliaron esta conceptualización mediante una revisión exploratoria que identificó cuatro dimensiones de la alfabetización en IA: conocer y comprender la IA, usar y aplicar la IA, evaluar y crear con IA, y considerar las implicaciones éticas de la IA. En el ámbito de la educación básica, \citet{touretzky2019k12ai} propusieron cinco grandes ideas que todo estudiante debería comprender: percepción, representación y razonamiento, aprendizaje, interacción natural e impacto social.
+
+Estos marcos no son mutuamente excluyentes; convergen en que la alfabetización en IA va más allá de la programación o el uso de herramientas. Incluye dimensiones cognitivas (comprender cómo funciona la IA), prácticas (saber usarla) y éticas (evaluar sus consecuencias). Estas dimensiones sugieren que las políticas nacionales pueden priorizar la alfabetización en IA de modos distintos según conciban la IA como competencia técnica, como herramienta práctica o como objeto de deliberación ética. Determinar cómo se distribuyen estas prioridades entre las 22 unidades de análisis es una de las preguntas empíricas de esta investigación.
+
+
+\subsection{IA como contenido curricular y como herramienta pedagógica}
+
+\citet{holmes2019aied} distinguieron entre IA como contenido de aprendizaje y como herramienta para apoyar el aprendizaje. Esta distinción atraviesa las políticas analizadas y configura dos enfoques complementarios pero distintos.
+
+La IA como contenido curricular implica que los estudiantes aprenden \emph{sobre} IA: qué es, cómo funciona, cuáles son sus limitaciones y qué dilemas éticos plantea. Este enfoque se materializa en asignaturas de programación, robótica, ciencia de datos o ética tecnológica. El caso más ambicioso es Corea del Sur, que estableció la IA como materia obligatoria en educación secundaria a partir de 2025.
+
+La IA como herramienta pedagógica implica que los sistemas de IA apoyan procesos de enseñanza y aprendizaje: tutores inteligentes que personalizan el ritmo de estudio, sistemas de evaluación automatizada, asistentes de escritura o plataformas adaptativas. \citet{holmes2022state} documentaron que la mayoría de las aplicaciones de IA en educación se concentran en este segundo enfoque, particularmente en la personalización del aprendizaje y la automatización de tareas administrativas.
+
+Una tercera dimensión, menos visible en la literatura pero presente en las políticas más recientes, es la IA como objeto de regulación dentro del espacio educativo. La irrupción de los modelos generativos en 2022--2023 obligó a muchos sistemas educativos a definir reglas de uso aceptable antes de poder incorporarla como contenido o herramienta \citep{unesco2023genai}. Esta dimensión regulatoria añade complejidad al panorama y explica por qué algunas de las políticas más recientes se enfocan más en restricciones que en aprovechamiento.
+
+\citet{zawacki2019systematic} señalaron un sesgo persistente en la investigación sobre IA en educación: más del 70\% de los estudios publicados provienen de las ciencias de la computación y la ingeniería, mientras que la participación de investigadores en educación y pedagogía es marginal. Esta observación refuerza la pertinencia de abordar el tema desde una perspectiva pedagógica, como propone esta tesis.
+
+
+\section{Marcos Internacionales}
+\label{sec:marcos-internacionales}
+
+Los organismos internacionales han desempeñado un papel determinante en la configuración del discurso global sobre IA y educación. Sus marcos normativos, aunque no son vinculantes, establecen vocabularios, categorías y prioridades que influyen en las estrategias nacionales \citep{bareis2022talking}. Esta sección examina los cuatro organismos cuyas contribuciones son más citadas en los documentos de política analizados.
+
+
+\subsection{UNESCO: Consenso de Beijing y marcos posteriores}
+
+La UNESCO fue el primer organismo multilateral en abordar específicamente la relación entre IA y educación. El Consenso de Beijing de 2019 estableció cinco áreas prioritarias: gestión de la IA en educación, uso de IA para la gestión educativa, apoyo a docentes mediante IA, uso de datos de forma ética y equitativa, y fomento de la investigación en IA educativa \citep{unesco2019beijing}. Este documento fue resultado de una conferencia con más de 500 participantes de 100 países y constituyó el primer marco internacional dedicado exclusivamente al tema.
+
+Posteriormente, la \textit{Recommendation on the Ethics of Artificial Intelligence} de 2021 amplió la perspectiva ética con principios aplicables a todos los ámbitos, incluido el educativo: proporcionalidad, seguridad, equidad, sostenibilidad, privacidad, supervisión humana, transparencia, responsabilidad y gobernanza \citep{unesco2021ai}. En el mismo año, \citet{miao2021guidance} publicaron una guía dirigida a diseñadores de políticas que tradujo estos principios en recomendaciones concretas para sistemas educativos.
+
+La \textit{Guidance for Generative AI in Education and Research} de 2023 representó la respuesta más rápida de la UNESCO a un cambio tecnológico: apenas diez meses separaron el lanzamiento de ChatGPT de la publicación del documento \citep{unesco2023genai}. La guía adoptó un tono cautelar, enfatizando los riesgos de la IA generativa para la integridad académica, la equidad y la privacidad, al tiempo que reconocía su potencial para personalizar el aprendizaje.
+
+
+\subsection{OCDE: Principios de IA y recomendaciones educativas}
+
+La OCDE adoptó en 2019 sus \textit{Principles on Artificial Intelligence}, que establecen cinco valores para el desarrollo de IA fiable: crecimiento inclusivo, bienestar y sostenibilidad; valores centrados en el ser humano y equidad; transparencia y explicabilidad; robustez, seguridad y protección; y rendición de cuentas \citep{oecd2019ai}. Estos principios fueron los primeros adoptados por un organismo intergubernamental y han sido suscritos por más de 40 países.
+
+En el ámbito educativo, el \textit{OECD Digital Education Outlook 2021} analizó las aplicaciones de IA, blockchain y robótica en educación, concluyendo que la adopción de IA en sistemas educativos era incipiente y desigual \citep{oecd2021digitaloutlook}. El observatorio de políticas de IA de la OCDE (OECD.AI) registra más de 1{,}000 iniciativas en 69 países, pero apenas entre el 5\% y el 8\% se enfocan en educación, lo que confirma la posición marginal del sector educativo en las agendas nacionales de IA.
+
+
+\subsection{Foro Económico Mundial: habilidades del futuro}
+
+El Foro Económico Mundial (FEM) ha influido en el discurso educativo sobre IA principalmente a través de sus informes sobre el futuro del trabajo. El \textit{Future of Jobs Report 2020} estimó que la automatización desplazaría 85 millones de empleos para 2025 pero crearía 97 millones de nuevos puestos, lo que exigiría una reconversión masiva de habilidades \citep{wef2020future}. Esta narrativa de ``destrucción creativa'' de empleos ha sido la justificación más frecuente para introducir formación en IA dentro de los sistemas educativos.
+
+\citet{bareis2022talking} han señalado que el discurso del FEM tiende a enmarcar la educación en IA dentro de una lógica de competitividad económica: los países deben formar trabajadores adaptables para no perder posiciones en la economía global. Esta perspectiva, que los autores denominan ``nacionalismo competitivo'', contrasta con el enfoque de la UNESCO centrado en derechos y equidad. La tensión entre ambas lógicas se refleja en los documentos nacionales, donde frecuentemente coexisten argumentos de competitividad y de equidad sin que se explicite cómo conciliarlos.
+
+
+\subsection{Banco Mundial: IA y desarrollo educativo}
+
+El Banco Mundial ha abordado la relación entre IA y educación desde la perspectiva del desarrollo. Su marco \textit{Reimagining Human Connections} enfatizó que las tecnologías educativas, incluida la IA, solo son efectivas cuando se integran en estrategias pedagógicas coherentes y no como sustitutos de inversiones en infraestructura básica \citep{worldbank2020reimagining}. Esta posición, más cautelosa que la del FEM, refleja la experiencia del organismo con proyectos tecnológicos en países de ingresos bajos y medios que no produjeron los resultados esperados.
+
+El Informe GEM 2023 de UNESCO, producido con aportes de múltiples organismos, sintetizó estas perspectivas al argumentar que la tecnología en educación debe evaluarse con los mismos criterios que cualquier otra intervención: evidencia de efectividad, análisis de costos, pertinencia contextual y alineación con objetivos pedagógicos \citep{unesco2023gem}. Esta posición sirve como contrapeso al entusiasmo tecnológico que caracteriza algunas estrategias nacionales.
+
+
+\section{Análisis Comparativo de Políticas Educativas}
+\label{sec:analisis-comparativo}
+
+\subsection{Tradición de la educación comparada}
+
+La educación comparada como campo académico se consolidó en la segunda mitad del siglo XX con contribuciones que buscaron dotarla de rigor metodológico. \citet{bereday1964comparative} propuso un método de cuatro etapas: descripción (recopilación de datos de cada caso), interpretación (análisis contextualizado), yuxtaposición (colocación lado a lado de los casos) y comparación (identificación de similitudes y diferencias). Este esquema clásico sigue vigente como estructura lógica del análisis comparativo, aunque las herramientas para ejecutarlo han evolucionado.
+
+\citet{noah1969toward} argumentaron que la educación comparada debía adoptar métodos empíricos más rigurosos, acercándose a las ciencias sociales cuantitativas sin perder la sensibilidad contextual que distingue al campo. \citet{bray1995levels} propusieron un marco tridimensional que cruza niveles geográficos (mundial, regional, nacional, subnacional, escolar), grupos demográficos (edad, género, etnia) y aspectos de la educación (currículo, gobernanza, financiamiento). Este ``cubo'' analítico permite situar cualquier estudio comparativo según las dimensiones que aborda.
+
+La presente investigación opera en el nivel nacional del eje geográfico, abarca 22 unidades de análisis (17 países, la Unión Europea y 4 organismos internacionales), y se enfoca en el aspecto de gobernanza y currículo en relación con la IA. Las siete dimensiones de comparación propuestas en el Capítulo~\ref{cap:metodologia} dialogan con el marco de Bray y Thomas al desagregar el ``aspecto'' educativo en componentes específicos del tema de estudio.
+
+
+\subsection{Métodos de análisis comparativo de políticas}
+
+Los métodos de análisis comparativo de políticas educativas han sido predominantemente cualitativos. El análisis de contenido, la codificación temática y el análisis del discurso constituyen las herramientas más utilizadas \citep{bray2014comparative}. \citet{krippendorff2018content} definió el análisis de contenido como una técnica para hacer inferencias reproducibles a partir de textos, y señaló que la reproducibilidad del análisis humano rara vez supera un kappa de Cohen de 0.80, mientras que los métodos computacionales alcanzan reproducibilidad consistente cuando se aplican al mismo corpus con los mismos parámetros.
+
+\citet{fatima2020aipolicy} realizaron uno de los pocos estudios que combinó métodos cualitativos y computacionales para analizar estrategias nacionales de IA. Su análisis de más de 30 documentos identificó que aproximadamente el 90\% de las estrategias mencionan la educación o la formación de la fuerza laboral, pero con niveles dispares de detalle y compromiso presupuestario. Sin embargo, su estudio no se centró específicamente en las dimensiones educativas ni utilizó representaciones vectoriales para medir similitud semántica.
+
+\citet{jobin2019landscape} analizaron 84 documentos de ética de IA y encontraron convergencia en cinco principios (transparencia, justicia, no maleficencia, responsabilidad y privacidad), pero divergencia en cómo se interpretan y operacionalizan. Su método de codificación temática, aplicado manualmente, requirió un esfuerzo considerable que el análisis computacional puede complementar sin reemplazar.
+
+Un vacío persistente en la educación comparada es la escasa adopción de métodos computacionales. Mientras que la ciencia política incorporó el análisis computacional de textos desde la década de 2010 \citep{grimmer2013text}, y la sociología ha explorado el uso de embeddings para capturar estructuras culturales \citep{kozlowski2019geometry}, la educación comparada permanece casi exclusivamente cualitativa. Una búsqueda exploratoria en Scopus con los términos \textit{text mining}, \textit{NLP}, \textit{topic modeling} y \textit{computational text analysis}, filtrada por las revistas \textit{Comparative Education Review}, \textit{Comparative Education} y \textit{Compare} entre 2015 y 2024, arrojó menos del 5\% de artículos que emplearan alguna forma de análisis computacional de textos.\footnote{Búsqueda realizada en octubre de 2024. Los términos se buscaron en título, resumen y palabras clave.} Esta tesis se propone aportar evidencia en esa dirección.
+
+
+\section{Procesamiento de Lenguaje Natural como Herramienta de Investigación Pedagógica}
+\label{sec:nlp-pedagogia}
+
+\subsection{Embeddings y representación semántica de textos}
+
+El procesamiento de lenguaje natural (PLN) ofrece herramientas para analizar textos a una escala que sería impracticable mediante lectura humana. \citet{grimmer2013text} establecieron los principios del paradigma ``texto como datos'': los métodos computacionales de análisis textual amplifican la capacidad del investigador pero no reemplazan su juicio; son herramientas que requieren validación cualitativa constante.
+
+Los embeddings, o representaciones vectoriales de textos, constituyen el avance técnico más relevante para esta investigación. \citet{mikolov2013efficient} demostraron que las palabras pueden representarse como vectores en un espacio de alta dimensionalidad donde la proximidad geométrica corresponde a similitud semántica. Este principio se ha extendido a frases, párrafos y documentos completos mediante modelos como BERT \citep{devlin2019bert} y sus sucesores, que capturan relaciones contextuales complejas.
+
+Para esta tesis, los documentos de política se representan como vectores mediante el modelo \texttt{text-embedding-3-small} de OpenAI, que ha demostrado capacidad multilingüe adecuada para corpus que combinan textos en español, inglés, francés, portugués y alemán. La similitud entre documentos se mide mediante la distancia del coseno entre sus vectores: valores cercanos a 1 indican alta similitud semántica, mientras que valores cercanos a 0 indican contenido semánticamente distante.
+
+\citet{rodriguez2022embeddings} evaluaron el desempeño de diferentes modelos de embeddings en tareas de ciencias sociales y concluyeron que los modelos más recientes superan a los métodos tradicionales (como TF-IDF o modelos de tópicos) en la captura de relaciones semánticas complejas. Sin embargo, advirtieron que la interpretabilidad de los embeddings es menor que la de métodos como los modelos de tópicos estructurales \citep{roberts2019stm}, lo que refuerza la necesidad de triangulación con análisis cualitativo.
+
+
+\subsection{Bases de datos vectoriales y ChromaDB}
+
+Las bases de datos vectoriales son sistemas diseñados para almacenar, indexar y consultar vectores de alta dimensionalidad. A diferencia de las bases de datos relacionales, que buscan coincidencias exactas, las bases vectoriales permiten buscar los documentos más similares a una consulta dada, lo que las hace idóneas para el análisis semántico de corpus documentales.
+
+ChromaDB es una base de datos vectorial de código abierto que permite almacenar documentos junto con sus embeddings y metadatos asociados. En esta investigación, cada fragmento de texto de política se almacena con metadatos que incluyen país de origen, región, año de publicación e idioma. Esto permite realizar consultas semánticas filtradas: por ejemplo, buscar los fragmentos más similares a una consulta sobre ``formación docente en IA'' restringiendo la búsqueda a documentos europeos o a documentos posteriores a 2020.
+
+La elección de ChromaDB sobre otras alternativas (Pinecone, Weaviate, Milvus) responde a criterios prácticos: es de código abierto, permite operación local sin dependencia de servicios en la nube, tiene una API sencilla en Python y ofrece integración con los principales proveedores de embeddings. Para los fines de esta investigación, las capacidades de ChromaDB son suficientes dado el tamaño moderado del corpus (22 documentos de política con aproximadamente 500 a 2{,}000 fragmentos tras el chunking).
+
+
+\subsection{Aplicaciones de PLN en investigación educativa}
+
+La aplicación de técnicas de PLN a la investigación educativa es reciente y se encuentra en una fase de exploración. \citet{nguyen2020words} propusieron un marco para integrar el análisis computacional de textos con las ciencias sociales, argumentando que las técnicas de PLN son más productivas cuando se diseñan en diálogo con preguntas teóricas sustantivas en lugar de aplicarse de forma puramente exploratoria.
+
+\citet{nelson2020computational} desarrolló el concepto de Teoría Fundamentada Computacional (\textit{Computational Grounded Theory}), un enfoque en tres etapas: detección no supervisada de patrones en los datos textuales, refinamiento cualitativo de esos patrones por parte del investigador y confirmación computacional de las categorías refinadas. Esta secuencia se alinea con el diseño metodológico de esta tesis, donde el análisis cualitativo precede al análisis computacional y la triangulación entre ambos valida los hallazgos.
+
+\citet{kozlowski2019geometry} demostraron que la geometría del espacio de embeddings puede capturar estructuras sociales y culturales. Aplicado al análisis de políticas, esto implica que la posición relativa de los documentos en el espacio vectorial puede revelar agrupaciones que reflejan afinidades ideológicas, influencias compartidas o tradiciones de política pública comunes. Cuando el análisis de clusters identifica que los países nórdicos se agrupan juntos y separados de los países latinoamericanos, esa distancia vectorial puede interpretarse como una diferencia en el enfoque y las prioridades de política educativa.
+
+\citet{moretti2013distant} acuñó el concepto de ``lectura distante'' (\textit{distant reading}) para describir el análisis computacional de grandes corpus literarios. La lectura distante no reemplaza la lectura cercana, sino que la complementa al revelar patrones que serían invisibles para un lector individual. Aplicado a las políticas educativas, la lectura distante mediante embeddings permite identificar convergencias y divergencias semánticas entre 22 documentos de forma simultánea, un ejercicio que la lectura cercana de cada documento por separado no podría lograr con la misma sistematicidad.
+
+\citet{gulson2019digitizing} y \citet{williamson2017big} han argumentado que los métodos digitales están comenzando a transformar la investigación en política educativa, aunque su adopción sigue siendo marginal. Esta tesis se inscribe en esa línea emergente al emplear embeddings y búsqueda semántica como herramientas para un análisis comparativo que mantiene la primacía de la interpretación pedagógica.

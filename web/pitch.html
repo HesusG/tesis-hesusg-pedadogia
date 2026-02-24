@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué dicen 14 países sobre IA en educación?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@2"></script>
+    <style>
+        /* ── Variables & Reset ── */
+        :root {
+            --bg: #F5F0E8;
+            --fg: #1a1a1a;
+            --bg-alt: #E8E2D2;
+            --border: 3px solid #1a1a1a;
+            --shadow: 6px 6px 0 #1a1a1a;
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --yellow: #FFD54F;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --europa: #1976d2;
+            --americas: #388e3c;
+            --asia: #d32f2f;
+            --internacional: #7b1fa2;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 100%; overflow-x: hidden; }
+        body {
+            font-family: var(--font-body);
+            background: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        ::selection { background: var(--yellow); color: var(--fg); }
+
+        /* ── Progress Bar ── */
+        #progress {
+            position: fixed; top: 0; left: 0; height: 6px;
+            background: var(--fg); z-index: 9999; width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* ── Side Nav ── */
+        #sidenav {
+            position: fixed; left: 20px; top: 50%;
+            transform: translateY(-50%); z-index: 999;
+            display: flex; flex-direction: column; gap: 0;
+        }
+        .nav-line { width: 2px; height: 16px; background: rgba(0,0,0,0.1); margin: 0 auto; }
+        .nav-dot {
+            width: 14px; height: 14px; border: 3px solid rgba(0,0,0,0.2);
+            background: var(--bg); cursor: pointer;
+            transition: all 0.4s var(--ease); position: relative;
+        }
+        .nav-dot:hover { border-color: var(--fg); transform: scale(1.4); }
+        .nav-dot.active { background: var(--fg); border-color: var(--fg); transform: scale(1.3); }
+        .nav-dot[data-label]:hover::after {
+            content: attr(data-label); position: absolute; left: 24px; top: 50%;
+            transform: translateY(-50%); background: var(--fg); color: var(--bg);
+            padding: 4px 10px; font-family: var(--font-mono); font-size: 0.75rem;
+            white-space: nowrap; pointer-events: none;
+        }
+
+        /* ── Hero ── */
+        #hero {
+            min-height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            padding: 40px 20px; text-align: center;
+            position: relative; overflow: hidden;
+            border-bottom: var(--border);
+        }
+        .hero-bg-text {
+            position: absolute; font-family: var(--font-display);
+            font-weight: 800; font-size: 18vw; line-height: 0.8;
+            opacity: 0.04; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; white-space: nowrap; user-select: none;
+        }
+        .hero-content {
+            position: relative; z-index: 1; max-width: 900px;
+            animation: fadeUp 1s var(--ease);
+        }
+        .hero-tag {
+            font-family: var(--font-mono); font-size: 0.85rem;
+            background: var(--yellow); border: var(--border);
+            padding: 0.3rem 0.8rem; display: inline-block; margin-bottom: 2rem;
+            box-shadow: 4px 4px 0 var(--fg);
+        }
+        .hero-title {
+            font-family: var(--font-display); font-weight: 800;
+            font-size: clamp(2.5rem, 7vw, 5rem); line-height: 0.95;
+            margin-bottom: 1.5rem; letter-spacing: -2px;
+        }
+        .hero-title .hl {
+            background: linear-gradient(180deg, transparent 60%, var(--yellow) 60%);
+            padding: 0 8px;
+        }
+        .hero-sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: #444; font-weight: 500; font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .hero-note {
+            font-family: var(--font-mono); font-size: 0.8rem;
+            color: #888; margin-bottom: 2.5rem;
+        }
+        .hero-stats {
+            display: flex; gap: 1.5rem; flex-wrap: wrap;
+            justify-content: center; margin-bottom: 3rem;
+        }
+        .hero-stat {
+            border: var(--border); padding: 1rem 1.5rem;
+            background: #fff; box-shadow: var(--shadow);
+            opacity: 0; transform: translateY(20px);
+            animation: fadeUp 0.6s var(--ease) forwards;
+        }
+        .hero-stat:nth-child(1) { animation-delay: 0.3s; }
+        .hero-stat:nth-child(2) { animation-delay: 0.5s; }
+        .hero-stat:nth-child(3) { animation-delay: 0.7s; }
+        .hero-stat:nth-child(4) { animation-delay: 0.9s; }
+        .hero-stat-number {
+            font-family: var(--font-display); font-size: 2.2rem;
+            font-weight: 800; line-height: 1;
+        }
+        .hero-stat-label {
+            font-family: var(--font-mono); font-size: 0.7rem;
+            text-transform: uppercase; margin-top: 0.25rem;
+        }
+        .hero-arrow {
+            width: 50px; height: 50px; border: var(--border);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; cursor: pointer; background: var(--bg);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            text-decoration: none; color: var(--fg); margin: 0 auto;
+            transition: transform 0.3s;
+        }
+        .hero-arrow:hover { transform: translateY(4px); box-shadow: 2px 2px 0 var(--fg); }
+
+        /* ── Sections ── */
+        .sec {
+            padding: 100px 40px;
+            display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .sec:nth-child(even) { background: var(--bg-alt); }
+        .sec-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 60px; max-width: 1200px; width: 100%; align-items: center;
+        }
+        .sec-text { order: 1; min-width: 0; }
+        .sec-visual {
+            order: 2; position: relative; display: flex;
+            justify-content: center; align-items: center;
+            min-height: 400px; min-width: 0;
+        }
+        .sec-reversed .sec-text { order: 2; }
+        .sec-reversed .sec-visual { order: 1; }
+
+        /* ── Section Typography ── */
+        .n-badge {
+            font-family: var(--font-display); font-weight: 800;
+            font-size: 6rem; opacity: 0.08; line-height: 1;
+            position: absolute; top: -50px; left: -20px;
+            pointer-events: none; user-select: none;
+        }
+        .s-era {
+            text-transform: uppercase; font-family: var(--font-mono);
+            font-size: 0.85rem; font-weight: 700; letter-spacing: 1px;
+            margin-bottom: 10px; display: block; opacity: 0.8;
+        }
+        .s-name {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw, 3rem);
+            font-weight: 800; line-height: 0.95; margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+        .s-body { font-size: 1.1rem; margin-bottom: 1.5rem; color: #333; line-height: 1.7; }
+        .s-body p { margin-bottom: 1rem; }
+
+        /* ── Takeaway ── */
+        .tk {
+            margin-top: 1.5rem; background: rgba(255,255,255,0.6);
+            padding: 1.2rem 1.5rem; border-left: 6px solid var(--yellow);
+        }
+        .tk-l {
+            font-family: var(--font-mono); font-size: 0.7rem;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            margin-bottom: 0.5rem; font-weight: 700; opacity: 0.7;
+        }
+        .tk p { font-size: 1rem; font-style: italic; font-weight: 500; }
+
+        /* ── Document Icons Grid ── */
+        .doc-grid {
+            display: grid; grid-template-columns: repeat(7, 1fr);
+            gap: 12px; max-width: 350px;
+        }
+        .doc-icon {
+            width: 40px; height: 52px; border: 2px solid var(--fg);
+            background: #fff; position: relative;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+            opacity: 0; transform: translateY(10px);
+            transition: all 0.4s var(--ease);
+        }
+        .doc-icon.vis { opacity: 1; transform: translateY(0); }
+        .doc-icon::after {
+            content: ''; position: absolute; top: 8px; left: 6px;
+            right: 6px; height: 2px; background: rgba(0,0,0,0.15);
+            box-shadow: 0 6px 0 rgba(0,0,0,0.1), 0 12px 0 rgba(0,0,0,0.1);
+        }
+        .doc-icon .doc-flag {
+            position: absolute; bottom: 4px; left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.55rem; font-family: var(--font-mono);
+            font-weight: 700; white-space: nowrap;
+        }
+
+        /* ── Pipeline Diagram ── */
+        .pipeline-diagram {
+            display: flex; align-items: center; gap: 0;
+            flex-wrap: wrap; justify-content: center;
+        }
+        .pipe-step {
+            border: var(--border); padding: 1.2rem 1.5rem;
+            background: #fff; box-shadow: var(--shadow);
+            text-align: center; min-width: 140px;
+            opacity: 0; transform: translateX(-20px);
+            transition: all 0.5s var(--ease);
+        }
+        .pipe-step.vis { opacity: 1; transform: translateX(0); }
+        .pipe-step h4 {
+            font-family: var(--font-display); font-size: 1rem; font-weight: 700;
+        }
+        .pipe-step p {
+            font-family: var(--font-mono); font-size: 0.7rem; color: #666; margin-top: 0.3rem;
+        }
+        .pipe-arrow {
+            font-size: 1.5rem; font-weight: 800; padding: 0 0.5rem;
+            opacity: 0; transition: opacity 0.3s 0.3s;
+        }
+        .pipe-arrow.vis { opacity: 0.3; }
+
+        /* ── Dark Section (Insights) ── */
+        .sec-dark {
+            background: #1a1a1a !important; color: var(--bg);
+            border-bottom-color: rgba(255,255,255,0.05);
+            padding: 100px 40px;
+        }
+        .sec-dark-inner { max-width: 1000px; width: 100%; }
+        .sec-dark h2 {
+            font-family: var(--font-display); font-weight: 800;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            text-align: center; margin-bottom: 3rem;
+        }
+
+        /* ── Insight Cards ── */
+        .insight-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .insight-card {
+            background: #2a2a2a; border: 2px solid rgba(255,255,255,0.15);
+            padding: 2rem; box-shadow: 4px 4px 0 rgba(255,213,79,0.15);
+            opacity: 0; transform: translateY(20px);
+            transition: all 0.5s var(--ease);
+        }
+        .insight-card.vis { opacity: 1; transform: translateY(0); }
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 rgba(255,213,79,0.2);
+        }
+        .insight-big {
+            font-family: var(--font-display); font-weight: 800;
+            font-size: 3.5rem; line-height: 1; margin-bottom: 0.5rem;
+        }
+        .insight-card:nth-child(1) .insight-big { color: var(--americas); }
+        .insight-card:nth-child(2) .insight-big { color: var(--asia); }
+        .insight-card:nth-child(3) .insight-big { color: var(--europa); }
+        .insight-card:nth-child(4) .insight-big { color: var(--internacional); }
+        .insight-title {
+            font-family: var(--font-display); font-weight: 700;
+            font-size: 1.1rem; margin-bottom: 0.5rem;
+        }
+        .insight-desc {
+            font-size: 0.9rem; color: #ccc; line-height: 1.5;
+        }
+
+        /* ── Heatmap Section ── */
+        .heatmap-wrap {
+            border: var(--border); background: #fff;
+            box-shadow: var(--shadow); padding: 1rem;
+            max-width: 500px; width: 100%;
+        }
+        .heatmap-wrap canvas { width: 100% !important; }
+
+        /* ── Centered Section ── */
+        .sec-centered {
+            text-align: center; max-width: 800px;
+            margin: 0 auto;
+        }
+        .next-steps {
+            display: flex; flex-direction: column; gap: 1rem;
+            margin: 2rem 0; text-align: left;
+        }
+        .next-step {
+            display: flex; align-items: flex-start; gap: 1rem;
+            padding: 1rem; border: var(--border); background: #fff;
+            box-shadow: var(--shadow);
+            opacity: 0; transform: translateY(15px);
+            transition: all 0.4s var(--ease);
+        }
+        .next-step.vis { opacity: 1; transform: translateY(0); }
+        .next-step-num {
+            font-family: var(--font-mono); font-weight: 700;
+            background: var(--yellow); border: 2px solid var(--fg);
+            width: 2rem; height: 2rem; display: flex;
+            align-items: center; justify-content: center;
+            flex-shrink: 0; font-size: 0.85rem;
+        }
+        .next-step-text strong {
+            font-family: var(--font-display); display: block; margin-bottom: 0.2rem;
+        }
+        .next-step-text span { font-size: 0.9rem; color: #555; }
+
+        /* ── Footer ── */
+        .pitch-footer {
+            background: var(--fg); color: var(--bg);
+            padding: 3rem 2rem; text-align: center;
+        }
+        .pitch-footer p {
+            font-family: var(--font-mono); font-size: 0.85rem;
+        }
+        .pitch-footer .footer-sub {
+            font-size: 0.75rem; opacity: 0.5; margin-top: 0.5rem;
+        }
+        .pitch-footer a {
+            color: var(--yellow); text-decoration: none;
+        }
+        .pitch-footer a:hover { text-decoration: underline; }
+
+        /* ── Animations ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .rv {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+        }
+        .rv.vis { opacity: 1; transform: translateY(0); }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            #sidenav { display: none; }
+            .sec-grid { grid-template-columns: 1fr; gap: 40px; }
+            .sec-reversed .sec-text { order: 1; }
+            .sec-reversed .sec-visual { order: 2; }
+            .sec-visual { min-height: 250px; }
+            .insight-grid { grid-template-columns: 1fr; }
+            .sec { padding: 60px 20px; }
+            .n-badge { font-size: 4rem; }
+        }
+        @media (max-width: 600px) {
+            .hero-title { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
+            .hero-stats { flex-direction: column; align-items: center; }
+            .hero-stat { width: 100%; max-width: 200px; text-align: center; }
+            .sec { padding: 40px 14px; }
+            .sec-grid { gap: 24px; }
+            .doc-grid { grid-template-columns: repeat(5, 1fr); }
+            .pipeline-diagram { flex-direction: column; }
+            .pipe-arrow { transform: rotate(90deg); }
+            .s-name { font-size: clamp(1.4rem, 5vw, 2rem); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress"></div>
+
+<!-- Side Navigation -->
+<nav id="sidenav"></nav>
+
+<!-- ═══ 1. Hero ═══ -->
+<section id="hero">
+    <div class="hero-bg-text">IA + EDUCACIÓN</div>
+    <div class="hero-content">
+        <div class="hero-tag">Maestría en Pedagogía — UPAEP 2026</div>
+        <h1 class="hero-title">¿Qué dicen <span class="hl">14 países</span> sobre IA en educación?</h1>
+        <p class="hero-sub">Un análisis semántico que revela patrones inesperados.</p>
+        <p class="hero-note">Resultados preliminares de una prueba de concepto.</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-number" data-counter="14">0</div>
+                <div class="hero-stat-label">Políticas</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number" data-counter="7">0</div>
+                <div class="hero-stat-label">Dimensiones</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number" data-counter="5120">0</div>
+                <div class="hero-stat-label">Fragmentos</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-number" data-counter="3">0</div>
+                <div class="hero-stat-label">Clusters</div>
+            </div>
+        </div>
+        <a href="#problem" class="hero-arrow">↓</a>
+    </div>
+</section>
+
+<!-- ═══ 2. The Problem ═══ -->
+<section class="sec" id="problem">
+    <div class="sec-grid">
+        <div class="sec-text rv" style="position:relative">
+            <div class="n-badge">01</div>
+            <span class="s-era">El contexto</span>
+            <h2 class="s-name">Todos hablan de IA en educación. Nadie se pone de acuerdo.</h2>
+            <div class="s-body">
+                <p>Desde 2017, gobiernos de todo el mundo publican estrategias nacionales de inteligencia artificial. Muchos dedican secciones enteras a educación: cómo preparar a los estudiantes, cómo formar a los docentes, qué enseñar y qué regular.</p>
+                <p>Pero, ¿dicen lo mismo? ¿Priorizan las mismas dimensiones? ¿Un país latinoamericano se parece más a su vecino o a uno del otro lado del mundo?</p>
+            </div>
+            <div class="tk">
+                <div class="tk-l">Dato clave</div>
+                <p>14 documentos de política pública. Nadie los había puesto lado a lado con herramientas computacionales.</p>
+            </div>
+        </div>
+        <div class="sec-visual rv">
+            <div class="doc-grid" id="doc-grid">
+                <!-- 14 document icons, populated by JS -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ 3. The Approach ═══ -->
+<section class="sec sec-reversed" id="approach">
+    <div class="sec-grid">
+        <div class="sec-text rv" style="position:relative">
+            <div class="n-badge">02</div>
+            <span class="s-era">El método</span>
+            <h2 class="s-name">Leer documentos con matemáticas</h2>
+            <div class="s-body">
+                <p>Cada documento se divide en fragmentos de texto. Un modelo de lenguaje multilingüe convierte cada fragmento en un vector numérico de 384 dimensiones: su "huella semántica".</p>
+                <p>Después, se calcula la similitud coseno entre todos los pares de políticas. El resultado es un mapa que muestra qué tan parecido es lo que dicen dos países, sin importar en qué idioma lo digan.</p>
+            </div>
+            <div class="tk">
+                <div class="tk-l">Importante</div>
+                <p>No reemplaza la lectura humana. La complementa con una perspectiva cuantitativa.</p>
+            </div>
+        </div>
+        <div class="sec-visual rv">
+            <div class="pipeline-diagram" id="pipeline-diagram">
+                <div class="pipe-step" id="pipe-1">
+                    <h4>Documentos</h4>
+                    <p>14 políticas en 4 idiomas</p>
+                </div>
+                <span class="pipe-arrow">→</span>
+                <div class="pipe-step" id="pipe-2">
+                    <h4>Embeddings</h4>
+                    <p>5,120 vectores de 384 dims</p>
+                </div>
+                <span class="pipe-arrow">→</span>
+                <div class="pipe-step" id="pipe-3">
+                    <h4>Similitud</h4>
+                    <p>91 pares comparados</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ 4. Key Insights (DARK) ═══ -->
+<section class="sec-dark" id="insights">
+    <div class="sec-dark-inner" style="margin:0 auto">
+        <h2>4 cosas que no esperábamos</h2>
+        <div class="insight-grid">
+            <div class="insight-card rv">
+                <div class="insight-big" data-counter="0.965" data-decimal="true">0</div>
+                <div class="insight-title">España y Brasil: casi gemelos</div>
+                <div class="insight-desc">La similitud semántica más alta del corpus. Dos países en continentes distintos, con idiomas diferentes, diciendo casi lo mismo sobre IA y educación.</div>
+            </div>
+            <div class="insight-card rv">
+                <div class="insight-big" data-counter="0.416" data-decimal="true">0</div>
+                <div class="insight-title">El EU AI Act: el lobo solitario</div>
+                <div class="insight-desc">La similitud más baja. Su naturaleza legislativa y su extensión lo separan radicalmente del resto del corpus educativo.</div>
+            </div>
+            <div class="insight-card rv">
+                <div class="insight-big" data-counter="3">0</div>
+                <div class="insight-title">Orientación &gt; Geografía</div>
+                <div class="insight-desc">Los clusters se forman por enfoque estratégico, no por región. Francia se agrupa con Brasil, no con la UE. Canadá va con Japón y Corea.</div>
+            </div>
+            <div class="insight-card rv">
+                <div class="insight-big" data-counter="10">0</div>
+                <div class="insight-title">Todos hablan de maestros</div>
+                <div class="insight-desc">10 de 14 políticas mencionan la formación docente. Pero solo 3 proponen mecanismos concretos. La mayor brecha entre discurso e implementación.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ 5. The Data ═══ -->
+<section class="sec" id="data">
+    <div class="sec-grid">
+        <div class="sec-text rv" style="position:relative">
+            <div class="n-badge">03</div>
+            <span class="s-era">Los datos</span>
+            <h2 class="s-name">El mapa completo</h2>
+            <div class="s-body">
+                <p>Esta matriz muestra la similitud semántica entre cada par de políticas. Los colores más intensos indican mayor convergencia temática.</p>
+                <p>Nótese la fila del EU AI Act: es la más pálida. Y el bloque España-Brasil-Colombia: el más intenso fuera de la diagonal.</p>
+            </div>
+            <div class="tk">
+                <div class="tk-l">Lectura</div>
+                <p>Cada celda representa miles de fragmentos comparados matemáticamente. Un valor de 0.96 indica convergencia casi total; uno de 0.41, temas muy diferentes.</p>
+            </div>
+        </div>
+        <div class="sec-visual rv">
+            <div class="heatmap-wrap">
+                <canvas id="pitch-heatmap" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ 6. What's Next ═══ -->
+<section class="sec" id="next">
+    <div class="sec-centered rv" style="position:relative">
+        <div class="n-badge" style="left:50%;transform:translateX(-50%)">04</div>
+        <span class="s-era" style="text-align:center">Lo que sigue</span>
+        <h2 class="s-name" style="text-align:center">De prueba de concepto a tesis completa</h2>
+        <div class="next-steps">
+            <div class="next-step rv">
+                <div class="next-step-num">1</div>
+                <div class="next-step-text">
+                    <strong>Marco teórico</strong>
+                    <span>Educación comparada, políticas públicas, alfabetización en IA</span>
+                </div>
+            </div>
+            <div class="next-step rv">
+                <div class="next-step-num">2</div>
+                <div class="next-step-text">
+                    <strong>Análisis cualitativo</strong>
+                    <span>Lectura profunda de las 7 dimensiones en los 14 documentos</span>
+                </div>
+            </div>
+            <div class="next-step rv">
+                <div class="next-step-num">3</div>
+                <div class="next-step-text">
+                    <strong>Triangulación</strong>
+                    <span>Cruzar resultados computacionales con el análisis de contenido</span>
+                </div>
+            </div>
+            <div class="next-step rv">
+                <div class="next-step-num">4</div>
+                <div class="next-step-text">
+                    <strong>Validación</strong>
+                    <span>Revisión por expertos y pruebas de robustez</span>
+                </div>
+            </div>
+            <div class="next-step rv">
+                <div class="next-step-num">5</div>
+                <div class="next-step-text">
+                    <strong>Conclusiones</strong>
+                    <span>Implicaciones para México y recomendaciones de política</span>
+                </div>
+            </div>
+        </div>
+        <div class="tk" style="text-align:center;border-left:none;border:var(--border);box-shadow:var(--shadow);background:#fff">
+            <p style="font-style:normal;font-weight:700;font-family:var(--font-display)">La herramienta funciona. Los datos hablan. Ahora falta escucharlos con cuidado.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ 7. Footer ═══ -->
+<footer class="pitch-footer">
+    <p>Hesus García Cobos · Maestría en Pedagogía · UPAEP 2026</p>
+    <p class="footer-sub">Análisis Comparativo de Políticas Públicas sobre Educación en Inteligencia Artificial</p>
+    <p style="margin-top:1rem;font-size:0.75rem"><a href="index.html">Ver resultados completos →</a></p>
+</footer>
+
+<script>
+// ── Country labels for doc grid ──
+const POLICY_LABELS = [
+    { label: 'UE', color: '#1976d2' },
+    { label: 'ES', color: '#1976d2' },
+    { label: 'FR', color: '#1976d2' },
+    { label: 'CA', color: '#388e3c' },
+    { label: 'BR', color: '#388e3c' },
+    { label: 'CO', color: '#388e3c' },
+    { label: 'JP', color: '#d32f2f' },
+    { label: 'KR', color: '#d32f2f' },
+    { label: 'SG', color: '#d32f2f' },
+    { label: 'IN₁', color: '#d32f2f' },
+    { label: 'IN₂', color: '#d32f2f' },
+    { label: 'AU', color: '#d32f2f' },
+    { label: 'UN', color: '#7b1fa2' },
+    { label: 'WEF', color: '#7b1fa2' },
+];
+
+const ABBR_LABELS = ['UE', 'ES', 'FR', 'CA', 'BR', 'CO', 'JP', 'KR', 'SG', 'IN₁', 'IN₂', 'AU', 'UN', 'WEF'];
+
+// ── Animated Counter ──
+function animateCounter(el, target, duration, isDecimal) {
+    const start = performance.now();
+    const format = isDecimal
+        ? (v) => v.toFixed(3)
+        : (v) => Math.round(v).toLocaleString('es-MX');
+
+    function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = format(target * eased);
+        if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+}
+
+// ── Build Document Grid ──
+function buildDocGrid() {
+    const grid = document.getElementById('doc-grid');
+    POLICY_LABELS.forEach((p, i) => {
+        const icon = document.createElement('div');
+        icon.className = 'doc-icon';
+        icon.style.transitionDelay = (i * 0.08) + 's';
+        icon.innerHTML = `<span class="doc-flag" style="color:${p.color}">${p.label}</span>`;
+        grid.appendChild(icon);
+    });
+}
+
+// ── Render Pitch Heatmap ──
+function renderPitchHeatmap(matrix) {
+    const ctx = document.getElementById('pitch-heatmap');
+    if (!ctx || !matrix || matrix.length === 0) return;
+
+    const n = matrix.length;
+    const matrixData = [];
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            matrixData.push({ x: j, y: i, v: matrix[i][j] });
+        }
+    }
+
+    function valueToColor(v) {
+        if (v >= 0.85) return `rgba(211, 47, 47, ${0.7 + (v - 0.85) * 2})`;
+        if (v >= 0.7) return `rgba(255, 152, 0, ${0.4 + (v - 0.7) * 2})`;
+        if (v >= 0.55) return `rgba(255, 213, 79, ${0.3 + (v - 0.55) * 2})`;
+        return `rgba(255, 213, 79, ${Math.max(0.05, v * 0.4)})`;
+    }
+
+    new Chart(ctx, {
+        type: 'matrix',
+        data: {
+            datasets: [{
+                label: 'Similitud',
+                data: matrixData,
+                backgroundColor(context) {
+                    const v = context.dataset.data[context.dataIndex]?.v || 0;
+                    return valueToColor(v);
+                },
+                borderColor: 'rgba(0,0,0,0.05)',
+                borderWidth: 1,
+                width: ({ chart }) => (chart.chartArea || {}).width / n - 1,
+                height: ({ chart }) => (chart.chartArea || {}).height / n - 1,
+            }],
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: {
+                    type: 'category', labels: ABBR_LABELS,
+                    ticks: { font: { family: "'JetBrains Mono'", size: 9 }, maxRotation: 45 },
+                    grid: { display: false },
+                },
+                y: {
+                    type: 'category', labels: ABBR_LABELS, offset: true,
+                    ticks: { font: { family: "'JetBrains Mono'", size: 9 } },
+                    grid: { display: false },
+                },
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        title: () => '',
+                        label(context) {
+                            const d = context.dataset.data[context.dataIndex];
+                            return `${ABBR_LABELS[d.y]} ↔ ${ABBR_LABELS[d.x]}: ${d.v.toFixed(3)}`;
+                        },
+                    },
+                },
+            },
+        },
+    });
+}
+
+// ── Scroll Animations ──
+function initPitchAnimations() {
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add('vis');
+
+                // Counters
+                const counters = e.target.querySelectorAll('[data-counter]');
+                counters.forEach((c) => {
+                    if (c.dataset.counted) return;
+                    c.dataset.counted = 'true';
+                    const target = parseFloat(c.dataset.counter);
+                    const isDecimal = c.dataset.decimal === 'true';
+                    animateCounter(c, target, 1500, isDecimal);
+                });
+
+                // Doc icons within this section
+                const icons = e.target.querySelectorAll('.doc-icon');
+                icons.forEach((icon, i) => {
+                    setTimeout(() => icon.classList.add('vis'), i * 80);
+                });
+
+                // Pipeline steps
+                const steps = e.target.querySelectorAll('.pipe-step, .pipe-arrow');
+                steps.forEach((s, i) => {
+                    setTimeout(() => s.classList.add('vis'), i * 200);
+                });
+
+                // Next steps
+                const nextSteps = e.target.querySelectorAll('.next-step');
+                nextSteps.forEach((s, i) => {
+                    setTimeout(() => s.classList.add('vis'), i * 150);
+                });
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.rv, .sec, .sec-dark, .insight-card, .doc-icon').forEach((el) => obs.observe(el));
+
+    // Hero counters fire immediately
+    document.querySelectorAll('#hero [data-counter]').forEach((c) => {
+        setTimeout(() => {
+            if (c.dataset.counted) return;
+            c.dataset.counted = 'true';
+            const target = parseFloat(c.dataset.counter);
+            animateCounter(c, target, 1500, false);
+        }, 1200);
+    });
+}
+
+// ── Progress Bar ──
+function initPitchProgress() {
+    const bar = document.getElementById('progress');
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0) + '%';
+    });
+}
+
+// ── Side Navigation ──
+function initPitchNav() {
+    const nav = document.getElementById('sidenav');
+    const sections = document.querySelectorAll('section[id]');
+
+    sections.forEach((section, i) => {
+        if (i > 0) {
+            const line = document.createElement('div');
+            line.className = 'nav-line';
+            nav.appendChild(line);
+        }
+        const dot = document.createElement('div');
+        dot.className = 'nav-dot';
+        const h = section.querySelector('h2, h1');
+        dot.dataset.label = h ? h.textContent.substring(0, 30) : '';
+        dot.addEventListener('click', () => section.scrollIntoView({ behavior: 'smooth' }));
+        nav.appendChild(dot);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const index = Array.from(sections).indexOf(entry.target);
+                nav.querySelectorAll('.nav-dot').forEach((d, i) => d.classList.toggle('active', i === index));
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach((s) => observer.observe(s));
+}
+
+// ── Init ──
+async function init() {
+    buildDocGrid();
+    initPitchProgress();
+    initPitchNav();
+
+    // Load data
+    try {
+        const resp = await fetch('data/results.json');
+        if (resp.ok) {
+            const data = await resp.json();
+            renderPitchHeatmap(data.similarity_matrix);
+        }
+    } catch (e) {
+        console.warn('Could not load results.json:', e);
+    }
+
+    initPitchAnimations();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

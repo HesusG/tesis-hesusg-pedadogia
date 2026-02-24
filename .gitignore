@@ -1,0 +1,54 @@
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ChromaDB
+.chroma_db/
+
+# Environment
+.env
+.venv/
+env/
+venv/
+
+# Output (generated, not tracked)
+output/*.pdf
+output/*.docx
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Data (too large for git)
+policies/raw/**/*.pdf
+policies/raw/**/*.docx
+!policies/raw/.gitkeep

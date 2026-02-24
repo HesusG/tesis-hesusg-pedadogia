@@ -1,0 +1,38 @@
+%% main.tex — Tesis de Maestría en Pedagogía, UPAEP
+%% Hesus García Cobos, 2026
+\documentclass{upaep-thesis}
+\input{preamble}
+
+\begin{document}
+
+% ── Frontmatter ──
+\pagenumbering{roman}
+\input{frontmatter/portada}
+\input{frontmatter/dedicatoria}
+\input{frontmatter/agradecimientos}
+\input{frontmatter/resumen}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% ── Mainmatter ──
+\clearpage
+\pagenumbering{arabic}
+\input{chapters/cap01-planteamiento}
+\input{chapters/cap02-marco-teorico}
+\input{chapters/cap03-marco-contextual}
+\input{chapters/cap04-metodologia}
+\input{chapters/cap05-resultados}
+\input{chapters/conclusiones}
+
+% ── Bibliography ──
+\bibliographystyle{apacite}
+\bibliography{referencias}
+
+% ── Appendices ──
+\appendix
+\input{appendices/apendice-catalogo}
+\input{appendices/apendice-herramienta}
+
+\end{document}

@@ -1,0 +1,61 @@
+%% conclusiones.tex — Conclusiones
+\chapter{Conclusiones}
+\label{cap:conclusiones}
+
+% Target: ~5 páginas (~1,250 palabras)
+% Iteration 1 — 2026-02-23
+
+Esta tesis analizó 14 políticas públicas sobre inteligencia artificial de tres regiones geográficas y dos organismos internacionales mediante un enfoque mixto que combinó lectura comparativa cualitativa con análisis semántico computacional. Las conclusiones se organizan en respuesta a los objetivos específicos planteados en la Sección~\ref{subsec:objetivos-especificos}.
+
+\section{Respuesta a los Objetivos de Investigación}
+
+\textbf{OE1: Construir un corpus documental sistematizado de políticas públicas sobre educación en IA.} El corpus resultante comprende 22 unidades de análisis ---5 países europeos y la UE, 6 americanos, 6 de Asia-Pacífico y 4 organismos internacionales---, de las cuales 14 fueron procesadas computacionalmente. Las políticas abarcan el período 2017--2024. La categorización por género discursivo reveló tres tipos: estrategias nacionales integrales, políticas sectoriales y regulación legislativa.
+
+\textbf{OE2: Desarrollar un marco analítico de siete dimensiones para la comparación estructurada de las políticas.} El marco de siete dimensiones permitió comparar las políticas de manera sistemática. Las mayores convergencias entre regiones se dieron en ética y valores; la mayor variación en puntuaciones se observó en infraestructura; y la mayor brecha entre intención declarativa y concreción operativa apareció en formación docente. Asia-Pacífico lideró en investigación e innovación y currículo; Iberoamérica en equidad e inclusión.
+
+\textbf{OE3: Implementar una herramienta de análisis semántico basada en embeddings y ChromaDB.} El pipeline procesó 5{,}120 fragmentos de texto mediante embeddings multilingües y similitud coseno, generando una matriz de $14 \times 14$. Los pares de mayor similitud fueron España--Brasil (0.965) y Japón--Corea del Sur (0.930). El clustering jerárquico identificó dos agrupaciones temáticas y un outlier regulatorio (EU AI Act).
+
+\textbf{OE4: Identificar patrones de similitud y divergencia entre las políticas analizadas.} Tres patrones principales: (a) convergencia iberoamericana transatlántica (España, Brasil, Colombia comparten estructura y prioridades); (b) cluster tecnológico asiático (Japón, Corea, Singapur, India NITI, más Canadá y Australia); (c) la orientación estratégica predice mejor el contenido semántico de una política que su ubicación geográfica.
+
+\textbf{OE5: Formular recomendaciones para la política educativa de IA en México.} A partir del análisis comparativo se derivaron cuatro orientaciones: (a) las estrategias iberoamericanas (España, Brasil, Colombia) como referentes; (b) la formación docente como dimensión prioritaria; (c) un modelo de gobernanza mixto adaptado al contexto institucional de la SEP; y (d) la infraestructura como precondición, a la luz de la brecha digital rural.
+
+
+\section{Hallazgos Principales}
+
+Tres hallazgos merecen énfasis por su contribución a la educación comparada:
+
+\begin{enumerate}
+\item \textbf{Las fronteras regionales no determinan el contenido de las políticas.} La presencia de Francia junto con Brasil y Colombia en el mismo cluster, o de Canadá junto con políticas asiáticas, muestra que la clasificación geográfica ---dominante en la literatura comparativa \citep{bray1995levels}--- no captura la variación real en el contenido de las políticas de IA educativa.
+
+\item \textbf{El análisis semántico computacional complementa ---no sustituye--- la lectura comparativa.} La triangulación mostró convergencia en cinco de siete dimensiones pero también reveló limitaciones: los embeddings capturan proximidad temática del vocabulario sin distinguir entre intención declarativa y concreción operativa. Esta limitación delimita el alcance de la herramienta como generadora de hipótesis, no como sustituto del juicio cualitativo.
+
+\item \textbf{La formación docente es la dimensión más desatendida del corpus.} Diez de 14 políticas la mencionan, pero solo tres proponen mecanismos concretos. Este desfase entre retórica y operacionalización constituye la brecha más consistente del análisis y sugiere un área prioritaria para las políticas en desarrollo, incluida la de México.
+\end{enumerate}
+
+
+\section{Limitaciones}
+
+\begin{itemize}
+\item \textbf{Corpus incompleto.} De las 22 unidades de análisis definidas, 8 no fueron procesadas por restricciones de acceso a los documentos fuente. La ausencia de Estados Unidos, China, Alemania y la OCDE limita la representatividad del análisis, particularmente en las dimensiones de gobernanza e investigación donde estos actores son centrales.
+
+\item \textbf{Modelo de embeddings.} El modelo local (\texttt{paraphrase-multilingual-MiniLM-L12-v2}, 384 dimensiones) fue elegido por su reproducibilidad, pero modelos de mayor dimensionalidad podrían capturar matices semánticos adicionales. La extensión desigual de los documentos (6{,}000 a 620{,}000 caracteres) influye en la representación promedio de cada política.
+
+\item \textbf{Análisis estático.} El corpus captura un momento temporal (2017--2024) sin rastrear la evolución de las políticas. Varias naciones han actualizado sus estrategias desde su publicación original.
+
+\item \textbf{Idioma.} Aunque el modelo es multilingüe, la proximidad entre español y portugués puede inflar la similitud del bloque iberoamericano. No fue posible aislar el componente lingüístico del componente temático.
+\end{itemize}
+
+
+\section{Trabajo Futuro}
+
+\begin{enumerate}
+\item \textbf{Completar el corpus.} Incorporar los 8 documentos pendientes ---particularmente Estados Unidos (EO 14110), China (NGAIDP), Alemania y la OCDE--- para alcanzar la cobertura planeada de 22 unidades.
+
+\item \textbf{Análisis longitudinal.} Rastrear las actualizaciones de políticas (Japón 2022, Corea 2023, Singapur 2.0) para evaluar convergencia o divergencia temporal.
+
+\item \textbf{Validación con modelos alternativos.} Replicar el análisis con \texttt{text-embedding-3-small} (OpenAI, 1{,}536 dimensiones) para comparar resultados y evaluar la robustez de los patrones identificados.
+
+\item \textbf{Estudio de implementación.} La convergencia discursiva identificada no implica convergencia en la implementación. Un estudio de seguimiento que examine la traducción de estas políticas en acciones concretas ---presupuestos, programas, evaluaciones--- completaría el análisis documental.
+
+\item \textbf{Propuesta para México.} Desarrollar, a partir de los insumos comparativos de esta tesis, un documento de política de IA educativa adaptado al contexto institucional mexicano, con atención particular a la formación docente y la infraestructura.
+\end{enumerate}
