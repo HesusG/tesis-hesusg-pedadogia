@@ -8,7 +8,7 @@ OUTPUT_DIR := output
 PIPELINE_DIR := pipeline
 WEB_DIR := web
 
-.PHONY: all pdf docx pipeline web figures setup clean status help
+.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help
 
 all: pdf web
 
@@ -20,6 +20,14 @@ pdf:
 	cd $(TEX_DIR) && pdflatex $(TEX_MAIN).tex
 	cp $(TEX_DIR)/$(TEX_MAIN).pdf $(OUTPUT_DIR)/tesis.pdf
 	@echo "✓ PDF generado: $(OUTPUT_DIR)/tesis.pdf"
+
+pdf-cap01:
+	cd $(TEX_DIR) && pdflatex main_cap01.tex
+	cd $(TEX_DIR) && bibtex main_cap01 || true
+	cd $(TEX_DIR) && pdflatex main_cap01.tex
+	cd $(TEX_DIR) && pdflatex main_cap01.tex
+	cp $(TEX_DIR)/main_cap01.pdf $(OUTPUT_DIR)/tesis_cap01.pdf
+	@echo "✓ PDF Cap01: $(OUTPUT_DIR)/tesis_cap01.pdf"
 
 docx: pdf
 	cd $(TEX_DIR) && pandoc $(TEX_MAIN).tex \
@@ -54,6 +62,10 @@ similarity:
 export:
 	python3 -m pipeline.export
 	@echo "✓ Datos exportados a $(WEB_DIR)/data/results.json"
+
+chunks:
+	python3 -m pipeline.export_chunks
+	@echo "✓ chunk_pairs.json exportado a $(WEB_DIR)/data/"
 
 # ── Web ────────────────────────────────────────────────
 web: export
@@ -102,4 +114,6 @@ help:
 	@echo "  make figures   — Generar figuras para tesis"
 	@echo "  make setup     — Configurar entorno Python"
 	@echo "  make status    — Ver progreso por capítulo"
+	@echo "  make chunks    — Exportar chunk_pairs.json para explorador"
+	@echo "  make pdf-cap01 — Compilar PDF solo hasta capítulo 1"
 	@echo "  make clean     — Limpiar archivos auxiliares"

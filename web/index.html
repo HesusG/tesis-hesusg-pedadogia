@@ -455,6 +455,82 @@
     </div>
 </section>
 
+<!-- ═══ Rigor Metodológico ═══ -->
+<section id="rigor" class="dark-section" style="padding:4rem 2rem">
+    <div class="container">
+        <h2 class="rv" style="color:var(--bg)">Rigor Metodológico</h2>
+        <p class="rv" style="opacity:0.7;margin-bottom:2rem;max-width:750px">Este análisis automatizado complementa — no reemplaza — la lectura cualitativa. A continuación se detallan las limitaciones, la comparación con estudios previos y el estatus de las dimensiones utilizadas.</p>
+
+        <!-- Limitaciones del método -->
+        <div class="rb rv">
+            <div class="rb-header">Limitaciones del método</div>
+            <div class="rb-body">
+                <div class="rigor-item">
+                    <strong>1. Corpus incompleto</strong>
+                    <p>14 de 22 documentos identificados fueron analizados; 8 permanecen pendientes de digitalización. Los resultados reflejan el estado actual del corpus, no la totalidad de las políticas existentes.</p>
+                </div>
+                <div class="rigor-item">
+                    <strong>2. Modelo de embedding</strong>
+                    <p>El modelo MiniLM (384 dimensiones) captura proximidad temática general, pero no matiz retórico ni intención legislativa. Un modelo más grande (e.g. OpenAI text-embedding-3, 1536 dims) podría detectar distinciones más finas.</p>
+                </div>
+                <div class="rigor-item">
+                    <strong>3. Análisis estático</strong>
+                    <p>El corpus captura el estado de las políticas entre 2017 y 2024. No refleja evolución temporal ni grado de implementación real de cada documento.</p>
+                </div>
+                <div class="rigor-item">
+                    <strong>4. Sesgo lingüístico</strong>
+                    <p>La proximidad entre español y portugués puede inflar la similitud España-Brasil/Colombia. El inglés como lingua franca de los documentos anglófonos favorece su agrupamiento mutuo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marco comparativo -->
+        <div class="rb rv">
+            <div class="rb-header">¿Cómo se comparan estos resultados?</div>
+            <div class="rb-body">
+                <p style="margin-bottom:1rem;font-size:0.95rem">Cinco convergencias con la literatura cualitativa previa y dos divergencias parciales.</p>
+
+                <h4 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.75rem;opacity:0.6">Convergencias</h4>
+                <div class="rigor-converge">
+                    <strong>Bloque iberoamericano</strong> — La alta similitud España-Brasil-Colombia confirma la existencia de un eje iberoamericano en política educativa de IA (Miao et al., 2021).
+                </div>
+                <div class="rigor-converge">
+                    <strong>Cluster tecnológico</strong> — El agrupamiento CA/JP/KR/SG se alinea con el enfoque STEM-first documentado por la OCDE (2021).
+                </div>
+                <div class="rigor-converge">
+                    <strong>EU AI Act como outlier</strong> — Su aislamiento confirma que es un documento regulatorio, no una estrategia educativa (Pedro et al., 2019).
+                </div>
+                <div class="rigor-converge">
+                    <strong>Organismos internacionales como puente</strong> — UNESCO y WEF conectan clusters, confirmando su rol articulador entre enfoques nacionales (Steiner-Khamsi, 2014).
+                </div>
+                <div class="rigor-converge">
+                    <strong>Ética como eje transversal</strong> — La dimensión ética aparece en todos los documentos, confirmando la tendencia global identificada por UNESCO (2023).
+                </div>
+
+                <h4 style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;margin:1.25rem 0 0.75rem;opacity:0.6">Divergencias parciales</h4>
+                <div class="rigor-diverge">
+                    <strong>India fragmentada</strong> — NITI Aayog aparece en el cluster tecnológico e India NEP en el integral. La literatura cualitativa suele tratar a India como bloque único.
+                </div>
+                <div class="rigor-diverge">
+                    <strong>Australia con Asia</strong> — Australia se agrupa más cerca de las políticas asiáticas que de la anglosfera. La orientación estratégica del documento supera la afinidad lingüística.
+                </div>
+            </div>
+        </div>
+
+        <!-- Validación de dimensiones -->
+        <div class="rb rv">
+            <div class="rb-header">Sobre las 7 dimensiones de análisis</div>
+            <div class="rb-body">
+                <p style="margin-bottom:1rem;font-size:0.95rem">Las 7 dimensiones se derivaron mediante un proceso <strong>inductivo-deductivo</strong>: se partió del marco del Consenso de Beijing (UNESCO, 2019), se cruzó con el Digital Education Outlook (OCDE, 2021) y la revisión de Miao et al. (2021). Cada dimensión se operacionalizó como frases semilla en español, embebidas como vectores, y puntuadas por similitud coseno contra los fragmentos del corpus.</p>
+                <p style="margin-bottom:1rem;font-size:0.95rem">La pestaña <a href="#explainer" style="color:var(--yellow);text-decoration:underline">«¿Cómo se definieron las 7 dimensiones?»</a> en la sección de explicadores detalla el proceso técnico completo.</p>
+                <div class="rigor-disclaimer">
+                    <strong>Nota importante:</strong> Las 7 dimensiones constituyen una <strong>propuesta analítica</strong> derivada de la revisión de literatura. No han sido validadas por panel de expertos ni por método Delphi. Futuras investigaciones deberían someter este marco a validación externa.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ═══ Country Profiles ═══ -->
 <section id="profiles" class="container">
     <h2 class="rv">Perfiles por Política</h2>
@@ -525,7 +601,11 @@
     <p class="mono" style="font-size:0.75rem;opacity:0.5;margin-top:0.5rem;color:var(--bg)">
         Análisis Comparativo de Políticas Públicas sobre Educación en IA
     </p>
-    <p style="margin-top:1rem;font-size:0.75rem"><a href="pitch.html">Ver la presentación de concepto →</a></p>
+    <p style="margin-top:1rem;font-size:0.75rem">
+        <a href="explorer.html">Explorador interactivo de políticas →</a>
+        &nbsp;·&nbsp;
+        <a href="pitch.html">Ver la presentación de concepto →</a>
+    </p>
 </footer>
 
 <script src="js/app.js"></script>

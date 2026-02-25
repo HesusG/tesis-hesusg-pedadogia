@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Políticas — IA en Educación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/explorer.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script src="https://cdn.plot.ly/plotly-2.35.0.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<!-- ═══ Header ═══ -->
+<header class="explorer-header">
+    <div class="explorer-header-inner">
+        <div class="explorer-title-row">
+            <a href="index.html" class="explorer-back" title="Volver a resultados">&larr;</a>
+            <h1>Explorador de Políticas</h1>
+            <span class="tag" style="margin-left:1rem">Comparación interactiva</span>
+        </div>
+        <div class="explorer-controls" id="global-controls">
+            <div class="control-group">
+                <label class="control-label">Región</label>
+                <select id="filter-region">
+                    <option value="all">Todas</option>
+                    <option value="europa">Europa</option>
+                    <option value="americas">Américas</option>
+                    <option value="asia_pacifico">Asia-Pacífico</option>
+                    <option value="internacional">Internacional</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Dimensión</label>
+                <select id="filter-dimension">
+                    <option value="all">Todas</option>
+                    <option value="gobernanza">Gobernanza</option>
+                    <option value="curriculo">Currículo</option>
+                    <option value="formacion_docente">Formación docente</option>
+                    <option value="infraestructura">Infraestructura</option>
+                    <option value="etica">Ética</option>
+                    <option value="investigacion">Investigación</option>
+                    <option value="equidad">Equidad</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Similitud <span id="threshold-value" class="mono">0.70</span></label>
+                <input type="range" id="threshold-slider" min="0.40" max="0.95" step="0.01" value="0.70">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ═══ Main Layout: Sidebar + Viz + Detail ═══ -->
+<div class="explorer-layout" id="explorer-layout">
+
+    <!-- Sidebar: Policy List -->
+    <aside class="explorer-sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>Políticas <span class="mono" id="sidebar-count">(14)</span></h3>
+            <div class="sidebar-hint mono">Selecciona 2 para comparar</div>
+        </div>
+        <div class="sidebar-list" id="sidebar-list">
+            <!-- Populated by JS -->
+        </div>
+        <div class="sidebar-selection" id="sidebar-selection" style="display:none">
+            <div class="selection-label mono">Selección:</div>
+            <div id="selection-tags"></div>
+            <button class="btn-clear" id="btn-clear-selection">Limpiar</button>
+        </div>
+    </aside>
+
+    <!-- Main Visualization Area -->
+    <main class="explorer-main">
+        <!-- Viz Tabs -->
+        <div class="viz-tabs" id="viz-tabs">
+            <button class="active" data-viz="chord">Chord</button>
+            <button data-viz="network">Red</button>
+            <button data-viz="heatmap">Heatmap</button>
+            <button data-viz="parallel">Coordenadas</button>
+        </div>
+
+        <!-- Viz Panels -->
+        <div class="viz-panel active" id="viz-chord">
+            <div id="chord-chart"></div>
+        </div>
+        <div class="viz-panel" id="viz-network">
+            <div id="explorer-network-chart"></div>
+        </div>
+        <div class="viz-panel" id="viz-heatmap">
+            <canvas id="explorer-heatmap"></canvas>
+        </div>
+        <div class="viz-panel" id="viz-parallel">
+            <div id="explorer-parallel-chart"></div>
+        </div>
+    </main>
+
+    <!-- Detail Panel -->
+    <aside class="explorer-detail" id="detail-panel">
+        <div class="detail-placeholder" id="detail-placeholder">
+            <div class="detail-icon">&#9672;</div>
+            <p>Selecciona dos políticas para ver su comparación dimensional.</p>
+        </div>
+        <div class="detail-content" id="detail-content" style="display:none">
+            <h3 id="detail-title">Comparación</h3>
+            <div class="detail-sim-badge" id="detail-sim-badge"></div>
+            <canvas id="detail-radar" height="260"></canvas>
+            <div class="detail-meta" id="detail-meta"></div>
+        </div>
+    </aside>
+</div>
+
+<!-- ═══ Text Comparison Panel (expandable) ═══ -->
+<div class="text-panel" id="text-panel">
+    <div class="text-panel-header" id="text-panel-header">
+        <button class="text-panel-toggle" id="text-panel-toggle">
+            <span class="toggle-arrow">&#9650;</span>
+            Comparación de Texto
+            <span class="mono" id="text-panel-pair"></span>
+        </button>
+    </div>
+    <div class="text-panel-body" id="text-panel-body">
+        <div class="text-columns">
+            <div class="text-column" id="text-col-a">
+                <div class="text-column-header" id="text-header-a">Documento A</div>
+                <div class="text-chunks" id="text-chunks-a"></div>
+            </div>
+            <div class="text-divider"></div>
+            <div class="text-column" id="text-col-b">
+                <div class="text-column-header" id="text-header-b">Documento B</div>
+                <div class="text-chunks" id="text-chunks-b"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ Footer ═══ -->
+<footer class="dark-footer">
+    <p class="mono" style="font-size:0.85rem;color:var(--bg)">
+        Hesus García Cobos · Maestría en Pedagogía · UPAEP 2026
+    </p>
+    <p style="margin-top:0.5rem;font-size:0.75rem">
+        <a href="index.html">&larr; Volver a resultados</a>
+    </p>
+</footer>
+
+<script src="js/explorer-app.js"></script>
+<script src="js/explorer-chord.js"></script>
+<script src="js/explorer-text.js"></script>
+</body>
+</html>

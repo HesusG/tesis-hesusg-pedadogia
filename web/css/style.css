@@ -972,6 +972,32 @@ footer.dark-footer {
   color: #ccc;
 }
 
+/* ── Rigor section ── */
+.dark-section .rb {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.15);
+  box-shadow: 4px 4px 0 rgba(255,213,79,0.08);
+  color: var(--bg);
+}
+
+.dark-section .rb-header { color: var(--bg); }
+
+.rigor-item { margin-bottom: 1rem; line-height: 1.6; font-size: 0.95rem; }
+.rigor-item strong { font-family: var(--font-display); }
+.rigor-item p { margin-top: 0.25rem; opacity: 0.85; }
+
+.rigor-converge { border-left: 4px solid #66BB6A; padding-left: 1rem; margin-bottom: 0.75rem; line-height: 1.6; font-size: 0.95rem; }
+.rigor-diverge  { border-left: 4px solid #FFD54F; padding-left: 1rem; margin-bottom: 0.75rem; line-height: 1.6; font-size: 0.95rem; }
+
+.rigor-disclaimer {
+  border-left: 4px solid #FFD54F;
+  background: rgba(255,213,79,0.08);
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 /* ── Plotly container overrides ── */
 .chart-wrap [id$="-chart"] .plotly {
   font-family: var(--font-body) !important;

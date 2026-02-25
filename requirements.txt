@@ -21,6 +21,11 @@ beautifulsoup4>=4.12.0
 matplotlib>=3.7.0
 seaborn>=0.12.0
 
+# Validation notebook
+jupyter>=1.0.0
+together>=1.0.0
+rank_bm25>=0.2.2
+
 # Utilities
 python-dotenv>=1.0.0
 tqdm>=4.65.0

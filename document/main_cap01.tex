@@ -1,0 +1,26 @@
+%% main_cap01.tex — Tesis parcial (hasta Capítulo 1)
+%% Hesus García Cobos, 2026
+\documentclass{upaep-thesis}
+\input{preamble}
+
+\begin{document}
+
+% ── Frontmatter ──
+\pagenumbering{roman}
+\input{frontmatter/portada}
+\input{frontmatter/dedicatoria}
+\input{frontmatter/agradecimientos}
+\input{frontmatter/resumen}
+
+\tableofcontents
+
+% ── Mainmatter ──
+\clearpage
+\pagenumbering{arabic}
+\input{chapters/cap01-planteamiento}
+
+% ── Bibliography ──
+\bibliographystyle{apacite}
+\bibliography{referencias}
+
+\end{document}
