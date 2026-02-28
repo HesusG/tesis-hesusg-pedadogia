@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Qué dicen 14 países sobre IA en educación?</title>
+    <title>¿Por qué comparar políticas de IA en educación?</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@2"></script>
     <style>
         /* ── Variables & Reset ── */
         :root {
@@ -109,28 +107,6 @@
         .hero-note {
             font-family: var(--font-mono); font-size: 0.8rem;
             color: #888; margin-bottom: 2.5rem;
-        }
-        .hero-stats {
-            display: flex; gap: 1.5rem; flex-wrap: wrap;
-            justify-content: center; margin-bottom: 3rem;
-        }
-        .hero-stat {
-            border: var(--border); padding: 1rem 1.5rem;
-            background: #fff; box-shadow: var(--shadow);
-            opacity: 0; transform: translateY(20px);
-            animation: fadeUp 0.6s var(--ease) forwards;
-        }
-        .hero-stat:nth-child(1) { animation-delay: 0.3s; }
-        .hero-stat:nth-child(2) { animation-delay: 0.5s; }
-        .hero-stat:nth-child(3) { animation-delay: 0.7s; }
-        .hero-stat:nth-child(4) { animation-delay: 0.9s; }
-        .hero-stat-number {
-            font-family: var(--font-display); font-size: 2.2rem;
-            font-weight: 800; line-height: 1;
-        }
-        .hero-stat-label {
-            font-family: var(--font-mono); font-size: 0.7rem;
-            text-transform: uppercase; margin-top: 0.25rem;
         }
         .hero-arrow {
             width: 50px; height: 50px; border: var(--border);
@@ -246,7 +222,7 @@
         }
         .pipe-arrow.vis { opacity: 0.3; }
 
-        /* ── Dark Section (Insights) ── */
+        /* ── Dark Section ── */
         .sec-dark {
             background: #1a1a1a !important; color: var(--bg);
             border-bottom-color: rgba(255,255,255,0.05);
@@ -259,74 +235,111 @@
             text-align: center; margin-bottom: 3rem;
         }
 
-        /* ── Insight Cards ── */
-        .insight-grid {
+        /* ── Question Cards ── */
+        .question-grid {
             display: grid; grid-template-columns: 1fr 1fr;
             gap: 1.5rem;
         }
-        .insight-card {
+        .question-card {
             background: #2a2a2a; border: 2px solid rgba(255,255,255,0.15);
             padding: 2rem; box-shadow: 4px 4px 0 rgba(255,213,79,0.15);
             opacity: 0; transform: translateY(20px);
             transition: all 0.5s var(--ease);
         }
-        .insight-card.vis { opacity: 1; transform: translateY(0); }
-        .insight-card:hover {
+        .question-card.vis { opacity: 1; transform: translateY(0); }
+        .question-card:hover {
             transform: translateY(-5px);
             box-shadow: 8px 8px 0 rgba(255,213,79,0.2);
         }
-        .insight-big {
+        .question-icon {
             font-family: var(--font-display); font-weight: 800;
-            font-size: 3.5rem; line-height: 1; margin-bottom: 0.5rem;
+            font-size: 2.5rem; line-height: 1; margin-bottom: 0.8rem;
         }
-        .insight-card:nth-child(1) .insight-big { color: var(--americas); }
-        .insight-card:nth-child(2) .insight-big { color: var(--asia); }
-        .insight-card:nth-child(3) .insight-big { color: var(--europa); }
-        .insight-card:nth-child(4) .insight-big { color: var(--internacional); }
-        .insight-title {
+        .question-card:nth-child(1) .question-icon { color: var(--americas); }
+        .question-card:nth-child(2) .question-icon { color: var(--asia); }
+        .question-card:nth-child(3) .question-icon { color: var(--europa); }
+        .question-card:nth-child(4) .question-icon { color: var(--internacional); }
+        .question-title {
             font-family: var(--font-display); font-weight: 700;
             font-size: 1.1rem; margin-bottom: 0.5rem;
         }
-        .insight-desc {
+        .question-desc {
             font-size: 0.9rem; color: #ccc; line-height: 1.5;
         }
 
-        /* ── Heatmap Section ── */
-        .heatmap-wrap {
-            border: var(--border); background: #fff;
-            box-shadow: var(--shadow); padding: 1rem;
-            max-width: 500px; width: 100%;
+        /* ── Dimension Cards ── */
+        .dim-grid {
+            display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+            max-width: 500px;
         }
-        .heatmap-wrap canvas { width: 100% !important; }
+        .dim-card {
+            border: var(--border); padding: 0.8rem 1.2rem;
+            background: #fff; box-shadow: 4px 4px 0 rgba(0,0,0,0.08);
+            font-family: var(--font-mono); font-size: 0.8rem;
+            font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0; transform: scale(0.9);
+            transition: all 0.4s var(--ease);
+        }
+        .dim-card.vis { opacity: 1; transform: scale(1); }
+        .dim-card:nth-child(1) { border-color: #1565c0; color: #1565c0; }
+        .dim-card:nth-child(2) { border-color: #2e7d32; color: #2e7d32; }
+        .dim-card:nth-child(3) { border-color: #e65100; color: #e65100; }
+        .dim-card:nth-child(4) { border-color: #6a1b9a; color: #6a1b9a; }
+        .dim-card:nth-child(5) { border-color: #c62828; color: #c62828; }
+        .dim-card:nth-child(6) { border-color: #00838f; color: #00838f; }
+        .dim-card:nth-child(7) { border-color: #4e342e; color: #4e342e; }
 
         /* ── Centered Section ── */
         .sec-centered {
             text-align: center; max-width: 800px;
             margin: 0 auto;
         }
-        .next-steps {
+        .benefit-list {
             display: flex; flex-direction: column; gap: 1rem;
             margin: 2rem 0; text-align: left;
         }
-        .next-step {
+        .benefit-item {
             display: flex; align-items: flex-start; gap: 1rem;
             padding: 1rem; border: var(--border); background: #fff;
             box-shadow: var(--shadow);
             opacity: 0; transform: translateY(15px);
             transition: all 0.4s var(--ease);
         }
-        .next-step.vis { opacity: 1; transform: translateY(0); }
-        .next-step-num {
+        .benefit-item.vis { opacity: 1; transform: translateY(0); }
+        .benefit-icon {
             font-family: var(--font-mono); font-weight: 700;
             background: var(--yellow); border: 2px solid var(--fg);
             width: 2rem; height: 2rem; display: flex;
             align-items: center; justify-content: center;
             flex-shrink: 0; font-size: 0.85rem;
         }
-        .next-step-text strong {
+        .benefit-text strong {
             font-family: var(--font-display); display: block; margin-bottom: 0.2rem;
         }
-        .next-step-text span { font-size: 0.9rem; color: #555; }
+        .benefit-text span { font-size: 0.9rem; color: #555; }
+
+        /* ── Region Map ── */
+        .region-list {
+            display: flex; flex-direction: column; gap: 1rem;
+            max-width: 400px; width: 100%;
+        }
+        .region-row {
+            display: flex; align-items: center; gap: 0.8rem;
+            opacity: 0; transform: translateX(-15px);
+            transition: all 0.4s var(--ease);
+        }
+        .region-row.vis { opacity: 1; transform: translateX(0); }
+        .region-dot {
+            width: 16px; height: 16px; border: 2px solid var(--fg);
+            flex-shrink: 0;
+        }
+        .region-label {
+            font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+        }
+        .region-countries {
+            font-family: var(--font-mono); font-size: 0.75rem; color: #666;
+        }
 
         /* ── Footer ── */
         .pitch-footer {
@@ -362,14 +375,12 @@
             .sec-reversed .sec-text { order: 1; }
             .sec-reversed .sec-visual { order: 2; }
             .sec-visual { min-height: 250px; }
-            .insight-grid { grid-template-columns: 1fr; }
+            .question-grid { grid-template-columns: 1fr; }
             .sec { padding: 60px 20px; }
             .n-badge { font-size: 4rem; }
         }
         @media (max-width: 600px) {
             .hero-title { font-size: clamp(1.8rem, 8vw, 2.5rem) !important; }
-            .hero-stats { flex-direction: column; align-items: center; }
-            .hero-stat { width: 100%; max-width: 200px; text-align: center; }
             .sec { padding: 40px 14px; }
             .sec-grid { gap: 24px; }
             .doc-grid { grid-template-columns: repeat(5, 1fr); }
@@ -392,45 +403,27 @@
     <div class="hero-bg-text">IA + EDUCACIÓN</div>
     <div class="hero-content">
         <div class="hero-tag">Maestría en Pedagogía — UPAEP 2026</div>
-        <h1 class="hero-title">¿Qué dicen <span class="hl">14 países</span> sobre IA en educación?</h1>
-        <p class="hero-sub">Un análisis semántico que revela patrones inesperados.</p>
-        <p class="hero-note">Resultados preliminares de una prueba de concepto.</p>
-        <div class="hero-stats">
-            <div class="hero-stat">
-                <div class="hero-stat-number" data-counter="14">0</div>
-                <div class="hero-stat-label">Políticas</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-number" data-counter="7">0</div>
-                <div class="hero-stat-label">Dimensiones</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-number" data-counter="5120">0</div>
-                <div class="hero-stat-label">Fragmentos</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-number" data-counter="3">0</div>
-                <div class="hero-stat-label">Clusters</div>
-            </div>
-        </div>
-        <a href="#problem" class="hero-arrow">↓</a>
+        <h1 class="hero-title">¿Cómo preparan los países a sus ciudadanos para la <span class="hl">era de la IA</span>?</h1>
+        <p class="hero-sub">Un análisis comparativo de políticas públicas sobre educación e inteligencia artificial.</p>
+        <p class="hero-note">Propuesta de investigación — Hesus García Cobos</p>
+        <a href="#why" class="hero-arrow">↓</a>
     </div>
 </section>
 
-<!-- ═══ 2. The Problem ═══ -->
-<section class="sec" id="problem">
+<!-- ═══ 2. Why This Matters ═══ -->
+<section class="sec" id="why">
     <div class="sec-grid">
         <div class="sec-text rv" style="position:relative">
             <div class="n-badge">01</div>
-            <span class="s-era">El contexto</span>
-            <h2 class="s-name">Todos hablan de IA en educación. Nadie se pone de acuerdo.</h2>
+            <span class="s-era">El problema</span>
+            <h2 class="s-name">La IA transforma la educación. La política no puede quedarse atrás.</h2>
             <div class="s-body">
-                <p>Desde 2017, gobiernos de todo el mundo publican estrategias nacionales de inteligencia artificial. Muchos dedican secciones enteras a educación: cómo preparar a los estudiantes, cómo formar a los docentes, qué enseñar y qué regular.</p>
-                <p>Pero, ¿dicen lo mismo? ¿Priorizan las mismas dimensiones? ¿Un país latinoamericano se parece más a su vecino o a uno del otro lado del mundo?</p>
+                <p>La inteligencia artificial ya está en las aulas: tutores adaptativos, sistemas de evaluación automatizada, asistentes de escritura. Pero cada país responde de manera distinta. Algunos regulan, otros incentivan, otros ignoran.</p>
+                <p>Para México, que aún no cuenta con una estrategia nacional consolidada de IA en educación, entender qué hacen otros países no es curiosidad académica. Es una necesidad urgente.</p>
             </div>
             <div class="tk">
-                <div class="tk-l">Dato clave</div>
-                <p>14 documentos de política pública. Nadie los había puesto lado a lado con herramientas computacionales.</p>
+                <div class="tk-l">La brecha</div>
+                <p>No existe un estudio comparativo sistemático que analice las políticas de IA en educación usando métodos computacionales. Los análisis existentes son cualitativos, cubren pocos países, o no abordan la dimensión educativa.</p>
             </div>
         </div>
         <div class="sec-visual rv">
@@ -441,150 +434,207 @@
     </div>
 </section>
 
-<!-- ═══ 3. The Approach ═══ -->
-<section class="sec sec-reversed" id="approach">
+<!-- ═══ 3. What We Propose ═══ -->
+<section class="sec sec-reversed" id="what">
     <div class="sec-grid">
         <div class="sec-text rv" style="position:relative">
             <div class="n-badge">02</div>
-            <span class="s-era">El método</span>
-            <h2 class="s-name">Leer documentos con matemáticas</h2>
+            <span class="s-era">La propuesta</span>
+            <h2 class="s-name">Leer 14 políticas con ojos humanos y herramientas computacionales</h2>
             <div class="s-body">
-                <p>Cada documento se divide en fragmentos de texto. Un modelo de lenguaje multilingüe convierte cada fragmento en un vector numérico de 384 dimensiones: su "huella semántica".</p>
-                <p>Después, se calcula la similitud coseno entre todos los pares de políticas. El resultado es un mapa que muestra qué tan parecido es lo que dicen dos países, sin importar en qué idioma lo digan.</p>
+                <p>Seleccionamos 14 documentos de política pública de 12 países y 2 organismos internacionales. Cada documento se divide en fragmentos de texto y se convierte en vectores numéricos mediante un modelo de lenguaje multilingüe.</p>
+                <p>Esto permite calcular la similitud semántica entre documentos sin importar el idioma original: español, inglés, francés, japonés o coreano.</p>
             </div>
             <div class="tk">
-                <div class="tk-l">Importante</div>
-                <p>No reemplaza la lectura humana. La complementa con una perspectiva cuantitativa.</p>
+                <div class="tk-l">Enfoque mixto</div>
+                <p>No reemplazamos la lectura humana. La complementamos con una perspectiva cuantitativa que detecta patrones invisibles a simple vista.</p>
             </div>
         </div>
         <div class="sec-visual rv">
             <div class="pipeline-diagram" id="pipeline-diagram">
                 <div class="pipe-step" id="pipe-1">
                     <h4>Documentos</h4>
-                    <p>14 políticas en 4 idiomas</p>
+                    <p>14 políticas, 4 idiomas</p>
                 </div>
                 <span class="pipe-arrow">→</span>
                 <div class="pipe-step" id="pipe-2">
                     <h4>Embeddings</h4>
-                    <p>5,120 vectores de 384 dims</p>
+                    <p>Vectores semánticos</p>
                 </div>
                 <span class="pipe-arrow">→</span>
                 <div class="pipe-step" id="pipe-3">
-                    <h4>Similitud</h4>
-                    <p>91 pares comparados</p>
+                    <h4>Análisis</h4>
+                    <p>Similitud + clustering</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══ 4. Key Insights (DARK) ═══ -->
-<section class="sec-dark" id="insights">
+<!-- ═══ 4. The Questions (DARK) ═══ -->
+<section class="sec-dark" id="questions">
     <div class="sec-dark-inner" style="margin:0 auto">
-        <h2>4 cosas que no esperábamos</h2>
-        <div class="insight-grid">
-            <div class="insight-card rv">
-                <div class="insight-big" data-counter="0.965" data-decimal="true">0</div>
-                <div class="insight-title">España y Brasil: casi gemelos</div>
-                <div class="insight-desc">La similitud semántica más alta del corpus. Dos países en continentes distintos, con idiomas diferentes, diciendo casi lo mismo sobre IA y educación.</div>
+        <h2>Preguntas que buscamos responder</h2>
+        <div class="question-grid">
+            <div class="question-card rv">
+                <div class="question-icon">?</div>
+                <div class="question-title">Convergencia o divergencia</div>
+                <div class="question-desc">¿Las políticas de IA en educación convergen hacia un modelo común, o cada región desarrolla su propia visión? ¿Qué tan similares son realmente?</div>
             </div>
-            <div class="insight-card rv">
-                <div class="insight-big" data-counter="0.416" data-decimal="true">0</div>
-                <div class="insight-title">El EU AI Act: el lobo solitario</div>
-                <div class="insight-desc">La similitud más baja. Su naturaleza legislativa y su extensión lo separan radicalmente del resto del corpus educativo.</div>
+            <div class="question-card rv">
+                <div class="question-icon">?</div>
+                <div class="question-title">Geografía vs. orientación</div>
+                <div class="question-desc">¿Los países se agrupan por cercanía geográfica, o por enfoque estratégico? ¿Un país latinoamericano se parece más a su vecino o a uno de Asia?</div>
             </div>
-            <div class="insight-card rv">
-                <div class="insight-big" data-counter="3">0</div>
-                <div class="insight-title">Orientación &gt; Geografía</div>
-                <div class="insight-desc">Los clusters se forman por enfoque estratégico, no por región. Francia se agrupa con Brasil, no con la UE. Canadá va con Japón y Corea.</div>
+            <div class="question-card rv">
+                <div class="question-icon">?</div>
+                <div class="question-title">Dimensiones priorizadas</div>
+                <div class="question-desc">¿Qué dimensiones reciben más atención: la formación docente, la infraestructura, la ética? ¿Hay temas que todos mencionan pero nadie desarrolla?</div>
             </div>
-            <div class="insight-card rv">
-                <div class="insight-big" data-counter="10">0</div>
-                <div class="insight-title">Todos hablan de maestros</div>
-                <div class="insight-desc">10 de 14 políticas mencionan la formación docente. Pero solo 3 proponen mecanismos concretos. La mayor brecha entre discurso e implementación.</div>
+            <div class="question-card rv">
+                <div class="question-icon">?</div>
+                <div class="question-title">Lecciones para México</div>
+                <div class="question-desc">¿Qué pueden aportar estas experiencias internacionales a la construcción de una política mexicana de IA en educación?</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══ 5. The Data ═══ -->
-<section class="sec" id="data">
+<!-- ═══ 5. The 7 Dimensions ═══ -->
+<section class="sec" id="dimensions">
     <div class="sec-grid">
         <div class="sec-text rv" style="position:relative">
             <div class="n-badge">03</div>
-            <span class="s-era">Los datos</span>
-            <h2 class="s-name">El mapa completo</h2>
+            <span class="s-era">Marco de análisis</span>
+            <h2 class="s-name">7 dimensiones para leer una política de IA</h2>
             <div class="s-body">
-                <p>Esta matriz muestra la similitud semántica entre cada par de políticas. Los colores más intensos indican mayor convergencia temática.</p>
-                <p>Nótese la fila del EU AI Act: es la más pálida. Y el bloque España-Brasil-Colombia: el más intenso fuera de la diagonal.</p>
+                <p>A partir de la literatura sobre políticas educativas y marcos internacionales como los de UNESCO y OCDE, definimos 7 dimensiones que estructuran el análisis comparativo.</p>
+                <p>Cada documento se evalúa en función de su cobertura y profundidad en estas dimensiones, combinando la lectura humana con la medición computacional.</p>
             </div>
             <div class="tk">
-                <div class="tk-l">Lectura</div>
-                <p>Cada celda representa miles de fragmentos comparados matemáticamente. Un valor de 0.96 indica convergencia casi total; uno de 0.41, temas muy diferentes.</p>
+                <div class="tk-l">Contribución</div>
+                <p>Este marco dimensional permite comparar documentos que difieren en formato, extensión, idioma y enfoque bajo criterios comunes y replicables.</p>
             </div>
         </div>
         <div class="sec-visual rv">
-            <div class="heatmap-wrap">
-                <canvas id="pitch-heatmap" height="400"></canvas>
+            <div class="dim-grid" id="dim-grid">
+                <div class="dim-card">Gobernanza</div>
+                <div class="dim-card">Currículo</div>
+                <div class="dim-card">Form. docente</div>
+                <div class="dim-card">Infraestructura</div>
+                <div class="dim-card">Ética</div>
+                <div class="dim-card">Investigación</div>
+                <div class="dim-card">Equidad</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══ 6. What's Next ═══ -->
-<section class="sec" id="next">
+<!-- ═══ 6. Coverage ═══ -->
+<section class="sec sec-reversed" id="coverage">
+    <div class="sec-grid">
+        <div class="sec-text rv" style="position:relative">
+            <div class="n-badge">04</div>
+            <span class="s-era">Alcance</span>
+            <h2 class="s-name">12 países, 4 regiones, 4 idiomas</h2>
+            <div class="s-body">
+                <p>El corpus abarca estrategias nacionales de IA de Europa, las Américas y Asia-Pacífico, más documentos de organismos internacionales. Incluye tanto países líderes tecnológicos como economías emergentes.</p>
+                <p>Esta diversidad permite identificar patrones que trascienden contextos particulares y detectar brechas que un análisis regional no captaría.</p>
+            </div>
+            <div class="tk">
+                <div class="tk-l">Diversidad</div>
+                <p>Desde la Unión Europea con su enfoque regulatorio hasta Singapur con su enfoque tecnológico, cada documento aporta una perspectiva distinta sobre el mismo desafío global.</p>
+            </div>
+        </div>
+        <div class="sec-visual rv">
+            <div class="region-list" id="region-list">
+                <div class="region-row">
+                    <div class="region-dot" style="background:var(--europa)"></div>
+                    <div>
+                        <div class="region-label">Europa</div>
+                        <div class="region-countries">Unión Europea, España, Francia</div>
+                    </div>
+                </div>
+                <div class="region-row">
+                    <div class="region-dot" style="background:var(--americas)"></div>
+                    <div>
+                        <div class="region-label">Américas</div>
+                        <div class="region-countries">Canadá, Brasil, Colombia</div>
+                    </div>
+                </div>
+                <div class="region-row">
+                    <div class="region-dot" style="background:var(--asia)"></div>
+                    <div>
+                        <div class="region-label">Asia-Pacífico</div>
+                        <div class="region-countries">Japón, Corea del Sur, Singapur, India, Australia</div>
+                    </div>
+                </div>
+                <div class="region-row">
+                    <div class="region-dot" style="background:var(--internacional)"></div>
+                    <div>
+                        <div class="region-label">Internacional</div>
+                        <div class="region-countries">UNESCO, Foro Económico Mundial</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ 7. Why It's Useful ═══ -->
+<section class="sec" id="utility">
     <div class="sec-centered rv" style="position:relative">
-        <div class="n-badge" style="left:50%;transform:translateX(-50%)">04</div>
-        <span class="s-era" style="text-align:center">Lo que sigue</span>
-        <h2 class="s-name" style="text-align:center">De prueba de concepto a tesis completa</h2>
-        <div class="next-steps">
-            <div class="next-step rv">
-                <div class="next-step-num">1</div>
-                <div class="next-step-text">
-                    <strong>Marco teórico</strong>
-                    <span>Educación comparada, políticas públicas, alfabetización en IA</span>
+        <div class="n-badge" style="left:50%;transform:translateX(-50%)">05</div>
+        <span class="s-era" style="text-align:center">Utilidad</span>
+        <h2 class="s-name" style="text-align:center">¿Para qué sirve esta investigación?</h2>
+        <div class="benefit-list">
+            <div class="benefit-item rv">
+                <div class="benefit-icon">1</div>
+                <div class="benefit-text">
+                    <strong>Informar la política mexicana</strong>
+                    <span>Ofrecer evidencia comparativa que oriente la construcción de una estrategia nacional de IA en educación para México, identificando las mejores prácticas y los vacíos a evitar.</span>
                 </div>
             </div>
-            <div class="next-step rv">
-                <div class="next-step-num">2</div>
-                <div class="next-step-text">
-                    <strong>Análisis cualitativo</strong>
-                    <span>Lectura profunda de las 7 dimensiones en los 14 documentos</span>
+            <div class="benefit-item rv">
+                <div class="benefit-icon">2</div>
+                <div class="benefit-text">
+                    <strong>Democratizar el análisis de políticas</strong>
+                    <span>Demostrar que herramientas computacionales accesibles (embeddings, similitud coseno, clustering) pueden complementar el análisis cualitativo tradicional y hacerlo replicable.</span>
                 </div>
             </div>
-            <div class="next-step rv">
-                <div class="next-step-num">3</div>
-                <div class="next-step-text">
-                    <strong>Triangulación</strong>
-                    <span>Cruzar resultados computacionales con el análisis de contenido</span>
+            <div class="benefit-item rv">
+                <div class="benefit-icon">3</div>
+                <div class="benefit-text">
+                    <strong>Superar la barrera del idioma</strong>
+                    <span>Los modelos multilingües permiten comparar documentos en español, inglés, francés, japonés y coreano sin depender de traducciones, revelando similitudes que el análisis monolingüe no captaría.</span>
                 </div>
             </div>
-            <div class="next-step rv">
-                <div class="next-step-num">4</div>
-                <div class="next-step-text">
-                    <strong>Validación</strong>
-                    <span>Revisión por expertos y pruebas de robustez</span>
+            <div class="benefit-item rv">
+                <div class="benefit-icon">4</div>
+                <div class="benefit-text">
+                    <strong>Crear una herramienta abierta</strong>
+                    <span>El pipeline de análisis, la visualización interactiva y los datos procesados quedan disponibles como recurso abierto para investigadores y tomadores de decisiones.</span>
                 </div>
             </div>
-            <div class="next-step rv">
-                <div class="next-step-num">5</div>
-                <div class="next-step-text">
-                    <strong>Conclusiones</strong>
-                    <span>Implicaciones para México y recomendaciones de política</span>
+            <div class="benefit-item rv">
+                <div class="benefit-icon">5</div>
+                <div class="benefit-text">
+                    <strong>Contribuir a la pedagogía</strong>
+                    <span>Aportar al campo de la educación comparada una metodología que combina análisis de contenido con procesamiento de lenguaje natural, aplicable a otros corpus de políticas educativas.</span>
                 </div>
             </div>
         </div>
         <div class="tk" style="text-align:center;border-left:none;border:var(--border);box-shadow:var(--shadow);background:#fff">
-            <p style="font-style:normal;font-weight:700;font-family:var(--font-display)">La herramienta funciona. Los datos hablan. Ahora falta escucharlos con cuidado.</p>
+            <p style="font-style:normal;font-weight:700;font-family:var(--font-display)">Si entendemos cómo otros países integran la IA en educación, podemos diseñar mejores políticas para el nuestro.</p>
         </div>
     </div>
 </section>
 
-<!-- ═══ 7. Footer ═══ -->
+<!-- ═══ 8. Footer ═══ -->
 <footer class="pitch-footer">
     <p>Hesus García Cobos · Maestría en Pedagogía · UPAEP 2026</p>
     <p class="footer-sub">Análisis Comparativo de Políticas Públicas sobre Educación en Inteligencia Artificial</p>
-    <p style="margin-top:1rem;font-size:0.75rem"><a href="index.html">Ver resultados completos →</a></p>
+    <p style="margin-top:1rem;font-size:0.75rem"><a href="index.html">Ver resultados →</a> · <a href="explorer.html">Explorador interactivo →</a></p>
 </footer>
 
 <script>
@@ -606,25 +656,6 @@ const POLICY_LABELS = [
     { label: 'WEF', color: '#7b1fa2' },
 ];
 
-const ABBR_LABELS = ['UE', 'ES', 'FR', 'CA', 'BR', 'CO', 'JP', 'KR', 'SG', 'IN₁', 'IN₂', 'AU', 'UN', 'WEF'];
-
-// ── Animated Counter ──
-function animateCounter(el, target, duration, isDecimal) {
-    const start = performance.now();
-    const format = isDecimal
-        ? (v) => v.toFixed(3)
-        : (v) => Math.round(v).toLocaleString('es-MX');
-
-    function tick(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = format(target * eased);
-        if (progress < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-}
-
 // ── Build Document Grid ──
 function buildDocGrid() {
     const grid = document.getElementById('doc-grid');
@@ -637,89 +668,12 @@ function buildDocGrid() {
     });
 }
 
-// ── Render Pitch Heatmap ──
-function renderPitchHeatmap(matrix) {
-    const ctx = document.getElementById('pitch-heatmap');
-    if (!ctx || !matrix || matrix.length === 0) return;
-
-    const n = matrix.length;
-    const matrixData = [];
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n; j++) {
-            matrixData.push({ x: j, y: i, v: matrix[i][j] });
-        }
-    }
-
-    function valueToColor(v) {
-        if (v >= 0.85) return `rgba(211, 47, 47, ${0.7 + (v - 0.85) * 2})`;
-        if (v >= 0.7) return `rgba(255, 152, 0, ${0.4 + (v - 0.7) * 2})`;
-        if (v >= 0.55) return `rgba(255, 213, 79, ${0.3 + (v - 0.55) * 2})`;
-        return `rgba(255, 213, 79, ${Math.max(0.05, v * 0.4)})`;
-    }
-
-    new Chart(ctx, {
-        type: 'matrix',
-        data: {
-            datasets: [{
-                label: 'Similitud',
-                data: matrixData,
-                backgroundColor(context) {
-                    const v = context.dataset.data[context.dataIndex]?.v || 0;
-                    return valueToColor(v);
-                },
-                borderColor: 'rgba(0,0,0,0.05)',
-                borderWidth: 1,
-                width: ({ chart }) => (chart.chartArea || {}).width / n - 1,
-                height: ({ chart }) => (chart.chartArea || {}).height / n - 1,
-            }],
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    type: 'category', labels: ABBR_LABELS,
-                    ticks: { font: { family: "'JetBrains Mono'", size: 9 }, maxRotation: 45 },
-                    grid: { display: false },
-                },
-                y: {
-                    type: 'category', labels: ABBR_LABELS, offset: true,
-                    ticks: { font: { family: "'JetBrains Mono'", size: 9 } },
-                    grid: { display: false },
-                },
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        title: () => '',
-                        label(context) {
-                            const d = context.dataset.data[context.dataIndex];
-                            return `${ABBR_LABELS[d.y]} ↔ ${ABBR_LABELS[d.x]}: ${d.v.toFixed(3)}`;
-                        },
-                    },
-                },
-            },
-        },
-    });
-}
-
 // ── Scroll Animations ──
 function initPitchAnimations() {
     const obs = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
             if (e.isIntersecting) {
                 e.target.classList.add('vis');
-
-                // Counters
-                const counters = e.target.querySelectorAll('[data-counter]');
-                counters.forEach((c) => {
-                    if (c.dataset.counted) return;
-                    c.dataset.counted = 'true';
-                    const target = parseFloat(c.dataset.counter);
-                    const isDecimal = c.dataset.decimal === 'true';
-                    animateCounter(c, target, 1500, isDecimal);
-                });
 
                 // Doc icons within this section
                 const icons = e.target.querySelectorAll('.doc-icon');
@@ -733,26 +687,28 @@ function initPitchAnimations() {
                     setTimeout(() => s.classList.add('vis'), i * 200);
                 });
 
-                // Next steps
-                const nextSteps = e.target.querySelectorAll('.next-step');
-                nextSteps.forEach((s, i) => {
-                    setTimeout(() => s.classList.add('vis'), i * 150);
+                // Dimension cards
+                const dims = e.target.querySelectorAll('.dim-card');
+                dims.forEach((d, i) => {
+                    setTimeout(() => d.classList.add('vis'), i * 100);
+                });
+
+                // Region rows
+                const regions = e.target.querySelectorAll('.region-row');
+                regions.forEach((r, i) => {
+                    setTimeout(() => r.classList.add('vis'), i * 150);
+                });
+
+                // Benefit items
+                const benefits = e.target.querySelectorAll('.benefit-item');
+                benefits.forEach((b, i) => {
+                    setTimeout(() => b.classList.add('vis'), i * 150);
                 });
             }
         });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.rv, .sec, .sec-dark, .insight-card, .doc-icon').forEach((el) => obs.observe(el));
-
-    // Hero counters fire immediately
-    document.querySelectorAll('#hero [data-counter]').forEach((c) => {
-        setTimeout(() => {
-            if (c.dataset.counted) return;
-            c.dataset.counted = 'true';
-            const target = parseFloat(c.dataset.counter);
-            animateCounter(c, target, 1500, false);
-        }, 1200);
-    });
+    document.querySelectorAll('.rv, .sec, .sec-dark, .question-card, .doc-icon').forEach((el) => obs.observe(el));
 }
 
 // ── Progress Bar ──
@@ -797,26 +753,12 @@ function initPitchNav() {
 }
 
 // ── Init ──
-async function init() {
+document.addEventListener('DOMContentLoaded', () => {
     buildDocGrid();
     initPitchProgress();
     initPitchNav();
-
-    // Load data
-    try {
-        const resp = await fetch('data/results.json');
-        if (resp.ok) {
-            const data = await resp.json();
-            renderPitchHeatmap(data.similarity_matrix);
-        }
-    } catch (e) {
-        console.warn('Could not load results.json:', e);
-    }
-
     initPitchAnimations();
-}
-
-document.addEventListener('DOMContentLoaded', init);
+});
 </script>
 </body>
 </html>
