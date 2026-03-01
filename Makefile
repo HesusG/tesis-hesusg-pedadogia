@@ -8,7 +8,7 @@ OUTPUT_DIR := output
 PIPELINE_DIR := pipeline
 WEB_DIR := web
 
-.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help
+.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01
 
 all: pdf web
 
@@ -97,6 +97,23 @@ status:
 	@total=$$(cat $(TEX_DIR)/chapters/cap*.tex | detex 2>/dev/null | wc -w || echo 0); \
 	echo "  Total: $$total palabras (~$$(( $$total / 250 )) páginas)"
 
+# ── References ────────────────────────────────────────
+refs-audit:
+	python3 references/ref_audit.py
+
+refs-audit-cap01:
+	python3 references/ref_audit.py --chapter cap01
+
+refs-download:
+	python3 references/download_references.py
+
+refs-check:
+	python3 references/ref_audit.py --check
+
+# ── Verify ────────────────────────────────────────────
+verify-cap01:
+	python3 -m pipeline.verify_chapter --chapter cap01
+
 # ── Clean ──────────────────────────────────────────────
 clean:
 	cd $(TEX_DIR) && rm -f *.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.fls *.fdb_latexmk *.synctex.gz
@@ -116,4 +133,9 @@ help:
 	@echo "  make status    — Ver progreso por capítulo"
 	@echo "  make chunks    — Exportar chunk_pairs.json para explorador"
 	@echo "  make pdf-cap01 — Compilar PDF solo hasta capítulo 1"
+	@echo "  make refs-audit     — Auditar referencias .bib vs PDFs locales"
+	@echo "  make refs-audit-cap01 — Auditar solo cap01"
+	@echo "  make refs-download  — Descargar PDFs via Unpaywall/URLs"
+	@echo "  make refs-check     — Verificar cobertura (exit 1 si hay gaps)"
+	@echo "  make verify-cap01   — Verificar cap01 semánticamente contra ChromaDB"
 	@echo "  make clean     — Limpiar archivos auxiliares"

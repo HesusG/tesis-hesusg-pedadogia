@@ -4,6 +4,7 @@ Usage: python download_references.py
 Creates PDFs in references/ with naming: bibkey_short-title.pdf
 """
 import os
+import re
 import time
 import json
 import urllib.request
@@ -42,7 +43,7 @@ def download(url, filename, headers=None):
 
 
 # ============================================================
-# DIRECT URLs (PDFs from UNESCO, OECD, etc.)
+# DIRECT URLs (PDFs from UNESCO, OECD, gov sites, ArXiv, etc.)
 # ============================================================
 DIRECT_DOWNLOADS = {
     # UNESCO documents
@@ -145,6 +146,10 @@ DIRECT_DOWNLOADS = {
     "long2020ailiteracy_what-is-ai-literacy.pdf":
         "https://dl.acm.org/doi/pdf/10.1145/3313831.3376727",
 
+    # Milosevic 2020 - Comparative Research Methodology (Gold OA)
+    "milosevic2020methodology_comparative-research-education.pdf":
+        "https://www.ijcrsee.com/index.php/ijcrsee/article/download/520/511",
+
     # Bowen - Document Analysis (preprint-style)
     "bowen2009document_document-analysis-qualitative.pdf":
         "https://www.researchgate.net/profile/Glenn-Bowen/publication/240807798_Document_Analysis_as_a_Qualitative_Research_Method/links/59d807d0a6fdcc2aad065377/Document-Analysis-as-a-Qualitative-Research-Method.pdf",
@@ -168,10 +173,18 @@ DIRECT_DOWNLOADS = {
     # Chile Política Nacional IA
     "chile2021ia_politica-nacional-ia.pdf":
         "https://minciencia.gob.cl/uploads/filer_public/bc/38/bc389daf-4514-4306-867c-760ae7686e2c/politica-nacional-ia.pdf",
+
+    # ArXiv papers (moved from MANUAL)
+    "mikolov2013efficient_word2vec.pdf":
+        "https://arxiv.org/pdf/1301.3781",
+    "devlin2019bert_bert-pretraining.pdf":
+        "https://arxiv.org/pdf/1810.04805",
+    "sevilla2022compute_compute-trends.pdf":
+        "https://arxiv.org/pdf/2202.05924",
 }
 
 # ============================================================
-# DOI-based downloads (try Unpaywall / direct publisher)
+# DOI-based downloads (try Unpaywall, then CrossRef fallback)
 # ============================================================
 DOI_REFS = {
     "oecd2021digitaloutlook_digital-education-outlook.pdf": "10.1787/589b283f-en",
@@ -188,39 +201,6 @@ DOI_REFS = {
     "bareis2022talking_talking-ai-into-being.pdf": "10.1177/01622439211030007",
     "gulson2019digitizing_data-infrastructures-education.pdf": "10.1177/0263775818813144",
 }
-
-# ============================================================
-# BOOKS & ITEMS REQUIRING MANUAL DOWNLOAD
-# ============================================================
-MANUAL = [
-    ("holmes2019aied", "Holmes et al. (2019) AI in Education: Promises and Implications — BOOK, need library/purchase"),
-    ("collingridge1980social", "Collingridge (1980) Social Control of Technology — BOOK, classic text"),
-    ("bray2014comparative", "Bray et al. (2014) Comparative Education Research — BOOK"),
-    ("rizvi2010globalizing", "Rizvi & Lingard (2010) Globalizing Education Policy — BOOK"),
-    ("steiner2004global", "Steiner-Khamsi (2004) Global Politics Educational Borrowing — BOOK"),
-    ("bereday1964comparative", "Bereday (1964) Comparative Method in Education — BOOK, classic"),
-    ("noah1969toward", "Noah & Eckstein (1969) Toward a Science of Comparative Education — BOOK"),
-    ("creswell2018mixed", "Creswell & Plano Clark (2018) Mixed Methods Research — BOOK"),
-    ("moretti2013distant", "Moretti (2013) Distant Reading — BOOK"),
-    ("krippendorff2018content", "Krippendorff (2018) Content Analysis — BOOK"),
-    ("williamson2017big", "Williamson (2017) Big Data in Education — BOOK"),
-    ("lasswell1951policy", "Lasswell (1951) The Policy Orientation — BOOK CHAPTER"),
-    ("steinerkhamsi2014cross", "Steiner-Khamsi (2014) Cross-National Policy Borrowing — BOOK CHAPTER"),
-    ("bray1995levels", "Bray & Thomas (1995) Levels of Comparison — JOURNAL (Harvard Educational Review, paywalled)"),
-    ("southgate2020aiethics", "Southgate (2020) AI Ethics Equity Education — AUSTRALIAN GOV REPORT, search manually"),
-    ("cminds2018iamexico", "C Minds (2018) Hacia una Estrategia IA México — search cminds.co"),
-    ("sep2020sectorial", "SEP (2020) Programa Sectorial Educación 2020-2024 — DOF México"),
-    ("sep2022nem", "SEP (2022) Plan de Estudios NEM — search gob.mx"),
-    ("inegi2024endutih", "INEGI (2024) ENDUTIH 2023 — search inegi.org.mx"),
-    ("germany2018aistrategy", "Bundesregierung (2018) AI Strategy Germany — search bmbf.de"),
-    ("germany2020aiupdate", "Bundesregierung (2020) AI Strategy Update — search bmbf.de"),
-    ("finland2017ai", "Finland (2017) Age of AI — search tem.fi"),
-    ("estonia2019krattai", "Estonia (2019) AI Taskforce Report — search kratid.ee"),
-    ("china2017ai", "China (2017) New Gen AI Development Plan — search English translation"),
-    ("sevilla2022compute", "Sevilla et al. (2022) Compute Trends — conference paper, search ArXiv"),
-    ("mikolov2013efficient", "Mikolov et al. (2013) Word2Vec — search ArXiv: 1301.3781"),
-    ("devlin2019bert", "Devlin et al. (2019) BERT — search ArXiv: 1810.04805"),
-]
 
 
 def try_unpaywall(doi, filename):
@@ -241,6 +221,107 @@ def try_unpaywall(doi, filename):
     return False
 
 
+def try_crossref(doi, filename):
+    """Try CrossRef API as fallback for PDF link."""
+    try:
+        url = f"https://api.crossref.org/works/{doi}"
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Academic-Research/1.0 (mailto:thesis@upaep.mx)"
+        })
+        with urllib.request.urlopen(req, timeout=15, context=ctx) as resp:
+            data = json.loads(resp.read())
+            work = data.get("message", {})
+
+            # Check for open-access link in CrossRef
+            for link in work.get("link", []):
+                if link.get("content-type") == "application/pdf":
+                    pdf_url = link["URL"]
+                    print(f"  CrossRef found PDF link for {doi}")
+                    return download(pdf_url, filename)
+
+            # Check for free license (Creative Commons, etc.)
+            licenses = work.get("license", [])
+            for lic in licenses:
+                lic_url = lic.get("URL", "")
+                if "creativecommons" in lic_url:
+                    # Try DOI redirect as PDF
+                    doi_url = f"https://doi.org/{doi}"
+                    print(f"  CrossRef: CC-licensed, trying DOI redirect for {doi}")
+                    return download(doi_url, filename)
+
+            print(f"  CrossRef: no PDF link found for {doi}")
+    except Exception as e:
+        print(f"  CrossRef failed for {doi}: {e}")
+    return False
+
+
+# ============================================================
+# BOOKS & ITEMS REQUIRING MANUAL DOWNLOAD
+# (Only items that truly cannot be automated)
+# ============================================================
+MANUAL = [
+    ("bray2014comparative", "Bray et al. (2014) Comparative Education Research — BOOK"),
+    ("rizvi2010globalizing", "Rizvi & Lingard (2010) Globalizing Education Policy — BOOK"),
+    ("steiner2004global", "Steiner-Khamsi (2004) Global Politics Educational Borrowing — BOOK"),
+    ("bereday1964comparative", "Bereday (1964) Comparative Method in Education — BOOK, classic"),
+    ("noah1969toward", "Noah & Eckstein (1969) Toward a Science of Comparative Education — BOOK"),
+    ("creswell2018mixed", "Creswell & Plano Clark (2018) Mixed Methods Research — BOOK"),
+    ("moretti2013distant", "Moretti (2013) Distant Reading — BOOK"),
+    ("krippendorff2018content", "Krippendorff (2018) Content Analysis — BOOK"),
+    ("williamson2017big", "Williamson (2017) Big Data in Education — BOOK"),
+    ("lasswell1951policy", "Lasswell (1951) The Policy Orientation — BOOK CHAPTER"),
+    ("steinerkhamsi2014cross", "Steiner-Khamsi (2014) Cross-National Policy Borrowing — BOOK CHAPTER"),
+    ("bray1995levels", "Bray & Thomas (1995) Levels of Comparison — JOURNAL (Harvard Educational Review, paywalled). Not cited in cap01 (replaced by milosevic2020methodology)."),
+    ("germany2018aistrategy", "Bundesregierung (2018) AI Strategy Germany — search bmbf.de"),
+    ("germany2020aiupdate", "Bundesregierung (2020) AI Strategy Update — search bmbf.de"),
+    ("finland2017ai", "Finland (2017) Age of AI — search tem.fi"),
+    ("estonia2019krattai", "Estonia (2019) AI Taskforce Report — search kratid.ee"),
+    ("china2017ai", "China (2017) New Gen AI Development Plan — search English translation"),
+]
+
+
+def generate_manifest(results):
+    """Generate MANIFEST.md with actual file inventory."""
+    manifest_path = os.path.join(REFS_DIR, "MANIFEST.md")
+
+    # Count actual PDFs on disk
+    actual_pdfs = sorted(
+        f for f in os.listdir(REFS_DIR) if f.endswith(".pdf")
+    )
+
+    # Parse .bib to get total count
+    bib_path = os.path.join(os.path.dirname(REFS_DIR), "document", "referencias.bib")
+    bib_count = 0
+    if os.path.exists(bib_path):
+        with open(bib_path, "r", encoding="utf-8") as f:
+            bib_count = len(re.findall(r"^@\w+\{", f.read(), re.MULTILINE))
+
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        f.write("# Referencias — Manifest\n\n")
+        f.write(f"Total en .bib: {bib_count} referencias\n")
+        f.write(f"PDFs locales: {len(actual_pdfs)}\n")
+        f.write(f"Cobertura: {len(actual_pdfs)}/{bib_count} ({len(actual_pdfs)/bib_count*100:.0f}%)\n\n")
+
+        f.write(f"## PDFs locales ({len(actual_pdfs)})\n\n")
+        for fn in actual_pdfs:
+            size_kb = os.path.getsize(os.path.join(REFS_DIR, fn)) // 1024
+            f.write(f"- `{fn}` ({size_kb} KB)\n")
+
+        if results["failed"]:
+            f.write(f"\n## Descarga fallida ({len(results['failed'])})\n\n")
+            for fn, url in results["failed"]:
+                f.write(f"- `{fn}` — {url}\n")
+
+        f.write(f"\n## Descarga manual requerida ({len(MANUAL)})\n\n")
+        for bibkey, note in MANUAL:
+            # Check if already downloaded manually
+            has_pdf = any(fn.startswith(bibkey) for fn in actual_pdfs)
+            status = "DESCARGADO" if has_pdf else "PENDIENTE"
+            f.write(f"- **{bibkey}** [{status}]: {note}\n")
+
+    print(f"\n  Manifest saved to: {manifest_path}")
+
+
 if __name__ == "__main__":
     results = {"downloaded": [], "failed": [], "manual": []}
 
@@ -256,10 +337,21 @@ if __name__ == "__main__":
         time.sleep(0.5)
 
     print("\n" + "=" * 60)
-    print("  TRYING DOI-BASED DOWNLOADS (Unpaywall)")
+    print("  TRYING DOI-BASED DOWNLOADS (Unpaywall + CrossRef)")
     print("=" * 60)
     for filename, doi in DOI_REFS.items():
+        # Skip if already exists
+        path = os.path.join(REFS_DIR, filename)
+        if os.path.exists(path) and os.path.getsize(path) > 1000:
+            print(f"  SKIP (exists): {filename}")
+            results["downloaded"].append(filename)
+            continue
+
+        # Try Unpaywall first
         ok = try_unpaywall(doi, filename)
+        if not ok:
+            # Fallback to CrossRef
+            ok = try_crossref(doi, filename)
         if ok:
             results["downloaded"].append(filename)
         else:
@@ -270,29 +362,23 @@ if __name__ == "__main__":
     print("  MANUAL DOWNLOAD REQUIRED")
     print("=" * 60)
     for bibkey, note in MANUAL:
-        print(f"  [{bibkey}] {note}")
+        # Check if already downloaded
+        has_pdf = any(
+            f.startswith(bibkey) and f.endswith(".pdf")
+            for f in os.listdir(REFS_DIR)
+        )
+        if has_pdf:
+            print(f"  [{bibkey}] ALREADY DOWNLOADED")
+        else:
+            print(f"  [{bibkey}] {note}")
         results["manual"].append(bibkey)
 
-    # Save manifest
-    manifest_path = os.path.join(REFS_DIR, "MANIFEST.md")
-    with open(manifest_path, "w", encoding="utf-8") as f:
-        f.write("# Referencias — Manifest\n\n")
-        f.write(f"Total en .bib: 75 referencias\n\n")
-        f.write(f"## Descargadas ({len(results['downloaded'])})\n\n")
-        for fn in sorted(results["downloaded"]):
-            f.write(f"- `{fn}`\n")
-        f.write(f"\n## Fallidas ({len(results['failed'])})\n\n")
-        for fn, url in results["failed"]:
-            f.write(f"- `{fn}` — {url}\n")
-        f.write(f"\n## Descarga manual requerida ({len(results['manual'])})\n\n")
-        for bibkey in results["manual"]:
-            note = next(n for k, n in MANUAL if k == bibkey)
-            f.write(f"- **{bibkey}**: {note}\n")
+    # Generate manifest from actual disk state
+    generate_manifest(results)
 
     print(f"\n{'=' * 60}")
     print(f"  SUMMARY")
     print(f"{'=' * 60}")
-    print(f"  Downloaded: {len(results['downloaded'])}")
-    print(f"  Failed:     {len(results['failed'])}")
-    print(f"  Manual:     {len(results['manual'])}")
-    print(f"\n  Manifest saved to: {manifest_path}")
+    print(f"  Downloaded/existing: {len(results['downloaded'])}")
+    print(f"  Failed:              {len(results['failed'])}")
+    print(f"  Manual:              {len(results['manual'])}")
