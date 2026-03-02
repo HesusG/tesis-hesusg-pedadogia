@@ -12,8 +12,9 @@
 \RequirePackage[spanish,es-tabla]{babel}
 \RequirePackage{mathptmx}                    % Times New Roman
 \RequirePackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
-\RequirePackage{setspace}                    % 1.5 spacing
-\RequirePackage[natbibapa]{apacite}          % APA style citations
+\RequirePackage{setspace}                    % 1.5 spacing (UPAEP)
+\RequirePackage{ragged2e}                    % APA 7: left-aligned text
+\RequirePackage[natbibapa]{apacite}          % APA citations (natbib compat)
 \RequirePackage{graphicx}
 \RequirePackage{booktabs}
 \RequirePackage{longtable}
@@ -32,7 +33,10 @@
 \RequirePackage{csquotes}
 
 % ── Spacing ──
-\onehalfspacing
+\onehalfspacing                              % UPAEP requirement (APA 7 uses double)
+
+% ── APA 7: Left-aligned text (ragged right) ──
+\RaggedRight
 
 % ── Colors ──
 \definecolor{upaep-blue}{RGB}{0,51,102}
@@ -53,18 +57,21 @@
 \fancyhead[R]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 
-% ── Chapter format ──
+% ── APA 7 Heading Levels ──
+% Level 1 (chapter): Centered, Bold
 \titleformat{\chapter}[display]
-  {\normalfont\Large\bfseries}
-  {\chaptertitlename\ \thechapter}{20pt}{\LARGE}
+  {\normalfont\Large\bfseries\centering}
+  {\chaptertitlename\ \thechapter}{12pt}{\LARGE\bfseries\centering}
 \titlespacing*{\chapter}{0pt}{-20pt}{40pt}
 
-% ── Section format ──
+% Level 2 (section): Left-Aligned, Bold
 \titleformat{\section}
   {\normalfont\large\bfseries}
   {\thesection}{1em}{}
+
+% Level 3 (subsection): Left-Aligned, Bold Italic
 \titleformat{\subsection}
-  {\normalfont\normalsize\bfseries}
+  {\normalfont\normalsize\bfseries\itshape}
   {\thesubsection}{1em}{}
 
 % ── Caption format ──
