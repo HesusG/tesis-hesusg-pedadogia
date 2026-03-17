@@ -8,7 +8,7 @@ OUTPUT_DIR := output
 PIPELINE_DIR := pipeline
 WEB_DIR := web
 
-.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01
+.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies
 
 all: pdf web
 
@@ -114,6 +114,23 @@ refs-check:
 verify-cap01:
 	python3 -m pipeline.verify_chapter --chapter cap01
 
+# ── Fact-check ────────────────────────────────────────
+ingest-refs:
+	python3 -m pipeline.ingest_bibliography
+
+factcheck-cap01:
+	python3 -m pipeline.verify_facts --chapter cap01
+
+# ── Advanced compute ─────────────────────────────────
+compute-advanced:
+	python3 scripts/compute_advanced.py
+	@echo "✓ Datos avanzados (UMAP, dendrograma, Sankey) generados"
+
+# ── Download policies ────────────────────────────────
+download-policies:
+	python3 scripts/download_policies.py
+	@echo "✓ Políticas descargadas"
+
 # ── Clean ──────────────────────────────────────────────
 clean:
 	cd $(TEX_DIR) && rm -f *.aux *.bbl *.blg *.log *.out *.toc *.lof *.lot *.fls *.fdb_latexmk *.synctex.gz
@@ -138,4 +155,8 @@ help:
 	@echo "  make refs-download  — Descargar PDFs via Unpaywall/URLs"
 	@echo "  make refs-check     — Verificar cobertura (exit 1 si hay gaps)"
 	@echo "  make verify-cap01   — Verificar cap01 semánticamente contra ChromaDB"
+	@echo "  make ingest-refs    — Ingestar PDFs de bibliografía para fact-check"
+	@echo "  make factcheck-cap01 — Fact-check numérico de cap01 (híbrido)"
+	@echo "  make compute-advanced — Generar datos avanzados (UMAP, Sankey)"
+	@echo "  make download-policies — Descargar PDFs de políticas"
 	@echo "  make clean     — Limpiar archivos auxiliares"

@@ -49,6 +49,9 @@ Thumbs.db
 .idea/
 *.code-workspace
 
+# Reference PDFs (too large for git, documented in references/MANIFEST.md)
+references/*.pdf
+
 # Data (too large for git)
 policies/raw/**/*.pdf
 policies/raw/**/*.docx

@@ -55,3 +55,7 @@ Análisis comparativo de políticas públicas sobre educación en inteligencia a
 - `make pipeline` para ejecutar análisis completo
 - `make web` para regenerar visualización
 - `make status` para ver progreso por capítulo
+- `make ingest-refs` para ingestar bibliografía (PDFs → ChromaDB)
+- `make factcheck-cap01` para fact-check numérico de cap01
+- `make compute-advanced` para enriquecer datos web (UMAP, dendrograma, Sankey)
+- `make download-policies` para descargar PDFs de políticas

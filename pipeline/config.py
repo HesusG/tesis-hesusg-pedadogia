@@ -27,6 +27,10 @@ CHUNK_OVERLAP = 200
 
 # ── ChromaDB ──
 COLLECTION_NAME = "politicas_ia_educacion"
+BIBLIOGRAPHY_COLLECTION_NAME = "bibliografia_referencias"
+
+# ── References (bibliography PDFs for fact-checking) ──
+REFERENCES_DIR = PROJECT_ROOT / "references"
 
 # ── Chroma Cloud (redundancy) ──
 CHROMA_CLOUD_API_KEY = os.getenv("CHROMA_CLOUD_API_KEY", "")
