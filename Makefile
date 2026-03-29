@@ -8,7 +8,7 @@ OUTPUT_DIR := output
 PIPELINE_DIR := pipeline
 WEB_DIR := web
 
-.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies
+.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies topics language-control validate
 
 all: pdf web
 
@@ -114,6 +114,19 @@ refs-check:
 verify-cap01:
 	python3 -m pipeline.verify_chapter --chapter cap01
 
+# ── v2 Analysis (unsupervised-first) ─────────────────
+topics:
+	python3 -m pipeline.topic_model
+	@echo "✓ BERTopic: temas no supervisados generados"
+
+language-control:
+	python3 -m pipeline.language_control
+	@echo "✓ Análisis de control lingüístico completado"
+
+validate:
+	python3 -m pipeline.validation
+	@echo "✓ Validación pre-registro vs no-supervisado completada"
+
 # ── Fact-check ────────────────────────────────────────
 ingest-refs:
 	python3 -m pipeline.ingest_bibliography
@@ -157,6 +170,9 @@ help:
 	@echo "  make verify-cap01   — Verificar cap01 semánticamente contra ChromaDB"
 	@echo "  make ingest-refs    — Ingestar PDFs de bibliografía para fact-check"
 	@echo "  make factcheck-cap01 — Fact-check numérico de cap01 (híbrido)"
+	@echo "  make topics     — BERTopic: análisis no supervisado (Fase 1)"
+	@echo "  make language-control — Control lingüístico (Fase 3)"
+	@echo "  make validate   — Validar pre-registro vs no-supervisado"
 	@echo "  make compute-advanced — Generar datos avanzados (UMAP, Sankey)"
 	@echo "  make download-policies — Descargar PDFs de políticas"
 	@echo "  make clean     — Limpiar archivos auxiliares"
