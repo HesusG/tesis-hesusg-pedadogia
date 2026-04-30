@@ -1,0 +1,57 @@
+%% cap01-shorter-hesus-speaks.tex — Planteamiento del Problema
+\chapter{Planteamiento del Problema}
+\label{cap:planteamiento}
+
+\section{Descripción de la Problemática}
+
+En 2017, China publicó el primer plan nacional que vinculó la inteligencia artificial con la reforma educativa. Para 2023, al menos 67 países habían desarrollado o estaban desarrollando estrategias nacionales de IA~\citep{unesco2023genai}. En la mayoría de ellas, sin embargo, la educación figuraba como un componente de desarrollo de talento para la competitividad económica, no como un objeto de política educativa en sí mismo. La diferencia es relevante: una cosa es formar ingenieros de IA y otra es preparar a todos los estudiantes para vivir en un mundo transformado por ella.
+
+\citet{thierer2018pacing} describió esta situación como el \textit{pacing problem}: la tecnología evoluciona de forma exponencial mientras que la regulación avanza de manera lineal. En el caso de la IA en educación, la brecha es particularmente aguda. Hacia 2022, pocos países habían desarrollado currículos de IA para educación básica avalados por sus gobiernos, y menos aún reportaban marcos de capacitación en IA para profesores. \citet{miao2021guidance} sintetizaron el panorama en cinco brechas de preparación institucional: ausencia de marcos regulatorios, insuficiencia en la formación docente, falta de estándares curriculares, inequidades en infraestructura digital y carencia de directrices éticas.
+
+Lo que esto significa en la práctica es concreto. Una profesora en Bogotá y un profesor en Berlín enfrentan hoy estudiantes que usan herramientas de IA generativa, pero las políticas que deberían orientar su trabajo pedagógico fueron redactadas bajo supuestos radicalmente distintos, si es que fueron redactadas.
+
+Siete países ilustran la diversidad de las respuestas. Algunos adoptaron planes estratégicos con componentes educativos, como Canadá y Australia. Otros, como Colombia y Sudáfrica, abordaron la IA en educación dentro de marcos más amplios de desarrollo nacional. China constituye un caso aparte por su iteración sostenida, con siete documentos publicados entre 2017 y 2025. Alemania actualizó una estrategia existente y Estados Unidos optó por la acción ejecutiva. En conjunto, estos casos abarcan cuatro familias lingüísticas y contextos que van desde economías avanzadas hasta países del sur global.
+
+Cuando documentos de política de diferentes países utilizan vocabulario similar, surge una pregunta que la lectura individual no puede resolver: ¿la similitud refleja convergencia temática genuina, influencia compartida de un tercer actor, o convergencia funcional independiente? \citet{steinerkhamsi2014cross} distingue tres explicaciones posibles. La primera es el préstamo genuino, donde un país adopta deliberadamente la política de otro. La segunda es la influencia común, en la que marcos como el Consenso de Beijing funcionan como plantillas para múltiples países. La tercera es la convergencia funcional, que ocurre cuando países sin contacto entre sí llegan a soluciones similares porque enfrentan problemas parecidos. Determinar cuál mecanismo opera en cada caso requiere un análisis que supere la lectura cualitativa.
+
+La ciencia política comenzó a tratar los textos como datos cuantificables a principios de la década de 2010~\citep{grimmer2013text}. Desde entonces, se han aplicado representaciones semánticas para medir alineación entre documentos de política. La educación comparada no ha seguido esa trayectoria. A esto se suma un problema adicional: los modelos de análisis semántico multilingüe capturan tanto el contenido como la estructura lingüística de los textos, de modo que dos documentos en el mismo idioma pueden obtener puntuaciones de similitud infladas respecto a documentos temáticamente afines pero lingüísticamente distantes. Este sesgo rara vez se cuantifica.
+
+
+\section{Propósito}
+
+El propósito de esta investigación es comprender cómo siete países de distintas regiones del mundo abordan la educación en inteligencia artificial en sus políticas públicas. El estudio responde a la necesidad de complementar los marcos comparativos existentes con un análisis exploratorio capaz de descubrir temas que esos marcos no anticipan.
+
+
+\section{Preguntas de Investigación}
+
+La pregunta central es: ¿qué temas caracterizan las políticas de educación en inteligencia artificial de siete países, y en qué convergen y divergen entre sí?
+
+De esta pregunta se derivan cuatro preguntas asociadas. Interesa saber qué agrupamientos temáticos emergen cuando se analizan los documentos de los siete países mediante procesamiento de lenguaje natural. También se pregunta qué temas latentes aparecen que marcos existentes como el Consenso de Beijing~\citep{unesco2019beijing} no capturan. Para los pares de países con alta similitud, se examina si comparten pasajes trazables a documentos fuente comunes. Por último, se aborda cómo evolucionaron las políticas de China entre 2017 y 2025.
+
+
+\section{Objetivos}
+
+El objetivo general es comparar las políticas de educación en inteligencia artificial de siete países mediante procesamiento de lenguaje natural para identificar los temas que las caracterizan, explorar sus convergencias y divergencias, y verificar que las similitudes detectadas no sean un artefacto del idioma de los documentos.
+
+Los objetivos específicos se organizan en torno a la secuencia analítica. Se parte de la construcción de un corpus documental sistematizado de los siete países, que incluye siete documentos longitudinales de China. Sobre este corpus se identifican primero los temas que emergen sin imponer categorías previas. Después se evalúa cada documento en nueve dimensiones derivadas de marcos de la OCDE~\citep{oecd2021epo} y UNESCO~\citep{unesco2019beijing}. El diseño contempla también verificar si el idioma de los documentos infla las similitudes observadas, contrastar los temas emergentes con las dimensiones del marco analítico, y trazar la evolución de las políticas de China entre 2017 y 2025.
+
+
+\section{Justificación}
+
+Esta investigación ofrece un análisis exploratorio de las políticas de educación en IA de siete países. La educación comparada tiene una larga tradición de análisis mediante similitudes y diferencias, y las herramientas de procesamiento de lenguaje natural permiten extenderla a corpus multilingües.
+
+Los siete países representan enfoques diversos ante un desafío compartido, lo que hace potencialmente observables los mecanismos de difusión descritos por \citet{shipan2012diffusion} mediante el trazado de pasajes compartidos entre documentos.
+
+Desde lo metodológico, la contribución reside en dos elementos ausentes en la educación comparada: la secuencia que primero descubre temas y luego los contrasta con un marco predefinido, y la verificación de que el idioma no distorsione las similitudes observadas.
+
+
+\section{Alcances y Limitaciones}
+
+El alcance de este estudio exploratorio se limita a los documentos de política de acceso público de los siete países seleccionados, publicados entre 2017 y 2025 en inglés, español, alemán y chino. La investigación examina el contenido de los documentos, es decir, qué dicen, qué priorizan y qué omiten. No examina el proceso de elaboración ni la implementación.
+
+Las limitaciones principales tienen que ver con la heterogeneidad del corpus: los documentos varían en género discursivo, estatus legal y etapa dentro del ciclo de políticas. El control lingüístico atenúa pero no elimina el sesgo idiomático, y los documentos de China se analizan en traducción al inglés. La muestra de siete casos es intencional y no permite generalización estadística.
+
+
+\section{Relevancia para México}
+
+México carece de un marco integral de IA en educación. Las iniciativas existentes, como el Centro Público de Formación en IA\footnote{Gobierno de México, Centro Público de Formación en Inteligencia Artificial, 2025.} y las líneas de acción de la SEP para IA generativa\footnote{SEP, Líneas de acción para el uso de IA generativa en educación básica, 2026.}, constituyen pasos iniciales pero no una política articulada. Comprender qué han hecho los siete países de este estudio ofrece una base comparativa concreta para informar las decisiones que están en proceso.
