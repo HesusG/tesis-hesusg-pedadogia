@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "last_updated": "2026-03-28",
+  "last_updated": "2026-04-03",
   "description": "v2 corpus: 7 countries (1 per political continent), ~13 documents total. China has 7 longitudinal documents (2017-2025).",
   "policies": [
     {
@@ -12,7 +12,7 @@
       "title": "Executive Order 14110 on Safe, Secure, and Trustworthy AI",
       "raw_file": "usa/eo14110_2023.pdf",
       "bib_key": "whitehouse2023aeo",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "policy_id": "canada_pan_canadian_ai_strategy_2017",
@@ -45,7 +45,7 @@
       "title": "KI-Strategie der Bundesregierung (Fortschreibung 2020)",
       "raw_file": "germany/ki_strategie_2020.pdf",
       "bib_key": "germany2020kistrategie",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "policy_id": "sudafrica_4ir_2020",
@@ -56,7 +56,7 @@
       "title": "Report of the Presidential Commission on the Fourth Industrial Revolution",
       "raw_file": "south_africa/4ir_report_2020.pdf",
       "bib_key": "southafrica2020pc4ir",
-      "status": "pending"
+      "status": "ready"
     },
     {
       "policy_id": "australia_ai_action_plan_2021",

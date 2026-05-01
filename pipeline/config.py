@@ -139,9 +139,15 @@ CHINA_DOCUMENTS = {
     },
 }
 
-# ── Composite groups (for aggregated cross-national comparison) ──
+# ── Two-level China design ──
+# Level 1 (cross-national): China represented by K-12 Guidance 2024 only
+CHINA_CROSSNATIONAL_DOC = "china_k12_guidance_2024"
+# Level 2 (longitudinal): all 7 docs scored individually
+CHINA_LONGITUDINAL_DOCS = list(CHINA_DOCUMENTS.keys())
+
+# Legacy composite group (for backward compatibility)
 COMPOSITE_GROUPS = {
-    "china": list(CHINA_DOCUMENTS.keys()),
+    "china": CHINA_LONGITUDINAL_DOCS,
 }
 
 REGION_COLORS = {
@@ -153,94 +159,314 @@ REGION_COLORS = {
     "asia": "#d32f2f",
 }
 
+# ── Stratified sampling for BERTopic ──
+CHUNKS_PER_COUNTRY_CAP = 80
+
 # ── Analysis dimensions (PRE-REGISTERED) ──
-# These dimensions are derived EXCLUSIVELY from the literature review,
-# NOT from reading the corpus. They are committed to git BEFORE running
-# any analysis. The git history serves as the pre-registration record.
+# 9 dimensions in 3 tiers (content, process, results).
+# Derived EXCLUSIVELY from the literature review, NOT from reading the corpus.
+# Committed to git BEFORE running any supervised analysis.
+# The git history serves as the pre-registration record.
 #
-# Sources:
-#   - UNESCO Beijing Consensus (2019): Areas 1, 2, 5
-#   - Miao et al. (2021): curriculum, infrastructure
-#   - OECD Digital Education Outlook (2021): research/innovation
-#   - Fatima et al. (2020): governance categories
-#   - Long & Magerko (2020): AI literacy framework
-#   - Ng et al. (2021): 4 dimensions of AI literacy
+# Framework sources:
+#   - OECD Education Policy Outlook (2021): Students, Institutions, System,
+#     Governance, Evaluation categories
+#   - UNESCO Beijing Consensus (2019): Areas 1-5
+#   - Miao et al. (2021): curriculum, infrastructure, teacher support
+#   - UNESCO Ethics Recommendation (2021): ethics principles
+#   - OECD AI Principles (2019): accountability, transparency
+#   - Bray & Thomas (1995): actor selection in comparative analysis
+#   - Shipan & Volden (2012): diffusion agents
+#   - Howlett & Ramesh (2003): policy cycle (evaluation phase)
+#   - Long & Magerko (2020), Ng et al. (2021): AI literacy
+#   - Mishra & Koehler (2006): TPACK for teacher knowledge
 #
-# IMPORTANT: Do NOT modify these queries after ingesting documents.
+# Each dimension has a bilingual anchor paragraph (ES + EN) that gets
+# embedded with the same model as the corpus. Cosine similarity between
+# the anchor vector and each chunk vector = dimension score.
+#
+# IMPORTANT: Do NOT modify these anchors after ingesting documents.
 # Any post-hoc refinement breaks the pre-registration and reintroduces
 # the circular validation problem from v1.
 
 DIMENSIONS = {
-    "gobernanza": {
-        "label": "Gobernanza y regulación",
-        "query": (
-            "Institutional governance, regulation of artificial intelligence, "
-            "legal framework, ministerial coordination, responsible bodies, "
-            "centralization versus decentralization of AI policy decisions"
-        ),
-        "source": "UNESCO Beijing Consensus Area 1; Fatima et al. (2020)",
-    },
+    # ── Tier 1: Content ──
     "curriculo": {
         "label": "Currículo e integración educativa",
-        "query": (
-            "School curriculum, integration of AI into subjects, digital "
-            "competencies, curricular content, educational levels, AI as "
-            "subject of study versus AI as pedagogical tool"
+        "tier": "content",
+        "anchor_es": (
+            "Este fragmento describe el contenido curricular de inteligencia "
+            "artificial en el sistema educativo. Incluye la definición de "
+            "competencias de IA que los estudiantes deben desarrollar, la "
+            "integración de la IA como materia independiente o como componente "
+            "transversal en otras asignaturas, y los niveles educativos en los "
+            "que se implementa (primaria, secundaria, educación superior). "
+            "Abarca también los estándares de aprendizaje, los marcos de "
+            "competencias digitales y de alfabetización en IA, y las decisiones "
+            "sobre si enseñar programación, pensamiento computacional, uso "
+            "crítico de herramientas de IA o una combinación de estos enfoques."
         ),
-        "source": "Miao et al. (2021); Long & Magerko (2020)",
+        "anchor_en": (
+            "This passage describes AI curriculum content in the education "
+            "system. It includes the definition of AI competencies students "
+            "must develop, integration of AI as a standalone subject or "
+            "cross-curricular component, and the educational levels at which "
+            "it is implemented (primary, secondary, higher education). It also "
+            "covers learning standards, digital competency and AI literacy "
+            "frameworks, and decisions about teaching programming, "
+            "computational thinking, critical use of AI tools, or a "
+            "combination of these approaches."
+        ),
+        "source": "OECD EPO 'Students'; Beijing area 2; Long & Magerko (2020)",
     },
     "formacion_docente": {
         "label": "Formación docente",
-        "query": (
-            "Teacher training in artificial intelligence, professional "
-            "development, certification, digital pedagogical competencies, "
-            "partnerships with universities and technology companies"
+        "tier": "content",
+        "anchor_es": (
+            "Este fragmento aborda la preparación y capacitación de profesores "
+            "para trabajar con inteligencia artificial en contextos educativos. "
+            "Incluye programas de formación inicial y continua en competencias "
+            "de IA para docentes, certificaciones profesionales, marcos de "
+            "competencias pedagógicas digitales y requisitos de actualización. "
+            "Describe quién diseña e imparte la formación, qué instituciones "
+            "participan (universidades, centros de formación, empresas "
+            "tecnológicas) y cómo se evalúa la competencia docente en IA. "
+            "Comprende también la provisión de recursos didácticos, guías "
+            "pedagógicas y comunidades de práctica para educadores."
         ),
-        "source": "UNESCO Beijing Consensus Area 2",
+        "anchor_en": (
+            "This passage addresses the preparation and training of teachers "
+            "to work with artificial intelligence in educational settings. It "
+            "includes pre-service and in-service training programs in AI "
+            "competencies for educators, professional certifications, digital "
+            "pedagogical competency frameworks, and continuing education "
+            "requirements. It describes who designs and delivers the training, "
+            "which institutions participate, and how teacher AI competency is "
+            "assessed. It also covers the provision of teaching resources, "
+            "pedagogical guides, and communities of practice for educators."
+        ),
+        "source": "OECD EPO 'Institutions'; Beijing area 3; Mishra & Koehler (2006)",
     },
     "infraestructura": {
         "label": "Infraestructura y acceso",
-        "query": (
-            "Technological infrastructure, connectivity, school equipment, "
-            "digital platforms, internet access, investment in educational "
-            "technology, hardware and software provision"
+        "tier": "content",
+        "anchor_es": (
+            "Este fragmento describe la infraestructura tecnológica y digital "
+            "necesaria para la integración de la inteligencia artificial en la "
+            "educación. Incluye inversiones en conectividad a internet en "
+            "escuelas, equipamiento informático (computadoras, tabletas, "
+            "laboratorios), plataformas digitales educativas, servicios en la "
+            "nube y centros de datos. Abarca también la disponibilidad de "
+            "electricidad, ancho de banda, software educativo con componentes "
+            "de IA, y los planes de adquisición, mantenimiento y actualización "
+            "de recursos tecnológicos en instituciones educativas."
         ),
-        "source": "Miao et al. (2021)",
-    },
-    "etica": {
-        "label": "Ética y valores",
-        "query": (
-            "Ethics of artificial intelligence in education, student data "
-            "privacy, algorithmic bias, transparency, human oversight, "
-            "academic integrity, responsible AI use"
+        "anchor_en": (
+            "This passage describes the technological and digital "
+            "infrastructure needed for integrating artificial intelligence in "
+            "education. It includes investments in school internet "
+            "connectivity, computing equipment (computers, tablets, labs), "
+            "educational digital platforms, cloud services, and data centers. "
+            "It also covers electricity availability, bandwidth, AI-enabled "
+            "educational software, and plans for procurement, maintenance, and "
+            "upgrading of technological resources in educational institutions."
         ),
-        "source": "UNESCO Beijing Consensus Area 5; Jobin et al. (2019)",
+        "source": "OECD EPO 'System'; Beijing area 1",
     },
     "investigacion": {
         "label": "Investigación e innovación",
-        "query": (
-            "Research in educational AI, innovation, funding, research "
-            "centers, academia-industry collaboration, piloting programs, "
-            "impact evaluation"
+        "tier": "content",
+        "anchor_es": (
+            "Este fragmento se refiere a la producción de conocimiento sobre "
+            "inteligencia artificial aplicada a la educación. Incluye la "
+            "creación de centros de investigación dedicados a IA educativa, "
+            "programas de financiamiento para investigación, vínculos de "
+            "colaboración entre universidades y empresas tecnológicas, y "
+            "prioridades de investigación y desarrollo (I+D). Abarca "
+            "convocatorias de proyectos, publicaciones académicas, "
+            "transferencia de resultados de investigación al aula, y la "
+            "formación de investigadores especializados en la intersección "
+            "entre IA y pedagogía."
         ),
-        "source": "OECD Digital Education Outlook (2021)",
+        "anchor_en": (
+            "This passage refers to the production of knowledge about "
+            "artificial intelligence applied to education. It includes the "
+            "creation of research centers dedicated to educational AI, "
+            "research funding programs, university-industry collaboration "
+            "links, and R&D priorities. It covers project calls, academic "
+            "publications, transfer of research results to the classroom, and "
+            "training of researchers specialized in the intersection of AI "
+            "and pedagogy."
+        ),
+        "source": "Beijing area 5; OECD Digital Education Outlook (2021)",
+    },
+
+    # ── Tier 2: Process ──
+    "gobernanza": {
+        "label": "Gobernanza y regulación",
+        "tier": "process",
+        "anchor_es": (
+            "Este fragmento describe las estructuras de gobernanza para la "
+            "inteligencia artificial en educación. Incluye la identificación "
+            "del ministerio u organismo responsable de liderar la política, la "
+            "existencia de comités interinstitucionales o agencias "
+            "especializadas, los marcos regulatorios y normativos que enmarcan "
+            "el uso de IA en escuelas, y los mecanismos de coordinación entre "
+            "niveles de gobierno (federal, estatal, municipal). Comprende "
+            "también la asignación presupuestaria, los instrumentos legales "
+            "(leyes, decretos, lineamientos) y las estructuras de toma de "
+            "decisiones sobre tecnología educativa."
+        ),
+        "anchor_en": (
+            "This passage describes governance structures for artificial "
+            "intelligence in education. It includes the identification of the "
+            "ministry or agency responsible for leading the policy, the "
+            "existence of inter-institutional committees or specialized "
+            "agencies, regulatory and normative frameworks governing AI use in "
+            "schools, and coordination mechanisms between levels of government "
+            "(federal, state, municipal). It also covers budget allocation, "
+            "legal instruments (laws, decrees, guidelines), and decision-making "
+            "structures for educational technology."
+        ),
+        "source": "OECD EPO 'Governance'; Howlett & Ramesh (2003)",
+    },
+    "participacion_actores": {
+        "label": "Participación de actores",
+        "tier": "process",
+        "anchor_es": (
+            "Este fragmento describe la participación de diversos actores en "
+            "la formulación de políticas de inteligencia artificial en "
+            "educación. Incluye mecanismos vinculantes de consulta pública, "
+            "foros de diálogo, mesas de trabajo y procesos participativos con "
+            "incorporación formal de recomendaciones. Identifica los actores "
+            "involucrados: sociedad civil, sector empresarial y tecnológico, "
+            "comunidad académica, sindicatos de docentes, organizaciones de "
+            "padres de familia, estudiantes y organismos internacionales. "
+            "Describe también alianzas público-privadas, la representación "
+            "formal de actores en órganos de decisión y el papel de "
+            "organizaciones como UNESCO y OCDE en la orientación de las "
+            "políticas nacionales."
+        ),
+        "anchor_en": (
+            "This passage describes the participation of diverse stakeholders "
+            "in the formulation of artificial intelligence education policies. "
+            "It includes binding public consultation mechanisms, dialogue "
+            "forums, working groups, and participatory processes with formal "
+            "incorporation of recommendations. It identifies the actors "
+            "involved: civil society, the business and technology sector, "
+            "academia, teacher unions, parent organizations, students, and "
+            "international organizations. It also describes public-private "
+            "partnerships, formal stakeholder representation in decision-making "
+            "bodies, and the role of UNESCO and OECD in shaping national "
+            "policies."
+        ),
+        "source": "Bray & Thomas (1995); Shipan & Volden (2012)",
+    },
+
+    # ── Tier 3: Results ──
+    "etica": {
+        "label": "Ética y rendición de cuentas",
+        "tier": "results",
+        "anchor_es": (
+            "Este fragmento aborda los principios éticos y los mecanismos de "
+            "rendición de cuentas para el uso de inteligencia artificial en "
+            "educación. Incluye directrices sobre transparencia algorítmica, "
+            "protección de datos personales de estudiantes y docentes, "
+            "prevención del sesgo algorítmico, y supervisión humana de "
+            "decisiones automatizadas. Describe mecanismos de auditoría, "
+            "organismos de vigilancia, sanciones por uso indebido de IA en "
+            "contextos educativos, y procedimientos para que estudiantes, "
+            "docentes o familias impugnen decisiones tomadas por sistemas "
+            "de IA."
+        ),
+        "anchor_en": (
+            "This passage addresses ethical principles and accountability "
+            "mechanisms for the use of artificial intelligence in education. "
+            "It includes guidelines on algorithmic transparency, protection "
+            "of student and teacher personal data, prevention of algorithmic "
+            "bias, and human oversight of automated decisions. It describes "
+            "audit mechanisms, oversight bodies, sanctions for misuse of AI in "
+            "educational settings, and procedures for students, teachers, or "
+            "families to challenge decisions made by AI systems."
+        ),
+        "source": "UNESCO Ethics Recommendation (2021); OECD AI Principles (2019)",
     },
     "equidad": {
         "label": "Equidad e inclusión",
-        "query": (
-            "Digital equity, inclusion, urban-rural divide, gender, access "
-            "for vulnerable populations, compensatory mechanisms, "
-            "socioeconomic disparities in AI education"
+        "tier": "results",
+        "anchor_es": (
+            "Este fragmento describe las medidas para garantizar el acceso "
+            "equitativo a la inteligencia artificial en educación. Incluye "
+            "políticas dirigidas a reducir brechas digitales entre zonas "
+            "urbanas y rurales, entre escuelas públicas y privadas, y entre "
+            "poblaciones según género, etnia, nivel socioeconómico o condición "
+            "de discapacidad. Abarca programas de inclusión digital, subsidios "
+            "para tecnología educativa en comunidades marginadas, adaptaciones "
+            "para estudiantes con necesidades especiales, y estrategias para "
+            "prevenir que la IA reproduzca o amplíe desigualdades existentes "
+            "en el sistema educativo."
         ),
-        "source": "UNESCO (general); Ng et al. (2021)",
+        "anchor_en": (
+            "This passage describes measures to ensure equitable access to "
+            "artificial intelligence in education. It includes policies aimed "
+            "at reducing digital divides between urban and rural areas, between "
+            "public and private schools, and among populations by gender, "
+            "ethnicity, socioeconomic status, or disability. It covers digital "
+            "inclusion programs, subsidies for educational technology in "
+            "marginalized communities, accommodations for students with "
+            "special needs, and strategies to prevent AI from reproducing or "
+            "amplifying existing inequalities in the education system."
+        ),
+        "source": "OECD EPO 'Equity'; Beijing area 4",
+    },
+    "metas_evaluacion": {
+        "label": "Metas y evaluación",
+        "tier": "results",
+        "anchor_es": (
+            "Este fragmento describe los objetivos cuantificables y los "
+            "mecanismos de evaluación establecidos en la política de "
+            "inteligencia artificial en educación. Incluye metas numéricas "
+            "(por ejemplo, capacitar a 500,000 docentes para 2025 o lograr "
+            "cobertura de internet en el 100% de las escuelas), indicadores "
+            "de desempeño, plazos de cumplimiento, y mecanismos de monitoreo "
+            "y seguimiento. Describe también cláusulas de revisión periódica "
+            "de la política, evaluaciones de impacto programadas, y la "
+            "designación de responsables de reportar avances."
+        ),
+        "anchor_en": (
+            "This passage describes quantifiable objectives and evaluation "
+            "mechanisms established in AI education policy. It includes "
+            "numerical targets (e.g., train 500,000 teachers by 2025 or "
+            "achieve internet coverage in 100% of schools), performance "
+            "indicators, compliance deadlines, and monitoring and follow-up "
+            "mechanisms. It also describes periodic policy review clauses, "
+            "scheduled impact evaluations, and the designation of officials "
+            "responsible for reporting progress."
+        ),
+        "source": "Howlett & Ramesh (2003) evaluation phase; OECD EPO 'Evaluation'",
     },
 }
+
+# Legacy compatibility: build query strings from anchors for scoring
+for _dim in DIMENSIONS.values():
+    _dim["query"] = _dim["anchor_es"]
 
 # ── BERTopic config (unsupervised analysis) ──
 BERTOPIC_MIN_TOPIC_SIZE = 5
 BERTOPIC_NR_TOPICS = "auto"  # let the algorithm decide
 
+# Sensitivity sweep grid (report all combinations, pick best)
+BERTOPIC_SENSITIVITY_GRID = {
+    "min_topic_size": [3, 5, 8],
+    "n_neighbors": [5, 10, 15],
+}
+BERTOPIC_MAX_OUTLIER_RATIO = 0.40  # reject configs above this
+
 # ── Clustering config ──
 CLUSTERING_METHODS = ["ward", "kmeans", "dbscan"]
 SILHOUETTE_MIN_CLUSTERS = 2
 SILHOUETTE_MAX_CLUSTERS = 6
+
+# ── Dimension scoring config ──
+SCORING_TOP_K_PERCENTILE = 0.10  # use top 10% of chunks per doc
+SCORING_BILINGUAL_STRATEGY = "average"  # average ES+EN anchor vectors

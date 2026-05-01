@@ -1,0 +1,102 @@
+%% cap03-shorter-hesus-speaks.tex — Metodología
+
+\chapter{Metodología}
+\label{cap:metodologia}
+
+Este capítulo describe cómo se lleva a cabo la investigación: qué tipo de estudio es, qué documentos se analizan, cómo funcionan las herramientas que procesan los textos, en qué orden se ejecuta el análisis y qué han hecho otros investigadores con herramientas similares.
+
+
+\section{Diseño de la Investigación}
+
+El estudio es exploratorio, documental y comparativo. Es exploratorio porque no parte de una hipótesis que confirmar, sino de preguntas abiertas sobre qué temas caracterizan las políticas y en qué convergen~\citep{bowen2009document}. Es documental porque la fuente de datos son textos oficiales publicados por gobiernos. Es comparativo porque el análisis se estructura como una comparación entre países, en la tradición de la educación comparada.
+
+El apoyo computacional no convierte al estudio en cuantitativo. Las herramientas de procesamiento de lenguaje natural funcionan como amplificadores de la capacidad analítica del investigador, no como sustitutos de su juicio~\citep{grimmer2013text}. Las herramientas detectan proximidad entre fragmentos de texto. La interpretación de qué significa esa proximidad en términos de política educativa corresponde al investigador.
+
+\citet{nelson2020computational} propuso una secuencia para combinar análisis computacional con investigación cualitativa: primero se descubren patrones sin imponer categorías, luego se refinan con la lectura del investigador y después se confirman computacionalmente. Esta investigación sigue esa secuencia, adaptada al contexto de la educación comparada.
+
+
+\section{Corpus Documental}
+
+El corpus se compone de documentos de política de siete países, seleccionados para representar regiones, idiomas y niveles de desarrollo distintos. China incluye siete documentos publicados entre 2017 y 2025, lo que permite observar cómo evolucionó su política. Los demás países están representados por un documento principal cada uno. La Tabla~\ref{tab:corpus-shorter} presenta el corpus completo.
+
+\begin{table}[htbp]
+\centering
+\caption{Corpus documental}
+\label{tab:corpus-shorter}
+\small
+\begin{tabular}{lllll}
+\hline
+\textbf{País} & \textbf{Región} & \textbf{Documento} & \textbf{Año} & \textbf{Idioma} \\
+\hline
+EE.UU. & Norteamérica & Executive Order 14110 & 2023 & EN \\
+Canadá & Norteamérica & Pan-Canadian AI Strategy & 2017 & EN \\
+Colombia & Latinoamérica & CONPES 3975 & 2019 & ES \\
+Alemania & Europa & KI-Strategie (actualización) & 2020 & DE \\
+Sudáfrica & África & PC4IR Report & 2020 & EN \\
+Australia & Oceanía & AI Action Plan & 2021 & EN \\
+China & Asia & 7 documentos (2017--2025) & 2017--2025 & ZH$\rightarrow$EN \\
+\hline
+\end{tabular}
+\end{table}
+
+Los criterios de selección fueron cuatro: que el país contara con un documento oficial de IA que incluyera educación, que el conjunto representara diversidad geográfica y lingüística, que los documentos fueran de acceso público, y que hubieran sido publicados entre 2017 y 2025.
+
+Los documentos de China se analizan en traducción al inglés. El corpus abarca cuatro familias lingüísticas (inglés, español, alemán y chino), lo que permite observar si el idioma de los documentos influye en las similitudes que el análisis detecta.
+
+
+\section{Cómo se Analizan los Textos}
+
+El análisis computacional de textos de política pública se ha consolidado en la última década como un campo con herramientas validadas para la investigación social~\citep{grimmer2013text}. Esta sección explica las tres herramientas que se utilizan, sin asumir conocimientos previos de programación.
+
+\subsection{Representación semántica}
+
+La técnica central consiste en convertir cada fragmento de texto en una coordenada dentro de un espacio conceptual. Textos que hablan de temas parecidos quedan cerca en ese espacio, aunque estén escritos en idiomas diferentes. Esta conversión la realiza un modelo de lenguaje entrenado en millones de textos en más de 50 idiomas~\citep{reimers2019sentencebert}.
+
+Para hacer esto posible, cada documento se divide primero en fragmentos de aproximadamente un párrafo (800 caracteres con 200 de solapamiento entre fragmentos consecutivos). Cada fragmento se convierte en una lista de 384 números que representan su significado. Dos fragmentos que tratan el mismo tema producen listas numéricas parecidas, lo que permite medir cuánto se parecen mediante una fórmula estándar llamada similitud del coseno.
+
+El modelo que se emplea es \texttt{paraphrase-multilingual-MiniLM-L12-v2}, un modelo de código abierto que se ejecuta en la computadora del investigador sin depender de servicios externos. Esta elección garantiza reproducibilidad: cualquier persona puede obtener los mismos resultados ejecutando el mismo modelo sobre los mismos documentos. La capacidad multilingüe es la que permite comparar documentos escritos en inglés, español, alemán y chino dentro de un mismo marco, aunque la separación entre idiomas no es perfecta~\citep{conneau2020unsupervised}, lo que motiva el control lingüístico que se describe más adelante.
+
+\subsection{Descubrimiento automático de temas}
+
+Antes de aplicar las nueve dimensiones del marco analítico, se ejecuta un análisis que identifica los temas del corpus sin imponer categorías previas~\citep{grootendorst2022bertopic}. El procedimiento agrupa los fragmentos por similitud semántica y después identifica las palabras más representativas de cada grupo.
+
+Los temas que este análisis descubre se comparan con las nueve dimensiones. Los temas que no corresponden a ninguna dimensión revelan puntos ciegos del marco. Las dimensiones sin tema correspondiente sugieren estructura impuesta por el investigador. Ambas divergencias son hallazgos.
+
+\subsection{Puntuación por dimensión}
+
+Las nueve dimensiones del marco analítico (presentadas en el Capítulo~\ref{cap:marco-teorico}) se operacionalizan mediante párrafos ancla: textos de 3 a 5 oraciones que describen qué se observa cuando un documento aborda esa dimensión. Cada párrafo ancla se registra en el código del proyecto antes de ejecutar el análisis, como una forma de pre-registro que evita ajustar las categorías después de ver los resultados~\citep{nosek2018preregistration}.
+
+El modelo convierte cada párrafo ancla en la misma representación numérica que los fragmentos del corpus. La afinidad entre un ancla y cada fragmento produce una puntuación por dimensión para cada país. Los párrafos ancla están escritos en español e inglés, y la puntuación final promedia ambas versiones para reducir el sesgo de idioma.
+
+
+\section{Secuencia Analítica}
+
+El análisis se ejecuta en tres fases que siguen el principio de descubrir primero y confirmar después.
+
+La primera fase descubre los temas del corpus mediante el análisis no supervisado. Se alimentan todos los fragmentos al modelo de descubrimiento de temas, que los agrupa por afinidad semántica. Para evitar que los países con más texto dominen los resultados, se limita la muestra a un máximo de 80 fragmentos por país. Esta fase produce un mapa temático del corpus que no depende de las categorías del investigador.
+
+La segunda fase mide cada documento contra las nueve dimensiones del marco analítico. Los párrafos ancla se comparan con los fragmentos de cada país y se calcula una puntuación de afinidad. El resultado es una matriz de siete países por nueve dimensiones que permite comparar qué temas enfatiza cada política.
+
+La tercera fase verifica que las similitudes detectadas no sean un artefacto del idioma. El control lingüístico compara las similitudes entre países que comparten idioma (por ejemplo, Canadá y Australia, ambos en inglés) con las similitudes entre países de idiomas diferentes (por ejemplo, Canadá y Colombia). Si las similitudes entre países del mismo idioma son sistemáticamente más altas que las de idiomas distintos, esa diferencia mide el sesgo lingüístico del modelo. El control incluye también una línea base monolingüe: traducir todos los documentos al inglés y recalcular las similitudes permite aislar cuánta de la similitud original se debe al contenido y cuánta al idioma.
+
+Para el caso de China, el análisis tiene dos niveles. En la comparación entre países, China está representada por un solo documento (la Guía K-12 de 2024). En el análisis longitudinal, los siete documentos de China se comparan entre sí para observar cómo cambiaron las prioridades entre 2017 y 2025.
+
+
+\section{Precedentes}
+
+El uso de representaciones semánticas para analizar documentos de política pública no es nuevo. \citet{rodriguez2022embeddings} demostraron en el \textit{Journal of Politics} que los modelos de representación semántica capturan distinciones sustantivas relevantes para la ciencia política, y establecieron criterios para evaluar cuándo estos modelos funcionan bien y cuándo no. \citet{kozlowski2019geometry} usaron representaciones semánticas en el \textit{American Sociological Review} para analizar significados culturales, demostrando que estas herramientas capturan constructos sociales, no solo patrones superficiales de texto.
+
+En el campo específico de las políticas de IA, \citet{fatima2020aipolicy} realizaron un análisis comparativo de planes nacionales de inteligencia artificial en 34 países, utilizando dimensiones analíticas similares a las de esta investigación. La librería NLP4Gov~\citep{nlp4gov2024} sistematizó herramientas de procesamiento de lenguaje natural para el análisis de políticas, incluyendo búsqueda semántica y comparación de documentos mediante representaciones similares a las que se emplean aquí.
+
+Lo que esta investigación agrega respecto a estos precedentes es la combinación de tres elementos: el análisis no supervisado previo al marco analítico, la verificación del sesgo de idioma en un corpus de cuatro familias lingüísticas, y el enfoque en políticas de educación en IA en lugar de estrategias nacionales de IA en general.
+
+
+\section{Limitaciones del Método}
+
+Las herramientas de procesamiento de lenguaje natural detectan proximidad semántica entre textos, no causalidad ni intención política. Que dos documentos de países distintos sean semánticamente similares puede significar que comparten preocupaciones, que ambos adoptaron el vocabulario de un marco internacional, o que el modelo captura similitudes lingüísticas más que temáticas. El diseño de tres fases busca distinguir estas posibilidades, pero no las resuelve con certeza.
+
+El modelo multilingüe no trata todos los idiomas con la misma precisión. Su desempeño es mejor en inglés y lenguas europeas que en chino~\citep{conneau2020unsupervised}. Los documentos de China se analizan en traducción, lo que introduce una capa adicional de mediación. El control lingüístico atenúa este problema pero no lo elimina.
+
+Los documentos del corpus varían en extensión, género discursivo y estatus legal. Una orden ejecutiva de Estados Unidos y un informe de comisión de Sudáfrica tienen propósitos y audiencias diferentes. Las puntuaciones de similitud reflejan el contenido textual, no la fuerza normativa ni la probabilidad de implementación.
+
+Por último, la muestra de siete países es intencional y no permite generalización estadística. Los hallazgos describen estos siete casos, no el universo de políticas de IA en educación.

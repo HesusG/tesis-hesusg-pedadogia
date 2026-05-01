@@ -1,10 +1,12 @@
 %% cap02-marco-teorico.tex — Marco Teórico
-%% Iteración 2: revisión triple (/writing + /weakpoints + /proofread)
+%% v2 — 9 dimensiones, 3 niveles, BERTopic, control lingüístico, pre-registro
 
 \chapter{Marco Teórico}
 \label{cap:marco-teorico}
 
-Este capítulo establece las bases conceptuales que sustentan la investigación. Se articula en cinco ejes: la teoría de políticas públicas educativas, el campo de la inteligencia artificial en educación, los marcos normativos de organismos internacionales, la tradición de la educación comparada y el procesamiento de lenguaje natural como herramienta analítica. La integración de estos ejes permite situar el análisis comparativo de políticas de IA educativa dentro de una perspectiva pedagógica informada por métodos computacionales.
+Este capítulo establece las bases conceptuales que sustentan la investigación. Se articula en siete ejes: la teoría de políticas públicas educativas, la transferencia y difusión de políticas entre países, el campo de la inteligencia artificial en educación, los marcos normativos de organismos internacionales, la tradición de la educación comparada, el marco analítico de dimensiones de comparación, y el procesamiento de lenguaje natural como herramienta analítica.
+
+La investigación se sitúa en la intersección de tres tradiciones académicas: la educación comparada \citep{bray1995levels}, el análisis de textos de política \citep{rizvi2010globalizing} y las ciencias sociales computacionales \citep{grimmer2022text}. De la educación comparada toma el rigor en la selección de casos y la sensibilidad contextual. Del análisis de políticas toma la distinción entre lo que los documentos dicen, cómo lo enmarcan y qué efectos producen. De las ciencias sociales computacionales toma las herramientas para escalar el análisis textual sin sacrificar profundidad interpretativa. La integración de estos ejes permite situar el análisis comparativo de políticas de IA educativa dentro de una perspectiva pedagógica informada por métodos computacionales.
 
 
 \section{Políticas Públicas Educativas}
@@ -12,7 +14,7 @@ Este capítulo establece las bases conceptuales que sustentan la investigación.
 
 \subsection{Definición y tipología}
 
-El estudio sistemático de las políticas públicas como campo académico se remonta a los trabajos de \citet{lasswell1951policy}, quien propuso que la investigación sobre políticas requería tanto conocimiento del proceso político como conocimiento aplicado a problemas concretos. Desde entonces, la noción de política pública ha adquirido múltiples acepciones. En su sentido más operativo, una política pública es un curso de acción deliberado adoptado por actores gubernamentales para abordar un problema percibido como de interés colectivo.
+El estudio sistemático de las políticas públicas como campo académico se remonta a los trabajos de \citet{lasswell1951policy}, quien propuso que la investigación sobre políticas requería tanto conocimiento del proceso político como conocimiento aplicado a problemas concretos. En su sentido más operativo, una política pública es un curso de acción deliberado adoptado por actores gubernamentales para abordar un problema percibido como de interés colectivo.
 
 Las políticas educativas constituyen un subconjunto con particularidades propias. \citet{rizvi2010globalizing} las definen como el conjunto de directrices, regulaciones y asignaciones de recursos mediante las cuales los gobiernos organizan y orientan los sistemas de enseñanza. A diferencia de otros ámbitos de la política social, las políticas educativas operan simultáneamente como instrumentos de formación de capital humano, mecanismos de cohesión social y vehículos de transmisión cultural.
 
@@ -20,16 +22,27 @@ Para efectos de esta investigación, conviene distinguir entre tipos de polític
 
 Un rasgo recurrente de las políticas de IA en educación es su carácter programático más que legislativo. La mayoría de los documentos analizados en esta tesis son estrategias, planes de acción o lineamientos, no leyes en sentido estricto. Esta distinción importa porque los documentos programáticos expresan intenciones y prioridades gubernamentales sin necesariamente contar con mecanismos vinculantes de implementación \citep{fatima2020aipolicy}.
 
+\subsection{El ciclo de políticas y la comparabilidad}
 
-\subsection{Transferencia y difusión de políticas educativas}
+Los países del corpus se encuentran en etapas distintas del proceso de políticas. El modelo de ciclo de políticas, formulado originalmente por \citet{lasswell1951policy} y sistematizado por \citet{howlett2003studying}, describe fases sucesivas: establecimiento de agenda, formulación, adopción, implementación y evaluación. China, con siete documentos publicados entre 2017 y 2025, se encuentra en fases avanzadas de evaluación y reformulación. Sudáfrica, con un informe de comisión presidencial, se encuentra aún en la fase de establecimiento de agenda. Esta asimetría no invalida la comparación, pero exige reconocer que los documentos capturan momentos distintos del proceso de políticas. El análisis longitudinal de China (OE6) permite examinar cómo cambia el contenido de una política a medida que un país avanza en el ciclo.
+
+La comprensión de estas etapas también ilumina el tipo de convergencia que el análisis semántico puede detectar. Dos países en la misma fase del ciclo pueden exhibir alta similitud no porque uno haya influido al otro, sino porque las presiones de agenda producen vocabulario similar. El control lingüístico y la triangulación con mecanismos de difusión (sección~\ref{sec:difusion}) permiten evaluar estas explicaciones alternativas.
+
+
+\section{Transferencia y Difusión de Políticas Educativas}
+\label{sec:difusion}
 
 La globalización ha intensificado los flujos de ideas sobre política educativa entre países. \citet{dolowitz2000learning} propusieron un marco analítico para entender la transferencia de políticas como un proceso en el que conocimientos sobre políticas, arreglos administrativos o instituciones de un sistema político se usan para desarrollar políticas en otro. Este proceso puede ser voluntario (aprendizaje de mejores prácticas) o coercitivo (condiciones impuestas por organismos internacionales).
 
 En el campo educativo, \citet{steiner2004global} ha documentado cómo la transferencia de políticas rara vez es una copia literal. Los países adaptan, recontextualizan y transforman las ideas importadas según sus tradiciones institucionales, restricciones presupuestarias y culturas pedagógicas locales. \citet{steinerkhamsi2014cross} distingue entre tres explicaciones para la similitud entre políticas de diferentes países: el préstamo genuino (un país adopta conscientemente la política de otro), la influencia común (varios países responden al mismo estímulo externo) y la convergencia funcional (presiones similares producen respuestas similares de forma independiente).
 
-Estas distinciones son relevantes para interpretar los resultados del análisis semántico. Cuando el pipeline de ChromaDB identifica alta similitud entre los documentos de dos países, las posibles explicaciones incluyen las tres categorías de Steiner-Khamsi. El análisis cualitativo complementario permite distinguir cuál mecanismo opera en cada caso. Por ejemplo, la similitud entre las estrategias de varios países latinoamericanos podría reflejar la influencia común de marcos de la OCDE, mientras que la similitud entre Finlandia y Estonia podría indicar préstamo genuino dada su proximidad geográfica y colaboración bilateral.
+\citet{shipan2012diffusion} identificaron cinco mecanismos específicos de difusión de políticas. El \textit{aprendizaje} ocurre cuando un gobierno observa los resultados de la política de otro y decide adoptarla con base en la evidencia. La \textit{competencia} surge cuando los gobiernos adoptan políticas similares para no quedar rezagados en la atracción de inversión o talento. La \textit{emulación} opera cuando un país adopta una política no por su eficacia demostrada, sino por el prestigio del país que la origina. La \textit{coerción} se manifiesta cuando organismos internacionales condicionan financiamiento o membresía a la adopción de determinadas políticas. El \textit{contagio social} describe la adopción que se propaga por proximidad geográfica o redes profesionales sin un mecanismo causal claro. Estos mecanismos no son mutuamente excluyentes y frecuentemente operan en combinación.
 
-\citet{ball1998big} advirtió que el análisis de políticas educativas en un mundo globalizado requiere atender tanto las convergencias discursivas como las divergencias en implementación. Dos países pueden usar vocabulario idéntico (``habilidades del siglo XXI'', ``alfabetización digital'', ``IA responsable'') pero dar a esas frases significados operativos distintos. El análisis de embeddings opera en el plano textual: puede detectar convergencia retórica entre documentos, pero no evalúa por sí mismo la implementación. Similitud semántica alta entre dos políticas indica que comparten vocabulario y estructura discursiva, no que se ejecuten de forma equivalente. La triangulación con análisis cualitativo, propuesta en el Capítulo~\ref{cap:metodologia}, permite distinguir entre convergencia sustantiva y convergencia meramente discursiva.
+La distinción entre estos mecanismos es central para interpretar los resultados del análisis semántico. Cuando el análisis identifica alta similitud entre los documentos de dos países, las posibles explicaciones incluyen las tres categorías de Steiner-Khamsi y los cinco mecanismos de Shipan y Volden. Si dos países de familias lingüísticas diferentes muestran alta similitud temática y ambos citan extensamente el Consenso de Beijing de la UNESCO, la hipótesis más parsimoniosa es la influencia común de un marco internacional. Si dos países angloparlantes muestran alta similitud, las explicaciones se multiplican: además de la convergencia temática, debe evaluarse el componente lingüístico de esa similitud. El control lingüístico propuesto en el Capítulo~\ref{cap:metodologia} permite descomponer, al menos parcialmente, estas fuentes de similitud.
+
+\citet{ball1998big} advirtió que el análisis de políticas educativas en un mundo globalizado requiere atender tanto las convergencias discursivas como las divergencias en implementación. Dos países pueden usar vocabulario idéntico (``habilidades del siglo XXI'', ``alfabetización digital'', ``IA responsable'') pero dar a esas frases significados operativos distintos. El análisis de \textit{embeddings} opera en el plano textual: puede detectar convergencia retórica entre documentos, pero no evalúa por sí mismo la implementación. Similitud semántica alta entre dos políticas indica que comparten vocabulario y estructura discursiva, no que se ejecuten de forma equivalente. La triangulación con análisis cualitativo permite distinguir entre convergencia sustantiva y convergencia meramente discursiva.
+
+Los mecanismos de difusión dejan huellas observables en los textos de política. Las secciones siguientes describen el dominio (IA en educación), los marcos normativos que pueden actuar como fuentes de difusión, los métodos comparativos para detectarla y las herramientas computacionales para medirla.
 
 
 \section{Inteligencia Artificial en Educación}
@@ -50,26 +63,30 @@ El concepto de alfabetización en IA ha emergido como un marco para definir qué
 
 \citet{ng2021ailiteracy} ampliaron esta conceptualización mediante una revisión exploratoria que identificó cuatro dimensiones de la alfabetización en IA: conocer y comprender la IA, usar y aplicar la IA, evaluar y crear con IA, y considerar las implicaciones éticas de la IA. En el ámbito de la educación básica, \citet{touretzky2019k12ai} propusieron cinco grandes ideas que todo estudiante debería comprender: percepción, representación y razonamiento, aprendizaje, interacción natural e impacto social.
 
-Estos marcos no son mutuamente excluyentes; convergen en que la alfabetización en IA va más allá de la programación o el uso de herramientas. Incluye dimensiones cognitivas (comprender cómo funciona la IA), prácticas (saber usarla) y éticas (evaluar sus consecuencias). Estas dimensiones sugieren que las políticas nacionales pueden priorizar la alfabetización en IA de modos distintos según conciban la IA como competencia técnica, como herramienta práctica o como objeto de deliberación ética. Determinar cómo se distribuyen estas prioridades entre las 22 unidades de análisis es una de las preguntas empíricas de esta investigación.
+Estos marcos no son mutuamente excluyentes; convergen en que la alfabetización en IA va más allá de la programación o el uso de herramientas. Incluye dimensiones cognitivas (comprender cómo funciona la IA), prácticas (saber usarla) y éticas (evaluar sus consecuencias). Estas dimensiones sugieren que las políticas nacionales pueden priorizar la alfabetización en IA de modos distintos según conciban la IA como competencia técnica, como herramienta práctica o como objeto de deliberación ética. La dimensión de currículo del marco analítico (sección~\ref{sec:marco-analitico}) permite comparar cómo los siete países responden a esta pregunta.
 
 
 \subsection{IA como contenido curricular y como herramienta pedagógica}
 
 \citet{holmes2019aied} distinguieron entre IA como contenido de aprendizaje y como herramienta para apoyar el aprendizaje. Esta distinción atraviesa las políticas analizadas y configura dos enfoques complementarios pero distintos.
 
-La IA como contenido curricular implica que los estudiantes aprenden \emph{sobre} IA: qué es, cómo funciona, cuáles son sus limitaciones y qué dilemas éticos plantea. Este enfoque se materializa en asignaturas de programación, robótica, ciencia de datos o ética tecnológica. El caso más ambicioso es Corea del Sur, que estableció la IA como materia obligatoria en educación secundaria a partir de 2025.
+La IA como contenido curricular implica que los estudiantes aprenden \emph{sobre} IA: qué es, cómo funciona, cuáles son sus limitaciones y qué dilemas éticos plantea. Este enfoque se materializa en asignaturas de programación, robótica, ciencia de datos o ética tecnológica.
 
 La IA como herramienta pedagógica implica que los sistemas de IA apoyan procesos de enseñanza y aprendizaje: tutores inteligentes que personalizan el ritmo de estudio, sistemas de evaluación automatizada, asistentes de escritura o plataformas adaptativas. \citet{holmes2022state} documentaron que la mayoría de las aplicaciones de IA en educación se concentran en este segundo enfoque, particularmente en la personalización del aprendizaje y la automatización de tareas administrativas.
 
 Una tercera dimensión, menos visible en la literatura pero presente en las políticas más recientes, es la IA como objeto de regulación dentro del espacio educativo. La irrupción de los modelos generativos en 2022--2023 obligó a muchos sistemas educativos a definir reglas de uso aceptable antes de poder incorporarla como contenido o herramienta \citep{unesco2023genai}. Esta dimensión regulatoria añade complejidad al panorama y explica por qué algunas de las políticas más recientes se enfocan más en restricciones que en aprovechamiento.
 
+Estas distinciones se conectan con marcos establecidos de integración tecnológica en educación. \citet{mishra2006technological} propusieron el marco TPACK (\textit{Technological Pedagogical Content Knowledge}), que describe el conocimiento docente como la intersección de tres dominios: contenido disciplinar, pedagogía y tecnología. Las competencias de alfabetización en IA propuestas por \citet{long2020ailiteracy} y \citet{ng2021ailiteracy} pueden mapearse a los dominios del TPACK: el conocimiento tecnológico (cómo funciona la IA), el conocimiento pedagógico-tecnológico (cómo usar la IA para enseñar) y el conocimiento de contenido-tecnológico (cómo la IA transforma la disciplina). La dimensión de formación docente del marco analítico (sección~\ref{sec:marco-analitico}) captura precisamente cómo las políticas abordan este conocimiento integrado.
+
 \citet{zawacki2019systematic} señalaron un sesgo persistente en la investigación sobre IA en educación: más del 70\% de los estudios publicados provienen de las ciencias de la computación y la ingeniería, mientras que la participación de investigadores en educación y pedagogía es marginal. Esta observación refuerza la pertinencia de abordar el tema desde una perspectiva pedagógica, como propone esta tesis.
+
+Los marcos de alfabetización y las distinciones entre contenido, herramienta y regulación configuran el terreno que las políticas nacionales deben navegar. Los organismos internacionales han jugado un papel central en definir los términos de esa navegación.
 
 
 \section{Marcos Internacionales}
 \label{sec:marcos-internacionales}
 
-Los organismos internacionales han desempeñado un papel determinante en la configuración del discurso global sobre IA y educación. Sus marcos normativos, aunque no son vinculantes, establecen vocabularios, categorías y prioridades que influyen en las estrategias nacionales \citep{bareis2022talking}. Esta sección examina los cuatro organismos cuyas contribuciones son más citadas en los documentos de política analizados.
+Los organismos internacionales han desempeñado un papel determinante en la configuración del discurso global sobre IA y educación. Sus marcos normativos, aunque no son vinculantes, establecen vocabularios, categorías y prioridades que influyen en las estrategias nacionales \citep{bareis2022talking}. En el contexto de esta investigación, estos marcos son relevantes no solo como antecedentes sino como posibles fuentes de difusión: cuando el análisis semántico identifica alta similitud entre documentos de dos países, la referencia compartida a un marco internacional puede explicar esa similitud.
 
 
 \subsection{UNESCO: Consenso de Beijing y marcos posteriores}
@@ -87,19 +104,11 @@ La OCDE adoptó en 2019 sus \textit{Principles on Artificial Intelligence}, que 
 
 En el ámbito educativo, el \textit{OECD Digital Education Outlook 2021} analizó las aplicaciones de IA, blockchain y robótica en educación, concluyendo que la adopción de IA en sistemas educativos era incipiente y desigual \citep{oecd2021digitaloutlook}. El observatorio de políticas de IA de la OCDE (OECD.AI) registra más de 1{,}000 iniciativas en 69 países, pero apenas entre el 5\% y el 8\% se enfocan en educación, lo que confirma la posición marginal del sector educativo en las agendas nacionales de IA.
 
+El \textit{Education Policy Outlook} de la OCDE ofrece un marco estandarizado para comparar políticas educativas de sus países miembros, organizado en torno a seis áreas temáticas: equidad y calidad para estudiantes, preparación de estudiantes para el futuro, mejora de instituciones escolares, evaluación y rendición de cuentas, gobernanza del sistema, y financiamiento \citep{oecd2021epo}. Este marco institucional informa las dimensiones de contenido del análisis comparativo de esta investigación.
 
-\subsection{Foro Económico Mundial: habilidades del futuro}
+El Foro Económico Mundial ha influido en el discurso educativo sobre IA principalmente a través de sus informes sobre el futuro del trabajo~\citep{wef2020future}, enmarcando la educación en IA dentro de una lógica de competitividad económica. \citet{bareis2022talking} denominaron esta perspectiva ``nacionalismo competitivo'', señalando su tensión con el enfoque de la UNESCO centrado en derechos y equidad. Esta tensión entre las lógicas de competitividad y equidad se refleja en los documentos nacionales analizados.
 
-El Foro Económico Mundial (FEM) ha influido en el discurso educativo sobre IA principalmente a través de sus informes sobre el futuro del trabajo. El \textit{Future of Jobs Report 2020} estimó que la automatización desplazaría 85 millones de empleos para 2025 pero crearía 97 millones de nuevos puestos, lo que exigiría una reconversión masiva de habilidades \citep{wef2020future}. Esta narrativa de ``destrucción creativa'' de empleos ha sido la justificación más frecuente para introducir formación en IA dentro de los sistemas educativos.
-
-\citet{bareis2022talking} han señalado que el discurso del FEM tiende a enmarcar la educación en IA dentro de una lógica de competitividad económica: los países deben formar trabajadores adaptables para no perder posiciones en la economía global. Esta perspectiva, que los autores denominan ``nacionalismo competitivo'', contrasta con el enfoque de la UNESCO centrado en derechos y equidad. La tensión entre ambas lógicas se refleja en los documentos nacionales, donde frecuentemente coexisten argumentos de competitividad y de equidad sin que se explicite cómo conciliarlos.
-
-
-\subsection{Banco Mundial: IA y desarrollo educativo}
-
-El Banco Mundial ha abordado la relación entre IA y educación desde la perspectiva del desarrollo. Su marco \textit{Reimagining Human Connections} enfatizó que las tecnologías educativas, incluida la IA, solo son efectivas cuando se integran en estrategias pedagógicas coherentes y no como sustitutos de inversiones en infraestructura básica \citep{worldbank2020reimagining}. Esta posición, más cautelosa que la del FEM, refleja la experiencia del organismo con proyectos tecnológicos en países de ingresos bajos y medios que no produjeron los resultados esperados.
-
-El Informe GEM 2023 de UNESCO, producido con aportes de múltiples organismos, sintetizó estas perspectivas al argumentar que la tecnología en educación debe evaluarse con los mismos criterios que cualquier otra intervención: evidencia de efectividad, análisis de costos, pertinencia contextual y alineación con objetivos pedagógicos \citep{unesco2023gem}. Esta posición sirve como contrapeso al entusiasmo tecnológico que caracteriza algunas estrategias nacionales.
+Los marcos internacionales establecen el vocabulario y las prioridades que las políticas nacionales adoptan, adaptan o ignoran. Para comparar cómo lo hacen, se requieren métodos con rigor metodológico propio. La educación comparada ofrece esa tradición.
 
 
 \section{Análisis Comparativo de Políticas Educativas}
@@ -107,55 +116,189 @@ El Informe GEM 2023 de UNESCO, producido con aportes de múltiples organismos, s
 
 \subsection{Tradición de la educación comparada}
 
-La educación comparada como campo académico se consolidó en la segunda mitad del siglo XX con contribuciones que buscaron dotarla de rigor metodológico. \citet{bereday1964comparative} propuso un método de cuatro etapas: descripción (recopilación de datos de cada caso), interpretación (análisis contextualizado), yuxtaposición (colocación lado a lado de los casos) y comparación (identificación de similitudes y diferencias). Este esquema clásico sigue vigente como estructura lógica del análisis comparativo, aunque las herramientas para ejecutarlo han evolucionado.
+La educación comparada como campo académico se consolidó en la segunda mitad del siglo XX con contribuciones que buscaron dotarla de rigor metodológico. \citet{bereday1964comparative} propuso un método de cuatro etapas: descripción (recopilación de datos de cada caso), interpretación (análisis contextualizado), yuxtaposición (colocación lado a lado de los casos) y comparación (identificación de similitudes y diferencias). Este esquema clásico sigue vigente como estructura lógica del análisis comparativo.
 
-\citet{noah1969toward} argumentaron que la educación comparada debía adoptar métodos empíricos más rigurosos, acercándose a las ciencias sociales cuantitativas sin perder la sensibilidad contextual que distingue al campo. \citet{bray1995levels} propusieron un marco tridimensional que cruza niveles geográficos (mundial, regional, nacional, subnacional, escolar), grupos demográficos (edad, género, etnia) y aspectos de la educación (currículo, gobernanza, financiamiento). Este ``cubo'' analítico permite situar cualquier estudio comparativo según las dimensiones que aborda.
+\citet{noah1969toward} argumentaron que la educación comparada debía adoptar métodos empíricos más rigurosos, acercándose a las ciencias sociales cuantitativas sin perder la sensibilidad contextual que distingue al campo. \citet{bray1995levels} propusieron un marco tridimensional que cruza niveles geográficos (mundial, regional, nacional, subnacional, escolar), grupos demográficos (edad, género, etnia) y aspectos de la educación (currículo, gobernanza, financiamiento). Este ``cubo'' analítico permite situar cualquier estudio comparativo según las dimensiones que aborda y explicitar las que omite.
 
-La presente investigación opera en el nivel nacional del eje geográfico, abarca 22 unidades de análisis (17 países, la Unión Europea y 4 organismos internacionales), y se enfoca en el aspecto de gobernanza y currículo en relación con la IA. Las siete dimensiones de comparación propuestas en el Capítulo~\ref{cap:metodologia} dialogan con el marco de Bray y Thomas al desagregar el ``aspecto'' educativo en componentes específicos del tema de estudio.
+La presente investigación opera en el nivel nacional del eje geográfico, abarca siete países seleccionados por región geopolítica sin filtrar por grupo demográfico, y se enfoca en el aspecto de políticas de IA en educación. Las nueve dimensiones de comparación propuestas en la sección~\ref{sec:marco-analitico} desagregan este aspecto en componentes específicos, dialogando con el marco de Bray y Thomas al hacer explícita la selección. Esta investigación no desagrega por grupo demográfico (el segundo eje del cubo); las comparaciones se realizan entre documentos nacionales, no entre cómo las políticas afectan a diferentes poblaciones dentro de un mismo país. Esta delimitación es deliberada: el análisis semántico opera sobre textos de política, no sobre datos de implementación diferenciados por grupo.
+
+
+\subsection{Tres planos de análisis de política}
+
+\citet{rizvi2010globalizing} propusieron una distinción fundamental para el análisis de políticas educativas en contextos globalizados. Distinguen entre política como \textit{texto} (lo que el documento dice), política como \textit{discurso} (cómo lo enmarca, qué vocabulario elige, qué asume como dado) y política como \textit{efecto} (qué ocurre cuando se implementa en la realidad).
+
+Esta distinción es esencial para posicionar el alcance de esta investigación. El análisis semántico mediante \textit{embeddings} y el modelado de tópicos con BERTopic operan en los planos de texto y discurso: miden qué dicen los documentos y cómo lo dicen. No miden los efectos de las políticas en los sistemas educativos. Las dimensiones de proceso y resultados del marco analítico (sección~\ref{sec:marco-analitico}) capturan lo que los documentos \emph{dicen} sobre procesos de formulación y metas de evaluación, no la implementación real.
+
+Esta delimitación no es una debilidad; es una decisión metodológica coherente. El análisis de texto y discurso es un campo de investigación legítimo y productivo, particularmente cuando el corpus abarca múltiples países e idiomas y la lectura humana comparativa tiene limitaciones de escala.
 
 
 \subsection{Métodos de análisis comparativo de políticas}
 
 Los métodos de análisis comparativo de políticas educativas han sido predominantemente cualitativos. El análisis de contenido, la codificación temática y el análisis del discurso constituyen las herramientas más utilizadas \citep{bray2014comparative}. \citet{krippendorff2018content} definió el análisis de contenido como una técnica para hacer inferencias reproducibles a partir de textos, y señaló que la reproducibilidad del análisis humano rara vez supera un kappa de Cohen de 0.80, mientras que los métodos computacionales alcanzan reproducibilidad consistente cuando se aplican al mismo corpus con los mismos parámetros.
 
-\citet{fatima2020aipolicy} realizaron uno de los pocos estudios que combinó métodos cualitativos y computacionales para analizar estrategias nacionales de IA. Su análisis de más de 30 documentos identificó que aproximadamente el 90\% de las estrategias mencionan la educación o la formación de la fuerza laboral, pero con niveles dispares de detalle y compromiso presupuestario. Sin embargo, su estudio no se centró específicamente en las dimensiones educativas ni utilizó representaciones vectoriales para medir similitud semántica.
+\citet{fatima2020aipolicy} realizaron uno de los pocos estudios que combinó métodos cualitativos y computacionales para analizar estrategias nacionales de IA. Su análisis de más de 30 documentos identificó que aproximadamente el 90\% de las estrategias mencionan la educación o la formación de la fuerza laboral, pero con niveles dispares de detalle y compromiso presupuestario. Sin embargo, su estudio utilizó codificación manual y no aplicó métodos no supervisados para descubrir estructura temática latente.
 
 \citet{jobin2019landscape} analizaron 84 documentos de ética de IA y encontraron convergencia en cinco principios (transparencia, justicia, no maleficencia, responsabilidad y privacidad), pero divergencia en cómo se interpretan y operacionalizan. Su método de codificación temática, aplicado manualmente, requirió un esfuerzo considerable que el análisis computacional puede complementar sin reemplazar.
 
-Un vacío persistente en la educación comparada es la escasa adopción de métodos computacionales. Mientras que la ciencia política incorporó el análisis computacional de textos desde la década de 2010 \citep{grimmer2013text}, y la sociología ha explorado el uso de embeddings para capturar estructuras culturales \citep{kozlowski2019geometry}, la educación comparada permanece casi exclusivamente cualitativa. Una búsqueda exploratoria en Scopus con los términos \textit{text mining}, \textit{NLP}, \textit{topic modeling} y \textit{computational text analysis}, filtrada por las revistas \textit{Comparative Education Review}, \textit{Comparative Education} y \textit{Compare} entre 2015 y 2024, arrojó menos del 5\% de artículos que emplearan alguna forma de análisis computacional de textos.\footnote{Búsqueda realizada en octubre de 2024. Los términos se buscaron en título, resumen y palabras clave.} Esta tesis se propone aportar evidencia en esa dirección.
+En el campo emergente del análisis computacional de políticas, los métodos de \textit{text-as-data} se han consolidado como herramientas para la comparación cross-nacional. \citet{grimmer2022text} sistematizaron el paradigma en cuatro principios: todo modelo cuantitativo de texto es incorrecto pero puede ser útil; ningún método domina a los demás; la validación contra el juicio humano es esencial; y los métodos computacionales aumentan la capacidad humana sin reemplazarla. Estos principios guían las decisiones metodológicas de esta investigación.
+
+Un vacío persistente en la educación comparada es la escasa adopción de estos métodos. Mientras que la ciencia política incorporó el análisis computacional de textos desde la década de 2010 \citep{grimmer2013text}, y la sociología ha explorado el uso de \textit{embeddings} para capturar estructuras culturales \citep{kozlowski2019geometry}, la educación comparada permanece casi exclusivamente cualitativa. Esta tesis aporta evidencia en esa dirección.
+
+La brecha entre la sofisticación metodológica de las ciencias sociales computacionales y la tradición cualitativa de la educación comparada motiva la construcción de un marco analítico que conecte ambas. La sección siguiente presenta ese marco.
+
+
+\section{Marco Analítico: Dimensiones de Comparación}
+\label{sec:marco-analitico}
+
+Esta sección presenta las nueve dimensiones que estructuran el análisis comparativo. Cada dimensión se deriva de marcos teóricos establecidos y se operacionaliza mediante un párrafo ancla que permite su medición computacional.
+
+
+\subsection{Fundamento: de los \textit{frameworks} a las dimensiones}
+
+La derivación de dimensiones sigue una cadena explícita: marco teórico, dimensión nombrada, párrafo ancla, vector de \textit{embeddings}. El \textit{Education Policy Outlook} de la OCDE \citep{oecd2021epo} proporciona las categorías generales para políticas educativas (estudiantes, instituciones, sistema). El Consenso de Beijing \citep{unesco2019beijing} y la guía de \citet{miao2021guidance} proporcionan las categorías específicas para IA en educación (gestión de IA, apoyo docente, ética de datos, investigación). Los mecanismos de difusión de \citet{shipan2012diffusion} y el cubo comparativo de \citet{bray1995levels} informan las dimensiones de proceso. La cadena es transparente: cada dimensión puede rastrearse hasta su fuente.
+
+Las dimensiones se organizan en tres niveles siguiendo la distinción de \citet{rizvi2010globalizing} entre texto, discurso y efecto. Las dimensiones de contenido capturan los temas que las políticas abordan. Las dimensiones de proceso capturan lo que las políticas dicen sobre cómo se formulan y quién participa. Las dimensiones de resultados capturan las metas, indicadores y mecanismos de evaluación que las políticas establecen. Los tres niveles operan en el plano del texto y el discurso, no del efecto.
+
+
+\subsection{Dimensiones de contenido}
+
+\textbf{Currículo.} Derivada de la categoría ``Students'' del OECD Education Policy Outlook y del área 2 del Consenso de Beijing (IA para la gestión educativa). Captura qué se enseña sobre IA en el sistema educativo: si la IA se presenta como materia independiente, herramienta transversal o tema de reflexión crítica; en qué niveles educativos se implementa; y qué competencias se definen. Los marcos de alfabetización en IA de \citet{long2020ailiteracy} y \citet{ng2021ailiteracy}, discutidos en la sección~\ref{sec:ia-educacion}, informan la interpretación de esta dimensión.
+
+\textbf{Formación docente.} Derivada de la categoría ``Institutions'' del OECD EPO y del área 3 del Consenso de Beijing (apoyo a docentes mediante IA). Captura los programas de capacitación, certificaciones y competencias requeridas para que los profesores trabajen con IA en contextos educativos. El marco TPACK \citep{mishra2006technological} proporciona el referente pedagógico para evaluar si las políticas abordan la integración de conocimiento tecnológico, pedagógico y disciplinar.
+
+\textbf{Infraestructura.} Derivada de la categoría ``System'' del OECD EPO y del área 1 del Consenso de Beijing (gestión de IA en educación). Captura la inversión en conectividad, equipamiento, plataformas digitales y servicios tecnológicos necesarios para la integración de IA.
+
+\textbf{Investigación.} Derivada del área 5 del Consenso de Beijing (fomento de investigación en IA educativa). Captura la creación de centros de investigación, programas de financiamiento, vínculos universidad-industria y prioridades de I+D.
+
+
+\subsection{Dimensiones de proceso}
+
+\textbf{Gobernanza.} Derivada de la categoría ``Governance'' del OECD EPO e informada por el modelo de ciclo de políticas \citep{lasswell1951policy, howlett2003studying}. Captura qué ministerio u organismo lidera la política, qué marcos regulatorios la enmarcan, y cómo se coordinan los niveles de gobierno.
+
+\textbf{Participación de actores.} Derivada del cubo comparativo de \citet{bray1995levels}, que exige explicitar qué actores se incluyen en el análisis, e informada por los mecanismos de difusión de \citet{shipan2012diffusion}, donde los actores (gobiernos, organismos internacionales, sector privado) son los agentes de la difusión. Captura los mecanismos de consulta pública, alianzas público-privadas, y la participación formal de sociedad civil, academia y sindicatos en la formulación de las políticas.
+
+
+\subsection{Dimensiones de resultados}
+
+\textbf{Ética y rendición de cuentas.} Derivada de la \textit{Recommendation on the Ethics of AI} \citep{unesco2021ai} y de los Principios de IA de la OCDE \citep{oecd2019ai}. Captura las directrices sobre transparencia, privacidad, sesgo algorítmico, supervisión humana y mecanismos de auditoría.
+
+\textbf{Equidad.} Derivada de la categoría ``Equity'' del OECD EPO y del área 4 del Consenso de Beijing (uso ético y equitativo de datos). Captura las medidas para reducir brechas digitales, atender poblaciones vulnerables y prevenir que la IA reproduzca desigualdades.
+
+\textbf{Metas y evaluación.} Derivada del modelo de ciclo de políticas (fase de evaluación) y de la categoría ``Evaluation and Assessment'' del OECD EPO \citep{howlett2003studying, oecd2021epo}. Captura los objetivos cuantificables, indicadores de desempeño, plazos, cláusulas de revisión y mecanismos de monitoreo que las políticas establecen.
+
+
+\subsection{Operacionalización: párrafos ancla}
+
+Cada dimensión se operacionaliza mediante un párrafo ancla de 3 a 5 oraciones que describe qué se observa cuando un documento de política aborda esa dimensión. El modelo de \textit{embeddings} (\texttt{paraphrase-multilingual-MiniLM-L12-v2}) convierte cada párrafo ancla en un vector de 384 dimensiones. La similitud coseno entre este vector y el vector de cada fragmento del corpus produce un \textit{score} por dimensión para cada fragmento. La agregación de estos \textit{scores} por documento produce el perfil dimensional de cada política.
+
+Los párrafos ancla se pre-registran en el sistema de control de versiones antes de ejecutar el análisis supervisado. La marca temporal del \textit{commit} funciona como mecanismo de pre-registro \citep{nosek2018preregistration}. El contenido de los párrafos ancla y los procedimientos de \textit{scoring} se detallan en el Capítulo~\ref{cap:metodologia}.
+
+Esta operacionalización difiere de la codificación temática manual \citep{krippendorff2018content} en que es completamente reproducible: cualquier investigador que ejecute el mismo modelo sobre el mismo corpus con los mismos párrafos ancla obtendrá los mismos \textit{scores}. La reproducibilidad se logra sin sacrificar riqueza semántica, ya que los párrafos ancla capturan vocabulario y contexto, no solo palabras clave aisladas.
+
+
+\subsection{Síntesis del marco analítico}
+
+La Tabla~\ref{tab:dimensiones} resume las nueve dimensiones, su nivel analítico, la fuente teórica principal y lo que cada una captura en los textos de política.
+
+\begin{table}[htbp]
+\centering
+\caption{Nueve dimensiones del marco analítico}
+\label{tab:dimensiones}
+\small
+\begin{tabular}{llll}
+\hline
+\textbf{Dimensión} & \textbf{Nivel} & \textbf{Fuente principal} & \textbf{Captura en el texto} \\
+\hline
+Currículo & Contenido & OECD EPO; Beijing & Qué y cómo se enseña sobre IA \\
+Formación docente & Contenido & OECD EPO; Beijing & Capacitación y competencias docentes \\
+Infraestructura & Contenido & OECD EPO; Beijing & Conectividad, equipamiento, plataformas \\
+Investigación & Contenido & Beijing área 5 & I+D, vínculos universidad-industria \\
+\hline
+Gobernanza & Proceso & OECD EPO; Howlett & Liderazgo institucional, coordinación \\
+Participación & Proceso & Bray \& Thomas; Shipan & Consulta pública, alianzas, actores \\
+\hline
+Ética & Resultados & UNESCO Ethics; OECD AI & Transparencia, privacidad, auditoría \\
+Equidad & Resultados & OECD EPO; Beijing & Brechas digitales, poblaciones vulnerables \\
+Metas & Resultados & Howlett; OECD EPO & Indicadores, plazos, revisión \\
+\hline
+\end{tabular}
+\end{table}
+
+Las nueve dimensiones constituyen el instrumento de lectura distante que complementa la lectura cercana cualitativa. Su valor analítico se evaluará en el Capítulo~\ref{cap:resultados} mediante la comparación con los tópicos emergentes del análisis no supervisado.
 
 
 \section{Procesamiento de Lenguaje Natural como Herramienta de Investigación Pedagógica}
 \label{sec:nlp-pedagogia}
 
-\subsection{Embeddings y representación semántica de textos}
+\subsection{\textit{Embeddings} y representación semántica de textos}
 
 El procesamiento de lenguaje natural (PLN) ofrece herramientas para analizar textos a una escala que sería impracticable mediante lectura humana. \citet{grimmer2013text} establecieron los principios del paradigma ``texto como datos'': los métodos computacionales de análisis textual amplifican la capacidad del investigador pero no reemplazan su juicio; son herramientas que requieren validación cualitativa constante.
 
-Los embeddings, o representaciones vectoriales de textos, constituyen el avance técnico más relevante para esta investigación. \citet{mikolov2013efficient} demostraron que las palabras pueden representarse como vectores en un espacio de alta dimensionalidad donde la proximidad geométrica corresponde a similitud semántica. Este principio se ha extendido a frases, párrafos y documentos completos mediante modelos como BERT \citep{devlin2019bert} y sus sucesores, que capturan relaciones contextuales complejas.
+Los \textit{embeddings}, o representaciones vectoriales de textos, constituyen el avance técnico más relevante para esta investigación. \citet{mikolov2013efficient} demostraron que las palabras pueden representarse como vectores en un espacio de alta dimensionalidad donde la proximidad geométrica corresponde a similitud semántica. Este principio se ha extendido a frases, párrafos y documentos completos mediante modelos como BERT \citep{devlin2019bert} y sus sucesores, que capturan relaciones contextuales complejas.
 
-Para esta tesis, los documentos de política se representan como vectores mediante el modelo \texttt{text-embedding-3-small} de OpenAI, que ha demostrado capacidad multilingüe adecuada para corpus que combinan textos en español, inglés, francés, portugués y alemán. La similitud entre documentos se mide mediante la distancia del coseno entre sus vectores: valores cercanos a 1 indican alta similitud semántica, mientras que valores cercanos a 0 indican contenido semánticamente distante.
+Para esta tesis, los documentos de política se representan como vectores mediante el modelo \texttt{paraphrase-multilingual-MiniLM-L12-v2}~\citep{reimers2019sentencebert}, un modelo de \textit{sentence-transformers} de código abierto que produce vectores de 384 dimensiones. Este modelo fue diseñado para tareas de similitud semántica multilingüe y ha demostrado capacidad adecuada para corpus que combinan textos en múltiples idiomas. La elección de un modelo local y de código abierto responde a criterios de reproducibilidad: el análisis puede replicarse sin depender de servicios en la nube, y los pesos del modelo son auditables.
 
-\citet{rodriguez2022embeddings} evaluaron el desempeño de diferentes modelos de embeddings en tareas de ciencias sociales y concluyeron que los modelos más recientes superan a los métodos tradicionales (como TF-IDF o modelos de tópicos) en la captura de relaciones semánticas complejas. Sin embargo, advirtieron que la interpretabilidad de los embeddings es menor que la de métodos como los modelos de tópicos estructurales \citep{roberts2019stm}, lo que refuerza la necesidad de triangulación con análisis cualitativo.
+La similitud entre documentos se mide mediante la distancia del coseno entre sus vectores: valores cercanos a 1 indican alta similitud semántica, mientras que valores cercanos a 0 indican contenido semánticamente distante. \citet{rodriguez2022embeddings} evaluaron el desempeño de diferentes modelos de \textit{embeddings} en tareas de ciencias sociales y concluyeron que los modelos basados en \textit{transformers} superan a los métodos tradicionales (como TF-IDF o modelos de tópicos basados en bolsa de palabras) en la captura de relaciones semánticas complejas. Sin embargo, advirtieron que la interpretabilidad de los \textit{embeddings} es menor que la de métodos como los modelos de tópicos estructurales \citep{roberts2019stm}, lo que refuerza la necesidad de complementar los \textit{embeddings} con un método que produzca representaciones temáticas interpretables.
+
+
+\subsection{BERTopic y modelado de tópicos no supervisado}
+
+El modelado de tópicos no supervisado permite descubrir la estructura temática latente de un corpus sin imponer categorías previas. Los modelos clásicos como LDA (\textit{Latent Dirichlet Allocation}) tratan los documentos como distribuciones de bolsas de palabras y asignan probabilidades de pertenencia a cada tópico. Aunque LDA fue ampliamente utilizado en ciencia política y sociología, su representación basada en frecuencia de palabras pierde información sobre el orden y el contexto semántico.
+
+BERTopic~\citep{grootendorst2022bertopic} representa una alternativa que aprovecha los avances en modelos de lenguaje preentrenados. Su arquitectura sigue una secuencia de tres etapas: (1) reducción de dimensionalidad de los \textit{embeddings} mediante UMAP, (2) agrupación de los vectores reducidos mediante HDBSCAN, y (3) representación de cada tópico mediante c-TF-IDF (\textit{class-based} TF-IDF), un procedimiento que identifica las palabras más distintivas de cada grupo. Esta arquitectura combina la riqueza semántica de los \textit{embeddings} preentrenados con la interpretabilidad de las representaciones léxicas.
+
+En esta investigación, BERTopic se ejecuta sobre los fragmentos del corpus embebidos con \texttt{paraphrase-multilingual-MiniLM-L12-v2}. Al utilizar los mismos \textit{embeddings} que el análisis de similitud supervisado, el modelado de tópicos opera en el mismo espacio semántico, lo que hace comparables los resultados de ambos análisis. Los tópicos resultantes se documentan antes de aplicar el marco de nueve dimensiones pre-registradas, siguiendo los principios de la Teoría Fundamentada Computacional~\citep{nelson2020computational}.
+
+La comparación entre los tópicos emergentes y las dimensiones pre-registradas constituye la contribución central del diseño metodológico. Los tópicos que no mapean a ninguna dimensión pre-registrada constituyen ``puntos ciegos'' del marco analítico: temas presentes en el corpus que el investigador no anticipó. Las dimensiones pre-registradas que no corresponden a ningún tópico emergente constituyen ``estructura impuesta'': categorías del marco teórico que no se manifiestan en los datos. Ambos tipos de divergencia son hallazgos.
+
+
+\subsection{Control lingüístico en análisis semántico multilingüe}
+
+Los modelos de \textit{embeddings} multilingües como \texttt{paraphrase-multilingual-MiniLM-L12-v2} fueron entrenados para proyectar textos de múltiples idiomas en un espacio vectorial compartido, donde la proximidad refleja similitud semántica independientemente del idioma~\citep{reimers2019sentencebert}. Sin embargo, estudios sobre representaciones multilingües han mostrado que la separación entre idiomas no es completa~\citep{conneau2020unsupervised}: textos en el mismo idioma o en idiomas de la misma familia tienden a agruparse más estrechamente que textos temáticamente equivalentes en idiomas distantes.
+
+Este fenómeno introduce un confound específico en el análisis comparativo de políticas multilingües. Si dos documentos en inglés (por ejemplo, de Estados Unidos y Australia) obtienen una puntuación de similitud de 0.85, y dos documentos en idiomas diferentes (por ejemplo, de Colombia y China) obtienen 0.70 sobre el mismo tema, la diferencia puede reflejar proximidad lingüística más que divergencia temática.
+
+Esta investigación implementa tres estrategias de control lingüístico:
+
+\begin{enumerate}
+  \item \textbf{Línea base monolingüe}: traducción de todos los documentos no ingleses al inglés, reembebido del corpus completo, y comparación de las matrices de similitud original y monolingüe. La diferencia entre ambas matrices cuantifica el componente lingüístico de la similitud.
+
+  \item \textbf{Comparación por familias lingüísticas}: el corpus incluye documentos en inglés (Estados Unidos, Canadá, Australia, Sudáfrica), español (Colombia), alemán (Alemania, analizado en traducción oficial al inglés) y chino (China, analizado en traducción al inglés). La comparación de similitudes intra-familia (entre países anglófonos) versus inter-familia (entre países de familias lingüísticas diferentes) permite evaluar si la lengua compartida infla la similitud.
+
+  \item \textbf{Test de corpus paralelo}: si un documento relevante (por ejemplo, el Consenso de Beijing de la UNESCO) está disponible en múltiples idiomas, se pueden embeber las versiones en diferentes idiomas y medir la variación en similitud. Si las puntuaciones difieren significativamente, el modelo es sensible al idioma más allá del contenido.
+\end{enumerate}
+
+Este nivel de control lingüístico no tiene precedente en la investigación comparada de políticas educativas. Los estudios existentes que utilizan \textit{embeddings} para comparar políticas cross-nacionales operan generalmente en un solo idioma o asumen sin verificar que el modelo multilingüe elimina el componente lingüístico de la similitud.
+
+
+\subsection{Pre-registro y validación en análisis computacional de textos}
+
+Un problema recurrente en el análisis computacional de textos es la calibración post-hoc de las categorías analíticas. Cuando un investigador define las consultas de un análisis semántico supervisado después de haber leído el corpus, los resultados confirman lo que la lectura humana ya encontró, y el análisis computacional no agrega información nueva~\citep{grimmer2013text}. Este problema, análogo al HARKing (\textit{Hypothesizing After the Results are Known}) en la investigación experimental, invalida la función de descubrimiento que justifica el uso de métodos computacionales.
+
+La solución adoptada en esta investigación es el pre-registro de las dimensiones analíticas. Las nueve dimensiones, junto con sus párrafos ancla y sus definiciones operativas, se registran en el archivo de configuración del \textit{pipeline} y se \textit{commitean} al sistema de control de versiones (Git) antes de ejecutar el análisis supervisado. La marca temporal del \textit{commit} funciona como registro de pre-registro: cualquier observador puede verificar que las categorías analíticas se definieron antes de que los resultados estuvieran disponibles.
+
+\citet{nosek2018preregistration} argumentaron que el pre-registro en ciencias sociales reduce los grados de libertad del investigador y aumenta la credibilidad de los hallazgos al distinguir entre predicciones y resultados post-hoc. En el contexto del análisis computacional de textos, el pre-registro es particularmente importante porque las decisiones sobre qué consultas utilizar y cómo definir las dimensiones afectan directamente los resultados de \textit{scoring}.
+
+El módulo de validación de esta investigación compara cuantitativamente los tópicos emergentes (BERTopic, Fase 1) con las dimensiones pre-registradas (Fase 2), calculando la similitud semántica entre las representaciones de cada tópico y cada dimensión. Este cálculo produce una matriz de cobertura que identifica los tópicos que mapean a dimensiones pre-registradas y los que no, así como las dimensiones que no corresponden a ningún tópico emergente.
 
 
 \subsection{Bases de datos vectoriales y ChromaDB}
 
 Las bases de datos vectoriales son sistemas diseñados para almacenar, indexar y consultar vectores de alta dimensionalidad. A diferencia de las bases de datos relacionales, que buscan coincidencias exactas, las bases vectoriales permiten buscar los documentos más similares a una consulta dada, lo que las hace idóneas para el análisis semántico de corpus documentales.
 
-ChromaDB es una base de datos vectorial de código abierto que permite almacenar documentos junto con sus embeddings y metadatos asociados. En esta investigación, cada fragmento de texto de política se almacena con metadatos que incluyen país de origen, región, año de publicación e idioma. Esto permite realizar consultas semánticas filtradas: por ejemplo, buscar los fragmentos más similares a una consulta sobre ``formación docente en IA'' restringiendo la búsqueda a documentos europeos o a documentos posteriores a 2020.
+ChromaDB es una base de datos vectorial de código abierto que permite almacenar documentos junto con sus \textit{embeddings} y metadatos asociados. En esta investigación, cada fragmento de texto de política se almacena con metadatos que incluyen país de origen, región, año de publicación e idioma. Esto permite realizar consultas semánticas filtradas: por ejemplo, buscar los fragmentos más similares a una consulta sobre ``formación docente en IA'' restringiendo la búsqueda a documentos de un país o periodo específico.
 
-La elección de ChromaDB sobre otras alternativas (Pinecone, Weaviate, Milvus) responde a criterios prácticos: es de código abierto, permite operación local sin dependencia de servicios en la nube, tiene una API sencilla en Python y ofrece integración con los principales proveedores de embeddings. Para los fines de esta investigación, las capacidades de ChromaDB son suficientes dado el tamaño moderado del corpus (22 documentos de política con aproximadamente 500 a 2{,}000 fragmentos tras el chunking).
+La elección de ChromaDB sobre otras alternativas (Pinecone, Weaviate, Milvus) responde a criterios prácticos: es de código abierto, permite operación local sin dependencia de servicios en la nube, tiene una API sencilla en Python y ofrece integración con los principales proveedores de \textit{embeddings}. Para los fines de esta investigación, las capacidades de ChromaDB son suficientes dado el tamaño del corpus (aproximadamente 13 documentos de política con varios cientos de fragmentos tras la segmentación).
 
 
 \subsection{Aplicaciones de PLN en investigación educativa}
 
 La aplicación de técnicas de PLN a la investigación educativa es reciente y se encuentra en una fase de exploración. \citet{nguyen2020words} propusieron un marco para integrar el análisis computacional de textos con las ciencias sociales, argumentando que las técnicas de PLN son más productivas cuando se diseñan en diálogo con preguntas teóricas sustantivas en lugar de aplicarse de forma puramente exploratoria.
 
-\citet{nelson2020computational} desarrolló el concepto de Teoría Fundamentada Computacional (\textit{Computational Grounded Theory}), un enfoque en tres etapas: detección no supervisada de patrones en los datos textuales, refinamiento cualitativo de esos patrones por parte del investigador y confirmación computacional de las categorías refinadas. Esta secuencia se alinea con el diseño metodológico de esta tesis, donde el análisis cualitativo precede al análisis computacional y la triangulación entre ambos valida los hallazgos.
+\citet{nelson2020computational} desarrolló el concepto de Teoría Fundamentada Computacional (\textit{Computational Grounded Theory}), un enfoque en tres etapas: detección no supervisada de patrones en los datos textuales, refinamiento cualitativo de esos patrones por parte del investigador y confirmación computacional de las categorías refinadas. Esta secuencia se alinea con el diseño metodológico de esta tesis: el análisis no supervisado mediante BERTopic (Fase 1) precede a la aplicación de dimensiones pre-registradas (Fase 2), y la validación cruzada (Fase 5) verifica si las categorías supervisadas capturan la estructura emergente del corpus.
 
-\citet{kozlowski2019geometry} demostraron que la geometría del espacio de embeddings puede capturar estructuras sociales y culturales. Aplicado al análisis de políticas, esto implica que la posición relativa de los documentos en el espacio vectorial puede revelar agrupaciones que reflejan afinidades ideológicas, influencias compartidas o tradiciones de política pública comunes. Cuando el análisis de clusters identifica que los países nórdicos se agrupan juntos y separados de los países latinoamericanos, esa distancia vectorial puede interpretarse como una diferencia en el enfoque y las prioridades de política educativa.
+\citet{kozlowski2019geometry} demostraron que la geometría del espacio de \textit{embeddings} puede capturar estructuras sociales y culturales. Aplicado al análisis de políticas, esto implica que la posición relativa de los documentos en el espacio vectorial puede revelar agrupaciones que reflejan afinidades ideológicas, influencias compartidas o tradiciones de política pública comunes.
 
-\citet{moretti2013distant} acuñó el concepto de ``lectura distante'' (\textit{distant reading}) para describir el análisis computacional de grandes corpus literarios. La lectura distante no reemplaza la lectura cercana, sino que la complementa al revelar patrones que serían invisibles para un lector individual. Aplicado a las políticas educativas, la lectura distante mediante embeddings permite identificar convergencias y divergencias semánticas entre 22 documentos de forma simultánea, un ejercicio que la lectura cercana de cada documento por separado no podría lograr con la misma sistematicidad.
+\citet{moretti2013distant} acuñó el concepto de ``lectura distante'' (\textit{distant reading}) para describir el análisis computacional de grandes corpus literarios. La lectura distante no reemplaza la lectura cercana, sino que la complementa al revelar patrones que serían invisibles para un lector individual. Aplicado a las políticas educativas, la lectura distante mediante \textit{embeddings} permite identificar convergencias y divergencias semánticas entre los documentos del corpus de forma simultánea.
 
-\citet{gulson2019digitizing} y \citet{williamson2017big} han argumentado que los métodos digitales están comenzando a transformar la investigación en política educativa, aunque su adopción sigue siendo marginal. Esta tesis se inscribe en esa línea emergente al emplear embeddings y búsqueda semántica como herramientas para un análisis comparativo que mantiene la primacía de la interpretación pedagógica.
+\citet{gulson2019digitizing} y \citet{williamson2017big} han argumentado que los métodos digitales están comenzando a transformar la investigación en política educativa, aunque su adopción sigue siendo marginal. Esta tesis se inscribe en esa línea emergente al emplear \textit{embeddings}, modelado de tópicos no supervisado y control lingüístico como herramientas para un análisis comparativo que mantiene la primacía de la interpretación pedagógica.
