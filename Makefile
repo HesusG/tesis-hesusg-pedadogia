@@ -29,6 +29,23 @@ pdf-cap01:
 	cp $(TEX_DIR)/main_cap01.pdf $(OUTPUT_DIR)/tesis_cap01.pdf
 	@echo "✓ PDF Cap01: $(OUTPUT_DIR)/tesis_cap01.pdf"
 
+pdf-shorter:
+	cd $(TEX_DIR) && pdflatex main_shorter.tex
+	cd $(TEX_DIR) && bibtex main_shorter || true
+	cd $(TEX_DIR) && pdflatex main_shorter.tex
+	cd $(TEX_DIR) && pdflatex main_shorter.tex
+	cp $(TEX_DIR)/main_shorter.pdf $(OUTPUT_DIR)/tesis_shorter.pdf
+	@echo "✓ PDF Shorter: $(OUTPUT_DIR)/tesis_shorter.pdf"
+
+docx-shorter:
+	cd $(TEX_DIR) && pandoc main_shorter.tex \
+		--from=latex \
+		--to=docx \
+		--bibliography=referencias.bib \
+		--citeproc \
+		-o ../$(OUTPUT_DIR)/tesis_shorter.docx
+	@echo "✓ DOCX Shorter: $(OUTPUT_DIR)/tesis_shorter.docx"
+
 docx: pdf
 	cd $(TEX_DIR) && pandoc $(TEX_MAIN).tex \
 		--from=latex \
