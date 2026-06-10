@@ -1,0 +1,177 @@
+[
+  {
+    "id": "vision-sistemica",
+    "bloque": "6.1",
+    "criterio": "La política define una visión sistémica de la relación entre IA y educación que incluye enseñar cómo funciona la IA y sus implicaciones sociales, más allá de su mera aplicación en contextos educativos o la formación de fuerza laboral.",
+    "fuente": "policies need to go beyond the application of AI in educational contexts, to include all the connections between AI and education",
+    "consulta": "visión estratégica nacional sobre inteligencia artificial y educación; objetivos del sistema educativo ante la IA; enseñar qué es la IA, alfabetización en IA, implicaciones sociales y éticas de la inteligencia artificial para la sociedad"
+  },
+  {
+    "id": "preparacion-prioridades",
+    "bloque": "6.1",
+    "criterio": "La política evalúa la preparación sistémica del país para la IA (infraestructura, conectividad, datos, talento local) y define prioridades estratégicas con metas realistas y acotadas en el tiempo, ponderando costos y beneficios.",
+    "fuente": "Apply or develop tools to assess system-wide AI readiness including infrastructure; Internet connectivity; the availability of data, AI tools, and local AI talent",
+    "consulta": "diagnóstico de preparación digital, brecha de infraestructura tecnológica, conectividad a internet en escuelas, disponibilidad de datos y talento en IA, priorización de inversiones, análisis costo-beneficio en política educativa"
+  },
+  {
+    "id": "enfoque-humanista",
+    "bloque": "6.2",
+    "criterio": "La política adopta un enfoque humanista que establece que la IA debe permanecer bajo control humano, centrarse en servir a las personas y desplegarse para ampliar las capacidades de estudiantes y docentes.",
+    "fuente": "Ensure that AI is human-controlled and centred on serving people, and that it is deployed to enhance capacities for students and teachers",
+    "consulta": "enfoque centrado en el ser humano, IA centrada en las personas, control y supervisión humana de la inteligencia artificial, protección de derechos humanos, dignidad de la persona, tecnología al servicio de las personas"
+  },
+  {
+    "id": "valores-humanos",
+    "bloque": "6.2",
+    "criterio": "La política promueve valores que priorizan a las personas y al medio ambiente sobre la eficiencia, y la interacción humana sobre la interacción humano-máquina, fomentando la responsabilidad corporativa y cívica ante los dilemas sociales de la IA.",
+    "fuente": "Define values that prioritize people and the environment over efficiency, and human interaction over human-machine interaction",
+    "consulta": "valores humanos frente a la automatización, bienestar social, interacción humana en el aula, responsabilidad cívica y corporativa, justicia, transparencia y rendición de cuentas en inteligencia artificial"
+  },
+  {
+    "id": "capacidades-decisores",
+    "bloque": "6.3",
+    "criterio": "La política contempla la formación continua de los responsables de políticas y gestores educativos para que puedan tomar decisiones informadas en un ecosistema educativo cada vez más permeado por la IA.",
+    "fuente": "Build the knowledge and confidence of policy-makers and education managers so that they can navigate and make decisions in an increasingly AI-rich educational ecosystem",
+    "consulta": "capacitación de funcionarios públicos en inteligencia artificial, formación de tomadores de decisiones, desarrollo de capacidades institucionales, alfabetización digital de gestores y administradores educativos, intercambio de buenas prácticas"
+  },
+  {
+    "id": "planificacion-interdisciplinaria",
+    "bloque": "6.3",
+    "criterio": "La política incorpora pericia intersectorial, interdisciplinaria y multiactor (educadores, científicos del aprendizaje, ingenieros de IA, organismos internacionales) en las decisiones clave de la planificación.",
+    "fuente": "Infuse inter-sectoral, interdisciplinary and multi-stakeholder expertise to inform the key decisions in policy planning",
+    "consulta": "consulta multiactor, participación de partes interesadas, comités y grupos de expertos, colaboración entre academia, industria y gobierno, planificación interdisciplinaria de la política de inteligencia artificial"
+  },
+  {
+    "id": "gobernanza-coordinacion",
+    "bloque": "6.3",
+    "criterio": "La política establece una estructura organizativa de gobernanza y coordinación intersectorial (órgano rector, instancia coordinadora, equipo implementador) con un ciclo iterativo de planificación, implementación, monitoreo y actualización.",
+    "fuente": "Set up a system-wide organizational structure for policy governance and coordination",
+    "consulta": "gobernanza de la inteligencia artificial, órgano rector, consejo o comisión nacional de IA, coordinación interministerial e intersectorial, mecanismos de implementación, seguimiento y actualización de la estrategia"
+  },
+  {
+    "id": "codigo-abierto-local",
+    "bloque": "6.3",
+    "criterio": "La política promueve la localización y reutilización de herramientas de IA de código abierto, adaptadas al contexto nacional y cultural, para incubar el desarrollo local y mitigar la brecha digital.",
+    "fuente": "Promote the localization and reuse of open-source AI to incubate local development",
+    "consulta": "código abierto, software libre, recursos educativos abiertos, datos y algoritmos compartidos, adaptación local de tecnologías, soberanía tecnológica, reducción de la brecha digital entre países y grupos"
+  },
+  {
+    "id": "equidad-grupos-vulnerables",
+    "bloque": "6.4",
+    "criterio": "La política fija y monitorea metas medibles de inclusión, diversidad y equidad en el uso educativo de la IA, con medidas para llegar a los grupos más vulnerables y fortalecer la infraestructura de acceso.",
+    "fuente": "Establish and monitor measurable targets to ensure inclusion, diversity and equality in teaching and developing AI services",
+    "consulta": "equidad e inclusión educativa, grupos vulnerables, poblaciones marginadas y desfavorecidas, acceso universal a la tecnología, igualdad de oportunidades, brecha urbano-rural, nivel socioeconómico"
+  },
+  {
+    "id": "sesgos-algoritmicos",
+    "bloque": "6.4",
+    "criterio": "La política exige revisar la capacidad de la IA para aliviar o exacerbar sesgos, verificando que las herramientas estén libres de sesgos y entrenadas con datos representativos de la diversidad de la población.",
+    "fuente": "test AI tools and verify that they are free of biases",
+    "consulta": "sesgo algorítmico, discriminación automatizada, datos representativos de la diversidad, equidad e imparcialidad de los algoritmos, auditoría de sistemas de inteligencia artificial, no discriminación"
+  },
+  {
+    "id": "genero-igualdad",
+    "bloque": "6.4",
+    "criterio": "La política aborda explícitamente la igualdad de género: aplicaciones de IA libres de sesgos de género, datos sensibles al género y empoderamiento de niñas y mujeres con competencias en IA.",
+    "fuente": "Create AI applications that are free from gender biases and ensure that the data used for development are gender-sensitive",
+    "consulta": "igualdad de género, sesgo de género en inteligencia artificial, empoderamiento de mujeres y niñas, participación femenina en STEM y tecnología, perspectiva de género en educación digital"
+  },
+  {
+    "id": "inclusion-discapacidad",
+    "bloque": "6.4",
+    "criterio": "La política garantiza que la IA educativa incluya a estudiantes con discapacidad y con distintas capacidades y antecedentes, priorizando herramientas con trayectoria probada de inclusión.",
+    "fuente": "focus on educational AI that has a proven track record of including students with different backgrounds and abilities",
+    "consulta": "discapacidad, necesidades educativas especiales, educación inclusiva, accesibilidad tecnológica, tecnologías de apoyo y asistencia, diseño universal para el aprendizaje, estudiantes con diversidad funcional"
+  },
+  {
+    "id": "datos-privacidad",
+    "bloque": "6.4",
+    "criterio": "La política establece marcos de protección de datos que hacen visible, trazable y auditable la recolección y análisis de datos educativos, regulando propiedad, privacidad y consentimiento informado de estudiantes y docentes.",
+    "fuente": "Establish data protection laws which make educational data collection and analysis visible, traceable, and auditable by teachers, students and parents",
+    "consulta": "protección de datos personales, privacidad de estudiantes y docentes, consentimiento informado, propiedad y gobernanza de los datos, seguridad de la información, regulación del uso de datos educativos"
+  },
+  {
+    "id": "gestion-educativa",
+    "bloque": "6.5",
+    "criterio": "La política prevé el uso de IA para mejorar los sistemas de información para la gestión educativa (EMIS) y su integración con sistemas de gestión del aprendizaje (LMS), al servicio de decisiones basadas en evidencia.",
+    "fuente": "Explore how AI technologies can improve educational management information systems (EMIS)",
+    "consulta": "sistemas de información para la gestión educativa, EMIS, gestión escolar basada en datos, analítica del aprendizaje, plataformas y sistemas de gestión del aprendizaje, eficiencia administrativa, planeación educativa"
+  },
+  {
+    "id": "estudiantes-agencia",
+    "bloque": "6.5",
+    "criterio": "La política protege la agencia, autonomía y bienestar de los estudiantes en el uso de IA, impide su uso con fines de vigilancia y exige informarles sobre los datos que se recogen y su impacto.",
+    "fuente": "Reinforce and reiterate humans' authority and autonomy over their own learning",
+    "consulta": "agencia y autonomía del estudiante, bienestar estudiantil, vigilancia y monitoreo en el aula, reconocimiento facial en escuelas, confianza, aprendizaje centrado en el alumno, motivación y tiempo de juego"
+  },
+  {
+    "id": "curriculo-evaluacion",
+    "bloque": "6.5",
+    "criterio": "La política prevé revisar currículos y métodos de evaluación ante la adopción de la IA, usándola para evaluar múltiples dimensiones de competencias sin convertirla en el único medio de predicción del desarrollo del estudiante.",
+    "fuente": "Review and adjust curricula to reflect pedagogical and assessment changes brought by the increasingly wide adoption of AI in teaching and learning",
+    "consulta": "reforma y ajuste curricular, evaluación de los aprendizajes, evaluación formativa con inteligencia artificial, calificación automatizada, evaluación de competencias múltiples, cambios pedagógicos"
+  },
+  {
+    "id": "docentes-empoderar",
+    "bloque": "6.5",
+    "criterio": "La política protege los derechos y prácticas de los docentes, los consulta en el despliegue de la IA y establece que esta debe apoyar la enseñanza, no reemplazar las funciones docentes esenciales.",
+    "fuente": "facilitate the development of AI tools to support teaching rather than to replace core teacher functions",
+    "consulta": "rol y empoderamiento del docente, derechos del profesorado, la inteligencia artificial como apoyo al maestro, sustitución o reemplazo de profesores, consulta a educadores, autonomía y autoridad docente"
+  },
+  {
+    "id": "docentes-formacion",
+    "bloque": "6.5",
+    "criterio": "La política define las competencias que los docentes necesitan para usar la IA y garantiza formación y acompañamiento continuo, incluyendo comunidades de práctica y oportunidades de aprendizaje permanente.",
+    "fuente": "Deliver training and ensure continuous support to help teachers gain skills to use AI effectively",
+    "consulta": "formación docente en inteligencia artificial, desarrollo profesional del profesorado, capacitación de maestros en tecnología, competencias digitales docentes, comunidades de práctica, acompañamiento pedagógico"
+  },
+  {
+    "id": "aprendizaje-vida",
+    "bloque": "6.5",
+    "criterio": "La política planifica el uso de la IA para apoyar el aprendizaje a lo largo de la vida en entornos formales, no formales e informales, incluido el seguimiento de resultados y credenciales y el acceso equitativo entre grupos de edad.",
+    "fuente": "Actively seek and promote the use of AI to support a wide range of educational approaches and diverse pathways for lifelong learning",
+    "consulta": "aprendizaje a lo largo de la vida, educación continua y permanente, certificaciones y credenciales digitales, educación de adultos y personas mayores, trayectorias formativas flexibles, educación no formal"
+  },
+  {
+    "id": "competencias-era-ia",
+    "bloque": "6.5",
+    "criterio": "La política integra competencias relacionadas con la IA en los currículos escolares y la formación técnico-profesional, promueve la alfabetización en IA de toda la ciudadanía y prevé el reciclaje de trabajadores en riesgo de automatización.",
+    "fuente": "Integrate AI-related skills into school curricula and technical and vocational education and training (TVET) qualifications",
+    "consulta": "enseñanza de la inteligencia artificial, pensamiento computacional, programación y robótica en el currículo, formación técnico-profesional, alfabetización en IA, recapacitación y reconversión laboral, habilidades del futuro"
+  },
+  {
+    "id": "pilotos-evidencia",
+    "bloque": "6.6",
+    "criterio": "La política exige pilotos y evaluaciones locales basadas en evidencia, y no en la novedad o el entusiasmo, antes de escalar tecnologías de IA, con criterios específicos para verificar las afirmaciones de los proveedores.",
+    "fuente": "encourage the pilot testing and evidence-informed adoption of technologies",
+    "consulta": "programas piloto, proyectos de demostración, adopción basada en evidencia, evaluación de eficacia de la tecnología educativa, validación de proveedores, escalamiento de innovaciones, pertinencia al contexto local"
+  },
+  {
+    "id": "investigacion-evaluacion",
+    "bloque": "6.6",
+    "criterio": "La política financia investigación sobre IA y educación, revisa sus impactos sociales y éticos integrales, y protege la investigación independiente minimizando la influencia de intereses creados.",
+    "fuente": "Encourage investment and provide targeted funding in order to build an evidence-based ecosystem for AI in education",
+    "consulta": "investigación educativa, financiamiento de investigación y desarrollo, monitoreo y evaluación de políticas, evidencia científica, evaluación de impacto de la inteligencia artificial en la educación, investigación independiente"
+  },
+  {
+    "id": "costo-ambiental",
+    "bloque": "6.6",
+    "criterio": "La política calcula y analiza el costo ambiental del despliegue de la IA a gran escala y establece metas de sostenibilidad para evitar contribuir al cambio climático.",
+    "fuente": "Calculate and analyse the environmental cost of leveraging AI technologies at scale",
+    "consulta": "sostenibilidad ambiental, huella de carbono, consumo energético de centros de datos, impacto ecológico de la tecnología, energías renovables, cambio climático y medio ambiente"
+  },
+  {
+    "id": "financiamiento-local",
+    "bloque": "6.7",
+    "criterio": "La política atrae inversión corporativa y provee financiamiento para desarrollar herramientas de IA educativa centradas en el ser humano, articulando a estudiantes, financiadores, desarrolladores, educadores y científicos del aprendizaje.",
+    "fuente": "Attract corporate investment and provide funding to create an evidence base",
+    "consulta": "inversión pública y privada, financiamiento de la tecnología educativa, alianzas público-privadas, fondos para innovación, desarrollo de soluciones locales de inteligencia artificial, fallas de mercado"
+  },
+  {
+    "id": "incubacion-innovacion",
+    "bloque": "6.7",
+    "criterio": "La política incuba el desarrollo local de tecnologías de IA para educación, invierte en la formación de talento local y fomenta ecosistemas de startups y colaboraciones internacionales para desplegar IA a escala.",
+    "fuente": "Foster innovations and incubate the local development of AI technologies and tools",
+    "consulta": "ecosistema de innovación, incubadoras y startups de tecnología educativa, talento local en inteligencia artificial, emprendimiento tecnológico, cooperación y colaboración internacional, transferencia de capacidades"
+  }
+]
