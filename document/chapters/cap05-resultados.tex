@@ -3,153 +3,123 @@
 \label{cap:resultados}
 
 % Target: ~25 páginas (~6,250 palabras)
-% v3 — Resultados reales del pipeline con corpus SEA + China (2026-06-09)
+% v4 — Resultados reales: matriz de evaluación + eco/voz (2026-06-10)
 
-El corpus definido en la Sección~\ref{sec:corpus} comprende nueve unidades de análisis: seis países del Sudeste Asiático (Vietnam, Singapur, Malasia, Indonesia, Tailandia y Filipinas), China como caso ancla de la tradición confuciana, la ASEAN y la UNESCO. Los nueve documentos fueron procesados en su totalidad: 2{,}334 fragmentos de texto ingresados a la base vectorial, con tamaños que reflejan la heterogeneidad documental del corpus —desde los 652 fragmentos del plan quinquenal chino y los 584 de la estrategia indonesia hasta los 47 de la decisión vietnamita y los 22 de la versión inglesa tailandesa—. Este capítulo presenta los hallazgos en cuatro secciones: los resultados cualitativos por dimensión de análisis; los resultados del análisis semántico computacional, incluida la prueba empírica de la hipótesis de herencia confuciana; la triangulación entre ambas aproximaciones; y la discusión de sus implicaciones.
+Este capítulo presenta los resultados de la investigación en cuatro secciones. La primera reporta la evaluación de los nueve documentos con la rúbrica derivada del marco UNESCO: la matriz global, el análisis por bloque y el perfil de instrumentos. La segunda reporta las mediciones de identidad discursiva: la proximidad a las plantillas globales, los léxicos de tradición con el índice de voz y la validación literal. La tercera triangula ambas mitades del diseño, con el cruce entre calidad de diseño e identidad discursiva como eje. La cuarta discute los hallazgos a la luz de la literatura.
 
-\section{Resultados por Dimensión de Análisis}
-\label{sec:resultados-dimension}
+\section{Resultados de la Evaluación con la Rúbrica}
+\label{sec:resultados-rubrica}
 
-El análisis semántico puntúa cada política en las siete dimensiones del marco analítico mediante la similitud coseno entre el centroide del documento y la consulta semántica de cada dimensión (Sección~\ref{sec:herramienta}). Las puntuaciones se interpretan de forma relativa —qué documentos se aproximan más a cada dimensión— y se contrastan con la lectura cualitativa de los textos. La Tabla~\ref{tab:dimension-scores} presenta la matriz completa.
+\subsection{La matriz de evaluación global}
+
+La Tabla~\ref{tab:eval-matrix} presenta la matriz de evaluación consolidada: la puntuación total de cada documento (sobre un máximo de 75: 25 criterios $\times$ 3 puntos) y el porcentaje de cumplimiento por bloque del marco UNESCO. La fiabilidad del procedimiento, estimada por doble codificación ciega de Vietnam e Indonesia, resultó sustancial a casi perfecta (acuerdo exacto de 80\% y 84\%, acuerdo dentro de un punto de 100\% en ambos casos, kappa ponderado de 0.90 y 0.80 respectivamente), con los nueve desacuerdos —todos de un punto— resueltos por revisión conjunta de la evidencia.
 
 \begin{table}[htbp]
 \centering
-\caption{Puntuaciones de similitud semántica por dimensión de análisis}
-\label{tab:dimension-scores}
+\caption{Matriz de evaluación: porcentaje de cumplimiento por bloque UNESCO y total}
+\label{tab:eval-matrix}
 \small
-\begin{tabular}{lccccccc}
+\begin{tabular}{lcccccccc}
 \hline
-\textbf{Unidad} & \textbf{Gob.} & \textbf{Curr.} & \textbf{F.~Doc.} & \textbf{Infra.} & \textbf{Ética} & \textbf{Inv.} & \textbf{Equidad} \\
+\textbf{Unidad} & \textbf{6.1} & \textbf{6.2} & \textbf{6.3} & \textbf{6.4} & \textbf{6.5} & \textbf{6.6} & \textbf{6.7} & \textbf{Total} \\
+ & Visión & Human. & Gob. & Equidad & Enseñ. & Evid. & Innov. & /75 \\
 \hline
-China      & 0.546 & 0.426 & 0.309 & 0.517 & 0.315 & 0.421 & 0.475 \\
-Vietnam    & 0.650 & 0.683 & 0.527 & 0.519 & 0.514 & 0.649 & 0.541 \\
-Singapur   & 0.519 & 0.624 & 0.469 & 0.450 & 0.476 & 0.603 & 0.517 \\
-Malasia    & 0.541 & 0.674 & 0.510 & 0.477 & 0.502 & 0.652 & 0.546 \\
-Indonesia  & 0.640 & 0.619 & 0.481 & 0.609 & 0.560 & 0.570 & 0.599 \\
-Tailandia  & 0.507 & 0.608 & 0.441 & 0.473 & 0.464 & 0.572 & 0.516 \\
-Filipinas  & 0.563 & 0.673 & 0.534 & 0.523 & 0.520 & 0.661 & 0.564 \\
-ASEAN      & 0.597 & 0.636 & 0.467 & 0.361 & 0.600 & 0.573 & 0.497 \\
-UNESCO     & 0.558 & 0.701 & 0.600 & 0.490 & 0.642 & 0.649 & 0.571 \\
+Malasia    & 83 & 67 & 58 & 40 & 57 & 44 & 83 & \textbf{43} (57\%) \\
+Indonesia  & 67 & 67 & 50 & 40 & 48 & 44 & 67 & \textbf{38} (51\%) \\
+Singapur   & 67 & 33 & 67 & 33 & 29 & 67 & 83 & \textbf{36} (48\%) \\
+Filipinas  & 67 & 50 & 42 & 33 & 43 & 22 & 67 & \textbf{32} (43\%) \\
+Tailandia  & 67 & 50 & 67 &  7 & 33 & 33 & 83 & \textbf{31} (41\%) \\
+China      & 50 & 33 & 33 & 27 & 43 & 44 & 67 & \textbf{30} (40\%) \\
+Vietnam    & 67 & 17 & 58 & 13 & 38 & 33 & 83 & \textbf{30} (40\%) \\
 \hline
+ASEAN\textsuperscript{a}  & 33 & 33 & 42 & 27 & 33 & 33 & 33 & \textbf{25} (33\%) \\
+UNESCO\textsuperscript{a} & 33 & 33 & 33 & 33 & 29 & 33 & 33 & \textbf{24} (32\%) \\
+\hline
+\multicolumn{9}{l}{\footnotesize Promedio de las 7 políticas nacionales por bloque: 6.1 = 67\%, 6.2 = 45\%, 6.3 = 54\%,} \\
+\multicolumn{9}{l}{\footnotesize 6.4 = 28\%, 6.5 = 42\%, 6.6 = 41\%, 6.7 = 76\%.} \\
+\multicolumn{9}{l}{\footnotesize \textsuperscript{a}Guías voluntarias: puntúan la especificidad operativa del género, no compromisos estatales.} \\
 \end{tabular}
 \end{table}
 
-\subsection{Gobernanza y regulación}
+Tres rasgos estructuran la matriz. Primero, ninguna política alcanza el 60\% del estándar UNESCO: el rango nacional va del 40\% (China, Vietnam) al 57\% (Malasia), con una media regional del 45\%. La región que más rápido formuló estrategias de IA presenta diseños educativos a media construcción. Segundo, el ranking invierte las jerarquías esperables: la mejor calidad de diseño corresponde a Malasia —una hoja de ruta ministerial cargada de indicadores— y la segunda a Indonesia —el documento de horizonte más largo y matriz axiológica explícita—, mientras que los dos sistemas de mayor escala y verticalidad (China y Vietnam) comparten el último lugar nacional. Tercero, las dos guías voluntarias puntúan por debajo de toda política nacional (33\% y 32\%), un resultado por construcción —la regla de calibración les reconoce nivel 1 en recomendaciones sin mecanismo propio— que cuantifica la diferencia entre recomendar y comprometer: la guía de la UNESCO menciona 24 de los 25 criterios de su propia matriz normativa, pero no instrumenta ninguno.
 
-La gobernanza alcanza sus puntuaciones más altas en Vietnam (0.650) e Indonesia (0.640), los dos documentos que dedican mayor espacio a la arquitectura institucional: el decreto vietnamita asigna tareas a diecisiete ministerios y la estrategia indonesia diseña un entramado de órganos nuevos (consejo de IA, comisión de ética, orquestador de innovación). En el extremo opuesto, Tailandia (0.507) y Singapur (0.519) presentan los valores más bajos entre los países, coherente con su estilo de gobernanza por comité y por red de agencias, que presupone instituciones existentes en lugar de diseñarlas. La lectura cualitativa añade el matiz que la métrica no captura: la gobernanza china, con una puntuación intermedia (0.546), es la más vertical del corpus —``el liderazgo centralizado y unificado del Comité Central del Partido''~\citep{china2026fyp}—, pero el plan la da por sentada en lugar de tematizarla.
+\subsection{El patrón por bloques: la pirámide invertida}
 
-\subsection{Currículo e integración educativa}
+El promedio nacional por bloque dibuja el hallazgo central de la evaluación: las políticas son fuertes exactamente donde el marco UNESCO pide ecosistema y débiles donde pide aula y equidad. El bloque mejor cubierto es el fomento de la innovación local (6.7: 76\%, con Malasia, Tailandia, Vietnam y Singapur en 83\%), seguido de la visión estratégica (6.1: 67\%). En el extremo opuesto, el bloque de uso equitativo, inclusivo y ético (6.4) promedia 28\%, con mínimos extremos en Tailandia (7\%) y Vietnam (13\%): en la mayoría de las políticas nacionales, los criterios de sesgos algorítmicos, igualdad de género e inclusión de la discapacidad puntúan cero —la palabra \textit{bias} no aparece en los textos de Malasia ni Filipinas; el vocabulario de género está ausente de Vietnam, Tailandia e incluso, en sus términos propios (\textit{perempuan}, \textit{wanita}), de Indonesia—. El bloque de planes maestros para la enseñanza y el aprendizaje (6.5), corazón pedagógico del marco, promedia 42\%, y el de evidencia y pilotaje (6.6), 41\%.
 
-El currículo es la dimensión de mayor puntuación promedio del corpus y la máxima para cinco de los seis países sudesteasiáticos: Vietnam (0.683), Malasia (0.674), Filipinas (0.673), Singapur (0.624) y Tailandia (0.608); en Indonesia (0.619) solo la supera la gobernanza. El dato refleja un hallazgo sustantivo: las estrategias sudesteasiáticas hablan de educación principalmente en clave curricular y de competencias —los programas STEAM vietnamitas, el ``currículo de convergencia de IA'' malasio que alcanza a las disciplinas no STEM, la ciencia de datos en la secundaria filipina, las vías \textit{AI @ School} tailandesas~\citep{vietnam2021ai, malaysia2021airmap, philippines2024naisr, thailand2022ai}—. La excepción es China (0.426): el plan quinquenal trata el currículo de IA en una línea de planificación de disciplinas universitarias, no como proyecto pedagógico. Que el documento más próximo a esta dimensión sea la guía de la UNESCO (0.701), un texto íntegramente educativo, valida la consulta semántica.
+Este patrón cuantifica, bloque a bloque, el diagnóstico global de \citet{schiff2022education}: la educación aparece en las estrategias de IA al servicio de la formación de talento y el ecosistema de innovación —``educación para la IA''— y no como ámbito de transformación pedagógica protegida —``IA para la educación''—. La proporción regional entre el bloque más alto y el más bajo (76\% frente a 28\%) es la medida más sintética de esa inversión de prioridades.
 
-\subsection{Formación docente}
+\subsection{Perfiles por documento}
 
-La formación docente confirma en el Sudeste Asiático el patrón global identificado en la literatura~\citep{miao2021guidance, unesco2023genai}: es la dimensión más débil del corpus. Es la puntuación mínima de China (0.309), Indonesia (0.481) y Tailandia (0.441), y se cuenta entre las puntuaciones más bajas del resto de las unidades nacionales. La lectura cualitativa precisa el hallazgo: solo Malasia cuenta con un programa nominal y cuantificado de formación docente (la plataforma AI-EE, con meta de 87,500 educadores)~\citep{malaysia2021airmap}; Filipinas asigna la tarea sin metas~\citep{philippines2024naisr}; China convoca a un ``cuerpo docente de alto calibre'' sin programa específico de IA~\citep{china2026fyp}; y Vietnam concibe al docente como beneficiario de la automatización —``docentes y tutores virtuales''— antes que como sujeto de formación~\citep{vietnam2021ai}. Que la puntuación máxima de la dimensión corresponda a la UNESCO (0.600) subraya la brecha: el discurso internacional insiste en la formación docente precisamente porque las políticas nacionales la desatienden.
+Los perfiles individuales matizan el patrón común. \textbf{Malasia} (43/75) debe su liderazgo a la densidad instrumental: cinco criterios alcanzan el nivel 3 —entre ellos la formación docente, con la plataforma AI-EE y su meta de 87,500 educadores, único nivel 3 docente del corpus— pero presenta la paradoja de empoderar al docente sin protegerlo: el criterio de formación puntúa 3 y el de salvaguardas del rol docente, 0. \textbf{Indonesia} (38/75) exhibe el perfil más homogéneo: trece criterios en nivel 2 y ninguno en 3 —programas con ejecutores nombrados (KORI-KA, la comisión de ética, la plataforma de algoritmos abiertos) pero sin metas numéricas ni presupuestos—, el diseño de un arquitecto sin cronograma. \textbf{Singapur} (36/75) combina la instrumentación más sofisticada del ecosistema (sandboxes regulatorios, investigación financiada en IA responsable, metas numéricas de talento) con el vacío escolar más nítido del corpus: cuatro ceros consecutivos en los criterios de aula —docentes, currículo, agencia estudiantil— dentro de un bloque 6.5 de 29\%. \textbf{Tailandia} (31/75) es bimodal: cuatro niveles 3 (la pirámide de talento con presupuesto, la gobernanza con comité instalado y fechado) contra nueve ceros, consistentes con la brevedad de su versión documental. \textbf{China} (30/75) presenta el caso del plan ómnibus: instrumentos abundantes de organización y autoridad, pero rara vez en la intersección precisa entre IA y educación que la rúbrica exige. \textbf{Vietnam} (30/75) combina la gobernanza más verificable del corpus (punto focal ministerial, informes anuales, revisión de medio término fechada: nivel 3) con los peores bloques de humanismo (17\%) y equidad (13\%): cero resultados para género, discapacidad, sesgos o grupos vulnerables en todo el decreto. \textbf{Filipinas} (32/75) instrumenta la gobernanza distribuida (treinta tareas con agencias líderes, el centro CAIR operativo) pero carece de metas con plazos y de toda previsión de pilotaje.
 
-\subsection{Infraestructura y acceso}
+\subsection{El perfil de instrumentos: organización sin tesoro ni autoridad}
 
-La infraestructura alcanza su máximo nacional en Indonesia (0.609), con un margen amplio sobre el resto; le siguen Filipinas (0.523), Vietnam (0.519) y China (0.517), en un grupo compacto coherente con sus capítulos de centros de cómputo, conectividad y datos —los clústeres nacionales de cómputo chinos, el superordenador nacional indonesio y la interconexión universitaria IdREN~\citep{china2026fyp, indonesia2020stranas}—. La guía de la ASEAN presenta el mínimo del corpus (0.361): un marco de gobernanza organizacional no tematiza infraestructura física. La lectura cualitativa añade el contraste regional: Tailandia exhibe la pieza de infraestructura más concreta del corpus (el superordenador LANTA, primero de la ASEAN)~\citep{thailand2022ai}, pero su versión documental abreviada diluye el peso semántico de la dimensión.
+La codificación NATO de los compromisos con nivel 2 o superior revela un patrón de instrumentación homogéneo: la \emph{organización} domina en todos los documentos nacionales (de 6 a 12 compromisos respaldados por órganos, programas o infraestructura propios), mientras que la \emph{autoridad} (mandatos regulatorios: 0 a 2 por documento) y el \emph{tesoro} (financiamiento identificado: 0 a 2) son escasos, y la \emph{nodalidad} pura es residual. Las políticas de la región no son retóricas en el sentido de \citet{fatima2022interpreting} —sus compromisos educativos suelen tener un programa con nombre—, pero están sistemáticamente subfinanciadas y desreguladas: se crean estructuras sin asegurar presupuestos ni obligaciones. La excepción parcial es Tailandia, cuyo marco presupuestal aprobado (mil millones de baht para la pirámide de talento) representa el compromiso de tesoro más explícito del corpus.
 
-\subsection{Ética y valores}
+\section{Resultados del Eco y la Voz}
+\label{sec:resultados-ecovoz}
 
-La ética separa los documentos normativos de las estrategias de desarrollo: la UNESCO (0.642) y la ASEAN (0.600) encabezan la dimensión, seguidas de Indonesia (0.560), el único país que funda su política en una matriz axiológica explícita (Pancasila)~\citep{indonesia2020stranas}. En el extremo opuesto, China registra la puntuación mínima del corpus (0.315): el plan quinquenal subordina la gobernanza ética a un capítulo de ``sistemas fundamentales'' de datos e IA sin desarrollo doctrinal~\citep{china2026fyp}. El resultado matiza la expectativa derivada de la literatura confuciana: la tradición que concibe la educación como formación moral~\citep{lee1996cultural, tan2020digital} no se traduce, en los países CHC del corpus, en un discurso ético más denso que el de sus vecinos; el lenguaje de la ética de la IA proviene del repertorio internacional~\citep{jobin2019landscape}, no de las matrices culturales nacionales.
+\subsection{Proximidad a las plantillas globales}
 
-\subsection{Investigación e innovación}
+La primera medición confirma la fuerza del repertorio global. Las cinco estrategias nacionales de IA propiamente dichas se sitúan a una similitud de entre 0.777 y 0.874 de la guía de la ASEAN —con Malasia (0.874) y Singapur (0.871) a la cabeza— y de entre 0.667 y 0.742 de la guía de la UNESCO. Los dos documentos de planificación integral son los menos próximos a las plantillas (China: 0.580 con la ASEAN y 0.564 con la UNESCO; Indonesia en posición intermedia), un efecto de género documental ya documentado en la fase anterior de esta investigación.
 
-La investigación presenta puntuaciones altas y homogéneas en las cinco estrategias nacionales de IA propiamente dichas (Filipinas 0.661, Malasia 0.652, Vietnam 0.649, Singapur 0.603, Tailandia 0.572), reflejo del género documental: todas se conciben como hojas de ruta de ecosistemas de investigación e innovación, con sus centros nacionales (CAIR filipino, AI Singapore, los centros de innovación vietnamitas)~\citep{philippines2024naisr, singapore2023nais2, vietnam2021ai}. La puntuación comparativamente baja de China (0.421) repite el efecto de dilución de su amplitud temática: la investigación en IA ocupa un lugar central del plan, pero comparte espacio con sesenta capítulos de desarrollo nacional.
+\subsection{Léxicos de tradición y el índice de voz}
 
-\subsection{Equidad e inclusión}
-
-La equidad alcanza su máximo nacional en Indonesia (0.599), validando la lectura cualitativa del Capítulo~\ref{cap:marco-contextual}: la estrategia indonesia es la única que parte de un diagnóstico de brechas educativas (acceso rural, discapacidad, desigualdad regional) y formula la IA educativa como instrumento de equidad~\citep{indonesia2020stranas}. Le siguen Filipinas (0.564) y Malasia (0.546), con sus programas de inclusión laboral y de género (Women-in-AI)~\citep{malaysia2021airmap}. China presenta el mínimo nacional (0.475) pese a su retórica de equalización de servicios públicos. El patrón es consistente con la síntesis preliminar: la equidad educativa como punto de partida de la política es un rasgo de los sistemas archipelágicos con grandes brechas internas, no de los sistemas de herencia confuciana.
-
-
-\section{Resultados del Análisis Semántico}
-\label{sec:resultados-semantico}
-
-\subsection{Matriz de similitud entre políticas}
-
-La matriz de similitud coseno entre los centroides de los nueve documentos (Figura~\ref{fig:heatmap}) presenta valores entre 0.564 y 0.948. La Tabla~\ref{tab:similitud-top} muestra los diez pares de mayor similitud.
+La Tabla~\ref{tab:voz} presenta la segunda y tercera medición: la proximidad semántica de cada documento a los tres léxicos y su índice de voz, junto con el resumen de la validación literal.
 
 \begin{table}[htbp]
 \centering
-\caption{Los diez pares de políticas con mayor similitud semántica}
-\label{tab:similitud-top}
-\begin{tabular}{llc}
+\caption{Identidad discursiva: proximidad a léxicos, índice de voz y menciones literales}
+\label{tab:voz}
+\small
+\begin{tabular}{lcccrl}
 \hline
-\textbf{Política A} & \textbf{Política B} & \textbf{Similitud} \\
+\textbf{Unidad} & \textbf{Confuciano} & \textbf{Pancasila} & \textbf{Global} & \textbf{Voz} & \textbf{Menciones literales} \\
 \hline
-Singapur (NAIS 2.0)      & Malasia (AI-RMAP)       & 0.948 \\
-Malasia (AI-RMAP)        & Filipinas (NAISR 2.0)   & 0.914 \\
-Vietnam (127/QD-TTg)     & Malasia (AI-RMAP)       & 0.909 \\
-Vietnam (127/QD-TTg)     & Singapur (NAIS 2.0)     & 0.896 \\
-Malasia (AI-RMAP)        & Tailandia (NAIS)        & 0.892 \\
-Singapur (NAIS 2.0)      & Filipinas (NAISR 2.0)   & 0.887 \\
-Malasia (AI-RMAP)        & ASEAN (Guía)            & 0.874 \\
-Singapur (NAIS 2.0)      & ASEAN (Guía)            & 0.871 \\
-Tailandia (NAIS)         & Filipinas (NAISR 2.0)   & 0.861 \\
-Vietnam (127/QD-TTg)     & ASEAN (Guía)            & 0.851 \\
+China      & 0.362 & 0.496 & 0.455 & $+0.041$ & carácter 30, tradición 15, moral 7 \\
+Indonesia  & 0.425 & 0.482 & 0.670 & $-0.188$ & \textbf{Pancasila 19}, carácter 37 \\
+UNESCO     & 0.506 & 0.417 & 0.726 & $-0.221$ & carácter 4, armonía 1 \\
+Vietnam    & 0.320 & 0.397 & 0.680 & $-0.283$ & \emph{ninguna} \\
+Tailandia  & 0.245 & 0.294 & 0.589 & $-0.295$ & \emph{ninguna} \\
+Singapur   & 0.310 & 0.354 & 0.677 & $-0.323$ & carácter 1, tradición 2 \\
+Filipinas  & 0.316 & 0.325 & 0.670 & $-0.345$ & armonía 1, tradición 5 \\
+Malasia    & 0.307 & 0.324 & 0.691 & $-0.367$ & armonía 1, tradición 4 \\
+ASEAN      & 0.331 & 0.313 & 0.774 & $-0.443$ & carácter 8, tradición 7 \\
 \hline
 \end{tabular}
 \end{table}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{figures/generated/heatmap_similitud.pdf}
-\caption{Matriz de similitud semántica entre las nueve unidades del corpus.}
-\label{fig:heatmap}
-\end{figure}
+El resultado es inequívoco: \emph{todas} las políticas del corpus, salvo el plan chino, están considerablemente más próximas a la plantilla global que a cualquier léxico de tradición —el índice de voz es negativo en ocho de nueve documentos—. La guía de la ASEAN es el eco más puro (proximidad global de 0.774, voz de $-0.443$), coherente con los análisis que la describen como una adaptación del repertorio de principios tipo OCDE. China es la única unidad con índice de voz positivo, pero marginal ($+0.041$) y de naturaleza difusa: su proximidad relativamente alta al léxico de Pancasila (0.496) delata que ese léxico captura en parte el vocabulario genérico de la construcción nacional (carácter, soberanía, unidad), del que el plan quinquenal está saturado.
 
-Tres rasgos estructuran la matriz. Primero, las cinco estrategias nacionales de IA del Sudeste Asiático forman un bloque denso de similitudes altas (0.830--0.948) que incluye a la guía de la ASEAN (0.777--0.874 con los miembros). Segundo, China es el vecino lejano de ese bloque: sus similitudes con los cinco países del grupo oscilan entre 0.614 (Tailandia) y 0.712 (Vietnam), y su par más próximo no es ningún país confuciano sino Indonesia (0.804). Tercero, los dos extremos de la matriz son instructivos: China es la unidad más distante del corpus en promedio (0.659 frente al resto), y la UNESCO, con similitudes entre 0.564 y 0.770, alcanza su máximo frente a la ASEAN —los dos documentos normativos se reconocen entre sí—.
+Dos resultados merecen relieve propio. El primero: el documento más próximo al léxico educativo confuciano del corpus no es ninguna política de país confuciano, sino la guía de la UNESCO (0.506, contra 0.320 de Vietnam y 0.310 de Singapur). El vocabulario de la formación de la persona, la centralidad del maestro y el aprendizaje como desarrollo humano —los temas que la tradición confuciana elaboró durante siglos— vive hoy en el discurso normativo global, no en las estrategias de los países que heredan esa tradición. El segundo: la validación literal radicaliza el hallazgo semántico. En los nueve documentos del corpus, la palabra ``Confucio'' (y sus derivados) aparece exactamente una vez, y esa única mención es patrimonial: el Templo y Cementerio de Confucio en Qufu, en una lista de sitios del patrimonio mundial anexa al plan chino. No existe una sola invocación filosófica del confucianismo en todo el corpus. Vietnam y Tailandia presentan cero menciones de todo el vocabulario axiológico rastreado (moral, carácter, virtud, armonía, tradición); el único anclaje explícito de una política en su tradición es Pancasila en Indonesia (19 menciones, más la formación del carácter como componente certificable).
 
-\subsection{Clusters y agrupaciones naturales}
-
-El agrupamiento jerárquico (método de Ward sobre la matriz de distancias) produce una estructura estable en un rango amplio de umbrales de corte: tres grupos. El primero reúne las cinco estrategias nacionales sudesteasiáticas y la guía de la ASEAN; su orden de fusión es ilustrativo: Singapur y Malasia se unen primero (distancia 0.052), después Vietnam (0.109), Filipinas (0.133), Tailandia (0.166) y la ASEAN (0.191). El segundo grupo une a China e Indonesia (0.196). La UNESCO permanece aislada hasta el final de la jerarquía, confirmando su condición de \textit{outlier} de género documental, análoga a la que el análisis de la fase anterior de esta investigación detectó en el EU AI Act.
-
-La composición de los grupos admite una lectura nítida: el primer cluster agrupa documentos del mismo género y espacio regional: las cinco estrategias nacionales de IA de alcance medio (22 a 198 fragmentos) y la guía regional que les sirve de referencia común (319 fragmentos); el segundo agrupa los dos documentos de planificación integral de largo horizonte (652 y 584 fragmentos, los dos mayores del corpus), que comparten amplitud temática, vocación de desarrollo nacional y tratamiento de la IA como un eje entre muchos. El género y la escala documental, no la geografía ni la cultura, son la primera fuerza organizadora del espacio semántico.
-
-\subsection{La prueba de la hipótesis confuciana}
-\label{subsec:prueba-chc}
-
-La pregunta central de esta investigación se traduce operativamente en una expectativa verificable: si la herencia confuciana predice el contenido de las políticas, los países CHC (Vietnam, Singapur) deberían presentar mayor similitud entre sí y con el caso ancla chino que con sus vecinos no confucianos. Los datos no satisfacen esa expectativa en ninguno de sus dos componentes.
-
-En el componente horizontal, la similitud Vietnam--Singapur (0.896) es alta pero no distintiva: queda por debajo de Singapur--Malasia (0.948) y de Malasia--Filipinas (0.914), pares que cruzan la frontera de la clasificación CHC. Las similitudes de cada país confuciano con sus vecinos no confucianos son del mismo orden que la similitud entre ambos países confucianos: Vietnam--Malasia alcanza 0.909 y Singapur--Filipinas 0.887. Ningún corte del dendrograma produce un grupo {Vietnam, Singapur} o {China, Vietnam, Singapur}: la clasificación cultural no emerge como estructura del espacio semántico.
-
-En el componente vertical, el caso ancla tampoco atrae a sus herederos culturales: China está más próxima a Indonesia (0.804) —país de herencia confuciana ausente— que a Vietnam (0.712) o Singapur (0.676). La explicación es de género documental: el plan quinquenal chino y la estrategia indonesia 2020--2045 comparten formato de planificación nacional integral de largo plazo, mientras que Vietnam y Singapur escribieron estrategias sectoriales de IA. Cuando el género coincide, la distancia cultural se desvanece; cuando difiere, la proximidad cultural no la compensa.
-
-Cabe una matización metodológica antes de interpretar este resultado como refutación: el centroide de un documento de 181 páginas diluye cualquier señal localizada, la versión tailandesa abreviada y el idioma indonesio introducen asimetrías, y la similitud semántica opera sobre el vocabulario compartido, no sobre los rasgos institucionales profundos donde la literatura CHC sitúa la herencia~\citep{marginson2011higher}. Los datos autorizan una conclusión precisa: \emph{en el plano del discurso documental}, las políticas de IA del Sudeste Asiático no se organizan según la herencia confuciana. Si la herencia opera, lo hace en planos que el análisis de \textit{embeddings} no captura, y que la triangulación cualitativa examina a continuación.
-
-
-\section{Triangulación de Resultados}
+\section{Triangulación: Calidad e Identidad}
 \label{sec:triangulacion}
 
-La triangulación entre el análisis computacional y la lectura cualitativa arroja convergencias, complementariedades y una divergencia central que constituye el hallazgo más relevante de la investigación.
+\textbf{Convergencia.} Las dos mitades del diseño coinciden en el diagnóstico de fondo. El bloque de equidad y ética (6.4) y el corazón pedagógico (6.5) son los más débiles de la rúbrica, y la fase semántica previa había encontrado que la formación docente es la dimensión de menor relevancia en el corpus: la evaluación y la semántica miden, con instrumentos independientes, el mismo vacío. Análogamente, el dominio del bloque de innovación (6.7) converge con la orientación de talento y ecosistema que los perfiles cualitativos del Capítulo~\ref{cap:marco-contextual} documentaron.
 
-\textbf{Convergencia.} Ambos métodos coinciden en tres resultados. La formación docente es la dimensión más desatendida: mínima semántica en tres unidades y entre las más bajas en el resto, sin programa cuantificado en ningún país salvo Malasia. La educación aparece subordinada a la formación de talento: la dimensión curricular y de investigación dominan las puntuaciones, y la lectura confirma que las seis estrategias se formularon desde ministerios de ciencia, tecnología o industria, o desde la jefatura de gobierno. Y la UNESCO habla otro idioma: su aislamiento semántico corresponde, en la lectura, a su condición de único documento del corpus centrado en la educación como fin y no como medio.
+\textbf{Complementariedad: el cruce calidad-voz.} El cruce central del diseño arroja un resultado contraintuitivo: la calidad de diseño y la identidad discursiva son independientes. La política mejor diseñada (Malasia, 57\%) es también la más isomorfa con el repertorio global entre las nacionales (voz de $-0.367$); la única política con voz propia explícita (Indonesia, con Pancasila) es la segunda mejor diseñada (51\%); y la única con índice de voz positivo (China) comparte el último lugar de calidad (40\%). Hablar el idioma global no implica diseño retórico —Malasia lo demuestra—, y tener voz propia no garantiza calidad —pero tampoco la penaliza, como muestra Indonesia—. El eco y la voz describen la \emph{identidad} de las políticas; la rúbrica, su \emph{factura}; y el corpus demuestra que ambas varían por separado.
 
-\textbf{Complementariedad.} El análisis semántico detectó la centralidad del género documental —el cluster China--Indonesia— que la lectura cualitativa, organizada por países y dimensiones, no había tematizado; a la inversa, la lectura aporta el contenido que las puntuaciones no distinguen: el programa docente malasio de 87,500 educadores y la pirámide de talento tailandesa de 30,000 personas comparten vecindad semántica, pero materializan filosofías distintas de la relación entre sistema educativo y fuerza laboral.
-
-\textbf{Divergencia.} El resultado central: la lectura cualitativa identifica huellas consistentes con la herencia confuciana —la verticalidad jurídica de los dos sistemas sínicos (el plan bajo dirección del Partido, el decreto del Primer Ministro), la cultura de la meta clasificatoria vietnamita, la educación como proyecto nacional existencial en Singapur~\citep{marginson2011higher, suen2006chronic}—, pero el análisis semántico no encuentra ningún agrupamiento correspondiente. Los rasgos confucianos detectables cualitativamente residen en la \emph{forma institucional} de las políticas (quién las emite, con qué jerarquía, con qué metas), no en su \emph{vocabulario}, que es el plano que miden los \textit{embeddings}. Esta divergencia entre métodos no es un defecto del diseño: es su resultado. Indica que la herencia confuciana, si persiste en las políticas de IA, lo hace como gramática institucional y no como léxico, y que el discurso de las políticas se ha globalizado más rápido que sus formas de gobierno.
-
+\textbf{Divergencia.} El caso vietnamita concentra la divergencia más instructiva: el decreto exhibe simultáneamente la gobernanza más verificable del corpus (nivel 3: punto focal, informes anuales, revisión fechada) y los bloques de humanismo y equidad más vacíos (17\% y 13\%). La alta proximidad de Vietnam a la plantilla global ($0.680$) convive así con la omisión completa de la mitad protectora de esa plantilla: el documento adopta del repertorio global el lenguaje del ecosistema y la competitividad, no el de las salvaguardas. Es el patrón que \citet{ball1998big} llamó convergencia discursiva con divergencia sustantiva, observable aquí dentro de un mismo documento: se importa la mitad del repertorio que sirve al proyecto nacional de desarrollo y se silencia la mitad que lo restringe.
 
 \section{Discusión}
 \label{sec:discusion}
 
-\subsection{Contribución al debate sobre las Culturas de Herencia Confuciana}
+\subsection{Respuesta a la pregunta central}
 
-Los resultados aportan evidencia empírica a un debate sostenido principalmente con argumentos interpretativos. En el plano del discurso de las políticas, los datos favorecen a los críticos del constructo CHC~\citep{ryan2007false, clark2006discursive, odwyer2017deflating}: la clasificación confuciana no predice la organización del espacio semántico, y el documento más ``culturalista'' del corpus pertenece a un país no confuciano que invoca Pancasila, no a Confucio~\citep{indonesia2020stranas}. La convergencia discursiva del bloque de cinco estrategias sudesteasiáticas con la guía de la ASEAN y entre sí —con Indonesia gravitando hacia su par de género documental, China— apunta a los mecanismos de \citet{steinerkhamsi2014cross}: influencia común del repertorio global de políticas de IA y convergencia funcional ante el mismo estímulo tecnológico.
+La respuesta a la pregunta de esta tesis tiene dos mitades complementarias. Sobre la calidad: los componentes educativos de las políticas de IA del Sudeste Asiático y China cumplen menos de la mitad del estándar UNESCO en promedio (45\%), con una pirámide de prioridades invertida respecto del marco —máxima en innovación y ecosistema (76\%), mínima en equidad, ética y salvaguardas del aula (28\%)— y una instrumentación de organización sin tesoro ni autoridad: programas con nombre, sin presupuestos asegurados ni mandatos exigibles. Sobre la identidad: las políticas son eco global casi sin excepción —ocho de nueve índices de voz negativos, ningún uso filosófico del confucianismo en todo el corpus, una sola tradición nominalmente presente (Pancasila)—, y ese isomorfismo discursivo es selectivo: se adopta el vocabulario del ecosistema con más fidelidad que el de la equidad.
 
-El resultado no liquida, sin embargo, la tesis culturalista; la desplaza. Las huellas confucianas que la triangulación localiza en la forma institucional —verticalidad, metas clasificatorias, integración de educación y proyecto de Estado— son precisamente los rasgos que \citet{marginson2011higher} sitúa en el nivel de los sistemas, no de los discursos. La conclusión que los datos autorizan es de alcance medio: en sus políticas de IA, los países de herencia confuciana del Sudeste Asiático escriben como sus vecinos, pero gobiernan como su tradición. La verificación de la segunda parte de esa fórmula exige métodos institucionales comparados que exceden el alcance documental de esta tesis y se proponen como trabajo futuro.
+\subsection{El silencio de las tradiciones como dato}
 
-\subsection{El género documental como variable metodológica}
+El hallazgo de la voz ausente dialoga con tres literaturas. Confirma, en un corpus nuevo y con medición directa, la uniformidad narrativa que \citet{bareis2022talking} documentaron en las estrategias de las potencias: también en el Sudeste Asiático las políticas de IA se escriben en el idioma común del repertorio global. Aporta al debate sobre las Culturas de Herencia Confuciana una pieza que la fase anterior de esta investigación dejó pendiente: no solo los países CHC no se agrupan semánticamente —ahora se sabe que su tradición está literalmente ausente de sus textos, mientras la academia regional elabora éticas confucianas de la IA~\citep{wong2021harmonious, tan2020digital, hou2026natural}, el desajuste entre filosofía y política queda medido—. Y para la evaluación culturalmente situada~\citep{chilisa2021indigenous}, el contraste entre Indonesia y sus vecinos es el dato mayor: el anclaje axiológico explícito es posible (Pancasila lo prueba) y compatible con la calidad de diseño; su ausencia en los demás no es una imposibilidad del género documental, sino una elección de repertorio.
 
-El hallazgo de que el género y la escala del documento organizan el espacio semántico antes que la geografía o la cultura tiene una implicación metodológica para la educación comparada computacional: los corpus de políticas deben controlar el género documental o incorporarlo explícitamente al análisis, porque la similitud de \textit{embeddings} entre centroides es sensible a la amplitud temática. La fase anterior de esta investigación había observado el fenómeno en el aislamiento del EU AI Act (un texto legislativo entre estrategias); el corpus sudesteasiático lo replica con el plan quinquenal chino y lo eleva de anomalía a regularidad. Para el diseño de futuros estudios, la unidad de comparación óptima no es el documento sino la sección temática, una refinación que el trabajo futuro detalla.
+La excepción aparente —el vocabulario axiológico denso del plan chino (carácter, tradición, moral, virtud)— refina la lectura en la clave interpretativa de esta tesis: la tradición sobrevive en las políticas no como filosofía citada sino como \emph{gramática}: la del proyecto civilizatorio estatal en China, la de la verticalidad del decreto en Vietnam, la del examen y el ranking en las metas clasificatorias. Lo que la fase anterior formuló como ``escriben como sus vecinos, gobiernan como su tradición'' encuentra aquí su correlato evaluativo: la tradición no aporta vocabulario a las políticas, pero sí estilo de instrumentación.
 
-\subsection{Implicaciones para la política educativa: la región y México}
+\subsection{Implicaciones para la política educativa}
 
-Para la región, los resultados señalan una agenda pendiente compartida: ningún país del Sudeste Asiático ha formulado aún una política de formación docente en IA proporcional a sus ambiciones curriculares y de talento —la brecha que la UNESCO identifica globalmente~\citep{miao2021guidance} se reproduce en la región que más rápido formuló estrategias—. El programa malasio AI-EE, único en su género, y los lineamientos filipinos de 2026 para la educación básica~\citep{deped2026ai} constituyen los puntos de partida regionales más concretos.
-
-Para sistemas externos a la región, incluido el mexicano, la experiencia sudesteasiática ofrece dos lecciones transferibles. La primera es la viabilidad de formular políticas de IA con componentes educativos sustantivos desde condiciones de desarrollo medio: Vietnam, Indonesia y Filipinas lo hicieron con niveles de infraestructura y brechas internas comparables a los de México~\citep{inegi2024endutih}, y la sincronía regional sugiere que el marco de la ASEAN operó como catalizador —un papel que en América Latina podrían desempeñar los marcos iberoamericanos—. La segunda es una advertencia: la convergencia discursiva con el repertorio global es fácil; los datos muestran que hasta los sistemas con tradiciones educativas más distintivas del mundo escriben hoy políticas semánticamente intercambiables. El reto para un país que formule su política no es adoptar el vocabulario correcto, sino dotarlo de la gramática institucional —metas, responsables, programas docentes— donde las diferencias reales se juegan.
+Para los gobiernos de la región, la matriz de evaluación es un diagnóstico accionable de vacíos: el bloque 6.4 está globalmente desatendido (sesgos, género, discapacidad y privacidad educativa rara vez superan la mención), la formación docente tiene un solo programa cuantificado en toda la región (Malasia) y el pilotaje basado en evidencia es casi inexistente. Para sistemas externos, incluido el mexicano, la lección es doble. La rúbrica es directamente reutilizable como lista de verificación de diseño para una futura política de IA educativa. Y el cruce calidad-voz ofrece una orientación menos obvia: el riesgo de formular una política de IA no es hablar el idioma global —todas lo hacen, y la mejor diseñada del corpus lo habla con fluidez—, sino importar selectivamente la mitad del repertorio que promete competitividad y omitir la mitad que protege el aula, como muestra el caso vietnamita. Una política bien diseñada se reconoce menos por su vocabulario que por la proporción entre sus estructuras, sus presupuestos y sus salvaguardas.
 
 \subsection{Contribuciones metodológicas}
 
-La investigación valida la viabilidad del análisis semántico computacional como instrumento de la educación comparada, con tres aportes específicos: el uso de \textit{embeddings} multilingües para incorporar documentos en idioma original (el caso indonesio) a un corpus comparativo; la operacionalización de una hipótesis culturalista como expectativa de agrupamiento verificable; y la documentación del género documental como variable de confusión que la comparación computacional de políticas debe controlar. El pipeline completo —código, corpus procesado y resultados— se publica como código abierto para su replicación y extensión.
+La investigación deja tres contribuciones metodológicas verificables. La rúbrica de 25 criterios es, hasta donde alcanza la revisión realizada, el primer instrumento publicado que operacionaliza el marco de la UNESCO para evaluar políticas existentes, con fiabilidad intercodificadora sustancial (kappa ponderado de 0.80 a 0.90) y trazabilidad completa de cada juicio a los pasajes que lo sustentan. El procedimiento de puntuación asistida por recuperación semántica muestra una vía práctica para disciplinar la evaluación documental a escala. Y la operacionalización del eco y la voz —plantillas, léxicos con índice de voz y validación literal— convierte una pregunta hasta ahora ensayística en una medición replicable, con sus límites de validez documentados: los léxicos miden temas y no identidades, y exigen la validación literal y la lectura contextual que este diseño incorporó.
