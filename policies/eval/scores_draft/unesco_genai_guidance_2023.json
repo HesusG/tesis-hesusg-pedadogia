@@ -1,0 +1,127 @@
+{
+  "vision-sistemica": {
+    "score": 1,
+    "justificacion": "Articula la visión más completa de IA-educación ('literacy in both the human and technological dimensions of AI', chunk 160), pero como guía solo recomienda a los Estados sin instrumentos propios.",
+    "instrumento": ""
+  },
+  "preparacion-prioridades": {
+    "score": 1,
+    "justificacion": "Analiza la 'digital poverty' en datos, cómputo y talento (chunks 83-84) y pide evaluar brechas regulatorias; no establece herramienta de diagnóstico ni metas propias.",
+    "instrumento": ""
+  },
+  "enfoque-humanista": {
+    "score": 1,
+    "justificacion": "Todo el documento se ancla en el enfoque humanista ('AI tools should be designed to extend or augment human intellectual abilities', chunk 241), pero es marco normativo recomendado, sin instrumento.",
+    "instrumento": ""
+  },
+  "valores-humanos": {
+    "score": 1,
+    "justificacion": "Sostiene que 'human capacity and collective action, and not technology, is the determining factor' (chunk 45) y exige diez rendiciones de cuentas a proveedores (chunk 136), como recomendación.",
+    "instrumento": ""
+  },
+  "capacidades-decisores": {
+    "score": 1,
+    "justificacion": "Surge de la mesa ministerial de mayo 2023 y orienta a policy-makers en pasos de regulación (chunks 10, 127), pero no prevé formación continua institucionalizada de decisores.",
+    "instrumento": ""
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 1,
+    "justificacion": "Recomienda 'bring together intersectoral and interdisciplinary expertise' y co-diseño con docentes, padres y proveedores (chunk 172, sección 4.8); sin mecanismo propio.",
+    "instrumento": ""
+  },
+  "gobernanza-coordinacion": {
+    "score": 1,
+    "justificacion": "Recomienda 'establish a national body to lead on the whole-of-government approach to GenAI' (chunk 127) en pasos de regulación detallados, pero el órgano es prescripción a los Estados, no de la guía.",
+    "instrumento": ""
+  },
+  "codigo-abierto-local": {
+    "score": 1,
+    "justificacion": "Recomienda 'encourage the building of open-source eco-systems' con cómputo y datasets compartidos (chunk 129) y modelos EdGPT locales; sin instrumento propio.",
+    "instrumento": ""
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 1,
+    "justificacion": "La medida 4.1 pide identificar a quienes carecen de conectividad y crear mecanismos de financiamiento sostenible para grupos excluidos (chunk 150); recomendación sin metas medibles propias.",
+    "instrumento": ""
+  },
+  "sesgos-algoritmicos": {
+    "score": 1,
+    "justificacion": "Recomienda 'validation mechanisms to test whether GenAI systems... are free of biases' con datos representativos de la diversidad (chunk 157); mecanismo prescrito a los Estados, no establecido.",
+    "instrumento": ""
+  },
+  "genero-igualdad": {
+    "score": 1,
+    "justificacion": "Promueve la igualdad de género como principio, pruebas de sesgo de género y 'a gender-balanced pool of professionals' (chunks 46, 157, 161); todo en clave de recomendación.",
+    "instrumento": ""
+  },
+  "inclusion-discapacidad": {
+    "score": 1,
+    "justificacion": "Recomienda financiar herramientas para 'learners who have disabilities or special needs' (chunk 150) y documenta usos de GenAI para impedimentos visuales y auditivos (5.3.5, chunks 216-217); sin instrumento propio.",
+    "instrumento": ""
+  },
+  "datos-privacidad": {
+    "score": 1,
+    "justificacion": "Propone mandatar protección de datos, consentimiento informado explícito y límites de edad, citando GDPR y COPPA como referentes (chunks 114, 137, texto completo); marcos ajenos que recomienda replicar.",
+    "instrumento": ""
+  },
+  "gestion-educativa": {
+    "score": 0,
+    "justificacion": "Grep de 'EMIS/management information' sin resultados; la guía no aborda sistemas de información para la gestión educativa ni su integración con LMS.",
+    "instrumento": ""
+  },
+  "estudiantes-agencia": {
+    "score": 1,
+    "justificacion": "La medida 4.2 exige informar a estudiantes qué datos se recogen y su impacto, proteger su motivación intrínseca y reforzar la autonomía humana (chunk 154); recomendación sin instrumento.",
+    "instrumento": ""
+  },
+  "curriculo-evaluacion": {
+    "score": 1,
+    "justificacion": "Recomienda 'system-wide adjustments in curriculum frameworks and assessment methodologies' co-diseñados con actores (chunk 172) y redefinir resultados de aprendizaje (chunk 236); sin instrumentos.",
+    "instrumento": ""
+  },
+  "docentes-empoderar": {
+    "score": 1,
+    "justificacion": "Pide 'protect the rights of teachers and researchers and the value of their practices' y analizar los roles docentes insustituibles (chunk 164); prescripción sin mecanismo.",
+    "instrumento": ""
+  },
+  "docentes-formacion": {
+    "score": 1,
+    "justificacion": "Medida 4.5: integrar la IA en marcos de competencias y programas de formación inicial y continua docente con 'training and continuous coaching' (chunks 123, 165); recomendación a los Estados.",
+    "instrumento": ""
+  },
+  "aprendizaje-vida": {
+    "score": 1,
+    "justificacion": "Recomienda currículos de IA 'for lifelong learning' y 'special programmes for older workers and citizens' (chunks 160, 162); sin instrumentos ni seguimiento de credenciales propio.",
+    "instrumento": ""
+  },
+  "competencias-era-ia": {
+    "score": 1,
+    "justificacion": "Urge 'government-sanctioned AI curricula for school education, in Technical and Vocational Education and Training' (chunk 160) y previsión de cambios laborales (chunk 161); todo recomendado, sin instrumento.",
+    "instrumento": ""
+  },
+  "pilotos-evidencia": {
+    "score": 1,
+    "justificacion": "Medida 4.7 'Test locally relevant application models and build a cumulative evidence base' y exigencia de 'robust process of piloting and evaluation' (chunks 30, 182); prescripción sin mecanismo propio.",
+    "instrumento": ""
+  },
+  "investigacion-evaluacion": {
+    "score": 1,
+    "justificacion": "Recomienda fortalecer la evidencia sobre el impacto social y ético de la GenAI y revisar implicaciones de largo plazo (chunks 171, 226); no financia ni protege investigación por sí misma.",
+    "instrumento": ""
+  },
+  "costo-ambiental": {
+    "score": 1,
+    "justificacion": "Pide explícitamente 'analyse the environmental costs of leveraging AI technologies at scale... and develop sustainable targets' para proveedores (chunk 171); recomendación sin meta propia.",
+    "instrumento": ""
+  },
+  "financiamiento-local": {
+    "score": 1,
+    "justificacion": "Recomienda 'establish sustainable funding mechanisms' para herramientas de IA inclusivas (chunk 150) y financiar estrategias nacionales (chunk 116); sin fondos propios.",
+    "instrumento": ""
+  },
+  "incubacion-innovacion": {
+    "score": 1,
+    "justificacion": "Alienta el desarrollo de modelos EdGPT locales, talento local de IA y ecosistemas de código abierto (chunks 129, 161); como exhortación sin instrumentos de incubación propios.",
+    "instrumento": ""
+  }
+}

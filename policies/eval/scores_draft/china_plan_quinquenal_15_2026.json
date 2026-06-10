@@ -1,0 +1,127 @@
+{
+  "vision-sistemica": {
+    "score": 1,
+    "justificacion": "La IA aparece en educación solo como aplicación ('AI will support the transformation of educational models', chunk 175) con encuadre laboral-productivo, sin visión de enseñar cómo funciona la IA ni sus implicaciones sociales.",
+    "instrumento": ""
+  },
+  "preparacion-prioridades": {
+    "score": 2,
+    "justificacion": "Prioriza infraestructura, datos y talento con instrumentos nombrados (clusters nacionales de cómputo, 'Trusted Data Space Development Action Plan', iniciativa 'Data Factor ×', chunks 164, 170), pero sin diagnóstico de preparación ni metas costo-beneficio para IA.",
+    "instrumento": "organizacion"
+  },
+  "enfoque-humanista": {
+    "score": 1,
+    "justificacion": "El eje 'AI+' People's Well-Being enmarca la IA al servicio de la vida de las personas (chunk 181), pero sin principio de control humano ni despliegue para ampliar capacidades de estudiantes y docentes.",
+    "instrumento": ""
+  },
+  "valores-humanos": {
+    "score": 1,
+    "justificacion": "Anuncia mejorar 'AI laws... and ethical guidelines' (chunk 186) como aspiración, sin valores que prioricen personas y ambiente sobre eficiencia ni interacción humana sobre humano-máquina.",
+    "instrumento": ""
+  },
+  "capacidades-decisores": {
+    "score": 0,
+    "justificacion": "No contempla formación en IA para responsables de políticas o gestores educativos; grep solo halla formación genérica de funcionarios para 'advance modernization' (chunk 635).",
+    "instrumento": ""
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 1,
+    "justificacion": "Menciona mejorar el 'national consultation system for major science and technology decision-making' y la participación empresarial (chunks 138, 147), sin mecanismo multiactor para decisiones de IA y educación.",
+    "instrumento": ""
+  },
+  "gobernanza-coordinacion": {
+    "score": 2,
+    "justificacion": "Establece sistemas de 'algorithm registration, transparency management, and security assessment' y supervisión de la implementación del plan con rendición pública (chunks 186, 651), sin órgano rector específico de IA.",
+    "instrumento": "autoridad"
+  },
+  "codigo-abierto-local": {
+    "score": 1,
+    "justificacion": "Aspira a 'strengthen the open-source ecosystem' y a sistemas abiertos globales (chunks 174, 183) sin programa nombrado de localización o reutilización de IA abierta.",
+    "instrumento": ""
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 1,
+    "justificacion": "Las tecnologías digitales-inteligentes deben 'promote educational equity' y equiparar servicios básicos (chunk 176), pero sin metas medibles de inclusión en el uso educativo de la IA.",
+    "instrumento": ""
+  },
+  "sesgos-algoritmicos": {
+    "score": 0,
+    "justificacion": "Sin mención de sesgos algorítmicos ni datos representativos; grep de bias/fairness/discrimination solo arroja usos sociales y laborales ajenos a la IA.",
+    "instrumento": ""
+  },
+  "genero-igualdad": {
+    "score": 0,
+    "justificacion": "La igualdad de género aparece solo como política de Estado en salud y derechos (chunk 492), sin conexión alguna con IA, datos sensibles al género o competencias digitales de mujeres.",
+    "instrumento": ""
+  },
+  "inclusion-discapacidad": {
+    "score": 1,
+    "justificacion": "Promete 'science and technology assistance for people with disabilities' y construcción de escuelas de educación especial (chunks 501, 427-428), sin vincular IA educativa inclusiva.",
+    "instrumento": ""
+  },
+  "datos-privacidad": {
+    "score": 2,
+    "justificacion": "Crea un 'unified national system for data property rights registration' con gestión clasificada y graduada de datos y normas de uso de datos personales (chunks 184, 186, 169), aunque sin marco específico para datos educativos.",
+    "instrumento": "autoridad"
+  },
+  "gestion-educativa": {
+    "score": 0,
+    "justificacion": "No prevé IA para sistemas de información de gestión educativa ni LMS; las 36 coincidencias de 'emis' en el texto corresponden a 'emissions'.",
+    "instrumento": ""
+  },
+  "estudiantes-agencia": {
+    "score": 1,
+    "justificacion": "Menciona 'strengthen cyber protection of minors' y educación en salud mental (chunks 372, 415) como aspiración, sin marco de agencia estudiantil ni límites a la vigilancia con IA.",
+    "instrumento": ""
+  },
+  "curriculo-evaluacion": {
+    "score": 1,
+    "justificacion": "Anuncia que la IA transformará los modelos educativos con 'precision teaching, personalized learning, and intelligent tutoring' (chunks 175, 181), sin revisión instrumentada de currículos o métodos de evaluación.",
+    "instrumento": ""
+  },
+  "docentes-empoderar": {
+    "score": 1,
+    "justificacion": "Los 'AI-assisted teachers' aparecen como apoyo a la enseñanza (chunk 181), pero sin protección de derechos docentes, consulta al profesorado ni cláusula de no reemplazo.",
+    "instrumento": ""
+  },
+  "docentes-formacion": {
+    "score": 1,
+    "justificacion": "La 'educational capacity enhancement initiative' busca un profesorado de alto calibre (chunk 415) pero sin definir competencias docentes en IA ni formación específica.",
+    "instrumento": ""
+  },
+  "aprendizaje-vida": {
+    "score": 2,
+    "justificacion": "Vincula la estrategia de digitalización educativa con 'optimize public services for lifelong learning' y la Open University of China, más el sistema de formación profesional permanente (chunks de educación, grep 'lifelong').",
+    "instrumento": "organizacion"
+  },
+  "competencias-era-ia": {
+    "score": 3,
+    "justificacion": "Construirá '200 industry-education integration practical training bases' en sectores clave que incluyen la IA (chunk 427), junto al National Action Plan for Enhancing Digital Literacy and Skills for All (chunk 175).",
+    "instrumento": "organizacion"
+  },
+  "pilotos-evidencia": {
+    "score": 1,
+    "justificacion": "Despliega zonas de demostración y 'concept validation centers' para industrias del futuro (chunk 71), pero sin pilotos basados en evidencia ni verificación de proveedores para IA educativa.",
+    "instrumento": ""
+  },
+  "investigacion-evaluacion": {
+    "score": 1,
+    "justificacion": "Fija crecimiento de I+D 'over seven percent annually' (chunk 41) e impulso a la investigación básica, sin financiamiento dirigido a investigación sobre IA y educación ni revisión de impactos éticos.",
+    "instrumento": ""
+  },
+  "costo-ambiental": {
+    "score": 2,
+    "justificacion": "Ordena el desarrollo 'scaled, intensive, green, and inclusive' del cómputo con monitoreo y programación nacional integrada y acoplamiento con electricidad verde (chunk 164, grep 'green electricity'), sin cálculo del costo ambiental de la IA.",
+    "instrumento": "organizacion"
+  },
+  "financiamiento-local": {
+    "score": 2,
+    "justificacion": "La iniciativa 'AI+' (Box 10) mandata desarrollar 'intelligent learning companions and AI-assisted teachers' (chunk 181), aunque sin esquema de financiamiento ni articulación de actores educativos.",
+    "instrumento": "organizacion"
+  },
+  "incubacion-innovacion": {
+    "score": 2,
+    "justificacion": "Crea el International AI Application Cooperation Centre y la plataforma multilateral de IA de la Franja y la Ruta, e impulsa fuerzas nacionales de talento estratégico (chunks 183, 156), sin metas numéricas específicas de IA.",
+    "instrumento": "organizacion"
+  }
+}

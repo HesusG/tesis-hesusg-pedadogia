@@ -1,0 +1,127 @@
+{
+  "vision-sistemica": {
+    "score": 2,
+    "justificacion": "El roadmap instrumenta una visión nacional con 4 dimensiones, 30 acciones con agencias líderes y campañas de alfabetización en IA (chunks 84, 91-92), aunque la relación IA-educación se enmarca sobre todo en formación de talento.",
+    "instrumento": "organizacion"
+  },
+  "preparacion-prioridades": {
+    "score": 2,
+    "justificacion": "Diagnostica barreras (casos de uso, cómputo, escasez de expertos en datos) y define la dimensión Digitization and Infrastructure con acciones asignadas a DICT (chunks 63-66, 83, 94), pero sin metas acotadas en el tiempo.",
+    "instrumento": "organizacion"
+  },
+  "enfoque-humanista": {
+    "score": 2,
+    "justificacion": "El principio 'human-centric and fair' está consagrado en el White Paper publicado por el DTI (2022) que fundamenta el National AI Governance Framework (chunks 48, 110).",
+    "instrumento": "nodalidad"
+  },
+  "valores-humanos": {
+    "score": 1,
+    "justificacion": "Enuncia principios de IA responsable (transparencia, rendición de cuentas, equidad) y rol de las OSC (chunks 77, 84), sin priorizar personas/ambiente sobre eficiencia ni instrumento específico.",
+    "instrumento": ""
+  },
+  "capacidades-decisores": {
+    "score": 1,
+    "justificacion": "La acción 4 solo 'encourage and promote' análisis de datos en agencias de gobierno (chunk 94); no existe programa de formación para decisores ni gestores educativos.",
+    "instrumento": ""
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 2,
+    "justificacion": "El DTI convocó a ~100 actores (gobierno, industria, academia, OSC) para el marco de gobernanza y opera un AI Working Group multiactor (chunks 109, 111).",
+    "instrumento": "organizacion"
+  },
+  "gobernanza-coordinacion": {
+    "score": 2,
+    "justificacion": "Treinta acciones estratégicas con agencias responsables, National AI Governance Framework, comité de expertos en ética (acción 30) y revisión continua del NAISR 2.0 (chunks 79, 92, 101), sin plazos verificables.",
+    "instrumento": "organizacion"
+  },
+  "codigo-abierto-local": {
+    "score": 0,
+    "justificacion": "Grep de 'open source/open-source' sin resultados; solo propone abrir datasets públicos (chunk 86), que no equivale a localización de IA de código abierto.",
+    "instrumento": ""
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 1,
+    "justificacion": "Retórica de 'inclusive growth' y rutas de aprendizaje para población 'out-of-school' (acción 11, chunk 95), sin metas medibles ni monitoreo de equidad en IA educativa.",
+    "instrumento": ""
+  },
+  "sesgos-algoritmicos": {
+    "score": 1,
+    "justificacion": "Grep de 'bias' sin resultados; solo el principio de fairness del White Paper y una futura certificación de auditores de IA sin nombre ni mandato antisesgos (chunks 91, 110).",
+    "instrumento": ""
+  },
+  "genero-igualdad": {
+    "score": 1,
+    "justificacion": "Género aparece solo vía la adopción de la Recomendación UNESCO 2021 y la cita del compromiso de Microsoft de capacitar a 100,000 mujeres (chunks 47, 56), que no es instrumento propio de la política.",
+    "instrumento": ""
+  },
+  "inclusion-discapacidad": {
+    "score": 0,
+    "justificacion": "Grep de 'disabilit/special needs/accessib' sin resultados pertinentes; no se menciona a estudiantes con discapacidad.",
+    "instrumento": ""
+  },
+  "datos-privacidad": {
+    "score": 2,
+    "justificacion": "La acción 30 crea un comité de expertos en ética de IA y datos con NPC/DICT/DTI para supervisar cumplimiento (chunk 101), aunque sin marco específico para datos educativos ni consentimiento estudiantil.",
+    "instrumento": "organizacion"
+  },
+  "gestion-educativa": {
+    "score": 1,
+    "justificacion": "Describe la IA para automatizar tareas administrativas educativas (calificación, gestión de cursos, chunk 30) solo como tendencia; sin previsión de EMIS/LMS (grep 'EMIS' sin resultados).",
+    "instrumento": ""
+  },
+  "estudiantes-agencia": {
+    "score": 0,
+    "justificacion": "No aborda agencia, bienestar ni vigilancia de estudiantes; grep de 'surveillance/consent' sin resultados en contexto educativo.",
+    "instrumento": ""
+  },
+  "curriculo-evaluacion": {
+    "score": 1,
+    "justificacion": "La revisión curricular aparece solo como integración de contenidos de DSA/IA (acciones 8 y 14); no contempla cambios pedagógicos ni de métodos de evaluación derivados de la adopción de IA.",
+    "instrumento": ""
+  },
+  "docentes-empoderar": {
+    "score": 1,
+    "justificacion": "Afirma que 'human workers still hold a major role' y que la IA asiste a docentes (chunk 30), pero sin consulta a docentes ni protección de sus derechos y funciones.",
+    "instrumento": ""
+  },
+  "docentes-formacion": {
+    "score": 2,
+    "justificacion": "Acción 7 'Ensure proper training of teachers in Data Science and Analytics' con DepEd y CHED como agencias líderes (chunk 94), sin metas numéricas ni comunidades de práctica.",
+    "instrumento": "organizacion"
+  },
+  "aprendizaje-vida": {
+    "score": 2,
+    "justificacion": "Acción 11: rutas de aprendizaje permanente incluyendo 'out-of-school', alineadas al PQF y al PSF-AAI, con DepEd/CHED/TESDA responsables (chunk 95).",
+    "instrumento": "organizacion"
+  },
+  "competencias-era-ia": {
+    "score": 2,
+    "justificacion": "Acciones 6-15 integran DSA/IA en currículos escolares y superiores alineados al marco nombrado PSF-AAI con agencias líderes (chunks 94-96), sin metas numéricas de cobertura.",
+    "instrumento": "organizacion"
+  },
+  "pilotos-evidencia": {
+    "score": 0,
+    "justificacion": "Grep de 'pilot/sandbox/evidence-based adoption' sin resultados; no exige pilotos ni validación de afirmaciones de proveedores antes de escalar.",
+    "instrumento": ""
+  },
+  "investigacion-evaluacion": {
+    "score": 2,
+    "justificacion": "Prioridad inmediata 3.1 de elevar el gasto en I+D citando el referente de 1% del PIB (GERD actual 0.3%) y acción 19 de financiamiento con NEDA/DOF/DBM (chunks 98, 102), pero sin plazo ni foco en investigación educativa.",
+    "instrumento": "tesoro"
+  },
+  "costo-ambiental": {
+    "score": 0,
+    "justificacion": "Grep de 'environment/carbon/energy/sustainab' no arroja análisis del costo ambiental de la IA ni metas de sostenibilidad.",
+    "instrumento": ""
+  },
+  "financiamiento-local": {
+    "score": 2,
+    "justificacion": "El CAIR (operado por DTI desde 2024) articula alianzas de I+D y la acción 19 asegura financiamiento con NEDA/DOF/DBM (chunks 98, 103), aunque no para IA educativa centrada en el humano.",
+    "instrumento": "tesoro"
+  },
+  "incubacion-innovacion": {
+    "score": 2,
+    "justificacion": "Acción 22 'Incubate, accelerate, and internationalize AI startups' (DTI/DOST/DICT) y el Center for AI Research establecido en 2024 (chunks 98, 103), sin metas numéricas.",
+    "instrumento": "organizacion"
+  }
+}

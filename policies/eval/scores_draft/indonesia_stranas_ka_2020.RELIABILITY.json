@@ -1,0 +1,102 @@
+{
+  "vision-sistemica": {
+    "score": 2,
+    "justificacion": "Define la educación como área prioritaria nombrada (Smart Education) con iniciativas concretas, articulada con pilares de talento (computational thinking desde básica) y ética Pancasila, aunque centrada más en aplicación y talento que en enseñar las implicaciones sociales de la IA."
+  },
+  "preparacion-prioridades": {
+    "score": 3,
+    "justificacion": "Incluye diagnóstico de preparación (análisis SWOT de talento, infraestructura, colaboración, capacidad de formación y regulación; mapeo de capacidad de cómputo universitaria) y prioriza con horizonte por etapas 2020-2045 y quickwins con duración máxima verificable de un año."
+  },
+  "enfoque-humanista": {
+    "score": 2,
+    "justificacion": "Adopta el principio de orientación al beneficio de la humanidad con mecanismos de supervisión humana nombrados (Human-in-the-loop, Human-on-the-loop, Human-in-command) dentro del marco de Trustworthy AI."
+  },
+  "valores-humanos": {
+    "score": 2,
+    "justificacion": "Establece principios éticos basados en Pancasila que incluyen bienestar social y ambiental, diversidad, no discriminación y sinergia entre gobierno, sociedad y empresas, con la Komisi Etika (art. 39 UU 11/2019) como instrumento de aplicación."
+  },
+  "capacidades-decisores": {
+    "score": 1,
+    "justificacion": "Reconoce a gestores y administradores educativos (system-facing) como usuarios de IA y prevé una hoja de ruta de talento liderada por Kantor Staf Presiden y Bappenas, pero sin formación específica para decisores y gestores educativos."
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 2,
+    "justificacion": "Institucionaliza la colaboración Quadruple-Helix (gobierno, industria, academia, comunidad) con membresía multicomponente y reclutamiento abierto para los programas 2020-2045, y asigna actores consultivos por iniciativa."
+  },
+  "gobernanza-coordinacion": {
+    "score": 2,
+    "justificacion": "Propone el órgano coordinador KORI-KA con funciones de dirección, ejecución y PMO más la Komisi Etika, con ciclo de gestión nombrado (planificación, programación, presupuestación, consolidación, evaluación y mejora continua), aunque su creación queda condicionada a un futuro Peraturan Presiden."
+  },
+  "codigo-abierto-local": {
+    "score": 2,
+    "justificacion": "Prevé iniciativas nombradas de infraestructura compartida con datos de entrenamiento y algoritmos abiertos al público desarrollados en Indonesia, acceso compartido a clusters HPC y lineamientos de uso de nube pública (iniciativas 3108-3110)."
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 2,
+    "justificacion": "Diagnostica brechas de acceso educativo (pobres/ricos, regiones, discapacidad) y orienta la IA a ampliar la cobertura educativa con atención especial a comunidades rurales y vulnerables, apoyada en el proyecto nombrado Palapa Ring (34 provincias, 514 ciudades), aunque sin metas medibles de inclusión monitoreadas."
+  },
+  "sesgos-algoritmicos": {
+    "score": 1,
+    "justificacion": "Reconoce el riesgo de discriminación y sesgo del reconocimiento facial por etnia, edad y sexo y exige construir la IA bajo el marco Trustworthy AI, pero sin mecanismo de verificación o auditoría de sesgos ni requisitos de datos representativos."
+  },
+  "genero-igualdad": {
+    "score": 1,
+    "justificacion": "Solo menciona el sesgo por sexo como ejemplo de discriminación algorítmica a mitigar; no aborda datos sensibles al género ni el empoderamiento de niñas y mujeres en competencias de IA."
+  },
+  "inclusion-discapacidad": {
+    "score": 1,
+    "justificacion": "Declara atención especial a personas con discapacidad y niños con necesidades especiales mediante personalización de contenidos con distintos modos de interacción, pero sin programa nombrado, criterios de herramientas probadas ni metas."
+  },
+  "datos-privacidad": {
+    "score": 2,
+    "justificacion": "Se apoya en regulación nombrada (PM Kominfo 20/2016) y prioriza como iniciativa la aprobación de la RUU PDP con ejecutores definidos (Kemkominfo y DPR), más lineamientos de anonimización y el principio de trazabilidad, aunque sin marco específico para datos educativos auditables por estudiantes y docentes."
+  },
+  "gestion-educativa": {
+    "score": 2,
+    "justificacion": "Plantea desarrollo de datos educativos integrados, banco de preguntas integrado, gestión de información de logros de aprendizaje y evaluación del desempeño docente con IA, vinculado al Renstra de Kemendikbud y a la perspectiva system-facing, sin metas numéricas."
+  },
+  "estudiantes-agencia": {
+    "score": 0,
+    "justificacion": "No protege la agencia, autonomía ni bienestar del estudiante ni restringe la vigilancia; propone registrar atributos psicológicos de los alumnos para personalización sin salvaguardas ni deber de informarles."
+  },
+  "curriculo-evaluacion": {
+    "score": 2,
+    "justificacion": "Diagnostica la ausencia de IA en el currículo escolar e instrumenta su ajuste con la iniciativa 2109 de computational thinking en educación básica y media (Kemdikbud) y sistemas de evaluación adaptativa y clasificación de estudiantes como programas insignia."
+  },
+  "docentes-empoderar": {
+    "score": 1,
+    "justificacion": "Plantea explícitamente la IA como apoyo que libera al docente de tareas administrativas y lo convierte en facilitador, e involucra a maestros en la creación de bancos de preguntas, pero sin protección de derechos ni consulta formal al profesorado."
+  },
+  "docentes-formacion": {
+    "score": 1,
+    "justificacion": "Contempla esquemas de incentivos para investigadores y docentes del campo de la IA en educación formal y no formal, pero no define competencias docentes para usar IA ni garantiza formación y acompañamiento continuo del profesorado."
+  },
+  "aprendizaje-vida": {
+    "score": 2,
+    "justificacion": "Reconoce trayectorias formales y no formales (capacitación, autodidactas) con certificación de competencias estandarizada y reconocida nacionalmente mediante instrumentos nombrados (KKNI, LSP/BNSP, formación y certificación en línea, iniciativa 3109)."
+  },
+  "competencias-era-ia": {
+    "score": 2,
+    "justificacion": "Instrumenta competencias de la era de la IA con la iniciativa 2109 de computational thinking en Dikdasmen (Kemdikbud), mapa de ocupaciones bajo KKNI, certificación BNSP/KAN y aumento de talento certificado, aunque sin metas numéricas verificables."
+  },
+  "pilotos-evidencia": {
+    "score": 2,
+    "justificacion": "Define criterios explícitos para quickwins (siete parámetros, duración máxima de un año, baja complejidad), una política de sandboxing para productos locales de IA (iniciativa 4211) y la lógica piloto-difusión del sistema de clasificación de estudiantes probado primero en escuelas primarias."
+  },
+  "investigacion-evaluacion": {
+    "score": 2,
+    "justificacion": "Financia investigación con fondos nombrados (RISPRO LPDP, Riset Pro Kemenristek) y esquemas de incentivos a la colaboración industria-universidad, con la educación como área prioritaria de investigación y la Komisi Etika para supervisar la ética, aunque sin protección explícita de la investigación independiente."
+  },
+  "costo-ambiental": {
+    "score": 1,
+    "justificacion": "Incluye el principio ético de bienestar social y ambiental que obliga a dirigir el desarrollo de la IA hacia la sostenibilidad y la armonía con el ambiente, pero no calcula el costo ambiental del despliegue de IA ni fija metas de sostenibilidad."
+  },
+  "financiamiento-local": {
+    "score": 2,
+    "justificacion": "Prevé instrumentos de financiamiento nombrados (política de financiamiento conjunto, incentivos fiscales a I+D, fondos RISPRO LPDP y Riset Pro) y mayor inversión de industria y gobierno, con la educación entre los sectores receptores (Intelligent Online Education con industria como coejecutora)."
+  },
+  "incubacion-innovacion": {
+    "score": 2,
+    "justificacion": "Construye un ecosistema de innovación Quad-Helix con creación de startups/spin-offs desde la gestión de talento universitario, colaboración con universidades internacionales en las cinco áreas prioritarias y el Indonesian National AI Super Computer Center por fases, sin metas numéricas verificables."
+  }
+}

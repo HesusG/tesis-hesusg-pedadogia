@@ -1,0 +1,127 @@
+{
+  "vision-sistemica": {
+    "score": 2,
+    "justificacion": "Estrategia holística con educación y riset como área prioritaria (Smart Education), pilar de etika, y enseñanza de fundamentos desde básica (\"computational thinking... debe enseñarse desde temprano\", chunk 166), más allá de la mera aplicación, aunque con fuerte sesgo hacia talento.",
+    "instrumento": "organizacion"
+  },
+  "preparacion-prioridades": {
+    "score": 2,
+    "justificacion": "Diagnóstico SWOT nacional (fuerza laboral, infraestructura, capacidad de entrenamiento, regulación) y matrices de programas 2020-2045 con ejecutores por iniciativa (p. ej. 3108 Super Computer Center), pero sin metas cuantificadas ni análisis costo-beneficio.",
+    "instrumento": "nodalidad"
+  },
+  "enfoque-humanista": {
+    "score": 2,
+    "justificacion": "Mecanismos explícitos de supervisión humana Human-in-the-loop, Human-on-the-loop y Human-in-command (\"el humano como supervisor\", chunk 111) y comisión de ética con potestad sancionadora ante violaciones del código ético.",
+    "instrumento": "autoridad"
+  },
+  "valores-humanos": {
+    "score": 2,
+    "justificacion": "Valores basados en Pancasila: \"orientada al beneficio de la humanidad\" (chunk 110), principio de Bienestar Social y Ambiental ligado al desarrollo sostenible (chunk 113) y diversidad/no discriminación, instrumentados en el código ético y la comisión de ética prevista.",
+    "instrumento": "nodalidad"
+  },
+  "capacidades-decisores": {
+    "score": 0,
+    "justificacion": "No contempla formación de responsables de políticas ni gestores educativos; la única capacitación estatal hallada (programa 5013) es para personal de salud y el roadmap de talento (chunk 165) apunta a talento de IA, no a decisores.",
+    "instrumento": ""
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 2,
+    "justificacion": "Organización Quadruple-Helix con miembros de \"gobierno, industria, academia y comunidad\" y reclutamiento abierto para conducir los programas 2020-2045 (chunk 565), articulada en el orquestador KORI-KA.",
+    "instrumento": "organizacion"
+  },
+  "gobernanza-coordinacion": {
+    "score": 2,
+    "justificacion": "Crea KORI-KA como orquestador con funciones de gobierno, ejecución y PMO incluyendo \"evaluación y control, y mejora continua\", cuya formación se mandata por Peraturan Presiden (chunk 138), aunque sin metas numéricas o fechas verificables de instalación.",
+    "instrumento": "organizacion"
+  },
+  "codigo-abierto-local": {
+    "score": 2,
+    "justificacion": "Quickwin de shared infrastructure con plataforma que incluye \"recolección de algoritmos abiertos al público\" desarrollados en Indonesia (programa 3110, chunks 455-456, 500) y estudios de Data Lake con Open Source, orientados a capacidad local.",
+    "instrumento": "organizacion"
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 1,
+    "justificacion": "Diagnostica brechas de acceso pobre/rico y declara que la IA ampliará la educación \"con atención especial a comunidades rurales, personas con discapacidad y niños con necesidades especiales\" (chunk 310), sin metas medibles ni programa específico.",
+    "instrumento": ""
+  },
+  "sesgos-algoritmicos": {
+    "score": 1,
+    "justificacion": "Reconoce que la IA puede \"reforzar discriminación o sesgo en reconocimiento facial por etnia, edad y sexo\" (chunk 282) y remite al marco Trustworthy AI, pero no exige pruebas ni datos representativos.",
+    "instrumento": ""
+  },
+  "genero-igualdad": {
+    "score": 1,
+    "justificacion": "Única alusión de género: el sesgo \"por etnia, edad y sexo\" en reconocimiento facial (chunk 282); perempuan/wanita/gender = 0 apariciones, sin empoderamiento de mujeres y niñas en IA.",
+    "instrumento": ""
+  },
+  "inclusion-discapacidad": {
+    "score": 1,
+    "justificacion": "Declara atención especial a \"personas con discapacidad y niños con necesidades especiales\" y personalización según características del aprendiz (chunks 310-311), pero sin herramientas, criterios ni programas dedicados.",
+    "instrumento": ""
+  },
+  "datos-privacidad": {
+    "score": 2,
+    "justificacion": "Instrumentos regulatorios nombrados: Permenkominfo 20/2016 de Protección de Datos Personales como precondición del entrenamiento de IA, impulso a la sanción del proyecto de ley PDP en el parlamento (chunks 194, 450-451) y guías de anonimización (programa 3214), aunque no específicos del ámbito educativo.",
+    "instrumento": "autoridad"
+  },
+  "gestion-educativa": {
+    "score": 2,
+    "justificacion": "Prevé \"desarrollo de datos educativos integrados, bancos de ítems integrados\" (chunk 406) y automatización de tareas administrativas y evaluación de desempeño docente con perspectiva system-facing (chunks 311-312), dentro del área prioritaria Smart Education.",
+    "instrumento": "organizacion"
+  },
+  "estudiantes-agencia": {
+    "score": 0,
+    "justificacion": "No protege agencia ni bienestar estudiantil ni limita la vigilancia; los sistemas previstos perfilan y clasifican alumnos (Intelligent Student Classification registra atributos psicológicos, chunks 415, 417) sin salvaguardas ni deber de informar.",
+    "instrumento": ""
+  },
+  "curriculo-evaluacion": {
+    "score": 2,
+    "justificacion": "Programas nombrados de Adaptive Assessment e Intelligent Student Classification con mecanismo y ejecutores definidos (chunks 472-473) y fortalecimiento del computational thinking en básica y media (chunk 166), sin cautela sobre la IA como único predictor.",
+    "instrumento": "organizacion"
+  },
+  "docentes-empoderar": {
+    "score": 1,
+    "justificacion": "Enmarca la IA como apoyo: \"convertir al guru en facilitador del aprendizaje\" y liberar carga administrativa para centrarse en la enseñanza (chunks 311-312, 407), pero sin derechos docentes, consulta ni cláusula de no reemplazo.",
+    "instrumento": ""
+  },
+  "docentes-formacion": {
+    "score": 1,
+    "justificacion": "Solo esquema de incentivos para \"investigadores y docentes (pengajar) del campo de la IA\" (chunk 175) y participación de maestros en bancos de ítems (chunk 474); no define competencias docentes ni formación para usar IA (grep pelatihan guru = 0).",
+    "instrumento": ""
+  },
+  "aprendizaje-vida": {
+    "score": 2,
+    "justificacion": "Certificación nacional de competencias vía BNSP/KKNI que reconoce vías \"de educación formal y no formal como capacitación y autodidactismo\" (chunk 213) y programa 3109 de medios de aprendizaje online/offline con certificación.",
+    "instrumento": "organizacion"
+  },
+  "competencias-era-ia": {
+    "score": 2,
+    "justificacion": "Iniciativa de Penguatan Computational Thinking en educación básica y media a cargo de Kemendikbud (chunk 166), materiales de enseñanza de IA por niveles y mapa de ocupaciones con marco KKNI (chunks 159, 171), sin metas numéricas.",
+    "instrumento": "organizacion"
+  },
+  "pilotos-evidencia": {
+    "score": 1,
+    "justificacion": "Solo enuncia la \"formulación de política de sandboxing\" como actividad futura del sistema de innovación (chunk 359) y estudios de caso guiados por la industria; no exige pilotos ni evidencia previa al escalamiento.",
+    "instrumento": ""
+  },
+  "investigacion-evaluacion": {
+    "score": 2,
+    "justificacion": "Fondos de incentivo nombrados para investigación colaborativa (RISPRO LPDP y Riset Pro Kemenristek, chunk 60) y educación/riset como área prioritaria de I+D coordinada por Kemenristek/BRIN, sin montos ni protección de la investigación independiente.",
+    "instrumento": "tesoro"
+  },
+  "costo-ambiental": {
+    "score": 1,
+    "justificacion": "El principio ético de \"Bienestar Social y Ambiental\" obliga a dirigir la IA al desarrollo sostenible (chunk 113), pero no calcula el costo ambiental del despliegue ni fija metas de sostenibilidad.",
+    "instrumento": ""
+  },
+  "financiamiento-local": {
+    "score": 2,
+    "justificacion": "Política de \"aumentar la inversión de industria y gobierno\" con incentivos a la colaboración industria-universidad y fondos existentes RISPRO LPDP/Riset Pro (chunks 60, 81), sin financiamiento dirigido a IA educativa centrada en las personas.",
+    "instrumento": "tesoro"
+  },
+  "incubacion-innovacion": {
+    "score": 2,
+    "justificacion": "Ecosistema de innovación Quad-Helix orientado a crear \"start-up/spin-off\" (chunk 152), esquemas de incentivos, orquestación por KORI-KA y colaboración con universidades internacionales en 5 áreas prioritarias (chunk 499), sin metas cuantificadas.",
+    "instrumento": "organizacion"
+  }
+}

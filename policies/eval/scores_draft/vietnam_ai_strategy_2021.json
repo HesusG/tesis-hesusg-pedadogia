@@ -1,0 +1,127 @@
+{
+  "vision-sistemica": {
+    "score": 1,
+    "justificacion": "La visión es económico-productiva ('core technology of the Fourth Industrial Revolution', chunk 1); la educación aparece como aplicación y formación de habilidades, sin enseñar implicaciones sociales de la IA.",
+    "instrumento": ""
+  },
+  "preparacion-prioridades": {
+    "score": 3,
+    "justificacion": "Define prioridades de infraestructura, datos y talento con metas numéricas y temporales: 'top 4 countries in the ASEAN region' y '3 national centers for big data storage and high performance computing' para 2030, '10 key AI research and training institutions' para 2025.",
+    "instrumento": "organizacion"
+  },
+  "enfoque-humanista": {
+    "score": 1,
+    "justificacion": "Adopta el principio de 'the human- and enterprise-centered approach, avoiding abuse of technology' (chunk 9) como orientación retórica, sin instrumento ni referencia a capacidades de estudiantes y docentes.",
+    "instrumento": ""
+  },
+  "valores-humanos": {
+    "score": 0,
+    "justificacion": "No promueve valores que prioricen personas y ambiente sobre eficiencia ni la interacción humana; grep de ethics/wellbeing/responsibility no arroja resultados en ese sentido.",
+    "instrumento": ""
+  },
+  "capacidades-decisores": {
+    "score": 2,
+    "justificacion": "Encarga al Ministerio de Información y Comunicaciones 'programs on communications to raise awareness of officials, civil servants' sobre IA (chunks 14, 27), aunque dirigido a funcionarios en general y no a gestores educativos.",
+    "instrumento": "nodalidad"
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 1,
+    "justificacion": "Orienta la I+D hacia la 'multi-disciplinarity, inter-disciplinarity and transdisciplinarity' (chunk 20) sin mecanismo multiactor que informe las decisiones clave de planificación.",
+    "instrumento": ""
+  },
+  "gobernanza-coordinacion": {
+    "score": 3,
+    "justificacion": "El Ministerio de Ciencia y Tecnología actúa como 'focal point' con informes anuales al Primer Ministro y 'preliminary review of the implementation of the Strategy up to 2025' (chunk 42), con tareas asignadas a cada ministerio y localidad.",
+    "instrumento": "organizacion"
+  },
+  "codigo-abierto-local": {
+    "score": 1,
+    "justificacion": "Exhorta a 'promote AI open-source communities and forums' y a aplicar plataformas y aplicaciones abiertas existentes (chunks 20, 13), sin programa nombrado de localización.",
+    "instrumento": ""
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 0,
+    "justificacion": "No fija metas ni medidas de inclusión o equidad para grupos vulnerables en el uso educativo de la IA; grep de inclusion/vulnerable no arroja resultados pertinentes.",
+    "instrumento": ""
+  },
+  "sesgos-algoritmicos": {
+    "score": 0,
+    "justificacion": "Sin mención de sesgos algorítmicos, auditoría de herramientas ni datos representativos de la diversidad (grep bias/fairness/discrimination sin resultados).",
+    "instrumento": ""
+  },
+  "genero-igualdad": {
+    "score": 0,
+    "justificacion": "No aborda la igualdad de género: grep de women/gender/girls no arroja ningún resultado en el documento.",
+    "instrumento": ""
+  },
+  "inclusion-discapacidad": {
+    "score": 0,
+    "justificacion": "No menciona estudiantes con discapacidad ni accesibilidad; 'Invalids' aparece solo en el nombre del Ministerio de Trabajo (grep disability/special needs sin resultados).",
+    "instrumento": ""
+  },
+  "datos-privacidad": {
+    "score": 2,
+    "justificacion": "Encarga al Ministerio de Seguridad Pública 'formulate and additionally improve legal documents on protection of privacy, human rights... related to AI' (chunk 29), sin marco específico para datos educativos ni consentimiento.",
+    "instrumento": "autoridad"
+  },
+  "gestion-educativa": {
+    "score": 2,
+    "justificacion": "El MOET debe promover IA en educación para 'forecasting in-demand careers' e 'identifying criteria for evaluating students' (chunks 31-32), analítica para decisiones educativas aunque sin EMIS/LMS explícitos.",
+    "instrumento": "organizacion"
+  },
+  "estudiantes-agencia": {
+    "score": 0,
+    "justificacion": "No protege agencia, autonomía ni bienestar estudiantil frente a la IA, ni restringe la vigilancia; solo prevé aplicaciones de personalización y evaluación (chunk 32).",
+    "instrumento": ""
+  },
+  "curriculo-evaluacion": {
+    "score": 2,
+    "justificacion": "Asigna al MOET usar IA para 'identifying criteria for evaluating students', personalizar el aprendizaje e 'identifying criteria to achieve study objectives' (chunk 32), sin salvaguarda contra la predicción única.",
+    "instrumento": "organizacion"
+  },
+  "docentes-empoderar": {
+    "score": 1,
+    "justificacion": "Menciona 'automating teachers' professional processes' y 'assistance of virtual teachers and tutors' (chunk 32) sin protección de derechos docentes, consulta ni cláusula de no reemplazo.",
+    "instrumento": ""
+  },
+  "docentes-formacion": {
+    "score": 0,
+    "justificacion": "No define competencias docentes en IA ni formación al profesorado; los programas de capacitación se dirigen a jóvenes, estudiantes, trabajadores e investigadores, no a maestros.",
+    "instrumento": ""
+  },
+  "aprendizaje-vida": {
+    "score": 1,
+    "justificacion": "Prevé programas de certificados de corto y mediano plazo para 'workers wishing to change their occupations' (chunk 11) como educación continua, sin marco de aprendizaje permanente apoyado por IA (grep lifelong sin resultados).",
+    "instrumento": ""
+  },
+  "competencias-era-ia": {
+    "score": 2,
+    "justificacion": "El MOET implementará 'STEAM training programs', universalización de habilidades de IA para jóvenes e inclusión de materias de IA y ciencia de datos en universidades (chunk 30), y el MOLISA reciclará trabajadores; sin metas numéricas.",
+    "instrumento": "organizacion"
+  },
+  "pilotos-evidencia": {
+    "score": 2,
+    "justificacion": "Encarga al MIC crear 'sandboxes... a separate legal framework serving the pilot application of AI in potential fields' (chunk 23, grep sandbox), sin criterios de evidencia ni verificación de proveedores en educación.",
+    "instrumento": "autoridad"
+  },
+  "investigacion-evaluacion": {
+    "score": 1,
+    "justificacion": "Financia investigación en IA en general (programa de investigación ligado a posgrado, chunk 19) sin fondos para investigación sobre IA y educación ni revisión de impactos sociales y éticos.",
+    "instrumento": ""
+  },
+  "costo-ambiental": {
+    "score": 0,
+    "justificacion": "Solo aplica IA al monitoreo ambiental y la respuesta climática (chunk 40); no calcula el costo ambiental del despliegue de la IA ni fija metas de sostenibilidad.",
+    "instrumento": ""
+  },
+  "financiamiento-local": {
+    "score": 2,
+    "justificacion": "El MPI formulará 'special mechanisms for innovation centers to attract venture investment funds' (chunk 32) y el MOET alentará a grupos tecnológicos a invertir en establecimientos de formación en IA (chunk 31), sin foco en IA educativa centrada en las personas.",
+    "instrumento": "tesoro"
+  },
+  "incubacion-innovacion": {
+    "score": 3,
+    "justificacion": "Metas numéricas y temporales de incubación local: 'To form 3 national AI innovation centers' y 10 marcas de IA de prestigio regional para 2030, con centros de talento y cooperación internacional (chunks 7, 21).",
+    "instrumento": "organizacion"
+  }
+}

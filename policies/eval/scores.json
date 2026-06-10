@@ -1,1145 +1,1145 @@
 {
-  "china_plan_quinquenal_15_2026": {
+  "asean_ai_governance_2024": {
     "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda 'incorporate AI into general education to help citizens understand how AI works' y su ética (chunk 214), pero como guía voluntaria no establece instrumentos propios.",
       "instrumento": ""
     },
     "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomendaciones genéricas a gobiernos sobre infraestructura, datos y talento (chunk 191) sin herramienta de diagnóstico de preparación ni metas temporales.",
       "instrumento": ""
     },
     "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "La human-centricity es principio rector y propone niveles human-in/over/out-of-the-loop (chunks 45, 91), pero es guía operativa voluntaria sin instrumento propio.",
       "instrumento": ""
     },
     "valores-humanos": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Exhorta a que la IA 'respect human-centred values and pursue benefits for human society' (chunk 44); sin priorizar la interacción humana ni mecanismos de responsabilidad.",
       "instrumento": ""
     },
     "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Se declara guía 'for policymakers in the region' y recomienda sesiones informativas para líderes (chunks 14, 191), sin programa propio de formación de decisores.",
       "instrumento": ""
     },
     "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda a las organizaciones juntas de ética multidisciplinarias y colaboración ecosistémica (chunks 62, 196); la pericia multiactor es prescripción, no mecanismo propio.",
       "instrumento": ""
     },
     "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 2,
+      "justificacion": "Propone crear el ASEAN Working Group on AI Governance con responsabilidades definidas para implementar planes regionales y prevé la revisión periódica de la guía por órganos sectoriales ASEAN (chunks 18, 216).",
+      "instrumento": "organizacion"
     },
     "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda que gobiernos desarrollen 'open-source AI platforms which are available for free' y datos en idiomas locales (chunks 204, 206), sin instrumento propio.",
       "instrumento": ""
     },
     "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Pide 'special consideration to impact on vulnerable and/or marginalised populations' en evaluaciones de riesgo (texto completo); sin metas medibles ni medidas de acceso.",
       "instrumento": ""
     },
     "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Guía operativa detallada de datasets representativos y fairness testing por subgrupos demográficos (chunks 111, 113), pero es recomendación voluntaria sin instrumento de verificación propio.",
       "instrumento": ""
     },
     "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "El género aparece solo como característica protegida y exigencia de representatividad en datos (chunks 39, 111); sin empoderamiento de mujeres y niñas en IA.",
       "instrumento": ""
     },
     "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "Grep de 'disabilit/accessib/special needs' sin resultados pertinentes; la inclusión se limita a géneros y etnias en datasets (chunk 39).",
       "instrumento": ""
     },
     "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Remite a leyes nacionales preexistentes (PDPA de Singapur, Data Privacy Act de Filipinas, etc.) y recomienda consentimiento y DPIA (chunks 49-51); la guía no establece marco propio.",
       "instrumento": ""
     },
     "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "El uso de IA en plataformas de aprendizaje aparece solo como caso ilustrativo del ALS/SLS del MOE de Singapur (chunk 179); sin previsión propia de EMIS/LMS.",
       "instrumento": ""
     },
     "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda divulgar a usuarios la interacción con IA y proteger a ciudadanos vulnerables (chunk 215); la autonomía del estudiante solo figura en la ilustración del ALS (chunk 313).",
       "instrumento": ""
     },
     "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda que 'the curriculum of STEM disciplines needs to be periodically reviewed' (chunk 185); sin cambios a métodos de evaluación ni instrumentos.",
       "instrumento": ""
     },
     "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "La consulta a docentes aparece solo en la ilustración del ALS de Singapur, donde fueron consultados en planificación y pilotaje (chunks 179, 316); no es prescripción de la guía.",
       "instrumento": ""
     },
     "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda adscripciones de profesores a empresas de IA y co-diseño de currículos con el sector privado (chunks 189-190); sin programa de formación docente propio.",
       "instrumento": ""
     },
     "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Grep de 'lifelong' sin resultados; solo recomienda upskilling continuo de la fuerza laboral en niveles de capacidad (chunks 182-183), sin trayectorias de aprendizaje permanente.",
       "instrumento": ""
     },
     "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda introducir IA en currículos, ética de IA en STEM y reskilling laboral citando ejemplos ajenos como la certificación de Singapur (chunks 184-186); sin instrumentos propios.",
       "instrumento": ""
     },
     "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda 'development sandbox for researchers to conduct pilots' y gobernanza tipo sandbox antes del despliegue (texto completo), como sugerencia a gobiernos sin mecanismo propio.",
       "instrumento": ""
     },
     "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda 'investing in AI research and development' incluida la investigación en gobernanza y ética (chunk 201); sin fondos propios ni foco educativo.",
       "instrumento": ""
     },
     "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Orienta a estimar el consumo energético del ciclo de vida y minimizar retención de datos para reducir demanda de centros de datos (chunks 104, 125); sin metas de sostenibilidad.",
       "instrumento": ""
     },
     "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda subvenciones y financiamiento gubernamental a startups y adopción de IA (chunks 191, 197); ninguna asignación o fondo propio.",
       "instrumento": ""
     },
     "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Recomienda becas, laboratorios de casos de uso, sandboxes y plataformas de inversión en startups (chunks 198, 203-204); todo en clave de sugerencia sin instrumentos propios.",
+      "instrumento": ""
+    }
+  },
+  "china_plan_quinquenal_15_2026": {
+    "vision-sistemica": {
+      "score": 1,
+      "justificacion": "La IA aparece en educación solo como aplicación ('AI will support the transformation of educational models', chunk 175) con encuadre laboral-productivo, sin visión de enseñar cómo funciona la IA ni sus implicaciones sociales.",
+      "instrumento": ""
+    },
+    "preparacion-prioridades": {
+      "score": 2,
+      "justificacion": "Prioriza infraestructura, datos y talento con instrumentos nombrados (clusters nacionales de cómputo, 'Trusted Data Space Development Action Plan', iniciativa 'Data Factor ×', chunks 164, 170), pero sin diagnóstico de preparación ni metas costo-beneficio para IA.",
+      "instrumento": "organizacion"
+    },
+    "enfoque-humanista": {
+      "score": 1,
+      "justificacion": "El eje 'AI+' People's Well-Being enmarca la IA al servicio de la vida de las personas (chunk 181), pero sin principio de control humano ni despliegue para ampliar capacidades de estudiantes y docentes.",
+      "instrumento": ""
+    },
+    "valores-humanos": {
+      "score": 1,
+      "justificacion": "Anuncia mejorar 'AI laws... and ethical guidelines' (chunk 186) como aspiración, sin valores que prioricen personas y ambiente sobre eficiencia ni interacción humana sobre humano-máquina.",
+      "instrumento": ""
+    },
+    "capacidades-decisores": {
+      "score": 0,
+      "justificacion": "No contempla formación en IA para responsables de políticas o gestores educativos; grep solo halla formación genérica de funcionarios para 'advance modernization' (chunk 635).",
+      "instrumento": ""
+    },
+    "planificacion-interdisciplinaria": {
+      "score": 1,
+      "justificacion": "Menciona mejorar el 'national consultation system for major science and technology decision-making' y la participación empresarial (chunks 138, 147), sin mecanismo multiactor para decisiones de IA y educación.",
+      "instrumento": ""
+    },
+    "gobernanza-coordinacion": {
+      "score": 2,
+      "justificacion": "Establece sistemas de 'algorithm registration, transparency management, and security assessment' y supervisión de la implementación del plan con rendición pública (chunks 186, 651), sin órgano rector específico de IA.",
+      "instrumento": "autoridad"
+    },
+    "codigo-abierto-local": {
+      "score": 1,
+      "justificacion": "Aspira a 'strengthen the open-source ecosystem' y a sistemas abiertos globales (chunks 174, 183) sin programa nombrado de localización o reutilización de IA abierta.",
+      "instrumento": ""
+    },
+    "equidad-grupos-vulnerables": {
+      "score": 1,
+      "justificacion": "Las tecnologías digitales-inteligentes deben 'promote educational equity' y equiparar servicios básicos (chunk 176), pero sin metas medibles de inclusión en el uso educativo de la IA.",
+      "instrumento": ""
+    },
+    "sesgos-algoritmicos": {
+      "score": 0,
+      "justificacion": "Sin mención de sesgos algorítmicos ni datos representativos; grep de bias/fairness/discrimination solo arroja usos sociales y laborales ajenos a la IA.",
+      "instrumento": ""
+    },
+    "genero-igualdad": {
+      "score": 0,
+      "justificacion": "La igualdad de género aparece solo como política de Estado en salud y derechos (chunk 492), sin conexión alguna con IA, datos sensibles al género o competencias digitales de mujeres.",
+      "instrumento": ""
+    },
+    "inclusion-discapacidad": {
+      "score": 1,
+      "justificacion": "Promete 'science and technology assistance for people with disabilities' y construcción de escuelas de educación especial (chunks 501, 427-428), sin vincular IA educativa inclusiva.",
+      "instrumento": ""
+    },
+    "datos-privacidad": {
+      "score": 2,
+      "justificacion": "Crea un 'unified national system for data property rights registration' con gestión clasificada y graduada de datos y normas de uso de datos personales (chunks 184, 186, 169), aunque sin marco específico para datos educativos.",
+      "instrumento": "autoridad"
+    },
+    "gestion-educativa": {
+      "score": 0,
+      "justificacion": "No prevé IA para sistemas de información de gestión educativa ni LMS; las 36 coincidencias de 'emis' en el texto corresponden a 'emissions'.",
+      "instrumento": ""
+    },
+    "estudiantes-agencia": {
+      "score": 1,
+      "justificacion": "Menciona 'strengthen cyber protection of minors' y educación en salud mental (chunks 372, 415) como aspiración, sin marco de agencia estudiantil ni límites a la vigilancia con IA.",
+      "instrumento": ""
+    },
+    "curriculo-evaluacion": {
+      "score": 1,
+      "justificacion": "Anuncia que la IA transformará los modelos educativos con 'precision teaching, personalized learning, and intelligent tutoring' (chunks 175, 181), sin revisión instrumentada de currículos o métodos de evaluación.",
+      "instrumento": ""
+    },
+    "docentes-empoderar": {
+      "score": 1,
+      "justificacion": "Los 'AI-assisted teachers' aparecen como apoyo a la enseñanza (chunk 181), pero sin protección de derechos docentes, consulta al profesorado ni cláusula de no reemplazo.",
+      "instrumento": ""
+    },
+    "docentes-formacion": {
+      "score": 1,
+      "justificacion": "La 'educational capacity enhancement initiative' busca un profesorado de alto calibre (chunk 415) pero sin definir competencias docentes en IA ni formación específica.",
+      "instrumento": ""
+    },
+    "aprendizaje-vida": {
+      "score": 2,
+      "justificacion": "Vincula la estrategia de digitalización educativa con 'optimize public services for lifelong learning' y la Open University of China, más el sistema de formación profesional permanente (chunks de educación, grep 'lifelong').",
+      "instrumento": "organizacion"
+    },
+    "competencias-era-ia": {
+      "score": 3,
+      "justificacion": "Construirá '200 industry-education integration practical training bases' en sectores clave que incluyen la IA (chunk 427), junto al National Action Plan for Enhancing Digital Literacy and Skills for All (chunk 175).",
+      "instrumento": "organizacion"
+    },
+    "pilotos-evidencia": {
+      "score": 1,
+      "justificacion": "Despliega zonas de demostración y 'concept validation centers' para industrias del futuro (chunk 71), pero sin pilotos basados en evidencia ni verificación de proveedores para IA educativa.",
+      "instrumento": ""
+    },
+    "investigacion-evaluacion": {
+      "score": 1,
+      "justificacion": "Fija crecimiento de I+D 'over seven percent annually' (chunk 41) e impulso a la investigación básica, sin financiamiento dirigido a investigación sobre IA y educación ni revisión de impactos éticos.",
+      "instrumento": ""
+    },
+    "costo-ambiental": {
+      "score": 2,
+      "justificacion": "Ordena el desarrollo 'scaled, intensive, green, and inclusive' del cómputo con monitoreo y programación nacional integrada y acoplamiento con electricidad verde (chunk 164, grep 'green electricity'), sin cálculo del costo ambiental de la IA.",
+      "instrumento": "organizacion"
+    },
+    "financiamiento-local": {
+      "score": 2,
+      "justificacion": "La iniciativa 'AI+' (Box 10) mandata desarrollar 'intelligent learning companions and AI-assisted teachers' (chunk 181), aunque sin esquema de financiamiento ni articulación de actores educativos.",
+      "instrumento": "organizacion"
+    },
+    "incubacion-innovacion": {
+      "score": 2,
+      "justificacion": "Crea el International AI Application Cooperation Centre y la plataforma multilateral de IA de la Franja y la Ruta, e impulsa fuerzas nacionales de talento estratégico (chunks 183, 156), sin metas numéricas específicas de IA.",
+      "instrumento": "organizacion"
+    }
+  },
+  "filipinas_naisr2_2024": {
+    "vision-sistemica": {
+      "score": 2,
+      "justificacion": "El roadmap instrumenta una visión nacional con 4 dimensiones, 30 acciones con agencias líderes y campañas de alfabetización en IA (chunks 84, 91-92), aunque la relación IA-educación se enmarca sobre todo en formación de talento.",
+      "instrumento": "organizacion"
+    },
+    "preparacion-prioridades": {
+      "score": 2,
+      "justificacion": "Diagnostica barreras (casos de uso, cómputo, escasez de expertos en datos) y define la dimensión Digitization and Infrastructure con acciones asignadas a DICT (chunks 63-66, 83, 94), pero sin metas acotadas en el tiempo.",
+      "instrumento": "organizacion"
+    },
+    "enfoque-humanista": {
+      "score": 2,
+      "justificacion": "El principio 'human-centric and fair' está consagrado en el White Paper publicado por el DTI (2022) que fundamenta el National AI Governance Framework (chunks 48, 110).",
+      "instrumento": "nodalidad"
+    },
+    "valores-humanos": {
+      "score": 1,
+      "justificacion": "Enuncia principios de IA responsable (transparencia, rendición de cuentas, equidad) y rol de las OSC (chunks 77, 84), sin priorizar personas/ambiente sobre eficiencia ni instrumento específico.",
+      "instrumento": ""
+    },
+    "capacidades-decisores": {
+      "score": 1,
+      "justificacion": "La acción 4 solo 'encourage and promote' análisis de datos en agencias de gobierno (chunk 94); no existe programa de formación para decisores ni gestores educativos.",
+      "instrumento": ""
+    },
+    "planificacion-interdisciplinaria": {
+      "score": 2,
+      "justificacion": "El DTI convocó a ~100 actores (gobierno, industria, academia, OSC) para el marco de gobernanza y opera un AI Working Group multiactor (chunks 109, 111).",
+      "instrumento": "organizacion"
+    },
+    "gobernanza-coordinacion": {
+      "score": 2,
+      "justificacion": "Treinta acciones estratégicas con agencias responsables, National AI Governance Framework, comité de expertos en ética (acción 30) y revisión continua del NAISR 2.0 (chunks 79, 92, 101), sin plazos verificables.",
+      "instrumento": "organizacion"
+    },
+    "codigo-abierto-local": {
+      "score": 0,
+      "justificacion": "Grep de 'open source/open-source' sin resultados; solo propone abrir datasets públicos (chunk 86), que no equivale a localización de IA de código abierto.",
+      "instrumento": ""
+    },
+    "equidad-grupos-vulnerables": {
+      "score": 1,
+      "justificacion": "Retórica de 'inclusive growth' y rutas de aprendizaje para población 'out-of-school' (acción 11, chunk 95), sin metas medibles ni monitoreo de equidad en IA educativa.",
+      "instrumento": ""
+    },
+    "sesgos-algoritmicos": {
+      "score": 1,
+      "justificacion": "Grep de 'bias' sin resultados; solo el principio de fairness del White Paper y una futura certificación de auditores de IA sin nombre ni mandato antisesgos (chunks 91, 110).",
+      "instrumento": ""
+    },
+    "genero-igualdad": {
+      "score": 1,
+      "justificacion": "Género aparece solo vía la adopción de la Recomendación UNESCO 2021 y la cita del compromiso de Microsoft de capacitar a 100,000 mujeres (chunks 47, 56), que no es instrumento propio de la política.",
+      "instrumento": ""
+    },
+    "inclusion-discapacidad": {
+      "score": 0,
+      "justificacion": "Grep de 'disabilit/special needs/accessib' sin resultados pertinentes; no se menciona a estudiantes con discapacidad.",
+      "instrumento": ""
+    },
+    "datos-privacidad": {
+      "score": 2,
+      "justificacion": "La acción 30 crea un comité de expertos en ética de IA y datos con NPC/DICT/DTI para supervisar cumplimiento (chunk 101), aunque sin marco específico para datos educativos ni consentimiento estudiantil.",
+      "instrumento": "organizacion"
+    },
+    "gestion-educativa": {
+      "score": 1,
+      "justificacion": "Describe la IA para automatizar tareas administrativas educativas (calificación, gestión de cursos, chunk 30) solo como tendencia; sin previsión de EMIS/LMS (grep 'EMIS' sin resultados).",
+      "instrumento": ""
+    },
+    "estudiantes-agencia": {
+      "score": 0,
+      "justificacion": "No aborda agencia, bienestar ni vigilancia de estudiantes; grep de 'surveillance/consent' sin resultados en contexto educativo.",
+      "instrumento": ""
+    },
+    "curriculo-evaluacion": {
+      "score": 1,
+      "justificacion": "La revisión curricular aparece solo como integración de contenidos de DSA/IA (acciones 8 y 14); no contempla cambios pedagógicos ni de métodos de evaluación derivados de la adopción de IA.",
+      "instrumento": ""
+    },
+    "docentes-empoderar": {
+      "score": 1,
+      "justificacion": "Afirma que 'human workers still hold a major role' y que la IA asiste a docentes (chunk 30), pero sin consulta a docentes ni protección de sus derechos y funciones.",
+      "instrumento": ""
+    },
+    "docentes-formacion": {
+      "score": 2,
+      "justificacion": "Acción 7 'Ensure proper training of teachers in Data Science and Analytics' con DepEd y CHED como agencias líderes (chunk 94), sin metas numéricas ni comunidades de práctica.",
+      "instrumento": "organizacion"
+    },
+    "aprendizaje-vida": {
+      "score": 2,
+      "justificacion": "Acción 11: rutas de aprendizaje permanente incluyendo 'out-of-school', alineadas al PQF y al PSF-AAI, con DepEd/CHED/TESDA responsables (chunk 95).",
+      "instrumento": "organizacion"
+    },
+    "competencias-era-ia": {
+      "score": 2,
+      "justificacion": "Acciones 6-15 integran DSA/IA en currículos escolares y superiores alineados al marco nombrado PSF-AAI con agencias líderes (chunks 94-96), sin metas numéricas de cobertura.",
+      "instrumento": "organizacion"
+    },
+    "pilotos-evidencia": {
+      "score": 0,
+      "justificacion": "Grep de 'pilot/sandbox/evidence-based adoption' sin resultados; no exige pilotos ni validación de afirmaciones de proveedores antes de escalar.",
+      "instrumento": ""
+    },
+    "investigacion-evaluacion": {
+      "score": 2,
+      "justificacion": "Prioridad inmediata 3.1 de elevar el gasto en I+D citando el referente de 1% del PIB (GERD actual 0.3%) y acción 19 de financiamiento con NEDA/DOF/DBM (chunks 98, 102), pero sin plazo ni foco en investigación educativa.",
+      "instrumento": "tesoro"
+    },
+    "costo-ambiental": {
+      "score": 0,
+      "justificacion": "Grep de 'environment/carbon/energy/sustainab' no arroja análisis del costo ambiental de la IA ni metas de sostenibilidad.",
+      "instrumento": ""
+    },
+    "financiamiento-local": {
+      "score": 2,
+      "justificacion": "El CAIR (operado por DTI desde 2024) articula alianzas de I+D y la acción 19 asegura financiamiento con NEDA/DOF/DBM (chunks 98, 103), aunque no para IA educativa centrada en el humano.",
+      "instrumento": "tesoro"
+    },
+    "incubacion-innovacion": {
+      "score": 2,
+      "justificacion": "Acción 22 'Incubate, accelerate, and internationalize AI startups' (DTI/DOST/DICT) y el Center for AI Research establecido en 2024 (chunks 98, 103), sin metas numéricas.",
+      "instrumento": "organizacion"
+    }
+  },
+  "indonesia_stranas_ka_2020": {
+    "vision-sistemica": {
+      "score": 2,
+      "justificacion": "Estrategia holística con educación y riset como área prioritaria (Smart Education), pilar de etika, y enseñanza de fundamentos desde básica (\"computational thinking... debe enseñarse desde temprano\", chunk 166), más allá de la mera aplicación, aunque con fuerte sesgo hacia talento.",
+      "instrumento": "organizacion"
+    },
+    "preparacion-prioridades": {
+      "score": 2,
+      "justificacion": "Diagnóstico SWOT nacional (fuerza laboral, infraestructura, capacidad de entrenamiento, regulación) y matrices de programas 2020-2045 con ejecutores por iniciativa (p. ej. 3108 Super Computer Center), pero sin metas cuantificadas ni análisis costo-beneficio.",
+      "instrumento": "nodalidad"
+    },
+    "enfoque-humanista": {
+      "score": 2,
+      "justificacion": "Mecanismos explícitos de supervisión humana Human-in-the-loop, Human-on-the-loop y Human-in-command (\"el humano como supervisor\", chunk 111) y comisión de ética con potestad sancionadora ante violaciones del código ético.",
+      "instrumento": "autoridad"
+    },
+    "valores-humanos": {
+      "score": 2,
+      "justificacion": "Valores basados en Pancasila: \"orientada al beneficio de la humanidad\" (chunk 110), principio de Bienestar Social y Ambiental ligado al desarrollo sostenible (chunk 113) y diversidad/no discriminación, instrumentados en el código ético y la comisión de ética prevista.",
+      "instrumento": "nodalidad"
+    },
+    "capacidades-decisores": {
+      "score": 0,
+      "justificacion": "No contempla formación de responsables de políticas ni gestores educativos; la única capacitación estatal hallada (programa 5013) es para personal de salud y el roadmap de talento (chunk 165) apunta a talento de IA, no a decisores.",
+      "instrumento": ""
+    },
+    "planificacion-interdisciplinaria": {
+      "score": 2,
+      "justificacion": "Organización Quadruple-Helix con miembros de \"gobierno, industria, academia y comunidad\" y reclutamiento abierto para conducir los programas 2020-2045 (chunk 565), articulada en el orquestador KORI-KA.",
+      "instrumento": "organizacion"
+    },
+    "gobernanza-coordinacion": {
+      "score": 2,
+      "justificacion": "Crea KORI-KA como orquestador con funciones de gobierno, ejecución y PMO incluyendo \"evaluación y control, y mejora continua\", cuya formación se mandata por Peraturan Presiden (chunk 138), aunque sin metas numéricas o fechas verificables de instalación.",
+      "instrumento": "organizacion"
+    },
+    "codigo-abierto-local": {
+      "score": 2,
+      "justificacion": "Quickwin de shared infrastructure con plataforma que incluye \"recolección de algoritmos abiertos al público\" desarrollados en Indonesia (programa 3110, chunks 455-456, 500) y estudios de Data Lake con Open Source, orientados a capacidad local.",
+      "instrumento": "organizacion"
+    },
+    "equidad-grupos-vulnerables": {
+      "score": 1,
+      "justificacion": "Diagnostica brechas de acceso pobre/rico y declara que la IA ampliará la educación \"con atención especial a comunidades rurales, personas con discapacidad y niños con necesidades especiales\" (chunk 310), sin metas medibles ni programa específico.",
+      "instrumento": ""
+    },
+    "sesgos-algoritmicos": {
+      "score": 1,
+      "justificacion": "Reconoce que la IA puede \"reforzar discriminación o sesgo en reconocimiento facial por etnia, edad y sexo\" (chunk 282) y remite al marco Trustworthy AI, pero no exige pruebas ni datos representativos.",
+      "instrumento": ""
+    },
+    "genero-igualdad": {
+      "score": 1,
+      "justificacion": "Única alusión de género: el sesgo \"por etnia, edad y sexo\" en reconocimiento facial (chunk 282); perempuan/wanita/gender = 0 apariciones, sin empoderamiento de mujeres y niñas en IA.",
+      "instrumento": ""
+    },
+    "inclusion-discapacidad": {
+      "score": 1,
+      "justificacion": "Declara atención especial a \"personas con discapacidad y niños con necesidades especiales\" y personalización según características del aprendiz (chunks 310-311), pero sin herramientas, criterios ni programas dedicados.",
+      "instrumento": ""
+    },
+    "datos-privacidad": {
+      "score": 2,
+      "justificacion": "Instrumentos regulatorios nombrados: Permenkominfo 20/2016 de Protección de Datos Personales como precondición del entrenamiento de IA, impulso a la sanción del proyecto de ley PDP en el parlamento (chunks 194, 450-451) y guías de anonimización (programa 3214), aunque no específicos del ámbito educativo.",
+      "instrumento": "autoridad"
+    },
+    "gestion-educativa": {
+      "score": 2,
+      "justificacion": "Prevé \"desarrollo de datos educativos integrados, bancos de ítems integrados\" (chunk 406) y automatización de tareas administrativas y evaluación de desempeño docente con perspectiva system-facing (chunks 311-312), dentro del área prioritaria Smart Education.",
+      "instrumento": "organizacion"
+    },
+    "estudiantes-agencia": {
+      "score": 0,
+      "justificacion": "No protege agencia ni bienestar estudiantil ni limita la vigilancia; los sistemas previstos perfilan y clasifican alumnos (Intelligent Student Classification registra atributos psicológicos, chunks 415, 417) sin salvaguardas ni deber de informar.",
+      "instrumento": ""
+    },
+    "curriculo-evaluacion": {
+      "score": 2,
+      "justificacion": "Programas nombrados de Adaptive Assessment e Intelligent Student Classification con mecanismo y ejecutores definidos (chunks 472-473) y fortalecimiento del computational thinking en básica y media (chunk 166), sin cautela sobre la IA como único predictor.",
+      "instrumento": "organizacion"
+    },
+    "docentes-empoderar": {
+      "score": 1,
+      "justificacion": "Enmarca la IA como apoyo: \"convertir al guru en facilitador del aprendizaje\" y liberar carga administrativa para centrarse en la enseñanza (chunks 311-312, 407), pero sin derechos docentes, consulta ni cláusula de no reemplazo.",
+      "instrumento": ""
+    },
+    "docentes-formacion": {
+      "score": 1,
+      "justificacion": "Solo esquema de incentivos para \"investigadores y docentes (pengajar) del campo de la IA\" (chunk 175) y participación de maestros en bancos de ítems (chunk 474); no define competencias docentes ni formación para usar IA (grep pelatihan guru = 0).",
+      "instrumento": ""
+    },
+    "aprendizaje-vida": {
+      "score": 2,
+      "justificacion": "Certificación nacional de competencias vía BNSP/KKNI que reconoce vías \"de educación formal y no formal como capacitación y autodidactismo\" (chunk 213) y programa 3109 de medios de aprendizaje online/offline con certificación.",
+      "instrumento": "organizacion"
+    },
+    "competencias-era-ia": {
+      "score": 2,
+      "justificacion": "Iniciativa de Penguatan Computational Thinking en educación básica y media a cargo de Kemendikbud (chunk 166), materiales de enseñanza de IA por niveles y mapa de ocupaciones con marco KKNI (chunks 159, 171), sin metas numéricas.",
+      "instrumento": "organizacion"
+    },
+    "pilotos-evidencia": {
+      "score": 1,
+      "justificacion": "Solo enuncia la \"formulación de política de sandboxing\" como actividad futura del sistema de innovación (chunk 359) y estudios de caso guiados por la industria; no exige pilotos ni evidencia previa al escalamiento.",
+      "instrumento": ""
+    },
+    "investigacion-evaluacion": {
+      "score": 2,
+      "justificacion": "Fondos de incentivo nombrados para investigación colaborativa (RISPRO LPDP y Riset Pro Kemenristek, chunk 60) y educación/riset como área prioritaria de I+D coordinada por Kemenristek/BRIN, sin montos ni protección de la investigación independiente.",
+      "instrumento": "tesoro"
+    },
+    "costo-ambiental": {
+      "score": 1,
+      "justificacion": "El principio ético de \"Bienestar Social y Ambiental\" obliga a dirigir la IA al desarrollo sostenible (chunk 113), pero no calcula el costo ambiental del despliegue ni fija metas de sostenibilidad.",
+      "instrumento": ""
+    },
+    "financiamiento-local": {
+      "score": 2,
+      "justificacion": "Política de \"aumentar la inversión de industria y gobierno\" con incentivos a la colaboración industria-universidad y fondos existentes RISPRO LPDP/Riset Pro (chunks 60, 81), sin financiamiento dirigido a IA educativa centrada en las personas.",
+      "instrumento": "tesoro"
+    },
+    "incubacion-innovacion": {
+      "score": 2,
+      "justificacion": "Ecosistema de innovación Quad-Helix orientado a crear \"start-up/spin-off\" (chunk 152), esquemas de incentivos, orquestación por KORI-KA y colaboración con universidades internacionales en 5 áreas prioritarias (chunk 499), sin metas cuantificadas.",
+      "instrumento": "organizacion"
+    }
+  },
+  "malasia_ai_rmap_2021": {
+    "vision-sistemica": {
+      "score": 2,
+      "justificacion": "Programas nombrados que enseñan qué es la IA y sus principios (\"shape these children's mental models of what AI is\", chunk 117; AI for Kids and Teens, infusión de Responsible AI en STEAM), aunque la visión global se enmarca en competitividad económica y talento.",
+      "instrumento": "organizacion"
+    },
+    "preparacion-prioridades": {
+      "score": 3,
+      "justificacion": "Encuesta nacional de preparación AI-Rmap 2021 (infraestructura, datos, talento; chunks 35, 40) más plan a 5 años en 3 horizontes con metas cuantificadas como \"100% household and organizations/SMEs access to the internet\" (chunk 108).",
+      "instrumento": "nodalidad"
+    },
+    "enfoque-humanista": {
+      "score": 2,
+      "justificacion": "Siete Principios de IA Responsable con \"pursuit of human benefit and happiness\" y control humano, anclados en un \"national AI Ethics charter\" y en la iniciativa de institucionalizar principios e implantar un AI Code of Ethics vía AI-CIU (chunks 74, 117).",
+      "instrumento": "nodalidad"
+    },
+    "valores-humanos": {
+      "score": 2,
+      "justificacion": "El charter ético nacional consagra \"elevating human happiness and quality of life\" y exige que quienes diseñan y despliegan IA rindan cuentas (chunks 74, 76-77), aunque omite la prioridad del medio ambiente y de la interacción humana sobre la máquina.",
+      "instrumento": "nodalidad"
+    },
+    "capacidades-decisores": {
+      "score": 3,
+      "justificacion": "Programa AI Awareness para funcionarios federales, estatales y C-Suites de GLC con meta verificable: \"3,600 officials have been trained\" hacia el final del Horizonte 3 (chunk 139).",
+      "instrumento": "organizacion"
+    },
+    "planificacion-interdisciplinaria": {
+      "score": 2,
+      "justificacion": "Estructuras multiactor nombradas: modelo Quadruple Helix, MyAI-Alliance que une gobierno, academia, industria y sociedad, Foresight Committee y comités ad hoc con expertos rotatorios de ministerios y público (chunks 71, 151, 163).",
+      "instrumento": "organizacion"
+    },
+    "gobernanza-coordinacion": {
+      "score": 2,
+      "justificacion": "Crea la AI Coordination and Implementation Unit (AI-CIU) como \"apex government body\" bajo MOSTI, con Foresight Committee y actualización continua del roadmap como documento vivo (airmap.my), pero sin meta numérica asociada a la gobernanza (chunks 15, 83, 184).",
+      "instrumento": "organizacion"
+    },
+    "codigo-abierto-local": {
+      "score": 0,
+      "justificacion": "Ninguna mención de código abierto en todo el texto (grep \"open source/open-source\" = 0); los pasajes recuperados tratan infraestructura digital y nube, no localización ni reutilización de IA abierta.",
+      "instrumento": ""
+    },
+    "equidad-grupos-vulnerables": {
+      "score": 1,
+      "justificacion": "Reconoce \"large gaps... between the privileged and the underprivileged in applying and using AI\" (chunk 135) y la inclusividad como principio, pero sin metas medibles de equidad ni medidas específicas para grupos vulnerables en IA educativa.",
+      "instrumento": ""
+    },
+    "sesgos-algoritmicos": {
+      "score": 1,
+      "justificacion": "El principio de fairness exige que los sistemas \"make the same recommendations to everyone\" (chunk 72), pero el término bias no aparece (grep = 0) y no se exige probar ni auditar herramientas.",
+      "instrumento": ""
+    },
+    "genero-igualdad": {
+      "score": 2,
+      "justificacion": "Programas nombrados Women-in-AI (WAICamp, WAI-2-Go, WAIDatathon) y Childcare for Women-in-AI dentro de S4.3 con KPWKM como agencia líder (chunk 132); el KPI de 10,000 talentos reincorporados corresponde al programa AI-LWBW general, y faltan sesgos y datos sensibles al género.",
+      "instrumento": "organizacion"
+    },
+    "inclusion-discapacidad": {
+      "score": 1,
+      "justificacion": "Mención única y retórica del \"empowerment for people who are physically or cognitively disabled... in education\" (chunk 74), sin instrumento ni programa de IA educativa inclusiva.",
+      "instrumento": ""
+    },
+    "datos-privacidad": {
+      "score": 1,
+      "justificacion": "Principio de Privacy & Security y exigencia genérica de que la IA cumpla \"applicable privacy laws\" (chunk 76), pero sin marco de protección de datos educativos ni consentimiento de estudiantes y docentes.",
+      "instrumento": ""
+    },
+    "gestion-educativa": {
+      "score": 2,
+      "justificacion": "Proyectos educativos nombrados de los National AI Use Cases (UPM): sistema de aprendizaje personalizado con Learning Management System, learning analytics y evaluación automatizada con centros de marcado (chunks 176-177), aunque sin referencia a EMIS.",
+      "instrumento": "organizacion"
+    },
+    "estudiantes-agencia": {
+      "score": 0,
+      "justificacion": "No hay protección de agencia, autonomía ni bienestar estudiantil (grep autonomy/consent = 0); la vigilancia aparece como área tecnológica de IA (\"Security and Surveillance\", chunk 72), no como práctica restringida.",
+      "instrumento": ""
+    },
+    "curriculo-evaluacion": {
+      "score": 2,
+      "justificacion": "Revisión curricular instrumentada: infusión de IA en STEAM de secundaria, revisión del currículo de informática y de disciplinas no-STEM (chunk 118) y proyecto de Intelligent Automated Assessment System (chunk 176), sin salvaguarda contra la IA como único predictor.",
+      "instrumento": "organizacion"
+    },
+    "docentes-empoderar": {
+      "score": 0,
+      "justificacion": "No aparecen derechos docentes, consulta al profesorado ni el principio de apoyar sin reemplazar (grep teacher = 0, replace solo en contexto ajeno); el AI-EE es formación, no protección del rol docente.",
+      "instrumento": ""
+    },
+    "docentes-formacion": {
+      "score": 3,
+      "justificacion": "Plataforma AI Education for Educators (AI-EE) con MOHE/MOE como agencias líderes y meta verificable de \"87,500 educators with AI Competency\" hacia Horizonte 3 (chunks 119, 122).",
+      "instrumento": "organizacion"
+    },
+    "aprendizaje-vida": {
+      "score": 2,
+      "justificacion": "Programas nombrados de formación continua con credenciales: AI-MOOC-Based Micro-credential Certification (1,000 profesionales certificados) y reincorporación de talento mayor y latente (chunks 122, 132), aunque centrados en enseñar IA y no en usar IA para sostener trayectorias de aprendizaje permanente.",
+      "instrumento": "organizacion"
+    },
+    "competencias-era-ia": {
+      "score": 3,
+      "justificacion": "Estrategia S4.1 con metas numéricas: AI for Kids and Teens con \"200,000 Future AI Talents\" (chunk 120), currículo de convergencia de IA en pregrado, 2,000 AI Professional Trainers certificados y reskilling de la fuerza laboral (S4.2).",
+      "instrumento": "organizacion"
+    },
+    "pilotos-evidencia": {
+      "score": 2,
+      "justificacion": "Los 13 National AI Use Cases funcionan como proyectos demostrativos coordinados por AI-Catalyst y se crea un policy sandbox para I+D en nube (\"1 cloud-based policy sandbox for AI R&D established\"), pero sin criterios de adopción basada en evidencia ni verificación de proveedores.",
+      "instrumento": "organizacion"
+    },
+    "investigacion-evaluacion": {
+      "score": 2,
+      "justificacion": "Financiamiento concreto de I+D: \"Ringfence RM10 mil. R&D funds\" y meta de \"20% allocation for AI R&D investments\" (chunk 102), pero sin fondos dedicados a investigar IA en educación ni protección de la investigación independiente.",
+      "instrumento": "tesoro"
+    },
+    "costo-ambiental": {
+      "score": 0,
+      "justificacion": "El costo ambiental de la IA no se calcula ni se menciona; las referencias a sostenibilidad aluden al ecosistema de innovación y a la Agenda 2030, no a huella de carbono o consumo energético de la IA.",
+      "instrumento": ""
+    },
+    "financiamiento-local": {
+      "score": 2,
+      "justificacion": "Instrumentos financieros nombrados: matching grants AI-MyIndustry de MDEC para posgrados y double tax deduction para colaboración con la industria (chunks 62, 120), aunque no dirigidos a herramientas de IA educativa centradas en las personas.",
+      "instrumento": "tesoro"
+    },
+    "incubacion-innovacion": {
+      "score": 3,
+      "justificacion": "Hub de innovación AI-Catalyst con metas verificables (\"Administration for the AI Catalyst established within the first year\", 11 AI Catalyst Consortia), MyAI-Alliance y colaboración internacional vía AI-eX y MOUs transfronterizos (chunks 58, 156, 168), con educación como vertical.",
+      "instrumento": "organizacion"
+    }
+  },
+  "singapur_nais2_2023": {
+    "vision-sistemica": {
+      "score": 1,
+      "justificacion": "La educación aparece como dominio de aplicación ('adaptive learning systems in our schools', 'Education & Manpower' como propuesta de valor, chunks 11, 25), sin visión de enseñar cómo funciona la IA y sus implicaciones sociales en el sistema educativo.",
+      "instrumento": ""
+    },
+    "preparacion-prioridades": {
+      "score": 3,
+      "justificacion": "Prioriza cómputo, datos y talento con metas verificables ('Boost AI Practitioner pool to 15,000', Action 6) y selecciona 'Leading Economic Sectors assessed to be most ready for AI-driven transformation' (chunk 29).",
+      "instrumento": "organizacion"
+    },
+    "enfoque-humanista": {
+      "score": 1,
+      "justificacion": "Postula que la IA debe 'uplift human potential' y el objetivo de 'Empowerment' de personas y comunidades (chunks 6, 18) como visión, sin principio de control humano ni despliegue para estudiantes y docentes.",
+      "instrumento": ""
+    },
+    "valores-humanos": {
+      "score": 1,
+      "justificacion": "Invoca 'what it means to be human' y el uso responsable y ético de la IA (chunks 5, 11), sin priorizar personas y ambiente sobre eficiencia ni la interacción humana sobre la humano-máquina.",
+      "instrumento": ""
+    },
+    "capacidades-decisores": {
+      "score": 2,
+      "justificacion": "Compromete 'targeted courses to impart AI skills' para segmentos del sector público incluidos 'senior management, policy' (chunk 42), aunque dirigido a funcionarios en general y no a gestores educativos.",
+      "instrumento": "organizacion"
+    },
+    "planificacion-interdisciplinaria": {
+      "score": 2,
+      "justificacion": "Convoca pericia multiactor mediante SCAI ('over 40 local and overseas experts from academia, non-profit, industry and government', chunk 51) y participa en GPAI, WEF AI Governance Alliance y el órgano asesor de la ONU (chunk 11).",
+      "instrumento": "nodalidad"
+    },
+    "gobernanza-coordinacion": {
+      "score": 2,
+      "justificacion": "Institucionalizará 'governance and security frameworks for AI systems' (chunk 88) y una 'common platform for regulatory agencies to coordinate on AI developments' (chunk 97), con agencias líderes sectoriales; sin metas temporales.",
+      "instrumento": "organizacion"
+    },
+    "codigo-abierto-local": {
+      "score": 2,
+      "justificacion": "Liberó AI Verify como código abierto y creó la AI Verify Foundation para 'harness the collective power... of the global open-source community' (grep open-source), aunque limitado a herramientas de gobernanza, no a IA educativa localizada.",
+      "instrumento": "organizacion"
+    },
+    "equidad-grupos-vulnerables": {
+      "score": 1,
+      "justificacion": "Reconoce riesgos de la IA 'especially toward vulnerable groups' (chunk 8) y aspira a que sea 'the great equaliser' (chunk 18), sin metas medibles de inclusión en el uso educativo de la IA.",
+      "instrumento": ""
+    },
+    "sesgos-algoritmicos": {
+      "score": 2,
+      "justificacion": "AI Verify, 'an AI governance testing framework and software toolkit' lanzado por IMDA, somete los sistemas de IA a pruebas estandarizadas frente a riesgos como la discriminación (chunk 91, grep AI Verify), sin requisito de datos representativos.",
+      "instrumento": "nodalidad"
+    },
+    "genero-igualdad": {
+      "score": 0,
+      "justificacion": "No aborda la igualdad de género: grep de women/gender/girls no arroja ningún resultado en el documento.",
+      "instrumento": ""
+    },
+    "inclusion-discapacidad": {
+      "score": 0,
+      "justificacion": "No menciona estudiantes con discapacidad ni accesibilidad educativa (grep disability/special needs/accessibility sin resultados pertinentes).",
+      "instrumento": ""
+    },
+    "datos-privacidad": {
+      "score": 2,
+      "justificacion": "Action 11 desarrolla capacidades en 'Privacy-Enhancing Technologies' con apoyo regulatorio y pilotos de cumplimiento (chunks 82-85), dentro del marco general de protección de datos; sin trazabilidad específica de datos educativos.",
+      "instrumento": "organizacion"
+    },
+    "gestion-educativa": {
+      "score": 2,
+      "justificacion": "Reporta 'adaptive learning systems in our schools' como servicio público en operación y encarga a las agencias del dominio educativo 'develop and lead sector-specific AI strategies' (chunks 11, 40-41), sin EMIS explícito.",
+      "instrumento": "organizacion"
+    },
+    "estudiantes-agencia": {
+      "score": 0,
+      "justificacion": "No protege la agencia, autonomía o bienestar de los estudiantes frente a la IA ni limita la vigilancia escolar (grep student/surveillance/wellbeing sin resultados pertinentes).",
+      "instrumento": ""
+    },
+    "curriculo-evaluacion": {
+      "score": 0,
+      "justificacion": "No prevé revisión de currículos escolares ni de métodos de evaluación ante la IA (grep curriculum/assessment sin resultados en el ámbito escolar).",
+      "instrumento": ""
+    },
+    "docentes-empoderar": {
+      "score": 0,
+      "justificacion": "No menciona a los docentes ni su consulta o protección frente al despliegue de la IA (grep teacher/educator sin resultados).",
+      "instrumento": ""
+    },
+    "docentes-formacion": {
+      "score": 0,
+      "justificacion": "No define competencias docentes en IA ni formación al profesorado; los programas de capacitación (TeSA, AIAP) se dirigen a la fuerza laboral tecnológica (grep teacher sin resultados).",
+      "instrumento": ""
+    },
+    "aprendizaje-vida": {
+      "score": 1,
+      "justificacion": "Usa vías de educación continua (Continuing Education and Training, Career Conversion Programmes, chunks 56, 58) para enseñar IA a adultos, pero no planifica la IA como apoyo al aprendizaje a lo largo de la vida.",
+      "instrumento": ""
+    },
+    "competencias-era-ia": {
+      "score": 3,
+      "justificacion": "Rediseña el AI Apprenticeship Programme (AIAP) con la meta 'Boost AI Practitioner pool to 15,000' (Action 6, chunk 56) y reciclaje sectorial vía ITM/JTM (Action 8); sin componente de currículo escolar.",
+      "instrumento": "organizacion"
+    },
+    "pilotos-evidencia": {
+      "score": 2,
+      "justificacion": "Despliega 'regulatory sandboxes, pilots for solutions such as watermarking and model cards' y un sector doméstico de 'Testing, Inspection, and Certification (TIC)' (chunk 96), sin criterios específicos para IA educativa.",
+      "instrumento": "autoridad"
+    },
+    "investigacion-evaluacion": {
+      "score": 2,
+      "justificacion": "Actualiza los planes nacionales de I+D en IA (Action 4) con la prioridad financiada 'Responsible AI' para mitigar riesgos sociales y éticos y joint grant calls internacionales (chunks 26, 44, 49), sin foco en IA y educación.",
+      "instrumento": "tesoro"
+    },
+    "costo-ambiental": {
+      "score": 2,
+      "justificacion": "Asigna 'sufficient carbon budget and power' a los centros de datos de IA y compromete 'a roadmap towards the growth of net-zero, green data centres' con energía renovable (chunks 76, 78), sin metas cuantificadas con plazo.",
+      "instrumento": "organizacion"
+    },
+    "financiamiento-local": {
+      "score": 2,
+      "justificacion": "Invierte en propuestas de valor de impacto social que incluyen 'Education & Manpower' (chunk 25), con accelerator programmes, targeted grants y financiamiento central para adopción pública de IA (chunks 35, 29, 41); sin articulación de actores educativos.",
+      "instrumento": "tesoro"
+    },
+    "incubacion-innovacion": {
+      "score": 3,
+      "justificacion": "Incuba el ecosistema local con el programa 100 Experiments de AISG, AI CoEs, aceleradoras y la meta numérica de 15,000 AI Practitioners (Action 6), más colaboraciones internacionales como el joint grant call con Corea (chunks 45, 31, 49).",
+      "instrumento": "organizacion"
+    }
+  },
+  "tailandia_ai_strategy_2022": {
+    "vision-sistemica": {
+      "score": 1,
+      "justificacion": "La visión es un ecosistema de IA para \"enhance the economy and quality of life within 2027\" (chunk 5); educación aparece como sector objetivo y nivel de alfabetización del programa de fuerza laboral, sin visión que vaya más allá de la formación de talento.",
+      "instrumento": ""
+    },
+    "preparacion-prioridades": {
+      "score": 3,
+      "justificacion": "Monitorea la preparación con el Government AI Readiness Index 2019-2023, identifica retos (talento, datos, negocio; chunks 3-4) y fija metas acotadas: \"30,000 workforce in 6 years\", 600 organizaciones adoptantes y 100 prototipos escalables (chunk 5).",
+      "instrumento": "nodalidad"
+    },
+    "enfoque-humanista": {
+      "score": 2,
+      "justificacion": "Primera Thailand AI Ethics Guideline para investigadores, desarrolladores y usuarios con curso de ética completado por 4,112 personas (chunks 7-8) y adhesión a marcos centrados en las personas (UNESCO RAM, OCDE; chunk 19), aunque sin formular control humano explícito.",
+      "instrumento": "nodalidad"
+    },
+    "valores-humanos": {
+      "score": 1,
+      "justificacion": "Solo títulos de guías (AI Governance Guideline for Executives 2023, AI User Guideline 2023; chunk 16); no se enuncian valores que prioricen personas y ambiente sobre eficiencia ni la interacción humana sobre la humano-máquina.",
+      "instrumento": ""
+    },
+    "capacidades-decisores": {
+      "score": 2,
+      "justificacion": "Proyecto nombrado \"Non-Degree (State personnel)\" entre los 5 de AI Workforce Development (chunk 17) y AI Governance Guideline for Executives (chunk 16), aunque dirigidos a funcionarios en general y no a gestores educativos.",
+      "instrumento": "organizacion"
+    },
+    "planificacion-interdisciplinaria": {
+      "score": 2,
+      "justificacion": "Estructura colaborativa nombrada: National AI Committee con subcomité de Workforce Development, ministerios, agencias, instituciones educativas y asociaciones (\"Collaborative organization driving Thailand NAIS\", chunks 14, 16) y universidades coautoras de la guía ética.",
+      "instrumento": "organizacion"
+    },
+    "gobernanza-coordinacion": {
+      "score": 3,
+      "justificacion": "Gobernanza instalada con hitos verificables: aprobación del gabinete el 26-jul-2022, orden de nombramiento del National AI Committee el 17-ago-2022 (chunk 0), AI Governance Center (AIGC) operativo desde nov-2022 (chunk 8) y seguimiento anual por fases 2022-2027.",
+      "instrumento": "organizacion"
+    },
+    "codigo-abierto-local": {
+      "score": 1,
+      "justificacion": "Desarrollo local del Thai Large Language Model adaptado a la lengua tailandesa (chunks 17 y texto completo, proyecto VISTEC/AIEAT), pero sin componente de código abierto ni reutilización (grep open source = 0).",
+      "instrumento": ""
+    },
+    "equidad-grupos-vulnerables": {
+      "score": 1,
+      "justificacion": "El caso de uso \"Geography of educational opportunities\" (chunk 6) y la plataforma TPMAP de focalización de pobreza (chunk 12) tocan equidad, pero sin metas medibles de inclusión en el uso educativo de la IA.",
+      "instrumento": ""
+    },
+    "sesgos-algoritmicos": {
+      "score": 0,
+      "justificacion": "El sesgo algorítmico no aparece en el documento; existe un AI Standard and Testing Center para identificación biométrica (chunk 17) pero sin mandato de verificar ausencia de sesgos ni representatividad de datos.",
+      "instrumento": ""
+    },
+    "genero-igualdad": {
+      "score": 0,
+      "justificacion": "Ninguna mención de género, mujeres o niñas en todo el texto (grep gender/women = 0).",
+      "instrumento": ""
+    },
+    "inclusion-discapacidad": {
+      "score": 0,
+      "justificacion": "Ninguna mención de discapacidad, necesidades especiales o accesibilidad (grep disab = 0).",
+      "instrumento": ""
+    },
+    "datos-privacidad": {
+      "score": 0,
+      "justificacion": "No aparece privacidad ni protección de datos personales (grep privacy/PDPA/personal data = 0); el \"Drafted AI Law\" (chunk 8) se enuncia sin contenido sobre datos educativos.",
+      "instrumento": ""
+    },
+    "gestion-educativa": {
+      "score": 1,
+      "justificacion": "Casos de uso del sector educativo listados sin instrumentos: \"Smart education, Geography of educational opportunities, Smart guidance and planning\" (chunk 6); ningún desarrollo de EMIS o LMS.",
+      "instrumento": ""
+    },
+    "estudiantes-agencia": {
+      "score": 0,
+      "justificacion": "Sin protecciones de agencia o bienestar estudiantil; la única vigilancia mencionada es la \"Public surveillance platform\" como caso de uso de seguridad (chunk 6), en dirección opuesta al criterio.",
+      "instrumento": ""
+    },
+    "curriculo-evaluacion": {
+      "score": 1,
+      "justificacion": "Solo \"curriculum frameworks (all levels)\" como resultado de desarrollo de capacidades en IA (texto completo, resultados 2022-2023); no se revisan currículos ni métodos de evaluación ante la adopción de IA.",
+      "instrumento": ""
+    },
+    "docentes-empoderar": {
+      "score": 0,
+      "justificacion": "Los docentes no aparecen en el documento (grep teacher/educator = 0); no hay consulta, derechos ni principio de no reemplazo.",
+      "instrumento": ""
+    },
+    "docentes-formacion": {
+      "score": 0,
+      "justificacion": "Ninguna formación docente en IA; AI @ School (chunk 11) se dirige a estudiantes de primaria, secundaria y vocacional, no a competencias del profesorado (grep teacher = 0).",
+      "instrumento": ""
+    },
+    "aprendizaje-vida": {
+      "score": 2,
+      "justificacion": "Nivel \"AI @ Lifelong Learning\" para trabajadores y emprendedores no titulados con \"Connector to National Credit Bank\" para acreditar resultados (chunks 10-11, 17), aunque orientado a enseñar IA más que a usar IA para sostener el aprendizaje permanente.",
+      "instrumento": "organizacion"
+    },
+    "competencias-era-ia": {
+      "score": 3,
+      "justificacion": "National AI Workforce Development Program con AI @ School (primaria, secundaria y vocacional), AI @ University y metas numéricas por nivel (1,000 profesionales, 9,000 ingenieros, 20,000 principiantes) y presupuesto aprobado de \"1,000 million baht (300 million baht x 3 years)\" (chunks 10-11).",
+      "instrumento": "organizacion"
+    },
+    "pilotos-evidencia": {
+      "score": 1,
+      "justificacion": "Menciona \"Pilot Projects\" (predicción PM2.5, Thai LLM) y un \"Industry assessment and testbed\" (texto completo, chunk 6), pero sin exigencia de adopción basada en evidencia ni verificación de proveedores, y nada en educación.",
+      "instrumento": ""
+    },
+    "investigacion-evaluacion": {
+      "score": 2,
+      "justificacion": "Financiamiento de I+D en IA vía R&D fund con 1,290 millones de baht ejecutados 2022-2023 (texto completo) y canalización por el National Science, Research and Innovation Fund (chunk 11), pero sin investigación específica sobre IA y educación.",
+      "instrumento": "tesoro"
+    },
+    "costo-ambiental": {
+      "score": 0,
+      "justificacion": "El ambiente aparece solo como sector de aplicación (Energy & Environment, predicción de PM2.5); no se calcula el costo ambiental del despliegue de IA ni se fijan metas de sostenibilidad.",
+      "instrumento": ""
+    },
+    "financiamiento-local": {
+      "score": 2,
+      "justificacion": "Instrumentos de financiamiento general: marco presupuestal de 1,000 millones de baht para talento, fondo de I+D y promoción que eleva la inversión de startups (chunks 11 y texto completo), sin fondos para herramientas de IA educativa.",
+      "instrumento": "tesoro"
+    },
+    "incubacion-innovacion": {
+      "score": 3,
+      "justificacion": "Línea \"Innovation & Startup Promotion\" y AI Co-creation space (chunk 17) con meta verificable de \"100 innovative prototypes ready for scaling in 6 years\" (chunk 5) y colaboración internacional (OCDE, UNESCO, ASEAN, Hiroshima AI Process; chunk 19), con educación como uno de 10 sectores.",
+      "instrumento": "organizacion"
+    }
+  },
+  "unesco_genai_guidance_2023": {
+    "vision-sistemica": {
+      "score": 1,
+      "justificacion": "Articula la visión más completa de IA-educación ('literacy in both the human and technological dimensions of AI', chunk 160), pero como guía solo recomienda a los Estados sin instrumentos propios.",
+      "instrumento": ""
+    },
+    "preparacion-prioridades": {
+      "score": 1,
+      "justificacion": "Analiza la 'digital poverty' en datos, cómputo y talento (chunks 83-84) y pide evaluar brechas regulatorias; no establece herramienta de diagnóstico ni metas propias.",
+      "instrumento": ""
+    },
+    "enfoque-humanista": {
+      "score": 1,
+      "justificacion": "Todo el documento se ancla en el enfoque humanista ('AI tools should be designed to extend or augment human intellectual abilities', chunk 241), pero es marco normativo recomendado, sin instrumento.",
+      "instrumento": ""
+    },
+    "valores-humanos": {
+      "score": 1,
+      "justificacion": "Sostiene que 'human capacity and collective action, and not technology, is the determining factor' (chunk 45) y exige diez rendiciones de cuentas a proveedores (chunk 136), como recomendación.",
+      "instrumento": ""
+    },
+    "capacidades-decisores": {
+      "score": 1,
+      "justificacion": "Surge de la mesa ministerial de mayo 2023 y orienta a policy-makers en pasos de regulación (chunks 10, 127), pero no prevé formación continua institucionalizada de decisores.",
+      "instrumento": ""
+    },
+    "planificacion-interdisciplinaria": {
+      "score": 1,
+      "justificacion": "Recomienda 'bring together intersectoral and interdisciplinary expertise' y co-diseño con docentes, padres y proveedores (chunk 172, sección 4.8); sin mecanismo propio.",
+      "instrumento": ""
+    },
+    "gobernanza-coordinacion": {
+      "score": 1,
+      "justificacion": "Recomienda 'establish a national body to lead on the whole-of-government approach to GenAI' (chunk 127) en pasos de regulación detallados, pero el órgano es prescripción a los Estados, no de la guía.",
+      "instrumento": ""
+    },
+    "codigo-abierto-local": {
+      "score": 1,
+      "justificacion": "Recomienda 'encourage the building of open-source eco-systems' con cómputo y datasets compartidos (chunk 129) y modelos EdGPT locales; sin instrumento propio.",
+      "instrumento": ""
+    },
+    "equidad-grupos-vulnerables": {
+      "score": 1,
+      "justificacion": "La medida 4.1 pide identificar a quienes carecen de conectividad y crear mecanismos de financiamiento sostenible para grupos excluidos (chunk 150); recomendación sin metas medibles propias.",
+      "instrumento": ""
+    },
+    "sesgos-algoritmicos": {
+      "score": 1,
+      "justificacion": "Recomienda 'validation mechanisms to test whether GenAI systems... are free of biases' con datos representativos de la diversidad (chunk 157); mecanismo prescrito a los Estados, no establecido.",
+      "instrumento": ""
+    },
+    "genero-igualdad": {
+      "score": 1,
+      "justificacion": "Promueve la igualdad de género como principio, pruebas de sesgo de género y 'a gender-balanced pool of professionals' (chunks 46, 157, 161); todo en clave de recomendación.",
+      "instrumento": ""
+    },
+    "inclusion-discapacidad": {
+      "score": 1,
+      "justificacion": "Recomienda financiar herramientas para 'learners who have disabilities or special needs' (chunk 150) y documenta usos de GenAI para impedimentos visuales y auditivos (5.3.5, chunks 216-217); sin instrumento propio.",
+      "instrumento": ""
+    },
+    "datos-privacidad": {
+      "score": 1,
+      "justificacion": "Propone mandatar protección de datos, consentimiento informado explícito y límites de edad, citando GDPR y COPPA como referentes (chunks 114, 137, texto completo); marcos ajenos que recomienda replicar.",
+      "instrumento": ""
+    },
+    "gestion-educativa": {
+      "score": 0,
+      "justificacion": "Grep de 'EMIS/management information' sin resultados; la guía no aborda sistemas de información para la gestión educativa ni su integración con LMS.",
+      "instrumento": ""
+    },
+    "estudiantes-agencia": {
+      "score": 1,
+      "justificacion": "La medida 4.2 exige informar a estudiantes qué datos se recogen y su impacto, proteger su motivación intrínseca y reforzar la autonomía humana (chunk 154); recomendación sin instrumento.",
+      "instrumento": ""
+    },
+    "curriculo-evaluacion": {
+      "score": 1,
+      "justificacion": "Recomienda 'system-wide adjustments in curriculum frameworks and assessment methodologies' co-diseñados con actores (chunk 172) y redefinir resultados de aprendizaje (chunk 236); sin instrumentos.",
+      "instrumento": ""
+    },
+    "docentes-empoderar": {
+      "score": 1,
+      "justificacion": "Pide 'protect the rights of teachers and researchers and the value of their practices' y analizar los roles docentes insustituibles (chunk 164); prescripción sin mecanismo.",
+      "instrumento": ""
+    },
+    "docentes-formacion": {
+      "score": 1,
+      "justificacion": "Medida 4.5: integrar la IA en marcos de competencias y programas de formación inicial y continua docente con 'training and continuous coaching' (chunks 123, 165); recomendación a los Estados.",
+      "instrumento": ""
+    },
+    "aprendizaje-vida": {
+      "score": 1,
+      "justificacion": "Recomienda currículos de IA 'for lifelong learning' y 'special programmes for older workers and citizens' (chunks 160, 162); sin instrumentos ni seguimiento de credenciales propio.",
+      "instrumento": ""
+    },
+    "competencias-era-ia": {
+      "score": 1,
+      "justificacion": "Urge 'government-sanctioned AI curricula for school education, in Technical and Vocational Education and Training' (chunk 160) y previsión de cambios laborales (chunk 161); todo recomendado, sin instrumento.",
+      "instrumento": ""
+    },
+    "pilotos-evidencia": {
+      "score": 1,
+      "justificacion": "Medida 4.7 'Test locally relevant application models and build a cumulative evidence base' y exigencia de 'robust process of piloting and evaluation' (chunks 30, 182); prescripción sin mecanismo propio.",
+      "instrumento": ""
+    },
+    "investigacion-evaluacion": {
+      "score": 1,
+      "justificacion": "Recomienda fortalecer la evidencia sobre el impacto social y ético de la GenAI y revisar implicaciones de largo plazo (chunks 171, 226); no financia ni protege investigación por sí misma.",
+      "instrumento": ""
+    },
+    "costo-ambiental": {
+      "score": 1,
+      "justificacion": "Pide explícitamente 'analyse the environmental costs of leveraging AI technologies at scale... and develop sustainable targets' para proveedores (chunk 171); recomendación sin meta propia.",
+      "instrumento": ""
+    },
+    "financiamiento-local": {
+      "score": 1,
+      "justificacion": "Recomienda 'establish sustainable funding mechanisms' para herramientas de IA inclusivas (chunk 150) y financiar estrategias nacionales (chunk 116); sin fondos propios.",
+      "instrumento": ""
+    },
+    "incubacion-innovacion": {
+      "score": 1,
+      "justificacion": "Alienta el desarrollo de modelos EdGPT locales, talento local de IA y ecosistemas de código abierto (chunks 129, 161); como exhortación sin instrumentos de incubación propios.",
       "instrumento": ""
     }
   },
   "vietnam_ai_strategy_2021": {
     "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "La visión es económico-productiva ('core technology of the Fourth Industrial Revolution', chunk 1); la educación aparece como aplicación y formación de habilidades, sin enseñar implicaciones sociales de la IA.",
       "instrumento": ""
     },
     "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 3,
+      "justificacion": "Define prioridades de infraestructura, datos y talento con metas numéricas y temporales: 'top 4 countries in the ASEAN region' y '3 national centers for big data storage and high performance computing' para 2030, '10 key AI research and training institutions' para 2025.",
+      "instrumento": "organizacion"
     },
     "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Adopta el principio de 'the human- and enterprise-centered approach, avoiding abuse of technology' (chunk 9) como orientación retórica, sin instrumento ni referencia a capacidades de estudiantes y docentes.",
       "instrumento": ""
     },
     "valores-humanos": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "No promueve valores que prioricen personas y ambiente sobre eficiencia ni la interacción humana; grep de ethics/wellbeing/responsibility no arroja resultados en ese sentido.",
       "instrumento": ""
     },
     "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 2,
+      "justificacion": "Encarga al Ministerio de Información y Comunicaciones 'programs on communications to raise awareness of officials, civil servants' sobre IA (chunks 14, 27), aunque dirigido a funcionarios en general y no a gestores educativos.",
+      "instrumento": "nodalidad"
     },
     "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Orienta la I+D hacia la 'multi-disciplinarity, inter-disciplinarity and transdisciplinarity' (chunk 20) sin mecanismo multiactor que informe las decisiones clave de planificación.",
       "instrumento": ""
     },
     "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 3,
+      "justificacion": "El Ministerio de Ciencia y Tecnología actúa como 'focal point' con informes anuales al Primer Ministro y 'preliminary review of the implementation of the Strategy up to 2025' (chunk 42), con tareas asignadas a cada ministerio y localidad.",
+      "instrumento": "organizacion"
     },
     "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Exhorta a 'promote AI open-source communities and forums' y a aplicar plataformas y aplicaciones abiertas existentes (chunks 20, 13), sin programa nombrado de localización.",
       "instrumento": ""
     },
     "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "No fija metas ni medidas de inclusión o equidad para grupos vulnerables en el uso educativo de la IA; grep de inclusion/vulnerable no arroja resultados pertinentes.",
       "instrumento": ""
     },
     "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "Sin mención de sesgos algorítmicos, auditoría de herramientas ni datos representativos de la diversidad (grep bias/fairness/discrimination sin resultados).",
       "instrumento": ""
     },
     "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "No aborda la igualdad de género: grep de women/gender/girls no arroja ningún resultado en el documento.",
       "instrumento": ""
     },
     "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "No menciona estudiantes con discapacidad ni accesibilidad; 'Invalids' aparece solo en el nombre del Ministerio de Trabajo (grep disability/special needs sin resultados).",
       "instrumento": ""
     },
     "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 2,
+      "justificacion": "Encarga al Ministerio de Seguridad Pública 'formulate and additionally improve legal documents on protection of privacy, human rights... related to AI' (chunk 29), sin marco específico para datos educativos ni consentimiento.",
+      "instrumento": "autoridad"
     },
     "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 2,
+      "justificacion": "El MOET debe promover IA en educación para 'forecasting in-demand careers' e 'identifying criteria for evaluating students' (chunks 31-32), analítica para decisiones educativas aunque sin EMIS/LMS explícitos.",
+      "instrumento": "organizacion"
     },
     "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "No protege agencia, autonomía ni bienestar estudiantil frente a la IA, ni restringe la vigilancia; solo prevé aplicaciones de personalización y evaluación (chunk 32).",
       "instrumento": ""
     },
     "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 2,
+      "justificacion": "Asigna al MOET usar IA para 'identifying criteria for evaluating students', personalizar el aprendizaje e 'identifying criteria to achieve study objectives' (chunk 32), sin salvaguarda contra la predicción única.",
+      "instrumento": "organizacion"
     },
     "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Menciona 'automating teachers' professional processes' y 'assistance of virtual teachers and tutors' (chunk 32) sin protección de derechos docentes, consulta ni cláusula de no reemplazo.",
       "instrumento": ""
     },
     "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "No define competencias docentes en IA ni formación al profesorado; los programas de capacitación se dirigen a jóvenes, estudiantes, trabajadores e investigadores, no a maestros.",
       "instrumento": ""
     },
     "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Prevé programas de certificados de corto y mediano plazo para 'workers wishing to change their occupations' (chunk 11) como educación continua, sin marco de aprendizaje permanente apoyado por IA (grep lifelong sin resultados).",
       "instrumento": ""
     },
     "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 2,
+      "justificacion": "El MOET implementará 'STEAM training programs', universalización de habilidades de IA para jóvenes e inclusión de materias de IA y ciencia de datos en universidades (chunk 30), y el MOLISA reciclará trabajadores; sin metas numéricas.",
+      "instrumento": "organizacion"
     },
     "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 2,
+      "justificacion": "Encarga al MIC crear 'sandboxes... a separate legal framework serving the pilot application of AI in potential fields' (chunk 23, grep sandbox), sin criterios de evidencia ni verificación de proveedores en educación.",
+      "instrumento": "autoridad"
     },
     "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
+      "score": 1,
+      "justificacion": "Financia investigación en IA en general (programa de investigación ligado a posgrado, chunk 19) sin fondos para investigación sobre IA y educación ni revisión de impactos sociales y éticos.",
       "instrumento": ""
     },
     "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
+      "score": 0,
+      "justificacion": "Solo aplica IA al monitoreo ambiental y la respuesta climática (chunk 40); no calcula el costo ambiental del despliegue de la IA ni fija metas de sostenibilidad.",
       "instrumento": ""
     },
     "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 2,
+      "justificacion": "El MPI formulará 'special mechanisms for innovation centers to attract venture investment funds' (chunk 32) y el MOET alentará a grupos tecnológicos a invertir en establecimientos de formación en IA (chunk 31), sin foco en IA educativa centrada en las personas.",
+      "instrumento": "tesoro"
     },
     "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    }
-  },
-  "singapur_nais2_2023": {
-    "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "valores-humanos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    }
-  },
-  "malasia_ai_rmap_2021": {
-    "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "valores-humanos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    }
-  },
-  "indonesia_stranas_ka_2020": {
-    "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "valores-humanos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    }
-  },
-  "tailandia_ai_strategy_2022": {
-    "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "valores-humanos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    }
-  },
-  "filipinas_naisr2_2024": {
-    "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "valores-humanos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    }
-  },
-  "asean_ai_governance_2024": {
-    "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "valores-humanos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    }
-  },
-  "unesco_genai_guidance_2023": {
-    "vision-sistemica": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "preparacion-prioridades": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "enfoque-humanista": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "valores-humanos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "capacidades-decisores": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "planificacion-interdisciplinaria": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gobernanza-coordinacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "codigo-abierto-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "equidad-grupos-vulnerables": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "sesgos-algoritmicos": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "genero-igualdad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "inclusion-discapacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "datos-privacidad": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "gestion-educativa": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "estudiantes-agencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "curriculo-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-empoderar": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "docentes-formacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "aprendizaje-vida": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "competencias-era-ia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "pilotos-evidencia": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "investigacion-evaluacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "costo-ambiental": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "financiamiento-local": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
-    },
-    "incubacion-innovacion": {
-      "score": null,
-      "justificacion": "",
-      "instrumento": ""
+      "score": 3,
+      "justificacion": "Metas numéricas y temporales de incubación local: 'To form 3 national AI innovation centers' y 10 marcas de IA de prestigio regional para 2030, con centros de talento y cooperación internacional (chunks 7, 21).",
+      "instrumento": "organizacion"
     }
   }
 }

@@ -1,0 +1,127 @@
+{
+  "vision-sistemica": {
+    "score": 2,
+    "justificacion": "Programas nombrados que enseñan qué es la IA y sus principios (\"shape these children's mental models of what AI is\", chunk 117; AI for Kids and Teens, infusión de Responsible AI en STEAM), aunque la visión global se enmarca en competitividad económica y talento.",
+    "instrumento": "organizacion"
+  },
+  "preparacion-prioridades": {
+    "score": 3,
+    "justificacion": "Encuesta nacional de preparación AI-Rmap 2021 (infraestructura, datos, talento; chunks 35, 40) más plan a 5 años en 3 horizontes con metas cuantificadas como \"100% household and organizations/SMEs access to the internet\" (chunk 108).",
+    "instrumento": "nodalidad"
+  },
+  "enfoque-humanista": {
+    "score": 2,
+    "justificacion": "Siete Principios de IA Responsable con \"pursuit of human benefit and happiness\" y control humano, anclados en un \"national AI Ethics charter\" y en la iniciativa de institucionalizar principios e implantar un AI Code of Ethics vía AI-CIU (chunks 74, 117).",
+    "instrumento": "nodalidad"
+  },
+  "valores-humanos": {
+    "score": 2,
+    "justificacion": "El charter ético nacional consagra \"elevating human happiness and quality of life\" y exige que quienes diseñan y despliegan IA rindan cuentas (chunks 74, 76-77), aunque omite la prioridad del medio ambiente y de la interacción humana sobre la máquina.",
+    "instrumento": "nodalidad"
+  },
+  "capacidades-decisores": {
+    "score": 3,
+    "justificacion": "Programa AI Awareness para funcionarios federales, estatales y C-Suites de GLC con meta verificable: \"3,600 officials have been trained\" hacia el final del Horizonte 3 (chunk 139).",
+    "instrumento": "organizacion"
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 2,
+    "justificacion": "Estructuras multiactor nombradas: modelo Quadruple Helix, MyAI-Alliance que une gobierno, academia, industria y sociedad, Foresight Committee y comités ad hoc con expertos rotatorios de ministerios y público (chunks 71, 151, 163).",
+    "instrumento": "organizacion"
+  },
+  "gobernanza-coordinacion": {
+    "score": 2,
+    "justificacion": "Crea la AI Coordination and Implementation Unit (AI-CIU) como \"apex government body\" bajo MOSTI, con Foresight Committee y actualización continua del roadmap como documento vivo (airmap.my), pero sin meta numérica asociada a la gobernanza (chunks 15, 83, 184).",
+    "instrumento": "organizacion"
+  },
+  "codigo-abierto-local": {
+    "score": 0,
+    "justificacion": "Ninguna mención de código abierto en todo el texto (grep \"open source/open-source\" = 0); los pasajes recuperados tratan infraestructura digital y nube, no localización ni reutilización de IA abierta.",
+    "instrumento": ""
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 1,
+    "justificacion": "Reconoce \"large gaps... between the privileged and the underprivileged in applying and using AI\" (chunk 135) y la inclusividad como principio, pero sin metas medibles de equidad ni medidas específicas para grupos vulnerables en IA educativa.",
+    "instrumento": ""
+  },
+  "sesgos-algoritmicos": {
+    "score": 1,
+    "justificacion": "El principio de fairness exige que los sistemas \"make the same recommendations to everyone\" (chunk 72), pero el término bias no aparece (grep = 0) y no se exige probar ni auditar herramientas.",
+    "instrumento": ""
+  },
+  "genero-igualdad": {
+    "score": 2,
+    "justificacion": "Programas nombrados Women-in-AI (WAICamp, WAI-2-Go, WAIDatathon) y Childcare for Women-in-AI dentro de S4.3 con KPWKM como agencia líder (chunk 132); el KPI de 10,000 talentos reincorporados corresponde al programa AI-LWBW general, y faltan sesgos y datos sensibles al género.",
+    "instrumento": "organizacion"
+  },
+  "inclusion-discapacidad": {
+    "score": 1,
+    "justificacion": "Mención única y retórica del \"empowerment for people who are physically or cognitively disabled... in education\" (chunk 74), sin instrumento ni programa de IA educativa inclusiva.",
+    "instrumento": ""
+  },
+  "datos-privacidad": {
+    "score": 1,
+    "justificacion": "Principio de Privacy & Security y exigencia genérica de que la IA cumpla \"applicable privacy laws\" (chunk 76), pero sin marco de protección de datos educativos ni consentimiento de estudiantes y docentes.",
+    "instrumento": ""
+  },
+  "gestion-educativa": {
+    "score": 2,
+    "justificacion": "Proyectos educativos nombrados de los National AI Use Cases (UPM): sistema de aprendizaje personalizado con Learning Management System, learning analytics y evaluación automatizada con centros de marcado (chunks 176-177), aunque sin referencia a EMIS.",
+    "instrumento": "organizacion"
+  },
+  "estudiantes-agencia": {
+    "score": 0,
+    "justificacion": "No hay protección de agencia, autonomía ni bienestar estudiantil (grep autonomy/consent = 0); la vigilancia aparece como área tecnológica de IA (\"Security and Surveillance\", chunk 72), no como práctica restringida.",
+    "instrumento": ""
+  },
+  "curriculo-evaluacion": {
+    "score": 2,
+    "justificacion": "Revisión curricular instrumentada: infusión de IA en STEAM de secundaria, revisión del currículo de informática y de disciplinas no-STEM (chunk 118) y proyecto de Intelligent Automated Assessment System (chunk 176), sin salvaguarda contra la IA como único predictor.",
+    "instrumento": "organizacion"
+  },
+  "docentes-empoderar": {
+    "score": 0,
+    "justificacion": "No aparecen derechos docentes, consulta al profesorado ni el principio de apoyar sin reemplazar (grep teacher = 0, replace solo en contexto ajeno); el AI-EE es formación, no protección del rol docente.",
+    "instrumento": ""
+  },
+  "docentes-formacion": {
+    "score": 3,
+    "justificacion": "Plataforma AI Education for Educators (AI-EE) con MOHE/MOE como agencias líderes y meta verificable de \"87,500 educators with AI Competency\" hacia Horizonte 3 (chunks 119, 122).",
+    "instrumento": "organizacion"
+  },
+  "aprendizaje-vida": {
+    "score": 2,
+    "justificacion": "Programas nombrados de formación continua con credenciales: AI-MOOC-Based Micro-credential Certification (1,000 profesionales certificados) y reincorporación de talento mayor y latente (chunks 122, 132), aunque centrados en enseñar IA y no en usar IA para sostener trayectorias de aprendizaje permanente.",
+    "instrumento": "organizacion"
+  },
+  "competencias-era-ia": {
+    "score": 3,
+    "justificacion": "Estrategia S4.1 con metas numéricas: AI for Kids and Teens con \"200,000 Future AI Talents\" (chunk 120), currículo de convergencia de IA en pregrado, 2,000 AI Professional Trainers certificados y reskilling de la fuerza laboral (S4.2).",
+    "instrumento": "organizacion"
+  },
+  "pilotos-evidencia": {
+    "score": 2,
+    "justificacion": "Los 13 National AI Use Cases funcionan como proyectos demostrativos coordinados por AI-Catalyst y se crea un policy sandbox para I+D en nube (\"1 cloud-based policy sandbox for AI R&D established\"), pero sin criterios de adopción basada en evidencia ni verificación de proveedores.",
+    "instrumento": "organizacion"
+  },
+  "investigacion-evaluacion": {
+    "score": 2,
+    "justificacion": "Financiamiento concreto de I+D: \"Ringfence RM10 mil. R&D funds\" y meta de \"20% allocation for AI R&D investments\" (chunk 102), pero sin fondos dedicados a investigar IA en educación ni protección de la investigación independiente.",
+    "instrumento": "tesoro"
+  },
+  "costo-ambiental": {
+    "score": 0,
+    "justificacion": "El costo ambiental de la IA no se calcula ni se menciona; las referencias a sostenibilidad aluden al ecosistema de innovación y a la Agenda 2030, no a huella de carbono o consumo energético de la IA.",
+    "instrumento": ""
+  },
+  "financiamiento-local": {
+    "score": 2,
+    "justificacion": "Instrumentos financieros nombrados: matching grants AI-MyIndustry de MDEC para posgrados y double tax deduction para colaboración con la industria (chunks 62, 120), aunque no dirigidos a herramientas de IA educativa centradas en las personas.",
+    "instrumento": "tesoro"
+  },
+  "incubacion-innovacion": {
+    "score": 3,
+    "justificacion": "Hub de innovación AI-Catalyst con metas verificables (\"Administration for the AI Catalyst established within the first year\", 11 AI Catalyst Consortia), MyAI-Alliance y colaboración internacional vía AI-eX y MOUs transfronterizos (chunks 58, 156, 168), con educación como vertical.",
+    "instrumento": "organizacion"
+  }
+}

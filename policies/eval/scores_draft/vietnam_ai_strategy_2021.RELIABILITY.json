@@ -1,0 +1,102 @@
+{
+  "vision-sistemica": {
+    "score": 1,
+    "justificacion": "La estrategia menciona universalizar habilidades básicas de IA y elevar la conciencia pública sobre su rol, pero la relación IA-educación se reduce a formación de fuerza laboral y aplicación, sin visión sistémica de implicaciones sociales."
+  },
+  "preparacion-prioridades": {
+    "score": 2,
+    "justificacion": "Define prioridades con metas temporales y numéricas (top 5 ASEAN en 2025, 3 centros nacionales de datos y 50 datasets abiertos en 2030), pero carece de un diagnóstico o herramienta de evaluación de preparación sistémica del país."
+  },
+  "enfoque-humanista": {
+    "score": 1,
+    "justificacion": "Declara el enfoque centrado en el ser humano y la empresa y el evitar abusos de la tecnología sobre derechos legítimos, pero como principio orientador sin instrumentos ni referencia a capacidades de estudiantes y docentes."
+  },
+  "valores-humanos": {
+    "score": 0,
+    "justificacion": "No promueve valores que prioricen a las personas o el medio ambiente sobre la eficiencia ni la interacción humana sobre la humano-máquina; el documento es de orientación productivista y de seguridad nacional."
+  },
+  "capacidades-decisores": {
+    "score": 1,
+    "justificacion": "Menciona aumentar capacidad y conciencia sobre IA de funcionarios y servidores públicos mediante programas de comunicación, pero sin formación específica para decisores o gestores educativos."
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 1,
+    "justificacion": "Menciona la multi/inter/transdisciplinariedad y la vinculación de comunidades académicas y profesionales, pero aplicada a I+D y no como pericia multiactor que informe decisiones clave de planificación de la política."
+  },
+  "gobernanza-coordinacion": {
+    "score": 3,
+    "justificacion": "Designa al Ministerio de Ciencia y Tecnología como punto focal con informes anuales al Primer Ministro antes del 15 de diciembre y revisión preliminar en 2025, configurando un ciclo de implementación-monitoreo-actualización verificable."
+  },
+  "codigo-abierto-local": {
+    "score": 2,
+    "justificacion": "Promueve comunidades y foros de código abierto, plataformas abiertas de datos y aplicaciones, el Portal Nacional de Datos y productos de IA propios basados en datos y conocimiento particulares de Vietnam (Esquema del sistema de conocimiento vietnamita digitalizado)."
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 0,
+    "justificacion": "No fija metas de inclusión, diversidad ni equidad en el uso educativo de la IA ni contempla medidas para grupos vulnerables."
+  },
+  "sesgos-algoritmicos": {
+    "score": 0,
+    "justificacion": "No exige revisar ni verificar sesgos de las herramientas de IA ni la representatividad de los datos de entrenamiento."
+  },
+  "genero-igualdad": {
+    "score": 0,
+    "justificacion": "No aborda la igualdad de género, los sesgos de género ni el empoderamiento de niñas y mujeres en competencias de IA en ninguna parte del texto."
+  },
+  "inclusion-discapacidad": {
+    "score": 0,
+    "justificacion": "No menciona a estudiantes con discapacidad ni la accesibilidad de la IA educativa; la única referencia a 'Invalids' es el nombre del ministerio de trabajo."
+  },
+  "datos-privacidad": {
+    "score": 1,
+    "justificacion": "Encarga al Ministerio de Seguridad Pública mejorar documentos legales sobre protección de la privacidad y evitar fugas de datos personales, pero sin marco específico que haga visible, trazable y auditable la recolección de datos educativos."
+  },
+  "gestion-educativa": {
+    "score": 2,
+    "justificacion": "Asigna al Ministerio de Educación y Formación tareas concretas de IA para gestión educativa (automatizar procesos profesionales docentes, criterios de evaluación de estudiantes, pronóstico de carreras demandadas), aunque sin mencionar EMIS/LMS ni metas."
+  },
+  "estudiantes-agencia": {
+    "score": 0,
+    "justificacion": "No protege la agencia, autonomía ni bienestar estudiantil ni limita usos de vigilancia; la personalización del aprendizaje se plantea sin salvaguardas."
+  },
+  "curriculo-evaluacion": {
+    "score": 2,
+    "justificacion": "Mandata al MOET intensificar la inclusión de análisis de datos e IA en los programas de universidades y colegios y desarrollar criterios de evaluación de estudiantes con IA, pero sin metas ni salvaguardas sobre la evaluación."
+  },
+  "docentes-empoderar": {
+    "score": 0,
+    "justificacion": "No protege derechos ni prácticas docentes ni los consulta; plantea automatizar procesos profesionales de los maestros y usar docentes y tutores virtuales sin la salvaguarda de no reemplazo."
+  },
+  "docentes-formacion": {
+    "score": 0,
+    "justificacion": "Los programas de formación en IA se dirigen a jóvenes, estudiantes, trabajadores, investigadores y funcionarios, pero no define competencias docentes ni formación continua del profesorado para usar IA."
+  },
+  "aprendizaje-vida": {
+    "score": 1,
+    "justificacion": "Menciona programas de certificación de corto y mediano plazo en IA para trabajadores que cambian de ocupación (MOLISA), pero no planifica el uso de la IA para apoyar trayectorias de aprendizaje a lo largo de la vida ni credenciales."
+  },
+  "competencias-era-ia": {
+    "score": 2,
+    "justificacion": "Encarga al MOET programas STEAM, universalización de habilidades de IA para jóvenes, formación formal en IA/ciencia de datos e inclusión en currículos universitarios, más reconversión de trabajadores, aunque sin metas numéricas verificables."
+  },
+  "pilotos-evidencia": {
+    "score": 2,
+    "justificacion": "Establece sandboxes con marco legal separado para la aplicación piloto de IA en campos potenciales (Ministerio de Información y Comunicaciones), aunque sin criterios de evidencia ni verificación de proveedores ni foco educativo."
+  },
+  "investigacion-evaluacion": {
+    "score": 1,
+    "justificacion": "Financia el programa nacional clave de investigación en IA y laboratorios, pero no investiga IA y educación ni revisa impactos sociales y éticos ni protege la investigación independiente."
+  },
+  "costo-ambiental": {
+    "score": 0,
+    "justificacion": "No calcula ni analiza el costo ambiental del despliegue de la IA; solo aplica IA al monitoreo ambiental, que es la dirección inversa."
+  },
+  "financiamiento-local": {
+    "score": 2,
+    "justificacion": "Atrae inversión con mecanismos nombrados (fondos de capital de riesgo vía Ministerio de Planificación e Inversión, IED bajo la Resolución 50-NQ/TW, alianzas público-privadas) e insta a grupos tecnológicos a invertir en institutos de formación e investigación en IA."
+  },
+  "incubacion-innovacion": {
+    "score": 3,
+    "justificacion": "Incuba desarrollo local con metas numéricas y temporales verificables: 2 centros nacionales de innovación en IA en 2025 y 3 en 2030, 10 marcas regionales de IA, al menos 1 institución en el top 20 de ASEAN, más centros de incubación y cooperación internacional."
+  }
+}

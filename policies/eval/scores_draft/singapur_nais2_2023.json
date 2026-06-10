@@ -1,0 +1,127 @@
+{
+  "vision-sistemica": {
+    "score": 1,
+    "justificacion": "La educación aparece como dominio de aplicación ('adaptive learning systems in our schools', 'Education & Manpower' como propuesta de valor, chunks 11, 25), sin visión de enseñar cómo funciona la IA y sus implicaciones sociales en el sistema educativo.",
+    "instrumento": ""
+  },
+  "preparacion-prioridades": {
+    "score": 3,
+    "justificacion": "Prioriza cómputo, datos y talento con metas verificables ('Boost AI Practitioner pool to 15,000', Action 6) y selecciona 'Leading Economic Sectors assessed to be most ready for AI-driven transformation' (chunk 29).",
+    "instrumento": "organizacion"
+  },
+  "enfoque-humanista": {
+    "score": 1,
+    "justificacion": "Postula que la IA debe 'uplift human potential' y el objetivo de 'Empowerment' de personas y comunidades (chunks 6, 18) como visión, sin principio de control humano ni despliegue para estudiantes y docentes.",
+    "instrumento": ""
+  },
+  "valores-humanos": {
+    "score": 1,
+    "justificacion": "Invoca 'what it means to be human' y el uso responsable y ético de la IA (chunks 5, 11), sin priorizar personas y ambiente sobre eficiencia ni la interacción humana sobre la humano-máquina.",
+    "instrumento": ""
+  },
+  "capacidades-decisores": {
+    "score": 2,
+    "justificacion": "Compromete 'targeted courses to impart AI skills' para segmentos del sector público incluidos 'senior management, policy' (chunk 42), aunque dirigido a funcionarios en general y no a gestores educativos.",
+    "instrumento": "organizacion"
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 2,
+    "justificacion": "Convoca pericia multiactor mediante SCAI ('over 40 local and overseas experts from academia, non-profit, industry and government', chunk 51) y participa en GPAI, WEF AI Governance Alliance y el órgano asesor de la ONU (chunk 11).",
+    "instrumento": "nodalidad"
+  },
+  "gobernanza-coordinacion": {
+    "score": 2,
+    "justificacion": "Institucionalizará 'governance and security frameworks for AI systems' (chunk 88) y una 'common platform for regulatory agencies to coordinate on AI developments' (chunk 97), con agencias líderes sectoriales; sin metas temporales.",
+    "instrumento": "organizacion"
+  },
+  "codigo-abierto-local": {
+    "score": 2,
+    "justificacion": "Liberó AI Verify como código abierto y creó la AI Verify Foundation para 'harness the collective power... of the global open-source community' (grep open-source), aunque limitado a herramientas de gobernanza, no a IA educativa localizada.",
+    "instrumento": "organizacion"
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 1,
+    "justificacion": "Reconoce riesgos de la IA 'especially toward vulnerable groups' (chunk 8) y aspira a que sea 'the great equaliser' (chunk 18), sin metas medibles de inclusión en el uso educativo de la IA.",
+    "instrumento": ""
+  },
+  "sesgos-algoritmicos": {
+    "score": 2,
+    "justificacion": "AI Verify, 'an AI governance testing framework and software toolkit' lanzado por IMDA, somete los sistemas de IA a pruebas estandarizadas frente a riesgos como la discriminación (chunk 91, grep AI Verify), sin requisito de datos representativos.",
+    "instrumento": "nodalidad"
+  },
+  "genero-igualdad": {
+    "score": 0,
+    "justificacion": "No aborda la igualdad de género: grep de women/gender/girls no arroja ningún resultado en el documento.",
+    "instrumento": ""
+  },
+  "inclusion-discapacidad": {
+    "score": 0,
+    "justificacion": "No menciona estudiantes con discapacidad ni accesibilidad educativa (grep disability/special needs/accessibility sin resultados pertinentes).",
+    "instrumento": ""
+  },
+  "datos-privacidad": {
+    "score": 2,
+    "justificacion": "Action 11 desarrolla capacidades en 'Privacy-Enhancing Technologies' con apoyo regulatorio y pilotos de cumplimiento (chunks 82-85), dentro del marco general de protección de datos; sin trazabilidad específica de datos educativos.",
+    "instrumento": "organizacion"
+  },
+  "gestion-educativa": {
+    "score": 2,
+    "justificacion": "Reporta 'adaptive learning systems in our schools' como servicio público en operación y encarga a las agencias del dominio educativo 'develop and lead sector-specific AI strategies' (chunks 11, 40-41), sin EMIS explícito.",
+    "instrumento": "organizacion"
+  },
+  "estudiantes-agencia": {
+    "score": 0,
+    "justificacion": "No protege la agencia, autonomía o bienestar de los estudiantes frente a la IA ni limita la vigilancia escolar (grep student/surveillance/wellbeing sin resultados pertinentes).",
+    "instrumento": ""
+  },
+  "curriculo-evaluacion": {
+    "score": 0,
+    "justificacion": "No prevé revisión de currículos escolares ni de métodos de evaluación ante la IA (grep curriculum/assessment sin resultados en el ámbito escolar).",
+    "instrumento": ""
+  },
+  "docentes-empoderar": {
+    "score": 0,
+    "justificacion": "No menciona a los docentes ni su consulta o protección frente al despliegue de la IA (grep teacher/educator sin resultados).",
+    "instrumento": ""
+  },
+  "docentes-formacion": {
+    "score": 0,
+    "justificacion": "No define competencias docentes en IA ni formación al profesorado; los programas de capacitación (TeSA, AIAP) se dirigen a la fuerza laboral tecnológica (grep teacher sin resultados).",
+    "instrumento": ""
+  },
+  "aprendizaje-vida": {
+    "score": 1,
+    "justificacion": "Usa vías de educación continua (Continuing Education and Training, Career Conversion Programmes, chunks 56, 58) para enseñar IA a adultos, pero no planifica la IA como apoyo al aprendizaje a lo largo de la vida.",
+    "instrumento": ""
+  },
+  "competencias-era-ia": {
+    "score": 3,
+    "justificacion": "Rediseña el AI Apprenticeship Programme (AIAP) con la meta 'Boost AI Practitioner pool to 15,000' (Action 6, chunk 56) y reciclaje sectorial vía ITM/JTM (Action 8); sin componente de currículo escolar.",
+    "instrumento": "organizacion"
+  },
+  "pilotos-evidencia": {
+    "score": 2,
+    "justificacion": "Despliega 'regulatory sandboxes, pilots for solutions such as watermarking and model cards' y un sector doméstico de 'Testing, Inspection, and Certification (TIC)' (chunk 96), sin criterios específicos para IA educativa.",
+    "instrumento": "autoridad"
+  },
+  "investigacion-evaluacion": {
+    "score": 2,
+    "justificacion": "Actualiza los planes nacionales de I+D en IA (Action 4) con la prioridad financiada 'Responsible AI' para mitigar riesgos sociales y éticos y joint grant calls internacionales (chunks 26, 44, 49), sin foco en IA y educación.",
+    "instrumento": "tesoro"
+  },
+  "costo-ambiental": {
+    "score": 2,
+    "justificacion": "Asigna 'sufficient carbon budget and power' a los centros de datos de IA y compromete 'a roadmap towards the growth of net-zero, green data centres' con energía renovable (chunks 76, 78), sin metas cuantificadas con plazo.",
+    "instrumento": "organizacion"
+  },
+  "financiamiento-local": {
+    "score": 2,
+    "justificacion": "Invierte en propuestas de valor de impacto social que incluyen 'Education & Manpower' (chunk 25), con accelerator programmes, targeted grants y financiamiento central para adopción pública de IA (chunks 35, 29, 41); sin articulación de actores educativos.",
+    "instrumento": "tesoro"
+  },
+  "incubacion-innovacion": {
+    "score": 3,
+    "justificacion": "Incuba el ecosistema local con el programa 100 Experiments de AISG, AI CoEs, aceleradoras y la meta numérica de 15,000 AI Practitioners (Action 6), más colaboraciones internacionales como el joint grant call con Corea (chunks 45, 31, 49).",
+    "instrumento": "organizacion"
+  }
+}

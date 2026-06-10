@@ -1,0 +1,513 @@
+{
+  "totales": {
+    "asean_ai_governance_2024": {
+      "total": 25,
+      "max": 75,
+      "pct": 33.3,
+      "bloques": {
+        "6.1": {
+          "puntos": 2,
+          "max": 6,
+          "pct": 33.3
+        },
+        "6.2": {
+          "puntos": 2,
+          "max": 6,
+          "pct": 33.3
+        },
+        "6.3": {
+          "puntos": 5,
+          "max": 12,
+          "pct": 41.7
+        },
+        "6.4": {
+          "puntos": 4,
+          "max": 15,
+          "pct": 26.7
+        },
+        "6.5": {
+          "puntos": 7,
+          "max": 21,
+          "pct": 33.3
+        },
+        "6.6": {
+          "puntos": 3,
+          "max": 9,
+          "pct": 33.3
+        },
+        "6.7": {
+          "puntos": 2,
+          "max": 6,
+          "pct": 33.3
+        }
+      },
+      "instrumentos": {
+        "organizacion": 1
+      }
+    },
+    "china_plan_quinquenal_15_2026": {
+      "total": 30,
+      "max": 75,
+      "pct": 40.0,
+      "bloques": {
+        "6.1": {
+          "puntos": 3,
+          "max": 6,
+          "pct": 50.0
+        },
+        "6.2": {
+          "puntos": 2,
+          "max": 6,
+          "pct": 33.3
+        },
+        "6.3": {
+          "puntos": 4,
+          "max": 12,
+          "pct": 33.3
+        },
+        "6.4": {
+          "puntos": 4,
+          "max": 15,
+          "pct": 26.7
+        },
+        "6.5": {
+          "puntos": 9,
+          "max": 21,
+          "pct": 42.9
+        },
+        "6.6": {
+          "puntos": 4,
+          "max": 9,
+          "pct": 44.4
+        },
+        "6.7": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        }
+      },
+      "instrumentos": {
+        "organizacion": 6,
+        "autoridad": 2
+      }
+    },
+    "filipinas_naisr2_2024": {
+      "total": 32,
+      "max": 75,
+      "pct": 42.7,
+      "bloques": {
+        "6.1": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        },
+        "6.2": {
+          "puntos": 3,
+          "max": 6,
+          "pct": 50.0
+        },
+        "6.3": {
+          "puntos": 5,
+          "max": 12,
+          "pct": 41.7
+        },
+        "6.4": {
+          "puntos": 5,
+          "max": 15,
+          "pct": 33.3
+        },
+        "6.5": {
+          "puntos": 9,
+          "max": 21,
+          "pct": 42.9
+        },
+        "6.6": {
+          "puntos": 2,
+          "max": 9,
+          "pct": 22.2
+        },
+        "6.7": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        }
+      },
+      "instrumentos": {
+        "organizacion": 9,
+        "nodalidad": 1,
+        "tesoro": 2
+      }
+    },
+    "indonesia_stranas_ka_2020": {
+      "total": 38,
+      "max": 75,
+      "pct": 50.7,
+      "bloques": {
+        "6.1": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        },
+        "6.2": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        },
+        "6.3": {
+          "puntos": 6,
+          "max": 12,
+          "pct": 50.0
+        },
+        "6.4": {
+          "puntos": 6,
+          "max": 15,
+          "pct": 40.0
+        },
+        "6.5": {
+          "puntos": 10,
+          "max": 21,
+          "pct": 47.6
+        },
+        "6.6": {
+          "puntos": 4,
+          "max": 9,
+          "pct": 44.4
+        },
+        "6.7": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        }
+      },
+      "instrumentos": {
+        "organizacion": 9,
+        "nodalidad": 2,
+        "autoridad": 2,
+        "tesoro": 2
+      }
+    },
+    "malasia_ai_rmap_2021": {
+      "total": 43,
+      "max": 75,
+      "pct": 57.3,
+      "bloques": {
+        "6.1": {
+          "puntos": 5,
+          "max": 6,
+          "pct": 83.3
+        },
+        "6.2": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        },
+        "6.3": {
+          "puntos": 7,
+          "max": 12,
+          "pct": 58.3
+        },
+        "6.4": {
+          "puntos": 6,
+          "max": 15,
+          "pct": 40.0
+        },
+        "6.5": {
+          "puntos": 12,
+          "max": 21,
+          "pct": 57.1
+        },
+        "6.6": {
+          "puntos": 4,
+          "max": 9,
+          "pct": 44.4
+        },
+        "6.7": {
+          "puntos": 5,
+          "max": 6,
+          "pct": 83.3
+        }
+      },
+      "instrumentos": {
+        "organizacion": 12,
+        "nodalidad": 3,
+        "tesoro": 2
+      }
+    },
+    "singapur_nais2_2023": {
+      "total": 36,
+      "max": 75,
+      "pct": 48.0,
+      "bloques": {
+        "6.1": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        },
+        "6.2": {
+          "puntos": 2,
+          "max": 6,
+          "pct": 33.3
+        },
+        "6.3": {
+          "puntos": 8,
+          "max": 12,
+          "pct": 66.7
+        },
+        "6.4": {
+          "puntos": 5,
+          "max": 15,
+          "pct": 33.3
+        },
+        "6.5": {
+          "puntos": 6,
+          "max": 21,
+          "pct": 28.6
+        },
+        "6.6": {
+          "puntos": 6,
+          "max": 9,
+          "pct": 66.7
+        },
+        "6.7": {
+          "puntos": 5,
+          "max": 6,
+          "pct": 83.3
+        }
+      },
+      "instrumentos": {
+        "organizacion": 9,
+        "nodalidad": 2,
+        "autoridad": 1,
+        "tesoro": 2
+      }
+    },
+    "tailandia_ai_strategy_2022": {
+      "total": 31,
+      "max": 75,
+      "pct": 41.3,
+      "bloques": {
+        "6.1": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        },
+        "6.2": {
+          "puntos": 3,
+          "max": 6,
+          "pct": 50.0
+        },
+        "6.3": {
+          "puntos": 8,
+          "max": 12,
+          "pct": 66.7
+        },
+        "6.4": {
+          "puntos": 1,
+          "max": 15,
+          "pct": 6.7
+        },
+        "6.5": {
+          "puntos": 7,
+          "max": 21,
+          "pct": 33.3
+        },
+        "6.6": {
+          "puntos": 3,
+          "max": 9,
+          "pct": 33.3
+        },
+        "6.7": {
+          "puntos": 5,
+          "max": 6,
+          "pct": 83.3
+        }
+      },
+      "instrumentos": {
+        "nodalidad": 2,
+        "organizacion": 6,
+        "tesoro": 2
+      }
+    },
+    "unesco_genai_guidance_2023": {
+      "total": 24,
+      "max": 75,
+      "pct": 32.0,
+      "bloques": {
+        "6.1": {
+          "puntos": 2,
+          "max": 6,
+          "pct": 33.3
+        },
+        "6.2": {
+          "puntos": 2,
+          "max": 6,
+          "pct": 33.3
+        },
+        "6.3": {
+          "puntos": 4,
+          "max": 12,
+          "pct": 33.3
+        },
+        "6.4": {
+          "puntos": 5,
+          "max": 15,
+          "pct": 33.3
+        },
+        "6.5": {
+          "puntos": 6,
+          "max": 21,
+          "pct": 28.6
+        },
+        "6.6": {
+          "puntos": 3,
+          "max": 9,
+          "pct": 33.3
+        },
+        "6.7": {
+          "puntos": 2,
+          "max": 6,
+          "pct": 33.3
+        }
+      },
+      "instrumentos": {}
+    },
+    "vietnam_ai_strategy_2021": {
+      "total": 30,
+      "max": 75,
+      "pct": 40.0,
+      "bloques": {
+        "6.1": {
+          "puntos": 4,
+          "max": 6,
+          "pct": 66.7
+        },
+        "6.2": {
+          "puntos": 1,
+          "max": 6,
+          "pct": 16.7
+        },
+        "6.3": {
+          "puntos": 7,
+          "max": 12,
+          "pct": 58.3
+        },
+        "6.4": {
+          "puntos": 2,
+          "max": 15,
+          "pct": 13.3
+        },
+        "6.5": {
+          "puntos": 8,
+          "max": 21,
+          "pct": 38.1
+        },
+        "6.6": {
+          "puntos": 3,
+          "max": 9,
+          "pct": 33.3
+        },
+        "6.7": {
+          "puntos": 5,
+          "max": 6,
+          "pct": 83.3
+        }
+      },
+      "instrumentos": {
+        "organizacion": 6,
+        "nodalidad": 1,
+        "autoridad": 2,
+        "tesoro": 1
+      }
+    }
+  },
+  "fiabilidad": {
+    "indonesia_stranas_ka_2020": {
+      "n": 25,
+      "exact_pct": 84.0,
+      "within1_pct": 100.0,
+      "disagreements": [
+        {
+          "criterio": "preparacion-prioridades",
+          "primario": 2,
+          "fiabilidad": 3
+        },
+        {
+          "criterio": "capacidades-decisores",
+          "primario": 0,
+          "fiabilidad": 1
+        },
+        {
+          "criterio": "equidad-grupos-vulnerables",
+          "primario": 1,
+          "fiabilidad": 2
+        },
+        {
+          "criterio": "pilotos-evidencia",
+          "primario": 1,
+          "fiabilidad": 2
+        }
+      ],
+      "weighted_kappa": 0.803
+    },
+    "vietnam_ai_strategy_2021": {
+      "n": 25,
+      "exact_pct": 80.0,
+      "within1_pct": 100.0,
+      "disagreements": [
+        {
+          "criterio": "preparacion-prioridades",
+          "primario": 3,
+          "fiabilidad": 2
+        },
+        {
+          "criterio": "capacidades-decisores",
+          "primario": 2,
+          "fiabilidad": 1
+        },
+        {
+          "criterio": "codigo-abierto-local",
+          "primario": 1,
+          "fiabilidad": 2
+        },
+        {
+          "criterio": "datos-privacidad",
+          "primario": 2,
+          "fiabilidad": 1
+        },
+        {
+          "criterio": "docentes-empoderar",
+          "primario": 1,
+          "fiabilidad": 0
+        }
+      ],
+      "weighted_kappa": 0.9
+    }
+  },
+  "criterios": [
+    "vision-sistemica",
+    "preparacion-prioridades",
+    "enfoque-humanista",
+    "valores-humanos",
+    "capacidades-decisores",
+    "planificacion-interdisciplinaria",
+    "gobernanza-coordinacion",
+    "codigo-abierto-local",
+    "equidad-grupos-vulnerables",
+    "sesgos-algoritmicos",
+    "genero-igualdad",
+    "inclusion-discapacidad",
+    "datos-privacidad",
+    "gestion-educativa",
+    "estudiantes-agencia",
+    "curriculo-evaluacion",
+    "docentes-empoderar",
+    "docentes-formacion",
+    "aprendizaje-vida",
+    "competencias-era-ia",
+    "pilotos-evidencia",
+    "investigacion-evaluacion",
+    "costo-ambiental",
+    "financiamiento-local",
+    "incubacion-innovacion"
+  ]
+}

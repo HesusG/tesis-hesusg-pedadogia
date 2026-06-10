@@ -1,0 +1,127 @@
+{
+  "vision-sistemica": {
+    "score": 1,
+    "justificacion": "Recomienda 'incorporate AI into general education to help citizens understand how AI works' y su ética (chunk 214), pero como guía voluntaria no establece instrumentos propios.",
+    "instrumento": ""
+  },
+  "preparacion-prioridades": {
+    "score": 1,
+    "justificacion": "Recomendaciones genéricas a gobiernos sobre infraestructura, datos y talento (chunk 191) sin herramienta de diagnóstico de preparación ni metas temporales.",
+    "instrumento": ""
+  },
+  "enfoque-humanista": {
+    "score": 1,
+    "justificacion": "La human-centricity es principio rector y propone niveles human-in/over/out-of-the-loop (chunks 45, 91), pero es guía operativa voluntaria sin instrumento propio.",
+    "instrumento": ""
+  },
+  "valores-humanos": {
+    "score": 1,
+    "justificacion": "Exhorta a que la IA 'respect human-centred values and pursue benefits for human society' (chunk 44); sin priorizar la interacción humana ni mecanismos de responsabilidad.",
+    "instrumento": ""
+  },
+  "capacidades-decisores": {
+    "score": 1,
+    "justificacion": "Se declara guía 'for policymakers in the region' y recomienda sesiones informativas para líderes (chunks 14, 191), sin programa propio de formación de decisores.",
+    "instrumento": ""
+  },
+  "planificacion-interdisciplinaria": {
+    "score": 1,
+    "justificacion": "Recomienda a las organizaciones juntas de ética multidisciplinarias y colaboración ecosistémica (chunks 62, 196); la pericia multiactor es prescripción, no mecanismo propio.",
+    "instrumento": ""
+  },
+  "gobernanza-coordinacion": {
+    "score": 2,
+    "justificacion": "Propone crear el ASEAN Working Group on AI Governance con responsabilidades definidas para implementar planes regionales y prevé la revisión periódica de la guía por órganos sectoriales ASEAN (chunks 18, 216).",
+    "instrumento": "organizacion"
+  },
+  "codigo-abierto-local": {
+    "score": 1,
+    "justificacion": "Recomienda que gobiernos desarrollen 'open-source AI platforms which are available for free' y datos en idiomas locales (chunks 204, 206), sin instrumento propio.",
+    "instrumento": ""
+  },
+  "equidad-grupos-vulnerables": {
+    "score": 1,
+    "justificacion": "Pide 'special consideration to impact on vulnerable and/or marginalised populations' en evaluaciones de riesgo (texto completo); sin metas medibles ni medidas de acceso.",
+    "instrumento": ""
+  },
+  "sesgos-algoritmicos": {
+    "score": 1,
+    "justificacion": "Guía operativa detallada de datasets representativos y fairness testing por subgrupos demográficos (chunks 111, 113), pero es recomendación voluntaria sin instrumento de verificación propio.",
+    "instrumento": ""
+  },
+  "genero-igualdad": {
+    "score": 1,
+    "justificacion": "El género aparece solo como característica protegida y exigencia de representatividad en datos (chunks 39, 111); sin empoderamiento de mujeres y niñas en IA.",
+    "instrumento": ""
+  },
+  "inclusion-discapacidad": {
+    "score": 0,
+    "justificacion": "Grep de 'disabilit/accessib/special needs' sin resultados pertinentes; la inclusión se limita a géneros y etnias en datasets (chunk 39).",
+    "instrumento": ""
+  },
+  "datos-privacidad": {
+    "score": 1,
+    "justificacion": "Remite a leyes nacionales preexistentes (PDPA de Singapur, Data Privacy Act de Filipinas, etc.) y recomienda consentimiento y DPIA (chunks 49-51); la guía no establece marco propio.",
+    "instrumento": ""
+  },
+  "gestion-educativa": {
+    "score": 1,
+    "justificacion": "El uso de IA en plataformas de aprendizaje aparece solo como caso ilustrativo del ALS/SLS del MOE de Singapur (chunk 179); sin previsión propia de EMIS/LMS.",
+    "instrumento": ""
+  },
+  "estudiantes-agencia": {
+    "score": 1,
+    "justificacion": "Recomienda divulgar a usuarios la interacción con IA y proteger a ciudadanos vulnerables (chunk 215); la autonomía del estudiante solo figura en la ilustración del ALS (chunk 313).",
+    "instrumento": ""
+  },
+  "curriculo-evaluacion": {
+    "score": 1,
+    "justificacion": "Recomienda que 'the curriculum of STEM disciplines needs to be periodically reviewed' (chunk 185); sin cambios a métodos de evaluación ni instrumentos.",
+    "instrumento": ""
+  },
+  "docentes-empoderar": {
+    "score": 1,
+    "justificacion": "La consulta a docentes aparece solo en la ilustración del ALS de Singapur, donde fueron consultados en planificación y pilotaje (chunks 179, 316); no es prescripción de la guía.",
+    "instrumento": ""
+  },
+  "docentes-formacion": {
+    "score": 1,
+    "justificacion": "Recomienda adscripciones de profesores a empresas de IA y co-diseño de currículos con el sector privado (chunks 189-190); sin programa de formación docente propio.",
+    "instrumento": ""
+  },
+  "aprendizaje-vida": {
+    "score": 1,
+    "justificacion": "Grep de 'lifelong' sin resultados; solo recomienda upskilling continuo de la fuerza laboral en niveles de capacidad (chunks 182-183), sin trayectorias de aprendizaje permanente.",
+    "instrumento": ""
+  },
+  "competencias-era-ia": {
+    "score": 1,
+    "justificacion": "Recomienda introducir IA en currículos, ética de IA en STEM y reskilling laboral citando ejemplos ajenos como la certificación de Singapur (chunks 184-186); sin instrumentos propios.",
+    "instrumento": ""
+  },
+  "pilotos-evidencia": {
+    "score": 1,
+    "justificacion": "Recomienda 'development sandbox for researchers to conduct pilots' y gobernanza tipo sandbox antes del despliegue (texto completo), como sugerencia a gobiernos sin mecanismo propio.",
+    "instrumento": ""
+  },
+  "investigacion-evaluacion": {
+    "score": 1,
+    "justificacion": "Recomienda 'investing in AI research and development' incluida la investigación en gobernanza y ética (chunk 201); sin fondos propios ni foco educativo.",
+    "instrumento": ""
+  },
+  "costo-ambiental": {
+    "score": 1,
+    "justificacion": "Orienta a estimar el consumo energético del ciclo de vida y minimizar retención de datos para reducir demanda de centros de datos (chunks 104, 125); sin metas de sostenibilidad.",
+    "instrumento": ""
+  },
+  "financiamiento-local": {
+    "score": 1,
+    "justificacion": "Recomienda subvenciones y financiamiento gubernamental a startups y adopción de IA (chunks 191, 197); ninguna asignación o fondo propio.",
+    "instrumento": ""
+  },
+  "incubacion-innovacion": {
+    "score": 1,
+    "justificacion": "Recomienda becas, laboratorios de casos de uso, sandboxes y plataformas de inversión en startups (chunks 198, 203-204); todo en clave de sugerencia sin instrumentos propios.",
+    "instrumento": ""
+  }
+}
