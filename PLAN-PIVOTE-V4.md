@@ -32,24 +32,31 @@ no rúbrica normativa); título legible elegido por el autor.
 ## Hoja de ruta
 
 - [x] It. 0: rama v4, plan aprobado
-- [ ] It. 1: infraestructura — `pipeline/lexicons.py` ✓, `pipeline/rubric.py` ✓,
-      `policies/eval/rubrica.json` (agente redactando), `references/rubrica-unesco.md`,
-      +12-15 entradas bib (Hood, Howlett, Fatima×2, Schiff, Bareis&Katzenbach, Nilsson,
-      OCDE 2021, UNESCO RAM, AI CFT 2024, Chilisa&Mertens, van Noordt)
-- [ ] It. 2: ejecutar — hojas de puntuación top-k, puntuar rúbrica 9 documentos,
-      computar léxicos; verificar fiabilidad (re-codificar ≥2 docs)
-- [ ] It. 3: cap01 + título + resumen (nueva PR; OE2=rúbrica como contribución; OE4=eco/voz)
-- [ ] It. 4: cap02 — sección "Evaluación de políticas públicas"; reposicionar sección
-      confuciana a repertorio interpretativo (+Pancasila); conservar críticas CHC
-- [ ] It. 5: cap04 — protocolo de rúbrica, instrumentos, fiabilidad, léxicos
-- [ ] It. 6: cap05 — matriz de evaluación + instrumentos + eco/voz + triangulación
-- [ ] It. 7: cap03 retoque (intro/transiciones) + conclusiones + resumen
-- [ ] It. 8: fact-check adversarial + compilación final + web
+- [x] It. 1: infraestructura completa (lexicons.py, rubric.py, eval_merge.py,
+      rubrica.json de 25 criterios con citas fuente, +14 entradas bib)
+- [x] It. 2: evaluación ejecutada — matriz 9×25 (Malasia 43 > Indonesia 38 > Singapur 36
+      > Filipinas 32 > Tailandia 31 > China=Vietnam 30 > ASEAN 25 > UNESCO 24);
+      léxicos eco/voz (voz negativa en 8/9; "Confucio" 1 mención patrimonial en todo el
+      corpus; Pancasila 19); fiabilidad kappa 0.80/0.90, ±1 100%
+- [x] It. 3: cap01 + título ("¿Eco Global o Voz Propia?...")
+- [x] It. 4: cap02 — sección de evaluación de políticas + tradiciones como repertorio
+      interpretativo + subsección Pancasila
+- [x] It. 5: cap04 — rúbrica, escala, NATO, fiabilidad real, método eco/voz
+- [x] It. 6: cap05 — pirámide invertida (76% innovación vs 28% equidad), perfiles,
+      cruce calidad⊥identidad, caso Vietnam (convergencia selectiva)
+- [x] It. 7: cap03 retocado + conclusiones + resumen/abstract
+- [ ] It. 8: fact-check adversarial (agente corriendo) + correcciones + compilación
+      final + web eco/voz
 
 ## Estado
 
-- **Última iteración**: 0→1 en curso (2026-06-09)
-- **En curso**: agente redactando rúbrica desde el texto real de la sección 6 de
-  Miao et al. 2021 (verificado: el PDF no contiene rúbrica propia)
+- **Última iteración**: 8 en curso (2026-06-10) — fact-check adversarial corriendo
+- **PENDIENTE DEL AUTOR (importante)**: las puntuaciones de la rúbrica en
+  `policies/eval/scores.json` son un BORRADOR producido por codificadores automáticos
+  con justificaciones auditables (hojas en `policies/eval/sheets/`). Antes de la
+  defensa, el autor debe revisar y apropiarse de las puntuaciones — especialmente las
+  llamadas de juicio documentadas en `scores_draft/*.json` — y decidir cómo describir
+  el procedimiento de codificación en cap04 (asistencia de IA en la codificación).
 - **Notas**: compilar con `make pdf`; pipeline `USE_LOCAL_EMBEDDINGS=1 python3 -m pipeline`;
-  léxicos `python3 -m pipeline.lexicons`; hojas `python3 -m pipeline.rubric`
+  léxicos `python3 -m pipeline.lexicons`; hojas `python3 -m pipeline.rubric`;
+  consolidación `python3 -m pipeline.eval_merge`
