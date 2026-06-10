@@ -3,103 +3,91 @@
 \label{cap:resultados}
 
 % Target: ~25 páginas (~6,250 palabras)
-% Iteration 2 — 2026-02-23 (fixed: 22v14 gap, model justification, EU AI Act confounders,
-%   Mexico clarification, clustering metric, linguistic affinity, outlier terminology)
+% v3 — Resultados reales del pipeline con corpus SEA + China (2026-06-09)
 
-El corpus definido en la Sección~\ref{sec:corpus} comprende 22 unidades de análisis. De estas, 14 cuentan con documentos fuente en formato procesable al momento del análisis.\footnote{Los 14 documentos procesados corresponden a: Unión Europea, España, Francia (Europa); Canadá, Brasil, Colombia (Américas); Japón, Corea del Sur, Singapur, India, con dos documentos (NITI Aayog 2018 y NEP 2020), Australia (Asia-Pacífico); UNESCO y Foro Económico Mundial (internacionales). Los ocho documentos restantes, a saber, Alemania (archivo corrupto), Finlandia, Estonia (Europa); Estados Unidos, México, Chile (Américas); China (Asia-Pacífico); y OCDE, Banco Mundial (internacionales), no se obtuvieron en formato descargable automático por restricciones de acceso o publicación institucional. Su incorporación queda como trabajo futuro (véase Conclusiones).} Este capítulo presenta los hallazgos del análisis comparativo de esas 14 políticas. Los resultados se organizan en cuatro secciones: primero, los hallazgos cualitativos por dimensión de análisis; segundo, los resultados del análisis semántico computacional; tercero, la triangulación entre ambas aproximaciones; y cuarto, la discusión de sus implicaciones.
-
+El corpus definido en la Sección~\ref{sec:corpus} comprende nueve unidades de análisis: seis países del Sudeste Asiático (Vietnam, Singapur, Malasia, Indonesia, Tailandia y Filipinas), China como caso ancla de la tradición confuciana, la ASEAN y la UNESCO. Los nueve documentos fueron procesados en su totalidad: 2{,}334 fragmentos de texto ingresados a la base vectorial, con tamaños que reflejan la heterogeneidad documental del corpus —desde los 652 fragmentos del plan quinquenal chino y los 584 de la estrategia indonesia hasta los 47 de la decisión vietnamita y los 22 de la versión inglesa tailandesa—. Este capítulo presenta los hallazgos en cuatro secciones: los resultados cualitativos por dimensión de análisis; los resultados del análisis semántico computacional, incluida la prueba empírica de la hipótesis de herencia confuciana; la triangulación entre ambas aproximaciones; y la discusión de sus implicaciones.
 
 \section{Resultados por Dimensión de Análisis}
 \label{sec:resultados-dimension}
 
-La lectura sistemática de los documentos de política permitió identificar patrones recurrentes y divergencias a lo largo de las siete dimensiones establecidas en la metodología (véase la Sección~\ref{sec:dimensiones}).
+El análisis semántico puntúa cada política en las siete dimensiones del marco analítico mediante la similitud coseno entre el centroide del documento y la consulta semántica de cada dimensión (Sección~\ref{sec:herramienta}). Las puntuaciones se interpretan de forma relativa —qué documentos se aproximan más a cada dimensión— y se contrastan con la lectura cualitativa de los textos. La Tabla~\ref{tab:dimension-scores} presenta la matriz completa.
+
+\begin{table}[htbp]
+\centering
+\caption{Puntuaciones de similitud semántica por dimensión de análisis}
+\label{tab:dimension-scores}
+\small
+\begin{tabular}{lccccccc}
+\hline
+\textbf{Unidad} & \textbf{Gob.} & \textbf{Curr.} & \textbf{F.~Doc.} & \textbf{Infra.} & \textbf{Ética} & \textbf{Inv.} & \textbf{Equidad} \\
+\hline
+China      & 0.546 & 0.426 & 0.309 & 0.517 & 0.315 & 0.421 & 0.475 \\
+Vietnam    & 0.650 & 0.683 & 0.527 & 0.519 & 0.514 & 0.649 & 0.541 \\
+Singapur   & 0.519 & 0.624 & 0.469 & 0.450 & 0.476 & 0.603 & 0.517 \\
+Malasia    & 0.541 & 0.674 & 0.510 & 0.477 & 0.502 & 0.652 & 0.546 \\
+Indonesia  & 0.640 & 0.619 & 0.481 & 0.609 & 0.560 & 0.570 & 0.599 \\
+Tailandia  & 0.507 & 0.608 & 0.441 & 0.473 & 0.464 & 0.572 & 0.516 \\
+Filipinas  & 0.563 & 0.673 & 0.534 & 0.523 & 0.520 & 0.661 & 0.564 \\
+ASEAN      & 0.597 & 0.636 & 0.467 & 0.361 & 0.600 & 0.573 & 0.497 \\
+UNESCO     & 0.558 & 0.701 & 0.600 & 0.490 & 0.642 & 0.649 & 0.571 \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Gobernanza y regulación}
 
-Las políticas analizadas muestran dos modelos predominantes de gobernanza. Por un lado, la Unión Europea adoptó un enfoque regulatorio prescriptivo con el AI Act \citep{eu2024aiact}, que clasifica los sistemas de IA por niveles de riesgo e impone obligaciones legales vinculantes. España, Francia y Colombia siguen un modelo mixto: establecen marcos de gobernanza institucional, como el Consejo Asesor de IA en España \citep{spain2020enia} o el Consejo Nacional de Política Económica y Social en Colombia \citep{colombia2019conpes}, sin imponer regulación sectorial detallada.
-
-Por otro lado, las políticas de Asia-Pacífico privilegian la gobernanza mediante principios voluntarios y coordinación intersectorial. Japón apuesta por ``human-centric AI'' como principio rector sin legislación específica \citep{japan2019ai}; Corea del Sur y Singapur articulan estrategias de gobierno que coordinan inversión pública con participación industrial \citep{korea2019ai, singapore2019nais}. India presenta un caso particular: su estrategia de IA delega la gobernanza a NITI Aayog como organismo coordinador, mientras que la política educativa (NEP 2020) opera en un marco regulatorio independiente \citep{india2018niti, india2020nep}.
-
-El análisis semántico corrobora esta diferenciación: el EU AI Act obtiene la puntuación más alta en la dimensión de gobernanza (0.497), mientras que documentos como el WEF Future of Jobs (0.458) y Australia (0.476) registran valores inferiores que reflejan su orientación hacia recomendaciones generales.
+La gobernanza alcanza sus puntuaciones más altas en Vietnam (0.650) e Indonesia (0.640), los dos documentos que dedican mayor espacio a la arquitectura institucional: el decreto vietnamita asigna tareas a diecisiete ministerios y la estrategia indonesia diseña un entramado de órganos nuevos (consejo de IA, comisión de ética, orquestador de innovación). En el extremo opuesto, Tailandia (0.507) y Singapur (0.519) presentan los valores más bajos entre los países, coherente con su estilo de gobernanza por comité y por red de agencias, que presupone instituciones existentes en lugar de diseñarlas. La lectura cualitativa añade el matiz que la métrica no captura: la gobernanza china, con una puntuación intermedia (0.546), es la más vertical del corpus —``el liderazgo centralizado y unificado del Comité Central del Partido''~\citep{china2026fyp}—, pero el plan la da por sentada en lugar de tematizarla.
 
 \subsection{Currículo e integración educativa}
 
-La integración de la IA en el currículo escolar presenta tres niveles de especificidad. Las políticas más detalladas (Japón [0.708], India NITI [0.723] y Corea del Sur [0.717] en la dimensión curricular) articulan propuestas concretas sobre qué contenidos de IA deben incluirse en la educación básica y superior. Japón propone la integración de ``data science y AI literacy'' desde la educación primaria; Corea del Sur plantea la formación en ``AI basic concepts'' para todos los niveles; India incluye ``computational thinking'' como competencia transversal en la NEP 2020.
-
-En un segundo nivel, Francia y España abordan el currículo de manera indirecta: la formación en IA se plantea como parte de la transformación digital educativa sin detallar contenidos específicos \citep{villani2018ai, spain2020enia}. Brasil y Colombia mencionan la formación digital pero sin vincularla explícitamente a contenidos curriculares de IA \citep{brasil2021ebia, colombia2019conpes}.
-
-La UNESCO, con una puntuación de 0.701, refleja su papel como organismo que propone marcos curriculares sin implementarlos directamente: su guía de IA generativa ofrece orientaciones pedagógicas detalladas pero no un currículo prescriptivo \citep{unesco2023genai}.
-
-El EU AI Act (0.392) registra la puntuación más baja en esta dimensión, coherente con su naturaleza exclusivamente regulatoria.
+El currículo es la dimensión de mayor puntuación promedio del corpus y la máxima para la mayoría de los países: Vietnam (0.683), Malasia (0.674), Filipinas (0.673), Singapur (0.624), Indonesia (0.619) y Tailandia (0.608). El dato refleja un hallazgo sustantivo: las seis estrategias sudesteasiáticas hablan de educación principalmente en clave curricular y de competencias —los programas STEAM vietnamitas, el ``currículo de convergencia de IA'' malasio que alcanza a las disciplinas no STEM, la ciencia de datos en la secundaria filipina, las vías \textit{AI @ School} tailandesas~\citep{vietnam2021ai, malaysia2021airmap, philippines2024naisr, thailand2022ai}—. La excepción es China (0.426): el plan quinquenal trata el currículo de IA en una línea de planificación de disciplinas universitarias, no como proyecto pedagógico. Que el documento más próximo a esta dimensión sea la guía de la UNESCO (0.701), un texto íntegramente educativo, valida la consulta semántica.
 
 \subsection{Formación docente}
 
-La formación docente emerge como una dimensión donde la brecha entre intención y concreción resulta notable. La UNESCO lidera con 0.600, producto de recomendaciones específicas sobre desarrollo profesional docente en IA que incluyen marcos de competencias y propuestas de certificación \citep{unesco2023genai}. India, a través de la NEP 2020, alcanza 0.615 al establecer un programa nacional de formación continua para profesores con componentes explícitos de tecnología educativa \citep{india2020nep}.
-
-En contraste, varias políticas nacionales de IA mencionan la necesidad de capacitar docentes sin detallar mecanismos. Canadá (0.494), Singapur (0.530) y Australia (0.462) reconocen la importancia de la formación docente pero la tratan como componente secundario de sus estrategias tecnológicas. El EU AI Act (0.241) apenas aborda esta dimensión, dado que su alcance regulatorio no incluye política educativa.
-
-La brecha entre el discurso y la implementación en formación docente atraviesa el corpus. Diez de las 14 políticas analizadas mencionan la formación docente; solo tres (India NEP, UNESCO, Corea del Sur) proponen mecanismos concretos de implementación.
+La formación docente confirma en el Sudeste Asiático el patrón global identificado en la literatura~\citep{miao2021guidance, unesco2023genai}: es la dimensión más débil del corpus. Es la puntuación mínima de China (0.309), Indonesia (0.481) y Tailandia (0.441), y se sitúa entre las dos más bajas de prácticamente todas las unidades nacionales. La lectura cualitativa precisa el hallazgo: solo Malasia cuenta con un programa nominal y cuantificado de formación docente (la plataforma AI-EE, con meta de 87,500 educadores)~\citep{malaysia2021airmap}; Filipinas asigna la tarea sin metas~\citep{philippines2024naisr}; China convoca a un ``cuerpo docente de alto calibre'' sin programa específico de IA~\citep{china2026fyp}; y Vietnam concibe al docente como beneficiario de la automatización —``docentes y tutores virtuales''— antes que como sujeto de formación~\citep{vietnam2021ai}. Que la puntuación máxima de la dimensión corresponda a la UNESCO (0.600) subraya la brecha: el discurso internacional insiste en la formación docente precisamente porque las políticas nacionales la desatienden.
 
 \subsection{Infraestructura y acceso}
 
-Las puntuaciones en infraestructura y acceso revelan diferencias entre políticas que integran la infraestructura tecnológica como condición habilitante y aquellas que la asumen como dada. India NEP obtiene el valor más alto (0.646), seguida de Japón (0.604) y Colombia (0.591). Estos documentos dedican secciones específicas a conectividad rural, equipamiento escolar y acceso a recursos digitales.
-
-España (0.571), Brasil (0.514) y Francia (0.522) abordan la infraestructura en el contexto más amplio de la transformación digital. La UE (0.189) obtiene la puntuación más baja: el AI Act no trata infraestructura educativa. Canadá (0.382) y Australia (0.430) tampoco desarrollan esta dimensión en profundidad, lo que sugiere que asumen niveles adecuados de infraestructura.
-
-Los datos sugieren que la atención a infraestructura no se correlaciona linealmente con el nivel de desarrollo económico. Colombia y la India, países de ingreso medio, obtienen puntuaciones más altas en esta dimensión que Canadá o Australia, países de ingreso alto. Una hipótesis plausible es que la presencia de brechas de infraestructura motiva su inclusión explícita en las políticas, aunque el tamaño del corpus (14 documentos) no permite generalizar esta observación.
+La infraestructura distingue con nitidez a los dos documentos de planificación integral: Indonesia (0.609) y China (0.517) son, junto con Filipinas (0.523), los valores más altos entre las unidades nacionales, coherente con sus capítulos de centros de cómputo, conectividad y datos —los clústeres nacionales de cómputo chinos, el superordenador nacional indonesio y la interconexión universitaria IdREN~\citep{china2026fyp, indonesia2020stranas}—. La guía de la ASEAN presenta el mínimo del corpus (0.361): un marco de gobernanza organizacional no tematiza infraestructura física. La lectura cualitativa añade el contraste regional: Tailandia exhibe la pieza de infraestructura más concreta del corpus (el superordenador LANTA, primero de la ASEAN)~\citep{thailand2022ai}, pero su versión documental abreviada diluye el peso semántico de la dimensión.
 
 \subsection{Ética y valores}
 
-La dimensión ética presenta la mayor convergencia discursiva entre regiones. La UNESCO registra 0.642, la puntuación más alta, consistente con su mandato normativo sobre ética de la IA \citep{unesco2023genai}. Francia (0.566), Brasil (0.573) e India NITI (0.571) también obtienen valores elevados, lo que indica una atención sostenida a los principios éticos en sus documentos.
-
-Los temas éticos recurrentes incluyen privacidad de datos, sesgo algorítmico, transparencia y supervisión humana. Sin embargo, el tratamiento varía: la UE legisla obligaciones concretas de transparencia y evaluación de riesgos; Francia y la UNESCO proponen marcos de principios; Brasil y Colombia articulan el discurso ético sin mecanismos de cumplimiento.
-
-Singapur (0.510) y Australia (0.455) mencionan la ética pero la subordinan a los objetivos de competitividad e innovación. El WEF (0.408) aborda la ética desde la perspectiva del mercado laboral sin profundizar en su aplicación educativa.
+La ética separa los documentos normativos de las estrategias de desarrollo: la UNESCO (0.642) y la ASEAN (0.600) encabezan la dimensión, seguidas de Indonesia (0.560), el único país que funda su política en una matriz axiológica explícita (Pancasila)~\citep{indonesia2020stranas}. En el extremo opuesto, China registra la puntuación mínima del corpus (0.315): el plan quinquenal subordina la gobernanza ética a un capítulo de ``sistemas fundamentales'' de datos e IA sin desarrollo doctrinal~\citep{china2026fyp}. El resultado matiza la expectativa derivada de la literatura confuciana: la tradición que concibe la educación como formación moral~\citep{lee1996cultural, tan2020digital} no se traduce, en los países CHC del corpus, en un discurso ético más denso que el de sus vecinos; el lenguaje de la ética de la IA proviene del repertorio internacional~\citep{jobin2019landscape}, no de las matrices culturales nacionales.
 
 \subsection{Investigación e innovación}
 
-Asia-Pacífico domina esta dimensión. Japón (0.690), Corea del Sur (0.696) e India NITI (0.692) son las políticas con mayores puntuaciones, seguidas de la UNESCO (0.649) y Francia (0.613). Esta concentración refleja las prioridades de inversión de las estrategias asiáticas, que posicionan la investigación en IA como motor de desarrollo económico.
-
-La media regional confirma el patrón: Asia-Pacífico obtiene 0.658 frente a 0.508 de Europa, 0.566 de Américas y 0.559 de las organizaciones internacionales. La diferencia se explica porque las políticas asiáticas integran la investigación como eje central, mientras que las europeas y latinoamericanas la tratan como uno de múltiples componentes.
-
-Canadá (0.609) constituye una excepción dentro de las Américas, coherente con su posición pionera en la investigación de IA, pues fue el primer país en adoptar una estrategia nacional de IA en 2017 \citep{canada2017ai}.
+La investigación presenta puntuaciones altas y homogéneas en las cinco estrategias nacionales de IA propiamente dichas (Filipinas 0.661, Malasia 0.652, Vietnam 0.649, Singapur 0.603, Tailandia 0.572), reflejo del género documental: todas se conciben como hojas de ruta de ecosistemas de investigación e innovación, con sus centros nacionales (CAIR filipino, AI Singapore, los centros de innovación vietnamitas)~\citep{philippines2024naisr, singapore2023nais2, vietnam2021ai}. La puntuación comparativamente baja de China (0.421) repite el efecto de dilución de su amplitud temática: la investigación en IA ocupa un lugar central del plan, pero comparte espacio con sesenta capítulos de desarrollo nacional.
 
 \subsection{Equidad e inclusión}
 
-España (0.642), Colombia (0.640) y Brasil (0.628) lideran la dimensión de equidad, un resultado que refleja la centralidad de la inclusión social en las políticas iberoamericanas. Colombia y Brasil abordan la brecha digital como un problema estructural vinculado a la desigualdad socioeconómica; España articula la equidad de género y la inclusión territorial como ejes transversales de su estrategia de IA.
-
-Francia (0.615) y la India (NEP: 0.614, NITI: 0.593) también registran valores altos. La NEP 2020 destaca por su énfasis en poblaciones históricamente marginadas, minorías lingüísticas y zonas rurales.
-
-La media regional muestra un gradiente: Américas (0.558) y Asia-Pacífico (0.577) superan a Europa (0.519) e internacionales (0.549). Sin embargo, el valor europeo está sesgado a la baja por el EU AI Act (0.300), que aborda la equidad desde el riesgo algorítmico y no desde la inclusión educativa.
+La equidad alcanza su máximo nacional en Indonesia (0.599), validando la lectura cualitativa del Capítulo~\ref{cap:marco-contextual}: la estrategia indonesia es la única que parte de un diagnóstico de brechas educativas (acceso rural, discapacidad, desigualdad regional) y formula la IA educativa como instrumento de equidad~\citep{indonesia2020stranas}. Le siguen Filipinas (0.564) y Malasia (0.546), con sus programas de inclusión laboral y de género (Women-in-AI)~\citep{malaysia2021airmap}. China presenta el mínimo nacional (0.475) pese a su retórica de equalización de servicios públicos. El patrón es consistente con la síntesis preliminar: la equidad educativa como punto de partida de la política es un rasgo de los sistemas archipelágicos con grandes brechas internas, no de los sistemas de herencia confuciana.
 
 
 \section{Resultados del Análisis Semántico}
 \label{sec:resultados-semantico}
 
-El análisis semántico procesó los 14 documentos mediante el modelo de embeddings \texttt{paraphrase-multilingual-MiniLM-L12-v2}. Aunque la Sección~\ref{sec:herramienta} establece \texttt{text-embedding-3-small} de OpenAI como modelo primario, se optó por el modelo local por dos razones: primero, al ser de código abierto y ejecutarse sin conexión a servicios externos, permite la reproducibilidad completa del análisis por cualquier investigador sin costo ni dependencia de APIs comerciales; segundo, su entrenamiento multilingüe (50+ idiomas) lo hace adecuado para un corpus que incluye documentos en inglés, español y portugués. El procesamiento generó 5{,}120 fragmentos de texto (chunks de 800 caracteres con 200 de solapamiento) que fueron almacenados en ChromaDB. A partir de estos embeddings se computaron las métricas de similitud coseno descritas en la Sección~\ref{sec:herramienta}.
-
 \subsection{Matriz de similitud entre políticas}
 
-La Tabla~\ref{tab:similitud-top} presenta los diez pares de políticas con mayor similitud semántica, mientras que la Figura~\ref{fig:heatmap} muestra la matriz completa.
+La matriz de similitud coseno entre los centroides de los nueve documentos (Figura~\ref{fig:heatmap}) presenta valores entre 0.564 y 0.948. La Tabla~\ref{tab:similitud-top} muestra los diez pares de mayor similitud.
 
 \begin{table}[htbp]
 \centering
-\caption{Los diez pares de políticas con mayor similitud semántica.}
+\caption{Los diez pares de políticas con mayor similitud semántica}
 \label{tab:similitud-top}
-\begin{tabular}{lll r}
+\begin{tabular}{llc}
 \hline
-\textbf{Política A} & \textbf{Política B} & \textbf{Regiones} & \textbf{Similitud} \\
+\textbf{Política A} & \textbf{Política B} & \textbf{Similitud} \\
 \hline
-España ENIA & Brasil EBIA & EU--AM & 0.965 \\
-España ENIA & Colombia CONPES & EU--AM & 0.934 \\
-Japón AI Strategy & Corea del Sur AI & AP--AP & 0.930 \\
-Corea del Sur AI & India NITI & AP--AP & 0.928 \\
-Japón AI Strategy & India NITI & AP--AP & 0.926 \\
-Brasil EBIA & Colombia CONPES & AM--AM & 0.925 \\
-España ENIA & Francia Villani & EU--EU & 0.916 \\
-Francia Villani & India NITI & EU--AP & 0.916 \\
-Francia Villani & Brasil EBIA & EU--AM & 0.914 \\
-Corea del Sur AI & Singapur NAIS & AP--AP & 0.897 \\
+Singapur (NAIS 2.0)      & Malasia (AI-RMAP)       & 0.948 \\
+Malasia (AI-RMAP)        & Filipinas (NAISR 2.0)   & 0.914 \\
+Vietnam (127/QD-TTg)     & Malasia (AI-RMAP)       & 0.909 \\
+Vietnam (127/QD-TTg)     & Singapur (NAIS 2.0)     & 0.896 \\
+Malasia (AI-RMAP)        & Tailandia (NAIS)        & 0.892 \\
+Singapur (NAIS 2.0)      & Filipinas (NAISR 2.0)   & 0.887 \\
+Malasia (AI-RMAP)        & ASEAN (Guía)            & 0.874 \\
+Singapur (NAIS 2.0)      & ASEAN (Guía)            & 0.871 \\
+Tailandia (NAIS)         & Filipinas (NAISR 2.0)   & 0.861 \\
+Vietnam (127/QD-TTg)     & ASEAN (Guía)            & 0.851 \\
 \hline
 \end{tabular}
 \end{table}
@@ -107,95 +95,61 @@ Corea del Sur AI & Singapur NAIS & AP--AP & 0.897 \\
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/generated/heatmap_similitud.pdf}
-\caption{Matriz de similitud semántica entre las 14 políticas analizadas. Valores más altos (colores más cálidos) indican mayor similitud en el contenido textual.}
+\caption{Matriz de similitud semántica entre las nueve unidades del corpus.}
 \label{fig:heatmap}
 \end{figure}
 
-Dos patrones destacan en la matriz. Primero, la similitud iberoamericana: España, Brasil y Colombia forman un triángulo de alta similitud (0.925--0.965). Aunque el modelo multilingüe opera sobre representaciones semánticas y no puramente léxicas, no puede descartarse que la proximidad entre español y portugués influya en los embeddings. Con todo, la convergencia no se reduce a lo lingüístico: las tres estrategias comparten una estructura similar (diagnóstico de capacidades nacionales, ejes estratégicos transversales y metas de inclusión social) y se inscriben en marcos de referencia comunes (UNESCO, OCDE).
-
-Segundo, el cluster asiático: Japón, Corea del Sur, India NITI y Singapur presentan similitudes entre 0.870 y 0.930. Estas cuatro políticas comparten una orientación hacia la competitividad tecnológica y la formación de capital humano en IA.
-
-El EU AI Act registra las similitudes más bajas del corpus (media: 0.526), separándose del resto por su naturaleza jurídica. Su texto legislativo (definiciones legales, clasificaciones de riesgo y artículos normativos) difiere fundamentalmente del lenguaje estratégico de las demás políticas.
+Tres rasgos estructuran la matriz. Primero, las cinco estrategias nacionales de IA del Sudeste Asiático forman un bloque denso de similitudes altas (0.830--0.948) que incluye a la guía de la ASEAN (0.777--0.874 con los miembros). Segundo, China es el vecino lejano de ese bloque: sus similitudes con los cinco países del grupo oscilan entre 0.614 (Tailandia) y 0.712 (Vietnam), y su par más próximo no es ningún país confuciano sino Indonesia (0.804). Tercero, la UNESCO es la unidad más distante del corpus en promedio (0.564--0.770), con su máximo frente a la ASEAN —los dos documentos normativos se reconocen entre sí—.
 
 \subsection{Clusters y agrupaciones naturales}
 
-El análisis jerárquico (método de Ward, distancia = $1 - \text{similitud coseno}$) identificó dos clusters y un outlier:
+El agrupamiento jerárquico (método de Ward sobre la matriz de distancias) produce una estructura estable en un rango amplio de umbrales de corte: tres grupos. El primero reúne las cinco estrategias nacionales sudesteasiáticas y la guía de la ASEAN; su orden de fusión es ilustrativo: Singapur y Malasia se unen primero (distancia 0.052), después Vietnam (0.109), Filipinas (0.133), Tailandia (0.166) y la ASEAN (0.191). El segundo grupo une a China e Indonesia (0.196). La UNESCO permanece aislada hasta el final de la jerarquía, confirmando su condición de \textit{outlier} de género documental, análoga a la que el análisis de la fase anterior de esta investigación detectó en el EU AI Act.
 
-\begin{description}
-\item[Cluster 1, estrategias tecnológicas (6 políticas):] Canadá, Japón, Corea del Sur, Singapur, India NITI y Australia. Políticas orientadas a la investigación, innovación y desarrollo de talento en IA. Predominan documentos de Asia-Pacífico con la excepción de Canadá.
+La composición de los grupos admite una lectura nítida: el primer cluster agrupa documentos del mismo género (estrategias nacionales de IA de alcance medio, 22 a 198 fragmentos) y del mismo espacio regional; el segundo agrupa los dos documentos de planificación integral de largo horizonte (652 y 584 fragmentos, los dos mayores del corpus), que comparten amplitud temática, vocación de desarrollo nacional y tratamiento de la IA como un eje entre muchos. El género y la escala documental, no la geografía ni la cultura, son la primera fuerza organizadora del espacio semántico.
 
-\item[Cluster 2, estrategias integrales (7 políticas):] España, Francia, Brasil, Colombia, India NEP, UNESCO y WEF. Políticas con enfoque multidimensional que abordan gobernanza, equidad, formación docente e infraestructura de manera transversal. Mezcla regiones y tipos de organización.
+\subsection{La prueba de la hipótesis confuciana}
+\label{subsec:prueba-chc}
 
-\item[Outlier, regulación (1 política):] EU AI Act. Técnicamente no constituye un cluster sino un valor atípico: la distancia semántica entre el AI Act y las demás políticas supera el umbral de corte del dendrograma. Su naturaleza legislativa y su extensión (tres a diez veces mayor que los demás documentos) explican esta separación.
-\end{description}
+La pregunta central de esta investigación se traduce operativamente en una expectativa verificable: si la herencia confuciana predice el contenido de las políticas, los países CHC (Vietnam, Singapur) deberían presentar mayor similitud entre sí y con el caso ancla chino que con sus vecinos no confucianos. Los datos no satisfacen esa expectativa en ninguno de sus dos componentes.
 
-La validación geopolítica muestra que el Cluster 1 tiene coherencia regional parcial (predominantemente Asia-Pacífico), mientras que el Cluster 2 es transregional. Este resultado sugiere que la orientación estratégica de una política predice mejor su contenido semántico que su ubicación geográfica.
+En el componente horizontal, la similitud Vietnam--Singapur (0.896) es alta pero no distintiva: queda por debajo de Singapur--Malasia (0.948) y de Malasia--Filipinas (0.914), pares que cruzan la frontera de la clasificación CHC. Las similitudes de cada país confuciano con sus vecinos no confucianos son del mismo orden que la similitud entre ambos países confucianos: Vietnam--Malasia alcanza 0.909 y Singapur--Filipinas 0.887. Ningún corte del dendrograma produce un grupo {Vietnam, Singapur} o {China, Vietnam, Singapur}: la clasificación cultural no emerge como estructura del espacio semántico.
 
-\subsection{Patrones emergentes}
+En el componente vertical, el caso ancla tampoco atrae a sus herederos culturales: China está más próxima a Indonesia (0.804) —país de herencia confuciana ausente— que a Vietnam (0.712) o Singapur (0.676). La explicación es de género documental: el plan quinquenal chino y la estrategia indonesia 2020--2045 comparten formato de planificación nacional integral de largo plazo, mientras que Vietnam y Singapur escribieron estrategias sectoriales de IA. Cuando el género coincide, la distancia cultural se desvanece; cuando difiere, la proximidad cultural no la compensa.
 
-Del análisis semántico emergen tres patrones:
-
-\textbf{Convergencia temática transregional.} La similitud Francia--India NITI (0.916) y la pertenencia de Francia al Cluster 2 junto con políticas latinoamericanas demuestran que la proximidad semántica no respeta las fronteras geográficas. Los documentos convergen cuando comparten una visión integral de la IA que incluye tanto competitividad como inclusión.
-
-\textbf{Divergencia regulatoria.} El aislamiento del EU AI Act se explica por dos factores. El primero es el género discursivo: la regulación legislativa emplea un vocabulario jurídico (definiciones legales, clasificaciones de riesgo, artículos normativos) que difiere del lenguaje estratégico compartido por las demás políticas. El segundo factor es la extensión del documento: con 620{,}000 caracteres, el EU AI Act es tres a diez veces más extenso que los demás documentos del corpus, lo que produce un embedding promedio dominado por vocabulario legal. Ambos factores contribuyen al aislamiento, y no es posible aislar su peso relativo con los datos disponibles.
-
-\textbf{Diferenciación por enfoque.} La separación entre los Clusters 1 y 2 refleja la tensión entre dos paradigmas identificados en la literatura: la IA como motor de competitividad económica (Cluster 1) y la IA como herramienta de transformación social (Cluster 2) \citep{pedro2019aieducation, miao2021guidance}.
+Cabe una matización metodológica antes de interpretar este resultado como refutación: el centroide de un documento de 181 páginas diluye cualquier señal localizada, la versión tailandesa abreviada y el idioma indonesio introducen asimetrías, y la similitud semántica opera sobre el vocabulario compartido, no sobre los rasgos institucionales profundos donde la literatura CHC sitúa la herencia~\citep{marginson2011higher}. Los datos autorizan una conclusión precisa: \emph{en el plano del discurso documental}, las políticas de IA del Sudeste Asiático no se organizan según la herencia confuciana. Si la herencia opera, lo hace en planos que el análisis de \textit{embeddings} no captura, y que la triangulación cualitativa examina a continuación.
 
 
 \section{Triangulación de Resultados}
 \label{sec:triangulacion}
 
-La triangulación confronta los hallazgos cualitativos (Sección~\ref{sec:resultados-dimension}) con los resultados computacionales (Sección~\ref{sec:resultados-semantico}) siguiendo el procedimiento descrito en la Sección~\ref{sec:procedimiento}.
+La triangulación entre el análisis computacional y la lectura cualitativa arroja convergencias, complementariedades y una divergencia central que constituye el hallazgo más relevante de la investigación.
 
-\textbf{Convergencias.} En cinco de las siete dimensiones, el análisis cualitativo y el computacional coinciden en sus hallazgos principales:
-\begin{itemize}
-\item La dimensión de \emph{investigación e innovación} muestra dominancia de Asia-Pacífico tanto en la lectura cualitativa como en las puntuaciones semánticas (media regional: 0.658 vs. 0.508 de Europa).
-\item La dimensión de \emph{equidad e inclusión} confirma cualitativamente el liderazgo de las políticas iberoamericanas que las puntuaciones semánticas indican (España: 0.642, Colombia: 0.640, Brasil: 0.628).
-\item La formación del cluster iberoamericano (España--Brasil--Colombia) corresponde a la convergencia temática observada en la lectura directa de estos documentos.
-\item El aislamiento semántico del EU AI Act coincide con la diferencia de género discursivo identificada cualitativamente.
-\item La agrupación de Japón, Corea del Sur, Singapur e India NITI refleja la orientación tecnológica compartida que la lectura cualitativa confirma.
-\end{itemize}
+\textbf{Convergencia.} Ambos métodos coinciden en tres resultados. La formación docente es la dimensión más desatendida: mínima semántica en tres unidades y entre las más bajas en el resto, sin programa cuantificado en ningún país salvo Malasia. La educación aparece subordinada a la formación de talento: la dimensión curricular y de investigación dominan las puntuaciones, y la lectura confirma que las seis estrategias se formularon desde ministerios de ciencia, tecnología o industria. Y la UNESCO habla otro idioma: su aislamiento semántico corresponde, en la lectura, a su condición de único documento del corpus centrado en la educación como fin y no como medio.
 
-\textbf{Divergencias parciales.} En dos dimensiones, los resultados requieren matización:
-\begin{itemize}
-\item En \emph{gobernanza}, la puntuación semántica del EU AI Act (0.497) es la más alta del corpus, pero la lectura cualitativa revela que se trata de un tipo de gobernanza fundamentalmente distinto (regulación vinculante vs. coordinación institucional). La métrica captura la presencia de vocabulario de gobernanza sin distinguir entre modalidades.
-\item En \emph{formación docente}, la UNESCO obtiene 0.600 y la India NEP 0.615. Sin embargo, la lectura cualitativa muestra que la UNESCO propone marcos generales mientras que India describe programas concretos. La similitud numérica oculta diferencias en el nivel de operacionalización.
-\end{itemize}
+\textbf{Complementariedad.} El análisis semántico detectó la centralidad del género documental —el cluster China--Indonesia— que la lectura cualitativa, organizada por países y dimensiones, no había tematizado; a la inversa, la lectura aporta el contenido que las puntuaciones no distinguen: el programa docente malasio de 87,500 educadores y la pirámide de talento tailandesa de 30,000 personas comparten vecindad semántica, pero materializan filosofías distintas de la relación entre sistema educativo y fuerza laboral.
 
-Estas divergencias parciales no invalidan el análisis computacional; confirman la necesidad de la triangulación metodológica y muestran los límites de las métricas de similitud semántica. Los embeddings capturan la proximidad temática del vocabulario pero no distinguen entre la intención declarativa y la concreción operativa de las políticas.
+\textbf{Divergencia.} El resultado central: la lectura cualitativa identifica huellas consistentes con la herencia confuciana —la verticalidad jurídica de los dos sistemas sínicos (el plan bajo dirección del Partido, el decreto del Primer Ministro), la cultura de la meta clasificatoria vietnamita, la educación como proyecto nacional existencial en Singapur~\citep{marginson2011higher, suen2006chronic}—, pero el análisis semántico no encuentra ningún agrupamiento correspondiente. Los rasgos confucianos detectables cualitativamente residen en la \emph{forma institucional} de las políticas (quién las emite, con qué jerarquía, con qué metas), no en su \emph{vocabulario}, que es el plano que miden los \textit{embeddings}. Esta divergencia entre métodos no es un defecto del diseño: es su resultado. Indica que la herencia confuciana, si persiste en las políticas de IA, lo hace como gramática institucional y no como léxico, y que el discurso de las políticas se ha globalizado más rápido que sus formas de gobierno.
 
 
 \section{Discusión}
 \label{sec:discusion}
 
-\subsection{Contribución a la educación comparada}
+\subsection{Contribución al debate sobre las Culturas de Herencia Confuciana}
 
-Los resultados aportan evidencia empírica a dos debates centrales de la educación comparada. Primero, la transferencia de políticas educativas \citep{dolowitz2000learning, steiner2004global}: la alta similitud entre las políticas iberoamericanas (España--Brasil--Colombia) sugiere procesos de convergencia que pueden explicarse por la circulación de marcos de referencia compartidos , particularmente los de la UNESCO y la OCDE, y por afinidades lingüísticas y culturales que facilitan la difusión de modelos de política. No obstante, convergencia discursiva no implica convergencia en la implementación; como señalan \citet{steinerkhamsi2014cross}, los mismos textos de política pueden producir resultados divergentes en contextos institucionales diferentes.
+Los resultados aportan evidencia empírica a un debate sostenido principalmente con argumentos interpretativos. En el plano del discurso de las políticas, los datos favorecen a los críticos del constructo CHC~\citep{ryan2007false, clark2006discursive, odwyer2017deflating}: la clasificación confuciana no predice la organización del espacio semántico, y el documento más ``culturalista'' del corpus pertenece a un país no confuciano que invoca Pancasila, no a Confucio~\citep{indonesia2020stranas}. La convergencia discursiva de las seis estrategias sudesteasiáticas con la guía de la ASEAN y entre sí apunta a los mecanismos de \citet{steinerkhamsi2014cross}: influencia común del repertorio global de políticas de IA y convergencia funcional ante el mismo estímulo tecnológico.
 
-Segundo, la relación entre lo global y lo local: las agrupaciones identificadas desafían las clasificaciones puramente geográficas que domina la literatura comparativa \citep{bray1995levels}. La presencia de Francia en el mismo cluster que Brasil y Colombia, o de Canadá junto con políticas asiáticas, indica que la orientación estratégica de una política predice mejor su contenido que su ubicación regional. Este hallazgo respalda los enfoques de educación comparada que trascienden la unidad del Estado-nación \citep{bereday1964comparative}.
+El resultado no liquida, sin embargo, la tesis culturalista; la desplaza. Las huellas confucianas que la triangulación localiza en la forma institucional —verticalidad, metas clasificatorias, integración de educación y proyecto de Estado— son precisamente los rasgos que \citet{marginson2011higher} sitúa en el nivel de los sistemas, no de los discursos. La conclusión que los datos autorizan es de alcance medio: en sus políticas de IA, los países de herencia confuciana del Sudeste Asiático escriben como sus vecinos, pero gobiernan como su tradición. La verificación de la segunda parte de esa fórmula exige métodos institucionales comparados que exceden el alcance documental de esta tesis y se proponen como trabajo futuro.
 
-\subsection{Implicaciones para México}
+\subsection{El género documental como variable metodológica}
 
-México no forma parte del corpus de 14 documentos analizados porque no cuenta con una política nacional de IA vigente.\footnote{Existen antecedentes como la propuesta de C Minds \citep{cminds2018iamexico} y documentos sectoriales de la SEP \citep{sep2020sectorial, sep2022nem}, pero ninguno constituye una estrategia nacional de IA comparable a las del corpus.} Sin embargo, como se establece en la Sección~\ref{sec:justificacion}, uno de los propósitos del análisis comparativo es generar insumos para el contexto mexicano. A partir de los hallazgos, se derivan cuatro orientaciones:
+El hallazgo de que el género y la escala del documento organizan el espacio semántico antes que la geografía o la cultura tiene una implicación metodológica para la educación comparada computacional: los corpus de políticas deben controlar el género documental o incorporarlo explícitamente al análisis, porque la similitud de \textit{embeddings} entre centroides es sensible a la amplitud temática. La fase anterior de esta investigación había observado el fenómeno en el aislamiento del EU AI Act (un texto legislativo entre estrategias); el corpus sudesteasiático lo replica con el plan quinquenal chino y lo eleva de anomalía a regularidad. Para el diseño de futuros estudios, la unidad de comparación óptima no es el documento sino la sección temática, una refinación que el trabajo futuro detalla.
 
-\begin{enumerate}
-\item \textbf{Modelo de referencia:} Las altas similitudes del bloque iberoamericano sugieren que las estrategias de España, Brasil y Colombia constituyen referentes naturales. Sus documentos comparten preocupaciones de equidad, formación docente e infraestructura que son pertinentes para el contexto mexicano.
+\subsection{Implicaciones para la política educativa: la región y México}
 
-\item \textbf{Dimensiones prioritarias:} La formación docente emerge como la dimensión con mayor brecha entre discurso y concreción en el corpus global. Una política mexicana podría diferenciarse al articular mecanismos específicos de capacitación (certificaciones, módulos curriculares, comunidades de práctica) en lugar de limitarse a declaraciones de intención.
+Para la región, los resultados señalan una agenda pendiente compartida: ningún país del Sudeste Asiático ha formulado aún una política de formación docente en IA proporcional a sus ambiciones curriculares y de talento —la brecha que la UNESCO identifica globalmente~\citep{miao2021guidance} se reproduce en la región que más rápido formuló estrategias—. El programa malasio AI-EE, único en su género, y los lineamientos filipinos de 2026 para la educación básica~\citep{deped2026ai} constituyen los puntos de partida regionales más concretos.
 
-\item \textbf{Gobernanza:} El análisis muestra dos modelos viables: regulación prescriptiva (UE) y coordinación institucional (Asia-Pacífico, Iberoamérica). El contexto institucional mexicano, con una Secretaría de Educación Pública centralizada y un sistema educativo federalizado, sugiere la pertinencia de un modelo mixto.
-
-\item \textbf{Infraestructura como precondición:} Las políticas de Colombia e India, países con perfiles de desarrollo comparables al de México, dedican espacio significativo a la infraestructura tecnológica. La brecha digital que persiste en zonas rurales mexicanas exige atención explícita en cualquier estrategia de IA educativa.
-\end{enumerate}
+Para sistemas externos a la región, incluido el mexicano, la experiencia sudesteasiática ofrece dos lecciones transferibles. La primera es la viabilidad de formular políticas de IA con componentes educativos sustantivos desde condiciones de desarrollo medio: Vietnam, Indonesia y Filipinas lo hicieron con niveles de infraestructura y brechas internas comparables a los de México~\citep{inegi2024endutih}, y la sincronía regional sugiere que el marco de la ASEAN operó como catalizador —un papel que en América Latina podrían desempeñar los marcos iberoamericanos—. La segunda es una advertencia: la convergencia discursiva con el repertorio global es fácil; los datos muestran que hasta los sistemas con tradiciones educativas más distintivas del mundo escriben hoy políticas semánticamente intercambiables. El reto para un país que formule su política no es adoptar el vocabulario correcto, sino dotarlo de la gramática institucional —metas, responsables, programas docentes— donde las diferencias reales se juegan.
 
 \subsection{Contribuciones metodológicas}
 
-El análisis semántico mediante embeddings y ChromaDB demostró ser una herramienta complementaria productiva para la educación comparada. Sus contribuciones principales son:
-
-\textbf{Escalabilidad.} El procesamiento de 14 documentos heterogéneos (en inglés, español y portugués) y la generación de una matriz de similitud de $14 \times 14$ con 91 pares únicos habría requerido semanas de lectura comparativa tradicional. El pipeline computacional lo resolvió en minutos, liberando tiempo para el análisis cualitativo profundo de los pares más relevantes.
-
-\textbf{Descubrimiento de patrones no anticipados.} La similitud Francia--India NITI (0.916) no habría sido un par prioritario en un análisis comparativo guiado solo por criterios geográficos o de desarrollo económico. El análisis semántico señaló esta convergencia, que la lectura posterior confirmó y explicó: ambas políticas comparten una visión integral que combina competitividad con inclusión y formación.
-
-\textbf{Limitaciones reconocidas.} El modelo de embeddings no distingue entre diferentes niveles de concreción (intención declarativa vs. mecanismos de implementación), como evidenciaron las divergencias parciales en la triangulación. Además, opera sobre el texto disponible, lo que significa que la extensión del documento influye en la representación: el EU AI Act, con 620{,}000 caracteres de texto legislativo, genera una representación dominada por vocabulario jurídico que lo separa artificialmente del corpus.
-
-Estas limitaciones no invalidan la herramienta sino que delimitan su alcance: el análisis semántico identifica proximidades temáticas y genera hipótesis que el investigador debe verificar cualitativamente. La combinación de ambos enfoques, el computacional y el cualitativo, produce resultados más robustos que cualquiera de los dos por separado.
+La investigación valida la viabilidad del análisis semántico computacional como instrumento de la educación comparada, con tres aportes específicos: el uso de \textit{embeddings} multilingües para incorporar documentos en idioma original (el caso indonesio) a un corpus comparativo; la operacionalización de una hipótesis culturalista como expectativa de agrupamiento verificable; y la documentación del género documental como variable de confusión que la comparación computacional de políticas debe controlar. El pipeline completo —código, corpus procesado y resultados— se publica como código abierto para su replicación y extensión.
