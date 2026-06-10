@@ -2,37 +2,245 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Defensa de Tesis — Políticas de IA en Educación</title>
+    <title>Defensa de Tesis — ¿Eco Global o Voz Propia?</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/theme/white.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom neobrutalist overrides — to be developed in Phase 5 */
         :root {
             --r-main-font: 'DM Sans', sans-serif;
             --r-heading-font: 'Syne', sans-serif;
             --r-code-font: 'JetBrains Mono', monospace;
             --r-background-color: #F5F0E8;
             --r-main-color: #1a1a1a;
+            --r-heading-color: #1a1a1a;
+            --r-link-color: #7b1fa2;
+            --acento: #FFD54F;
         }
+        .reveal .slides section { text-align: left; }
+        .reveal h1, .reveal h2 { text-transform: none; letter-spacing: -0.02em; }
+        .reveal h1 { font-size: 1.7em; }
+        .reveal h2 { font-size: 1.15em; border-bottom: 4px solid #1a1a1a; padding-bottom: .2em; }
+        .reveal p, .reveal li { font-size: .72em; line-height: 1.45; }
+        .reveal table { font-size: .55em; border: 3px solid #1a1a1a; box-shadow: 6px 6px 0 #1a1a1a; background: #fff; }
+        .reveal table th { background: var(--acento); border-bottom: 3px solid #1a1a1a; }
+        .reveal table td, .reveal table th { padding: .35em .6em; }
+        .caja { background: #fff; border: 3px solid #1a1a1a; box-shadow: 6px 6px 0 #1a1a1a; padding: .6em .9em; margin: .6em 0; }
+        .caja.amarilla { background: var(--acento); }
+        .dato { font-family: 'JetBrains Mono', monospace; font-weight: 700; }
+        .min { color: #d32f2f; font-weight: 700; }
+        .max { color: #388e3c; font-weight: 700; }
+        .centrado { text-align: center !important; }
+        .chico { font-size: .55em !important; color: #555; }
+        .reveal .slides section .fragment.highlight-current-blue.current-fragment { color: #1976d2; }
     </style>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
-            <!-- TODO: Create slides after thesis content is finalized (Phase 5) -->
-            <section>
-                <h1>Políticas Públicas sobre Educación en IA</h1>
-                <h3>Análisis Comparativo</h3>
-                <p>Hesus García Cobos</p>
-                <p><small>Maestría en Pedagogía — UPAEP 2026</small></p>
+
+            <!-- 1. Portada -->
+            <section class="centrado">
+                <h1>¿Eco global o voz propia?</h1>
+                <p style="font-size:.85em">La educación en las estrategias de inteligencia artificial<br>del Sudeste Asiático frente al marco de la UNESCO</p>
+                <div class="caja amarilla" style="display:inline-block; text-align:center">
+                    <p style="margin:0"><strong>Hesus García Cobos</strong><br>
+                    <small>Maestría en Pedagogía — UPAEP — 2026</small></p>
+                </div>
             </section>
+
+            <!-- 2. El problema -->
             <section>
-                <h2>Contenido pendiente</h2>
-                <p>Las diapositivas se crearán después de finalizar el contenido de la tesis.</p>
+                <h2>El problema</h2>
+                <ul>
+                    <li>Entre 2019 y 2024, los seis principales países del Sudeste Asiático publicaron estrategias nacionales de IA; China elevó la IA a eje de su XV Plan Quinquenal; la ASEAN adoptó su guía regional.</li>
+                    <li>La UNESCO publicó en 2021 el marco normativo del campo: <em>AI and education — Guidance for policy-makers</em> (7 bloques de construcción).</li>
+                    <li class="fragment"><strong>Pregunta 1 (calidad):</strong> ¿qué tan bien diseñados están los componentes educativos de esas políticas? Nadie los ha evaluado contra el marco — que no incluye rúbrica alguna.</li>
+                    <li class="fragment"><strong>Pregunta 2 (identidad):</strong> ¿con qué voz están escritas? Las tradiciones de la región (confuciana, Pancasila) tienen éticas de la IA elaboradas en la academia… ¿aparecen en las políticas?</li>
+                </ul>
             </section>
+
+            <!-- 3. Antecedente: la fase previa -->
+            <section>
+                <h2>El antecedente: la fase previa (Anexo B)</h2>
+                <p>Primera fase de esta investigación: ¿la herencia confuciana predice la similitud semántica entre políticas?</p>
+                <div class="caja">
+                    <p style="margin:0"><strong>Resultado negativo.</strong> Ningún corte del dendrograma produce un cluster confuciano. Vietnam–Singapur (0.896) &lt; Singapur–Malasia (0.948). El par más próximo de China es Indonesia (0.804): <em>género documental</em>, no cultura.</p>
+                </div>
+                <p class="fragment">Eso reformuló la pregunta: si todas convergen en el repertorio global, ¿qué calidad tiene aquello en lo que convergen, y queda alguna voz local?</p>
+            </section>
+
+            <!-- 4. Pregunta y objetivos -->
+            <section>
+                <h2>Pregunta central</h2>
+                <div class="caja amarilla">
+                    <p style="margin:0">¿Qué calidad de diseño tienen los componentes educativos de las políticas de IA del Sudeste Asiático y China, evaluados con el marco de la UNESCO, y se aproximan esas políticas al repertorio discursivo global o a los vocabularios de sus propias tradiciones?</p>
+                </div>
+                <ul class="chico">
+                    <li>OE2: construir la rúbrica (no existe instrumento publicado) — contribución metodológica</li>
+                    <li>OE3: evaluar los 9 documentos con trazabilidad y fiabilidad verificada</li>
+                    <li>OE4: medir eco vs. voz (plantillas, léxicos, menciones literales)</li>
+                    <li>OE5: interpretar con préstamo de políticas y tradiciones como repertorio</li>
+                </ul>
+            </section>
+
+            <!-- 5. Corpus -->
+            <section>
+                <h2>Corpus: 9 unidades, 2,334 fragmentos</h2>
+                <table>
+                    <tr><th>Unidad</th><th>Documento</th><th>Año</th><th>Idioma</th></tr>
+                    <tr><td>China</td><td>XV Plan Quinquenal (AI+)</td><td>2026</td><td>EN (trad. íntegra)</td></tr>
+                    <tr><td>Vietnam</td><td>Decisión 127/QD-TTg</td><td>2021</td><td>EN (trad. íntegra)</td></tr>
+                    <tr><td>Singapur</td><td>NAIS 2.0</td><td>2023</td><td>EN</td></tr>
+                    <tr><td>Malasia</td><td>AI-RMAP 2021–2025</td><td>2021</td><td>EN</td></tr>
+                    <tr><td>Indonesia</td><td>Stranas KA 2020–2045</td><td>2020</td><td><strong>ID</strong></td></tr>
+                    <tr><td>Tailandia</td><td>NAIS 2022–2027</td><td>2022</td><td>EN (versión breve)</td></tr>
+                    <tr><td>Filipinas</td><td>NAISR 2.0</td><td>2024</td><td>EN</td></tr>
+                    <tr><td>ASEAN</td><td>Guía de Gobernanza y Ética</td><td>2024</td><td>EN</td></tr>
+                    <tr><td>UNESCO</td><td>Guidance GenAI in Education</td><td>2023</td><td>EN</td></tr>
+                </table>
+                <p class="chico">Asimetrías de idioma, extensión y género documental: documentadas y tratadas como variables del análisis.</p>
+            </section>
+
+            <!-- 6. Método 1: la rúbrica -->
+            <section>
+                <h2>Método (1/2): la rúbrica UNESCO</h2>
+                <ul>
+                    <li><strong>25 criterios</strong> derivados deductivamente de los 7 bloques de Miao et al. (2021), cada uno con su cita fuente literal.</li>
+                    <li><strong>Escala 0–3:</strong> ausente → mencionado → con instrumentos nombrados → con metas SMART verificables.</li>
+                    <li><strong>Codificación de instrumentos</strong> (Hood, taxonomía NATO): nodalidad / autoridad / tesoro / organización.</li>
+                    <li><strong>Trazabilidad:</strong> puntuación asistida por recuperación semántica (ChromaDB); cada celda enlaza a sus pasajes de evidencia.</li>
+                    <li class="fragment"><strong>Fiabilidad:</strong> doble codificación ciega de 2 documentos → acuerdo exacto 80–84%, ±1 = 100%, <span class="dato">kappa 0.80–0.90</span>. Asistencia de IA en la codificación: declarada en cap. 4 y ética.</li>
+                </ul>
+            </section>
+
+            <!-- 7. Método 2: eco y voz -->
+            <section>
+                <h2>Método (2/2): medir el eco y la voz</h2>
+                <ul>
+                    <li><strong>Plantillas globales:</strong> similitud de cada política con las guías UNESCO y ASEAN.</li>
+                    <li><strong>Léxicos de tradición:</strong> confuciano (maestro ejemplar, autocultivo, esfuerzo, armonía), Pancasila (carácter, unidad, deliberación) y plantilla global (transparencia, equidad algorítmica, privacidad…).</li>
+                    <li><strong>Índice de voz</strong> = proximidad máxima a tradición local − proximidad a plantilla global.</li>
+                    <li><strong>Validación literal:</strong> conteo de menciones explícitas (confucio, pancasila, moral, carácter, virtud…) en cada idioma.</li>
+                </ul>
+                <p class="chico">Cautela de validez declarada: los léxicos miden <em>temas</em>, no identidad filosófica → por eso la triple medición.</p>
+            </section>
+
+            <!-- 8. Resultado 1: la matriz -->
+            <section>
+                <h2>Resultado 1: nadie llega al 60%</h2>
+                <table>
+                    <tr><th>Política</th><th>6.1 Visión</th><th>6.4 Equidad</th><th>6.5 Enseñ.</th><th>6.7 Innov.</th><th>Total /75</th></tr>
+                    <tr><td>Malasia</td><td>83</td><td>40</td><td>57</td><td>83</td><td><strong>43 (57%)</strong></td></tr>
+                    <tr><td>Indonesia</td><td>67</td><td>40</td><td>48</td><td>67</td><td><strong>38 (51%)</strong></td></tr>
+                    <tr><td>Singapur</td><td>67</td><td>33</td><td class="min">29</td><td>83</td><td><strong>36 (48%)</strong></td></tr>
+                    <tr><td>Filipinas</td><td>67</td><td>33</td><td>43</td><td>67</td><td><strong>32 (43%)</strong></td></tr>
+                    <tr><td>Tailandia</td><td>67</td><td class="min">7</td><td>33</td><td>83</td><td><strong>31 (41%)</strong></td></tr>
+                    <tr><td>China</td><td>50</td><td>27</td><td>43</td><td>67</td><td><strong>30 (40%)</strong></td></tr>
+                    <tr><td>Vietnam</td><td>67</td><td class="min">13</td><td>38</td><td>83</td><td><strong>30 (40%)</strong></td></tr>
+                </table>
+                <p class="chico">Media nacional: 46%. Guías voluntarias aparte: ASEAN 33%, UNESCO 32% — recomendar ≠ comprometer (la UNESCO menciona 24/25 criterios y no instrumenta ninguno).</p>
+            </section>
+
+            <!-- 9. Resultado 2: pirámide invertida -->
+            <section>
+                <h2>Resultado 2: la pirámide invertida</h2>
+                <div class="caja">
+                    <p style="margin:0">Promedio nacional por bloque UNESCO:<br>
+                    <span class="max">Innovación local 76%</span> · Visión 67% · Gobernanza 54% · Humanismo 45% · <strong>Enseñanza y docentes 42%</strong> · Evidencia 41% · <span class="min">Equidad, ética y salvaguardas 28%</span></p>
+                </div>
+                <ul>
+                    <li>Fuertes donde el marco pide <em>ecosistema</em>; débiles donde pide <em>aula y equidad</em> → Schiff (2022) cuantificado: «educación para la IA, no IA para la educación».</li>
+                    <li>Género y discapacidad: <strong>cero</strong> en 4 de 7 políticas. La palabra <em>bias</em> no aparece en Malasia ni Filipinas.</li>
+                    <li class="fragment">Instrumentos: domina la <strong>organización</strong> (programas con nombre); autoridad y tesoro escasos → estructuras sin mandatos ni presupuestos.</li>
+                </ul>
+            </section>
+
+            <!-- 10. Resultado 3: eco casi total -->
+            <section>
+                <h2>Resultado 3: el eco es casi total</h2>
+                <table>
+                    <tr><th>Política</th><th>Léx. confuciano</th><th>Léx. Pancasila</th><th>Plantilla global</th><th>Índice de voz</th></tr>
+                    <tr><td>China</td><td>0.362</td><td>0.496</td><td>0.455</td><td class="max">+0.041</td></tr>
+                    <tr><td>Indonesia</td><td>0.425</td><td><strong>0.482</strong></td><td>0.670</td><td>−0.188</td></tr>
+                    <tr><td>UNESCO</td><td><strong>0.506</strong></td><td>0.417</td><td>0.726</td><td>−0.221</td></tr>
+                    <tr><td>Vietnam</td><td>0.320</td><td>0.397</td><td>0.680</td><td>−0.283</td></tr>
+                    <tr><td>Singapur</td><td>0.310</td><td>0.354</td><td>0.677</td><td>−0.323</td></tr>
+                    <tr><td>Malasia</td><td>0.307</td><td>0.324</td><td>0.691</td><td>−0.367</td></tr>
+                    <tr><td>ASEAN</td><td>0.331</td><td>0.313</td><td><strong>0.774</strong></td><td class="min">−0.443</td></tr>
+                </table>
+                <p class="fragment">El documento más próximo al léxico <em>confuciano</em> es… <strong>la UNESCO</strong> (0.506), no Vietnam (0.320) ni Singapur (0.310).</p>
+            </section>
+
+            <!-- 11. El dato de la mención única -->
+            <section class="centrado">
+                <h2 style="border:none">La validación literal</h2>
+                <div class="caja amarilla" style="text-align:center">
+                    <p style="font-size:1em; margin:.3em 0">En los nueve documentos del corpus, «Confucio» aparece</p>
+                    <p style="font-size:2.2em; margin:.1em 0" class="dato">1 vez</p>
+                    <p style="margin:.3em 0">…y es una mención <strong>patrimonial</strong>: el Templo de Confucio en Qufu,<br>en una lista de sitios del patrimonio mundial anexa al plan chino.</p>
+                </div>
+                <p class="chico centrado">Pancasila: 19 menciones (solo Indonesia) — la única tradición nominalmente presente.<br>Vietnam y Tailandia: cero vocabulario axiológico (moral, carácter, virtud, armonía, tradición).</p>
+            </section>
+
+            <!-- 12. Triangulación -->
+            <section>
+                <h2>Triangulación: calidad ⊥ identidad</h2>
+                <ul>
+                    <li>La política <strong>mejor diseñada</strong> (Malasia) es la <strong>más isomorfa</strong> con el repertorio global.</li>
+                    <li>La única con <strong>voz propia explícita</strong> (Indonesia/Pancasila) es la <strong>segunda en calidad</strong>.</li>
+                    <li>La única con índice de voz positivo (China) comparte el <strong>último lugar</strong>.</li>
+                </ul>
+                <div class="caja fragment">
+                    <p style="margin:0"><strong>El caso Vietnam — isomorfismo selectivo:</strong> gobernanza de nivel 3 (punto focal, informes anuales, revisión fechada) y a la vez humanismo 17% y equidad 13%. Se importa la mitad del repertorio global que promete competitividad; se silencia la mitad que protege el aula.</p>
+                </div>
+            </section>
+
+            <!-- 13. Conclusiones -->
+            <section>
+                <h2>Conclusiones</h2>
+                <ol>
+                    <li><strong>Pirámide invertida:</strong> diseño a media construcción (media 46%), fuerte en ecosistema (76%) y débil en aula y equidad (28%), con organización sin tesoro ni autoridad.</li>
+                    <li><strong>El silencio de las tradiciones es medible:</strong> eco global en 8 de 9 documentos; el confucianismo, literalmente ausente, sobrevive como <em>gramática institucional</em> (verticalidad, plan integral, meta clasificatoria), no como vocabulario.</li>
+                    <li><strong>Calidad e identidad varían por separado:</strong> el riesgo no es el vocabulario importado, sino la importación selectiva — adoptar promesas sin salvaguardas.</li>
+                </ol>
+            </section>
+
+            <!-- 14. Contribuciones -->
+            <section>
+                <h2>Contribuciones</h2>
+                <ul>
+                    <li><strong>Metodológica:</strong> la primera rúbrica que operacionaliza el marco UNESCO (25 criterios, fiabilidad verificada, trazabilidad total) — reutilizable para cualquier política, incluida una futura política mexicana.</li>
+                    <li><strong>Empírica:</strong> primera evaluación de diseño de las políticas de IA educativa de una región completa; primera medición del peso de las tradiciones filosóficas en esos textos.</li>
+                    <li><strong>Teórica:</strong> evidencia para el debate CHC (la tradición como gramática, no como léxico) y para la teoría del préstamo de políticas (isomorfismo selectivo).</li>
+                    <li><strong>Tecnológica:</strong> pipeline de código abierto (ChromaDB + embeddings multilingües) con visualización interactiva.</li>
+                </ul>
+            </section>
+
+            <!-- 15. Limitaciones y trabajo futuro -->
+            <section>
+                <h2>Limitaciones y trabajo futuro</h2>
+                <ul class="chico">
+                    <li>Evaluación de diseño, no de impacto (solo pertinencia y coherencia son evaluables ex-ante).</li>
+                    <li>La rúbrica es la vara global — circularidad usada conscientemente como espejo, con tres controles (la UNESCO no pasa su propia vara; calidad ⊥ identidad; lectura culturalmente situada).</li>
+                    <li>Léxicos miden temas, no identidad → triple validación; codificación asistida por IA, declarada y auditada.</li>
+                </ul>
+                <p><strong>Futuro:</strong> validación experta de la rúbrica · aplicación a América Latina y México · seguimiento de implementación (metas 2025–2030) · la voz en niveles intermedios del sistema · réplica con otros repertorios (Ubuntu, pensamiento indígena).</p>
+            </section>
+
+            <!-- 16. Gracias -->
+            <section class="centrado">
+                <h1>Gracias</h1>
+                <div class="caja" style="display:inline-block; text-align:center">
+                    <p style="margin:0">«Las políticas escriben como sus vecinas<br>y gobiernan como su tradición.»</p>
+                </div>
+                <p class="chico centrado">Código, corpus, rúbrica y hojas de evidencia: repositorio abierto del proyecto.</p>
+            </section>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4/dist/reveal.js"></script>
-    <script>Reveal.initialize({ hash: true });</script>
+    <script>Reveal.initialize({ hash: true, slideNumber: true });</script>
 </body>
 </html>
