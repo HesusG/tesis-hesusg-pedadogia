@@ -260,6 +260,14 @@ function initScrollytelling() {
 
 // ── Policy type and language maps ──
 const POLICY_TYPES = {
+    china_plan_quinquenal_15_2026: 'Plan quinquenal',
+    vietnam_ai_strategy_2021: 'Estrategia nacional',
+    singapur_nais2_2023: 'Estrategia nacional',
+    malasia_ai_rmap_2021: 'Hoja de ruta',
+    indonesia_stranas_ka_2020: 'Estrategia nacional',
+    tailandia_ai_strategy_2022: 'Estrategia nacional',
+    filipinas_naisr2_2024: 'Hoja de ruta',
+    asean_ai_governance_2024: 'Guía regional',
     eu_ai_act_2024: 'Ley',
     espana_enia_2020: 'Estrategia nacional',
     francia_villani_report_2018: 'Reporte',
@@ -277,6 +285,14 @@ const POLICY_TYPES = {
 };
 
 const POLICY_URLS = {
+    china_plan_quinquenal_15_2026: 'https://www.wko.at/noe/aussenwirtschaft/euclera-translation-15th-five-year-plan-2026-2030-.pdf',
+    vietnam_ai_strategy_2021: 'https://wp.oecd.ai/app/uploads/2021/12/Vietnam_National_Strategy_on_RD_and_Application_of_AI_2021-2030.pdf',
+    singapur_nais2_2023: 'https://file.go.gov.sg/nais2023.pdf',
+    malasia_ai_rmap_2021: 'https://mastic.mosti.gov.my/publication/artificial-intelligence-roadmap-2021-2025/',
+    indonesia_stranas_ka_2020: 'https://korika.id/wp-content/uploads/2024/07/stranas-ka-2045.pdf',
+    tailandia_ai_strategy_2022: 'https://www.ai.in.th/wp-content/uploads/2022/12/2022-NAIS-Presentation-eng.pdf',
+    filipinas_naisr2_2024: 'https://naisr.cair.ph/',
+    asean_ai_governance_2024: 'https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_201223_v2.pdf',
     eu_ai_act_2024: 'https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R1689',
     espana_enia_2020: 'https://portal.mineco.gob.es/RecursosArticulo/mineco/ministerio/ficheros/201202_ENIA_V1_0.pdf',
     francia_villani_report_2018: 'https://www.aiforhumanity.fr/pdfs/MissionVillani_Report_ENG-VF.pdf',
@@ -294,6 +310,14 @@ const POLICY_URLS = {
 };
 
 const POLICY_LANGS = {
+    china_plan_quinquenal_15_2026: 'en',
+    vietnam_ai_strategy_2021: 'en',
+    singapur_nais2_2023: 'en',
+    malasia_ai_rmap_2021: 'en',
+    indonesia_stranas_ka_2020: 'id',
+    tailandia_ai_strategy_2022: 'en',
+    filipinas_naisr2_2024: 'en',
+    asean_ai_governance_2024: 'en',
     eu_ai_act_2024: 'en',
     espana_enia_2020: 'es',
     francia_villani_report_2018: 'fr',
