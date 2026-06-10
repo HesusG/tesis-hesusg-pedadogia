@@ -113,7 +113,29 @@ El análisis comparativo se estructura en siete dimensiones que cubren los aspec
 
 Cada dimensión funciona como una lente analítica que se aplica a los nueve documentos del corpus. En la fase cualitativa, el investigador codifica los fragmentos relevantes de cada documento según estas dimensiones. En la fase computacional, se formulan consultas semánticas específicas para cada dimensión y se mide la similitud entre los documentos en cada eje. La intersección de ambos análisis permite construir una matriz de 9 unidades $\times$ 7 dimensiones con puntuaciones tanto cualitativas como computacionales.
 
-A las siete dimensiones se añade una variable de diseño transversal: la clasificación de herencia confuciana de cada país (fuerte, parcial, ausente), derivada de la literatura CHC revisada en el Capítulo~\ref{cap:marco-teorico}~\citep{nguyen2005cooperative, welch2011higher, marginson2011higher}. Esta clasificación no interviene en el cálculo de las puntuaciones; opera como variable de contraste en la fase de análisis: la hipótesis culturalista se traduce en la expectativa verificable de que los países CHC presenten mayor similitud semántica entre sí y con el caso ancla chino que con sus vecinos no confucianos, frente a las hipótesis rivales de convergencia regional (proximidad a la guía de la ASEAN) y normativa global (proximidad a la guía de la UNESCO).
+Las siete dimensiones, heredadas de la fase anterior de esta investigación, cumplen en esta fase una función descriptiva y de continuidad: permiten comparar el perfil temático de los documentos y contrastar los resultados con los de la fase previa. El instrumento analítico central de esta fase es, sin embargo, la rúbrica de evaluación derivada del marco de la UNESCO, que la sección siguiente presenta.
+
+
+\section{Instrumento de Evaluación: Rúbrica Derivada del Marco UNESCO}
+\label{sec:rubrica}
+
+\subsection{Construcción de la rúbrica}
+
+La rúbrica operacionaliza la guía de la UNESCO para diseñadores de políticas~\citep{miao2021guidance}, cuyo capítulo de recomendaciones organiza el deber ser de una política de IA y educación en siete bloques de construcción: visión sistémica y prioridades estratégicas (6.1), principio humanista rector (6.2), planificación interdisciplinaria y gobernanza intersectorial (6.3), uso equitativo, inclusivo y ético (6.4), planes maestros para la gestión, la enseñanza, el aprendizaje y la evaluación (6.5), pilotaje, monitoreo y base de evidencia (6.6), y fomento de la innovación local (6.7). La guía no incluye instrumento de evaluación alguno, por lo que su operacionalización siguió un protocolo deductivo documentado: cada encabezado de recomendación y sus sub-recomendaciones se tradujeron a criterios evaluables, conservando para cada criterio la cita literal del texto fuente que lo respalda. El resultado son 25 criterios distribuidos en los siete bloques (de dos a siete criterios por bloque, en proporción al peso de cada bloque en la guía), publicados con la herramienta en formato estructurado. La dimensión docente se desagregó en dos criterios —protección y empoderamiento del profesorado; definición de competencias y formación continua— conforme a las sub-recomendaciones diferenciadas de la guía y al marco de competencias docentes en IA de la UNESCO~\citep{miao2024aicft}.
+
+\subsection{Escala de puntuación y codificación de instrumentos}
+
+Cada criterio se puntúa en una escala ordinal de cuatro niveles que gradúa la especificidad del compromiso, integrando el estándar SMART de la valoración ex-ante y la distinción entre aspiración y compromiso sustentado~\citep{fatima2022interpreting}: 0 (ausente: el componente no aparece en el documento), 1 (mencionado: aparece como aspiración o principio sin respaldo operativo), 2 (especificado con instrumentos: existe un programa, órgano, plataforma, presupuesto o regulación nominalmente identificados) y 3 (especificado con metas verificables: el instrumento se acompaña de metas numéricas o plazos comprobables). Para cada puntuación de nivel 2 o superior se codifica además el tipo de instrumento dominante según la taxonomía NATO~\citep{hood1983tools}: nodalidad (información y exhortación), autoridad (regulación y mandatos), tesoro (financiamiento e incentivos) u organización (órganos, programas e infraestructura propios).
+
+Una regla de calibración atiende la asimetría de género documental del corpus: las guías voluntarias (ASEAN, UNESCO) recomiendan en lugar de comprometer, por lo que sus recomendaciones —por detalladas que sean— se puntúan 1, salvo cuando el propio documento crea un mecanismo (por ejemplo, la propuesta de un grupo de trabajo regional). Sus puntuaciones se reportan por separado de las de las políticas nacionales y se interpretan como medida de la especificidad operativa del propio género documental.
+
+\subsection{Procedimiento de puntuación asistida por recuperación}
+
+La puntuación combina el juicio experto con la trazabilidad computacional. Para cada criterio se formuló una consulta semántica en español rica en sinónimos; el sistema recupera de la base vectorial los seis fragmentos más próximos a la consulta dentro de cada documento y los consigna en una hoja de puntuación por documento (25 criterios $\times$ 6 pasajes, con su índice de similitud y su posición en el texto). El codificador asigna la puntuación leyendo esos pasajes y, cuando el resultado sería 0 o la evidencia es ambigua, verifica contra el texto completo mediante búsqueda de términos clave —en el idioma del documento, incluido el indonesio— para compensar los límites de la recuperación. Cada puntuación se acompaña de una justificación de una oración con su evidencia. Las hojas de puntuación se publican íntegras junto con la herramienta, de modo que cada celda de la matriz de evaluación es auditable hasta los pasajes que la sustentan.
+
+\subsection{Fiabilidad}
+
+Para estimar la fiabilidad del procedimiento, dos documentos del corpus (Vietnam e Indonesia, seleccionados por representar los dos idiomas y dos géneros documentales distintos) fueron codificados de manera independiente y ciega por un segundo codificador con el mismo protocolo. El acuerdo intercodificador resultó del 80\% exacto y 100\% dentro de un punto para Vietnam (kappa ponderado cuadrático $= 0.90$) y del 84\% exacto y 100\% dentro de un punto para Indonesia (kappa ponderado $= 0.80$), valores convencionalmente interpretados como acuerdo sustancial a casi perfecto. Los desacuerdos (nueve celdas en total, todos de un punto) se resolvieron por revisión conjunta de la evidencia y se documentan junto con las hojas de puntuación.
 
 
 \section{Herramienta de Análisis Semántico}
@@ -177,51 +199,45 @@ Estas consultas se formularon a partir de las definiciones operativas de cada di
 Para identificar agrupaciones entre países, se aplica \textit{clustering} jerárquico aglomerativo sobre la matriz de similitud global, utilizando el método de Ward como criterio de enlace. El número de clusters no se fija a priori; se examina el dendrograma resultante y se selecciona el corte que maximiza la coherencia interpretativa de los grupos (es decir, que las agrupaciones tengan sentido a la luz del contexto geopolítico y de los hallazgos cualitativos). Este enfoque privilegia la interpretabilidad sobre la optimización estadística, en consonancia con la prioridad cualitativa del diseño.
 
 
+\section{Medición del Eco y la Voz: Plantillas y Léxicos}
+\label{sec:eco-voz}
+
+La segunda pregunta de investigación —¿hablan las políticas el idioma del repertorio global o el de sus tradiciones?— se operacionaliza con tres mediciones complementarias sobre la misma base vectorial.
+
+Primera, la \emph{proximidad a las plantillas globales}: la similitud del coseno entre el centroide de cada política nacional y los centroides de los dos documentos normativos del corpus (la guía de la UNESCO y la guía de la ASEAN), heredada de la matriz de similitud global de la fase anterior. Segunda, la \emph{proximidad a léxicos de tradición}: se construyeron tres léxicos de oraciones descriptoras —el confuciano (maestro como ejemplar moral, aprendizaje como autocultivo, esfuerzo, armonía, mérito del examen, piedad filial), el de Pancasila (valores nacionales, formación del carácter, unidad en la diversidad, deliberación, soberanía) y el de la plantilla global (transparencia, equidad algorítmica, privacidad, rendición de cuentas, centralidad humana, competencias del siglo XXI)— a partir de las fuentes teóricas revisadas en el Capítulo~\ref{cap:marco-teorico}; cada léxico se representa como el centroide de los embeddings de sus oraciones y se calcula su similitud con el centroide de cada documento. La diferencia entre la proximidad máxima a una tradición local y la proximidad a la plantilla global define el \emph{índice de voz} de cada política. Tercera, la \emph{validación literal}: el conteo de menciones explícitas del vocabulario de tradición (confucio, Pancasila, armonía, moral, carácter, virtud, tradición) en cada texto, en su idioma.
+
+Las tres mediciones se interpretan conjuntamente y con una cautela de validez explícita: los léxicos miden proximidad a los \emph{temas} de cada tradición, no identidad filosófica. El léxico confuciano colinda con el vocabulario humanista-educativo general y el de Pancasila con el vocabulario nacionalista genérico, por lo que ninguna puntuación semántica se interpreta sin su contraparte literal y sin lectura cualitativa del contexto.
+
+
 \section{Procedimiento de Análisis}
 \label{sec:procedimiento}
 
-El análisis se organiza en tres fases secuenciales con un momento de triangulación al final. Este diseño se inspira en la Teoría Fundamentada Computacional de \citet{nelson2020computational}, adaptada al contexto de la educación comparada.
+El análisis se organiza en tres fases secuenciales con un momento de triangulación al final. Este diseño se inspira en la Teoría Fundamentada Computacional de \citet{nelson2020computational}, adaptada al contexto de la educación comparada y al doble objeto de esta fase: la calidad de diseño y la identidad discursiva.
 
 \subsection{Fase cualitativa: lectura y codificación}
 
-En la primera fase, el investigador realiza una lectura cercana de los 22 documentos del corpus. Cada documento se codifica según las siete dimensiones del marco analítico, identificando:
+En la primera fase, el investigador realiza una lectura cercana de los nueve documentos del corpus, apoyada en los perfiles del Capítulo~\ref{cap:marco-contextual}. Cada documento se caracteriza según su género documental, su arreglo de gobernanza, su contenido educativo y sus marcos conceptuales, identificando el vocabulario empleado y las omisiones significativas. Esta lectura alimenta la calibración de la rúbrica y la interpretación contextualizada de los resultados.
 
-\begin{itemize}
-  \item Presencia o ausencia de cada dimensión en el documento.
-  \item Nivel de detalle: mención general, sección dedicada o plan de acción con indicadores y presupuesto.
-  \item Vocabulario y marcos conceptuales utilizados.
-  \item Omisiones significativas (dimensiones ausentes o tratadas de forma superficial).
-\end{itemize}
+\subsection{Fase evaluativa: aplicación de la rúbrica}
 
-Esta fase produce una matriz cualitativa de 22 $\times$ 7 con descripciones textuales y valoraciones ordinales (0 = ausente, 1 = mención, 2 = desarrollo moderado, 3 = desarrollo extenso) para cada celda. Las valoraciones numéricas no pretenden cuantificar con precisión el tratamiento de cada dimensión, sino proporcionar un ordenamiento que permita comparar su distribución entre documentos y contrastarla con las puntuaciones computacionales de la fase siguiente.
-
+En la segunda fase se aplica la rúbrica de la Sección~\ref{sec:rubrica}: generación de las hojas de puntuación asistidas por recuperación, puntuación de los 25 criterios en los nueve documentos con justificación y codificación de instrumentos, doble codificación de la submuestra de fiabilidad y consolidación de la matriz de evaluación de $9 \times 25$ con subtotales por bloque y perfil de instrumentos por documento.
 
 \subsection{Fase computacional: análisis semántico}
 
-En la segunda fase, se ejecuta el pipeline de análisis semántico:
-
-\begin{enumerate}
-  \item \textbf{Ingesta.} Los documentos preprocesados se ingestan en ChromaDB con sus embeddings y metadatos.
-  \item \textbf{Matriz de similitud global.} Se calcula la similitud del coseno entre todos los pares de documentos (22 $\times$ 22 = 231 pares únicos).
-  \item \textbf{Matriz de similitud por dimensión.} Para cada dimensión, se formulan consultas semánticas y se registran las puntuaciones de similitud de cada documento (22 $\times$ 7).
-  \item \textbf{\textit{Clustering}.} Se aplica \textit{clustering} jerárquico sobre la matriz de similitud global para identificar agrupaciones.
-  \item \textbf{Exportación.} Los resultados se exportan en formato JSON para alimentar la visualización interactiva y en formato tabular para su inclusión en la tesis.
-\end{enumerate}
-
-Esta fase produce tres productos: una matriz de similitud global (22 $\times$ 22), una matriz de relevancia por dimensión (22 $\times$ 7) y un dendrograma de agrupaciones.
+En la tercera fase se ejecuta el pipeline semántico: ingesta de los documentos en ChromaDB (2{,}334 fragmentos), matriz de similitud global de $9 \times 9$, puntuaciones por dimensión, proximidades a plantillas y léxicos con índice de voz y conteo literal (Sección~\ref{sec:eco-voz}), y exportación de todos los resultados en formato JSON para la visualización interactiva y en formato tabular para la tesis.
 
 
 \subsection{Triangulación de resultados}
 
-La tercera fase confronta los hallazgos de las dos fases anteriores. La triangulación sigue el principio de que los métodos cualitativos y computacionales iluminan facetas diferentes del mismo corpus \citep{creswell2018mixed}:
+La fase final confronta los hallazgos de las fases anteriores. La triangulación sigue el principio de que los métodos evaluativos y computacionales iluminan facetas diferentes del mismo corpus \citep{creswell2018mixed}:
 
 \begin{itemize}
-  \item \textbf{Convergencia.} Cuando la codificación cualitativa y la puntuación computacional coinciden en la dirección (por ejemplo, ambos métodos ubican a un país como alto o bajo en una dimensión), el hallazgo se considera robusto. Operativamente, se verifica que los documentos con valoración cualitativa ``extenso'' (3) obtengan puntuaciones de relevancia computacional por encima de la mediana, y viceversa.
-  \item \textbf{Complementariedad.} Cuando el análisis computacional revela patrones no anticipados por la lectura cercana (por ejemplo, alta similitud semántica entre dos países geográficamente distantes), el hallazgo se examina cualitativamente para determinar si refleja una convergencia sustantiva o un artefacto del método.
-  \item \textbf{Divergencia.} Cuando los resultados difieren (por ejemplo, dos documentos obtienen alta similitud semántica pero la codificación cualitativa revela enfoques distintos), la divergencia se analiza como un posible caso de convergencia retórica sin convergencia sustantiva, conforme a la distinción de \citet{ball1998big}. Cada caso de divergencia se documenta y se interpreta a la luz del contexto de política de los países involucrados.
+  \item \textbf{Convergencia.} Cuando la matriz de evaluación y las mediciones semánticas coinciden en la dirección (por ejemplo, los bloques con menor puntuación de rúbrica corresponden a las dimensiones de menor relevancia semántica), el hallazgo se considera robusto.
+  \item \textbf{Complementariedad.} El cruce central del diseño: la relación entre la calidad de diseño (rúbrica) y la identidad discursiva (índice de voz), que ninguno de los dos métodos puede establecer por sí solo. ¿Las políticas más isomorfas con la plantilla global son también las mejor diseñadas, o la convergencia discursiva convive con diseños retóricos?
+  \item \textbf{Divergencia.} Cuando los resultados difieren (por ejemplo, un documento semánticamente próximo a la plantilla global pero con puntuación de rúbrica baja), la divergencia se analiza como posible convergencia retórica sin convergencia sustantiva, conforme a la distinción de \citet{ball1998big}, y se interpreta con los repertorios de tradición y los estilos de gobernanza del Capítulo~\ref{cap:marco-teorico} como claves de lectura.
 \end{itemize}
 
-Los resultados triangulados se presentan en el Capítulo~\ref{cap:resultados} organizados por dimensión y por agrupación de países.
+Los resultados triangulados se presentan en el Capítulo~\ref{cap:resultados} organizados por bloque de la rúbrica, por documento y por el cruce calidad-identidad.
 
 
 \section{Consideraciones Éticas}
