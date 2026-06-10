@@ -26,22 +26,28 @@ predice diferencias en las 7 dimensiones de análisis. Esto evita el error esenc
 tratar a toda la región como confuciana y convierte la variación interna en la pregunta de
 investigación.
 
-## Nuevo corpus (por verificar disponibilidad)
+## Nuevo corpus (VERIFICADO Y DESCARGADO, 2026-06-09)
 
-| País | Documento candidato | Año | CHC |
-|------|--------------------|-----|-----|
-| Vietnam | Decisión 127/QD-TTg — Estrategia Nacional de IA | 2021 | Sí |
-| Singapur | NAIS 2019 / NAIS 2.0 | 2019/2023 | Sí |
-| Malasia | AI Roadmap 2021–2025 (AI-RMAP) | 2021 | Parcial |
-| Indonesia | Stranas KA | 2020 | No |
-| Tailandia | National AI Strategy and Action Plan 2022–2027 | 2022 | No |
-| Filipinas | National AI Strategy Roadmap (NAISR / 2.0) | 2021/2024 | No |
-| ASEAN | Guide on AI Governance and Ethics | 2024 | Regional |
-| UNESCO | Guidance for Generative AI in Education (se conserva) | 2023 | Referencia |
+| País | Documento | Año | CHC | Estado |
+|------|-----------|-----|-----|--------|
+| **China** | Outline 15th Five-Year Plan 2026–2030 (trad. EUCLERA, 181 pp.) | 2026 | Fuerte (ancla) | ✓ 391k chars |
+| Vietnam | Decisión 127/QD-TTg (trad. inglesa LuatVietnam) | 2021 | Fuerte | ✓ 28k chars |
+| Singapur | NAIS 2.0 (oficial) | 2023 | Fuerte | ✓ 67k chars |
+| Malasia | AI-RMAP 2021–2025 | 2021 | Parcial | ✓ 119k chars |
+| Indonesia | Stranas KA (en indonesio, sin versión EN) | 2020 | Ausente | ✓ 350k chars |
+| Tailandia | National AI Strategy 2022–2027 (versión EN, 28 pp.) | 2022 | Ausente | ✓ 13k chars (corto) |
+| Filipinas | NAISR 2.0 | 2024 | Ausente | ✓ 74k chars |
+| ASEAN | Guide on AI Governance and Ethics | 2024 | Regional | ✓ 191k chars |
+| UNESCO | Guidance for Generative AI in Education (conservado) | 2023 | Internacional | ✓ |
 
-Se conservan del corpus anterior: `singapur` (NAIS 2019), `unesco`. El resto de países
-(Europa, Américas, Japón, Corea, India, Australia, WEF) salen del corpus pero pueden citarse
-como contexto global en cap. 1.
+**Decisión del autor (2026-06-09)**: China DEBE incluirse, en particular el último plan
+quinquenal (15º, 2026–2030) con su iniciativa AI+. Se incorpora como **caso ancla de la
+civilización confuciana** (región `asia_oriental`): el diseño compara los países del Sudeste
+Asiático contra el sistema de origen confuciano, lo que refuerza la lente CHC.
+
+Salen del corpus: Europa, Américas, Japón, Corea, India, Australia, WEF (citables como
+contexto global en cap. 1). Notas metodológicas pendientes: Tailandia corto (versión EN
+abreviada), Indonesia en idioma original, Vietnam vía traducción de tercero (LuatVietnam).
 
 ## Acciones por capítulo (del relevamiento)
 
@@ -67,9 +73,11 @@ como contexto global en cap. 1.
 ## Hoja de ruta del bucle
 
 - [x] It. 0: rama `v3/sudeste-asiatico-confuciano`, relevamiento, este plan
-- [ ] It. 1: verificar disponibilidad de documentos (agentes web en curso) y literatura CHC;
-      decidir corpus definitivo; descargar PDFs a `policies/raw/`
-- [ ] It. 2: actualizar `metadata.json` + `referencias.bib` (políticas SEA + CHC)
+- [x] It. 1: verificación de documentos + literatura CHC (24 refs verificadas); corpus
+      definitivo descargado a `policies/raw/` (9 unidades, China incluida por decisión
+      del autor); textos extraídos a `policies/processed/`
+- [x] It. 2: `metadata.json` v2.0 + `referencias.bib` (24 CHC + 9 políticas); `config.py`
+      con regiones nuevas y clasificación CHC
 - [ ] It. 3: reescribir cap01 + frontmatter/título
 - [ ] It. 4: cap02 — sección de herencia confuciana
 - [ ] It. 5: cap03 — reescritura mayor (países SEA)
@@ -82,7 +90,11 @@ como contexto global en cap. 1.
 
 ## Estado
 
-- **Última iteración**: 0 (2026-06-09)
-- **En curso**: agentes de investigación web (documentos SEA + bibliografía CHC)
-- **Bloqueos**: disponibilidad de documentos oficiales en inglés para Vietnam/Indonesia/
-  Tailandia (los resultados del cap. 5 dependen de re-ejecutar el pipeline con PDFs reales)
+- **Última iteración**: 2 (2026-06-09)
+- **Siguiente**: It. 3 — reescribir cap01 + frontmatter/título con el nuevo encuadre
+  (9 unidades: China ancla + 6 SEA + ASEAN + UNESCO)
+- **Bloqueos**: ninguno para la escritura; `make pipeline` (It. 6) requiere OPENAI_API_KEY
+  o USE_LOCAL_EMBEDDINGS=1 — verificar al llegar
+- **Notas**: PDFs crudos no se versionan (gitignore); processed/ sí. Bib keys del corpus:
+  china2026fyp, vietnam2021ai, singapore2023nais2, malaysia2021airmap, indonesia2020stranas,
+  thailand2022ai, philippines2024naisr, asean2024guide, unesco2023genai, deped2026ai (extra)

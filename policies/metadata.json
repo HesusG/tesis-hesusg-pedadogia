@@ -1,157 +1,111 @@
 {
-  "schema_version": "1.0",
-  "last_updated": "2026-02-23",
+  "schema_version": "2.0",
+  "last_updated": "2026-06-09",
+  "_note": "Corpus v3: Sudeste Asiático + China como ancla confuciana, lente de herencia confuciana (CHC). Ver PLAN-PIVOTE.md.",
   "policies": [
     {
-      "policy_id": "eu_ai_act_2024",
-      "country": "eu",
-      "region": "europa",
+      "policy_id": "china_plan_quinquenal_15_2026",
+      "country": "china",
+      "region": "asia_oriental",
+      "chc": "fuerte",
+      "year": 2026,
+      "language": "en",
+      "title": "Outline of the 15th Five-Year Plan (2026-2030) for National Economic and Social Development",
+      "raw_file": "china/plan_quinquenal_15_2026.pdf",
+      "bib_key": "china2026fyp",
+      "_note": "Traducción inglesa íntegra (proyecto EUCLERA, 181 pp.); aprobado por la APN en marzo de 2026; incluye la iniciativa AI+ como eje transversal."
+    },
+    {
+      "policy_id": "vietnam_ai_strategy_2021",
+      "country": "vietnam",
+      "region": "sudeste_asiatico",
+      "chc": "fuerte",
+      "year": 2021,
+      "language": "en",
+      "title": "National Strategy on R&D and Application of Artificial Intelligence until 2030 (Decisión 127/QD-TTg)",
+      "raw_file": "vietnam/ai_strategy_2021.pdf",
+      "bib_key": "vietnam2021ai",
+      "_note": "PDF oficial (OECD.AI) es escaneado sin texto; processed/ proviene de la traducción inglesa íntegra de LuatVietnam (verificada completa: Art. 1-3 + firma)."
+    },
+    {
+      "policy_id": "singapur_nais2_2023",
+      "country": "singapur",
+      "region": "sudeste_asiatico",
+      "chc": "fuerte",
+      "year": 2023,
+      "language": "en",
+      "title": "National Artificial Intelligence Strategy 2.0 — AI for the Public Good, for Singapore and the World",
+      "raw_file": "singapore/nais2_2023.pdf",
+      "bib_key": "singapore2023nais2"
+    },
+    {
+      "policy_id": "malasia_ai_rmap_2021",
+      "country": "malasia",
+      "region": "sudeste_asiatico",
+      "chc": "parcial",
+      "year": 2021,
+      "language": "en",
+      "title": "Malaysia National Artificial Intelligence Roadmap 2021-2025 (AI-RMAP)",
+      "raw_file": "malaysia/ai_rmap_2021.pdf",
+      "bib_key": "malaysia2021airmap"
+    },
+    {
+      "policy_id": "indonesia_stranas_ka_2020",
+      "country": "indonesia",
+      "region": "sudeste_asiatico",
+      "chc": "ausente",
+      "year": 2020,
+      "language": "id",
+      "title": "Strategi Nasional Kecerdasan Artifisial Indonesia 2020-2045 (Stranas KA)",
+      "raw_file": "indonesia/stranas_ka_2020.pdf",
+      "bib_key": "indonesia2020stranas",
+      "_note": "Sin versión oficial en inglés; se procesa el original en indonesio (el modelo de embeddings es multilingüe)."
+    },
+    {
+      "policy_id": "tailandia_ai_strategy_2022",
+      "country": "tailandia",
+      "region": "sudeste_asiatico",
+      "chc": "ausente",
+      "year": 2022,
+      "language": "en",
+      "title": "Thailand National AI Strategy and Action Plan (2022-2027)",
+      "raw_file": "thailand/ai_strategy_2022.pdf",
+      "bib_key": "thailand2022ai",
+      "_note": "Versión inglesa (28 pp., vía OECD.AI); el plan completo oficial está en tailandés (ai.in.th)."
+    },
+    {
+      "policy_id": "filipinas_naisr2_2024",
+      "country": "filipinas",
+      "region": "sudeste_asiatico",
+      "chc": "ausente",
       "year": 2024,
       "language": "en",
-      "title": "EU AI Act — Regulation 2024/1689",
-      "raw_file": "eu/ai_act_2024.pdf",
-      "bib_key": "eu2024aiact"
+      "title": "National AI Strategy Roadmap 2.0 (NAISR 2.0)",
+      "raw_file": "philippines/naisr2_2024.pdf",
+      "bib_key": "philippines2024naisr"
     },
     {
-      "policy_id": "espana_enia_2020",
-      "country": "espana",
-      "region": "europa",
-      "year": 2020,
-      "language": "es",
-      "title": "Estrategia Nacional de Inteligencia Artificial",
-      "raw_file": "spain/enia_2020.pdf",
-      "bib_key": "spain2020enia"
-    },
-    {
-      "policy_id": "francia_villani_report_2018",
-      "country": "francia",
-      "region": "europa",
-      "year": 2018,
+      "policy_id": "asean_ai_governance_2024",
+      "country": "asean",
+      "region": "regional",
+      "chc": "na",
+      "year": 2024,
       "language": "en",
-      "title": "For a Meaningful AI (Villani Report)",
-      "raw_file": "france/villani_report_2018.pdf",
-      "bib_key": "villani2018ai"
-    },
-    {
-      "policy_id": "alemania_ai_strategy_2018",
-      "country": "alemania",
-      "region": "europa",
-      "year": 2018,
-      "language": "en",
-      "title": "AI Strategy of the German Federal Government",
-      "raw_file": "germany/ai_strategy_2018.pdf",
-      "bib_key": "germany2018aistrategy",
-      "_note": "PENDING: Raw file is HTML not PDF, needs manual redownload"
-    },
-    {
-      "policy_id": "canada_pan_canadian_ai_strategy_2017",
-      "country": "canada",
-      "region": "americas",
-      "year": 2017,
-      "language": "en",
-      "title": "Pan-Canadian AI Strategy",
-      "raw_file": "canada/pan_canadian_ai_strategy_2017.pdf",
-      "bib_key": "canada2017ai"
-    },
-    {
-      "policy_id": "brasil_ebia_2021",
-      "country": "brasil",
-      "region": "americas",
-      "year": 2021,
-      "language": "pt",
-      "title": "Estratégia Brasileira de Inteligência Artificial",
-      "raw_file": "brazil/ebia_2021.pdf",
-      "bib_key": "brasil2021ebia"
-    },
-    {
-      "policy_id": "colombia_conpes_3975_2019",
-      "country": "colombia",
-      "region": "americas",
-      "year": 2019,
-      "language": "es",
-      "title": "CONPES 3975 — Política Nacional para la Transformación Digital e IA",
-      "raw_file": "colombia/conpes_3975_2019.pdf",
-      "bib_key": "colombia2019conpes"
-    },
-    {
-      "policy_id": "japon_ai_strategy_2019",
-      "country": "japon",
-      "region": "asia_pacifico",
-      "year": 2019,
-      "language": "en",
-      "title": "AI Strategy 2019: AI for Everyone",
-      "raw_file": "japan/ai_strategy_2019.pdf",
-      "bib_key": "japan2019ai"
-    },
-    {
-      "policy_id": "corea_ai_strategy_2019",
-      "country": "corea",
-      "region": "asia_pacifico",
-      "year": 2019,
-      "language": "en",
-      "title": "National Strategy for Artificial Intelligence",
-      "raw_file": "korea/ai_strategy_2019.pdf",
-      "bib_key": "korea2019ai"
-    },
-    {
-      "policy_id": "singapur_nais_2019",
-      "country": "singapur",
-      "region": "asia_pacifico",
-      "year": 2019,
-      "language": "en",
-      "title": "National AI Strategy",
-      "raw_file": "singapore/nais_2019.pdf",
-      "bib_key": "singapore2019nais"
-    },
-    {
-      "policy_id": "india_aiforall_2018",
-      "country": "india",
-      "region": "asia_pacifico",
-      "year": 2018,
-      "language": "en",
-      "title": "National Strategy for AI: #AIForAll",
-      "raw_file": "india/aiforall_2018.pdf",
-      "bib_key": "india2018niti"
-    },
-    {
-      "policy_id": "india_nep_2020",
-      "country": "india",
-      "region": "asia_pacifico",
-      "year": 2020,
-      "language": "en",
-      "title": "National Education Policy 2020",
-      "raw_file": "india/nep_2020.pdf",
-      "bib_key": "india2020nep"
-    },
-    {
-      "policy_id": "australia_ai_action_plan_2021",
-      "country": "australia",
-      "region": "asia_pacifico",
-      "year": 2021,
-      "language": "en",
-      "title": "Australia's AI Action Plan",
-      "raw_file": "australia/ai_action_plan_2021.pdf",
-      "bib_key": "australia2021aiaction"
+      "title": "ASEAN Guide on AI Governance and Ethics",
+      "raw_file": "asean/ai_governance_2024.pdf",
+      "bib_key": "asean2024guide"
     },
     {
       "policy_id": "unesco_genai_guidance_2023",
       "country": "unesco",
       "region": "internacional",
+      "chc": "na",
       "year": 2023,
       "language": "en",
       "title": "Guidance for Generative AI in Education and Research",
       "raw_file": "unesco/genai_guidance_2023.pdf",
-      "bib_key": "unesco2023genai"
-    },
-    {
-      "policy_id": "wef_future_of_jobs_2020",
-      "country": "wef",
-      "region": "internacional",
-      "year": 2020,
-      "language": "en",
-      "title": "The Future of Jobs Report 2020",
-      "raw_file": "wef/future_of_jobs_2020.pdf",
-      "bib_key": "wef2020future"
+      "bib_key": "unesco2023genai",
+      "_note": "Conservado del corpus v2 como referente normativo internacional; processed/ ya existe."
     }
   ]
 }

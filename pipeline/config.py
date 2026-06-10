@@ -66,34 +66,31 @@ DIMENSIONS = {
 }
 
 # ── Countries & regions ──
+# Corpus v3: Sudeste Asiático con clasificación de herencia confuciana (CHC).
+# China se incluye como caso ancla de la civilización confuciana (Asia Oriental).
+# chc: "fuerte" | "parcial" | "ausente" | "na" (organismos)
 COUNTRIES = {
-    "eu": {"name": "Unión Europea", "region": "europa"},
-    "espana": {"name": "España", "region": "europa"},
-    "francia": {"name": "Francia", "region": "europa"},
-    "alemania": {"name": "Alemania", "region": "europa"},
-    "finlandia": {"name": "Finlandia", "region": "europa"},
-    "estonia": {"name": "Estonia", "region": "europa"},
-    "eeuu": {"name": "Estados Unidos", "region": "americas"},
-    "canada": {"name": "Canadá", "region": "americas"},
-    "mexico": {"name": "México", "region": "americas"},
-    "brasil": {"name": "Brasil", "region": "americas"},
-    "chile": {"name": "Chile", "region": "americas"},
-    "colombia": {"name": "Colombia", "region": "americas"},
-    "china": {"name": "China", "region": "asia_pacifico"},
-    "japon": {"name": "Japón", "region": "asia_pacifico"},
-    "corea": {"name": "Corea del Sur", "region": "asia_pacifico"},
-    "singapur": {"name": "Singapur", "region": "asia_pacifico"},
-    "india": {"name": "India", "region": "asia_pacifico"},
-    "australia": {"name": "Australia", "region": "asia_pacifico"},
-    "unesco": {"name": "UNESCO", "region": "internacional"},
-    "ocde": {"name": "OCDE", "region": "internacional"},
-    "wef": {"name": "Foro Económico Mundial", "region": "internacional"},
-    "banco_mundial": {"name": "Banco Mundial", "region": "internacional"},
+    "china": {"name": "China", "region": "asia_oriental", "chc": "fuerte"},
+    "vietnam": {"name": "Vietnam", "region": "sudeste_asiatico", "chc": "fuerte"},
+    "singapur": {"name": "Singapur", "region": "sudeste_asiatico", "chc": "fuerte"},
+    "malasia": {"name": "Malasia", "region": "sudeste_asiatico", "chc": "parcial"},
+    "indonesia": {"name": "Indonesia", "region": "sudeste_asiatico", "chc": "ausente"},
+    "tailandia": {"name": "Tailandia", "region": "sudeste_asiatico", "chc": "ausente"},
+    "filipinas": {"name": "Filipinas", "region": "sudeste_asiatico", "chc": "ausente"},
+    "asean": {"name": "ASEAN", "region": "regional", "chc": "na"},
+    "unesco": {"name": "UNESCO", "region": "internacional", "chc": "na"},
 }
 
 REGION_COLORS = {
-    "europa": "#1976d2",
-    "americas": "#388e3c",
-    "asia_pacifico": "#d32f2f",
+    "asia_oriental": "#880e4f",
+    "sudeste_asiatico": "#d32f2f",
+    "regional": "#f57c00",
     "internacional": "#7b1fa2",
+}
+
+CHC_COLORS = {
+    "fuerte": "#b71c1c",
+    "parcial": "#f57c00",
+    "ausente": "#1976d2",
+    "na": "#7b1fa2",
 }

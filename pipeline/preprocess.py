@@ -10,6 +10,7 @@ from .config import RAW_DIR, PROCESSED_DIR, METADATA_FILE
 
 # Map raw directory names to config.py country keys
 DIR_TO_COUNTRY = {
+    "asean": "asean",
     "australia": "australia",
     "brazil": "brasil",
     "canada": "canada",
@@ -22,14 +23,19 @@ DIR_TO_COUNTRY = {
     "france": "francia",
     "germany": "alemania",
     "india": "india",
+    "indonesia": "indonesia",
     "japan": "japon",
     "korea": "corea",
+    "malaysia": "malasia",
     "mexico": "mexico",
     "oecd": "ocde",
+    "philippines": "filipinas",
     "singapore": "singapur",
     "spain": "espana",
+    "thailand": "tailandia",
     "unesco": "unesco",
     "usa": "eeuu",
+    "vietnam": "vietnam",
     "wef": "wef",
     "worldbank": "banco_mundial",
 }
