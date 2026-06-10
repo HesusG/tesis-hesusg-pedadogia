@@ -37,8 +37,8 @@ El corpus se compone de nueve unidades de análisis: los seis principales paíse
 
 \begin{enumerate}
   \item \textbf{Existencia de documento oficial.} Cada unidad debe contar con un documento rector de política de IA que aborde la educación, ya sea una estrategia nacional, un plan de desarrollo con eje de IA o una guía de gobernanza.
-  \item \textbf{Diseño según la lente CHC.} La muestra nacional cubre el gradiente completo de herencia confuciana derivado de la literatura~\citep{nguyen2005cooperative, welch2011higher}: fuerte (Vietnam, Singapur), parcial (Malasia) y ausente (Indonesia, Tailandia, Filipinas), con China como caso ancla externo a la región. Esta variable de diseño es la que permite contrastar la hipótesis culturalista.
-  \item \textbf{Hipótesis rivales representadas.} La ASEAN y la UNESCO se incluyen para representar las fuentes alternativas de convergencia (influencia regional e influencia normativa global) frente a la herencia cultural.
+  \item \textbf{Diversidad de tradiciones educativas.} La muestra nacional cubre el gradiente de tradiciones de la región~\citep{nguyen2005cooperative, welch2011higher}: herencia confuciana fuerte (Vietnam, Singapur), parcial (Malasia) y otras matrices (Indonesia, Tailandia, Filipinas), con China como sistema de referencia de la tradición confuciana. Esta diversidad sustenta la pregunta del eco y la voz: el corpus contiene los repertorios locales cuya presencia o silencio se mide.
+  \item \textbf{El repertorio global representado.} La ASEAN y la UNESCO se incluyen como encarnaciones del repertorio discursivo global (regional y normativo internacional) frente al cual se mide la proximidad de cada política nacional, y como casos de contraste del género documental en la evaluación.
   \item \textbf{Disponibilidad pública.} Solo se incluyen documentos de acceso público, descargables de sitios oficiales o, en su defecto, traducciones íntegras verificables (véase el procedimiento de recopilación).
   \item \textbf{Periodo temporal.} Los documentos fueron publicados entre 2020 y 2026, desde la estrategia indonesia hasta el XV Plan Quinquenal chino, el periodo en que la región formuló sus marcos rectores de IA.
 \end{enumerate}
@@ -194,7 +194,7 @@ Además de la similitud global, se calcula una puntuación de relevancia por dim
 \end{tabular}
 \end{table}
 
-Estas consultas se formularon a partir de las definiciones operativas de cada dimensión (Sección~\ref{sec:dimensiones}) y se refinaron iterativamente comparando los fragmentos recuperados con los codificados cualitativamente para la misma dimensión. Este proceso de calibración asegura que las consultas capturan el vocabulario real de los documentos y no solo los términos esperados por el investigador. El resultado es una matriz de 22 $\times$ 7 puntuaciones de relevancia que complementa la codificación cualitativa.
+Estas consultas se formularon a partir de las definiciones operativas de cada dimensión (Sección~\ref{sec:dimensiones}) y se refinaron iterativamente comparando los fragmentos recuperados con los codificados cualitativamente para la misma dimensión. Este proceso de calibración asegura que las consultas capturan el vocabulario real de los documentos y no solo los términos esperados por el investigador. El resultado es una matriz de 9 $\times$ 7 puntuaciones de relevancia que complementa la codificación cualitativa.
 
 Para identificar agrupaciones entre países, se aplica \textit{clustering} jerárquico aglomerativo sobre la matriz de similitud global, utilizando el método de Ward como criterio de enlace. El número de clusters no se fija a priori; se examina el dendrograma resultante y se selecciona el corte que maximiza la coherencia interpretativa de los grupos (es decir, que las agrupaciones tengan sentido a la luz del contexto geopolítico y de los hallazgos cualitativos). Este enfoque privilegia la interpretabilidad sobre la optimización estadística, en consonancia con la prioridad cualitativa del diseño.
 
@@ -260,7 +260,7 @@ Se adoptan tres principios éticos:
 Como producto complementario de la investigación, se desarrolla una página web interactiva que presenta los resultados del análisis de forma visual y explorable. La visualización cumple tres funciones de investigación:
 
 \begin{enumerate}
-  \item \textbf{Comunicación de resultados complejos.} La matriz de similitud de 22 $\times$ 22 y las puntuaciones por dimensión son difíciles de interpretar en formato tabular. Los mapas de calor, gráficos de radar y dendrogramas interactivos permiten identificar patrones que las tablas ocultan.
+  \item \textbf{Comunicación de resultados complejos.} La matriz de similitud de 9 $\times$ 9, la matriz de evaluación de 9 $\times$ 25 y las puntuaciones por dimensión son difíciles de interpretar en formato tabular. Los mapas de calor, gráficos de radar y dendrogramas interactivos permiten identificar patrones que las tablas ocultan.
   \item \textbf{Exploración por parte del lector.} La visualización permite al lector filtrar por región, comparar pares de países o explorar dimensiones específicas, lo que extiende el análisis más allá de lo que el texto de la tesis puede cubrir.
   \item \textbf{Reproducibilidad visual.} Los datos que alimentan la visualización provienen directamente del pipeline de análisis, sin manipulación manual. El archivo \texttt{results.json} que conecta el pipeline con la web constituye un registro auditable.
 \end{enumerate}
