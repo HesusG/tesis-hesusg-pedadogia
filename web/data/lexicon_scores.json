@@ -1,0 +1,170 @@
+{
+  "lexicons": {
+    "confuciano": [
+      "El maestro como ejemplar moral y autoridad ética que guía la formación del estudiante",
+      "El aprendizaje como autocultivo y perfeccionamiento moral de la persona (xiushen)",
+      "La educación para llegar a ser plenamente humano, formación del carácter virtuoso (junzi, ren)",
+      "El esfuerzo y la perseverancia como vía del aprendizaje por encima del talento innato",
+      "La armonía social y el respeto a la jerarquía en la relación maestro-discípulo",
+      "El examen y el mérito académico como vía de movilidad y selección de los mejores",
+      "La piedad filial, el respeto a los mayores y la transmisión de la tradición"
+    ],
+    "pancasila": [
+      "Los valores de Pancasila como fundamento ético y filosófico de la nación",
+      "La formación del carácter nacional y la identidad cultural del pueblo (karakter kebangsaan)",
+      "La unidad en la diversidad y la justicia social para todo el pueblo",
+      "La deliberación y el consenso comunitario como forma de decisión (musyawarah)",
+      "La fe en Dios y la humanidad justa y civilizada como principios rectores",
+      "La obra de los hijos de la nación y la soberanía tecnológica nacional"
+    ],
+    "plantilla_global": [
+      "Transparencia y explicabilidad de los sistemas de inteligencia artificial",
+      "Equidad, inclusión y no discriminación en el uso de la inteligencia artificial",
+      "Privacidad y gobernanza de los datos personales de los estudiantes",
+      "Rendición de cuentas, responsabilidad y supervisión humana de la IA",
+      "Enfoque centrado en el ser humano para una inteligencia artificial confiable",
+      "Seguridad, robustez y fiabilidad de los sistemas de inteligencia artificial",
+      "Desarrollo de competencias digitales y alfabetización en IA para el siglo XXI",
+      "Aprendizaje a lo largo de la vida y mejora de habilidades de la fuerza laboral"
+    ]
+  },
+  "scores": {
+    "china_plan_quinquenal_15_2026": {
+      "confuciano": 0.36217801759958235,
+      "pancasila": 0.49607031804226254,
+      "plantilla_global": 0.45471972294994534,
+      "indice_voz": 0.0413505950923172
+    },
+    "vietnam_ai_strategy_2021": {
+      "confuciano": 0.3197531615365613,
+      "pancasila": 0.39704927300637416,
+      "plantilla_global": 0.6796532856183503,
+      "indice_voz": -0.2826040126119761
+    },
+    "singapur_nais2_2023": {
+      "confuciano": 0.31034366872265207,
+      "pancasila": 0.35367366720794147,
+      "plantilla_global": 0.67689500639593,
+      "indice_voz": -0.32322133918798857
+    },
+    "malasia_ai_rmap_2021": {
+      "confuciano": 0.30675362796787464,
+      "pancasila": 0.3237152159678791,
+      "plantilla_global": 0.6910462556975699,
+      "indice_voz": -0.36733103972969083
+    },
+    "indonesia_stranas_ka_2020": {
+      "confuciano": 0.42500511869064583,
+      "pancasila": 0.4821793849615158,
+      "plantilla_global": 0.6704353595551459,
+      "indice_voz": -0.18825597459363008
+    },
+    "tailandia_ai_strategy_2022": {
+      "confuciano": 0.24482125066703542,
+      "pancasila": 0.29400978900668817,
+      "plantilla_global": 0.5886257348546444,
+      "indice_voz": -0.29461594584795625
+    },
+    "filipinas_naisr2_2024": {
+      "confuciano": 0.3163847092459331,
+      "pancasila": 0.3249486208677512,
+      "plantilla_global": 0.6698302257667927,
+      "indice_voz": -0.3448816048990415
+    },
+    "asean_ai_governance_2024": {
+      "confuciano": 0.33093885829338554,
+      "pancasila": 0.31322151577457635,
+      "plantilla_global": 0.7744035289645915,
+      "indice_voz": -0.443464670671206
+    },
+    "unesco_genai_guidance_2023": {
+      "confuciano": 0.5056150389726495,
+      "pancasila": 0.4169007474518568,
+      "plantilla_global": 0.7261323529934844,
+      "indice_voz": -0.22051731402083496
+    }
+  },
+  "literal_mentions": {
+    "china_plan_quinquenal_15_2026": {
+      "confucio": 1,
+      "pancasila": 0,
+      "armonia": 4,
+      "moral": 7,
+      "caracter": 30,
+      "tradicion": 15,
+      "virtud": 4
+    },
+    "vietnam_ai_strategy_2021": {
+      "confucio": 0,
+      "pancasila": 0,
+      "armonia": 0,
+      "moral": 0,
+      "caracter": 0,
+      "tradicion": 0,
+      "virtud": 0
+    },
+    "singapur_nais2_2023": {
+      "confucio": 0,
+      "pancasila": 0,
+      "armonia": 0,
+      "moral": 0,
+      "caracter": 1,
+      "tradicion": 2,
+      "virtud": 0
+    },
+    "malasia_ai_rmap_2021": {
+      "confucio": 0,
+      "pancasila": 0,
+      "armonia": 1,
+      "moral": 0,
+      "caracter": 0,
+      "tradicion": 4,
+      "virtud": 0
+    },
+    "indonesia_stranas_ka_2020": {
+      "confucio": 0,
+      "pancasila": 19,
+      "armonia": 2,
+      "moral": 0,
+      "caracter": 37,
+      "tradicion": 3,
+      "virtud": 0
+    },
+    "tailandia_ai_strategy_2022": {
+      "confucio": 0,
+      "pancasila": 0,
+      "armonia": 0,
+      "moral": 0,
+      "caracter": 0,
+      "tradicion": 0,
+      "virtud": 0
+    },
+    "filipinas_naisr2_2024": {
+      "confucio": 0,
+      "pancasila": 0,
+      "armonia": 1,
+      "moral": 0,
+      "caracter": 1,
+      "tradicion": 5,
+      "virtud": 0
+    },
+    "asean_ai_governance_2024": {
+      "confucio": 0,
+      "pancasila": 0,
+      "armonia": 0,
+      "moral": 0,
+      "caracter": 8,
+      "tradicion": 7,
+      "virtud": 0
+    },
+    "unesco_genai_guidance_2023": {
+      "confucio": 0,
+      "pancasila": 0,
+      "armonia": 1,
+      "moral": 0,
+      "caracter": 4,
+      "tradicion": 0,
+      "virtud": 0
+    }
+  }
+}

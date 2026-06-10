@@ -55,6 +55,42 @@ LEXICONS = {
 }
 
 
+# Literal-mention regexes (cross-validation of the semantic lexicons): does the
+# tradition vocabulary literally appear in each document?
+LITERAL_TERMS = {
+    "confucio": r"confuci",
+    "pancasila": r"pancasila",
+    "armonia": r"harmon",
+    "moral": r"\bmoral",
+    "caracter": r"character|karakter",
+    "tradicion": r"tradition|tradisi",
+    "virtud": r"virtue|kebajikan",
+}
+
+
+def count_literal_mentions() -> dict:
+    """Count literal tradition-vocabulary mentions per processed document."""
+    import re
+
+    from .config import PROCESSED_DIR
+
+    with open(METADATA_FILE, encoding="utf-8") as f:
+        metadata = json.load(f)
+
+    counts = {}
+    for policy in metadata["policies"]:
+        pid = policy["policy_id"]
+        path = PROCESSED_DIR / f"{pid}.txt"
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8").lower()
+        counts[pid] = {
+            name: len(re.findall(pattern, text))
+            for name, pattern in LITERAL_TERMS.items()
+        }
+    return counts
+
+
 def lexicon_embedding(embedding_fn, sentences: list[str]) -> np.ndarray:
     """Average embedding of the lexicon's descriptor sentences."""
     vectors = embedding_fn(sentences)
@@ -94,10 +130,14 @@ def compute_lexicon_scores() -> dict:
 
 def main():
     scores = compute_lexicon_scores()
+    literal = count_literal_mentions()
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     output = WEB_DATA_DIR / "lexicon_scores.json"
     with open(output, "w", encoding="utf-8") as f:
-        json.dump({"lexicons": LEXICONS, "scores": scores}, f, indent=2, ensure_ascii=False)
+        json.dump(
+            {"lexicons": LEXICONS, "scores": scores, "literal_mentions": literal},
+            f, indent=2, ensure_ascii=False,
+        )
     print(f"✓ Lexicon scores for {len(scores)} policies → {output}")
     for pid, s in sorted(scores.items(), key=lambda kv: -kv[1]["indice_voz"]):
         print(f"  {pid:<34} conf={s['confuciano']:.3f} panc={s['pancasila']:.3f} "
