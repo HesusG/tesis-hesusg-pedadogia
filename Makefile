@@ -14,10 +14,11 @@ all: pdf web
 
 # ── LaTeX ──────────────────────────────────────────────
 pdf:
-	cd $(TEX_DIR) && pdflatex $(TEX_MAIN).tex
-	cd $(TEX_DIR) && bibtex $(TEX_MAIN) || true
-	cd $(TEX_DIR) && pdflatex $(TEX_MAIN).tex
-	cd $(TEX_DIR) && pdflatex $(TEX_MAIN).tex
+	@if command -v pdflatex >/dev/null 2>&1; then \
+		cd $(TEX_DIR) && pdflatex $(TEX_MAIN).tex && (bibtex $(TEX_MAIN) || true) && pdflatex $(TEX_MAIN).tex && pdflatex $(TEX_MAIN).tex; \
+	else \
+		cd $(TEX_DIR) && tectonic $(TEX_MAIN).tex; \
+	fi
 	cp $(TEX_DIR)/$(TEX_MAIN).pdf $(OUTPUT_DIR)/tesis.pdf
 	@echo "✓ PDF generado: $(OUTPUT_DIR)/tesis.pdf"
 
@@ -47,10 +48,7 @@ docx: pdf
 
 # ── Pipeline ───────────────────────────────────────────
 pipeline:
-	python3 -m pipeline.ingest --all
-	python3 -m pipeline.similarity
-	python3 -m pipeline.analysis
-	python3 -m pipeline.export
+	USE_LOCAL_EMBEDDINGS=$${USE_LOCAL_EMBEDDINGS:-1} python3 -m pipeline
 	@echo "✓ Pipeline completo"
 
 ingest:
@@ -88,13 +86,13 @@ status:
 	@echo ""
 	@for f in $(TEX_DIR)/chapters/cap*.tex; do \
 		name=$$(basename $$f .tex); \
-		words=$$(detex $$f 2>/dev/null | wc -w || echo 0); \
+		words=$$( (detex $$f 2>/dev/null || sed -e 's/%.*//' -e 's/\\\\[a-zA-Z]*//g' $$f) | wc -w ); \
 		todos=$$(grep -c 'TODO\|FIXME\|XXX' $$f 2>/dev/null || echo 0); \
 		cites=$$(grep -co '\\citep\|\\citet' $$f 2>/dev/null || echo 0); \
 		printf "  %-30s  %5s palabras  %2s citas  %2s TODOs\n" "$$name" "$$words" "$$cites" "$$todos"; \
 	done
 	@echo ""
-	@total=$$(cat $(TEX_DIR)/chapters/cap*.tex | detex 2>/dev/null | wc -w || echo 0); \
+	@total=$$( (cat $(TEX_DIR)/chapters/cap*.tex | detex 2>/dev/null || cat $(TEX_DIR)/chapters/cap*.tex | sed -e 's/%.*//' -e 's/\\\\[a-zA-Z]*//g') | wc -w ); \
 	echo "  Total: $$total palabras (~$$(( $$total / 250 )) páginas)"
 
 # ── References ────────────────────────────────────────
