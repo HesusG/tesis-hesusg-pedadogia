@@ -78,23 +78,29 @@ abreviada), Indonesia en idioma original, Vietnam vía traducción de tercero (L
       del autor); textos extraídos a `policies/processed/`
 - [x] It. 2: `metadata.json` v2.0 + `referencias.bib` (24 CHC + 9 políticas); `config.py`
       con regiones nuevas y clasificación CHC
-- [ ] It. 3: reescribir cap01 + frontmatter/título
-- [ ] It. 4: cap02 — sección de herencia confuciana
-- [ ] It. 5: cap03 — reescritura mayor (países SEA)
-- [ ] It. 6: re-ejecutar pipeline con nuevo corpus
-- [ ] It. 7: cap05 — resultados con datos reales del pipeline + análisis CHC vs no-CHC
-- [ ] It. 8: cap04 ajustes + conclusiones + resumen
-- [ ] It. 9: compilar PDF, revisar consistencia (sin restos de "22 unidades"/"17 países"),
-      fact-check de citas
-- [ ] It. 10: autorreflexión final, `make pdf` limpio, actualizar web/slides si hay tiempo
+- [x] It. 3: cap01 + título + resumen reescritos (compila 80 pp. con tectonic)
+- [x] It. 4: cap02 — sección herencia confuciana (5 subsecciones) + subsección ASEAN
+- [x] It. 5: cap03 — perfiles fundados en los documentos (agentes lectores sobre processed/)
+- [x] It. 6: pipeline re-ejecutado (9 unidades, 2,334 chunks, MiniLM local); hallazgo:
+      NO hay cluster confuciano; el género documental domina (China↔Indonesia 0.804;
+      Singapur↔Malasia 0.948 máximo); figuras regeneradas
+- [x] It. 7: cap05 — resultados reales + subsección "prueba de la hipótesis confuciana";
+      triangulación con divergencia central ("escriben como vecinos, gobiernan como su
+      tradición")
+- [x] It. 8: cap04 (tabla corpus v3, variable CHC, modelo local, método de centroide) +
+      conclusiones + resumen/abstract con hallazgos reales
+- [ ] It. 9: revisión de consistencia global (restos del corpus viejo, referencias cruzadas,
+      CLAUDE.md, fact-check de números), `make pdf`/Makefile arreglado
+- [ ] It. 10: autorreflexión final + web/ actualizada (results.json ya regenerado;
+      revisar colores CHC) + cierre
 
 ## Estado
 
-- **Última iteración**: 2 (2026-06-09)
-- **Siguiente**: It. 3 — reescribir cap01 + frontmatter/título con el nuevo encuadre
-  (9 unidades: China ancla + 6 SEA + ASEAN + UNESCO)
-- **Bloqueos**: ninguno para la escritura; `make pipeline` (It. 6) requiere OPENAI_API_KEY
-  o USE_LOCAL_EMBEDDINGS=1 — verificar al llegar
-- **Notas**: PDFs crudos no se versionan (gitignore); processed/ sí. Bib keys del corpus:
-  china2026fyp, vietnam2021ai, singapore2023nais2, malaysia2021airmap, indonesia2020stranas,
-  thailand2022ai, philippines2024naisr, asean2024guide, unesco2023genai, deped2026ai (extra)
+- **Última iteración**: 8 (2026-06-09)
+- **Siguiente**: It. 9 — revisión de consistencia global y fact-check
+- **Bloqueos**: ninguno
+- **Notas**: compilar con `tectonic main.tex` en document/ (no hay pdflatex; Makefile
+  pendiente de actualizar). Pipeline real: `USE_LOCAL_EMBEDDINGS=1 python3 -m pipeline`
+  (los targets del Makefile llaman módulos sin efecto). `make status` cuenta 0 palabras
+  (script roto, preexistente). Resultados clave en references/corpus-briefs-v3.md y
+  web/data/results.json.
