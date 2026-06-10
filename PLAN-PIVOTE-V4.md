@@ -45,12 +45,15 @@ no rúbrica normativa); título legible elegido por el autor.
 - [x] It. 6: cap05 — pirámide invertida (76% innovación vs 28% equidad), perfiles,
       cruce calidad⊥identidad, caso Vietnam (convergencia selectiva)
 - [x] It. 7: cap03 retocado + conclusiones + resumen/abstract
-- [ ] It. 8: fact-check adversarial (agente corriendo) + correcciones + compilación
-      final + web eco/voz
+- [x] It. 8: fact-check adversarial ejecutado — 14 categorías verificadas OK, 8
+      discrepancias detectadas y corregidas (conteos de niveles de Indonesia/Tailandia,
+      rango UNESCO 0.667-0.729, perfil asimétrico de Indonesia, alcance del claim de
+      sesgos, media 46%, restos 22×22 en cap04, hedging del "primer instrumento") +
+      coherencia de criterios de selección en cap04 + compilación final limpia (81 pp.)
 
 ## Estado
 
-- **Última iteración**: 8 en curso (2026-06-10) — fact-check adversarial corriendo
+- **BUCLE COMPLETO** (2026-06-10): tesis v4 terminada y verificada; output/tesis.pdf
 - **PENDIENTE DEL AUTOR (importante)**: las puntuaciones de la rúbrica en
   `policies/eval/scores.json` son un BORRADOR producido por codificadores automáticos
   con justificaciones auditables (hojas en `policies/eval/sheets/`). Antes de la
