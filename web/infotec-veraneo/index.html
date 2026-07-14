@@ -361,16 +361,8 @@ footer .mono{font-size:.75rem;opacity:.7;}
       </div>
       <p style="font-family:var(--font-mono);font-size:.72rem;opacity:.6;text-align:center;margin-top:1.4rem;">Ejemplo ilustrativo del eje. Se repite para lǐ, yì, xiūshēn, dézhì y hé.</p>
     </div>
-    <p class="lead rv">Al hacerlo con los seis valores, <b>cada país obtiene una huella de seis números</b>: un perfil confuciano. Y eso permite decir algo específico y defendible, en lugar de un vago "es el más cercano a las <i>Analectas</i>". El esquema de abajo es <b>hipotético</b>, solo para mostrar la forma del resultado: aún no se calcula con datos.</p>
-    <div class="fp rv">
-      <div class="fp-row"><span class="fp-name">仁 rén (benevolencia)</span><div class="fp-bar-wrap"><div class="fp-bar" style="--w:74%;background:var(--ren);"></div></div></div>
-      <div class="fp-row"><span class="fp-name">礼 lǐ (ritual/estándar)</span><div class="fp-bar-wrap"><div class="fp-bar" style="--w:58%;background:var(--li);"></div></div></div>
-      <div class="fp-row"><span class="fp-name">义 yì (rectitud)</span><div class="fp-bar-wrap"><div class="fp-bar" style="--w:40%;background:var(--yi);"></div></div></div>
-      <div class="fp-row"><span class="fp-name">修身 xiūshēn (cultivo)</span><div class="fp-bar-wrap"><div class="fp-bar" style="--w:63%;background:var(--xiushen);"></div></div></div>
-      <div class="fp-row"><span class="fp-name">德治 dézhì (gobernar por virtud)</span><div class="fp-bar-wrap"><div class="fp-bar" style="--w:82%;background:var(--dezhi);"></div></div></div>
-      <div class="fp-row"><span class="fp-name">和 hé (armonía)</span><div class="fp-bar-wrap"><div class="fp-bar" style="--w:77%;background:var(--he);"></div></div></div>
-      <p style="font-family:var(--font-mono);font-size:.72rem;opacity:.6;margin-top:1rem;">Esquema hipotético de un perfil país. Enchufa directo con las 7 dimensiones preregistradas del pipeline.</p>
-    </div>
+    <p class="lead rv">Al hacerlo con los seis valores, <b>cada país obtiene una huella de seis números</b>: un perfil confuciano. Y eso permite decir algo específico y defendible, en lugar de un vago "es el más cercano a las <i>Analectas</i>". Los resultados de abajo <b>ya están calculados</b> sobre tres políticas reales (MVP): ejes bipolares estilo Kozlowski, puntuados por fragmento y estandarizados en z contra el corpus. Cada barra mapea la mediana z a 0–100 (0 = promedio del corpus); a la derecha va la mediana z cruda.</p>
+    <div id="mvp-fingerprints" class="rv"><p class="mono" style="opacity:.55;">Cargando resultados…</p></div>
   </div>
 </section>
 
@@ -481,6 +473,38 @@ footer .mono{font-size:.75rem;opacity:.7;}
     });
   },{threshold:0.12});
   document.querySelectorAll('.rv, .stagger, .fp').forEach(function(el){obs.observe(el);});
+})();
+
+// ── MVP: cargar huellas confucianas reales desde confucian_mvp.json ──
+(function(){
+  var colorVar={ren:'--ren',li:'--li',yi:'--yi',xiushen:'--xiushen',dezhi_fa:'--dezhi',he:'--he'};
+  var box=document.getElementById('mvp-fingerprints');
+  if(!box) return;
+  fetch('../data/confucian_mvp.json').then(function(r){return r.json();}).then(function(d){
+    var axes=d.axes, html='';
+    Object.keys(d.documents).forEach(function(pid){
+      var doc=d.documents[pid];
+      html+='<div class="fp" style="margin-bottom:1.2rem;"><div style="font-family:var(--font-display);font-weight:700;margin-bottom:.6rem;">'+doc.label+' <span style="font-family:var(--font-mono);font-size:.68rem;opacity:.5;">'+doc.n_chunks+' frag.</span></div>';
+      axes.forEach(function(a){
+        var v=doc.axes[a.key], w=Math.round(v.display_0_100);
+        var z=(v.median_z>=0?'+':'')+v.median_z.toFixed(2);
+        html+='<div class="fp-row"><span class="fp-name">'+a.zh+' '+a.pinyin+' ('+a.label.toLowerCase()+')</span>'
+             +'<div class="fp-bar-wrap"><div class="fp-bar" style="--w:'+w+'%;background:var('+colorVar[a.key]+');"></div></div>'
+             +'<span style="font-family:var(--font-mono);font-size:.72rem;min-width:3rem;text-align:right;">'+z+'</span></div>';
+      });
+      html+='</div>';
+    });
+    var cv=d.construct_validity;
+    html+='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>Validez de constructo (MVP).</strong> '
+         +'Orden Analectas &gt; control legal (UE): <b>'+cv.axes_ordered+'</b> ejes. '
+         +'Antipolo dézhì↔fǎ (Analectas&gt;0&gt;UE): <b>'+(cv.antipole_pass?'sí ✓':'no ✗')+'</b>. '
+         +'Autoanclaje de las Analectas: <b>'+cv.self_anchor_axes+'</b> (falla: '+(cv.self_anchor_failing.join(', ')||'ninguno')+'). '
+         +'Estandarizado en z contra '+d.metadata.background_n_chunks+' fragmentos del corpus. <b>'+d.metadata.status+'</b></div>';
+    box.innerHTML=html;
+    setTimeout(function(){box.querySelectorAll('.fp').forEach(function(f){f.classList.add('vis');});},80);
+  }).catch(function(){
+    box.innerHTML='<p class="mono" style="opacity:.6;">No se pudo cargar confucian_mvp.json</p>';
+  });
 })();
 </script>
 </body>

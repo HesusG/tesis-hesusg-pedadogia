@@ -8,7 +8,7 @@ OUTPUT_DIR := output
 PIPELINE_DIR := pipeline
 WEB_DIR := web
 
-.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies topics language-control validate
+.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies topics language-control validate ingest-analects confucian-mvp
 
 all: pdf web
 
@@ -151,6 +151,14 @@ ingest-refs:
 factcheck-cap01:
 	python3 -m pipeline.verify_facts --chapter cap01
 
+# ── Confucian axes MVP (usa .venv por sentence-transformers) ──
+ingest-analects:
+	.venv/bin/python -m pipeline.ingest_analects
+
+confucian-mvp:
+	.venv/bin/python -m pipeline.confucian_axes
+	@echo "✓ Ejes confucianos MVP → web/data/confucian_mvp.json"
+
 # ── Advanced compute ─────────────────────────────────
 compute-advanced:
 	python3 scripts/compute_advanced.py
@@ -190,6 +198,8 @@ help:
 	@echo "  make topics     — BERTopic: análisis no supervisado (Fase 1)"
 	@echo "  make language-control — Control lingüístico (Fase 3)"
 	@echo "  make validate   — Validar pre-registro vs no-supervisado"
+	@echo "  make ingest-analects  — Indexar Analectas en ChromaDB (MVP)"
+	@echo "  make confucian-mvp    — Ejes confucianos sobre 3 políticas (MVP)"
 	@echo "  make compute-advanced — Generar datos avanzados (UMAP, Sankey)"
 	@echo "  make download-policies — Descargar PDFs de políticas"
 	@echo "  make clean     — Limpiar archivos auxiliares"

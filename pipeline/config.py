@@ -470,3 +470,157 @@ SILHOUETTE_MAX_CLUSTERS = 6
 # ── Dimension scoring config ──
 SCORING_TOP_K_PERCENTILE = 0.10  # use top 10% of chunks per doc
 SCORING_BILINGUAL_STRATEGY = "average"  # average ES+EN anchor vectors
+
+# ════════════════════════════════════════════════════════════════════
+#  MVP: Confucian concept axes (Kozlowski-style bipolar projection)
+# ════════════════════════════════════════════════════════════════════
+# Read policies from the ACTUAL stored collection. NOTE: the populated
+# collection is "politicas_ia_educacion" (NO "_v2" suffix); COLLECTION_NAME
+# above points at a name that does not exist on disk.
+POLICY_READ_COLLECTION_NAME = "politicas_ia_educacion"
+ANALECTS_COLLECTION_NAME = "analectas_confucio"
+ANALECTS_SOURCE_FILE = PROJECT_ROOT / "corpus" / "analects" / "analects_legge_en.txt"
+CONFUCIAN_MVP_JSON = WEB_DATA_DIR / "confucian_mvp.json"
+
+# The China policy is NOT in the stored v1 collection; ingest it on demand
+# from its raw English translation so the MVP contrast includes China.
+CHINA_MVP_POLICY = {
+    "policy_id": "china_ngaidp_2017",
+    "raw_file": RAW_DIR / "china" / "3_new_gen_ai_development_plan_2017_en.txt",
+    "country": "china", "region": "asia", "year": 2017, "language": "en",
+}
+
+# Three MVP policies (max contrast) + the legalistic negative control.
+MVP_POLICY_IDS = [
+    "china_ngaidp_2017",
+    "colombia_conpes_3975_2019",
+    "canada_pan_canadian_ai_strategy_2017",
+]
+MVP_CONTROL_NEG_POLICY_ID = "eu_ai_act_2024"  # command-and-control legal text
+
+# Pre-registered bipolar Confucian axes. Each axis is a DIRECTION in embedding
+# space: axis = normalize(mean(pos_anchors) - mean(neg_anchors)). A document's
+# score on an axis is the projection of its chunk vectors onto that direction.
+# PRE-REGISTRATION: do NOT modify these anchors after computing results.
+CONFUCIAN_AXES = {
+    "ren": {
+        "label": "Benevolencia", "zh": "仁", "pinyin": "rén",
+        "pos_pole": "centrado en la persona", "neg_pole": "eficiencia instrumental",
+        "pos_anchors_en": [
+            "Governing and educating with benevolence and humaneness, caring for each person's dignity and wellbeing.",
+            "The benevolent person loves others and puts people at the center of every decision.",
+        ],
+        "pos_anchors_es": [
+            "Gobernar y educar con benevolencia y humanidad, cuidando la dignidad y el bienestar de cada persona.",
+            "La persona benevolente ama a los demás y pone a las personas en el centro de cada decisión.",
+        ],
+        "neg_anchors_en": [
+            "Treating people as instruments for efficiency, output, and economic productivity.",
+            "Optimizing systems for performance and profit without regard for human dignity.",
+        ],
+        "neg_anchors_es": [
+            "Tratar a las personas como instrumentos para la eficiencia, la producción y la productividad económica.",
+            "Optimizar los sistemas por rendimiento y ganancia sin considerar la dignidad humana.",
+        ],
+    },
+    "li": {
+        "label": "Ritual y propiedad", "zh": "礼", "pinyin": "lǐ",
+        "pos_pole": "normas y estándares", "neg_pole": "sin normas",
+        "pos_anchors_en": [
+            "Proper conduct guided by ritual, established norms, codes of conduct, and shared standards of appropriate behavior.",
+            "Following rites, protocols, and rules of propriety that structure how people should act.",
+        ],
+        "pos_anchors_es": [
+            "Conducta correcta guiada por el ritual, las normas establecidas, los códigos de conducta y los estándares compartidos.",
+            "Seguir ritos, protocolos y reglas de propiedad que estructuran cómo deben actuar las personas.",
+        ],
+        "neg_anchors_en": [
+            "Acting without shared norms, protocols, or codes of conduct; improvised behavior with no rules.",
+            "Rejecting formal standards and established procedures in favor of ad hoc action.",
+        ],
+        "neg_anchors_es": [
+            "Actuar sin normas compartidas, protocolos ni códigos de conducta; comportamiento improvisado y sin reglas.",
+            "Rechazar los estándares formales y los procedimientos establecidos en favor de la acción improvisada.",
+        ],
+    },
+    "yi": {
+        "label": "Rectitud", "zh": "义", "pinyin": "yì",
+        "pos_pole": "lo justo", "neg_pole": "el provecho",
+        "pos_anchors_en": [
+            "Doing what is morally right and just regardless of profit or advantage; upholding justice and moral duty.",
+            "Choosing the righteous course over personal gain.",
+        ],
+        "pos_anchors_es": [
+            "Hacer lo que es moralmente correcto y justo sin importar el beneficio o la ventaja; sostener la justicia y el deber moral.",
+            "Elegir el camino recto por encima del provecho personal.",
+        ],
+        "neg_anchors_en": [
+            "Pursuing profit, self-interest, and advantage as the guide to action.",
+            "Deciding by financial benefit and personal gain rather than by what is right.",
+        ],
+        "neg_anchors_es": [
+            "Perseguir el beneficio, el interés propio y la ventaja como guía de la acción.",
+            "Decidir por el beneficio económico y la ganancia personal en vez de por lo correcto.",
+        ],
+    },
+    "xiushen": {
+        "label": "Cultivo de sí mismo", "zh": "修身", "pinyin": "xiūshēn",
+        "pos_pole": "formación del carácter", "neg_pole": "credencial instrumental",
+        "pos_anchors_en": [
+            "Lifelong moral self-cultivation, character formation, reflection, and self-improvement to become a better person.",
+            "Cultivating virtue and one's own character through continuous learning and self-examination.",
+        ],
+        "pos_anchors_es": [
+            "Cultivo moral de sí mismo a lo largo de la vida, formación del carácter, reflexión y mejora personal para ser mejor persona.",
+            "Cultivar la virtud y el propio carácter mediante el aprendizaje continuo y el autoexamen.",
+        ],
+        "neg_anchors_en": [
+            "Acquiring credentials and technical skills only for external reward, status, and employment.",
+            "Training merely to pass exams and gain qualifications, without moral or character growth.",
+        ],
+        "neg_anchors_es": [
+            "Adquirir credenciales y habilidades técnicas solo por la recompensa externa, el estatus y el empleo.",
+            "Formarse únicamente para aprobar exámenes y obtener títulos, sin crecimiento moral ni del carácter.",
+        ],
+    },
+    "dezhi_fa": {
+        "label": "Gobernar por virtud vs. por ley", "zh": "德治", "pinyin": "dézhì↔fǎ",
+        "pos_pole": "德治 gobierno por virtud", "neg_pole": "法 gobierno por ley",
+        "pos_anchors_en": [
+            "Governing by moral virtue and example, leading people through ethics and cultivation so they develop conscience and correct themselves.",
+            "Rule by virtue: the state guides society by moral example rather than coercion.",
+        ],
+        "pos_anchors_es": [
+            "Gobernar por la virtud moral y el ejemplo, guiando a las personas mediante la ética y el cultivo para que desarrollen conciencia y se corrijan a sí mismas.",
+            "Gobierno por virtud: el Estado guía a la sociedad con el ejemplo moral más que con la coerción.",
+        ],
+        "neg_anchors_en": [
+            "Governing by strict law, coercion, punishment, sanctions, and mandatory command-and-control enforcement.",
+            "Rule by law: compelling behavior through binding regulation, penalties, and prohibitions.",
+        ],
+        "neg_anchors_es": [
+            "Gobernar por la ley estricta, la coerción, el castigo, las sanciones y la aplicación obligatoria de mando y control.",
+            "Gobierno por la ley: obligar la conducta mediante regulación vinculante, penalizaciones y prohibiciones.",
+        ],
+    },
+    "he": {
+        "label": "Armonía", "zh": "和", "pinyin": "hé",
+        "pos_pole": "bien colectivo", "neg_pole": "autonomía individual",
+        "pos_anchors_en": [
+            "Social harmony, collective wellbeing, concord, unity, and the common good of the community.",
+            "Prioritizing social stability and the harmony of the whole society.",
+        ],
+        "pos_anchors_es": [
+            "Armonía social, bienestar colectivo, concordia, unidad y bien común de la comunidad.",
+            "Priorizar la estabilidad social y la armonía del conjunto de la sociedad.",
+        ],
+        "neg_anchors_en": [
+            "Individual autonomy, competition, pluralism, and the primacy of personal rights and freedom over the collective.",
+            "Emphasizing individual liberty, dissent, and personal choice over collective concord.",
+        ],
+        "neg_anchors_es": [
+            "Autonomía individual, competencia, pluralismo y primacía de los derechos y la libertad personales sobre el colectivo.",
+            "Enfatizar la libertad individual, el disenso y la elección personal por encima de la concordia colectiva.",
+        ],
+    },
+}
