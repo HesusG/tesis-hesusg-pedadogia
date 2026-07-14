@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protocolo de investigación — Confucianismo y gobernanza de la IA · INFOTEC Veraneo 2026</title>
+<meta name="description" content="Protocolo de investigación: resonancia de valores confucianos en políticas públicas de IA en educación de siete países, medida con ejes de concepto en espacio de embeddings. INFOTEC Veraneo 2026 y su vínculo con la tesis de maestría.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F0E8; --fg:#1a1a1a; --bg-alt:#E8E2D2;
+  --border:3px solid #1a1a1a; --shadow:6px 6px 0 #1a1a1a;
+  --font-display:'Syne',sans-serif; --font-body:'DM Sans',sans-serif; --font-mono:'JetBrains Mono',monospace;
+  --yellow:#FFD54F; --ease:cubic-bezier(0.22,1,0.36,1);
+  --europa:#1976d2; --americas:#388e3c; --asia:#d32f2f; --internacional:#7b1fa2;
+  --ren:#d32f2f; --li:#1976d2; --yi:#7b1fa2; --xiushen:#388e3c; --dezhi:#e65100; --he:#00838f;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:100%;overflow-x:hidden;}
+body{font-family:var(--font-body);background:var(--bg);color:var(--fg);overflow-x:hidden;overflow-wrap:break-word;line-height:1.6;}
+::selection{background:var(--yellow);color:var(--fg);}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.2;}
+h1{font-size:clamp(2rem,5vw,3.4rem);} h2{font-size:clamp(1.4rem,3.2vw,2.2rem);}
+h3{font-size:clamp(1.1rem,2vw,1.4rem);} h4{font-size:1.05rem;}
+.mono{font-family:var(--font-mono);}
+.zh{font-family:var(--font-display);font-weight:800;}
+a{color:inherit;}
+
+#progress{position:fixed;top:0;left:0;height:6px;background:var(--fg);z-index:9999;width:0%;transition:width .1s;}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:900;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 1.5rem;background:var(--fg);color:var(--bg);font-family:var(--font-mono);font-size:.78rem;flex-wrap:wrap;}
+.topbar a{color:var(--yellow);text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s;}
+.topbar a:hover{border-color:var(--yellow);}
+.topbar .crumb{opacity:.7;}
+
+#sidenav{position:fixed;left:20px;top:50%;transform:translateY(-50%);z-index:800;display:flex;flex-direction:column;gap:0;}
+.nav-line{width:2px;height:14px;background:rgba(0,0,0,.1);margin:0 auto;}
+.nav-dot{width:13px;height:13px;border:3px solid rgba(0,0,0,.2);background:var(--bg);cursor:pointer;transition:all .4s var(--ease);position:relative;}
+.nav-dot:hover{border-color:var(--fg);transform:scale(1.4);}
+.nav-dot.active{background:var(--fg);border-color:var(--fg);transform:scale(1.3);}
+.nav-dot[data-label]:hover::after{content:attr(data-label);position:absolute;left:22px;top:50%;transform:translateY(-50%);background:var(--fg);color:var(--bg);padding:4px 10px;font-family:var(--font-mono);font-size:.72rem;white-space:nowrap;pointer-events:none;}
+
+.container{max-width:1000px;margin:0 auto;padding:0 2rem;}
+section{padding:4rem 0;border-bottom:1px solid rgba(0,0,0,.1);}
+section:nth-of-type(even){background:var(--bg-alt);}
+.eyebrow{font-family:var(--font-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;opacity:.55;margin-bottom:.5rem;}
+.rubric{display:inline-block;font-family:var(--font-mono);font-size:.68rem;background:var(--yellow);border:2px solid var(--fg);padding:.15rem .5rem;margin-bottom:.8rem;}
+.lead{font-size:1.08rem;line-height:1.8;max-width:780px;color:#2a2a2a;}
+.lead + .lead{margin-top:.9rem;}
+p.body{font-size:1rem;line-height:1.75;max-width:780px;color:#2a2a2a;margin-top:.6rem;}
+ul.clean{list-style:none;max-width:800px;margin-top:1rem;}
+ul.clean li{position:relative;padding-left:1.6rem;margin-bottom:.7rem;font-size:1rem;line-height:1.65;}
+ul.clean li::before{content:'';position:absolute;left:0;top:.55rem;width:10px;height:10px;background:var(--yellow);border:2px solid var(--fg);}
+ol.spec{max-width:800px;margin-top:1rem;padding-left:0;list-style:none;counter-reset:s;}
+ol.spec li{counter-increment:s;position:relative;padding-left:2.4rem;margin-bottom:.9rem;font-size:1rem;line-height:1.65;}
+ol.spec li::before{content:counter(s);position:absolute;left:0;top:0;font-family:var(--font-mono);font-weight:700;font-size:.8rem;width:1.7rem;height:1.7rem;display:flex;align-items:center;justify-content:center;background:var(--fg);color:var(--bg);}
+
+/* Hero */
+#hero{min-height:78vh;display:flex;flex-direction:column;justify-content:center;padding:4rem 0;position:relative;overflow:hidden;border-bottom:var(--border);}
+#hero .container{position:relative;z-index:1;}
+.hero-bg-text{position:absolute;font-family:var(--font-display);font-weight:800;font-size:24vw;line-height:.8;opacity:.045;top:50%;right:-4%;transform:translateY(-50%);pointer-events:none;user-select:none;}
+.hero-tag{font-family:var(--font-mono);font-size:.8rem;background:var(--yellow);border:var(--border);padding:.3rem .8rem;display:inline-block;margin-bottom:1.6rem;box-shadow:4px 4px 0 var(--fg);}
+.hero-title{font-family:var(--font-display);font-weight:800;font-size:clamp(2.1rem,5.5vw,3.8rem);line-height:1;margin-bottom:1.2rem;letter-spacing:-1.5px;}
+.hero-title .hl{background:linear-gradient(180deg,transparent 60%,var(--yellow) 60%);padding:0 6px;}
+.hero-sub{font-size:clamp(1rem,2.2vw,1.3rem);color:#444;font-weight:500;max-width:720px;}
+
+/* Cards / callouts */
+.card{border:var(--border);background:#fff;box-shadow:var(--shadow);padding:1.5rem;}
+.grid{display:grid;gap:1.3rem;}
+.grid-2{grid-template-columns:repeat(2,1fr);} .grid-3{grid-template-columns:repeat(3,1fr);}
+.tk{border-left:6px solid var(--yellow);padding:1rem 1.4rem;margin:1.4rem 0;background:rgba(255,213,79,.14);max-width:820px;}
+.tk strong{font-family:var(--font-display);}
+.warn{border-left:6px solid var(--asia);background:rgba(211,47,47,.07);padding:1rem 1.4rem;margin:1.4rem 0;max-width:820px;}
+.warn strong{font-family:var(--font-display);}
+.link-thesis{border-left:6px solid var(--dezhi);background:rgba(230,81,0,.07);padding:.9rem 1.3rem;margin:1.2rem 0;max-width:820px;font-size:.96rem;}
+.link-thesis b{font-family:var(--font-display);color:#b34700;}
+
+/* 15th FYP feature */
+.fyp{border:var(--border);background:var(--fg);color:var(--bg);box-shadow:8px 8px 0 var(--dezhi);padding:1.8rem;margin-top:1.6rem;}
+.fyp h3{color:var(--yellow);margin-bottom:.3rem;}
+.fyp .fyp-zh{font-family:var(--font-display);font-weight:800;font-size:2.2rem;color:#fff;}
+.fyp ul{list-style:none;margin-top:1rem;}
+.fyp li{position:relative;padding-left:1.5rem;margin-bottom:.6rem;font-size:.95rem;line-height:1.55;color:#eee;}
+.fyp li::before{content:'';position:absolute;left:0;top:.5rem;width:9px;height:9px;background:var(--yellow);}
+.fyp b{color:#fff;font-family:var(--font-display);}
+
+/* Phase pipeline */
+.phase{display:flex;gap:1rem;border:var(--border);background:#fff;box-shadow:4px 4px 0 rgba(0,0,0,.08);padding:1.1rem 1.3rem;margin-bottom:1rem;border-left:8px solid var(--accent,#1a1a1a);}
+.phase .p-n{font-family:var(--font-mono);font-weight:700;font-size:1.3rem;color:var(--accent,#1a1a1a);flex-shrink:0;min-width:2.2rem;}
+.phase h4{margin-bottom:.15rem;}
+.phase p{font-size:.92rem;color:#333;line-height:1.55;}
+
+/* Timeline */
+.tl{border-left:3px solid var(--fg);margin-left:.5rem;padding-left:1.5rem;max-width:800px;}
+.tl-item{position:relative;padding-bottom:1.3rem;}
+.tl-item::before{content:'';position:absolute;left:calc(-1.5rem - 8px);top:4px;width:14px;height:14px;background:var(--yellow);border:3px solid var(--fg);border-radius:50%;}
+.tl-item.key::before{background:var(--asia);}
+.tl-date{font-family:var(--font-mono);font-size:.75rem;font-weight:700;}
+.tl-item p{font-size:.92rem;margin-top:.1rem;}
+
+/* Index tentativo */
+.toc{max-width:820px;margin-top:1rem;}
+.toc-item{display:flex;gap:1rem;border-bottom:1px dashed rgba(0,0,0,.2);padding:.7rem 0;align-items:baseline;}
+.toc-num{font-family:var(--font-mono);font-weight:700;color:var(--dezhi);min-width:1.6rem;}
+.toc-t{font-family:var(--font-display);font-weight:700;}
+.toc-d{font-size:.88rem;color:#555;margin-top:.15rem;}
+
+/* Sources mini */
+.src{border:var(--border);background:#fff;box-shadow:4px 4px 0 rgba(0,0,0,.08);padding:.85rem 1.1rem;margin-bottom:.8rem;border-left:6px solid var(--fg);}
+.src .s-cite{font-size:.9rem;line-height:1.5;}
+.src .s-cite b{font-family:var(--font-display);}
+.src .s-link{font-family:var(--font-mono);font-size:.7rem;word-break:break-all;opacity:.65;margin-top:.25rem;}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.rv.vis{opacity:1;transform:translateY(0);}
+
+footer{padding:3rem 0;text-align:center;background:var(--fg);color:var(--bg);}
+footer a{color:var(--yellow);text-decoration:none;}
+footer .mono{font-size:.75rem;opacity:.7;}
+
+@media(max-width:900px){
+  #sidenav{display:none;}
+  .grid-2,.grid-3{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  section{padding:3rem 0;}
+  .container{padding:0 1.1rem;}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="topbar">
+  <span><a href="index.html">← Guía confuciana</a> <span class="crumb">/ protocolo de investigación</span></span>
+  <span class="crumb">INFOTEC Veraneo 2026 · UPAEP</span>
+</div>
+<nav id="sidenav"></nav>
+
+<!-- ═══ HERO ═══ -->
+<header id="hero">
+  <div class="hero-bg-text">德治</div>
+  <div class="container">
+    <span class="hero-tag">Protocolo de investigación · borrador de trabajo</span>
+    <h1 class="hero-title">¿Qué tan <span class="hl">confuciana</span> es una política de IA, y qué gobernanza revela?</h1>
+    <p class="hero-sub">Un estudio comparado de las políticas públicas de IA en educación de siete países, midiendo la resonancia de seis valores confucianos con ejes de concepto en espacio de embeddings. Producto del Programa de Veraneo de INFOTEC y capítulo metodológico de la tesis de maestría.</p>
+  </div>
+</header>
+
+<!-- ═══ TEMA + RESUMEN ═══ -->
+<section id="tema">
+  <div class="container">
+    <span class="rubric rv">1 · Tema</span>
+    <h2 class="rv">Tema y resumen</h2>
+    <p class="lead rv"><b>Tema.</b> Ética confuciana y gobernanza de la inteligencia artificial: análisis semántico comparado de políticas públicas de IA en educación.</p>
+    <span class="rubric rv" style="margin-top:1.5rem;">2 · Resumen</span>
+    <p class="body rv">La investigación pregunta en qué medida las políticas públicas de IA en educación de siete países (uno por región política) resuenan con los valores centrales del confucianismo, y qué revela esa resonancia sobre el modelo de gobernanza que cada país propone. En lugar de medir la simple cercanía de cada política a los textos clásicos —un procedimiento con serios problemas de validez— se construyen seis ejes de concepto (rén, lǐ, yì, xiūshēn, dézhì, hé) al estilo de la geometría de la cultura de Kozlowski, y se proyecta cada política sobre ellos para obtener una huella de seis valores por país. El caso de China se estudia en su evolución temporal 2017–2026, incorporando el 15º Plan Quinquenal y la iniciativa "IA + Educación" de 2026. El trabajo sostiene una tesis doble: los valores confucianos pueden enriquecer la gobernanza de la IA, pero el riesgo permanente está en su institucionalización.</p>
+    <div class="link-thesis rv"><b>Relación con la tesis.</b> Este protocolo es un módulo del trabajo recepcional de la Maestría en Pedagogía (UPAEP): aporta el marco cultural y el método de ejes de concepto que la tesis aplica al caso China dentro de su comparación de siete países.</div>
+  </div>
+</section>
+
+<!-- ═══ INTRODUCCIÓN + ANTECEDENTES ═══ -->
+<section id="antecedentes">
+  <div class="container">
+    <span class="rubric rv">3 · Introducción &nbsp;·&nbsp; 4 · Antecedentes</span>
+    <h2 class="rv">Introducción y antecedentes</h2>
+    <p class="body rv">Los países escriben sus políticas de IA en educación desde tradiciones culturales distintas. La literatura documenta que el confucianismo sigue moldeando la educación china contemporánea a través de la educación moral, el respeto a la autoridad y la búsqueda de la excelencia académica (Mustafa, 2024; Bahtilla &amp; Xu, 2021; Xu &amp; Chen, 2024). Al mismo tiempo, esa tradición carga un malentendido persistente: la memorización mecánica y la presión de los exámenes no provienen de Confucio —que defendía la reflexión y desalentaba el aprendizaje pasivo— sino de la institucionalización imperial de su ética en el sistema de exámenes (keju) y, más tarde, el gaokao.</p>
+    <p class="body rv">En China, el instrumento que da coherencia a la política de ciencia, tecnología y educación es el Plan Quinquenal. El vigente marca el punto de partida temporal más reciente para esta investigación.</p>
+
+    <div class="fyp rv">
+      <div class="fyp-zh">十五五 · 2026–2030</div>
+      <h3>El 15º Plan Quinquenal como documento clave</h3>
+      <p style="color:#ddd;font-size:.95rem;margin-top:.4rem;">Recomendaciones adoptadas en el 4º Pleno del 20º Comité Central del PCCh (20–23 oct 2025); plan aprobado por la Asamblea Nacional Popular hacia marzo de 2026.</p>
+      <ul>
+        <li>Menciona la <b>IA 52 veces</b> (el 14º Plan la mencionaba 6) e incluye un plan de acción <b>"IA+" (人工智能+)</b> autónomo.</li>
+        <li>El 10 de abril de 2026 el Ministerio de Educación lanzó <b>"IA + Educación" (人工智能+教育)</b>: sistema integral de educación en IA de primaria a universidad, con plena implementación hacia 2030.</li>
+        <li>Establece el <b>desarrollo coordinado de educación, ciencia-tecnología y talento</b> (教育科技人才), un fondo de <b>1 billón de RMB</b> para IA y robótica y una meta de <b>90% de penetración</b> de IA en la industria para 2030.</li>
+        <li>Marco general: <b>autosuficiencia tecnológica</b> y "nuevas fuerzas productivas de calidad", rumbo a la modernización socialista en 2035.</li>
+      </ul>
+    </div>
+    <div class="link-thesis rv"><b>Por qué importa para la tesis.</b> El Plan es el documento #8 del caso China (extiende la serie 2017→2026) y la expresión más nítida del gobierno planificado desde arriba: dézhì a escala nacional. El objetivo explícito de "cultivar talento" (培养人才) es xiūshēn institucionalizado, y el Plan fija incluso metas de "progreso ético-cultural". Material directo para los ejes de concepto.</div>
+  </div>
+</section>
+
+<!-- ═══ PLANTEAMIENTO + PREGUNTA + JUSTIFICACIÓN ═══ -->
+<section id="problema">
+  <div class="container">
+    <span class="rubric rv">5 · Planteamiento &nbsp;·&nbsp; 6 · Pregunta &nbsp;·&nbsp; 7 · Justificación</span>
+    <h2 class="rv">El problema, la pregunta y su justificación</h2>
+    <p class="body rv"><b>Planteamiento.</b> Existe un vacío entre dos literaturas: la que estudia la influencia confuciana en la educación china y la que analiza, con métodos computacionales, el contenido de las políticas públicas de IA. Falta un puente medible: ¿cómo se pasa de "esta política suena confuciana" a evidencia comparable entre países? La tentación de medir la cercanía semántica cruda a los textos clásicos falla, porque esa cercanía puede deberse al tema (todo documento ético comparte vocabulario) o al idioma (dos textos traducidos se parecen por la traducción, no por la filosofía).</p>
+    <div class="tk rv"><strong>Pregunta de investigación.</strong> ¿En qué medida las políticas públicas de IA en educación de siete países resuenan con los seis valores confucianos, y qué revela esa resonancia sobre el modelo de gobernanza —dézhì (gobernar por virtud) frente a fǎ (gobernar por ley)— que cada país propone?</div>
+    <p class="body rv"><b>Justificación.</b> El programa de INFOTEC busca promover la investigación sobre TIC desde enfoques tecnológico, jurídico, bioético y sostenible. Este trabajo aporta en los cuatro: ofrece un método reproducible para auditar el encuadre ético de las políticas de IA, conecta con el debate jurídico sobre gobernanza por ética frente a regulación vinculante, y aporta a América Latina una lente para leer el modelo chino sin caer en la propaganda ni en el rechazo automático.</p>
+    <div class="link-thesis rv"><b>Relación con la tesis.</b> La pregunta del veraneo es una versión acotada de la pregunta comparativa de la tesis; el método que aquí se valida (ejes de concepto) es el que la tesis usa para sus siete dimensiones preregistradas.</div>
+  </div>
+</section>
+
+<!-- ═══ OBJETIVOS ═══ -->
+<section id="objetivos">
+  <div class="container">
+    <span class="rubric rv">8 · Objetivo general &nbsp;·&nbsp; 9 · Objetivos específicos</span>
+    <h2 class="rv">Objetivos</h2>
+    <p class="lead rv"><b>Objetivo general.</b> Caracterizar y comparar la resonancia de los valores confucianos en las políticas de IA en educación de siete países mediante ejes de concepto en espacio de embeddings, y discutir su relación con los modelos de gobernanza que cada país propone.</p>
+    <p class="body rv" style="margin-top:1.2rem;"><b>Objetivos específicos.</b></p>
+    <ol class="spec rv">
+      <li>Construir seis ejes de concepto confuciano (rén, lǐ, yì, xiūshēn, dézhì, hé) a partir de frases ancla, siguiendo la geometría de la cultura de Kozlowski.</li>
+      <li>Descubrir de forma no supervisada los temas que emergen de las políticas (BERTopic), antes de imponer cualquier marco.</li>
+      <li>Proyectar las siete políticas sobre los ejes para obtener una huella de seis valores por país.</li>
+      <li>Controlar los confusores de idioma y de tema mediante un baseline y un control lingüístico (intra- frente a inter-familia).</li>
+      <li>Analizar el caso China en su evolución temporal 2017–2026, con el 15º Plan Quinquenal e "IA + Educación" como cierre de la serie.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ HIPÓTESIS ═══ -->
+<section id="hipotesis">
+  <div class="container">
+    <span class="rubric rv">10 · Supuesto o hipótesis</span>
+    <h2 class="rv">Supuesto de trabajo</h2>
+    <p class="body rv">Se espera que las políticas chinas —en especial el 15º Plan Quinquenal e "IA + Educación" (2026)— muestren la mayor resonancia en los ejes de <b>dézhì</b> (gobernar por virtud) y <b>hé</b> (armonía), mientras que las políticas de tradición liberal (Canadá, Alemania, Australia) pesen más en <b>rén</b> (centrado en la persona) y en marcos de derechos, con baja resonancia en dézhì.</p>
+    <div class="warn rv"><strong>Salvaguarda metodológica.</strong> La resonancia semántica es un proxy del encuadre discursivo, no una prueba de influencia causal ni de adhesión filosófica. Una política puede estar profundamente moldeada por el confucianismo y no usar su vocabulario, o usar palabras de "armonía" y "ética" sin ninguna raíz confuciana. Por eso el diseño mide ejes de concepto y controla idioma y tema, en lugar de leer la distancia cruda como "influencia".</div>
+  </div>
+</section>
+
+<!-- ═══ METODOLOGÍA ═══ -->
+<section id="metodologia">
+  <div class="container">
+    <span class="rubric rv">11 · Metodología</span>
+    <h2 class="rv">Metodología: seis fases, no supervisado primero</h2>
+    <p class="lead rv">El diseño invierte el orden habitual: primero se escucha lo que dicen los documentos por sí solos y solo después se impone el marco confuciano. Así se evita "encontrar" lo que se salió a buscar.</p>
+    <div class="rv" style="margin-top:1.6rem;">
+      <div class="phase" style="--accent:var(--asia);"><div class="p-n">1</div><div><h4>Temas emergentes (no supervisado)</h4><p>BERTopic sobre las siete políticas para documentar los temas que emergen antes de imponer ningún marco.</p></div></div>
+      <div class="phase" style="--accent:var(--dezhi);"><div class="p-n">2</div><div><h4>Preregistro de ejes</h4><p>Definir en <code>config.py</code> las frases ancla de los seis ejes confucianos y confirmarlas con un commit a git: el commit es el preregistro.</p></div></div>
+      <div class="phase" style="--accent:var(--yi);"><div class="p-n">3</div><div><h4>Proyección sobre ejes</h4><p>Incrustar cada chunk de política (Sentence-BERT multilingüe) y proyectarlo sobre los ejes para obtener la huella de seis valores por país.</p></div></div>
+      <div class="phase" style="--accent:var(--li);"><div class="p-n">4</div><div><h4>Control lingüístico</h4><p>Baseline solo-EN y comparación intra- frente a inter-familia lingüística para descontar el efecto del idioma y de la traducción.</p></div></div>
+      <div class="phase" style="--accent:var(--xiushen);"><div class="p-n">5</div><div><h4>Validación</h4><p>Contrastar lo no supervisado (Fase 1) con lo supervisado (Fase 3): ¿los ejes recuperan temas que el modelo halló solo?</p></div></div>
+      <div class="phase" style="--accent:var(--he);"><div class="p-n">6</div><div><h4>Profundización en China</h4><p>Evolución temporal 2017→2026 del caso China, con el 15º Plan Quinquenal e "IA + Educación" como documentos de cierre.</p></div></div>
+    </div>
+    <p class="body rv" style="margin-top:1.5rem;"><b>Materiales.</b> Embeddings con <code>paraphrase-multilingual-MiniLM-L12-v2</code> (384 dims); almacenamiento vectorial en ChromaDB; chunking de 800 caracteres con 200 de solape. Corpus de siete países: EO 14110 (EUA), Pan-Canadian AI Strategy (Canadá), CONPES 3975 (Colombia), KI-Strategie (Alemania), PC4IR (Sudáfrica), AI Action Plan (Australia) y la serie china 2017–2026.</p>
+    <div class="link-thesis rv"><b>Relación con la tesis.</b> Es exactamente el pipeline de la tesis (mismo modelo, misma colección vectorial, mismas fases). El veraneo valida el eslabón confuciano; la tesis lo integra a sus siete dimensiones preregistradas de política.</div>
+  </div>
+</section>
+
+<!-- ═══ MARCO TEÓRICO ═══ -->
+<section id="marco">
+  <div class="container">
+    <span class="rubric rv">12 · Marco teórico</span>
+    <h2 class="rv">Marco teórico</h2>
+    <div class="grid grid-3 rv" style="margin-top:1.4rem;">
+      <div class="card" style="border-top:8px solid var(--ren);"><h4>Ética confuciana</h4><p style="font-size:.92rem;color:#333;margin-top:.4rem;">Rén como núcleo, lǐ como forma, cultivo de sí mismo y gobierno por virtud (dézhì) frente a gobierno por ley (fǎ). Base en Analectas, Mencio y Xunzi.</p></div>
+      <div class="card" style="border-top:8px solid var(--li);"><h4>Geometría de la cultura</h4><p style="font-size:.92rem;color:#333;margin-top:.4rem;">Los significados culturales se pueden proyectar como direcciones en espacio de embeddings (Kozlowski et al., 2019). Fundamento de los ejes de concepto.</p></div>
+      <div class="card" style="border-top:8px solid var(--dezhi);"><h4>Análisis de políticas</h4><p style="font-size:.92rem;color:#333;margin-top:.4rem;">Encuadre (framing) discursivo y modelos de gobernanza de la IA; el debate ética frente a regulación vinculante que atraviesa el caso chino y su lectura latinoamericana.</p></div>
+    </div>
+    <p class="body rv" style="margin-top:1.4rem;">La <a href="index.html">guía confuciana para principiantes</a> desarrolla los seis conceptos y el método en detalle; esta página es su contraparte formal.</p>
+  </div>
+</section>
+
+<!-- ═══ CRONOGRAMA ═══ -->
+<section id="cronograma">
+  <div class="container">
+    <span class="rubric rv">13 · Cronograma de actividades</span>
+    <h2 class="rv">Cronograma</h2>
+    <p class="lead rv">Seis semanas del Programa de Veraneo, con la clausura del 7 de agosto como entrega, y un horizonte de continuidad hacia la tesis.</p>
+    <div class="tl rv" style="margin-top:1.6rem;">
+      <div class="tl-item"><div class="tl-date">14–20 jul</div><p>Marco confuciano, frases ancla de los seis ejes y Fase 1 (temas emergentes, BERTopic).</p></div>
+      <div class="tl-item"><div class="tl-date">21–26 jul</div><p>Fase 2 (preregistro) y Fase 3 (proyección sobre ejes, primeras huellas por país).</p></div>
+      <div class="tl-item key"><div class="tl-date">27 jul</div><p><b>Registro de modalidad</b>: ponencia o póster.</p></div>
+      <div class="tl-item key"><div class="tl-date">29 jul</div><p>Ponencia de la Dra. Beatriz Juárez Aguilar (gobernanza de la IA en China). Insumo directo para la discusión.</p></div>
+      <div class="tl-item"><div class="tl-date">30 jul–5 ago</div><p>Fase 4 (control lingüístico), Fase 5 (validación) y Fase 6 (profundización en China con el 15º Plan). Redacción del producto.</p></div>
+      <div class="tl-item key"><div class="tl-date">7 ago</div><p><b>Clausura</b>: presentación de avances y entrega.</p></div>
+      <div class="tl-item"><div class="tl-date">Después</div><p>Integración del módulo confuciano al capítulo de China de la tesis de maestría.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FUENTES ═══ -->
+<section id="fuentes">
+  <div class="container">
+    <span class="rubric rv">14 · Fuentes de información</span>
+    <h2 class="rv">Fuentes</h2>
+    <p class="lead rv">La bibliografía completa, con etiquetas JSTOR/DOI/OA y los textos primarios a muestrear, vive en la <a href="index.html#fuentes">guía confuciana</a>. Aquí se añaden las fuentes verificadas sobre el 15º Plan Quinquenal.</p>
+    <div class="rv" style="margin-top:1.3rem;">
+      <div class="src"><div class="s-cite"><b>Gobierno de China.</b> (2025). CPC plenum concludes, adopting recommendations for China's 15th Five-Year Plan. <i>english.www.gov.cn</i>, 23 oct 2025.</div><div class="s-link">english.www.gov.cn/news/202510/23/content_WS68f9f337c6d00ca5f9a06fb2.html</div></div>
+      <div class="src"><div class="s-cite"><b>Xinhua.</b> (2026). China Focus: China moves to bring AI into classrooms as it accelerates digital push. 10 abr 2026.</div><div class="s-link">english.news.cn/20260410/0bc08aa9a78645be8c870ac58dfefef4/c.html</div></div>
+      <div class="src"><div class="s-cite"><b>DigiChina (Stanford).</b> (2026). Forum: Technology in China's 15th Five-Year Plan.</div><div class="s-link">digichina.stanford.edu/work/forum-technology-in-chinas-15th-five-year-plan/</div></div>
+      <div class="src"><div class="s-cite"><b>MERICS.</b> (2025). China doubles down on innovation course — Key takeaways from the Fourth Plenum.</div><div class="s-link">merics.org/en/press-release/china-doubles-down-innovation-course-key-takeaways-fourth-plenum</div></div>
+      <div class="src"><div class="s-cite"><b>Congressional Research Service.</b> (2026). China's 15th Five-Year Plan: S&amp;T and Economic Priorities (IF13204).</div><div class="s-link">congress.gov/crs-product/IF13204</div></div>
+    </div>
+    <div class="tk rv" style="margin-top:1.4rem;"><strong>Nota de verificación.</strong> Las fuentes sobre el 15º Plan se consultaron en la web (julio 2026). Antes de citarlas en el documento final conviene contrastar cifras (52 menciones, 1 billón RMB, 90%) con el texto oficial del Plan y con el anuncio del Ministerio de Educación.</div>
+  </div>
+</section>
+
+<!-- ═══ ÍNDICE TENTATIVO ═══ -->
+<section id="indice">
+  <div class="container">
+    <span class="rubric rv">15 · Índice tentativo</span>
+    <h2 class="rv">Índice tentativo</h2>
+    <div class="toc rv">
+      <div class="toc-item"><span class="toc-num">1.</span><div><span class="toc-t">Introducción</span><div class="toc-d">Confucianismo, gobernanza de la IA y el vacío entre ambas literaturas.</div></div></div>
+      <div class="toc-item"><span class="toc-num">2.</span><div><span class="toc-t">Marco confuciano</span><div class="toc-d">Los seis conceptos; la trampa de la memorización; dézhì frente a fǎ.</div></div></div>
+      <div class="toc-item"><span class="toc-num">3.</span><div><span class="toc-t">Método</span><div class="toc-d">Ejes de concepto, embeddings, control de confusores; las seis fases.</div></div></div>
+      <div class="toc-item"><span class="toc-num">4.</span><div><span class="toc-t">Resultados comparados</span><div class="toc-d">Huellas de seis valores por país y lectura por regiones.</div></div></div>
+      <div class="toc-item"><span class="toc-num">5.</span><div><span class="toc-t">Caso China 2017–2026</span><div class="toc-d">Evolución temporal y el 15º Plan Quinquenal como cierre de la serie.</div></div></div>
+      <div class="toc-item"><span class="toc-num">6.</span><div><span class="toc-t">Discusión</span><div class="toc-d">Aporte y riesgo: el valor humano frente a la institucionalización; retos para América Latina.</div></div></div>
+      <div class="toc-item"><span class="toc-num">7.</span><div><span class="toc-t">Conclusiones y bibliografía</span><div class="toc-d">Límites del proxy semántico y líneas futuras.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;margin-bottom:.5rem;">仁 · 礼 · 义 · 修身 · 德治 · 和</p>
+    <p class="mono">Protocolo de investigación · borrador de trabajo</p>
+    <p class="mono">Hesus García Cobos · Supervisión: Dra. Beatriz Juárez Aguilar · Maestría en Pedagogía, UPAEP · INFOTEC Veraneo 2026</p>
+    <p class="mono" style="margin-top:1rem;"><a href="index.html">← Guía confuciana para principiantes</a> &nbsp;·&nbsp; <a href="../index.html">Sitio de la tesis</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('progress');
+  window.addEventListener('scroll',function(){
+    var st=document.documentElement.scrollTop;
+    var sh=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(sh>0?(st/sh)*100:0)+'%';
+  });
+})();
+(function(){
+  var nav=document.getElementById('sidenav');
+  var sections=document.querySelectorAll('section[id], header[id]');
+  sections.forEach(function(sec,i){
+    if(i>0){var line=document.createElement('div');line.className='nav-line';nav.appendChild(line);}
+    var dot=document.createElement('div');dot.className='nav-dot';
+    var h=sec.querySelector('h2,h1');
+    dot.dataset.label=h?h.textContent.substring(0,32):(sec.id||'');
+    dot.addEventListener('click',function(){sec.scrollIntoView({behavior:'smooth'});});
+    nav.appendChild(dot);
+  });
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx=Array.prototype.indexOf.call(sections,e.target);
+        nav.querySelectorAll('.nav-dot').forEach(function(d,i){d.classList.toggle('active',i===idx);});
+      }
+    });
+  },{threshold:0.3});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+(function(){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); } });
+  },{threshold:0.12});
+  document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+})();
+</script>
+</body>
+</html>
