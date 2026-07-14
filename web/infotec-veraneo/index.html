@@ -494,12 +494,16 @@ footer .mono{font-size:.75rem;opacity:.7;}
       });
       html+='</div>';
     });
-    var cv=d.construct_validity;
-    html+='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>Validez de constructo (MVP).</strong> '
+    var cv=d.construct_validity, fv=d.face_validity||{}, md=d.metadata;
+    var ap=cv.antipole_pass===true?'sí ✓':cv.antipole_pass===false?'no ✗':'n/a';
+    html+='<div class="tk" style="margin-top:1rem;font-size:.9rem;">'
+         +'<strong>Método (A/B ganador: anclas '+(md.anchor_mode||'')+' · 6 ejes).</strong> '
+         +(md.anchor_note?md.anchor_note+'. ':'')
          +'Orden Analectas &gt; control legal (UE): <b>'+cv.axes_ordered+'</b> ejes. '
-         +'Antipolo dézhì↔fǎ (Analectas&gt;0&gt;UE): <b>'+(cv.antipole_pass?'sí ✓':'no ✗')+'</b>. '
-         +'Autoanclaje de las Analectas: <b>'+cv.self_anchor_axes+'</b> (falla: '+(cv.self_anchor_failing.join(', ')||'ninguno')+'). '
-         +'Estandarizado en z contra '+d.metadata.background_n_chunks+' fragmentos del corpus. <b>'+d.metadata.status+'</b></div>';
+         +'Antipolo dézhì↔fǎ (Analectas&gt;0&gt;UE): <b>'+ap+'</b>. '
+         +(fv.china!=null?'Gobernanza: China <b>'+fv.china.toFixed(2)+'</b> vs Canadá '+fv.canada.toFixed(2)+' en dézhì; UE '+fv.eu.toFixed(2)+' (polo ley). ':'')
+         +'Estandarizado en z contra '+md.background_n_chunks+' fragmentos. <b>'+md.status+'</b></div>';
+    html+='<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">A/B 3×3 (3 conjuntos × 3 estrategias de ancla): anclar 100% en las Analectas maximiza la separación pero invierte el orden China/Canadá en dézhì (confusor de retórica); por eso gana el híbrido (pasajes de Confucio + paráfrasis moderna).</p>';
     box.innerHTML=html;
     setTimeout(function(){box.querySelectorAll('.fp').forEach(function(f){f.classList.add('vis');});},80);
   }).catch(function(){

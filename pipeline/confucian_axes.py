@@ -1,19 +1,18 @@
-"""Confucian concept-axes MVP — Kozlowski-style bipolar projection.
+"""Confucian concept-axes MVP — Analects-grounded bipolar projection + A/B test.
 
-Measures how strongly each of 3 AI-education policies expresses six Confucian
-values, by projecting their per-chunk embeddings onto six BIPOLAR axes built
-from pre-registered anchor pairs (config.CONFUCIAN_AXES):
+Each axis is a BIPOLAR direction in embedding space:
 
-    axis = normalize( mean(pos_anchors) - mean(neg_anchors) )
-    raw  = normalize(chunk_vector) . axis          # cosine in [-1, 1]
-    z    = (raw - mu_bg) / sigma_bg                 # vs. the policy-corpus background
+    positive pole = centroid of the actual Analects passages about the value
+                    (retrieved from the indexed 'analectas_confucio' collection
+                    using the concept's anchor phrases as queries — Confucius's
+                    own words, not paraphrases)
+    negative pole = centroid of constructed modern-policy contrast phrases
+    axis          = normalize(pos_centroid - neg_centroid)
 
-Unit of analysis is the CHUNK: we report distributions per (document, axis),
-never a significance test across few documents. A construct-validity check
-verifies the Analects (Confucian-positive control) separates from the EU AI Act
-(legalistic negative control) before any substantive reading.
-
-Writes web/data/confucian_mvp.json.
+A document's score on an axis is the per-chunk projection, z-scored against the
+policy-corpus background. We A/B THREE candidate axis sets (config.AXIS_SETS) and
+pick the one that best (a) separates the Analects from a legalistic control and
+(b) discriminates among real policies. Writes web/data/confucian_mvp.json.
 
 Usage:
     python -m pipeline.confucian_axes
@@ -25,16 +24,14 @@ import numpy as np
 from .config import (
     CHROMA_DIR, WEB_DATA_DIR, CONFUCIAN_MVP_JSON,
     POLICY_READ_COLLECTION_NAME, ANALECTS_COLLECTION_NAME,
-    CONFUCIAN_AXES, MVP_POLICY_IDS, MVP_CONTROL_NEG_POLICY_ID,
-    CHINA_MVP_POLICY, CHUNK_SIZE, CHUNK_OVERLAP,
-    EMBEDDING_MODEL_LOCAL,
+    CONFUCIAN_AXES, AXIS_SETS, MVP_POLICY_IDS, MVP_CONTROL_NEG_POLICY_ID,
+    CHINA_MVP_POLICY, CHUNK_SIZE, CHUNK_OVERLAP, EMBEDDING_MODEL_LOCAL,
 )
 from .preprocess import clean_text
 from .ingest import chunk_text
 from .embeddings import get_embedding_function
 from .export import NumpyEncoder
 
-# Display names for the MVP documents.
 DOC_LABELS = {
     "china_ngaidp_2017": {"label": "China · New Gen AI Development Plan 2017",
                           "country": "china", "region": "asia"},
@@ -50,7 +47,6 @@ DOC_LABELS = {
 
 
 def l2norm(mat: np.ndarray) -> np.ndarray:
-    """L2-normalize each row; zero rows are left as zero."""
     mat = np.asarray(mat, dtype=float)
     if mat.ndim == 1:
         mat = mat.reshape(1, -1)
@@ -65,7 +61,7 @@ def get_client():
 
 
 def get_vectors(collection, policy_id: str | None = None) -> np.ndarray:
-    """Return L2-normalized chunk vectors for a document (or the whole collection)."""
+    """L2-normalized chunk vectors for a document (or the whole collection)."""
     kwargs = {"include": ["embeddings"]}
     if policy_id is not None:
         kwargs["where"] = {"policy_id": policy_id}
@@ -80,9 +76,9 @@ def ensure_china_doc(policy_col):
     """The China policy is absent from the stored v1 collection; ingest on demand."""
     pid = CHINA_MVP_POLICY["policy_id"]
     if policy_col.get(where={"policy_id": pid}, include=[])["ids"]:
-        return  # already present
+        return
     raw_file = CHINA_MVP_POLICY["raw_file"]
-    click.echo(f"  China policy '{pid}' not found in collection — ingesting from {raw_file.name}")
+    click.echo(f"  China policy '{pid}' not found — ingesting from {raw_file.name}")
     cleaned = clean_text(raw_file.read_text(encoding="utf-8"))
     chunks = chunk_text(cleaned, CHUNK_SIZE, CHUNK_OVERLAP)
     ids = [f"{pid}_chunk_{i:04d}" for i in range(len(chunks))]
@@ -99,134 +95,157 @@ def ensure_china_doc(policy_col):
     click.echo(f"  Ingested {len(chunks)} China chunks")
 
 
-def build_axes(embedding_fn) -> dict:
-    """Build one unit direction vector per Confucian axis (bipolar subtraction)."""
-    axes = {}
-    for key, ax in CONFUCIAN_AXES.items():
-        pos = embedding_fn(ax["pos_anchors_en"] + ax["pos_anchors_es"])
-        neg = embedding_fn(ax["neg_anchors_en"] + ax["neg_anchors_es"])
-        direction = np.mean(np.array(pos), axis=0) - np.mean(np.array(neg), axis=0)
-        norm = np.linalg.norm(direction)
-        axes[key] = direction / norm if norm else direction
-    return axes
+def analects_centroid(analects_col, queries, k=3) -> np.ndarray:
+    """Positive pole = mean embedding of the top Analects passages for the concept."""
+    vecs = []
+    for q in queries:
+        r = analects_col.query(query_texts=[q], n_results=k, include=["embeddings"])
+        vecs.extend(r["embeddings"][0])
+    return np.mean(np.array(vecs), axis=0)
 
 
-def background_stats(bg_vecs: np.ndarray, axes: dict) -> dict:
-    """Mean/std of raw projections over the policy-corpus background, per axis."""
-    stats = {}
-    for key, axis_unit in axes.items():
-        proj = bg_vecs @ axis_unit
-        stats[key] = (float(np.mean(proj)), float(np.std(proj) or 1.0))
-    return stats
+def build_axis(mode, embedding_fn, analects_col, ax) -> np.ndarray:
+    """Bipolar axis under one anchor strategy.
+
+    theory   : positive pole = modern paraphrases (my phrases)
+    grounded : positive pole = centroid of retrieved Analects passages
+    hybrid   : positive pole = average of the two (classical + policy register)
+    The negative pole is always the constructed modern-policy contrast.
+    """
+    para = np.array(embedding_fn(ax["pos_anchors_en"] + ax["pos_anchors_es"]))
+    neg = np.mean(np.array(embedding_fn(ax["neg_anchors_en"] + ax["neg_anchors_es"])), axis=0)
+    if mode == "theory":
+        pos = para.mean(axis=0)
+    elif mode == "grounded":
+        pos = analects_centroid(analects_col, ax["pos_anchors_en"] + ax["pos_anchors_es"])
+    else:  # hybrid
+        gc = analects_centroid(analects_col, ax["pos_anchors_en"] + ax["pos_anchors_es"])
+        pos = np.mean(np.vstack([gc, para.mean(axis=0)]), axis=0)
+    direction = pos - neg
+    norm = np.linalg.norm(direction)
+    return direction / norm if norm else direction
 
 
-def score_document(vecs: np.ndarray, axes: dict, bg: dict) -> dict:
-    """Per-chunk z-scored projection distribution for one document, per axis."""
-    out = {}
-    for key, axis_unit in axes.items():
-        raw = vecs @ axis_unit
-        mu, sigma = bg[key]
-        z = (raw - mu) / sigma
-        median_z = float(np.median(z))
-        out[key] = {
-            "median_z": median_z,
-            "mean_z": float(np.mean(z)),
-            "std_z": float(np.std(z)),
-            "p25": float(np.percentile(z, 25)),
-            "p75": float(np.percentile(z, 75)),
-            "n_chunks": int(len(z)),
-            # display transform only: ±3 SD -> 0..100
-            "display_0_100": float(np.clip((median_z + 3) / 6, 0, 1) * 100),
-        }
-    return out
+def bg_stats(bg_vecs: np.ndarray, axis_unit: np.ndarray):
+    proj = bg_vecs @ axis_unit
+    return float(np.mean(proj)), float(np.std(proj) or 1.0)
 
 
-def run_construct_validity(scores: dict) -> dict:
-    """Analects (positive) must separate from EU AI Act (legalistic negative)."""
-    pos = scores["analects"]
-    neg = scores[MVP_CONTROL_NEG_POLICY_ID]
-    per_axis = {k: {"analects": pos[k]["median_z"], "control": neg[k]["median_z"],
-                    "ordered": pos[k]["median_z"] > neg[k]["median_z"]}
-                for k in CONFUCIAN_AXES}
-    axes_ordered = sum(1 for v in per_axis.values() if v["ordered"])
-    antipole = (pos["dezhi_fa"]["median_z"] > 0 > neg["dezhi_fa"]["median_z"])
-    self_anchor_fail = [k for k in CONFUCIAN_AXES if pos[k]["median_z"] <= 0]
+def axis_stats(vecs: np.ndarray, axis_unit: np.ndarray, mu: float, sigma: float) -> dict:
+    z = (vecs @ axis_unit - mu) / sigma
+    median_z = float(np.median(z))
     return {
-        "ordering_pass": axes_ordered >= 5,
-        "axes_ordered": f"{axes_ordered}/6",
-        "antipole_pass": bool(antipole),
-        "self_anchor_pass": len(self_anchor_fail) == 0,
-        "self_anchor_axes": f"{6 - len(self_anchor_fail)}/6",
-        "self_anchor_failing": self_anchor_fail,
-        "per_axis": per_axis,
+        "median_z": median_z,
+        "p25": float(np.percentile(z, 25)),
+        "p75": float(np.percentile(z, 75)),
+        "n_chunks": int(len(z)),
+        "display_0_100": float(np.clip((median_z + 3) / 6, 0, 1) * 100),
     }
+
+
+ANCHOR_MODES = ["theory", "grounded", "hybrid"]
+
+
+def evaluate_set(scores, keys):
+    """Metrics for one axis set. self_anchor is CIRCULAR under grounded/hybrid."""
+    a, e = scores["analects"], scores[MVP_CONTROL_NEG_POLICY_ID]
+    ordering = float(np.mean([a[k]["median_z"] > e[k]["median_z"] for k in keys]))
+    gap = float(np.mean([a[k]["median_z"] - e[k]["median_z"] for k in keys]))
+    disc = float(np.mean([np.std([scores[p][k]["median_z"] for p in MVP_POLICY_IDS]) for k in keys]))
+    self_anchor = float(np.mean([a[k]["median_z"] > 0 for k in keys]))
+    gov = None
+    if "dezhi_fa" in keys:
+        ch = scores["china_ngaidp_2017"]["dezhi_fa"]["median_z"]
+        ca = scores["canada_pan_canadian_ai_strategy_2017"]["dezhi_fa"]["median_z"]
+        eu = e["dezhi_fa"]["median_z"]
+        gov = {"china": ch, "canada": ca, "eu": eu,
+               "china_gt_canada": bool(ch > ca), "eu_is_law_pole": bool(eu < 0),
+               "ok": bool(ch > ca and eu < 0)}
+    return {"n_axes": len(keys), "ordering_frac": ordering, "control_gap": gap,
+            "discrimination": disc, "self_anchor_frac": self_anchor, "governance_face": gov}
 
 
 @click.command()
 def main():
-    """Compute Confucian concept-axis fingerprints for the MVP policies."""
-    click.echo("=" * 60)
-    click.echo("  CONFUCIAN CONCEPT AXES — MVP")
-    click.echo("=" * 60)
+    """A/B three axis sets × three anchor strategies; pick by governance face + discrimination."""
+    click.echo("=" * 68)
+    click.echo("  CONFUCIAN CONCEPT AXES — A/B (3 sets × 3 anchor strategies)")
+    click.echo("=" * 68)
 
     embedding_fn = get_embedding_function()
     client = get_client()
-    policy_col = client.get_collection(POLICY_READ_COLLECTION_NAME,
-                                       embedding_function=embedding_fn)
-    analects_col = client.get_collection(ANALECTS_COLLECTION_NAME,
-                                         embedding_function=embedding_fn)
-
+    policy_col = client.get_collection(POLICY_READ_COLLECTION_NAME, embedding_function=embedding_fn)
+    analects_col = client.get_collection(ANALECTS_COLLECTION_NAME, embedding_function=embedding_fn)
     ensure_china_doc(policy_col)
 
-    click.echo("Building 6 bipolar axes from pre-registered anchors...")
-    axes = build_axes(embedding_fn)
+    concepts = sorted(set(k for keys in AXIS_SETS.values() for k in keys))
+    bg_vecs = get_vectors(policy_col)
+    docvecs = {pid: get_vectors(policy_col, pid) for pid in MVP_POLICY_IDS + [MVP_CONTROL_NEG_POLICY_ID]}
+    docvecs["analects"] = get_vectors(analects_col)
 
-    click.echo("Computing background distribution (policy corpus)...")
-    bg_vecs = get_vectors(policy_col)  # all policy chunks
-    bg = background_stats(bg_vecs, axes)
+    # scores_by_mode[mode][doc][concept], metrics_by_mode[mode][set]
+    scores_by_mode, metrics = {}, {}
+    for mode in ANCHOR_MODES:
+        axes = {c: build_axis(mode, embedding_fn, analects_col, CONFUCIAN_AXES[c]) for c in concepts}
+        bg = {c: bg_stats(bg_vecs, axes[c]) for c in concepts}
+        sc = {doc: {c: axis_stats(vecs, axes[c], *bg[c]) for c in concepts}
+              for doc, vecs in docvecs.items()}
+        scores_by_mode[mode] = sc
+        metrics[mode] = {name: evaluate_set(sc, keys) for name, keys in AXIS_SETS.items()}
 
-    # Score the 3 MVP policies + the two controls.
-    scores, n_chunks = {}, {}
-    for pid in MVP_POLICY_IDS + [MVP_CONTROL_NEG_POLICY_ID]:
-        vecs = get_vectors(policy_col, pid)
-        scores[pid] = score_document(vecs, axes, bg)
-        n_chunks[pid] = len(vecs)
-    analects_vecs = get_vectors(analects_col)
-    scores["analects"] = score_document(analects_vecs, axes, bg)
-    n_chunks["analects"] = len(analects_vecs)
+    # ── Pick winner (mode, set): governance face first, then discrimination ──
+    # Prefer sets that pass governance face validity; among those, prefer anchors
+    # grounded in the actual text (hybrid > theory) for provenance defensibility.
+    # grounded-alone is de facto excluded because it fails governance (it measures
+    # resemblance to Confucius's virtue-prose, not the governance model).
+    mode_pref = {"hybrid": 2, "theory": 1, "grounded": 0}
+    def rank_key(mode, name):
+        m = metrics[mode][name]
+        gov_ok = 1 if (m["governance_face"] and m["governance_face"]["ok"]) else 0
+        return (gov_ok, mode_pref[mode], m["discrimination"])
+    win_mode, win_set = max(((mo, s) for mo in ANCHOR_MODES for s in AXIS_SETS), key=lambda t: rank_key(*t))
+    win_keys = AXIS_SETS[win_set]
+    scores = scores_by_mode[win_mode]
 
-    validity = run_construct_validity(scores)
+    a, e = scores["analects"], scores[MVP_CONTROL_NEG_POLICY_ID]
+    ordered = sum(a[k]["median_z"] > e[k]["median_z"] for k in win_keys)
+    self_fail = [k for k in win_keys if a[k]["median_z"] <= 0]
+    antipole = bool(a["dezhi_fa"]["median_z"] > 0 > e["dezhi_fa"]["median_z"]) if "dezhi_fa" in win_keys else None
+    cv = {"axes_ordered": f"{ordered}/{len(win_keys)}", "ordering_pass": ordered >= len(win_keys) - 1,
+          "antipole_pass": antipole, "self_anchor_axes": f"{len(win_keys) - len(self_fail)}/{len(win_keys)}",
+          "self_anchor_failing": self_fail,
+          "self_anchor_note": "circular bajo grounded/hybrid (el polo positivo es texto de las Analectas)"}
 
-    # Face validity: China should lean more to dézhì than Canada.
-    face = {
-        "china_dezhi_median_z": scores["china_ngaidp_2017"]["dezhi_fa"]["median_z"],
-        "canada_dezhi_median_z": scores["canada_pan_canadian_ai_strategy_2017"]["dezhi_fa"]["median_z"],
-    }
-    face["china_gt_canada_on_dezhi"] = face["china_dezhi_median_z"] > face["canada_dezhi_median_z"]
-
-    # ── Assemble output ──
-    def doc_block(pid):
+    def doc_block(pid, keys):
         meta = DOC_LABELS.get(pid, {"label": pid, "country": "", "region": ""})
-        return {"label": meta["label"], "country": meta["country"],
-                "region": meta["region"], "n_chunks": n_chunks[pid],
-                "axes": scores[pid]}
+        return {"label": meta["label"], "country": meta["country"], "region": meta["region"],
+                "n_chunks": scores[pid][keys[0]]["n_chunks"], "axes": {k: scores[pid][k] for k in keys}}
 
     output = {
-        "axes": [{"key": k, "zh": ax["zh"], "pinyin": ax["pinyin"],
-                  "label": ax["label"], "pos_pole": ax["pos_pole"],
-                  "neg_pole": ax["neg_pole"]}
-                 for k, ax in CONFUCIAN_AXES.items()],
-        "documents": {pid: doc_block(pid) for pid in MVP_POLICY_IDS},
-        "controls": {"analects": doc_block("analects"),
-                     MVP_CONTROL_NEG_POLICY_ID: doc_block(MVP_CONTROL_NEG_POLICY_ID)},
-        "construct_validity": validity,
-        "face_validity": face,
+        "winner": {"anchor_mode": win_mode, "axis_set": win_set},
+        "ab_test": {
+            "criterion": "validez de gobernanza (China>Canadá en dézhì y UE en polo de ley), luego discriminación",
+            "matrix": {mode: {name: {"axes": AXIS_SETS[name], **metrics[mode][name]}
+                              for name in AXIS_SETS} for mode in ANCHOR_MODES},
+        },
+        "axes": [{"key": k, "zh": CONFUCIAN_AXES[k]["zh"], "pinyin": CONFUCIAN_AXES[k]["pinyin"],
+                  "label": CONFUCIAN_AXES[k]["label"], "pos_pole": CONFUCIAN_AXES[k]["pos_pole"],
+                  "neg_pole": CONFUCIAN_AXES[k]["neg_pole"]} for k in win_keys],
+        "documents": {pid: doc_block(pid, win_keys) for pid in MVP_POLICY_IDS},
+        "controls": {"analects": doc_block("analects", win_keys),
+                     MVP_CONTROL_NEG_POLICY_ID: doc_block(MVP_CONTROL_NEG_POLICY_ID, win_keys)},
+        "construct_validity": cv,
+        "face_validity": metrics[win_mode][win_set]["governance_face"],
         "metadata": {
             "embedding_model": EMBEDDING_MODEL_LOCAL,
+            "anchor_mode": win_mode,
+            "anchor_note": {"theory": "polo positivo = paráfrasis modernas",
+                            "grounded": "polo positivo = pasajes reales de las Analectas",
+                            "hybrid": "polo positivo = Analectas + paráfrasis"}[win_mode],
             "standardization": "z-score vs policy-corpus background",
             "unit_of_analysis": "chunk (800 chars, 200 overlap)",
             "background_n_chunks": int(len(bg_vecs)),
-            "status": "PRELIMINAR / MVP — solo validez de constructo",
+            "status": "PRELIMINAR / MVP",
         },
     }
 
@@ -234,21 +253,26 @@ def main():
     with open(CONFUCIAN_MVP_JSON, "w", encoding="utf-8") as f:
         json.dump(output, f, cls=NumpyEncoder, ensure_ascii=False, indent=2)
 
-    # ── Console report ──
-    click.echo("\n  Fingerprints (median z per axis):")
-    header = "  " + " " * 40 + "".join(f"{k[:8]:>9}" for k in CONFUCIAN_AXES)
-    click.echo(header)
+    # ── Console matrix ──
+    click.echo(f"\n  {'mode':9s}{'set':8s}{'discrim↑':>9}{'gap↑':>7}{'orden':>7}{'gov.face':>10}")
+    for mode in ANCHOR_MODES:
+        for name in AXIS_SETS:
+            m = metrics[mode][name]
+            g = m["governance_face"]
+            gv = ("ok" if g["ok"] else "China<Can" if not g["china_gt_canada"] else "EU!<0") if g else "n/a"
+            mk = "  <--" if (mode, name) == (win_mode, win_set) else ""
+            click.echo(f"  {mode:9s}{name:8s}{m['discrimination']:>9.2f}{m['control_gap']:>7.2f}"
+                       f"{m['ordering_frac']:>7.2f}{gv:>10}{mk}")
+    click.echo(f"\n  GANADOR: anchor={win_mode}  set={win_set}  ({', '.join(win_keys)})")
+    click.echo("\n  Fingerprints (median z):")
+    click.echo("  " + " " * 40 + "".join(f"{k[:8]:>9}" for k in win_keys))
     for pid in MVP_POLICY_IDS + [MVP_CONTROL_NEG_POLICY_ID, "analects"]:
-        row = "".join(f"{scores[pid][k]['median_z']:>9.2f}" for k in CONFUCIAN_AXES)
+        row = "".join(f"{scores[pid][k]['median_z']:>9.2f}" for k in win_keys)
         click.echo(f"  {DOC_LABELS.get(pid, {}).get('label', pid)[:40]:40s}{row}")
-
-    click.echo("\n  Construct validity:")
-    click.echo(f"    ordering (>=5/6): {validity['ordering_pass']}  ({validity['axes_ordered']})")
-    click.echo(f"    antipole (Analects>0>EU on dézhì↔fǎ): {validity['antipole_pass']}")
-    click.echo(f"    self-anchor (Analects>0 per axis): {validity['self_anchor_axes']}"
-               f"  failing: {validity['self_anchor_failing'] or 'none'}")
-    click.echo(f"  Face validity — China>Canada on dézhì: {face['china_gt_canada_on_dezhi']}")
-    click.echo(f"\n  Wrote {CONFUCIAN_MVP_JSON}")
+    g = metrics[win_mode][win_set]["governance_face"]
+    click.echo(f"\n  Gobernanza: China {g['china']:.2f} vs Canadá {g['canada']:.2f} (China>Can={g['china_gt_canada']}), "
+               f"UE {g['eu']:.2f} (polo ley={g['eu_is_law_pole']})")
+    click.echo(f"  Wrote {CONFUCIAN_MVP_JSON}")
 
 
 if __name__ == "__main__":

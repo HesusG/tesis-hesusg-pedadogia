@@ -623,4 +623,71 @@ CONFUCIAN_AXES = {
             "Enfatizar la libertad individual, el disenso y la elección personal por encima de la concordia colectiva.",
         ],
     },
+    "zhi": {
+        "label": "Sabiduría", "zh": "智", "pinyin": "zhì",
+        "pos_pole": "discernimiento", "neg_pole": "ignorancia",
+        "pos_anchors_en": [
+            "Wisdom and practical knowledge; knowing right from wrong and understanding people.",
+            "The wise person discerns what is true and acts with good judgment.",
+        ],
+        "pos_anchors_es": [
+            "Sabiduría y conocimiento práctico; distinguir lo correcto de lo incorrecto y comprender a las personas.",
+            "La persona sabia discierne lo verdadero y actúa con buen juicio.",
+        ],
+        "neg_anchors_en": [
+            "Ignorance, folly, and acting without understanding or discernment.",
+            "Deciding blindly, without knowledge or careful judgment.",
+        ],
+        "neg_anchors_es": [
+            "Ignorancia, insensatez y actuar sin comprensión ni discernimiento.",
+            "Decidir a ciegas, sin conocimiento ni juicio cuidadoso.",
+        ],
+    },
+    "xin": {
+        "label": "Confiabilidad", "zh": "信", "pinyin": "xìn",
+        "pos_pole": "buena fe", "neg_pole": "engaño",
+        "pos_anchors_en": [
+            "Trustworthiness, sincerity, and keeping one's word; good faith and reliability.",
+            "A trustworthy person honors commitments and can be relied upon.",
+        ],
+        "pos_anchors_es": [
+            "Confiabilidad, sinceridad y cumplir la palabra dada; buena fe y fiabilidad.",
+            "La persona confiable honra sus compromisos y merece confianza.",
+        ],
+        "neg_anchors_en": [
+            "Deceit, broken promises, and bad faith; being unreliable and dishonest.",
+            "Manipulation and disregard for one's given word.",
+        ],
+        "neg_anchors_es": [
+            "Engaño, promesas rotas y mala fe; ser poco fiable y deshonesto.",
+            "Manipulación y desprecio por la palabra dada.",
+        ],
+    },
+    "xue": {
+        "label": "Aprendizaje", "zh": "学", "pinyin": "xué",
+        "pos_pole": "estudio devoto", "neg_pole": "sin estudio",
+        "pos_anchors_en": [
+            "Devoted study and lifelong learning; loving to learn and constantly practicing what one learns.",
+            "Setting one's heart on learning and pursuing knowledge throughout life.",
+        ],
+        "pos_anchors_es": [
+            "Estudio devoto y aprendizaje a lo largo de la vida; amar el aprendizaje y practicar constantemente lo aprendido.",
+            "Poner el corazón en el aprendizaje y buscar el conocimiento toda la vida.",
+        ],
+        "neg_anchors_en": [
+            "Neglecting study, refusing to learn, and remaining in ignorance.",
+            "Indifference to knowledge and to improving one's understanding.",
+        ],
+        "neg_anchors_es": [
+            "Descuidar el estudio, negarse a aprender y permanecer en la ignorancia.",
+            "Indiferencia hacia el conocimiento y hacia mejorar la propia comprensión.",
+        ],
+    },
+}
+
+# A/B test: three candidate axis sets, scored over the same Analects-grounded anchors.
+AXIS_SETS = {
+    "tuned6": ["ren", "li", "yi", "xiushen", "dezhi_fa", "he"],
+    "edu7":   ["ren", "li", "yi", "xiushen", "dezhi_fa", "he", "xue"],
+    "canon5": ["ren", "yi", "li", "zhi", "xin"],
 }
