@@ -74,3 +74,22 @@ Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo �
 **Pipeline confirmado:** `curl → strip HTML → clean → translate ZH→EN → chunk 500/50 → blurb → embed → politicas_v3`.
 
 **Veredicto:** ✅ feasible vía curl. Próximo: `fetch_china.py` (curl+extract) para las URLs confirmadas + pinear provinciales + traducir + ingerir.
+
+---
+
+## SPIKE Fase 2c — fetch_china.py (construir + jalar)
+
+**Qué se hizo:** `pipeline_v3/fetch_china.py` (curl + extracción HTML→texto, solo stdlib) con el **registro pre-registrado de 10 docs** (metadata Tier A: doc_id, genre, scope, adopting_body, year, título) → `china_2026_registry.json`.
+
+**Resultado del run:**
+- ✅ **4/5 con-URL jalados con texto verbatim:** flagship (6.3k chars, 人工智能×96) · Q&A (3.2k, ×59) · **15º Plan Quinquenal (7.9k, ×7) — COMPLETO por curl** (WebFetch lo había parafraseado → vindica "curl, no WebFetch") · reporte docentes (1.4k, ×6).
+- ⚠️ **Guangdong: 0 chars** — el portal `szns.gov.cn` tiene el contenido en un **PDF adjunto**; necesita vía PDF (pypdf, ya en el repo) o la URL del PDF (`jyj.gz.gov.cn/.../10608660.pdf`).
+- ⏳ **5 provinciales 2025: URL exacta pendiente** (Beijing, Zhejiang, Henan, Jiangsu + Consejo de Estado "IA+").
+
+**Hallazgos:**
+- El extractor stdlib (curl + regex, filtra líneas con contenido chino) **funciona para páginas gov/edu HTML estándar**; falla en portales cuyo contenido real es un PDF/iframe → se necesita un segundo camino (PDF).
+- Se amplió `GENRE_VOCAB` con **"guidance"** (Q&A, guía Guangdong).
+
+**Estado corpus China v3: 4 sólidos** (todos 2026 nacionales). Para ~10 faltan: Guangdong (PDF) + 5 provinciales (URLs).
+
+**Next:** (a) pinear URLs provinciales 2025, (b) extraer Guangdong vía PDF, (c) traducir ZH→EN los ~10, (d) chunk+blurb+embed → `politicas_v3`.

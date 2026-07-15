@@ -38,7 +38,7 @@ TIER_A_FIELDS = {
     "adopting_body": str, "doc_type_official": str,
     "source_uri": str, "n_pages": int, "ingest_version": str,
 }
-GENRE_VOCAB = ["strategy", "law", "action_plan", "report"]   # vocabulario controlado
+GENRE_VOCAB = ["strategy", "law", "action_plan", "report", "guidance"]   # vocabulario controlado (spike Fase 2b: +guidance)
 # Campos indexados/filtrables (bajos en cardinalidad — guía Pinecone):
 FILTERABLE_FIELDS = ["country", "region", "genre", "language", "year"]
 
