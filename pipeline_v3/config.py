@@ -1,0 +1,94 @@
+"""Pipeline v3 — configuración PRE-REGISTRADA (SPIKE Fase 1).
+
+Todo lo que la medición necesita cuelga de aquí. Commit a git = pre-registro
+(metodología v2, Fase 2). No modificar tras congelar sin re-versionar `INGEST_VERSION`.
+"""
+import os
+import json
+from dataclasses import dataclass, asdict
+from pathlib import Path
+
+from dotenv import load_dotenv
+load_dotenv()
+
+# ── Paths ──
+PROJECT_ROOT = Path(__file__).parent.parent
+POLICIES_DIR = PROJECT_ROOT / "policies"
+METADATA_FILE = POLICIES_DIR / "metadata.json"
+CHROMA_DIR = PROJECT_ROOT / ".chroma_db"
+WEB_DATA_DIR = PROJECT_ROOT / "web" / "data"
+CODEBOOK_FILE = Path(__file__).parent / "codebook.json"
+CACHE_DIR = Path(__file__).parent / "cache"          # blurbs + salidas crudas cacheadas
+
+# ── Pipeline params (pre-registrados) ──
+INGEST_VERSION = "v3.0"
+COLLECTION_V3 = "politicas_v3"
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 50
+EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"   # multilingüe, local, reproducible
+CONTEXT_BLURB_MODEL = "gpt-4o-mini"                          # Anthropic-style contextual retrieval
+CLASSIFIER_TEMPERATURE = 0.0                                 # determinismo
+
+# ── Esquema de metadata (dos capas) ──
+# Tier A: manual/determinista, nivel documento. `genre` = control del confusor (NUNCA por LLM).
+TIER_A_FIELDS = {
+    "doc_id": str, "country": str, "region": str,
+    "genre": str, "language": str, "year": int,
+    "adopting_body": str, "doc_type_official": str,
+    "source_uri": str, "n_pages": int, "ingest_version": str,
+}
+GENRE_VOCAB = ["strategy", "law", "action_plan", "report"]   # vocabulario controlado
+# Campos indexados/filtrables (bajos en cardinalidad — guía Pinecone):
+FILTERABLE_FIELDS = ["country", "region", "genre", "language", "year"]
+
+# Tier B: auto, congelado-cacheado, SOLO retrieval.
+TIER_B_FIELDS = {
+    "chunk_id": str, "parent_doc_id": str, "chunk_index": int,
+    "page": int, "char_start": int, "char_end": int,
+    "context": str, "emb_model": str, "ctx_model": str,
+}
+
+# ── Panel de jueces (etiquetado por ORIGEN para el contraste transcultural) ──
+@dataclass
+class Judge:
+    key: str
+    provider: str        # openai | google | together | anthropic
+    model: str
+    origin: str          # "western" | "chinese"
+    env_key: str         # variable de entorno con la API key
+
+PANEL = [
+    Judge("gpt",      "openai",   "gpt-4o-mini",                              "western", "OPENAI_API_KEY"),
+    Judge("gemini",   "google",   "gemini-1.5-flash",                         "western", "GOOGLE_API_KEY"),
+    Judge("llama",    "together",  "meta-llama/Llama-3.3-70B-Instruct-Turbo", "western", "TOGETHER_API_KEY"),
+    Judge("qwen",     "together",  "Qwen/Qwen2.5-72B-Instruct-Turbo",         "chinese", "TOGETHER_API_KEY"),
+    Judge("deepseek", "together",  "deepseek-ai/DeepSeek-V3",                 "chinese", "TOGETHER_API_KEY"),
+    # Claude se añade en runtime vía el harness (sin key cruda).
+]
+
+def available_judges():
+    """Jueces con API key presente en el entorno."""
+    return [j for j in PANEL if os.getenv(j.env_key)]
+
+def load_codebook() -> dict:
+    return json.loads(CODEBOOK_FILE.read_text(encoding="utf-8"))
+
+# ── Ejes confucianos (Vía A = embeddings; Vía B = LLM para dézhì) ──
+# Se reutilizan los 6 ejes tuned validados en pipeline/config.py (A/B ganador: híbrido+tuned6).
+AXES = ["ren", "li", "yi", "xiushen", "dezhi_fa", "he"]
+AXIS_LLM = "dezhi_fa"   # el eje difícil que va por Vía B (clasificador)
+
+
+if __name__ == "__main__":
+    print(f"INGEST_VERSION={INGEST_VERSION}  collection={COLLECTION_V3}")
+    print(f"chunk={CHUNK_SIZE}/{CHUNK_OVERLAP}  emb={EMBEDDING_MODEL}")
+    print(f"Tier A: {len(TIER_A_FIELDS)} campos  |  Tier B: {len(TIER_B_FIELDS)} campos")
+    print(f"genre vocab: {GENRE_VOCAB}")
+    av = available_judges()
+    print(f"Panel: {len(PANEL)} jueces definidos, {len(av)} disponibles con keys:")
+    for j in PANEL:
+        ok = "✓" if os.getenv(j.env_key) else "—"
+        print(f"  [{ok}] {j.key:9s} {j.origin:8s} {j.model}")
+    cb = load_codebook()
+    print(f"Códebook '{cb['axis']}': {len(cb['decision_rules'])} reglas, "
+          f"{len(cb['examples_positive'])}+/{len(cb['examples_negative'])}- ejemplos")
