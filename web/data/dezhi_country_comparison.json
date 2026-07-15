@@ -1,0 +1,56 @@
+{
+  "axis": "dezhi_governance",
+  "k_passages": 3,
+  "n_classifications": 124,
+  "country_dezhi": {
+    "china": {
+      "median": 1,
+      "mean": 1.0588235294117647,
+      "n": 17
+    },
+    "eeuu": {
+      "median": 0.0,
+      "mean": 0,
+      "n": 20
+    },
+    "canada": {
+      "median": 0,
+      "mean": 0,
+      "n": 21
+    },
+    "colombia": {
+      "median": 0,
+      "mean": 0.058823529411764705,
+      "n": 17
+    },
+    "alemania": {
+      "median": 0.0,
+      "mean": -0.25,
+      "n": 16
+    },
+    "sudafrica": {
+      "median": 0.0,
+      "mean": 0,
+      "n": 16
+    },
+    "australia": {
+      "median": 0,
+      "mean": 0,
+      "n": 17
+    }
+  },
+  "ranking": [
+    "china",
+    "eeuu",
+    "canada",
+    "colombia",
+    "alemania",
+    "sudafrica",
+    "australia"
+  ],
+  "origin_median": {
+    "western": 0,
+    "chinese": 0
+  },
+  "status": "PRELIMINAR / MVP — panel EN, K=3 pasajes de gobernanza/país"
+}

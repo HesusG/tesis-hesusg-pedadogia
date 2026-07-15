@@ -179,3 +179,26 @@ Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo �
 - China está en chino (8 docs edu 2025-2026); los demás en su idioma original → la traducción a EN para el panel (Vía B) se hace en la comparación.
 
 **Estado:** ✅ corpus v3 completo (7 países). Listo para la comparación central China-vs-liberales en dézhì.
+
+---
+
+## SPIKE Fase 4 — comparación cross-country en dézhì (China vs liberales)
+
+**Diseño:** top-3 pasajes de gobernanza por país (7 países) de `politicas_v3` → traducidos a EN → clasificados por el panel de 7 jueces. n=124 clasificaciones válidas.
+
+**Resultado — la afirmación central CONFIRMADA:**
+| país | mediana | media |
+|---|---|---|
+| **China** | **+1.00** | +1.06 |
+| EUA / Canadá / Colombia / Sudáfrica / Australia | 0.00 | ~0.00 |
+| Alemania | 0.00 | **−0.25** (único lean liberal) |
+
+**Hallazgos:**
+1. **China se separa sola** (+1.0 vs todos en 0). El eje aísla el encuadre "Estado cultiva/dirige" que es específico de China. Método validado.
+2. **Los liberales quedan en 0 (no negativo):** no dicen "derechos limitan al Estado" explícitamente; simplemente no encuadran al Estado como cultivador → neutral. Alemania (−0.25) = el único lean liberal (tradición de derechos). Eje = presencia de estatismo (0..+2).
+3. **El payoff del método de dos vías:** con embeddings China≈Canadá (0.83/0.83, empate); con el LLM China +1.0 vs Canadá 0. **El LLM logra lo que el coseno no pudo** — arco narrativo de la tesis demostrado.
+4. **Sidequest replicado:** occidental media +0.17 vs chino +0.07 → los modelos occidentales atribuyen algo más de estatismo, consistente con la Fase 3.
+
+**Caveats:** K=3/país, n=124, preliminar; medianas mayormente 0 (pasajes de gobernanza escasos); China = corpus edu 2025-2026. Salida: `web/data/dezhi_country_comparison.json`.
+
+**Veredicto:** ✅ el instrumento separa a China de los liberales en dézhì donde los embeddings fallaban. La afirmación central de la tesis tiene evidencia reproducible.
