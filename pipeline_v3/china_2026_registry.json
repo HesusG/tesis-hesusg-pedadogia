@@ -79,15 +79,12 @@
     "adopting_body": "广东省教育厅",
     "doc_type_official": "应用指南",
     "title_en": "Guangdong Basic-Education AI Full-Scenario Application Guide",
-    "url": "https://www.szns.gov.cn/nsqjyj/gkmlpt/content/12/12794/post_12794118.html",
+    "url": null,
     "language": "zh",
     "country": "china",
     "region": "asia",
     "ingest_version": "v3.0",
-    "status": "ok",
-    "source_uri": "https://www.szns.gov.cn/nsqjyj/gkmlpt/content/12/12794/post_12794118.html",
-    "n_chars": 0,
-    "ai_mentions": 0
+    "status": "url_pendiente"
   },
   {
     "doc_id": "cn_statecouncil_aiplus_2025",
@@ -97,12 +94,15 @@
     "adopting_body": "国务院",
     "doc_type_official": "意见",
     "title_en": "State Council 'AI+' Opinion (education/AI-literacy section)",
-    "url": null,
+    "url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
     "language": "zh",
     "country": "china",
     "region": "asia",
     "ingest_version": "v3.0",
-    "status": "url_pendiente"
+    "status": "ok",
+    "source_uri": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm",
+    "n_chars": 5627,
+    "ai_mentions": 92
   },
   {
     "doc_id": "cn_beijing_k12_ai_2025",
@@ -112,12 +112,15 @@
     "adopting_body": "北京市教委",
     "doc_type_official": "工作方案",
     "title_en": "Beijing K-12 AI Education Plan 2025-2027",
-    "url": null,
+    "url": "https://jw.beijing.gov.cn/xxgk/2024zcwj/2024qtwj/202503/t20250307_4028227.html",
     "language": "zh",
     "country": "china",
     "region": "asia",
     "ingest_version": "v3.0",
-    "status": "url_pendiente"
+    "status": "ok",
+    "source_uri": "https://jw.beijing.gov.cn/xxgk/2024zcwj/2024qtwj/202503/t20250307_4028227.html",
+    "n_chars": 4899,
+    "ai_mentions": 96
   },
   {
     "doc_id": "cn_zhejiang_ai_edu_2025",
@@ -127,12 +130,15 @@
     "adopting_body": "浙江省教育厅",
     "doc_type_official": "行动方案",
     "title_en": "Zhejiang 'AI+Education' Action Plan 2025-2029",
-    "url": null,
+    "url": "https://fgc.zjnu.edu.cn/2025/0430/c16734a516807/page.htm",
     "language": "zh",
     "country": "china",
     "region": "asia",
     "ingest_version": "v3.0",
-    "status": "url_pendiente"
+    "status": "ok",
+    "source_uri": "https://fgc.zjnu.edu.cn/2025/0430/c16734a516807/page.htm",
+    "n_chars": 4546,
+    "ai_mentions": 86
   },
   {
     "doc_id": "cn_henan_ai_edu_2025",
@@ -142,12 +148,15 @@
     "adopting_body": "河南省教育厅",
     "doc_type_official": "三年行动计划",
     "title_en": "Henan 'AI+Education' 3-Year Action Plan 2025-2027",
-    "url": null,
+    "url": "https://www.zztrc.edu.cn/wlzx/info/1321/17291.htm",
     "language": "zh",
     "country": "china",
     "region": "asia",
     "ingest_version": "v3.0",
-    "status": "url_pendiente"
+    "status": "ok",
+    "source_uri": "https://www.zztrc.edu.cn/wlzx/info/1321/17291.htm",
+    "n_chars": 4088,
+    "ai_mentions": 77
   },
   {
     "doc_id": "cn_jiangsu_ai_edu_2025",
@@ -157,11 +166,14 @@
     "adopting_body": "江苏省教育厅",
     "doc_type_official": "行动方案",
     "title_en": "Jiangsu AI-Enabled Education Development Plan 2025-2027",
-    "url": null,
+    "url": "https://edu.nanjing.gov.cn/njsjyj/202506/t20250604_5577484.html",
     "language": "zh",
     "country": "china",
     "region": "asia",
     "ingest_version": "v3.0",
-    "status": "url_pendiente"
+    "status": "needs_review",
+    "source_uri": "https://edu.nanjing.gov.cn/njsjyj/202506/t20250604_5577484.html",
+    "n_chars": 46,
+    "ai_mentions": 0
   }
 ]

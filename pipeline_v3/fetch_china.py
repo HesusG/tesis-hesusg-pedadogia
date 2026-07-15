@@ -39,23 +39,28 @@ DOCS = [
     {"doc_id": "cn_guangdong_ai_edu_2026", "year": 2026, "genre": "guidance", "scope": "provincial",
      "adopting_body": "广东省教育厅", "doc_type_official": "应用指南",
      "title_en": "Guangdong Basic-Education AI Full-Scenario Application Guide",
-     "url": "https://www.szns.gov.cn/nsqjyj/gkmlpt/content/12/12794/post_12794118.html"},
+     "url": None},  # portal 0-chars + PDF 504 (servidor bloquea) — pendiente
     # ── provinciales/nacionales 2025 — URL exacta PENDIENTE de pinear ──
     {"doc_id": "cn_statecouncil_aiplus_2025", "year": 2025, "genre": "law", "scope": "national",
      "adopting_body": "国务院", "doc_type_official": "意见",
-     "title_en": "State Council 'AI+' Opinion (education/AI-literacy section)", "url": None},
+     "title_en": "State Council 'AI+' Opinion (education/AI-literacy section)",
+     "url": "https://www.gov.cn/zhengce/content/202508/content_7037861.htm"},
     {"doc_id": "cn_beijing_k12_ai_2025", "year": 2025, "genre": "action_plan", "scope": "municipal",
      "adopting_body": "北京市教委", "doc_type_official": "工作方案",
-     "title_en": "Beijing K-12 AI Education Plan 2025-2027", "url": None},
+     "title_en": "Beijing K-12 AI Education Plan 2025-2027",
+     "url": "https://jw.beijing.gov.cn/xxgk/2024zcwj/2024qtwj/202503/t20250307_4028227.html"},
     {"doc_id": "cn_zhejiang_ai_edu_2025", "year": 2025, "genre": "action_plan", "scope": "provincial",
      "adopting_body": "浙江省教育厅", "doc_type_official": "行动方案",
-     "title_en": "Zhejiang 'AI+Education' Action Plan 2025-2029", "url": None},
+     "title_en": "Zhejiang 'AI+Education' Action Plan 2025-2029",
+     "url": "https://fgc.zjnu.edu.cn/2025/0430/c16734a516807/page.htm"},  # mirror .edu.cn (gov geo-bloqueado)
     {"doc_id": "cn_henan_ai_edu_2025", "year": 2025, "genre": "action_plan", "scope": "provincial",
      "adopting_body": "河南省教育厅", "doc_type_official": "三年行动计划",
-     "title_en": "Henan 'AI+Education' 3-Year Action Plan 2025-2027", "url": None},
+     "title_en": "Henan 'AI+Education' 3-Year Action Plan 2025-2027",
+     "url": "https://www.zztrc.edu.cn/wlzx/info/1321/17291.htm"},  # mirror .edu.cn (gov 403)
     {"doc_id": "cn_jiangsu_ai_edu_2025", "year": 2025, "genre": "action_plan", "scope": "provincial",
      "adopting_body": "江苏省教育厅", "doc_type_official": "行动方案",
-     "title_en": "Jiangsu AI-Enabled Education Development Plan 2025-2027", "url": None},
+     "title_en": "Jiangsu AI-Enabled Education Development Plan 2025-2027",
+     "url": "https://edu.nanjing.gov.cn/njsjyj/202506/t20250604_5577484.html"},  # mirror Nanjing (oficial JS-dinámico)
 ]
 
 
@@ -99,10 +104,13 @@ def main():
         try:
             text = html_to_text(fetch(d["url"]))
             ai = text.count("人工智能")
-            (RAW_DIR / f"{d['doc_id']}_zh.txt").write_text(text, encoding="utf-8")
-            rec.update(status="ok", source_uri=d["url"], n_chars=len(text), ai_mentions=ai)
-            flag = "" if ai >= 3 and len(text) > 800 else "  ⚠ revisar (poco contenido)"
-            print(f"  [OK]   {d['doc_id']:32s} {len(text):>7} chars | 人工智能×{ai}{flag}")
+            good = len(text) > 800
+            if good:  # no escribir archivos casi vacíos (páginas JS/portales)
+                (RAW_DIR / f"{d['doc_id']}_zh.txt").write_text(text, encoding="utf-8")
+            rec.update(status="ok" if good else "needs_review",
+                       source_uri=d["url"], n_chars=len(text), ai_mentions=ai)
+            tag, flag = ("OK ", "") if good else ("REV", "  ⚠ needs_review (JS/portal)")
+            print(f"  [{tag}]  {d['doc_id']:32s} {len(text):>7} chars | 人工智能×{ai}{flag}")
         except Exception as e:  # noqa: BLE001
             rec.update(status=f"fail: {e}", source_uri=d["url"])
             print(f"  [FAIL] {d['doc_id']:32s} {e}")

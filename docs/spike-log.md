@@ -93,3 +93,33 @@ Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo �
 **Estado corpus China v3: 4 sólidos** (todos 2026 nacionales). Para ~10 faltan: Guangdong (PDF) + 5 provinciales (URLs).
 
 **Next:** (a) pinear URLs provinciales 2025, (b) extraer Guangdong vía PDF, (c) traducir ZH→EN los ~10, (d) chunk+blurb+embed → `politicas_v3`.
+
+---
+
+## SPIKE Fase 2d — cierre del corpus China 2025-2026
+
+**Qué se hizo:** research pineó las 5 URLs provinciales/nacionales 2025 (con línea de apertura confirmada); se cablearon en `fetch_china.py` y se re-corrió.
+
+**Corpus cerrado: 8 documentos sólidos** con texto verbatim (ZH):
+| doc | chars | 人工智能 | año |
+|---|---|---|---|
+| flagship "IA+Educación" | 6.3k | 96 | 2026 |
+| Q&A del MoE | 3.2k | 59 | 2026 |
+| 15º Plan Quinquenal educación | 7.9k | 7 | 2026 |
+| reporte docentes IA-gen | 1.4k | 6 | 2026 |
+| Consejo de Estado "IA+" | 5.6k | 92 | 2025 |
+| Beijing K-12 IA | 4.9k | 96 | 2025 |
+| Zhejiang IA+Educación (mirror) | 4.5k | 86 | 2025 |
+| Henan IA+Educación (mirror) | 4.1k | 77 | 2025 |
+
+**2 pendientes (marcados `needs_review`/`url_pendiente`):**
+- `jiangsu`: página oficial y mirror Nanjing son **JS-dinámicos** (46 chars) → sin mirror estático.
+- `guangdong`: portal 0-chars + PDF **504** (servidor bloquea).
+
+**Hallazgos:**
+- Los sitios gov **provinciales** chinos **geo-bloquean o renderizan por JS** → los **mirrors académicos .edu.cn** (zjnu, zztrc) son la vía confiable para el texto verbatim.
+- El extractor stdlib funciona en HTML servido; falla en JS/PDF (esperado). Umbral <800 chars → `needs_review` (registro honesto, no comitea casi-vacíos).
+
+**Estado:** ✅ corpus China v3 con **8 docs sólidos** (el "gran universo" 2025-2026, mucho más rico que los 7 longitudinales previos). Jiangsu/Guangdong = alternativa futura.
+
+**Next real:** traducir ZH→EN los 8 → chunk 500/50 + blurb → embed → `politicas_v3`.
