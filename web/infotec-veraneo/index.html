@@ -366,6 +366,16 @@ footer .mono{font-size:.75rem;opacity:.7;}
   </div>
 </section>
 
+<!-- ═══ 5b. RESULTADO: EL CLASIFICADOR SEPARA A CHINA ═══ -->
+<section id="resultado">
+  <div class="container">
+    <p class="eyebrow rv">Resultado preliminar · clasificador LLM (panel de 7 jueces)</p>
+    <h2 class="rv">El clasificador separa a China donde el coseno no pudo</h2>
+    <p class="lead rv">Con <b>embeddings</b>, China y Canadá <b>empataban</b> en dézhì (0.83 vs 0.83): el coseno no distingue "el Estado lidera el esfuerzo nacional", que toda estrategia dice. Con un <b>panel de 7 jueces LLM</b> (4 de origen chino, 3 occidental) leyendo pasajes de gobernanza contra el códebook pre-registrado, <b>China se separa sola</b>. Ese es el pago del método de dos vías: embeddings para lo fácil, LLM para el significado profundo.</p>
+    <div id="dezhi-ranking" class="rv"><p class="mono" style="opacity:.55;">Cargando ranking…</p></div>
+  </div>
+</section>
+
 <!-- ═══ 6. EL PROGRAMA Y LA TESIS ═══ -->
 <section id="programa">
   <div class="container">
@@ -509,6 +519,34 @@ footer .mono{font-size:.75rem;opacity:.7;}
   }).catch(function(){
     box.innerHTML='<p class="mono" style="opacity:.6;">No se pudo cargar confucian_mvp.json</p>';
   });
+})();
+
+// ── Ranking dézhì por país (clasificador LLM) desde dezhi_country_comparison.json ──
+(function(){
+  var box=document.getElementById('dezhi-ranking');
+  if(!box) return;
+  var names={china:'🇨🇳 China',eeuu:'🇺🇸 EUA',canada:'🇨🇦 Canadá',colombia:'🇨🇴 Colombia',
+             alemania:'🇩🇪 Alemania',sudafrica:'🇿🇦 Sudáfrica',australia:'🇦🇺 Australia'};
+  fetch('../data/dezhi_country_comparison.json').then(function(r){return r.json();}).then(function(d){
+    var cd=d.country_dezhi;
+    var order=Object.keys(cd).sort(function(a,b){return cd[b].mean-cd[a].mean;});
+    var html='<div class="fp" style="padding:1.4rem;">';
+    html+='<div style="font-family:var(--font-mono);font-size:.68rem;opacity:.55;display:flex;justify-content:space-between;margin-bottom:.7rem;"><span>← derechos limitan al Estado</span><span>neutral</span><span>Estado cultiva/dirige →</span></div>';
+    order.forEach(function(c){
+      var m=cd[c].mean, w=Math.max(2,Math.min(98,(m+2)/4*100));
+      var color=m>0.1?'var(--dezhi)':(m<-0.1?'var(--li)':'#9a9a9a');
+      html+='<div class="fp-row"><span class="fp-name">'+(names[c]||c)+'</span>'
+           +'<div class="fp-bar-wrap" style="position:relative;">'
+           +'<div style="position:absolute;left:50%;top:-3px;bottom:-3px;width:2px;background:rgba(0,0,0,.28);z-index:1;"></div>'
+           +'<div class="fp-bar" style="--w:'+w+'%;background:'+color+';"></div></div>'
+           +'<span style="font-family:var(--font-mono);font-size:.72rem;min-width:3.2rem;text-align:right;">'+(m>=0?'+':'')+m.toFixed(2)+'</span></div>';
+    });
+    html+='</div>';
+    html+='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>Sidequest — sesgo de origen del modelo.</strong> Sobre los 7 países, los jueces de origen <b>occidental atribuyen algo más de estatismo</b> que los chinos (media +0.17 vs +0.07). Pequeño pero replicado (también apareció midiendo solo China) → va al capítulo de discusión, no se esconde.</div>';
+    html+='<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">'+d.status+' · n='+d.n_classifications+' clasificaciones. El eje mide <b>presencia de estatismo (0..+2)</b>: los liberales caen en neutral porque no encuadran al Estado como cultivador, no porque digan lo contrario. Alemania es el único con lean liberal (−0.25).</p>';
+    box.innerHTML=html;
+    setTimeout(function(){box.querySelectorAll('.fp').forEach(function(f){f.classList.add('vis');});},80);
+  }).catch(function(){box.innerHTML='<p class="mono" style="opacity:.6;">No se pudo cargar dezhi_country_comparison.json</p>';});
 })();
 </script>
 </body>
