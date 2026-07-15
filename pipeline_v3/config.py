@@ -26,7 +26,8 @@ COLLECTION_V3 = "politicas_v3"
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"   # multilingüe, local, reproducible
-CONTEXT_BLURB_MODEL = "gpt-4o-mini"                          # Anthropic-style contextual retrieval
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"        # una API para TODAS las familias
+CONTEXT_BLURB_MODEL = "openai/gpt-4o-mini"                  # Anthropic-style contextual retrieval (vía OpenRouter)
 CLASSIFIER_TEMPERATURE = 0.0                                 # determinismo
 
 # ── Esquema de metadata (dos capas) ──
@@ -57,14 +58,20 @@ class Judge:
     origin: str          # "western" | "chinese"
     env_key: str         # variable de entorno con la API key
 
+# Panel PUNTUADO (7 jueces vía OpenRouter, etiquetados por origen). Claude NO va aquí.
 PANEL = [
-    Judge("gpt",      "openai",   "gpt-4o-mini",                              "western", "OPENAI_API_KEY"),
-    Judge("gemini",   "google",   "gemini-1.5-flash",                         "western", "GOOGLE_API_KEY"),
-    Judge("llama",    "together",  "meta-llama/Llama-3.3-70B-Instruct-Turbo", "western", "TOGETHER_API_KEY"),
-    Judge("qwen",     "together",  "Qwen/Qwen2.5-72B-Instruct-Turbo",         "chinese", "TOGETHER_API_KEY"),
-    Judge("deepseek", "together",  "deepseek-ai/DeepSeek-V3",                 "chinese", "TOGETHER_API_KEY"),
-    # Claude se añade en runtime vía el harness (sin key cruda).
+    Judge("gpt",      "openrouter", "openai/gpt-4o-mini",                 "western", "OPENROUTER_API_KEY"),
+    Judge("gemini",   "openrouter", "google/gemini-2.5-flash",           "western", "OPENROUTER_API_KEY"),
+    Judge("llama",    "openrouter", "meta-llama/llama-3.3-70b-instruct", "western", "OPENROUTER_API_KEY"),
+    Judge("qwen",     "openrouter", "qwen/qwen-2.5-72b-instruct",        "chinese", "OPENROUTER_API_KEY"),
+    Judge("deepseek", "openrouter", "deepseek/deepseek-chat",            "chinese", "OPENROUTER_API_KEY"),
+    Judge("glm",      "openrouter", "z-ai/glm-4.6",                      "chinese", "OPENROUTER_API_KEY"),
+    Judge("kimi",     "openrouter", "moonshotai/kimi-k2",                "chinese", "OPENROUTER_API_KEY"),
 ]
+
+# META-JUEZ: adjudica SOLO los desacuerdos del panel + sintetiza. NO puntúa
+# (evita circularidad: Claude orquestó el pipeline y coordinó el códebook).
+META_JUDGE = Judge("claude", "openrouter", "anthropic/claude-sonnet-4.5", "western", "OPENROUTER_API_KEY")
 
 def available_judges():
     """Jueces con API key presente en el entorno."""
