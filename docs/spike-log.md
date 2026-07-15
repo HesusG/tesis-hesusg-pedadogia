@@ -123,3 +123,19 @@ Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo �
 **Estado:** ✅ corpus China v3 con **8 docs sólidos** (el "gran universo" 2025-2026, mucho más rico que los 7 longitudinales previos). Jiangsu/Guangdong = alternativa futura.
 
 **Next real:** traducir ZH→EN los 8 → chunk 500/50 + blurb → embed → `politicas_v3`.
+
+---
+
+## SPIKE Fase 2e — ingesta del corpus China a `politicas_v3`
+
+**Qué se hizo:** `pipeline_v3/ingest.py` — chunk 500/50 → embed multilingüe (texto chino ORIGINAL) → ChromaDB `politicas_v3` con metadata Tier A. Los 8 docs sólidos → **90 chunks**.
+
+**Hallazgo clave (valida una decisión):** una query en **español** recuperó chunks **chinos** a dist 0.25 → el embedding `multilingual-MiniLM` **puentea idiomas por sí solo**. Por eso **NO se traduce para el store/retrieval** (Vía A); se guarda el original, consistente con los demás países en su idioma. La traducción ZH→EN queda solo para el clasificador (Vía B), como paso posterior cacheado.
+
+**Flagged (mejoras posteriores, no bloquean el corpus):** (a) blurb de contexto Anthropic por chunk; (b) traducción ZH→EN para que los jueces occidentales lean inglés (Vía B).
+
+**Nota:** chunks de 500 chars en chino son densos (~1 char ≈ 1 palabra) → flagship 6.3k = 15 chunks. Aceptable; documentado.
+
+**Estado:** ✅ corpus China 2025-2026 (8 docs / 90 chunks) EN el store, consultable cross-lingual.
+
+**Next:** (a) ingerir los otros 6 países a `politicas_v3`; (b) blurb + traducción; (c) correr el clasificador panel (7 jueces chino/occidental) sobre `politicas_v3`.
