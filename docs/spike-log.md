@@ -164,3 +164,18 @@ Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo �
 **Caveats:** 6 pasajes / 79 clasificaciones = preliminar; qwen a arreglar (ruteo OpenRouter). Confirmar con corpus completo.
 
 **Estado:** ✅ el edge case de idioma quedó convertido en hallazgo medible; la señal China es robusta; el sidequest chino-vs-occidental tiene sustancia.
+
+---
+
+## SPIKE Fase 2f — ingesta de los 6 países restantes a `politicas_v3`
+
+**Qué se hizo:** `ingest_countries.py` — EUA, Canadá, Colombia, Alemania, Sudáfrica, Australia (texto procesado, idioma original; embed multilingüe) con metadata Tier A y `genre` asignado a mano (control).
+
+**Resultado:** `politicas_v3` = **2420 chunks, 7 países**. Por país: china 90 · canada 15 · colombia 315 · eeuu 306 · alemania 230 · sudafrica 1303 · australia 161.
+
+**Hallazgos:**
+- **Corpus desbalanceado** (Sudáfrica 1303 vs Canadá 15) — real: los docs varían de largo (el PC4IR es un reporte extenso; Canadá una estrategia corta). La **agregación por-documento** (distribución de scores por chunk, no conteo) lo maneja; se reporta.
+- **Genre-control poblado:** strategy 578 · report 1307 · law 319 · action_plan 208 · guidance 8. Permite el matching por género (control del confusor).
+- China está en chino (8 docs edu 2025-2026); los demás en su idioma original → la traducción a EN para el panel (Vía B) se hace en la comparación.
+
+**Estado:** ✅ corpus v3 completo (7 países). Listo para la comparación central China-vs-liberales en dézhì.
