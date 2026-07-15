@@ -53,3 +53,24 @@ Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo �
 **Antes de la Fase 2 completa:** (a) fijar qwen (provider), (b) reintento en glm/kimi, (c) decidir tratar el eje como **0..+2** (presencia de estatismo) en el reporte, (d) opcional: ejemplos al códebook para separar neutral-0 de liberal-negativo.
 
 **Veredicto:** ✅ el edge case que temía no ocurre (códebook robusto a la trampa fǎ); el spike re-especificó el eje, destapó el polo-liberal-poco-activado, y cazó bugs de plumbing — todo antes de gastar en la ingesta completa.
+
+---
+
+## SPIKE Fase 2b — corpus China 2025-2026 de IA-educación (feasibility)
+
+**Pregunta:** ¿podemos recuperar ~10 políticas chinas de IA-educación (2025-2026) con **texto completo verbatim**?
+
+**Hallazgo honesto sobre "10 de 2026":** NO existe. Solo **~5 docs genuinamente 2026** con texto (flagship "IA+Educación" MoE abr-2026, su Q&A, Plan Quinquenal educación jun-2026, guía Guangdong may-2026, reporte docentes). Casi todos los "planes provinciales 2026" citados **son 2025**. Para ~10 se enmarca como **"2025-2026"** (+ capa provincial 2025: Beijing, Shanghai, Zhejiang, Henan, Jiangsu). Decidido con el usuario.
+
+**Feasibility de recuperación (lo que el spike probó):**
+- **curl funciona**: los 2 nacionales 2026 → HTTP 200, texto verbatim UTF-8, `人工智能` presente (flagship 100 menciones = todo IA-educación; Plan Quinquenal 7 = IA es una sección).
+- **WebFetch NO sirve para verbatim**: resume con un modelo chico (el Plan Quinquenal salió *parafraseado*, "简体转述"). El flagship sí salió completo por suerte (doc corto). → **usar curl + extracción de HTML**, no WebFetch.
+
+**Riesgos / abiertos:**
+- URLs exactas de los **provinciales 2025 faltan** (la research dio dominios) → hay que pinearlas una por una.
+- Todo en **chino** → traducir ZH→EN (decisión previa: todos los jueces leen el mismo inglés → contraste de origen limpio). Reusar Qwen/OpenRouter o `china_research/translate.py`.
+- Encoding: eol.cn sin `charset` declarado (asumir UTF-8, verificar); moe.gov.cn utf-8.
+
+**Pipeline confirmado:** `curl → strip HTML → clean → translate ZH→EN → chunk 500/50 → blurb → embed → politicas_v3`.
+
+**Veredicto:** ✅ feasible vía curl. Próximo: `fetch_china.py` (curl+extract) para las URLs confirmadas + pinear provinciales + traducir + ingerir.
