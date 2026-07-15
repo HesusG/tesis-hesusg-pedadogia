@@ -139,3 +139,28 @@ Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo �
 **Estado:** ✅ corpus China 2025-2026 (8 docs / 90 chunks) EN el store, consultable cross-lingual.
 
 **Next:** (a) ingerir los otros 6 países a `politicas_v3`; (b) blurb + traducción; (c) correr el clasificador panel (7 jueces chino/occidental) sobre `politicas_v3`.
+
+---
+
+## SPIKE Fase 3 — experimento de idioma (ZH vs EN × origen chino/occidental)
+
+**Diseño:** 6 pasajes de gobernanza del corpus China v3, clasificados por los 7 jueces en **chino Y en inglés** (traducido con gpt-4o-mini). 2×2: idioma × origen. 79/84 clasificaciones válidas (qwen sigue con errores de ruteo).
+
+**Resultado (score medio, +2 = Estado-dirige/dézhì):**
+| | occidental | chino | fila |
+|---|---|---|---|
+| ZH | 1.33 | 1.14 | 1.23 |
+| EN | 1.11 | 0.91 | 1.00 |
+
+- **Efecto IDIOMA (ZH−EN): +0.23** · **Efecto ORIGEN (chino−occ): −0.20**
+
+**Hallazgos:**
+1. **China=dézhì ROBUSTO:** todas las celdas ~+1 (0.91–1.33). El resultado no depende del idioma ni del origen → validez convergente fuerte.
+2. **Sesgo de origen real (−0.20):** los modelos **chinos puntúan MENOS dézhì que los occidentales** → los occidentales **sobre-atribuyen estatismo**, los chinos lo normalizan. Es el sidequest confirmado: pequeño pero direccional y medible.
+3. **Idioma ≈ origen (~0.2 en escala de 5), direcciones opuestas** → ninguno domina. Traducir amortigua levemente el dézhì (no lo invierte) → **traducir es defendible**; el efecto origen se reporta como hallazgo.
+
+**Decisión de idioma resuelta:** dado que el efecto es chico y la traducción defendible, se usa EN como primario (contraste de origen limpio, comparable entre países) y se reporta el par ZH/EN como chequeo de robustez. El efecto origen entra al capítulo de discusión.
+
+**Caveats:** 6 pasajes / 79 clasificaciones = preliminar; qwen a arreglar (ruteo OpenRouter). Confirmar con corpus completo.
+
+**Estado:** ✅ el edge case de idioma quedó convertido en hallazgo medible; la señal China es robusta; el sidequest chino-vs-occidental tiene sustancia.
