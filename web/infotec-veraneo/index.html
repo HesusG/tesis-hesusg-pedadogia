@@ -366,6 +366,16 @@ footer .mono{font-size:.75rem;opacity:.7;}
   </div>
 </section>
 
+<!-- ═══ 5a-bis. EL RADAR: LOS 6 EJES SOBRE LOS 7 PAÍSES ═══ -->
+<section id="radar">
+  <div class="container">
+    <p class="eyebrow rv">Perfil confuciano completo · 6 ejes × 7 países (Vía A, embeddings)</p>
+    <h2 class="rv">La huella de seis números, ahora sobre los siete países</h2>
+    <p class="lead rv">El MVP calculó los seis ejes sobre tres documentos. Aquí están sobre el corpus completo: <b>2420 fragmentos, 7 países</b>, estandarizados en z contra el mismo fondo, de modo que la comparación entre países no dependa de a quién se mire. Cada polígono es el perfil confuciano de un país.</p>
+    <div id="confucian-radar" class="rv"><p class="mono" style="opacity:.55;">Cargando radar…</p></div>
+  </div>
+</section>
+
 <!-- ═══ 5b. RESULTADO: EL CLASIFICADOR SEPARA A CHINA ═══ -->
 <section id="resultado">
   <div class="container">
@@ -519,6 +529,95 @@ footer .mono{font-size:.75rem;opacity:.7;}
   }).catch(function(){
     box.innerHTML='<p class="mono" style="opacity:.6;">No se pudo cargar confucian_mvp.json</p>';
   });
+})();
+
+// ── Radar confuciano: 6 ejes × 7 países (Vía A) desde confucian_radar_v3.json ──
+(function(){
+  var box=document.getElementById('confucian-radar');
+  if(!box) return;
+  var COL={china:'#d32f2f',eeuu:'#1565c0',canada:'#1565c0',colombia:'#388e3c',
+           alemania:'#6a1b9a',sudafrica:'#e65100',australia:'#00838f'};
+  var NAME={china:'China',eeuu:'EUA',canada:'Canadá',colombia:'Colombia',
+            alemania:'Alemania',sudafrica:'Sudáfrica',australia:'Australia'};
+  fetch('../data/confucian_radar_v3.json').then(function(r){return r.json();}).then(function(d){
+    var axes=d.axes, L=d.labels, ca=d.country_axes, countries=Object.keys(ca);
+    // Escala común: z de -1.5 a +1.5 mapeado al radio. 0 = promedio del corpus.
+    var LO=-1.5, HI=1.5, S=300, C=S/2, R=105, N=axes.length;
+    function pt(i,z){
+      var t=(Math.max(LO,Math.min(HI,z))-LO)/(HI-LO);
+      var a=-Math.PI/2 + i*2*Math.PI/N;
+      return [C+Math.cos(a)*R*t, C+Math.sin(a)*R*t];
+    }
+    function poly(c){
+      return axes.map(function(k,i){return pt(i,ca[c][k].median_z).join(',');}).join(' ');
+    }
+    var svg='<svg viewBox="0 0 '+S+' '+S+'" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;">';
+    // anillos de referencia; el de z=0 va marcado porque es el promedio del corpus
+    [-1.5,-0.75,0,0.75,1.5].forEach(function(z){
+      var rr=(z-LO)/(HI-LO)*R, ring=[];
+      for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N;ring.push((C+Math.cos(a)*rr)+','+(C+Math.sin(a)*rr));}
+      svg+='<polygon points="'+ring.join(' ')+'" fill="none" stroke="'+(z===0?'rgba(0,0,0,.45)':'rgba(0,0,0,.13)')+'" stroke-width="'+(z===0?1.6:1)+'"/>';
+    });
+    axes.forEach(function(k,i){
+      var e=pt(i,HI);
+      svg+='<line x1="'+C+'" y1="'+C+'" x2="'+e[0]+'" y2="'+e[1]+'" stroke="rgba(0,0,0,.16)" stroke-width="1"/>';
+      var lx=C+Math.cos(-Math.PI/2+i*2*Math.PI/N)*(R+26), ly=C+Math.sin(-Math.PI/2+i*2*Math.PI/N)*(R+26);
+      svg+='<text x="'+lx+'" y="'+ly+'" text-anchor="middle" dominant-baseline="middle" '
+          +'style="font-family:var(--font-mono);font-size:11px;font-weight:700;fill:currentColor;">'
+          +(L[k].zh||'')+'</text>';
+      svg+='<text x="'+lx+'" y="'+(ly+11)+'" text-anchor="middle" dominant-baseline="middle" '
+          +'style="font-family:var(--font-mono);font-size:8.5px;opacity:.6;fill:currentColor;">'
+          +(L[k].pinyin||k)+'</text>';
+    });
+    countries.forEach(function(c){
+      var hi=(c==='china'||c==='canada');
+      svg+='<polygon points="'+poly(c)+'" fill="'+COL[c]+'" fill-opacity="'+(hi?.14:.05)+'" '
+          +'stroke="'+COL[c]+'" stroke-width="'+(hi?2.4:1.1)+'" stroke-opacity="'+(hi?1:.45)+'"'
+          +(hi?'':' stroke-dasharray="3 3"')+'/>';
+    });
+    svg+='</svg>';
+    var leg='<div style="display:flex;flex-wrap:wrap;gap:.5rem .9rem;justify-content:center;margin-top:.8rem;font-family:var(--font-mono);font-size:.7rem;">';
+    countries.forEach(function(c){
+      var hi=(c==='china'||c==='canada');
+      leg+='<span style="display:inline-flex;align-items:center;gap:.3rem;opacity:'+(hi?1:.55)+';">'
+          +'<span style="width:14px;height:3px;background:'+COL[c]+';display:inline-block;"></span>'
+          +(hi?'<b>'+NAME[c]+'</b>':NAME[c])+'</span>';
+    });
+    leg+='</div>';
+
+    // Tabla país × eje: el radar muestra la forma, la tabla los números exactos.
+    var tab='<div style="overflow-x:auto;margin-top:1.2rem;"><table style="border-collapse:collapse;font-family:var(--font-mono);font-size:.72rem;min-width:520px;width:100%;">'
+           +'<tr><th style="text-align:left;padding:.35rem .5rem;">país</th>';
+    axes.forEach(function(k){tab+='<th style="padding:.35rem .5rem;text-align:right;">'+(L[k].pinyin||k)+'</th>';});
+    tab+='</tr>';
+    countries.slice().sort(function(a,b){return ca[b].dezhi_fa.median_z-ca[a].dezhi_fa.median_z;})
+      .forEach(function(c){
+        tab+='<tr style="border-top:1px solid rgba(0,0,0,.1);"><td style="padding:.35rem .5rem;"><b>'+NAME[c]+'</b></td>';
+        axes.forEach(function(k){
+          var z=ca[c][k].median_z;
+          tab+='<td style="padding:.35rem .5rem;text-align:right;opacity:'+(Math.abs(z)>.5?1:.5)+';">'+(z>=0?'+':'')+z.toFixed(2)+'</td>';
+        });
+        tab+='</tr>';
+      });
+    tab+='</table></div>';
+
+    // Cuántos ejes separan a China de Canadá (IC95 sin traslape)
+    var sep=[], tie=[];
+    axes.forEach(function(k){
+      var a=ca.china[k].ci95_median, b=ca.canada[k].ci95_median;
+      ((a[0]<=b[1]&&b[0]<=a[1])?tie:sep).push(L[k].pinyin||k);
+    });
+    var note='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>Lo que el radar deja ver.</strong> '
+      +'China y Canadá tienen perfiles <b>casi superpuestos</b>. De los seis ejes, '
+      +'<b>'+tie.length+' son empates estadísticos</b> ('+tie.join(', ')+') y solo '
+      +'<b>'+sep.length+' separa'+(sep.length===1?'':'n')+'</b> ('+sep.join(', ')+'). '
+      +'O sea: el problema que apareció en dézhì no era de ese eje, es <b>del método de embeddings en general</b>. '
+      +'Por eso hace falta la segunda vía.</div>'
+      +'<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">'
+      +'Mediana z por país sobre '+d.background_n+' fragmentos; anillo marcado = 0 (promedio del corpus). '
+      +'Anclas: modo '+d.anchor_mode+', conjunto '+d.axis_set+'. China y Canadá resaltados; los demás punteados.</p>';
+    box.innerHTML=svg+leg+tab+note;
+  }).catch(function(){box.innerHTML='<p class="mono" style="opacity:.6;">No se pudo cargar confucian_radar_v3.json</p>';});
 })();
 
 // ── Ranking dézhì por país (clasificador LLM) desde dezhi_country_comparison.json ──
