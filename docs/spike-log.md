@@ -202,3 +202,62 @@ Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo �
 **Caveats:** K=3/país, n=124, preliminar; medianas mayormente 0 (pasajes de gobernanza escasos); China = corpus edu 2025-2026. Salida: `web/data/dezhi_country_comparison.json`.
 
 **Veredicto:** ✅ el instrumento separa a China de los liberales en dézhì donde los embeddings fallaban. La afirmación central de la tesis tiene evidencia reproducible.
+
+---
+
+## SPIKE Fase 5 — robustez y validación del instrumento
+
+**Pregunta:** los números de la Fase 4 salieron con K=3, n=124, panel 6/7 y sin caché. ¿Sobreviven a un panel completo y a K mayor, y **cuánto concuerdan realmente los jueces**? El spec (§5 reproducibilidad, §6 evaluación) exige responder esto antes de que las cifras entren a la tesis.
+
+### El bug que invalidaba parte de la Fase 4
+
+`glm` no fallaba "de forma intermitente" como asumió la Fase 2-pre: fallaba **determinísticamente**. GLM-4.6 es un modelo de razonamiento y el techo de 400 `max_tokens` se agotaba en la cadena de razonamiento antes de emitir el JSON → `finish_reason=length`, `content=None`. A temperatura 0 los 3 reintentos repetían el mismo fallo. Subiendo el techo a 4000 (sin suprimir el razonamiento: cada familia debe leer el códebook como lo haría naturalmente) el panel quedó en **490/490, 7/7 jueces, cero errores**.
+
+Consecuencia honesta: el `n=124` de la Fase 4 tenía un **juez chino sistemáticamente ausente**, justo en el sidequest que mide sesgo occidental-vs-chino. Las cifras de esta fase reemplazan a las de aquella.
+
+**Segundo plumbing:** `qwen/qwen-2.5-72b-instruct` estaba **retirado** de OpenRouter — el error de ruteo de la Fase 2-pre nunca fue del provider. Reemplazo fijado por fecha: `qwen/qwen3-235b-a22b-2507`. Re-versionado consciente del pre-registro, no un cambio silencioso.
+
+### Resultados (K=10, 7 países, 490 clasificaciones, panel completo)
+
+**1. La separación de China se sostiene y ahora tiene intervalo.** Bootstrap sobre *pasajes* (la unidad de muestreo — remuestrear clasificaciones sueltas fingiría independencia entre los 7 jueces que leen el mismo pasaje):
+
+| país | media | IC95 |
+|---|---|---|
+| **China** | **+0.94** | **[+0.73, +1.17]** |
+| Sudáfrica | +0.06 | [−0.04, +0.21] |
+| Canadá | 0.00 | [0.00, 0.00] |
+| Colombia / Australia | −0.03 | [−0.16, +0.10] |
+| Alemania | −0.10 | [−0.24, 0.00] |
+| EUA | −0.30 | [−0.73, 0.00] |
+
+El IC de China **no se solapa con ninguno** → la separación no es un artefacto de K pequeño.
+
+**2. Acuerdo inter-juez — el hallazgo incómodo que hay que reportar.** α ordinal de Krippendorff = **0.600**, κ de Fleiss = 0.455. Eso queda **por debajo del umbral 0.667** que el propio Krippendorff fija como mínimo para conclusiones tentativas. Pero el acuerdo *observado* es alto: **79.9% exacto, 98.8% dentro de ±1 punto** (1470 pares). La brecha es la **paradoja de kappa** (Feinstein & Cicchetti 1990): con la distribución concentrada en 0, la corrección por azar deprime α. Se reportan **ambos**, no uno u otro. Lectura defendible: el instrumento es **fiable a nivel de agregado por país** (ver punto 1), **no** para afirmar nada sobre un pasaje individual.
+
+**3. El sesgo de origen ahora es una medición, no una impresión.** Brecha pareada por pasaje occidental − chino = **+0.098, IC95 [+0.037, +0.162] → excluye el 0**. Los modelos occidentales atribuyen sistemáticamente más estatismo. Y a la vez la correlación pasaje a pasaje es **r = +0.870**: concuerdan mucho, con un desplazamiento sistemático pequeño. Las dos cosas son ciertas y ambas van al capítulo de discusión.
+
+**4. Vía A vs Vía B, ahora sobre los 7 países.** El MVP de embeddings solo cubría 3 documentos; `via_a.py` proyecta el eje ganador (híbrido/tuned6) sobre `politicas_v3` completo:
+
+| país | Vía A (z) | Vía B (LLM) |
+|---|---|---|
+| China | +0.916 | +0.943 |
+| **Canadá** | **+0.895** | **0.000** |
+| Australia | +0.538 | −0.029 |
+| Alemania | +0.176 | −0.100 |
+| Sudáfrica | +0.136 | +0.057 |
+| Colombia | −0.094 | −0.029 |
+| EUA | −0.654 | −0.300 |
+
+Spearman ρ = +0.667 (coinciden en la tendencia general) **pero China − Canadá: Vía A +0.020 vs Vía B +0.943**. Y con IC bootstrap sobre la mediana Vía A, los intervalos de China [+0.64, +1.07] y Canadá [+0.75, +1.44] **se solapan ampliamente**: el empate no es coincidencia de dos puntos, es incapacidad del método. **El arco narrativo de la tesis queda demostrado sobre el corpus completo, no sobre 3 documentos.**
+
+### Reproducibilidad (spec §5, ahora sí)
+
+- Cada salida cruda **cacheada en disco** con hash del códebook → re-correr es *replay*, no re-llamar; si la rúbrica cambia, la caché se invalida sola.
+- **Log de auditoría** JSONL con modelo, timestamp, intento y hash por clasificación.
+- Traducciones ZH/ES/DE→EN cacheadas.
+- `dezhi_records.jsonl`: las 490 clasificaciones crudas, provenance completa para la tesis.
+- κ y α implementados **sin dependencias externas** y **verificados contra `krippendorff` y `statsmodels`** con coincidencia exacta en los 3 niveles (`make dezhi-test`) — la métrica que sostiene el capítulo de validación no depende de mi aritmética.
+
+**Caveats vivos:** K=10 sigue siendo poco (10 pasajes/país); Canadá tiene solo 15 chunks en el corpus, así que su Vía A es ruidosa (de ahí el IC ancho); sin codificación humana no hay ancla externa (trabajo futuro / supervisora); el eje sigue funcionando como **presencia de estatismo (0..+2)**, no como continuo estatista↔liberal.
+
+**Veredicto:** ✅ el instrumento pasa de "resultado preliminar" a "medición con intervalos, acuerdo cuantificado y sesgo acotado". El límite honesto — α por debajo del umbral a nivel pasaje — queda documentado como límite, no escondido.

@@ -1,56 +1,98 @@
 {
   "axis": "dezhi_governance",
-  "k_passages": 3,
-  "n_classifications": 124,
+  "k_passages": 10,
+  "n_classifications": 490,
+  "codebook_hash": "1fb19472bbff",
   "country_dezhi": {
     "china": {
-      "median": 1,
-      "mean": 1.0588235294117647,
-      "n": 17
+      "median": 1.0,
+      "mean": 0.9428571428571428,
+      "n": 70
     },
     "eeuu": {
       "median": 0.0,
-      "mean": 0,
-      "n": 20
+      "mean": -0.3,
+      "n": 70
     },
     "canada": {
-      "median": 0,
+      "median": 0.0,
       "mean": 0,
-      "n": 21
+      "n": 70
     },
     "colombia": {
-      "median": 0,
-      "mean": 0.058823529411764705,
-      "n": 17
+      "median": 0.0,
+      "mean": -0.02857142857142857,
+      "n": 70
     },
     "alemania": {
       "median": 0.0,
-      "mean": -0.25,
-      "n": 16
+      "mean": -0.1,
+      "n": 70
     },
     "sudafrica": {
       "median": 0.0,
-      "mean": 0,
-      "n": 16
+      "mean": 0.05714285714285714,
+      "n": 70
     },
     "australia": {
-      "median": 0,
-      "mean": 0,
-      "n": 17
+      "median": 0.0,
+      "mean": -0.02857142857142857,
+      "n": 70
     }
   },
   "ranking": [
     "china",
-    "eeuu",
+    "sudafrica",
     "canada",
     "colombia",
+    "australia",
     "alemania",
-    "sudafrica",
-    "australia"
+    "eeuu"
   ],
   "origin_median": {
-    "western": 0,
-    "chinese": 0
+    "western": 0.0,
+    "chinese": 0.0
   },
-  "status": "PRELIMINAR / MVP — panel EN, K=3 pasajes de gobernanza/país"
+  "origin_mean": {
+    "western": 0.13333333333333333,
+    "chinese": 0.03571428571428571
+  },
+  "judge_coverage": {
+    "gpt": {
+      "valid": 70,
+      "expected": 70,
+      "errors": 0
+    },
+    "gemini": {
+      "valid": 70,
+      "expected": 70,
+      "errors": 0
+    },
+    "llama": {
+      "valid": 70,
+      "expected": 70,
+      "errors": 0
+    },
+    "qwen": {
+      "valid": 70,
+      "expected": 70,
+      "errors": 0
+    },
+    "deepseek": {
+      "valid": 70,
+      "expected": 70,
+      "errors": 0
+    },
+    "glm": {
+      "valid": 70,
+      "expected": 70,
+      "errors": 0
+    },
+    "kimi": {
+      "valid": 70,
+      "expected": 70,
+      "errors": 0
+    }
+  },
+  "status": "PRELIMINAR / MVP — panel EN, K=10 pasajes de gobernanza/país, 7 jueces (4 origen chino / 3 occidental)"
 }

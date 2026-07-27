@@ -1,0 +1,133 @@
+{
+  "agreement": {
+    "n_units": 70,
+    "observed_agreement": {
+      "exact": 0.7993197278911565,
+      "within_1": 0.9884353741496599,
+      "n_pairs": 1470
+    },
+    "panel": {
+      "fleiss_kappa": 0.45538324743044895,
+      "krippendorff_alpha_ordinal": 0.5999319932131457,
+      "krippendorff_alpha_interval": 0.6470536697707019,
+      "krippendorff_alpha_nominal": 0.4564947101907948
+    },
+    "within_western": {
+      "fleiss_kappa": 0.47567065381488777,
+      "krippendorff_alpha_ordinal": 0.5926487568433785
+    },
+    "within_chinese": {
+      "fleiss_kappa": 0.4495012014854732,
+      "krippendorff_alpha_ordinal": 0.6292652346465604
+    }
+  },
+  "origin_bias": {
+    "n_paired_passages": 70,
+    "mean_western": 0.13333333333333333,
+    "mean_chinese": 0.03571428571428571,
+    "mean_gap_western_minus_chinese": 0.0976190476190476,
+    "ci95": [
+      0.0369047619047619,
+      0.1619047619047619
+    ],
+    "excludes_zero": true,
+    "pearson_r_passage_level": 0.8702156054115777,
+    "n_boot": 5000,
+    "seed": 42
+  },
+  "country_stability": {
+    "china": {
+      "mean": 0.9428571428571428,
+      "n_passages": 10,
+      "ci95": [
+        0.7285714285714285,
+        1.1714285714285715
+      ]
+    },
+    "eeuu": {
+      "mean": -0.3,
+      "n_passages": 10,
+      "ci95": [
+        -0.7285714285714285,
+        0.0
+      ]
+    },
+    "canada": {
+      "mean": 0,
+      "n_passages": 10,
+      "ci95": [
+        0,
+        0
+      ]
+    },
+    "colombia": {
+      "mean": -0.02857142857142857,
+      "n_passages": 10,
+      "ci95": [
+        -0.15714285714285714,
+        0.09999999999999999
+      ]
+    },
+    "alemania": {
+      "mean": -0.09999999999999999,
+      "n_passages": 10,
+      "ci95": [
+        -0.24285714285714285,
+        0
+      ]
+    },
+    "sudafrica": {
+      "mean": 0.05714285714285715,
+      "n_passages": 10,
+      "ci95": [
+        -0.04285714285714286,
+        0.2142857142857143
+      ]
+    },
+    "australia": {
+      "mean": -0.02857142857142857,
+      "n_passages": 10,
+      "ci95": [
+        -0.17142857142857143,
+        0.08571428571428572
+      ]
+    }
+  },
+  "china_separates": true,
+  "via_a_vs_via_b": {
+    "countries": [
+      "china",
+      "eeuu",
+      "canada",
+      "colombia",
+      "alemania",
+      "sudafrica",
+      "australia"
+    ],
+    "via_a_median_z": {
+      "china": 0.9156566186054602,
+      "eeuu": -0.6539100009854684,
+      "canada": 0.8953521313763403,
+      "colombia": -0.09421272454637455,
+      "alemania": 0.17624781528731637,
+      "sudafrica": 0.13611732651693592,
+      "australia": 0.5381915918525635
+    },
+    "via_b_mean_llm": {
+      "china": 0.9428571428571428,
+      "eeuu": -0.3,
+      "canada": 0,
+      "colombia": -0.02857142857142857,
+      "alemania": -0.1,
+      "sudafrica": 0.05714285714285714,
+      "australia": -0.02857142857142857
+    },
+    "spearman": 0.6666937223947136,
+    "pearson": 0.6620385744157465,
+    "china_vs_canada": {
+      "via_a_gap": 0.020304487229119927,
+      "via_b_gap": 0.9428571428571428
+    }
+  },
+  "n_classifications": 490
+}

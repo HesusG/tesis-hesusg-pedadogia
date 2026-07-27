@@ -29,6 +29,16 @@ EMBEDDING_MODEL = "paraphrase-multilingual-MiniLM-L12-v2"   # multilingüe, loca
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"        # una API para TODAS las familias
 CONTEXT_BLURB_MODEL = "openai/gpt-4o-mini"                  # Anthropic-style contextual retrieval (vía OpenRouter)
 CLASSIFIER_TEMPERATURE = 0.0                                 # determinismo
+CLASSIFIER_MAX_RETRIES = 3                                   # Fase 5: glm/kimi fallan de forma intermitente
+CLASSIFIER_BACKOFF_SEC = 2.0                                 # backoff exponencial entre reintentos
+# Fase 5: con 400 tokens, glm-4.6 (modelo de razonamiento) gastaba TODO el presupuesto
+# en la cadena de razonamiento y devolvía content=None (finish_reason=length) → 30/70
+# fallos. No se suprime el razonamiento: cada familia debe leer el códebook como lo
+# haría naturalmente. Se le da techo suficiente.
+# (1500 aún truncaba a glm en los 12 pasajes más largos; 4000 le da margen holgado.)
+CLASSIFIER_MAX_TOKENS = 4000
+K_PASSAGES = 10             # pasajes de gobernanza por país (Fase 4 usó 3; Fase 5 sube a 10)
+TRANSLATION_MODEL = "openai/gpt-4o-mini"                     # ZH/ES/DE → EN para el panel (Vía B)
 
 # ── Esquema de metadata (dos capas) ──
 # Tier A: manual/determinista, nivel documento. `genre` = control del confusor (NUNCA por LLM).
@@ -63,7 +73,11 @@ PANEL = [
     Judge("gpt",      "openrouter", "openai/gpt-4o-mini",                 "western", "OPENROUTER_API_KEY"),
     Judge("gemini",   "openrouter", "google/gemini-2.5-flash",           "western", "OPENROUTER_API_KEY"),
     Judge("llama",    "openrouter", "meta-llama/llama-3.3-70b-instruct", "western", "OPENROUTER_API_KEY"),
-    Judge("qwen",     "openrouter", "qwen/qwen-2.5-72b-instruct",        "chinese", "OPENROUTER_API_KEY"),
+    # Fase 5: `qwen/qwen-2.5-72b-instruct` fue RETIRADO de OpenRouter (de ahí el error de
+    # ruteo de la Fase 2-pre; no era el provider). Reemplazo fijado por fecha (2507) para
+    # reproducibilidad. Re-versionado documentado en el spike-log — el pre-registro no se
+    # rompe en silencio.
+    Judge("qwen",     "openrouter", "qwen/qwen3-235b-a22b-2507",         "chinese", "OPENROUTER_API_KEY"),
     Judge("deepseek", "openrouter", "deepseek/deepseek-chat",            "chinese", "OPENROUTER_API_KEY"),
     Judge("glm",      "openrouter", "z-ai/glm-4.6",                      "chinese", "OPENROUTER_API_KEY"),
     Judge("kimi",     "openrouter", "moonshotai/kimi-k2",                "chinese", "OPENROUTER_API_KEY"),

@@ -542,11 +542,43 @@ footer .mono{font-size:.75rem;opacity:.7;}
            +'<span style="font-family:var(--font-mono);font-size:.72rem;min-width:3.2rem;text-align:right;">'+(m>=0?'+':'')+m.toFixed(2)+'</span></div>';
     });
     html+='</div>';
-    html+='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>Sidequest — sesgo de origen del modelo.</strong> Sobre los 7 países, los jueces de origen <b>occidental atribuyen algo más de estatismo</b> que los chinos (media +0.17 vs +0.07). Pequeño pero replicado (también apareció midiendo solo China) → va al capítulo de discusión, no se esconde.</div>';
-    html+='<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">'+d.status+' · n='+d.n_classifications+' clasificaciones. El eje mide <b>presencia de estatismo (0..+2)</b>: los liberales caen en neutral porque no encuadran al Estado como cultivador, no porque digan lo contrario. Alemania es el único con lean liberal (−0.25).</p>';
+    var liberal=order[order.length-1], lm=cd[liberal].mean;
+    html+='<div id="dezhi-validation"></div>';
+    html+='<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">'+d.status+' · n='+d.n_classifications+' clasificaciones. El eje mide <b>presencia de estatismo (0..+2)</b>: los liberales caen en neutral porque no encuadran al Estado como cultivador, no porque digan lo contrario. El lean más liberal es '+(names[liberal]||liberal)+' ('+lm.toFixed(2)+').</p>';
     box.innerHTML=html;
     setTimeout(function(){box.querySelectorAll('.fp').forEach(function(f){f.classList.add('vis');});},80);
+    renderValidation();
   }).catch(function(){box.innerHTML='<p class="mono" style="opacity:.6;">No se pudo cargar dezhi_country_comparison.json</p>';});
+
+  // ── Validación del instrumento (Fase 5): acuerdo, sesgo acotado, Vía A vs Vía B ──
+  function renderValidation(){
+    fetch('../data/dezhi_validation.json').then(function(r){return r.json();}).then(function(v){
+      var slot=document.getElementById('dezhi-validation');
+      if(!slot) return;
+      var ag=v.agreement, oa=ag.observed_agreement, ob=v.origin_bias, ab=v.via_a_vs_via_b;
+      var ci=v.country_stability&&v.country_stability.china?v.country_stability.china.ci95:null;
+      var h='';
+      h+='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>¿Es fiable el panel?</strong> '
+        +'Los 7 jueces coinciden <b>exactamente en el '+(oa.exact*100).toFixed(1)+'%</b> de los pares y '
+        +'<b>dentro de ±1 punto en el '+(oa.within_1*100).toFixed(1)+'%</b>. El α ordinal de Krippendorff es '
+        +'<b>'+ag.panel.krippendorff_alpha_ordinal.toFixed(3)+'</b> — por debajo del umbral 0.667, porque la '
+        +'corrección por azar se deprime cuando casi todo cae en 0 (paradoja de kappa). Lectura honesta: el '
+        +'instrumento es fiable <b>por país</b>'+(ci?' (China +'+v.country_stability.china.mean.toFixed(2)+', IC95 ['+ci[0].toFixed(2)+', '+ci[1].toFixed(2)+'], sin solaparse con ningún otro)':'')
+        +', <b>no</b> para juzgar un pasaje suelto.</div>';
+      h+='<div class="tk" style="margin-top:.8rem;font-size:.9rem;"><strong>Sidequest — sesgo de origen, ahora medido.</strong> '
+        +'Los jueces occidentales atribuyen más estatismo que los chinos: brecha <b>+'+ob.mean_gap_western_minus_chinese.toFixed(3)+'</b>, '
+        +'IC95 [+'+ob.ci95[0].toFixed(3)+', +'+ob.ci95[1].toFixed(3)+'] → <b>excluye el 0</b>, el sesgo es real. '
+        +'Y aun así concuerdan mucho: r = +'+ob.pearson_r_passage_level.toFixed(3)+' pasaje a pasaje. '
+        +'Las dos cosas son ciertas — va al capítulo de discusión, no se esconde.</div>';
+      if(ab&&ab.china_vs_canada){
+        h+='<div class="tk" style="margin-top:.8rem;font-size:.9rem;"><strong>El payoff, sobre el corpus completo.</strong> '
+          +'Con embeddings, China y Canadá quedan en <b>empate</b> (brecha '+ab.china_vs_canada.via_a_gap.toFixed(3)+' z, intervalos solapados). '
+          +'Con el panel LLM la brecha es <b>+'+ab.china_vs_canada.via_b_gap.toFixed(2)+'</b>. '
+          +'Antes esto se sabía con 3 documentos; ahora con los 7 países.</div>';
+      }
+      slot.innerHTML=h;
+    }).catch(function(){});
+  }
 })();
 </script>
 </body>
