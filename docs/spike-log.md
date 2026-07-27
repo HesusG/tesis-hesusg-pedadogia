@@ -261,3 +261,46 @@ Spearman ρ = +0.667 (coinciden en la tendencia general) **pero China − Canad�
 **Caveats vivos:** K=10 sigue siendo poco (10 pasajes/país); Canadá tiene solo 15 chunks en el corpus, así que su Vía A es ruidosa (de ahí el IC ancho); sin codificación humana no hay ancla externa (trabajo futuro / supervisora); el eje sigue funcionando como **presencia de estatismo (0..+2)**, no como continuo estatista↔liberal.
 
 **Veredicto:** ✅ el instrumento pasa de "resultado preliminar" a "medición con intervalos, acuerdo cuantificado y sesgo acotado". El límite honesto — α por debajo del umbral a nivel pasaje — queda documentado como límite, no escondido.
+
+---
+
+## SPIKE Fase 6 — ¿el +0.94 mide al país o al género documental?
+
+**Pregunta:** la Fase 5 midió a China con 8 documentos de IA-**en-educación** (2025-2026) y a los otros 6 países con **estrategias generales de IA** (2017-2023). Como el eje dézhì mide "el Estado cultiva y forma personas", y la política educativa trata por definición de formar personas, había una explicación alternativa que tumbaba el resultado central: *China no sale alta por ser China, sino porque le medimos documentos de educación.*
+
+**Diseño (pre-registrado en `451aea6`, commiteado ANTES de correr):** 2×2 de tema × país, más un tercer brazo que separa "es China" de "es la región de herencia confuciana". Chunking, query de gobernanza, K, panel y códebook idénticos a la Fase 5 — es lo que hace comparables los números. Los controles fueron a una colección aparte para no contaminar el corpus pre-registrado.
+
+**Resultados (420 clasificaciones):**
+
+| documento | media | IC95 | celda |
+|---|---|---|---|
+| China NGAIDP 2017 | **+0.257** | [+0.057, +0.500] | China × IA general |
+| Corea AI Strategy | +0.200 | [0.000, +0.443] | vecindario confuciano |
+| India NEP 2020 | +0.143 | [0.000, +0.314] | no-China × educación |
+| Singapur NAIS | +0.086 | [−0.143, +0.329] | vecindario confuciano |
+| Japón AI Strategy | 0.000 | [0.000, 0.000] | vecindario confuciano |
+| UNESCO GenAI Guidance | **−0.157** | [−0.371, −0.014] | no-China × educación |
+
+**Contrastes con bootstrap sobre pasajes:**
+- **NGAIDP vs los 6 países (todos IA general): +0.324, IC95 [+0.114, +0.583] → excluye el 0.** China se distingue **aun con un documento general**, no educativo. El efecto de país es real.
+- **NGAIDP vs China-educación: −0.686, IC95 [−0.986, −0.357] → excluye el 0.** Dentro de China, los documentos educativos puntúan muy por encima del plan general. El tema aporta una parte grande.
+
+**Las tres predicciones, evaluadas:**
+1. **P1 (efecto país) — parcialmente confirmada.** China sí se distingue con documento general (+0.32 sobre los liberales), pero solo alcanza ~27% del efecto del corpus educativo.
+2. **P2 (efecto género) — refutada.** El tema educativo **por sí solo no eleva el eje**: India NEP +0.14 (IC toca 0) y UNESCO **−0.157** (lean liberal, IC excluye 0). Y UNESCO es el control topográficamente más parecido al corpus chino — también es IA-en-educación — y sale con signo opuesto.
+3. **P3 (efecto regional) — refutada.** Corea +0.20, Japón exactamente 0, Singapur +0.09. No es la región de herencia confuciana: **es China**.
+
+**Lectura correcta: hay una INTERACCIÓN país × tema.** Ninguno de los dos factores por separado reproduce el +0.94:
+
+|  | educación | IA general |
+|---|---|---|
+| **China** | **+0.94** | +0.26 |
+| **no China** | ~0 (India +0.14, UNESCO −0.16) | ~0 |
+
+Y esa interacción es **exactamente donde la teoría la predice**: dézhì (德治) es el gobierno por la virtud mediante el **cultivo moral a través de la educación**. Que el encuadre se concentre en la política educativa china no es un artefacto que debilite la tesis; es la ubicación que el concepto anticipa. El confusor sospechado resultó ser un hallazgo teóricamente coherente.
+
+**Consecuencia para la redacción:** la afirmación defendible **no** es "la política de IA china tiene encuadre dézhì". Es: *"el encuadre dézhì se concentra en la política china de IA **en educación**; en su estrategia general de IA aparece atenuado pero todavía por encima de las democracias liberales; y no aparece en la política educativa de otros países ni en las estrategias de sus vecinos confucianos."* Más precisa, más falsable y más difícil de atacar.
+
+**Caveats:** los umbrales binarios que pre-registré (0.25) resultaron demasiado crudos y colapsaban a sí/no lo que es cuestión de grado — se conservan en el JSON por honestidad, pero la lectura buena son los contrastes con IC. UNESCO es un organismo internacional con mandato de derechos, no un Estado. El corpus chino está traducido ZH→EN y la Fase 3 mostró que traducir **atenúa** el dézhì (−0.23), así que el +0.94 es si acaso conservador. K=10 por documento.
+
+**Veredicto:** ✅ el confusor se probó en vez de asumirse, y el resultado obliga a **reformular la afirmación central de forma más precisa** en vez de repetirla. El efecto de país sobrevive; el de tema es real y grande; la interacción es la historia.

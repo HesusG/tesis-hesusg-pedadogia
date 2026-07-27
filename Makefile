@@ -8,7 +8,7 @@ OUTPUT_DIR := output
 PIPELINE_DIR := pipeline
 WEB_DIR := web
 
-.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies topics language-control validate ingest-analects confucian-mvp dezhi-via-a dezhi-compare dezhi-validate dezhi-test dezhi-all
+.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies topics language-control validate ingest-analects confucian-mvp dezhi-via-a dezhi-compare dezhi-validate dezhi-confound dezhi-test dezhi-all
 
 all: pdf web
 
@@ -172,11 +172,15 @@ dezhi-validate:
 	.venv/bin/python -m pipeline_v3.agreement
 	@echo "✓ Validación (κ, α, sesgo de origen, Vía A vs B) → web/data/dezhi_validation.json"
 
+dezhi-confound:
+	.venv/bin/python -m pipeline_v3.confound_test
+	@echo "✓ Prueba del confusor país×tema → web/data/dezhi_confound_test.json"
+
 dezhi-test:
 	.venv/bin/python -m pipeline_v3.test_agreement
 
 # Cadena completa de la Fase 5. La caché de clasificaciones la hace reanudable.
-dezhi-all: dezhi-via-a dezhi-compare dezhi-validate
+dezhi-all: dezhi-via-a dezhi-compare dezhi-validate dezhi-confound
 
 # ── Advanced compute ─────────────────────────────────
 compute-advanced:
@@ -222,6 +226,7 @@ help:
 	@echo "  make dezhi-via-a      — Vía A: eje dézhì por embeddings, 7 países"
 	@echo "  make dezhi-compare    — Vía B: panel de 7 jueces LLM, 7 países"
 	@echo "  make dezhi-validate   — Validación: κ/α, sesgo de origen, Vía A vs B"
+	@echo "  make dezhi-confound   — Prueba del confusor país × tema (2×2 + vecindario)"
 	@echo "  make dezhi-all        — Cadena completa de la Fase 5"
 	@echo "  make compute-advanced — Generar datos avanzados (UMAP, Sankey)"
 	@echo "  make download-policies — Descargar PDFs de políticas"

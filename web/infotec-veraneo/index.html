@@ -577,6 +577,34 @@ footer .mono{font-size:.75rem;opacity:.7;}
           +'Antes esto se sabía con 3 documentos; ahora con los 7 países.</div>';
       }
       slot.innerHTML=h;
+      renderConfound();
+    }).catch(function(){});
+  }
+
+  // ── Prueba del confusor: ¿país o género documental? (Fase 6) ──
+  function renderConfound(){
+    fetch('../data/dezhi_confound_test.json').then(function(r){return r.json();}).then(function(cf){
+      var slot=document.getElementById('dezhi-validation');
+      if(!slot) return;
+      var ds=cf.doc_stats, ct=cf.verdict&&cf.verdict.contrasts?cf.verdict.contrasts:{};
+      var lib=ct.ngaidp_vs_liberal_general_ai, edu=ct.ngaidp_vs_china_education;
+      var h='<div class="tk" style="margin-top:.8rem;font-size:.9rem;">'
+        +'<strong>La prueba que el resultado tenía que pasar.</strong> A China le medimos documentos de IA '
+        +'<b>en educación</b>; a los otros seis, estrategias generales de IA. Y el eje mide "el Estado forma '
+        +'personas", que es de lo que trata la educación. Así que se probó el confusor en vez de asumirlo:'
+        +'<ul style="margin:.6rem 0 0 1.1rem;padding:0;">'
+        +'<li>China con <b>estrategia general</b> (NGAIDP 2017): <b>'+ds.china_ngaidp_2017.mean.toFixed(2)+'</b>'
+        +(lib?', <b>+'+lib.diff.toFixed(2)+' sobre los seis países</b> (IC95 excluye el 0) → el efecto de país es real':'')+'.</li>'
+        +'<li>Educación <b>no china</b>: India NEP '+ds.india_nep_2020.mean.toFixed(2)+', UNESCO '
+        +ds.unesco_genai_guidance_2023.mean.toFixed(2)+' → el tema educativo <b>por sí solo no eleva el eje</b>.</li>'
+        +'<li>Vecinos confucianos: Corea '+ds.corea_ai_strategy_2019.mean.toFixed(2)+', Japón '
+        +ds.japon_ai_strategy_2019.mean.toFixed(2)+', Singapur '+ds.singapur_nais_2019.mean.toFixed(2)
+        +' → <b>no es la región, es China</b>.</li></ul>'
+        +'<p style="margin:.6rem 0 0;">Hay una <b>interacción país × tema</b>: ni China-general ni educación-no-china '
+        +'reproducen el +0.94. El encuadre se concentra donde la teoría lo predice, porque dézhì <i>es</i> cultivo '
+        +'moral por la educación. La afirmación precisa no es "la política de IA china es dézhì", sino que '
+        +'<b>el encuadre se concentra en su política de IA en educación</b>.</p></div>';
+      slot.innerHTML+=h;
     }).catch(function(){});
   }
 })();

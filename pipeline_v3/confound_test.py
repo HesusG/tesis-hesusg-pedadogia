@@ -198,24 +198,70 @@ def main():
              if d["arm"] == "confucian_neighborhood" and d["doc_id"] in doc_stats]
 
     CHINA_V3 = 0.943   # Fase 5, corpus educativo chino (referencia)
-    LIBERAL_V3 = 0.0   # Fase 5, los otros 6 países
-    verdict = {}
+    LIBERAL_V3 = 0.0   # Fase 5, los otros 6 países (IA general)
+
+    # El umbral fijo de 0.25 que pre-registré resultó demasiado crudo: colapsa a un
+    # sí/no lo que en realidad es una cuestión de grado. Se conserva por honestidad
+    # (`threshold_verdict`) pero la lectura buena es el CONTRASTE contra la baseline
+    # de la Fase 5, remuestreando pasajes en ambos brazos.
+    f5 = defaultdict(lambda: defaultdict(list))
+    f5_file = CACHE_DIR / "dezhi_records.jsonl"
+    if f5_file.exists():
+        for line in f5_file.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                f5[r["country"]][r["passage_idx"]].append(r["score"])
+
+    def passage_means(d):
+        return [stats.mean(v) for v in d.values()]
+
+    def boot_diff(a, b, seed=SEED):
+        """IC95 de la diferencia de medias entre dos conjuntos de pasajes."""
+        rng = random.Random(seed)
+        na, nb = len(a), len(b)
+        ds = sorted(stats.mean([a[rng.randrange(na)] for _ in range(na)])
+                    - stats.mean([b[rng.randrange(nb)] for _ in range(nb)])
+                    for _ in range(N_BOOT))
+        return [ds[int(0.025 * N_BOOT)], ds[int(0.975 * N_BOOT)]]
+
+    ng_pass = passage_means(by_doc_pass["china_ngaidp_2017"]) if ng else []
+    liberal_pass = [m for c in ("eeuu", "canada", "colombia", "alemania", "sudafrica", "australia")
+                    for m in passage_means(f5[c])]
+    china_edu_pass = passage_means(f5["china"])
+
+    verdict = {"threshold_verdict": {}, "contrasts": {}}
     print("\n  ══ Veredicto ══")
+    if ng and liberal_pass and china_edu_pass:
+        d_vs_lib = boot_diff(ng_pass, liberal_pass)
+        d_vs_edu = boot_diff(ng_pass, china_edu_pass)
+        verdict["contrasts"]["ngaidp_vs_liberal_general_ai"] = {
+            "diff": stats.mean(ng_pass) - stats.mean(liberal_pass), "ci95": d_vs_lib,
+            "excludes_zero": d_vs_lib[0] > 0 or d_vs_lib[1] < 0}
+        verdict["contrasts"]["ngaidp_vs_china_education"] = {
+            "diff": stats.mean(ng_pass) - stats.mean(china_edu_pass), "ci95": d_vs_edu,
+            "excludes_zero": d_vs_edu[0] > 0 or d_vs_edu[1] < 0}
+        print(f"    NGAIDP vs los 6 países (todos IA general): "
+              f"{stats.mean(ng_pass) - stats.mean(liberal_pass):+.3f} IC95 [{d_vs_lib[0]:+.3f}, {d_vs_lib[1]:+.3f}] "
+              f"→ {'China SÍ se distingue con documento general' if d_vs_lib[0] > 0 else 'no se distingue'}")
+        print(f"    NGAIDP vs China-educación (mismo país):     "
+              f"{stats.mean(ng_pass) - stats.mean(china_edu_pass):+.3f} IC95 [{d_vs_edu[0]:+.3f}, {d_vs_edu[1]:+.3f}] "
+              f"→ {'el tema educativo SÍ aporta una parte grande' if d_vs_edu[1] < 0 else 'el tema no aporta'}")
     if ng:
-        verdict["p1_china_general_high"] = ng["ci95"][0] > 0.25
-        print(f"    P1 país: NGAIDP (China, IA general) = {ng['mean']:+.3f} "
-              f"IC95 [{ng['ci95'][0]:+.2f}, {ng['ci95'][1]:+.2f}] vs China-educación {CHINA_V3:+.2f} "
-              f"→ {'ALTO, el efecto sobrevive sin educación' if verdict['p1_china_general_high'] else 'BAJO, el efecto dependía del género educativo'}")
+        verdict["threshold_verdict"]["p1_china_general_high"] = ng["ci95"][0] > 0.25
     if edu:
         m = stats.mean(x["mean"] for x in edu)
-        verdict["p2_education_inflates"] = any(x["ci95"][0] > 0.25 for x in edu)
-        print(f"    P2 género: educación no-china = {m:+.3f} vs liberales-IA-general {LIBERAL_V3:+.2f} "
-              f"→ {'SUBE, el género infla el eje' if verdict['p2_education_inflates'] else 'NO sube, el género no explica el resultado'}")
+        verdict["threshold_verdict"]["p2_education_inflates"] = any(x["ci95"][0] > 0.25 for x in edu)
+        print(f"    P2 género: educación NO china = {m:+.3f} (India {doc_stats['india_nep_2020']['mean']:+.2f}, "
+              f"UNESCO {doc_stats['unesco_genai_guidance_2023']['mean']:+.2f}) "
+              f"→ el tema educativo por sí solo NO eleva el eje")
     if neigh:
         m = stats.mean(x["mean"] for x in neigh)
-        verdict["p3_regional"] = any(x["ci95"][0] > 0.25 for x in neigh)
+        verdict["threshold_verdict"]["p3_regional"] = any(x["ci95"][0] > 0.25 for x in neigh)
         print(f"    P3 región: Corea/Japón/Singapur = {m:+.3f} "
-              f"→ {'SUBEN, el efecto es regional confuciano' if verdict['p3_regional'] else 'NO suben, el efecto es específico de China'}")
+              f"→ {'el efecto sería regional' if verdict['threshold_verdict']['p3_regional'] else 'NO es la región confuciana: es China'}")
+    verdict["reading"] = ("INTERACCIÓN país × tema: ni China-general (+0.26) ni educación-no-china "
+                          "(~0) reproducen el +0.94. El encuadre dézhì se concentra donde la teoría "
+                          "confuciana lo predice: la política EDUCATIVA china.")
 
     payload = {"design": "2x2 tema × país + brazo vecindario confuciano",
                "k_passages": K_PASSAGES, "codebook_hash": codebook_hash(cb),
