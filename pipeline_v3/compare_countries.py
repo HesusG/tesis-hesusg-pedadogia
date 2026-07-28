@@ -141,8 +141,9 @@ def main():
         "origin_median": origin_med,
         "origin_mean": origin_mean,
         "judge_coverage": coverage,
-        "status": f"PRELIMINAR / MVP — panel EN, K={K} pasajes de gobernanza/país, "
-                  f"{len(PANEL)} jueces (4 origen chino / 3 occidental)",
+        "status": f"Resultado preliminar. Panel en inglés, K={K} pasajes de gobernanza por país, "
+                  f"{len(PANEL)} jueces ({sum(1 for j in PANEL if j.origin=='chinese')} de origen chino, "
+                  f"{sum(1 for j in PANEL if j.origin=='western')} occidentales).",
     }
     WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
     (WEB_DATA_DIR / "dezhi_country_comparison.json").write_text(
