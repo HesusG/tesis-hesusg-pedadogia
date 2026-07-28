@@ -19,7 +19,7 @@ from concurrent.futures import ThreadPoolExecutor
 import chromadb
 
 from .config import (CHROMA_DIR, COLLECTION_V3, PANEL, WEB_DATA_DIR, CACHE_DIR,
-                     K_PASSAGES, TRANSLATION_MODEL, load_codebook)
+                     K_PASSAGES, TRANSLATION_MODEL, DEEP_DIVE_DOCS, load_codebook)
 from .judges import classify, client, codebook_hash
 from pipeline.embeddings import get_embedding_function
 
@@ -59,8 +59,12 @@ def main():
 
     # ── 1. Retrieval uniforme + traducción a EN (cacheada) ──
     jobs = []       # (country, passage_idx, meta, passage_en, judge)
+    # Se excluyen los documentos de análisis-en-profundidad: están en la colección
+    # pero no son comparables entre países (ver config.DEEP_DIVE_DOCS).
     for c in COUNTRIES:
-        q = col.query(query_texts=[GOV_QUERY], n_results=K, where={"country": c},
+        where = ({"$and": [{"country": c}, {"policy_id": {"$nin": DEEP_DIVE_DOCS}}]}
+                 if DEEP_DIVE_DOCS else {"country": c})
+        q = col.query(query_texts=[GOV_QUERY], n_results=K, where=where,
                       include=["documents", "metadatas"])
         docs, metas = q["documents"][0], q["metadatas"][0]
         for i, (d, m) in enumerate(zip(docs, metas)):

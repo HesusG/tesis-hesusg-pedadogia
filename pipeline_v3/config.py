@@ -49,6 +49,14 @@ TIER_A_FIELDS = {
     "source_uri": str, "n_pages": int, "ingest_version": str,
 }
 GENRE_VOCAB = ["strategy", "law", "action_plan", "report", "guidance"]   # vocabulario controlado (spike Fase 2b: +guidance)
+
+# Documentos que viven en la colección pero NO entran en la comparación entre países.
+# El Plan Quinquenal nacional (十五五规划纲要) es el documento canónico de planificación
+# estatal china y lo pidió el asesor, pero es un plan general de desarrollo: ningún otro
+# país tiene un instrumento equivalente, así que incluirlo en el agregado de China
+# rompería la comparabilidad. Entra para el análisis en profundidad de China.
+# Ver docs/criterio-seleccion-corpus.md (criterio C6).
+DEEP_DIVE_DOCS = ["cn_national_15fyp_2026"]
 # Campos indexados/filtrables (bajos en cardinalidad — guía Pinecone):
 FILTERABLE_FIELDS = ["country", "region", "genre", "language", "year"]
 

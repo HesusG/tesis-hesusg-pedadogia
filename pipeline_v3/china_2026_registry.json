@@ -1,5 +1,27 @@
 [
   {
+    "doc_id": "cn_national_15fyp_2026",
+    "year": 2026,
+    "genre": "strategy",
+    "scope": "national",
+    "adopting_body": "全国人民代表大会 / 国务院",
+    "doc_type_official": "国民经济和社会发展五年规划纲要",
+    "title_en": "Outline of the 15th Five-Year Plan for National Economic and Social Development (2026-2030)",
+    "language": "zh",
+    "country": "china",
+    "region": "asia",
+    "ingest_version": "v3.0",
+    "url": "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+    "source_uri": "https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/202603/U020260317369114704096.pdf",
+    "adopted_date": "2026-03-13",
+    "n_chars": 81178,
+    "ai_mentions": 52,
+    "edu_mentions": 100,
+    "corpus_role": "china_deep_dive",
+    "note": "Plan nacional de desarrollo, no estrategia de IA ni documento educativo. NO ocupa una casilla del par (a)/(b) del criterio C6 porque ningún otro país tiene un instrumento equivalente. Entra como documento declarado para el análisis en profundidad de China. Pedido explícito del asesor.",
+    "status": "ok"
+  },
+  {
     "doc_id": "cn_ai_edu_action_2026",
     "year": 2026,
     "genre": "action_plan",

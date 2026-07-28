@@ -19,7 +19,7 @@ import json
 import numpy as np
 import chromadb
 
-from .config import CHROMA_DIR, COLLECTION_V3, CACHE_DIR, WEB_DATA_DIR
+from .config import CHROMA_DIR, COLLECTION_V3, CACHE_DIR, WEB_DATA_DIR, DEEP_DIVE_DOCS
 from pipeline.config import ANALECTS_COLLECTION_NAME, CONFUCIAN_AXES, AXIS_SETS
 from pipeline.confucian_axes import build_axis, l2norm, bg_stats, axis_stats
 from pipeline.embeddings import get_embedding_function
@@ -54,9 +54,15 @@ def main():
     analects = cl.get_collection(ANALECTS_COLLECTION_NAME, embedding_function=ef)
 
     allv = pol.get(include=["embeddings", "metadatas"])
-    vecs = l2norm(np.array(allv["embeddings"]))
-    countries = [m.get("country") for m in allv["metadatas"]]
-    print(f"  Corpus: {len(vecs)} chunks, {len(set(countries))} países")
+    # Fuera los documentos de análisis-en-profundidad: no son comparables entre países,
+    # ni deben contaminar el fondo del z-score (ver config.DEEP_DIVE_DOCS).
+    keep = [i for i, m in enumerate(allv["metadatas"])
+            if m.get("policy_id") not in DEEP_DIVE_DOCS]
+    dropped = len(allv["metadatas"]) - len(keep)
+    vecs = l2norm(np.array(allv["embeddings"]))[keep]
+    countries = [allv["metadatas"][i].get("country") for i in keep]
+    print(f"  Corpus: {len(vecs)} chunks, {len(set(countries))} países "
+          f"({dropped} excluidos por DEEP_DIVE_DOCS)")
 
     axis_keys = AXIS_SETS[AXIS_SET]
     by_axis, background = {}, {}
