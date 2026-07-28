@@ -344,3 +344,46 @@ La limitación reportada en la Fase 5 (α por debajo del mínimo para conclusion
 **Pendiente:** Australia y Sudáfrica tienen reemplazos vigentes localizados (National AI Plan dic-2025; National AI Policy Framework oct-2024) pero **sus portales bloquean la descarga automatizada** (HTTP/2 se cuelga en industry.gov.au; el DCDT sirve un envoltorio Joomla). Quedan documentados en `docs/corpus-objetivo.md` con URL. Faltan también los documentos de IA-en-educación de los países federales, con la salvedad estructural de que Canadá no puede tener uno.
 
 **Veredicto:** ✅ el criterio de selección demostró su valor en la primera aplicación: destapó dos documentos derogados, y arreglarlos subió la confiabilidad del instrumento por encima del umbral. Los hallazgos centrales sobrevivieron el cambio de corpus, que es la prueba de robustez que faltaba.
+
+---
+
+## SPIKE Fase 8 — Vietnam y ASEAN: la Fase 6 concluyó de más
+
+**Pregunta.** La Fase 6 concluyó "no es la región confuciana, es China" porque Corea, Japón y Singapur quedaron cerca de cero. Pero los tres son democracias o híbridos de mercado: **ninguno comparte con China la estructura de partido único**. Quedaba una alternativa sin probar.
+
+**Vietnam es el caso decisivo:** único país que comparte con China **ambas** condiciones, esfera cultural confuciana y Estado de partido único. Se añadió Malasia como control asiático **no** confuciano, con dos documentos de género distinto.
+
+**Fuentes.** Vietnam: Decisión 127/QĐ-TTg (2021), texto legal verbatim en inglés vía LuatVietnam, 27,773 caracteres, 143 menciones de IA, con el articulado completo (Artículos 1 a 3, los 17 ministerios y la firma del Viceprimer Ministro). Se recortó la cola de muro de pago. El portal `en.baochinhphu.vn` **no sirve**: entrega una nota de prensa con menú de navegación. Malasia: AI Roadmap 2021-2025 (99 p) y Directrices AIGE 2024 (140 p), ambos PDF oficiales.
+
+**Resultado (630 clasificaciones):**
+
+| documento | media | IC95 |
+|---|---|---|
+| China NGAIDP (IA general) | +0.257 | [+0.06, +0.50] |
+| Corea | +0.200 | [0.00, +0.44] |
+| **Vietnam** | **+0.200** | **[+0.06, +0.34]** |
+| India NEP | +0.143 | [0.00, +0.31] |
+| Malasia Roadmap | +0.129 | [0.00, +0.27] |
+| Singapur | +0.086 | [−0.14, +0.33] |
+| Malasia AIGE / Japón | 0.000 | [0.00, 0.00] |
+| UNESCO | −0.157 | [−0.37, −0.01] |
+
+**Contrastes de Vietnam:**
+- vs los seis liberales: **+0.290, IC95 [+0.126, +0.467] → sube**, el intervalo excluye el cero.
+- vs China general: **−0.057, IC95 [−0.343, +0.186] → INDISTINGUIBLE de China.**
+- vs vecinos Corea/Japón/Singapur: +0.105, IC95 [−0.076, +0.290] → **no separa**.
+- vs Malasia: +0.136, IC95 [−0.029, +0.293] → **no separa**.
+
+### Lo que esto obliga a corregir
+
+**La Fase 6 concluyó de más.** Su afirmación "no es la región confuciana, es China" se apoyaba en que Corea, Japón y Singapur no subían. Con Vietnam en el corpus, **China deja de estar sola** en el nivel de documentos generales: Vietnam alcanza el mismo nivel y su intervalo se traslapa con el de China.
+
+**Pero tampoco alcanza para atribuirlo al Estado-partido.** Atribuir el efecto a esa estructura exigía dos condiciones: que Vietnam subiera sobre los liberales **y** que se separara de los vecinos confucianos que no son partido único. Se cumple la primera, no la segunda. Vietnam tiene el mismo punto que Corea (+0.200).
+
+**Lectura defendible con estos datos:** hay un **gradiente asiático** en los documentos generales de IA. Varios países asiáticos, confucianos y no confucianos, se ubican levemente por encima de las democracias liberales, sin separarse entre sí con la resolución actual. La afirmación fuerte que **sí** sobrevive intacta sigue siendo **la interacción China × educación** (+0.94), que está muy por encima de toda esa banda.
+
+**Error de método repetido y corregido.** El veredicto automático del script decía "SUBE: el efecto es de la estructura de Estado-partido" evaluando solo Vietnam contra los liberales. Es el mismo error de umbral crudo de la Fase 6: una comparación única no basta para atribuir un mecanismo. Se corrigió para exigir ambos contrastes.
+
+**Caveats.** K=10 por documento. Vietnam aporta un documento; Corea, Japón y Singapur uno cada uno. No hay Estado-partido **no** confuciano en el corpus (Laos y Camboya están redactando sus estrategias), así que la celda que separaría "partido único" de "herencia confuciana" sigue vacía.
+
+**Veredicto:** ✅ el caso que faltaba debilitó una conclusión previa en vez de confirmarla, que es exactamente para lo que sirven los controles. La afirmación central de la tesis, la interacción país × tema, no se movió.

@@ -78,6 +78,31 @@ CONTROLS = [
      "doc_type_official": "Guidance for generative AI in education and research",
      "path": PROC / "unesco_genai_guidance_2023.txt"},
 
+    # ── Brazo Fase 8: ¿es China o es el Estado-partido? ──
+    # La Fase 6 descartó que el efecto fuera regional (Corea, Japón y Singapur en
+    # cero), pero los tres son democracias o híbridos de mercado: ninguno comparte
+    # con China la estructura de partido único. Vietnam es el ÚNICO país que
+    # comparte ambas condiciones (esfera cultural confuciana + Estado-partido).
+    #   · Si Vietnam sube  → el efecto es de la estructura política.
+    #   · Si Vietnam queda en cero → el efecto es de China.
+    # Malasia entra como control asiático NO confuciano (mayoría musulmana) y con
+    # dos documentos de género distinto, para que la comparación no dependa de uno.
+    {"doc_id": "vietnam_ai_strategy_2021", "country": "vietnam", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2021, "topic": "general_ai",
+     "arm": "confucian_party_state", "adopting_body": "Prime Minister of Viet Nam",
+     "doc_type_official": "Decision 127/QD-TTg, National Strategy on R&D and Application of AI to 2030",
+     "path": PROC / "vietnam_ai_strategy_2021.txt"},
+    {"doc_id": "malasia_ai_roadmap_2021", "country": "malasia", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2021, "topic": "general_ai",
+     "arm": "asean_non_confucian", "adopting_body": "MOSTI Malaysia",
+     "doc_type_official": "National Artificial Intelligence Roadmap 2021-2025",
+     "path": PROC / "malasia_ai_roadmap_2021.txt"},
+    {"doc_id": "malasia_aige_2024", "country": "malasia", "region": "asia",
+     "genre": "guidance", "language": "en", "year": 2024, "topic": "general_ai",
+     "arm": "asean_non_confucian", "adopting_body": "MOSTI Malaysia",
+     "doc_type_official": "National Guidelines on AI Governance and Ethics",
+     "path": PROC / "malasia_aige_2024.txt"},
+
     # ── Brazo: vecindario confuciano × IA general. ¿China o la región? ──
     {"doc_id": "corea_ai_strategy_2019", "country": "corea", "region": "asia",
      "genre": "strategy", "language": "en", "year": 2019, "topic": "general_ai",
@@ -259,6 +284,51 @@ def main():
         verdict["threshold_verdict"]["p3_regional"] = any(x["ci95"][0] > 0.25 for x in neigh)
         print(f"    P3 región: Corea/Japón/Singapur = {m:+.3f} "
               f"→ {'el efecto sería regional' if verdict['threshold_verdict']['p3_regional'] else 'NO es la región confuciana: es China'}")
+
+    # ── P4 (Fase 8): ¿China o Estado-partido confuciano? ──
+    vn = doc_stats.get("vietnam_ai_strategy_2021")
+    asean = [doc_stats[d["doc_id"]] for d in CONTROLS
+             if d["arm"] == "asean_non_confucian" and d["doc_id"] in doc_stats]
+    if vn and ng and liberal_pass:
+        vn_pass = passage_means(by_doc_pass["vietnam_ai_strategy_2021"])
+        d_vn_lib = boot_diff(vn_pass, liberal_pass)
+        d_vn_ng = boot_diff(vn_pass, ng_pass)
+        verdict["contrasts"]["vietnam_vs_liberal_general_ai"] = {
+            "diff": stats.mean(vn_pass) - stats.mean(liberal_pass), "ci95": d_vn_lib,
+            "excludes_zero": d_vn_lib[0] > 0 or d_vn_lib[1] < 0}
+        verdict["contrasts"]["vietnam_vs_china_general_ai"] = {
+            "diff": stats.mean(vn_pass) - stats.mean(ng_pass), "ci95": d_vn_ng,
+            "excludes_zero": d_vn_ng[0] > 0 or d_vn_ng[1] < 0}
+        # Atribuir el efecto al Estado-partido exige DOS cosas: que Vietnam suba sobre
+        # los liberales Y que se separe de los vecinos confucianos que NO son partido
+        # único. Con solo lo primero, "es el Estado-partido" sería sobreinterpretar,
+        # que es el error de umbral crudo que ya cometí en la Fase 6.
+        vecinos_pass = [m for d in CONTROLS if d["arm"] == "confucian_neighborhood"
+                        and d["doc_id"] in by_doc_pass
+                        for m in passage_means(by_doc_pass[d["doc_id"]])]
+        sube = d_vn_lib[0] > 0
+        d_vn_vec = boot_diff(vn_pass, vecinos_pass) if vecinos_pass else None
+        separa_vecinos = bool(d_vn_vec and (d_vn_vec[0] > 0 or d_vn_vec[1] < 0))
+        verdict["contrasts"]["vietnam_vs_confucian_neighborhood"] = {
+            "diff": stats.mean(vn_pass) - stats.mean(vecinos_pass) if vecinos_pass else None,
+            "ci95": d_vn_vec, "excludes_zero": separa_vecinos}
+        print(f"\n    P4 Estado-partido: Vietnam (confuciano + partido único) = {vn['mean']:+.3f} "
+              f"IC95 [{vn['ci95'][0]:+.2f}, {vn['ci95'][1]:+.2f}]")
+        print(f"       vs los 6 liberales:      {stats.mean(vn_pass) - stats.mean(liberal_pass):+.3f} "
+              f"IC95 [{d_vn_lib[0]:+.3f}, {d_vn_lib[1]:+.3f}]  {'sube' if sube else 'no sube'}")
+        print(f"       vs China general:        {stats.mean(vn_pass) - stats.mean(ng_pass):+.3f} "
+              f"IC95 [{d_vn_ng[0]:+.3f}, {d_vn_ng[1]:+.3f}]  "
+              f"{'distinto' if d_vn_ng[0] > 0 or d_vn_ng[1] < 0 else 'INDISTINGUIBLE de China'}")
+        if d_vn_vec:
+            print(f"       vs vecinos KR/JP/SG:     {stats.mean(vn_pass) - stats.mean(vecinos_pass):+.3f} "
+                  f"IC95 [{d_vn_vec[0]:+.3f}, {d_vn_vec[1]:+.3f}]  "
+                  f"{'separa' if separa_vecinos else 'NO separa'}")
+        verdict["p4_party_state"] = bool(sube and separa_vecinos)
+        print(f"       → {'el efecto SÍ es atribuible al Estado-partido' if verdict['p4_party_state'] else 'NO alcanza para atribuirlo al Estado-partido: Vietnam sube sobre los liberales pero no se separa de sus vecinos'}")
+    if asean:
+        m = stats.mean(x["mean"] for x in asean)
+        print(f"    Control ASEAN no confuciano (Malasia) = {m:+.3f} "
+              f"→ {'sube, el eje capta algo no confuciano' if any(x['ci95'][0] > 0.25 for x in asean) else 'no sube, como se esperaba'}")
     verdict["reading"] = ("INTERACCIÓN país × tema: ni China-general (+0.26) ni educación-no-china "
                           "(~0) reproducen el +0.94. El encuadre dézhì se concentra donde la teoría "
                           "confuciana lo predice: la política EDUCATIVA china.")

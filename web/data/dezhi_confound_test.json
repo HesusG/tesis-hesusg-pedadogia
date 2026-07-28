@@ -2,7 +2,7 @@
   "design": "2x2 tema × país + brazo vecindario confuciano",
   "k_passages": 10,
   "codebook_hash": "1fb19472bbff",
-  "n_classifications": 420,
+  "n_classifications": 630,
   "reference_fase5": {
     "china_education": 0.943,
     "liberal_general_ai": 0.0
@@ -30,6 +30,30 @@
       "ci95": [
         -0.37142857142857144,
         -0.014285714285714285
+      ]
+    },
+    "vietnam_ai_strategy_2021": {
+      "mean": 0.19999999999999998,
+      "n_passages": 10,
+      "ci95": [
+        0.05714285714285714,
+        0.34285714285714286
+      ]
+    },
+    "malasia_ai_roadmap_2021": {
+      "mean": 0.12857142857142856,
+      "n_passages": 10,
+      "ci95": [
+        0,
+        0.2714285714285714
+      ]
+    },
+    "malasia_aige_2024": {
+      "mean": 0,
+      "n_passages": 10,
+      "ci95": [
+        0,
+        0
       ]
     },
     "corea_ai_strategy_2019": {
@@ -94,6 +118,42 @@
       "adopting_body": "UNESCO",
       "doc_type_official": "Guidance for generative AI in education and research"
     },
+    "vietnam_ai_strategy_2021": {
+      "doc_id": "vietnam_ai_strategy_2021",
+      "country": "vietnam",
+      "region": "asia",
+      "genre": "strategy",
+      "language": "en",
+      "year": 2021,
+      "topic": "general_ai",
+      "arm": "confucian_party_state",
+      "adopting_body": "Prime Minister of Viet Nam",
+      "doc_type_official": "Decision 127/QD-TTg, National Strategy on R&D and Application of AI to 2030"
+    },
+    "malasia_ai_roadmap_2021": {
+      "doc_id": "malasia_ai_roadmap_2021",
+      "country": "malasia",
+      "region": "asia",
+      "genre": "strategy",
+      "language": "en",
+      "year": 2021,
+      "topic": "general_ai",
+      "arm": "asean_non_confucian",
+      "adopting_body": "MOSTI Malaysia",
+      "doc_type_official": "National Artificial Intelligence Roadmap 2021-2025"
+    },
+    "malasia_aige_2024": {
+      "doc_id": "malasia_aige_2024",
+      "country": "malasia",
+      "region": "asia",
+      "genre": "guidance",
+      "language": "en",
+      "year": 2024,
+      "topic": "general_ai",
+      "arm": "asean_non_confucian",
+      "adopting_body": "MOSTI Malaysia",
+      "doc_type_official": "National Guidelines on AI Governance and Ethics"
+    },
     "corea_ai_strategy_2019": {
       "doc_id": "corea_ai_strategy_2019",
       "country": "corea",
@@ -139,10 +199,10 @@
     },
     "contrasts": {
       "ngaidp_vs_liberal_general_ai": {
-        "diff": 0.32380952380952377,
+        "diff": 0.3476190476190476,
         "ci95": [
-          0.11428571428571427,
-          0.5833333333333333
+          0.1380952380952381,
+          0.611904761904762
         ],
         "excludes_zero": true
       },
@@ -153,8 +213,33 @@
           -0.3571428571428571
         ],
         "excludes_zero": true
+      },
+      "vietnam_vs_liberal_general_ai": {
+        "diff": 0.29047619047619044,
+        "ci95": [
+          0.1261904761904762,
+          0.4666666666666667
+        ],
+        "excludes_zero": true
+      },
+      "vietnam_vs_china_general_ai": {
+        "diff": -0.057142857142857134,
+        "ci95": [
+          -0.34285714285714286,
+          0.18571428571428572
+        ],
+        "excludes_zero": false
+      },
+      "vietnam_vs_confucian_neighborhood": {
+        "diff": 0.10476190476190475,
+        "ci95": [
+          -0.0761904761904762,
+          0.2904761904761905
+        ],
+        "excludes_zero": false
       }
     },
+    "p4_party_state": false,
     "reading": "INTERACCIÓN país × tema: ni China-general (+0.26) ni educación-no-china (~0) reproducen el +0.94. El encuadre dézhì se concentra donde la teoría confuciana lo predice: la política EDUCATIVA china."
   }
 }

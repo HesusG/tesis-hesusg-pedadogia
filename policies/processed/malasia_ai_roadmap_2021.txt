@@ -1,0 +1,3778 @@
+
+The National Artificial Intelligence Roadmap (AI-Rmap) signifies the government’s commitment and significant step forward in the
+field of AI. As Artificial Intelligence (AI) is one of the foundation technologies of the 4th Industrial Revolution, the AI-Rmap is a
+game-changer in Malaysia's quest to leapfrog and become a high-tech nation by 2030. AI-Rmap is aligned with the aims of the
+National Policy on Science, Technology and Innovation (DSTIN) 2021-2030, the 10-10 Malaysia Science, Technology, Innovation,
+and Economy Framework (10-10 MySTIE) and other national policies and programmes that support AI development and
+implementation, such as the Malaysia Digital Economy Blueprint and the National 4IR Policy.
+The unprecedented disruption caused by the COVID-19 pandemic has unwittingly driven the innovation engine, which is often not
+the foremost priority for most organizations. Whilst the outbreak has caused significant disruptions to commercial operations and
+business relationships around the world, it has also unveiled hidden talents and innate capacity to learn and adapt ideas to local
+needs. AI has become more critical than ever when society has become increasingly reliant on technology. AI will play an essential
+role in bolstering Malaysia's economic resiliency and ensuring stability and competitiveness for all Malaysians.
+In strengthening the nation's innovation ecosystem, we must increase AI growth and adoption. Most importantly, the government,
+industry, academia and society must come together and collaborate to deploy the AI solutions in addressing key national priorities.
+This quadruple helix will need to participate in cross-sectoral collaboration to secure world-class AI competitiveness. I hope this
+National AI Roadmap will provide a reference to boost Malaysians' quality of life by application of AI technology while also
+speeding up the country's transformation into a high-tech nation.
+YANG BERHORMAT DATO’ SRI DR. ADHAM BIN BABA
+MINISTER OF SCIENCE, TECHNOLOGY AND INNOVATION
+III
+The National Artificial Intelligence Roadmap (AI-Rmap) is a document that explains the development of artificial
+intelligence (AI) and demonstrates how the Malaysian government reacts to technological and environmental
+changes. At the Ministry of Science, Technology and Innovation, we recognise the role of AI in boosting our economy
+and showcasing Malaysia's true capabilities. We do not want to be a country that only uses and adopts technology;
+we want to be innovators in new fields.
+AI-Rmap’s vision is to increase employment opportunities and national competitiveness by expanding productivity
+and economic growth and making Malaysia more globally competitive. By leveraging AI as a significant technology
+engine, AI-Rmap will build a thriving and sustainable AI innovation ecosystem that will help Malaysia become a high-
+tech and high-income country.
+The strategic quadruple helix partnership of government, academia, industry, and society (GAIS) is essential to the
+success of the AI-Rmap. It emphasises how AI can help Malaysia become a high-tech nation by bringing together
+relevant AI stakeholders. These parties should take a constructive stance in this new paradigm by actively co-
+designing the required environment and ecosystem to promote responsible AI design, AI growth, and emerging AI
+technologies in Malaysia.
+The implementation and application of AI in our society are increasing and changing, and we are only at the
+beginning of a long journey. AI-RMap aims to address the complexities of enabling change, given the scope and
+importance of future AI applications.
+YANG BERBAHAGIA DATUK IR. TS. DR. SITI HAMISAH TAPSIR
+SECRETARY GENERAL
+MINISTRY OF SCIENCE, TECHNOLOGY AND INNOVATION
+IV
+The National Artificial Intelligence Roadmap (hereafter
+AI-Rmap) describes how Malaysia’s AI capabilities will be
+harnessed, catalysed and propelled within the next 5
+years, from 2021 until 2025. The COVID-19 pandemic
+has created an extraordinary crisis for countries all
+around the world. It has also been a catalyst for
+accelerating digital transformation and technology
+adoption in Malaysia. This roadmap urges all AI
+stakeholders to take a proactive stance in this new
+paradigm, actively co-designing the appropriate
+environment and ecosystem to support responsible AI
+design, development, and use in Malaysia.
+AI-Rmap has three distinctive features in its
+development:
+Strategic alignment with global and national strategy
+documents relevant to science, technology and
+innovation focus,
+Strategic collaboration amongst Government,
+Academia, Industry and Society (GAIS, or Quadruple
+Helix), and
+Fully 100% virtual and online meetings and
+presentations, from project inception to project
+completion, culminating into a living
+document placed in the cloud and an
+augmented reality based physical document.
+Central to the AI-Rmap is the AI Innovation Ecosystem (AI-
+IE) Framework, with the AI Innovation Hub, also known as
+the AI-Catalyst, leveraging quadruple helix collaboration to
+expedite the implementation of national AI use cases
+(or projects) that would place Malaysia on the global AI
+map.
+The main goal of AI-Rmap is to create a thriving and
+sustainable AI innovation ecosystem that will make
+Malaysia a high-technology and high-income nation
+by exploiting AI. Malaysia can be considered a high
+technology nation when the degree of which cutting edge
+technologies like AI become a critical driver of productivity
+and competitiveness for the whole economy, not only in
+the tech sector. The success of AI-Rmap lies in the strategic
+quadruple helix collaboration of government, academia,
+industry and society (GAIS), which is reflected in the
+collaboration of UTM, PIKOM and MOSTI to develop the
+AI-Rmap document.
+Malaysia's development and use of AI is growing and
+evolving, and we need to accelerate this important
+journey. Given the breadth and significance of potential AI
+applications, AI-RMap seeks to overcome the challenges of
+enabling change. AI-Rmap is a living document that will
+continuously be revised along with changes occurring in
+the environment, to ensure the roadmap remains relevant
+and consistent with any new developments.
+EXECUTIVE SUMMARY
+1
+2
+3
+V
+1. Contextualizing AI in Malaysia
+3. AI Innovation Ecosystem (AI- IE)
+2. AI Landscape 
+4. Strategies and Strategic Initiatives
+6. AI-Rmap as a Living Document
+5. National AI Use Cases
+7. Critical Success Factors
+ Vision, Mission, Goals and Targets................3
+ The Economic Impact of AI............................5
+ Defining AI-IE.............................................24
+ Key Actors in AI-IE......................................26
+ AI Innovation Hub (AI-Catalyst).................27
+ AI-CIU.........................................................28
+ Principles for Responsible AI.....................29
+ Global AI Landscape
+ National AI Status
+ AI-Rmap Horizon.........................................32
+ Strategy 1: Establishing AI Governance…...34
+ Strategy 2: Advancing AI R&D....................40
+ Strategy 3: Escalating Digital Infrastructure
+to Enable AI................................................46
+ Strategy 4: Fostering AI Talents.................50
+ Strategy 5: Acculturating AI.......................60
+ Strategy 6: Kick-Starting a National AI 
+Innovation Ecosystem...............................66
+IDC Study on AI Adoption in Malaysia…...11
+Malaysian AI Roadmap Survey 2021........12
+Examples of AI Adoption in Malaysia…....18
+Global AI Leaders........................................8
+East Asia AI Leaders....................................9
+AI in ASEAN...............................................10
+ Malaysia as World Leader in AI-Driven
+Supply Chain...............................................77
+ National AI Use Cases within National 
+Priority Areas.............................................79
+CONTENTS
+X
+X
+X
+X
+X
+…......................................................................88
+….......................................................................89
+X
+SCAN here
+VI
+Contextualizing 
+AI in Malaysia1
+SCAN here
+2
+5-YEAR GOAL
+“To create a self-sustaining AI 
+Innovation Ecosystem for AI 
+development, leveraging 
+quadruple helix collaboration 
+guided by Responsible
+AI Principles”
+Establishing AI 
+Governance
+Advancing AI  R&D
+Escalating Digital 
+Infrastructure to Enable AI
+Kick-Starting a National 
+AI Innovation Ecosystem
+AI Coordination and 
+Implementation Unit (AI -CIU) 
+A Robust AI R&D Ecosystem
+Digital Infrastructure for AI
+AI Talents and AI Skilled Workforce
+Acculturating AI
+Fostering AI Talents
+Increased AI Awareness and AI 
+Adoption
+AI Innovation Hub
+VISION MISSION
+“Make Malaysia a nation where
+Artificial Intelligence augments JOBS, drives NATIONAL
+COMPETITIVENESS, encourages INNOVATION &
+ENTREPRENEURSHIP to bring economic prosperity,
+social good and improves PEOPLE’S WELL BEING”
+“To create a THRIVING NATIONAL
+AI ECOSYSTEM that allows EVERYONE 
+(government, business, and people) to 
+capitalise on the BENEFITS OF AI in a 
+SECURED AND SAFE manner for economic 
+prosperity and social well-being”
+STRATEGIES
+SUB-GOALS
+By 2025, the future Malaysia envisioned by AI-Rmap will achieve
+the following: 
+AI-Rmap Vision, Mission, Goals
+SCAN here
+3
+Establishing AI -Catalyst as the Innovation 
+Hub to implement the Quadruple Helix
+AI Innovation Ecosystem Model
+Implementing Proposed National AI Use -
+Cases focusing on AI -Driven Supply Chain
+Establishing a Quadruple Helix 
+Collaborative Platform for AI R&D&I
+Engaging with Global Knowledge 
+and Innovation Networks for AI
+Cultivating AI Awareness 
+Accelerating AI Adoption
+Offering comprehensive and inclusive 
+AI Education
+Reskilling and upskilling existing 
+workforce
+Attracting and retaining AI Talents
+6.1
+6.2
+6.3
+6.4
+5.1
+5.2
+4.1
+4.2
+4.3
+3.1
+3.2
+3.3
+1.1
+1.2
+1.3
+1.4
+1.5
+Establishing AI Coordination and Implementation 
+Unit (AI -CIU) responsible for successful 
+implementation of the AI Roadmap
+Establishing digital platform for multidirectional 
+committee interaction and horizon scanning
+Institutionalizing current cybersecurity policies 
+and best practices for AI incorporation
+Institutionalizing AI principles  for AI 
+implementation
+Establishing clear guidelines for data sharing 
+in government to enable AI implementation
+2.1
+2.2
+2.3
+2.4
+2.5
+Embarking on fundamental and applied R&D 
+in the relevant entities within the AI 
+Innovation Ecosystem
+Encouraging AI Adoption in R&D for all 
+fields (S&T and Non- S&T)
+Institutionalizing AI within AI National 
+Research Institutes
+Leveraging AI within all National 
+Research Institutes
+Establishing clear guidelines for data sharing 
+in government to enable AI implementation
+Enabling adoption of cloud computing and 
+storage for AI
+Enabling data sharing in AI Catalyst Consortium
+Improving network and connectivity for 
+wider access to digital infrastructure for AI
+STRATEGY 6:
+KICK-STARTING A NATIONAL AI
+INNOVATION ECOSYSTEM
+STRATEGY 5:
+ACCULTURATING AI
+STRATEGY 4:
+FOSTERING AI TALENTS
+STRATEGY 1:
+ESTABLISHING AI GOVERNANCE
+STRATEGY 2:
+ADVANCING AI R&D
+STRATEGY 3:
+ESCALATING DIGITAL INFRASTRUCTURE TO 
+ENABLE AI
+Strategies
+SCAN here
+4
+AI can transform the productivity and
+GDP potential of the global economy.
+Industry analysts and government
+believe that AI can be a great
+transformer for both developed and
+developing nations. Accenture
+research on the impact of AI in 12
+developed economies concluded that
+AI has the potential to double annual
+economic growth in 2035 of gross
+value added by changing the nature
+of jobs and creating new relationships
+between human and machines.
+United Nations agencies have
+embraced AI as an accelerator for
+realizing the 2030 Agenda for
+Sustainable Development for all
+countries - poor, rich and middle
+income - to promote prosperity while
+protecting the planet. Nations
+ignoring these trends may miss out
+on economic opportunity and stay
+relevant as well as competitive in this
+fast-transforming digital world.
+Using McKinsey data, simulation in 2018 reported that Malaysia’s baseline growth is about 4.4%, and with AI-led growth, there is an additional 1.2%
+growth impact as shown in the figure. The additional 1.2 GDP percentage points on GDP growth leads to an increment of 30% GDP growth based on the
+2018 baseline growth for Malaysia. With current events of Covid19 and other related factors, Malaysia GDP is not quite even at 4.0% and this
+framework (McKinsey) enables the AI-Rmap to evaluate and to calculate what is the expected GDP growth. In view of this, AI-Rmap is targeting towards
+at least an AI-led growth that aims for 30% increase in the GDP growth at the very least.
+Due to the importance of AI for Malaysia, AI-Rmap proposes that an annual economic impact assessment should be carried out over during the RMK12
+period. This will not only help Malaysian validate existing reports, but also becomes a measure of progress in the implementation of the National AI
+Roadmap.
+2.1
+1.8
+1.5
+1.2
+0.9
+0.6
+0.3
+0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0
+AI-led Growth                       Per Capita GDP         < $10,000          $10,000 - $30,000          $30,000+
+MALAYSIA
+Baseline growth: 4.4%
+AI to add another 1.2%
+i.e. additional 30% GDP growth
+Baseline consensus growth rates (2017-30)
+Year-on-year growth, %
+The Economic Impact of AI
+SCAN here
+5
+AI Landscape
+2
+Government AI Readiness Index 2020
+Source: Oxford Insights
+COUNTRY
+USA
+JAPAN
+CHINA
+MALAYSIA
+THAILAND
+INDONESIA
+PHILIPPINES
+VIETNAM
+GLOBAL RANK
+UK
+SINGAPORE
+SOUTH KOREA
+MALAYSIA
+1
+2
+6
+7
+13
+19
+28
+28
+60
+62
+74
+76
+REGIONAL RANK
+ASEAN
+EAST ASIA
+WESTERN EUROPE
+NORTH AMERICA
+1
+1
+1
+2
+3
+4
+5
+1
+2
+3
+4
+5
+SCORE
+85.48
+81.12
+78.70
+77.69
+73.30
+69.08
+63.66
+63.66
+48.16
+47.53
+38.73
+34.00
+7
+Global AI Leaders
+US BENCHMARK UK BENCHMARK
+1. First ranked in the Government Readiness
+Index for strong AI innovation ecosystems
+across government, academia and industry,
+consistent with AI leadership standing criteria.
+2. USA is one of the leading AI nations and
+focuses its efforts on fostering AI
+innovations in the private sector and
+encouraging AI adoption in government.
+3. One of the key pillars AI Policy plan is
+focusing on investments in R&D to support
+AI innovations.
+4. Launch initiative to set out a strategy for
+maintaining the USA’s global leadership in
+AI.
+5. Improve commitment to doubling the R&D
+spending over the next 2 years.
+6. It has a solid foundation on which to build to
+improve its human capital score.
+1. UK universities have produced world-leading
+AI research centres.
+2. UK AI strategy focus on the growth of the
+economy through widespread use of AI
+technologies; ethical, safe and trustworthy
+development; and resilience in the face of
+change through an emphasis on skills,
+talents and R&D.
+3. Boasts some of the finest AI scientists in the
+world.
+4. Boosting AI initial in business adoption,
+startup & scale-up support, public sector
+adoption, health and social care, climate
+change, and defense.
+5. Plan to be as the global centre for
+development, commercialization and
+adoption of responsible AI.
+6. First ranked as performs well on the data and
+infrastructure pillar.
+8
+East Asia AI Leaders
+9
+
+AI in ASEAN
+10
+Deeper analysis of the survey shows that most business leaders and
+workers believed that cultural traits that support AI journeys namely
+risk-taking, proactive innovation, cross-function partnerships among
+teams are not pervasive today. This in turn leads to the lack of
+leadership commitment which will likely lead to lack of investments in
+the digital skills as well as tools and infrastructure to drive AI-enabled
+digital transformation. The study discovered that Malaysia’s business
+leaders and workers held positive viewpoints about the AI’s impact on
+the future of jobs. Specifically, more than half (67% of business
+leaders and 64% of workers) believed that AI will either help to do
+their existing jobs better or reduce repetitive tasks.
+Clearly business leaders in Malaysia require a mindset change to
+embrace a new culture where innovation and continuous learning are
+core components of the organizational culture. It sets the stage for
+agility, adaptability, and growth. The study also showed that those
+who were brave enough to embrace a growth mindset and to
+implement digital transformation leveraging on AI saw tangible
+business benefits from AI. This is not only from a cost leadership point
+of view through improved efficiency and higher employee
+productivity, but also from strategic business advantage through
+accelerated innovation, higher competitiveness, and better customer
+engagement as shown in bottom figure.
+In 2018, Microsoft commissioned a study by the International Data Corporation (IDC) involving 100 business leaders and 100 workers in Malaysia to better
+understand how they are embracing AI, harnessing its capabilities, and understanding the key barriers to greater and faster adoption. This was part of a
+wider study involving 15 geographies across Asia Pacific that provides a useful benchmark when studying a country. The IDC study on adoption is based on
+an organization’s readiness to adopt AI using a Readiness Model that involve 6 dimensions including strategy, investments, culture, capabilities,
+infrastructure and data.
+IDC Study on AI Adoption in Malaysia
+International Data Corporation Study: Asia Pacific and Malaysia AI Readiness
+Benefits from AI implementation today (2018) and after 3 years
+The result of the study is illustrated in the top figure which shows
+that Malaysia will have to catch up with APAC on her readiness to
+adopt AI. The key areas of opportunity for Malaysian organization
+to improve are data and investments in digital platforms. In other
+words, Malaysian organizations will need to improve their data
+governance to leverage on the potential of their data and invest in
+digital platforms such as hyper-scale intelligent cloud rather
+expansion of their traditional IT infrastructure
+Strategy
+Data
+Capabilities
+Infrastructure
+Investments
+Culture
+Malaysia is behind Asia Pacific
+in all areas particularly
+Investments and Data
+1.94
+1.59
+2.03
+1.88
+1.65
+2.22
+Accelerated 
+innovation
+Higher 
+competitiveness
+Improve 
+Efficiency
+Productive 
+employees
+Better Customer 
+Engagements
+Today In 3 Years
+0
+1
+2
+3
+4
+17%
+38%
+19%
+42%
+21%
+39%
+28%
+49%
+34%
+53%
+11
+The Malaysian Artificial Intelligence (AI) Roadmap Survey was
+performed in 2021 in order to better understand the state of AI use
+and development in various economic sectors across the country,
+as well as to aid the government in developing an AI roadmap. The
+survey was conducted with the goal of assessing the state of AI
+development in the quadruple helix (government, business,
+academia, and society) in terms of governance, infrastructure and
+data, talent and technology, research and development, and
+innovation. The survey received 173 valid answers from Quadruple
+Helix organizations.
+Malaysian Artificial Intelligence (AI) Roadmap Survey:
+OVERVIEW
+Government , 
+66, 38%
+Industry/ Private / 
+Companies, 77, 
+45%
+Academia , 24, 
+14%
+Others, 6, 3%
+TYPE OF ORGANISATIONS
+BUDGET
+PRIORITIES
+ AI ADOPTION
+ AI CAPABILTIES      
+& FUNCTIONS
+GOVERNANCE
+ INFRASTRUCTURE 
+& DATA
+ AI TALENT
+TECHNOLOGY,       
+R & D, & 
+INNOVATION
+CHALLENGES
+Malaysia (AI) Roadmap Survey Content
+12
+Current status of data security policy/program AI Governance initiatives:
+Perceived stage of implementation
+Organization's operational expenditure priority
+Malaysian Artificial Intelligence (AI) Roadmap Survey : 
+AI GOVERNANCE
+More than half of the organizations have a security policy in place. However,
+just half of those surveyed feel their programme is either well established or
+established.
+2.70%
+9.30%
+38%
+34%
+16%
+Not available
+Somewhat vulnerable but…
+Well established & implemented
+Initiatives Initial 
+(%)
+Partial 
+(%)
+Full 
+(%) 
+None 
+(%)
+Ensured that AI application/system 
+is secured 27.7 18.4 16.3 37.6
+Ensured inter-departmental 
+integration throughout the 
+organization
+28.4 19.9 12.1 39.7
+Safeguarded the transparency in 
+protecting privacy to the users 24.8 18.4 16.3 40.4
+Studied, reviewed and update on 
+related AI policies and regulations 
+to accelerate AI development
+30.5 14.2 7.8 47.5
+Established dedicated task 
+force/committee for planning, 
+implementing and managing AI 
+initiatives.
+28.4 11.3 12.8 47.5
+Established a policy making 
+support system to protect users 25.5 13.5 12.8 48.2
+Developed risk management and 
+cyber security policy for AI 27.7 12.1 10.6 49.6
+Updated the legal system to 
+promote AI development 21.3 13.5 7.1 58.2
+Established the right regulations 
+and ethical frameworks to 
+implement AI 
+19.9 12.1 9.9 58.2
+13
+For Infrastructure and data
+that support AI, the survey
+comprises information about
+• Data sharing activities
+• Storage capabilities
+• Policy and mechanism
+• Infrastructure
+• Networks
+• Computing resources
+• Security
+Overall findings indicate good overall
+computing infrastructure. But majority of
+the organizations are at the initial stage
+of capabilities to support AI.
+31%
+28%
+25%
+16%
+NONE
+INITIAL 
+PARTIAL 
+FULL
+STATE OF AI 
+INFRASTRUCTURE & 
+DATA
+Malaysian Artificial Intelligence (AI) Roadmap Survey :
+INFRASTRUCTURE AND DATA THAT SUPPORT AI
+AI activities and 
+implementation
+None 
+(%)
+Initial  
+(%) 
+Partial 
+(%) 
+Full 
+(%)
+Infrastructure for data storage 
+and sharing 18.8 30.8 27.8 22.6
+Data storage in cloud 22.6 30.8 27.1 19.5
+Data for inter-department 
+resource sharing (eg. Cloud 
+sharing) 
+23.3 29.3 27.8 19.5
+Security measures against threat 
+to organisational data 25.6 27.8 24.8 21.8
+Descriptive and diagnostic 
+analytics 33.1 30.1 21.1 15.8
+Techniques and processes 
+facilitate data sharing across 
+functional lines 
+33.8 24.1 23.3 18.8
+Inter-departmental integration 
+throughout the organisation 35.3 26.3 30.8 7.5
+Policy and mechanism for 
+sharing data with other 
+organizations 
+36.8 27.1 21.8 14.3
+Predictive and prescriptive 
+analytics  40.6 27.8 20.3 11.3
+External data used for business 
+intelligence and analytics 41.4 27.1 22.6 9
+AI-related activities &implementation
+CAPACITY HIGH
+(%)
+MEDIUM 
+(%)
+LOW
+(%)
+Storage capacity  *** ** *
+Bandwidth *** ** *
+Network Latency  ** *** *
+Secured data  *** ** *
+Performance computing 
+resources  *** ** *
+Cost effective AI solutions * ** ***
+Infrastructure and data capacity for continuous use, development and 
+implementation 
+14
+The survey related to talents includes
+*Talent headcount and projection           *Hiring channels/ resources
+*Activities that promote talent                 *Challenges
+The challenges in sourcing AI talents are mainly shortage of talents in the 
+market and insufficient hiring budget.
+Malaysian Artificial Intelligence (AI) Roadmap Survey: AI TALENTS
+Professionals
+Current 
+Total 
+Headcount
+Target 
+Total 
+Headcount 
+(by 2025)
+Percent 
+change
+Data Analyst 149 339 128%
+Data Engineer 94 263 180%*
+Software Engineer (for AI-related 
+activities) 114 259 127%
+Data Scientists
+(including Jr. and Sr.) 201 432 115%
+Product Engineering
+(focus on AI applications) 70 205 193%**
+AI Architect 40 171 328%***
+2.45
+2.45
+2.35
+2.34
+2.1
+1.9 2 2.1 2.2 2.3 2.4 2.5
+Awareness programme on AI
+Up-skilling current employees for
+AI
+Re-skilling current employees for AI
+Innovative work practices on AI
+Recruiting AI Talent
+Activities to accelerate the AI 
+talents 
+2.91
+2.82
+2.77
+2.57
+2.4
+0 0.5 1 1.5 2 2.5 3 3.5
+Shortage of AI talents in the…
+Insufficient budget to hire AI…
+Unsuitable AI talents in the…
+Unsure which categorisation of…
+Issues with current HR…
+Issues in AI Talent Sourcing
+2.47
+2.12
+2.06
+2.05
+2.05
+1.81
+1.62
+0 0.5 1 1.5 2 2.5 3
+University partnership
+Conference &  events
+Recruiting agencies
+Up-skill current employees
+Advertisement (eg JobStreet.com,…
+Social media (eg. FB, Instagram,…
+Referrals
+Source or channels to hire AI talents
+Current and future AI talent needs
+15
+The most common 
+areas of the AI R&D
+are big data 
+analytics, smart 
+applications and 
+IOTs.
+7.16
+7.05
+6.95
+6.88
+6.70
+6.68
+6.59
+6.59
+6.10
+6.05
+5.67
+5.62
+5.53
+Access to Relevant Data
+Research Funding
+AI talents in the market
+Research Leadership
+Advanced AI Technology
+HR recruiting process
+International Collaboration
+Malaysian Artificial Intelligence (AI) Roadmap Survey : 
+TECHNOLOGY, RESEARCH & DEVELOPMENT, & INNOVATION
+46
+41
+39
+32
+28
+22
+19
+11
+0 10 20 30 40 50
+Commercialisation Funding
+Job Promotion
+IP revenue sharing
+Tax
+exemption/rebate/reducti…
+R&D Funding
+Easy excess to R&D facilities
+Awards & Recognition
+Attractive remuneration
+(Financial rewards)
+Incentives available in promoting AI R&D, &I 
+Important elements that promote AI R&D, &I
+Areas of AI R&D
+82
+61
+60
+53
+46
+46
+43
+33
+25
+6
+0 20 40 60 80 100
+Big Data Analytics
+ Smart Application
+ Internet of Things (IoT)
+ Machine Learning
+ Deep Learning
+ Intelligent Automation
+ Algorithm
+Robotics
+ Reinforcement Learning
+ Neuromorphic…
+16
+Budget and governance
+Budget priority is reasonably high
+on technologies and infrastructure
+that can support AI
+Organizations are allocating less
+budget for AI related projects and
+development
+AI governance initiatives are
+mostly at the initial stage
+The public sector is significantly
+behind in some aspects of
+governance and monetary support.
+Infrastructure and data
+AI Infrastructure and Data
+activities are mostly at the
+initial stage
+Majority of the organizations
+have high capacity in storage,
+bandwith, computing
+performance, secured data,
+and network latency, hence
+indicating a good readiness
+for AI
+While the survey has its own limitations, the knowledge gained from the analysis can provide useful insights into the AI
+adoption and implementation in Malaysia within relevant Quadruple Helix quadrants. Investigation on the differences
+between organizations was made only for the private and the public sectors as there was sufficient unit of analysis
+acquired in the data. Some of the conclusions provided below are supported by the statistical analysis of the survey,
+which are detailed out in the full survey report.
+Talents
+High growth needs for AI
+related expertise for the next
+five years.
+Organizations engaged less in
+activities that accelerate the
+AI talents.
+Talent issues - shortage and
+insufficient budget top the
+list.
+The private sectors lead in
+most aspects of promoting
+and acquiring AI talents
+AI Innovation and R&D
+Important elements that
+promote AI R&D - Access to
+relevant data, budget,
+funding, network and
+linkages, and availability of AI
+talent in the market top the
+list.
+Majority of organizations have
+no incentives to promote AI
+R&D.
+The private sectors lead in
+most aspects of AI R&D
+Malaysian Artificial Intelligence (AI) Roadmap Survey :
+STATUS OF AI IN MALAYSIA 
+ SCAN here
+17
+Examples of AI Adoption in Malaysia
+The level of AI adoption is in nascent stage, and many organizations in Malaysia have begun several
+AI initiatives. The following quadruple helix sectors (ie Government, Academia, Industry, Society)
+provides evidences of the AI adoption in Malaysia.
+1. Government
+Both Federal Government and the State Governments have embarked on numerous AI initiatives. With the wider
+push for AI, many federal and state agencies are accelerating their adoption of AI. Several agencies of note are the
+Malaysian Investment Development Authority (MIDA) and the Malaysia Automotive Robotics and IOT Institute.
+Federal State 
+High-Tech Nation Council provides strategic 
+direction for emerging technologies
+Many states included AI Adoption in their strategic 
+plans. Examples: 
+ Johor 4.0
+ Pelan Strategik Melakaku Maju Jaya 2035
+ Penang2030
+ SUK Perak 2021-2025
+ Sarawak Digital Economy Strategy 2018-2022 
+ Smart Selangor 2025
+MIDA promotes AI among SMEs
+MARii developed DEVhub Prime online platform 
+that adopts AI and big data in matching algorithm
+Chatbots introduced in KWSP and MOSTI portals.
+18
+Examples of AI Adoption in Malaysia
+2. Academia
+AI is offered as an academic programme in 17 Malaysian public and private universities, at both undergraduate and
+postgraduate levels. However, very few of these programmes explicitly state Artificial Intelligence in the degree
+conferred as AI is usually offered as a course rather than as a programme. Other courses which are related to AI
+include Machine Learning and Data. There are also three AI Centre of Excellence in public universities and
+collaborations with industry to cultivate AI talents was implemented.
+AI Academic Programmes in Malaysian Universities Center of Excellence for AI in 
+Malaysian Universities
+University-Industry to 
+Cultivate Industry Ready 
+AI Talents
+AI Specialization in Undergraduate programmes in:
+|UM|UTeM|APU|Monash (Sunway)|MMU|UCSI 
+|Nottingham Malaysia|Southampton Malaysia|UOW
+Malaysia KDU U College|
+ Center for Artificial 
+Intelligence Technology 
+(CAIT) UKM
+ Centre for Artificial 
+Intelligence and Robotics 
+(CAIRO) UTM, 
+ Institute of AI and Big Data 
+(AIBIG) UMK
+Skymind Holdings Berhad
+joined forces with 
+Universiti Teknologi
+Malaysia (UTM) and 
+Universiti Sains Malaysia 
+(USM) with a 
+collaboration to cultivate 
+industry-ready AI talents.
+AI Master programme in:
+IIUM|UKM|UniMAP|UMS|UPM|UTEM|IIUM|Taylor’s
+|UTAR
+AI Doctoral program in:
+IIUM|UM|UniMAP|UMS|UPM|UTEM|AeU| Monash 
+(Sunway)|
+19
+Examples of AI Adoption in Malaysia
+3. Industry
+Many industry players in Malaysia have either initiated or are actively involved in various forms of AI projects and 
+programs. Amongst these are Petronas, Telekom Malaysia, Huawei Malaysia, and Seeloz.
+• PETRONAS: uses AI to manage platform data - New technology to the Oil and Gas industry is introduced by
+moving away from condition-based monitoring and conventional analytics and toward predictive
+maintenance driven by predictive analytics. In the Dulang platform, VROC AI validated the failure root
+causes 2000 times faster and saved RM 15 million in cost avoidance.
+• Microsoft (Malaysia) Sdn. Bhd: supports researchers, nonprofits and organizations globally covering
+multiple disciplines such as environment, accessibility, human issues, cultural heritage and health through
+their AI for Good initiatives. Further, ethical AI practices are enforced throughout the organization via their
+Responsible AI program.
+• Seeloz Inc: an AI company based in Silicon Valley, California but with deep roots in Malaysia, is an emerging
+global leader in Supply Chain Automation. Leveraging Artificial Intelligence (AI), Seeloz introduced Supply
+Chain Automation Suite (SCAS), the world’s first Autonomous Requirements Planning (ARP), that redefines
+supply chain planning across the distinct types of supply chains.
+• Telekom Malaysia Berhad ™: signed a Memorandum of Agreement (MoA) with Huawei Technologies (M)
+Sdn Bhd (Huawei), sealing a collaboration that expands its cloud infrastructure offered through TM ONE
+• Huawei: a leading global provider of information and communications technology (ICT) infrastructure and
+smart devices, employing 197,000 employees in 170 countries, and serving more than 3 billion people. The
+company serves more than 80% of Malaysians through fixed and mobile telecommunications solutions and
+is proud to be a part of the nation’s digital transformation journey.
+20
+List of AI Companies and Startups in Malaysia
+List of AI and Big Data Analytics related companies which are members of PIKOM members
+1.ADF Technologies Sdn Bhd
+2.Adv Fusionex Sdn Bhd
+3.Avenga Malaysia Sdn Bhd
+4.Axiata Digital Labs (Pvt) Limited 
+5.Crayon Software Experts Sdn Bhd
+6.Eighth Intuition Sdn Bhd
+7.FPT Software Malaysia Sdn Bhd
+8.Hewlett Packard (M) Sdn Bhd
+9.Hitachi Vantara Sdn Bhd
+10.Huawei Technologies (M) Sdn Bhd
+11.IBM Malaysia Sdn Bhd
+12.Knight Information Solutions Sdn Bhd
+13.Lenovo Technology Sdn Bhd
+14.Macrovention Sdn Bhd
+15.Matrix Connexion Sdn Bhd
+16.Mesiniaga Berhad
+17.NEC Corporation of Malaysia Sdn Bhd
+18.Orangefin Asia Sdn Bhd
+19.PanPages Labs Sdn Bhd
+20.Promeritus Sdn Bhd
+21.RAMS Solutions Sdn Bhd
+22.Saltyskins Sdn Bhd
+23.SAP Malaysia Sdn Bhd
+24.Softline Solutions International Sdn Bhd
+25.Strateq Sdn Bhd
+26.Sunway Quantum Sdn Bhd
+27.Synergy Log-In System Sdn Bhd
+28.TERAS Teknologi Sdn Bhd
+29.TOMTOM Navigation Malaysia Sdn Bhd
+30.Top Click Sdn Bhd
+31.Trisilco IT Sdn Bhd
+32.VADS Berhad
+33.Xperanti IOT (M) Sdn Bhd
+34.Zadara Storage Inc.
+35.Microsoft (Malaysia) Sdn Bhd
+Type of Companies identified by
+MDEC involved in areas related to
+AI, Machine Learning and
+Advanced Analytics
+Areas in AI, Machine 
+Learning and 
+Advanced Analytics
+Number of 
+companies
+Automation 4
+Data Analysis 14
+Data Ingestion 9
+Data Management 12
+Data Preparation 8
+Data Visualization 3
+Descriptive analytics 20
+IR 4.0 5
+NLP 11
+Platform enabler 17
+Predictive analytics 12
+Prescriptive analytics 10
+Robotics 9
+System integration 7
+Total 141
+Examples of AI Adoption in Malaysia
+MAGIC and TPM list of AI and Big Data Analytics related companies that develop AI products and/or rely on AI in their business
+1.Glueck Technologies
+2.Otomate.me
+3.Tapway
+4.Poladrone
+5.Dropee
+6.Cedar Technologies
+7.Favoriot
+8.DataMicron
+9.DF Automation
+10.Biztory
+11.Fairwiz by EasyUni
+12.Billplz
+13.MoneyMatch
+14.Retailetics
+15.ServisHero
+16.EasyParcel
+17.Robopreneur
+18.Food Market Hub
+19.Kravve
+20.BoomGrow
+21.Blinkware
+22.Soft Space
+23.Firegent iASP
+24.Kommu
+25.Braintree Technologies
+26.Cloudbreakr
+27.Alfie Tech
+28.Naluri
+29.Runcloid.io
+30.Oxygen Resources
+31.Inference Tech
+32.Precision Agriculture Robotics
+33.OFO Tech
+34.Geoprecision Tech
+35.Core Expert
+36.Commaxion
+37.Y Us
+38.BNetwork
+Many international companies and digital startups companies in Malaysia are already leveraging on AI to stay relevant and be competitive in this new
+world. PIKOM, MAGIC, TPM and MDEC have reported a total of more than 100 companies associated with AI. Data from MDEC shows that AI in
+Malaysia is mainly used in the areas associated with analytics, while having the opportunity to grow other areas of applied AI.
+21
+Other companies known to leverage AI in their business in Malaysia
+1.Luno, Malaysia
+2.Skymind Holdings
+3.Axiata
+4.Telekom Malaysia
+5.Air Asia
+6.NVDIA Corporation
+7.Google
+8.Amazon
+9.Grab
+10.Lazada
+11.Shopee
+12.Seeloz Malaysia Sdn. Bhd
+21
+Examples of AI Adoption in Malaysia
+4. Society
+There are several AI interest groups that have been in existence in Malaysia. Communities like AI Malaysia 
+(Facebook) exist to discuss AI-related issues. They may be online communities or registered NGOs in Malaysia. They 
+serve as an important source of views from the grassroots.
+AI Society Owner URL
+Artificial Intelligence Society UiTM 
+Malaysia
+UiTM
+https://web.facebook.com/aisocietyuitm
+Artificial Intelligence Society (ARTIS) 
+Malaysia
+NPO
+http://www.sigtech.com.my/AI/
+Malaysia Robotics & Automation 
+Society (MYRAS)
+NPO
+https://myras.org/
+Woman in AI NPO https://web.facebook.com/womenaimalaysia
+Tensor Flow & Deep Learning 
+Malaysia
+NPO
+https://web.facebook.com/groups/TensorFlowMY
+R User Group Malaysia NPO https://web.facebook.com/rusergroupmalaysia
+Artificial Intelligence Malaysia NPO https://www.facebook.com/groups/artificialintelligenc
+emalaysia/
+22
+AI Innovation 
+Ecosystem3
+Defining the AI Innovation Ecosystem
+The AI innovation ecosystem (AI-IE) is an evolving, dynamic, inter-relational, and interactional network of quadruple helix
+actors, institutions, activities and digital capabilities that coevolve to form trusted, reliable and conducive environment
+wherein AI innovation could thrive supported by robust investment and policy frameworks. These crucial elements contribute
+to the quadruple helix actors' innovative performance, allowing AI adoption and implementation to thrive to address the right
+set of challenges that are aligned to national interests. Within the context of the National AI Roadmap, the ecosystem is virtual
+whose existence is not bounded by any physical boundaries or structures to ensure its resilience and agility. AI Innovation
+Ecosystem consists of six main actors:
+AI-Catalyst
+AI Coordination and 
+Implementation 
+Unit (AI-CIU)
+AI Industry
+AI Socio-Economic 
+Sectors 
+AI and Data Science 
+Professionals
+Education and 
+Skilling
+AI-Catalyst is the nucleus of the AI Innovation Ecosystem virtually hosting consortia established to address specific 
+industry or public sector challenges with AI.
+It is responsible for the successful creation of a vibrant and dynamic AI Innovation Ecosystem, operationalization, and
+sustainability through strategic investments, supportive interventions and good governance that will eventually be self-
+sustainable.
+From a business perspective, the AI Industry may include Multinational corporations (MNCs), Malaysian Companies,
+Startups (typically Agile small companies with breakthrough AI innovation), and National Research Institutes with
+internal AI practices who can contribute their domain expertise.
+These include public and private organizations that have the desire to leverage AI-based solutions in their respective
+sectors to drive the required digital transformation needed to stay relevant and competitive in this Fourth Industrial
+Revolution.
+These professionals are individuals with digital skills in AI and Data Science. These data professionals need to be
+managed as a virtual community where the industry can source expertise from. These professionals will need to be
+catalogued, nurtured through skilling (including re-skilling) and made visible to the AI Industry.
+Tertiary institutions, schools and training centres will create a continuous supply of AI and Data Science Professionals
+with the relevant digital skills, knowledge as well as hands on experience in developing AI solutions. They will conduct
+both applied and fundamental research and development activities and offer professional programs relevant to AI.
+24
+AI Industry AI Socio Economic Drivers
+Energy Business & 
+Financial Services
+Culture, Arts & 
+Tourism
+Medical & 
+Healthcare
+Smart Technology 
+& System
+Education
+Smart Cities & 
+Transformation
+Water & 
+Food
+Environmental & 
+Biodiversity
+Government IOT
+Agriculture & 
+Forestry
+Consultancy, Testing, 
+Certification, Advisory, 
+Data,
+Skilled AI Talents
+MNC
+Malaysian
+Companies
+AI-
+COE
+Startups
+Domain 
+Specific 
+National 
+Research 
+Institutes
+• Platform/ 
+products
+• Expertise
+AI and Data Science Professionals
+Education & Skilling
+• Revenue/ 
+funding
+• Strategic
+• Double tax 
+deduction
+Professional 
+Program
+Applied Research
+Undergraduate
+Postgraduate
+Fundamental 
+Research
+Schools
+Training Centres
+• Enablers
+• Guidelines
+• Facilitation
+• Incentives
+• Expert communities
+• Funding./funding management
+• Monitoring
+• Affordable trusted
+infrastructure
+• Awareness
+• Issues
+• Updates
+AI-CIU (AI Governance)
+Experienced
+students’ 
+expertise
+Research 
+students
+• Experienced 
+students
+• Fundamental 
+research funding
+• Real applied 
+problems
+• Data
+• Revenue/ 
+funding
+• Strategic
+• Double tax 
+deduction
+Research students’ 
+expertise
+Skilled AI Talents Skilled AI TalentsCandidates Skilled AI Talents
+Quadruple Helix Stakeholders
+AI Innovation Ecosystem
+SCAN here
+25
+Key Actors in AI Innovation Ecosystem
+AI-Catalyst is the nucleus
+of the AI Innovation
+Ecosystem virtually
+hosting consortia
+established to address
+specific industry or public
+sector challenges with AI.
+The critical premise
+behind the industry-led
+consortium idea is to
+allow quad-helix players
+to be in an environment
+that facilitates and
+governs collaboration
+within a micro-ecosystem
+to expedite AI adoption
+and implementation.
+The AI-CIU is responsible
+for the successful creation
+of a vibrant and dynamic
+AI Innovation Ecosystem,
+operationalization, and
+sustainability through
+strategic investments,
+supportive interventions
+and good governance that
+will eventually be self-
+sustainable. They are also
+responsible to create
+awareness on the benefits
+of AI, and how to leverage
+this across all socio-
+economic sectors.
+AI Industry is the supply
+side of AI. From a
+business perspective, the
+AI Industry may include
+Multinational
+corporations (MNCs),
+Malaysian Companies,
+Startups (typically agile
+small companies with
+breakthrough AI
+innovation), and National
+Research Institutes with
+internal AI practices who
+can contribute their
+domain expertise.
+AI Socio-Economic
+Sectors is the demand
+side for AI. These are
+public and private
+organizations that have
+the desire to leverage AI-
+based solutions in their
+respective sectors to
+drive the required digital
+transformation needed
+to stay relevant and
+competitive in this Fourth
+Industrial Revolution.
+Creates a continuous supply of AI and Data
+Science Professionals with the relevant digital
+skills, knowledge as well as hands on experience
+in developing AI solutions. This is achieved
+through the roles played by schools and tertiary
+institutions in conducting research and
+development activities and offering professional
+programs. Practical experience is derived from
+solving real world problems.
+AI and Data Science Professionals are individuals
+with digital skills in AI and Data Science. They are
+in great demand. both at local and global levels.
+These data professionals need to be managed as a
+virtual community where the industry can source
+expertise from. These professionals will need to be
+catalogued, nurtured through skilling (including re-
+skilling) and made visible to the AI Industry.
+AI Innovation Hub
+(AI Catalysts)
+SCAN here
+26
+AI Innovation Hub (AI-Catalyst)
+Central to this new conceptualization of the AI innovation ecosystem
+is a nimble, agile and resilient micro-ecosystem called the AI
+Innovation Hub (or in short, AI-Catalyst)). This is the nucleus of the
+ecosystem, that functions as an "AI factory". It hosts select consortia
+that bring together players from four key sectors - the quadruple
+helix - to address specific national challenges to create vertical-
+specific solutions.
+AI-Catalyst is the nucleus of the AI Innovation Ecosystem. It virtually
+hosts consortia, each of which addresses specific industry or public
+sector challenges. The critical premise behind the consortia idea is to
+allow quad-helix players to be in an environment that facilitates
+(particularly data governance), and therefore allows AI solutions to
+be developed without hindrance, or at the very least, less hindrance
+to expedite AI adoption and implementation.
+A consortium is an apt avenue for:
+∙ Focusing efforts and critical mass in overcoming local and global shortage of AI talents
+∙ Breaking traditional silos to monitor progress of AI-related activities while creating impacts
+∙ Pooling various resources that include expertise, facilities, funding and networking
+∙ Attracting international investments and partnership, beyond the conventional R&I scopes
+∙ Increasing visibility of local AI talents, solutions and industries in the global arena
+∙ Creating better access to networks and opportunities beneficial for all stakeholders
+∙ Effectively pursuing large scale projects
+SCAN here
+27
+AI Coordination and Implementation Unit (AI-CIU)
+Role and Function: The AI-CIU will act as the
+apex government body on all matters
+related to AI. It will arbitrate all issues
+related to AI within the nation and will be
+directly answerable to the Minister for
+Science, Technology and Innovation. It will
+be a lean, independent organization in line
+with the latest systems thinking approach
+i.e., being adaptive and responsive (DSTIN
+2030).
+Modus Operandi: The first task of the AI-CIU
+would be to establish a Foresight Committee
+which will undertake horizon scanning,
+foresight and policy advocacy. The Foresight
+Committee will also inform the AI-CIU of
+relevant issues regarding emerging
+technologies that will inevitably incorporate
+Artificial Intelligence. (It will also serve the
+needs of Initiative B1 of DSTIN 2021-2030).
+The Foresight Committee should include representatives from MIGHT (Malaysian Foresight Institute), MOSTI’s Technology Foresight division
+and individual experts drawn from other ministries, academia, industries or the public. Representations from these entities can be rotated
+according to the agenda of the day.
+Upon the recommendations of the Foresight Committee, the AI-CIU will establish ad hoc committees based on anticipated priorities. The
+committees will focus on HSE; R&D; AI and Digital Ethics and Laws etc.
+For effective implementation of AI-Rmap, AI needs to be the engine of next-generation techno-social gamechangers such the Internet of Things
+(IoT); Fourth Industrial Revolution (4IR); 5th and 6th Gen Telecommunications (5G & 6G); Machine Learning; Robotics; Big Data Analytics (BDA);
+Security and Surveillance; and Quantum Computing.
+SCAN here
+28
+SCAN here
+29
+It is essential that AI does not limit opportunities for anyone – fairness is the foundation for treating people with dignity and
+respect. If AI systems provide guidance on medical treatment, loan applications or employment, for example, they should make
+the same recommendations to everyone with similar symptoms, financial circumstances, or professional qualifications.
+AI systems should perform reliably and safely. The complexity of AI technologies has fueled fears that AI systems may cause harm
+in the face of unforeseen circumstances, or that they can be manipulated to act in harmful ways. Trust in AI systems will depend
+on whether they can be operated reliably, safely, and consistently even under unexpected conditions, especially for applications
+in fields affecting both lives and livelihoods such as transportation, healthcare, and financial services – where consequential
+decisions are involved.
+AI systems should benefit everyone and address a broad range of human needs and experience, inclusively. For example, these
+technologies can become tools of empowerment for people who are physically or cognitively disabled (or any other minority
+groups), enabling them to gain access to opportunities that they may not have had before, in education, employment, and citizen
+services, thereby improving their overall health, socioeconomic situation, quality of life, and participation in society.
+AI is first and foremost a tool; the purpose and objective of this tool should be to promote the well-being of humanity. By
+enshrining the goal of elevating human happiness and quality of life in our own national AI Ethics charter, we can start to address
+one of the five goals for AI in Malaysia as articulated in MDEC’s proposed National AI Framework (NAIF): that is the intention to
+“solve people’s problems to improve quality of life96
+People will not want to share their data if they do not believe it will be stored securely, used safely, and to a good end. It is
+essential that AI systems comply with applicable privacy laws, on the collection, use, and storage of data. The systems must be
+designed to protect personal data from bad actors who may steal private information or inflict harm otherwise.
+Transparency is crucial because a lack of it tends to lead to suspicion and reluctance. The Malaysian public places significant value
+in organisations being transparent about what they do with people’s data. Compared to the global average, Malaysians are more
+receptive to their data being used by organisations - both private and government - but one of the main conditions for allowing
+this is that they want to understand the risks involved.
+Principles of Responsible AI
+Fairness
+Reliability, 
+Safety and 
+Control
+Privacy and 
+Security
+Inclusiveness
+Pursuit of 
+Human 
+Benefits and 
+Happiness
+People who design and deploy AI systems must be accountable for how their systems operate. To establish norms and best
+practices, we can draw upon experience in other sectors such as healthcare. Internal review boards can provide oversight and
+guidance on which practices should be adopted during development and deployment of AI systems.
+Accountability
+Transparency
+30
+Strategies and 
+Strategic Initiatives4
+SCAN here
+32
+Establishing AI -Catalyst as the Innovation 
+Hub to implement the Quadruple Helix
+AI Innovation Ecosystem Model
+Implementing Proposed National AI Use -
+Cases focusing on AI -Driven Supply Chain
+Establishing a Quadruple Helix 
+Collaborative Platform for AI R&D&I
+Engaging with Global Knowledge 
+and Innovation Networks for AI
+Cultivating AI Awareness 
+Accelerating AI Adoption
+Offering comprehensive and inclusive 
+AI Education
+Reskilling and upskilling existing 
+workforce
+Attracting and retaining AI Talents
+6.1
+6.2
+6.3
+6.4
+5.1
+5.2
+4.1
+4.2
+4.3
+3.1
+3.2
+3.3
+1.1
+1.2
+1.3
+1.4
+1.5
+Establishing AI Coordination and Implementation 
+Unit (AI -CIU) responsible for successful 
+implementation of the AI Roadmap
+Establishing digital platform for multidirectional 
+committee interaction and horizon scanning
+Institutionalizing current cybersecurity policies 
+and best practices for AI incorporation
+Institutionalizing AI principles  for AI 
+implementation
+Establishing clear guidelines for data sharing 
+in government to enable AI implementation
+2.1
+2.2
+2.3
+2.4
+2.5
+Embarking on fundamental and applied R&D 
+in the relevant entities within the AI 
+Innovation Ecosystem
+Encouraging AI Adoption in R&D for all 
+fields (S&T and Non- S&T)
+Institutionalizing AI within AI National 
+Research Institutes
+Leveraging AI within all National 
+Research Institutes
+Establishing clear guidelines for data sharing 
+in government to enable AI implementation
+Enabling adoption of cloud computing and 
+storage for AI
+Enabling data sharing in AI Catalyst Consortium
+Improving network and connectivity for 
+wider access to digital infrastructure for AI
+STRATEGY 6:
+KICK-STARTING A NATIONAL AI
+INNOVATION ECOSYSTEM
+STRATEGY 5:
+ACCULTURATING AI
+STRATEGY 4:
+FOSTERING AI TALENTS
+STRATEGY 1:
+ESTABLISHING AI GOVERNANCE
+STRATEGY 2:
+ADVANCING AI R&D
+STRATEGY 3:
+ESCALATING DIGITAL INFRASTRUCTURE TO 
+ENABLE AI
+Strategies
+33
+STRATEGY 2: ADVANCING AI R&D
+R&D activities flourish talents, enrich IPs and increase a nation's global standing. 
+Strengthening our R&D ecosystem is expected to help achieve the target of 3.5% gross domestic expenditure for research and
+development (GERD) to gross domestic product (GDP) by 2030 (currently at 1.08%). MOSTI has provided 4 funding schemes based
+on socio-economic drivers (priority areas) that applicable for the researchers from edana known as Strategic Research Fund,
+Technology Development Fund 1, Technology Development Fund 2 and Bringing Fund schemes. It also designs the matching fund
+scheme for the applicants from SMEs/Start-ups company. Whereas applicants from public/private universities will be fully funded but
+the applicants must collaborate with companies from the industries within Malaysia.
+With Artificial Intelligence being developed and deployed across all facets of
+human undertakings worldwide -- particularly in Developed Nations – there is an
+urgent need for Malaysia to prioritize the incorporation of AI intelligence into all
+four national helixes i.e. in the government, academia, private sector and civil
+society. This is a sine quo non for Malaysia to attain a Developed Nation status by
+2030 or even earlier. The development of the national AI ecosystem would be led
+by a robust governance structure that will eventually subsume all aspects of civil
+administration. It will also oversee the development of AI sub-sectors (or
+industries impacted by AI) in the nation. The Ministry of Science Technology and
+Innovation (MOSTI) will play a centralizing role in this regard.
+Currently Malaysia does not have a central AI governance coordination structure.
+Most AI activities are planned and implemented in silo. This siloed approach will
+vitiate industrial and societal competitiveness as well as efficiency in the area of
+public service delivery. As a result, many agencies incur needless financial,
+personnel and operational expenses. A clear and smooth communications
+platform, high level of information exchange, de-fragmentation of management
+as well as cross ministerial and cross-functional approaches are needed to reduce
+or control siloes effectively. The “un-siloed” paradigm necessitate the adoption of
+AI.
+Additionally, AI governance will be aligned to, and simultaneously support the
+realization of the Shared Prosperity Vision 2030 and the Sustainable Development
+Agenda 2030. The Malaysian government had also established the Digital
+Economy and Fourth Industrial Revolution (4IR) Council in November 2020 to
+ratchet up the country's 4IR technological capabilities and ensure the overall
+growth of its digital economy.
+As such, the country requires a clear AI policy, collective actions as well as a
+whole-of-nation approach instead the usual compartmentalized approach to
+governance. This new approach must be mainstreamed throughout all levels of
+the government through the adoption of AI-powered digital technologies.
+STRATEGY 1: ESTABLISHING AI GOVERNANCE
+SCAN here
+34
+42
+Prioritize foundational 
+aspects of AI-driven 
+digital governance 
+structure and measures 
+(policy, regulation, 
+standard, guidelines.
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Target Lead Agency &
+Collaborators
+ (Number of Policy, regulation, 
+guideline reviewed) 
+ (Number of Standards developed)
+ Investment Fund Policy formulated
+ (Number of promotion programme)
+ (Number of Incentives
+MOSTI
+MITI
+MCMC
+MOF
+Develop the AI risk 
+management system.
+ Risk Management SystemPromote and 
+implement risk 
+management system.  
+Review the roles 
+and functions of government 
+research institutes/ 
+organizations related to AI; 
+Technology Park Malaysia, 
+MIMOS Bhd.
+Develop proposal on the 
+Transformation 
+of Technology Park 
+Malaysia into National AI 
+Park.
+x Formation of 
+National AI Park
+MOSTI
+Strategic Initiative 1.1
+ Review existing laws, policies, 
+regulations and guidelines.
+ Develop standards to support 
+AI development.
+ Develop AI Investment Fund 
+Policy to nurture AI industries.
+ Review existing incentives
+Introduce AI Innovative Incentives
+Promote AI investment policy 
+to nature AI industry.
+Incorporate risk 
+management into the 
+Public-Private 
+Partnership 
+approach.
+MOSTI
+35
+43
+Establish AI stakeholders 
+Communication platform 
+(Digital Platform) to 
+facilitate Quadruple Helix 
+inputs for multidirectional 
+interaction at the Expert 
+Group levels.
+Source local talents and 
+companies to create full-
+fledged Digital Platform.
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Target Lead Agency &
+Collaborators
+x A Stakeholder Communication 
+Platform
+MOSTI
+MAMPU
+Optimize Digital Platform 
+(existing AI-Rmap Platform) 
+to collate and harmonize all 
+current policies related to AI, 
+including policies related to 
+cybersecurity, data sharing, 
+intellectual property, privacy 
+and individual rights, SMEs 
+etc.
+ Number of local talents
+ Number of Companies created
+Monitor citizen-led problems 
+and AI solution
+Probe and test resilience of 
+Digital Platform and make 
+necessary improvements
+Incorporate predictive 
+analytics component into 
+Digital Platform to 
+complement or augment 
+AI initiatives.
+x % of Digital Platform 
+Optimisation
+MOSTI
+Develop Digital Platform 
+into a one-stop center for 
+all emerging hi-tech and AI 
+data that are relevant to all 
+four helixes.
+Expand Digital Platform for 
+use in other ministries and 
+agencies.
+Optimization of governance
+data sharing among 
+stakeholders.
+MOSTI
+Strategic Initiative 1.2
+Source local talents and 
+companies to create full-
+fledged Digital Platform.
+36
+44
+Incorporate 
+and implement  
+the Cyber security 
+policy in all government 
+AI projects.
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Target Lead Agency &
+Collaborators
+ 4 workshops on institutionalize 
+cyber security policies in an 
+organization
+ 2 monitoring studies
+ 100% of ministry and 
+government agencies to adopt 
+cyber security policies for AI 
+implementation
+MAMPU
+Chief 
+Government 
+Security 
+Officer 
+(CGSO)
+National 
+Cyber 
+Security 
+Agency 
+(NACSA)
+All ministry 
+and 
+government 
+agencies
+Monitor and analyze the 
+incorporation and 
+implementation of the 
+cyber security policy, 
+and losses due to cyber 
+threats and cyber 
+attacks
+(Activity is continued)
+Strategic Initiative 1.3
+37
+Implement AI code of 
+ethics in AI-IE by the 
+AI-CIU
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Target
+ 2 international 
+conference / forum
+ Conduct 
+benchmark
+ AI Code of Ethics & 
+Guideline
+Conduct joint global 
+intellectual discourse on 
+AI principles
+Monitor and analyze ethical 
+initiatives and impacts
+Strategic Initiative 1.4
+Disseminate and 
+distribute the AI Code 
+of Ethics and Guideline 
+to all stakeholders
+Conduct benchmark/ 
+study on AI ethics
+Lead Agency & 
+Collaborators
+MDEC
+38
+46
+Create clarity 
+on understanding 
+and challenges of data 
+sharing 
+for AI implementations.
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+x 4 workshops for effective implementation and 
+monitoring across government on data sharing.
+x 100% ministry-
+agencies implement data sharing collaboration
+Implement clear 
+guidelines on how to 
+share data across 
+government.
+Monitor and evaluate 
+the effectiveness of 
+implantation.
+Strategic Initiative 1.5
+MAMPU
+KKMM
+MDEC
+ 4 workshops for effective implementation 
+clear data classification guidelines
+ 100% increase of useful data made available to the 
+public
+ Top 40 ranking for Global Open Data Index
+ Effective legal agreement data collaboration 
+templates for AI Innovation Ecosystem
+Develop clear data 
+classification 
+guideline to expedite 
+the open data sharing 
+for AI 
+LPSOHPHQWDWLRQV௙
+Disseminate data 
+classification guideline of 
+the data sharing for 
+effective implementation.
+Monitor and evaluate the 
+effectiveness of data 
+sharing implementation.
+MAMPU
+KKMM
+MDEC
+Formulate data-sharing in 
+AI-Catalyst consortium 
+Develop legal agreement 
+data collaboration templates
+Improve on legal 
+agreement data 
+collaboration templates
+MOSTI
+MAMPU
+KKMM
+MDEC
+Target Lead Agency & 
+Collaborators
+39
+STRATEGY 2: ADVANCING AI R&D
+• Advancing AI R&D strategies is an initiative formed to enable
+Malaysia to adopt, develop, fund and accelerate AI Research
+internally towards the fundamental and applied research in
+solving the national problems faced by the end users. The
+key advancing R&D strategy is to encourage R&D
+commercialization and innovation that can strengthen the
+national AI R&D. By advancing AI R&D it will intensify the
+R&D initiatives that covers fundamental and applied
+research, while catalyzing rapid innovation to meet national
+digital aspirations responsibly.
+• Five (5) main strategic initiatives to drive the Malaysian R&D
+in different areas were formulated and listed. Based on this,
+the overall initiatives have allocated 44.1% for fundamental
+research and 43% for applied research (initiative 2.2, 2.3 and
+2.5) while 12.9% for other supporting R&D (initiative 2.1, 2.4)
+SCAN here
+40
+• To help and enable the Malaysia innovation driven 
+by connecting the existing R&D project from 
+institution, business and industries, the AI-Catalyst 
+was proposed to be implemented under MOSTI. 
+The AI-Catalyst is designed to facilitate the 
+quadruple helix consortium by connecting the AI 
+governance, AI industry, AI business users and AI 
+Data Science Professionals that initially providing 
+the solution to embark on R&D as the National AI 
+Innovation Hub (Table 35).
+• The initiative will be entrusted to:
+• Conduct and serve comprehensive AI technology foresight 
+and horizon for embarking AI R&D to support AI-Catalyst 
+projects. 
+• Developing next-generation AI technology to be part of AI 
+R&D priority areas.
+• Produce next-generation AI systems as the National AI 
+Innovation Hub to support the AI-Catalyst project.
+S2.1 Embarking on fundamental and applied R&D in the relevant entities 
+within the AI Innovation Ecosystem.
+Conduct 
+comprehensive 
+AI 
+technology fore
+sight and 
+horizon 
+scanning to 
+provide 
+guidelines for AI 
+R&D directions 
+and funding.
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Embark on R&D 
+for developing 
+next-generation AI 
+technologies to be 
+applied in fields 
+that are of 
+strategic 
+importance to 
+Malaysia
+MOSTI
+MOHE
+MITI
+Produce next-
+generation AI 
+systems through 
+R&D.
+ Continuously 
+updated AI 
+R&D priority 
+areas
+ Next-
+generation AI 
+systems
+Target Lead Agency & 
+Collaborators
+41
+Strategic Initiative 2.2 - Encouraging AI adoption in R&D for 
+all areas (S&T and non-S&T)
+Postgraduate 
+research 
+scholarship and 
+post-doctoral 
+fellowship for AI 
+R&D related to 
+the 5 priority 
+areas.
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Postgraduate 
+research 
+scholarship and 
+post-doctoral 
+fellowship for AI 
+R&D in other 
+identified areas.
+MOSTI
+MOHE
+MITI
+(Activity is 
+continued)
+x 20 Postgraduate
+Scholarship awarded (Masters by 
+Research & PhD)
+Fundamental Research
+Applied Research
+Establish 
+special R&D 
+grants for non-
+S&T project that 
+incorporate AI.
+(Activity is 
+continued)
+(Activity is 
+continued)
+x 20 Post-Doctoral Fellowship awarded
+x 50 AI-based non-S&T projects funded.
+x 50 AI-based non-S&T projects funded.
+MOSTI, MOHE, MITI
+MOSTI
+MOHE
+MITI
+Target Lead Agency & 
+Collaborators
+42
+S2.3 Institutionalizing AI within all National Research Institutes
+ Promote the 
+establishment of 
+AI Centre of 
+Excellence (AI-
+XL) within the 
+research 
+institutions
+ Establish special 
+funding for AI 
+R&D conducted 
+in the AI-XL
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Intensive AI R&D
+in domain areas MOSTI
+Related Ministries for 
+the RI’s
+Intensive AI R&D 
+in domain areas 
+continues
+ 10 AI-XL established
+Fundamental Research
+x 20 AI-based projects in domain 
+areas funded
+Target Lead Agency & 
+Collaborators
+43
+S2.4 Leveraging global platform to accelerate R&D of advanced AI 
+solutions
+Establish a policy 
+sandbox* that 
+enable the use of 
+hyperscale cloud for 
+AI R&D
+Establish a policy 
+sandbox to enable 
+the use and sharing 
+of required data 
+(local, global) while 
+protecting privacy
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Intensive AI R&D
+in domain areas
+MOSTI
+MOHE
+MITI
+Intensive AI R&D 
+in domain areas 
+continues
+x 1 cloud-based policy sandbox for AI 
+R&D established
+(Note 38.1)
+Target Lead Agency & 
+Collaborators
+44
+Ringfence RM10 
+mil. R&D funds to 
+accelerate advances 
+in fundamental and 
+applied AI R&D 
+related to the 5 
+priority areas.
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+To ring-fence a 
+further RM15 
+mil. R&D funds to 
+accelerate 
+advances in 
+fundamental and 
+applied AI R&D in 
+all other areas.
+MOSTI
+MITI
+Cross-border 
+MOUs and 
+Cooperation 
+to generate 
+research funds on 
+AI innovations
+x Increase number of fundamental 
+advanced AI publications
+x 20% allocation for AI R&D 
+investments
+S2.5 Prioritizing funding for AI R&D
+Target Lead Agency & 
+Collaborators
+45
+There is a complex infrastructure and technologies needed to sustain AI initiatives, including the need for a vast amount of
+computing capacity and the ability to transmit large volumes of data. Organisations not only need the ability to access the large
+volume of data generated by IoT/5G devices, but they also need infrastructure capable of achieving value through computation
+and data processing.
+Digital infrastructure refers to the systems which connect people to digital information, products, and services. It serves as the
+backbone of the digital economy and includes both hard (physical) and soft (non-physical) digital infrastructure comprising
+connectivity, devices, data storage and processing, services, and applications. Similar to the way cables, wires, and generators
+provide for the electricity needs of citizens, digital infrastructure enables transmission of information and data, underpinning our
+social and economic lives.
+Digital infrastructure once required large up-front investment in equipment such as fiber optics, satellites, and high-powered
+computing facilities, highly flexible and elastic on-demand cloud computing services. At present, there is a shift from capital
+expenditure to operational expenditure, lowering the barrier to entry for individuals, businesses, and governments.
+Strategy 3 emphasizes the digital infrastructure that needs to be enabled to support the AI implementation. The nationwide AI-
+Rmap survey indicates that only 30% of the responding organizations are at the initial implementation of the digital infrastructure
+and data activities.
+Malaysian organisations need to take a closer look at the technological requirements to execute the AI implementation and
+ensure that their infrastructure capabilities meet the technology's demands. Therefore, three initiatives are formulated in
+ensuring that the organisations can continuously deploy AI in their activities. T
+• Strategic Initiative 1: Enabling adoption of cloud computing and storage for AI
+• Strategic Initiative 2: Enabling data sharing in AI Catalyst Consortium
+• Strategic Initiative 3: Improving network & connectivity for wider access to digital infrastructure for AI
+STRATEGY 3: ESCALATING DIGITAL INFRASTRUCTURE TO ENABLE AI
+SCAN here
+46
+S3.1 Enabling adoption of cloud computing and storage for AI
+௙(VWDEOLVKDEDVHOLQH
+adoption and use of 
+cloud computing for 
+AI
+none
+Horizon 1
+(2021)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025 )
+Target Lead Agency
+& Collaborators
+Measure the 
+adoption and use 
+of hyperscale AI 
+cloud computing 
+and storage 
+adoption
+60(&RUS௙௙- MEDAC
+MIDA
+SME Corp - MEDAC
+Cloud Providers:
+TM-Huawei
+AWS
+Microsoft
+IBM
+Google
+Oracle
+Alibaba
+Local Data centers
+(Activity is 
+continued)
+(Activity is 
+continued)
+x 2 Studies on 
+Status of adoption and 
+use of cloud computing for 
+AI
+x 80% of organizations/MSME
+s (875,000 MSMEs) adopt cl
+oud computing and storage
+for AI
+Incentivize MSM
+Es/organizations 
+for cloud 
+adoption 
+to implement AI
+47
+S3.2 Enabling data sharing in AI Catalyst Consortium
+௙3URYLGH storage 
+of data sharing withi
+n the consortium 
+for AI-
+Catalyst projects 
+for the National AI u
+se cases
+Horizon 1
+(2021)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025 )
+Target Lead Agency
+& Collaborators
+(Activity is 
+continued)
+MOSTI(Activity is 
+continued)
+x 50 TB data storage per project 
+per year
+48
+Strategic initiative 3.3 - Improving network & connectivity for wider access 
+to digital infrastructure for AI
+Implement the 
+National agenda –
+Jalinan Digital 
+Negara (Jendela) for 
+comprehensive and 
+high-quality 
+broadband coverage 
+as well as prepare 
+the country for the 
+transition towards 
+5G technology
+Horizon 1
+(2021)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025 )
+Target Lead Agency
+& Collaborators
+Extend the 
+benefits of lower 
+connectivity cost to 
+universities and 
+companies 
+embarked on AI 
+works
+MCMC
+Telco
+(Activity is 
+continued)
+x Competitive Connectivity Cost like 
+Singapore (Note 43.2)
+x 100% household and 
+organizations/SMEs access to the 
+internet 
+Wider broadband access/ coverag
+e
+x 100% real-time broadband access
+49
+“Shortage of AI Talents and AI experts” is one of the greatest challenges faced by
+organisations in adopting and implementing AI.
+The pool of fresh AI Talents in Malaysia can be measured primarily by the number of
+computer science graduates and electrical engineering graduates, as well as the
+number of Science, Technology, Engineering and Maths (STEM) graduates. Since
+engineering and data science are the foundation of AI, these talents possess the basics
+for AI and are suitable for further upskilling and specialization in the area of AI. The
+nationwide AI-Rmap 2021 survey shows that AI Talents in Malaysia are mainly sourced
+by upskilling current employees, industry-university partnership, and advertisements.
+The evolving list of skills expected in AI Talents include:
+ඵ AI Data Science skills - understands and able to contribute to the end-to-end data
+science process, which include data preparation, feature engineering, develop AI
+models, and evaluation of these models. Note that AI Data Scientists and AI Data
+Experts are roles that involve experience developed over time, rather than recruited
+fresh from graduation. However, fresh graduates from computer science or STEM
+programs are natural candidates for AI training.
+ඵ AI Engineering skills - ability to create technology architectures that scale, writing and
+deploying bulletproof software incorporating AI features, and integrating AI
+capabilities with existing systems.
+ඵ AI Business Strategist skills - multi-disciplinary skills that involve understanding the
+intersection of business strategy and AI methods, and able to leverage AI for
+business.
+Amongst competencies that AI Talents are expected to have are:
+ඵ Analytical thought process enabling ability to solve problems with cost-effective
+solutions
+ඵ Technical skills to design, maintain and repair technology and software programs
+ඵ Statistical modelling and big data computational skills to develop algorithms powering
+AI technologies
+ඵ Ability to translate highly technical information for execution
+ඵ Foresight about technological innovations
+STRATEGY 4: FOSTERING AI TALENTS
+AI Talents are defined as 
+individuals who possess 
+technical competencies 
+necessary to 
+strategize, develop, 
+deploy, maintain and 
+manage AI solutions in 
+organizations in a way that 
+conforms to 
+the Responsible AI 
+Principles.
+TYPES OF AI 
+TALENTS
+Data Scientist
+AI Developers
+AI Engineers
+AI Researchers
+SCAN here
+50
+This strategy must be achieved through talent-by-design and not by chance:
+• The core competency of the 21st century is the ability to learn, and this must be embedded,
+nurtured, reinforced and incentivized throughout the talent development value chain
+• Need to invest in building the workforce of the future, by strengthening and expanding the
+science, technology, engineering and mathematics (STEM) talent pool
+• Prioritise high level STEM specialisation in cutting edge, disruptive technology ahead of time
+taking the cue from foresight intelligence
+• Sharpen talent pool competencies in the 4Cs: critical thinking, creativity, collaboration and
+communication
+• Create opportunities and resources for talent in cutting edge technology areas to collaborate
+with the brightest and best globally
+Fostering AI Talents strategy comprises a three-pronged approach, targeting three different
+segments (Table 44). Strategic Initiative 4.1 develops AI talents through offering comprehensive
+and inclusive AI Education, from school level to tertiary level. Strategic Initiative 4.2 targets on
+reskilling and upskilling employees in the workforce. Strategic Initiative 4.3 aims to attract AI
+talents in the AI diaspora to contribute to Malaysia’s AI industry. They can either return to
+develop Malaysia’s AI industry as AI champions, or to collaborate with Malaysian industries even
+if they choose not to return. The latent AI talents are those with AI related qualifications or
+skills but have retired or left the workforce for personal reasons. This latent workforce that has
+retired has to be brought back at work. Women make up most of the AI talents who chose to
+leave the workforce. Women in AI programmes will harness their talents.
+51
+Talent development is core in building the workforce of the future. Education is the best
+way to prepare future talents with knowledge in AI. The ability to identify how AI can be
+utilized in various situations must be nurtured and reinforced throughout the education
+process. AI education must be comprehensive, where AI is introduced at all levels,
+beginning from the school level, up to tertiary level. Our children are growing up with
+various instances of AI driven devices and services. An intensive AI for Kids and Teens
+program introduces school children to basic principles of how AI operates and what AI is
+capable of. Hence, this program will shape these children’s mental models of what AI is
+and how it manifests, so that they will not overestimate capabilities of AI. Principles of
+Responsible AI (fairness, reliability and security & control, privacy & security,
+inclusiveness, transparency, accountability and pursuit of human benefit and happiness)
+need to be infused into the Science, Technology, Engineering, Arts and Mathematics
+curriculum at secondary schools.
+At undergraduate level, a full-scale AI convergence curriculum needs to be offered to
+ensure inclusivity of AI education, extending beyond the traditional discipline of computer
+science and engineering. Curriculum of non-STEM disciplines should be revised to
+include AI related subjects such as Data Science and Machine Learning. The traditional
+Computer Science curriculum must be revised to place more emphasis on AI related
+courses, as well as offered as specific industry-based AI programmes, whereby students
+are exposed to real-world applications of AI in industry. Such programmes would also
+enable Malaysia to increase the number of graduates in Data Science and AI who not
+only has knowledge of AI but also has exposure of how AI is applied in industry. Apart
+from that, all educators in Malaysia especially computer science educators in universities
+must constantly update their knowledge of AI via the AI Education for Educators (AI-EE)
+platform as they will be critical to implement the AI convergence curriculum (Table 45).
+AI-EE should also be extended to MOHR registered trainers.
+At the industry, AI professionals in the workforce are encouraged to pursue professional
+doctorate and professional master's program to enable them to solve industry problems
+using the latest AI knowledge and skills. Employers are also encouraged to sponsor their
+AI professionals for postgraduate education by participating in AI-MyIndustry matching
+grants offered by agencies such as MDEC. Apart from the formal education, universities
+could also offer MOOC-based certification program on AI.
+S4.1 Offering Comprehensive and Inclusive AI Education
+52
+S4.1 Offering Comprehensive and Inclusive AI Education
+Infusing AI 
+Principles in STEAM 
+Education 
+curriculum at 
+secondary
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+AI for Kids and 
+Teens Program
+MOEActivity continues 200,000 Future AI Talents 
+Full-scale AI 
+Convergence 
+Curriculum at 
+undergraduate level
+Industry-based AI 
+Curriculum at 
+undergraduate 
+level
+Activity continues 1,000 AI graduates with industry 
+exposure  (2,000 in the pipeline)
+MOHE
+MBOT
+AI-MyIndustry
+Matching Grant 
+Funding
+AI Professional 
+Doctorate (AI-Doc) 
+Matching Grant 
+Funding for AI 
+Professionals
+Activity continues
+20 AI professionals with Doctoral 
+qualification  (40 in the pipeline)
+100 AI professionals with Masters 
+Qualification (400 in the pipeline)
+MOHE
+MBOT
+MDEC
+Target Lead Agency
+& Collaborators
+53
+S4.1 Offering Comprehensive and Inclusive AI Education
+none
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+AI-MOOC-Based 
+Micro-credential 
+Certification 
+Program
+Activity continues 1,000 AI Certified Professionals
+none AI Education for 
+Educators  (AI-EE) 
+Activity continues 87,500 educators with AI Competency MOHE
+MOE
+none
+AI Professional 
+Trainer certification 
+program
+Activity continues
+2,000 AI Professional Trainers certified MOF
+MITI
+MBOT
+Target Lead Agency
+& Collaborators
+54
+• The future of work will revolve around AI either in the form of AI used to strengthen
+analytics, AI empowering cognitive automation, or AI used to offer individualized
+services and products. Avoiding AI from disrupting existing jobs or displacing existing
+workers would require workers of today to be reskilled and upskilled to AI Talents so
+that they are equipped with necessary and relevant AI skills. However, AI reskilling
+activities needs to be strategic, and must also include upskilling activities for existing
+workers already equipped with AI skills.
+• To consolidate all AI related reskilling and upskilling activities, a dedicated AI Reskilling
+and Upskilling System (AI-RUS) online platform needs to be developed (Table 46). As
+a start, AI-RUS will be focusing to reskill workers in sectors with the highest probability
+of AI disruption, before expanding to reskill workers from all sectors. In order to carry
+out this, AI-RUS will be equipped with relevant modules including asynchronous
+reskilling and upskilling module (for non-AI, mid-career workforce to be AI-Talents), job
+matching module (for reskilled AI-Talents), and mentoring module (for continuous
+upskilling of AI-Talents). AI-RUS will also be expanded to offer AI Skills and
+Competency awards and competitions that is envisioned to continuously test the
+abilities of top AI Talents in Malaysia. Apart from existing workforce, AI-RUS will also
+be equipped with Executive AI Upskilling module to upskill SME management AI skills
+to strategically achieve competitive goals. All users of AI-RUS who has received
+reskilling (and upskilling) will be integrated into the National AI Directory (AI-DI) and
+their skill progression will be recorded.
+• Apart from having an online consolidated platform, AI reskilling activities must also
+engage the technicians and skilled labour population who might not have access to AI-
+RUS. For this, a dedicated hybrid on-site activity powered by asynchronous training
+module from AI-RUS to train technicians and skilled labour will be put in place. Trainers
+for this particular program will be those who are registered with MOHR (HRDF) which
+have credentials from AI-EE. Apart from this extended AI-RUS program, these trainers
+should also strengthen their offerings with additional and AI-RUS-complementing adult-
+learning, mid-career AI reskilling and upskilling programs. The use of AR/VR as part of
+the blended learning experience is highly encouraged. At the other end, apart from
+being part of AI-RUS, employers are also recommended to integrate reskilling and
+upskilling activities as part of annual appraisals and design On-Job-Training (OJT) that
+further supports reskilling of mid-career workers.
+S4.2 Reskilling and Upskilling Existing Workforce
+55
+AI-RUS developed.  
+Begin to reskill
+workers
+AI-RUS expands to include
+AI Skills and Competency 
+awards and competition
+AI-RUS expands to include 
+job matching modules and 
+offer mobilty channel to AI-
+Talents
+500,000 employees 
+registered in AI-RUS with 
+5,000 active monthly user
+30,000 SMEs registered
+as employer
+5,000 employer/ top
+management reskilled
+50,000 workers reskilled
+133,000 technicians and 
+skilled labor reskilled
+MPC
+MOHR,
+MDEC
+AI-RUS expands to include 
+mentoring (continuous 
+upskilling)
+AI-RUS expands to include 
+employers. Begin to reskill
+top management
+AI-RUS expands to provide 
+hybrid reskilling for
+technicians, skilled labor
+Integrate AI-RUS with AI-DI
+(none) Promote AI and Data
+Science HRDF Programs
+Activity continues 5,000 HRDF reskilling 
+programs subsidized
+MOHR,
+HRDF
+S4.2 Reskilling and Upskilling Existing Workforce
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+KPI Lead Agency &
+Collaborators
+56
+• This strategic initiative aims to further boost the number of AI Talents in Malaysia by
+attracting latent AI Talents back to work and creating new AI Talents from the pool of
+unemployed workers. Furthermore, a specific program must be put in place to pull back
+female AI Talents in Malaysia who do not serve the AI workforce.
+• Therefore, the AI-Latent-Workforce-Back-to-Work (AI-LWBW) program, which is
+designed to be run concurrently with the Women-in-AI program, aims to empower and
+attract latent AI Talents especially female AI Talents by providing scaffolding sub-
+programs such as Childcare for Women-in-AI, and AI-Work-From-Home, a sub-
+program that would allow AI Talents to be location independent and their productivity
+will be monitored via a Productivity and Goal-based Performance Measurement
+System.
+• Apart from the private sector, the Public Service Department (JPA) should also be
+engaged to encourage Ageing-AI-Talents in the public sector to continue contributing
+even after retirement, as part of a knowledge management program and to address the
+dearth of AI talents in the Public Sector. This would be able to ensure continuity of AI
+implementation in the public sector.
+• Malaysia must also look outwards and must attract world renowned expert AI Talents
+overseas in the AI talent diaspora to set up base in Malaysia and become AI Talent
+Champions. For this to be materialized, an AI Talent Visa under the AI Talent
+Champion Empowerment (AI-ChEmp) Program is proposed. The search for these AI
+Talent Champions must first prioritize Malaysian expert AI Talents who are globally
+sought-after but choose to remain in Malaysia, and to the Malaysian expert AI-Talents
+diaspora currently residing overseas. At the very least, these Malaysian expert AI-
+Talents must be registered and networked into the National AI Directory (AI-DI).
+S4.3 Attracting & Retaining AI Talents
+57
+S4.3 Attracting & Retaining AI Talents
+Childcare for 
+Women-in-AI
+AI-Work-From-
+Home 
+Productivity and 
+Goal-based 
+Performance 
+Measurement 
+System for location 
+independent AI 
+Talents
+Encourage AI 
+Ageing Talents 
+especially in the 
+Public-Sector to 
+continue 
+contributing
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+KPI Lead Agency &
+Collaborators
+AI Latent 
+Workforce Back-to-
+Work Program
+(AI-LWBW)
+KPWKM
+MOHR
+JPA
+Activity continues 10,000 latent AI Talents back at work
+58
+S4.3 Attracting & Retaining AI Talents
+Women-in-AI (WAI) 
+Programmes
+1.WAICamp
+2.WAI-2-Go
+3.WAIDatathon
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+KPI Lead Agency &
+Collaborators
+Women-in-AI 
+(WAI) Awards
+MOHR Activity continues 1,000 Women-in-AI (WAI)
+Expand AI-ChEmp
+to AI Talent 
+Diaspora Directory 
+and integrate with 
+AI-DI
+Activity continues 100 AI Champions Empowered MOHRProvide AI Talent Visa 
+under the AI Champion 
+Empowerment (AI-
+ChEmp) Program for: 
+1.Renowned global AI -
+Experts;
+2.Globally sought-after 
+Malaysian AI Talents 
+(residing in Malaysia);
+1.Malaysian AI Talents, 
+AI Experts currently 
+residing overseas
+59
+STRATEGY 5: ACCULTURATING AI
+The Coronavirus pandemic has shown that we have become so dependent on data-
+driven technologies through AI and automation. Many businesses are also heavily
+leveraging AI-based technologies and capabilities during this time. AI applications
+have an enormous potential to transform our future fundamentally, and machine
+learning is already changing our society's fabric.
+People acculturation is the way towards AI-driven society. We should start by
+acculturating our top leaders to get their support and engagement in the
+transformation process. We need to ensure that employees stay at the forefront of AI
+technologies and continuously develop their skills. Moreover, there exist large gaps in
+our society between the privileged and the underprivileged in applying and using AI.
+There is, therefore, a need to develop an AI acculturation strategy to increase AI
+awareness and adoption in all sectors and reduce AI fear among communities.
+The objectives of AI Acculturation Strategy include giving Malaysians the
+opportunities to adapt, acquires and adjust to the new culture of AI and providing
+them a voice to increase their participation in this machine age by enhancing their AI
+knowledge and skills.
+SCAN here
+60
+• This strategy aims to raise awareness of the role of AI in our lives. The Malaysian population must understand that we
+are moving towards general AI applications, and AI will slowly replace repetitive tasks and future jobs. The awareness-
+raising activities involve all AI stakeholders. The activities outlined for this Strategic Initiative include:
+Social media engagements on AI
+• This activity focuses on cultivating AI awareness to the public. The aim of this activity is to establish and promote social
+media presence for AI in Malaysia. The activities will leverage social media in showcasing the latest AI technology and
+applications to inspire young people. The use of social media such as Facebook, Twitter, and LinkedIn will help develop
+essential AI awareness and AI understanding, hence, reduce AI fear across all economic sectors and all levels of society.
+Social media influencers, celebrities, and public icons will also contribute to creating viral contents of AI. The activities
+proposed in Horizon 1 will be further enhanced through the creation of AI podcasts/ YouTube/ Twitter postings in dual
+language as well as featuring AI technology/ developments/ products in TV/ Radio Talk shows. This is carried out to
+consistently engage the respective Quad Helix on updates in AI developments.
+Online publications
+• In 2021, the editorial board for AI online publications will be set up. The contents on AI news and updates will be
+contributed by the Quad Helix members. This activity will be monitored by the Corporate Communication Unit at the
+respective Ministries. Publications are expected to be produced 2 times per year in 2022 and 2023. The frequency of
+publications can be further increased to 4 online publications in 2024 and 2025.
+AI Awareness programs for government officials
+• The AI awareness-raising activities will also include top Federal, State Government officials, GOC and GLC C-Suites and
+Senior/ Middle/Junior Officials. These are the current and future leaders who will be responsible to oversee the country’s
+AI development, hence their awareness and understanding on AI and its basic application is crucial. Towards the end of
+Horizon 3, it is expected that 3,600 officials have been trained for this program.
+AI Roadshows/ Training for researchers and research institutes
+• Another Quad Helix component are the academia and researchers from the public and private institutions who are
+potential and frequent users of AI. AI Roadshows/Training are carried out to promote the use of AI to this community of
+users (Table 49). The training activity will be carried out by MOSTI, KPLB, KWP in collaboration with the Higher
+Education Leadership Academy (AKEPT) to train specific researchers on AI. AKEPT is expected to train 600 potential AI
+researchers by 2025.
+S5.1 Cultivating AI Awareness 
+61
+S5.1 Cultivating AI Awareness 
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2023-2024)
+Timeline
+Horizon 3
+(2025 onwards)
+Target Lead Agency &
+Collaborators
+Social media strategy and
+public engagement to 
+disseminate info on AI national 
+programs by leveraging on 
+existing structures and 
+government/ industries’ social 
+media programs
+AI podcasts/ YouTube/
+Twitter postings in dual
+language
+and TV/ Radio Talk Shows
+featuring AI technology/ 
+developments/ products to 
+consistently
+engage the respective
+Quad Helix.
+(Activity is continued) No. of active social media engagements
+on AI:
+x AI Podcasts (260), YouTube (260),
+Twitter (260)
+No. of Radio Talk Shows
+x Radio RTM (50), Hot FM (50)
+No. of TV Shows
+x RTM (20), TV3 (20)
+MDEC
+MOSTI
+Set up an editorial board for AI 
+online publications with 
+contributions from the Quad 
+Helix and rolling out of AI 
+Publication.
+(Activity is continued) (Activity is continued) x 12 online publications for 5 years MOSTI 
+KKMM
+MDEC
+AI Awareness program for Top 
+Federal, State Government 
+Officials, GOC and GLC C-Suites 
+and Senior/ Middle/Junior 
+Officials
+(Activity is continued) (Activity is continued) x 8,000 AI Awareness programs
+attendees
+MOSTI
+MOHE
+All Relevant Ministries
+AI Roadshows/Training to 
+promote the use of AI to 
+University researchers and 
+research institutes from the 
+public and private institutions.
+(Activity is continued) (Activity is continued) x 1,200 attendees for AI Roadshows/
+Training
+x 640 trained AI researchers
+MOHE
+MOSTI
+KPLB KWP
+l
+62
+S5.2 Accelerating AI Adoption 
+This Strategy aims to expedite the adoption of AI among Malaysian citizens.
+Successful adoption of AI requires a pragmatic approach. The activities to be
+promoted must develop AI knowledge, technical skills, and processes geared towards
+the rapid adoption of AI. The activities outlined for this Strategic Initiative include:
+AI SCORE Program
+This activity focuses on the small and medium-sized enterprises (SMEs) that have
+employed AI applications in their business pursuits via the introduction of AI SCORE
+rating. AI adoption among the SMEs is expected to accelerate via the AI SCORE
+Program. SME Corp-MEDAC and other Cloud providers will engage 10,000 SME
+representatives from 5,000 SMEs on AI adoption and AI SCORE Rating. The SMEs
+that support the widespread adoption of AI in the nation by developing AI technology
+and/or AI solutions will be incentivized. The final objective is to produce local SMEs
+with global AI potentials.
+Accelerated AI programs for government officials
+The AI Awareness and Basic Application program for top Federal, State Government
+officials, GOC and GLC C-Suites and Senior/ Middle/Junior Officials will be further
+extended by increasing the number of attendees to the program. These attendees are
+expected to accelerate the AI adoption in their respective departments/ agencies/
+ministries via the AI SCORE rating. An AI Star Rating portal will be developed.
+Ministry/ government agencies will be annually awarded with 5 Stars AI Rating
+beginning in 2023.
+Accelerated AI programs for researchers and research institutes
+AI adoption among university researchers and research institutes are expected to
+accelerate via the AI SCORE rating. MOSTI and MOHE will work together to introduce
+the AI SCORE Rating Award to the public and private universities in 2022.
+Malaysia AI Awards
+This activity focuses on the rapid adoption of AI via incentive-driven activities (Table
+50). The Malaysian AI Awards will be introduced for individuals, government agencies
+and companies heavily involved with AI adoption in the country.
+63
+Accelerate AI adoption 
+among SMEs via AI 
+SCORE rating
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025)
+Target Lead Agency &
+Collaborators
+(Activity is 
+continued)
+SME Corp - MEDAC
+MDEC
+Cloud providers
+(Activity is 
+continued)
+x 10,000 SME reps from 5,000 
+SMEs introduced to AI adoption and AI 
+SCORE Rating
+(Activity is 
+continued)
+(Activity is 
+continued)
+x 2,000 SMEs awarded with AI adoption 
+incentives 
+MOSTI
+SMECORP
+MDEC
+MITI
+MEDAC
+Incentivize SMEs with 
+AI potentials
+(Follow through from 
+Strategy 5-1 H1)
+Accelerate AI 
+adoption among 
+Federal & State 
+Government 
+Ministries & 
+Agencies, GOC 
+and GLC via AI 
+SCORE rating
+(Activity is 
+continued)
+x One AI Star Rating portal
+x 15 Ministry/ government agencies with 
+5 Stars AI Rating 
+x 15 GOC and GLC C-Suites with 5 
+Stars AI Rating
+MOSTI
+S5.2 Accelerating AI Adoption 
+64
+Follow through from 
+Strategy 5-1 H1) Accelerate AI 
+adoption among 
+university 
+researchers and 
+research institutes 
+from public and 
+private sectors via AI 
+SCORE rating
+MDEC
+MOSTI
+MOHE
+(Activity is 
+continued)
+x 50 Public & Private Universities with 5 
+Stars AI Rating 
+Incentivize 10 
+SMEs with global 
+AI potentials.
+(Activity is 
+continued)
+x 30 SMEs with global AI potentials MDEC
+MOSTI
+SMECORP
+(Follow through from 5-
+2 H1)
+Horizon 1
+(2021 - 2022)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025)
+Target Lead Agency &
+Collaborators
+S5.2 Accelerating AI Adoption 
+(Follow through 
+from 5-2 H2)
+Malaysian AI 
+Awards for 
+individuals, 
+government 
+agencies and 
+companies heavily 
+involved with AI 
+adoption in 
+Malaysia.
+(Activity is 
+continued)
+x Malaysian AI Awards
+MOSTI
+65
+The key element in kickstarting the innovation ecosystem for Malaysia is effective collaborations between various stakeholders. Quadruple Helix
+collaboration or consortium encompasses players from four key sectors: Academia, Government, Industries and Community, with the support from
+international partners. The functions of the consortium are crucial in bridging the different strengths and opportunities available from each key sector.
+The consortium, with its strong and diverse expertise, will drive this grand collaboration and simultaneously augment the key enablers of this roadmap.
+The formation of such a flexible yet inclusive consortium will create a long-term platform for both the government and the relevant industry players to
+commit to the national AI agenda.
+STRATEGY 6: KICK-STARTING A NATIONAL AI INNOVATION ECOSYSTEM
+66
+There are 2 levels of Quad Helix collaboration in this roadmap:
+(1) A National-level alliance of AI experts and players (MyAI-Alliance)
+that unites the various AI communities in the country (e.g., Women in
+AI, Artificial Intelligence Society of Malaysia, IEEE Malaysia
+Computational Intelligence Society, various university-level Centres of
+Excellence in AI etc), as an apt avenue to pool various resources,
+increase visibility, effectively attract international partnership and
+create more opportunities for all stakeholders. Similar set-ups are
+created in other countries such as Norway (NORA – Norwegian
+Artificial Intelligence Research Consortium), Europe (AI4EU) and
+AECAIR (Asia-European Consortium on AI Research). The AI
+community in Malaysia can then be represented as a united entity,
+especially at the global level.
+(2) Collaborations on the National AI Use Cases projects, where
+quadruple helix collaboration will be the key element in the project
+implementations for each AICatalyst Consortium. This is the most
+critical part of the AI Innovation Ecosystem (AIIE) in the roadmap.
+SCAN here
+66
+To increase Malaysia’s visibility in AI at the international level, it is important for
+Malaysia to be part of global AI platforms such as the OECD Network of Experts
+on AI (ONE AI) and WEF’s Global AI Action Alliance; participate in world AI
+ranking, participate in the UN’s AI programs such as the AI for Good Global
+Summit organized by UN’s ITU (International Telecommunication Union); as
+well as establish official partnership with world renowned AI research centres
+such as the Alan Turing Institute UK, NTU Data Science & AI Research Centre,
+Singapore and Allen Institute for AI, USA.
+A systematic and effective public-private R&D&I collaboration that benefits the
+societies is the key determinant of the development of successful AI innovations.
+To strengthen the synergies between all the quadruple helix actors, this strategy
+proposes the initiatives that are realistic and able to enhance the collaboration
+towards producing impactful R&D&I outcomes and AI adoption especially by
+business users. This strategy also acknowledges the importance of international
+connections that will add values to our knowledge, technology and global
+opportunities.
+Under this strategy, there are 4 strategic initiatives with 12 key activities involving
+a RM60.4-million budget. The activities are distributed throughout the three
+horizons.
+Strategy 6: Kick-Starting a National AI Innovation Ecosystem
+67
+• The nucleus of the Innovation Hub of the AI Innovation Ecosystem (AI-IE) is the
+AI-Catalyst. The AI-Catalyst acts as a virtual host for the quadruple helix
+National AI Use Cases consortia. Therefore, for successful implementation of
+the AI-IE, the AI-Catalyst must first be established. Under this initiative, there
+are 3 key activities:
+x Establishing the administration for the AI-Catalyst that will manage the consortia
+and assist them in conducting their activities. Dealing with inter-partite
+agreements/arrangements, various issues may arise and the support from a
+dedicated administrative team is essential. Therefore, the AI-Catalyst
+administration must be established within Horizon 1 to ensure any processes
+related to the establishment of the AI-Catalyst Consortia and their activities are
+properly administered.
+x Establishing the AI Catalyst Consortia to implement the National AI Use Cases
+projects (AI-Cases). The process to establish the AI Catalyst Consortia will be
+determined by the AI-CIU or similar task force/unit that will be appointed by
+MOSTI.
+x Forming a collaborative network among tech providers to share AI resources
+such as data, digital infrastructure, funding etc.
+S6.1 Establishing AI-Catalyst as the Innovation Hub to implement the 
+Quadruple Helix AI Innovation Ecosystem Model
+68
+S6.1 Establishing AI-Catalyst as the Innovation Hub to implement the 
+Quadruple Helix AI Innovation Ecosystem Model
+x Establish the 
+administration 
+for the AI-Catalyst
+x Establish the AI 
+Catalyst Consortia 
+to implement the 
+National AI Use 
+Cases projects, 
+AI-Cases
+Horizon 1
+(2021)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025)
+Target Lead Agency &
+Collaborators
+Form a 
+collaborative 
+network among 
+tech providers to 
+share AI 
+resources
+Make AI-
+Catalyst a self-
+sustainable 
+model
+x Administration for the AI Catalyst 
+established within the first year
+x 11 AI Catalyst Consortia are 
+established within the first year
+MOSTI
+69
+• Strategic Initiative 6.2 focuses on ensuring successful
+implementation of the proposed National AI Use Cases,
+presented in Section 7 of this report. During Horizon 1 (2021),
+there are 2 key activities:
+• Establishing a priority funding for the proposed National AI
+projects/use cases (AI Use Cases), from MOSTI’s Malaysia
+Grand Challenge fund. However, additional funding from other
+industries and government agencies are also expected especially
+for projects whose the main beneficiaries are the industries or
+agencies.
+• Implementing AI Use Cases is the most important activity in this
+initiative. The implementation starts in Horizon 1 and delivery of
+the results from some projects are expected to start in Horizon 2.
+Complete delivery of results/solutions from all other projects will
+be in Horizon 3.
+• The total budget for Strategic Initiative 6.2 is RM50 million, which
+is for all the 10 AI Use Cases. The budget for the National AI Use
+Cases under the Public Service area will be covered by MAMPU
+who will be implementing and delivering the project outputs. Table
+53 shows the activities for Strategic Initiative 6.2, the timeline, the
+targets, lead agency(ies) and the proposed budget.
+S6.2 Implementing Proposed National AI Use-Cases focusing on AI-driven 
+Supply Chain
+70
+S6.2 Implementing Proposed National AI Use-Cases focusing on AI-driven 
+Supply Chain
+x Establish a priority 
+funding for the 
+proposed National 
+AI use cases, AI 
+Use Cases, from 
+MOSTI’s Malaysia 
+Grand Challenge 
+fund
+x Implement the 
+proposed National 
+AI Use Cases via 
+the AI Catalyst 
+Consortia
+Horizon 1
+(2021)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025)
+Target Lead Agency &
+Collaborators
+Start delivering 
+the AI solutions 
+from the AI Use 
+Cases
+Deliver all other 
+AI Use Cases 
+solutions
+x Implementation and delivery of 7 
+AI Use Cases for 3 priority 
+areas (Agric. & Forestry, 
+Medical & Healthcare, Smart 
+Cities & Transportation)
+x Implementation and delivery of 4 
+AI Use Cases for 2 priority 
+areas (Education  and Public 
+Services) as supports
+x Secure 50% of the total project 
+funding from the Malaysia 
+Grand Challenge Fund
+x Secure 50% of the total project 
+funding from government-
+industry matching grant scheme
+MOSTI
+MoHE
+Ministries related to 
+the National AI Use 
+Cases
+71
+The Government-Academia-Industry-Society Collaboration is fundamental for the success of the
+AI Innovation Ecosystem and is the key enabler of the National AI Use Cases implementation.
+The collaboration effort must outline its expectations and targeted achievements. All parties that
+will involve in this consortium must embrace the similar fundamental belief towards the national
+agenda. The consortium pact must be impervious to any stagnation that can jeopardise its roles
+and functions. To facilitate the consortium in performing its expected roles and duties, a working
+structure or a formal committee, with endorsement from the government, must be in place.
+The Strategic Initiative 6.3 ensures that the quad-helix collaboration is nurtured at the earliest
+stage possible through 4 key activities:
+ Establishing the Malaysia AI Alliance (MyAI-Alliance), which brings together AI collaborators
+from the government, academia, industries and societies, to support the implementation of
+the AI-IE, in Horizon 1:
+ MyAI-Alliance will connect and promote collaborations among all the different quadruple helix
+actors to engage in the National AI Use Cases and other collaborative arrangements. Because
+MyAI-Alliance also consists of AI experts, it can provide technical advice to the government on
+matters related to AI when engaging with international partners e.g. through the ASEAN
+Committee on Science, Technology and Innovations (ASEAN COSTI).
+ The alliance should also participate actively in AI discussions held globally, for example, on the
+official discussion platform of the United Nation Commissions on Science & Technology for
+Development (CSTD).
+ Formulate an AI Investment Fund Guidelines for AI start-ups, in Horizon 2.
+ Establish the National Directory of AI experts and companies (AI-DI), in Horizon 2, to allow
+national and international entities to search for our local AI experts and organizations to
+collaborate with.
+ Establish a regional AI in Supply Chain Centre of Excellence that focuses on quadruple helix
+collaboration on AI R&D&I in Supply Chain to establish Malaysia as the regional global AI
+leader in supply chain management sector, in Horizon 3. This pursuit will be part of our
+initiatives to position Malaysia as the leader in AI-driven SCM.
+S6.3 Establishing a Quadruple Helix Collaborative Platform for AI R&D&I
+72
+Establish the 
+Malaysia AI Alliance 
+(MyAI-Alliance) 
+which brings 
+together AI 
+collaborators from 
+the government, 
+academia, industries 
+and societies, to 
+support the 
+implementation of 
+the AI-IE.
+Horizon 1
+(2021)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025)
+Target Lead Agency &
+Collaborators
+x Formulate an 
+AI investment 
+Fund Guidelin
+es for AI start-
+ups
+x Establish the 
+National AI 
+Directory of 
+experts and 
+communities, 
+AI-DI
+Establish a 
+regional AI in 
+Supply Chain 
+Centre of 
+Excellence that 
+focuses on 
+quadruple helix 
+collaboration on 
+AI R&D&I in 
+Supply Chain
+x Malaysia AI Alliance is 
+established
+x An AI investment guideline for AI 
+start-ups
+x AI-DI, a National AI directory is 
+established.
+x 1 regional centre for AI R&D&I 
+in Supply Chain is established
+MOSTI
+MoHE
+MITI
+S6.3 Establishing a Quadruple Helix Collaborative Platform for AI R&D&I
+73
+• International collaborations encourage mutually
+beneficial discourse and promote more discoveries.
+Hence, activities that encourage international
+partnership and alliances in AI must be promoted.
+These can be achieved through the activities outlined
+in the Strategic Initiative 6.4, which are:
+• Cross-border partnerships between governments to
+share AI knowledge through AI-eX (International AI
+Joint Intellectual Discourse), in Horizon 1. This include
+engaging with other AI leading countries on their AI
+policy implementation to learn from their experiences,
+organizing intellectual discourses on AI ethics, AI
+principles, social impacts of AI, etc.
+• Cross-border MOUs, cooperation and collaboration
+initiatives for data sharing, high-impact innovations and
+AI adoption, in Horizon 2 through Horizon 3.
+• A close synergy with the regional and global players is
+the enabler that will position Malaysia in the
+international AI ecosystem. Participations from global
+and regional entities are crucial to enhance our local
+ecosystem and will assist in positioning Malaysia as
+one of the active proponents for the deployment of AI
+based solutions.
+• The total budget for Strategic Initiative 6.4 is RM3.5
+million for the first 5 years. Table 55 shows the
+activities for Strategic Initiative 6.4, the timeline, the
+targets, the lead agency and the proposed budget.
+S6.4 Engaging with Global Knowledge and Innovation Networks for AI
+74
+S6.4 Engaging with Global Knowledge and Innovation Networks for AI
+Cross-border 
+partnerships 
+between 
+governments to 
+share AI knowledge 
+through AI-
+eX (International AI 
+Joint Intellectual 
+Discourse)
+Horizon 1
+(2021)
+Horizon 2
+(2022-2023)
+Timeline
+Horizon 3
+(2024-2025)
+Target Lead Agency &
+Collaborators
+Cross-border 
+MOUs, 
+cooperation and 
+collaboration 
+initiatives for data 
+sharing, high-
+impact 
+innovations and 
+AI adoption.
+(Activity is 
+continued)
+x An official platform to link 
+Malaysia's AI players with 
+international AI networks is 
+formed.
+x 5 impactful international AI 
+intellectual discourse conducted
+x 5 MOUs signed with international 
+AI centres or industries
+MOSTI
+75
+National AI
+Use Cases5
+Malaysia as World Leader in AI-Driven Supply Chain
+Supply chain can essentially be defined as any environment or ecosystem across which there is a flow of
+resources. These resources can be physical such as products and materials or nonphysical such as human
+or services.
+Why supply chain? Malaysia's economic foundations are based primarily on manufacturing, plantation,
+trading, logistics and distribution, and retail activities. These strengths are punctuated by Malaysia
+boasting two of the top five ports in Southeast Asia.
+These foundational activities thrive on an efficient, agile and resilient supply chain, the backbone of
+Malaysia's and global economy. As the supply chain becomes more complex and more sophisticated, the
+challenges, in terms of being able to adapt to constantly evolving needs and constraints, has rapidly
+become beyond human capacity to manage. Global trends in digitization, digitalization and digital
+transformation reinforce the need for a transformation towards a more resilient, agile, intelligent and
+efficient supply chain.
+While other countries strategically focus on specific areas of AI such as national security, defence,
+cybersecurity, energy and healthcare to drive their national agenda, at least, in the public arena, it is
+therefore proposed that Malaysia places a strategic focus on AI in Supply Chain Management (SCM).
+National AI Use Cases and Supply Chain Management (SCM): 4 of the 11 proposed National AI Use Cases
+are directly addressing different supply chain management challenges.
+77
+SCAN here
+78
+SCAN here
+79
+Agriculture & Forestry
+Project 1
+Project 2
+AI Driven Supply Chain 
+Management System for Palm Oil
+Autonomous Robotics in Oil 
+Palm Harvesting Management 
+System
+Objective: To optimize
+profitability and minimize
+supply chain inefficiencies
+by leveraging an AI-driven
+Autonomous Procurement &
+Inventory Management
+System
+Objective: To develop an
+integrated autonomous
+harvesting system for use in
+palm oil plantation areas to
+sustain the productivity and
+revenue of the plantation
+companies despite shortage
+of labour
+Plantations
+Transport Transport
+Mills
+Mills
+Refineries
+Food 
+Manufacturer
+Store
+Transport
+Bulking
+EXPORT
+Store
+Consumer
+RetailGrowing Distribution Processing Distribution Manufacturing Distribution
+An autonomous UGV for 
+palm oil plantations 
+equipped with intelligent 
+FFB grabber, fertiliser
+sprayer and loose fruits 
+collector.
+Light and effective 
+assistive device to reduce 
+workers’ load during 
+harvesting
+Drone system that collect 
+data for use in plantation 
+inspection, FFB quality 
+monitoring and yield 
+prediction.
+Provides bird’s eye view 
+of plantation KPI’s and 
+data collected from 
+various sensors on the 
+ground, the UGV and the 
+drones.
+1. UGV for Palm Oil Plantations 2. Drones for Data Collection & Monitoring
+3. FFB Harvesting Exoskeleton
+4. Centralised Data Monitoring System for 
+Plantation Management
+SCAN here
+80
+Dashboard for Assistive Learning Personalization Planning
+Education
+Project 3
+Project 4
+Personalized Learning 
+System
+Intelligent Automated 
+Assessment System
+Objective: To develop
+an intelligent automated
+assessment system to
+support the
+personalized learning
+system.
+Objective: To develop
+a personalized learning
+system to boost
+students’ engagement
+and results using AI.
+Learning Management System
+Personalized 
+Lesson 
+Generator
+Conversational 
+Recommender 
+System
+Access to 
+Personalise
+Recommendation
+Instructor
+Learning Analytics
+Learning Experience
+Customize to 
+personalize
+Generate to 
+personalize
+Access to 
+Learn
+Personalised
+Learning Path 
+and 
+Learning 
+Content
+Personal 
+tutor
+Personalized 
+assistance
+UPM
+UPM
+UPM
+Proposed Architecture for CRS4PerL
+UPM Learners 
+Profile
+Learning 
+Profile
+Learning 
+Content
+Communicate PlanPredictMonitor
+Intervene
+Exam Evaluation Centres
+Student 1
+Student ….n
+Student 2
+Script 
+assessment 
+images loaded 
+to marking 
+software
+Marking Centre
+Automatic Marking 
+Mechanism
+Feedback Mechanism
+Data 
+Analysis
+Return Script
+View
+Result
+SCAN here
+81
+Education
+Project 5
+Cognitive Ability
+EmotionCompetency
+Values Experiences
+Behavior
+Assessment level of 
+students’ 
+intelligence
+Balance of graduates’ 
+efficiency and 
+effectiveness in tasks
+Assessment of 
+graduates’ behavior 
+and attitude
+Graduates’ emotional 
+intelligence, stability, 
+spirit and endurance
+Graduates’ X factor, 
+specialty, academic 
+excellence and 
+uniqueness
+Previous experience 
+in industry, leadership 
+and extra curricular 
+activities
+Graduate 
+Standards
+AI automated 
+search and 
+skills – job 
+mapping
+Options of suitable match 
+between job seekers and 
+job offers based on 
+requirement matches Successful job 
+acceptance
+Combined databases 
+of graduates’ skills 
+and company’s 
+requirements
+National
+Human 
+Resources 
+Requirements
+Industry 
+Expectation
+Experience 
+Requirements
+Academic 
+Requirements
+Skillsets
+Minimum
+academic 
+acceptance
+Minimum 
+experience 
+acceptance
+Required skillsets 
+for company’s 
+portfolio
+Industry/ 
+Companies
+Intelligent Graduates Profiling for National Future-Driven Workforce 
+Objective: To develop an intelligent personalized learning system to boost students’ engagement and results using AI.
+SCAN here
+82
+Project 6 Autonomous Vaccine Distribution and Management System
+Medical & Healthcare
+Objective: To boost the operational efficiency of COVID-19 vaccine distribution by using AI to reduce supply spend
+by 20% and logistic cost by 40%. To overlay an AI layer on top of current workflow and systems so that vaccine
+doses scheduling can be administered autonomously and effectively at scale.
+Control Tower
+Set Goals
+AP&I 
+Tactical
+AP&I
+Operational
+Government 
+Supply Chain
+Constraints
+Recommended
+Constraints AI Model
+Autonomous Procurements
+Autonomous Replenishments
+AP&I greenlight to 
+schedule
+Citizens
+Suppliers
+Inventory
+Distribution Center
+Inventory
+Warehouse
+Onsite Inventory
+Vaccine
+Administration
+Administration Site
+Registration
+Ready 
+Queue
+Scheduling 
+Queue
+SCAN here
+83
+Project 7
+Personalized Proactive 
+Healthcare
+Medical & Healthcare
+Project 8
+Autonomous A-eye 
+System
+Project 9
+AI-Nasoalveolar (AI-Na) 
+System
+Objective: To enable a
+national Proactive Healthcare
+Strategy for cardiovascular
+disease and reduces
+healthcare cost.
+Objective: To provide an
+autonomous A-eye system to
+prevent blindness using AI-
+powered image analysis.
+Objective: To develop an AI-
+assisted predictive model
+CIAPAI Series of 3D printed
+presurgical nasoalveolar mold
+(PNAM) with AI prediction on
+changes of cleft separation
+after the application of PNAM.
+SCAN here
+84
+Project 10 AI-Driven Mass Public Transport
+Smart Cities and Transportation
+Challenges:
+Current technologies in city-wide mass
+transportation provide live information but lacking
+intelligence that is needed for public transport
+operators to provide efficient service at reduced
+cost, increased operational efficiency and better
+system reliability.
+Key Benefits:
+The system will deliver better customer
+experience and services and intelligence
+amongst authorities and operators with real-time
+management. It can also provide operational
+excellence through AI deployment to drive
+system improvement, operational efficiencies
+and reliability, greater efficiency of asset
+management including predictive maintenance
+and improved operational safety and security
+such as more a efficient revenue capture and
+property management.
+Objective: To develop and deploy an AI-driven autonomous maintenance, repair and operations (MRO) for public
+transport system towards excellent operation, customer service as well as security and safety management.
+SCAN here
+85
+Intelligent Automation in Public Services
+Challenges:
+• Huge amount of time spent on 
+repetitive and routine tasks.
+• More complex problems that require 
+human judgement.
+• A growing backlog of work, and 
+limited capacity to tackle it.
+Key Benefits:
+The systems developed will improve
+workplace productivity and delivery,
+enhance citizens’ satisfaction and
+improve the quality of information for
+critical decision- making processes.
+They will also improve service delivery
+and process efficiency.
+Public Services
+Project 11
+Objective: To create more responsive, reliable, and timely services as well as to keep up with citizens’ demands
+and desire for consumer-grade service levels. This will reduce cost, boost productivity and allow organisations to
+focus on delivering critical public services.
+SCAN here
+86
+AI-Rmap as a Living 
+Document on 
+https://airmap.my6
+AI related initiatives demand for continuous and sustainable planning involving various parties. Therefore, in formulating AI-
+Rmap, the Roadmap document has been designated as a living document.
+AI-Rmap as a living document can be realised through:
+AI-Rmap document was
+created in a platform that is
+supported by automatic
+version control and
+collaborative document
+editing.
+The contents of the
+documents were reviewed
+and refined based on
+feedback received from the
+stakeholders.
+The document is
+continuously shared the
+document with relevant
+stakeholders to gather their
+feedback and views through
+multiple channels.
+The feedback gathered from
+the various stakeholders will
+be consolidated, analysed
+and synthesised to identify
+changes or updates required
+for the documents.
+• AI-Rmap Portal
+• Annual Panels, 
+Workshops, 
+Syndications and 
+Conferences
+• Establishing AI Open 
+Community
+• Utilisation of 
+Interactive Digital 
+Platform
+AI-Rmap as A Living Document
+SCAN here
+88
+SCAN here
+There are six Critical Success Factors for AI-Rmap, as shown in the Figure.
+First, the Quadruple Helix model for all AI-Rmap funded projects within the
+AI-Catalyst must be embraced by all, creating a strong demand for AI
+technology, services and expertise in Malaysia.
+Second, adequate funding must be ensured for all the strategies in the AI-
+Rmap, and for developing a sustainable model for the AI-IE in the longer
+term.
+Third, the success depends very much on the establishment of an
+empowered AI-ICU to oversee the governance of the AI-IE that will
+transcend any leadership and political changes within the government.
+Fourth, Malaysia must have sufficient local AI talents to meet AI local and
+global AI opportunities.
+Fifth, the government must ensure mindset change to fully understand
+and embrace the digital economy that demands intensifying the use of
+trusted digital platforms and open data, and ensuring the local talents are
+skilled to fully support the digital economy.
+The final strategy is to leverage on democratized digital infrastructure
+particularly the intelligent hyper-scale cloud and smart devices as a
+preferred approach to benefit from the economics, agility and security
+compliance.
+AI-Rmap has outlined a 5-year plan across three horizons. The document aims
+to provide strategic directions and initiatives towards creating a thriving
+national AI ecosystem in Malaysia that allows all sectors and stakeholders to
+capitalize on the benefits of AI. AI-Rmap emphasizes that key to its success is
+the quadruple helix collaboration between all stakeholders. government.
+89
+Acknowledgement
+Acknowledgement
+Acknowledgement
+Ministry of Science, Technology and Innovation Leadership
+• YB Khairy Jamaludin, Minister
+• Datuk Ir. Dr. Siti Hamisah Tapsir, Secretary General
+• Dr. Mohd Nor Azman bin Hassan, Deputy Secretary General
+• Bahagian Teknologi Strategik dan Aplikasi S&T (TSA)
+o Nordina Idris
+o Siti Salmiah Haji Dimyati
+o Mohd Aniq Firdaus Mohd Yuzaidy
+o Nubailah Arshad
+o Airull Azizi Awang Lah
+Authors of Report
+• Prof. Ts. Dr. Rose Alinda Alias –
+Universiti Teknologi Malaysia
+• Prof. Ts. Dr. Salwani Mohd Daud -
+Universiti Teknologi Malaysia
+• Prof. Dr. Nor Shahriza Abdul Karim 
+– PSU, KSA
+• Dr. Dzaharudin Mansor - PIKOM
+• Assoc. Prof. Dr. Aini Suzana Ariffin 
+– Universiti Teknologi Malaysia
+• Dr. Syed Norris Hikmi Syed 
+Abdullah – Universiti Teknologi
+Malaysia
+• Amir Aznan Razelan – Seeloz Inc.
+• Assoc. Prof. Ir Dr. Hazlina Selamat -
+Universiti Teknologi Malaysia
+• Assoc. Prof. Dr. Marlia Puteh -
+Universiti Teknologi Malaysia
+• Prof. Ts. Dr. Ali Selamat - Universiti 
+Teknologi Malaysia
+• Dr. Mathew Ferns Mathew -
+Universiti Teknologi Malaysia
+• Sakinah Abd Jamil - Universiti 
+Teknologi Malaysia
+Contributing Organisations
+• AgroBank
+• Alan Turing Institute, UK
+• British High Commission Malaysia
+• CREST
+• EPU
+• Huawei Malaysia
+• IIB Ventures
+• Pejabat Setiausaha Kerajaan Johor
+• Luno, South Africa
+• Silver Lead Technologies, US
+• Majlis Dekan ICT (MaDICT)
+• MAMPU
+• MARii
+• MDEC
+• Microsoft
+• Ministry of Health
+• MPC
+• NT Business Consulting & Training
+• Oxford University
+• PIKOM
+• R-User Group
+• Seeloz Inc
+• Skymind Holdings
+• TalentCorp
+• Tensorflow Community
+• University of Southampton
+• Women in AI (Malaysia)
+• All participants of Virtual 
+Conference
+• All participants of Virtual Focus 
+Group Discussion
+• All MyAIRmap Survey respondents
+• All participants of Virtual Townhall
+Members of Technical Committee
+• Ministry of Communications and Multimedia Malaysia
+• Malaysia Digital Economy Corporation
+• Academy of Sciences Malaysia
+• MIMOS Berhad
+• Malaysia Automotive Robotics and IoT Institute
+• University Putra Malaysia
+• University Technology Mara
+• University Science Islam Malaysia
+• International Islamic University Malaysia
+• Fusionex
+• Tensorflow & Deep Learning
+• PIKOM AI SIG
+91
+Acknowledgement
+Attendees of the Virtual Conference, Virtual Focus Group Discussion, Virtual Townhall and MyAIRmap Survey Respondents
+10 Infinity Sdn Bhd
+ĨĨŝŶŝƚǇŝƚǇĐĞŶƚĞƌ/ŶĐല
+Artificial Intelligence Society Malaysia 
+;Zd/^Ϳല
+Bank Pembangunan Malaysia Berhad
+Cr8tivo Sdn Bhd
+Crayon Software Experts 
+Malaysia Sdn Bhd
+ǇďĞƌ^ĞĐƵƌŝƚǇDĂůĂǇƐŝĂല
+ĞƉĂƌƚŵĞŶƚKĨŶǀŝƌŽŶŵĞŶƚല
+ĞƉĂƌƚŵĞŶƚŽĨtŽŵĞŶĞǀĞůŽƉŵĞŶƚല
+DRB-,/KDല
+EKTECH
+Etiqa ŝŐŝƚĂů^ŽůƵƚŝŽŶƐല
+&Dല
+&ůĞǆല
+'ůƵĞĐŬdĞĐŚŶŽůŽŐŝĞƐല
+Hannur ZĞƐŽƵƌĐĞƐല
+Heraeus Materials Malaysia Sdn Bhd
+Honeywell International Sdn Bhd
+,ƵĂǁĞŝDĂůĂǇƐŝĂല
+/DW<'D/>E'^ͬല
+Lembaga Hasil Dalam EĞŐĞƌŝല
+Institut <ĂŶƐĞƌEĞŐĂƌĂല
+Institut Kemajuan Desa (INFRA), 
+Kementerian Pembangunan Luar ĂŶĚĂƌല
+Institut Latihan Kehakiman dan 
+Perundangan
+Institut Tanah dan Ukur EĞŐĂƌĂ;/E^dhEͿല
+/ŶƚĞůDŝĐƌŽĞůĞĐƚƌŽŶŝĐƐല
+IIB Ventures Sdn Bhd
+ITW DĞƌŝƚĞǆല
+Jabatan Akauntan EĞŐĂƌĂDĂůĂǇƐŝĂല
+Jabatan Kastam Diraja DĂůĂǇƐŝĂല
+Jabatan Kerajaan Tempatan
+:ĂďĂƚĂŶ>ĂƵƚDĂůĂǇƐŝĂല
+Jabatan Penerangan DĂůĂǇƐŝĂല
+Jabatan Penilaian Dan Perkhidmatan
+,ĂƌƚĂല
+Jabatan Perhilitan
+Jabatan Perkhidmatan Pembetungan
+Jabatan Perkhidmatan sĞƚĞƌŝŶĂƌല
+Jabatan Warisan EĞŐĂƌĂല
+:Ăďŝůല
+Kejora
+Kementerian Pembangunan Usahawan
+Dan Koperasi
+KOPSEL Bhd
+Kulim Technology Park 
+Corporation Sdn Bhd
+Lembaga Getah DĂůĂǇƐŝĂല
+Lembaga Kemajuan :ŽŚŽƌdĞŶŐŐĂƌĂല
+Lembaga Kemajuan Kelantan 
+^ĞůĂƚĂŶ;<^ZͿല
+Lembaga Kemajuan Terengganu 
+Tengah ;<dE',Ϳല
+Lembaga Kemajuan Wilayah 
+<ĞĚĂŚ;<Ϳല
+Lembaga Kemajuan Willayah
+WƵůĂƵWŝŶĂŶŐല
+>ĞŵďĂŐĂWĞƌŝŶĚƵƐƚƌŝĂŶEĂŶĂƐDĂůĂǇƐŝĂല
+Malakoff Corporation Berhad
+DĂůĂǇƐŝĂWƌŽĚƵĐƚŝǀŝƚǇŽƌƉŽƌĂƚŝŽŶ;DWͿല
+MARii
+DŝĐƌŽŶDĞŵŽƌǇDĂůĂǇƐŝĂല
+D/ല
+MINISTRY OF FOREIGN AFFAIRS 
+D>z^/ല
+DƵůƚŝŵĞĚŝĂhŶŝǀĞƌƐŝƚǇല
+MyAIS
+NEC Capital Solutions Malaysia Sdn Bhd
+Nexperia Malaysia Sdn Bhd
+EdƵƐŝŶĞƐƐŽŶƐƵůƚŝŶŐdƌĂŝŶŝŶŐല
+Es//ŽƌƉŽƌĂƚŝŽŶല
+Perbadanan Kemajuan Filem Nasional 
+Malaysia
+Perbadanan Kemajuan EĞŐĞƌŝWĂŚĂŶŐല
+Perbadanan KotaBuku
+Permodalan Nasional Berhad
+Pihak Berkuasa KemajuanPekebun Kecil 
+Perusahaan Getah
+Politeknik
+WZ^ZED>z^/Z,ല
+Z/>tz^^dKZWKZd/KEല
+SilTerra
+SIRIM Berhad
+Skymind Holdings Berhad
+Statworks (M) Sdn Bhd
+^dDŝĐƌŽĞůĞĐƚƌŽŶŝĐƐല
+^ƵŶWŽǁĞƌല
+Talent Corporation Malaysia Berhad
+dĞĐŚŶŝƉ&Dല
+Telekom Malaysia Berhad
+Tomcare Resources Sdn Bhd
+Trovicor Technology Sdn Bhd
+Microsoft Malaysia Sdn Bhd
+h^/hŶŝǀĞƌƐŝƚǇല
+Universiti Islam Antarabangsa DĂůĂǇƐŝĂല
+Universiti Kebangsaan DĂůĂǇƐŝĂല
+hŶŝǀĞƌƐŝƚŝDĂůĂǇĂല
+hŶŝǀĞƌƐŝƚŝDĂůĂǇƐŝĂ<ĞůĂŶƚĂŶല
+hŶŝǀĞƌƐŝƚŝDĂůĂǇƐŝĂWĂŚĂŶŐല
+hŶŝǀĞƌƐŝƚŝDĂůĂǇƐŝĂWĞƌůŝƐല
+hŶŝǀĞƌƐŝƚŝDĂůĂǇƐŝĂ^ĂďĂŚല
+hŶŝǀĞƌƐŝƚŝDĂůĂǇƐŝĂ^ĂƌĂǁĂŬല
+hŶŝǀĞƌƐŝƚŝDĂůĂǇƐŝĂdĞƌĞŶŐŐĂŶƵല
+hŶŝǀĞƌƐŝƚŝWĞŶĚŝĚŝŬĂŶ^ƵůƚĂŶ/ĚƌŝƐല
+Universiti Pertahanan EĂƐŝŽŶĂůDĂůĂǇƐŝĂല
+hŶŝǀĞƌƐŝƚŝWƵƚƌĂDĂůĂǇƐŝĂല
+Universiti Sains /ƐůĂŵDĂůĂǇƐŝĂല
+Universiti SainsMalaysia
+Universiti Teknologi DĂůĂǇƐŝĂല
+Universiti dƵŶ,ƵƐƐĞŝŶKŶŶDĂůĂǇƐŝĂല
+Universiti Teknikal DĂůĂǇƐŝĂDĞůĂŬĂല
+Universiti Teknologi DZല
+hŶŝǀĞƌƐŝƚŝhƚĂƌĂDĂůĂǇƐŝĂല
+hŶŝǀĞƌƐŝƚŝdĞŶĂŐĂEĂƐŝŽŶĂůല
+Universiti Teknologi WĞƚƌŽŶĂƐല
+Venture Electronics Services Malaysia
+Vettons Sdn Bhd
+sŝƐĂ/ŶƚĞƌŶĂƚŝŽŶĂů;ƐŝĂWĂĐŝĨŝĐͿ͕>>ല
+Xylem Water Solutions (M) Sdn Bhd
+92
+
