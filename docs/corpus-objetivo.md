@@ -70,6 +70,41 @@ Esto obliga a una decisión metodológica explícita, y **cualquiera de las tres
 
 ---
 
+## 2-bis. Ampliar el brazo asiático: por qué Vietnam vale más que el resto
+
+El SPIKE Fase 6 añadió Corea, Japón y Singapur como brazo de "vecindario confuciano" y ninguno se despegó de cero. Eso descartó que el efecto fuera regional. Pero **quedó una explicación alternativa sin probar**: los tres son democracias o híbridos de mercado. Ninguno comparte con China la estructura de **Estado-partido**.
+
+O sea, hoy no puedes distinguir entre estas tres hipótesis:
+
+| Hipótesis | Qué predice |
+|---|---|
+| Es China específicamente | Solo China puntúa alto |
+| Es la herencia confuciana | Corea, Japón, Singapur también deberían subir. **Ya refutada** |
+| Es la estructura de Estado-partido | Un Estado-partido confuciano no chino también sube |
+
+**Vietnam resuelve el empate.** Es el único país que comparte con China las dos condiciones: pertenece a la esfera cultural confuciana, junto con Corea y Japón, **y** es un Estado-partido de partido único. Si Vietnam puntúa alto, el efecto es de la estructura política. Si puntúa cero, es de China.
+
+Un solo documento decide una pregunta que hoy queda abierta. Ningún otro país del sudeste asiático rinde tanto.
+
+**Los demás ASEAN sirven como control no confuciano.** Indonesia, Malasia, Tailandia y Filipinas son de mayoría musulmana, budista o católica. Si alguno subiera, el eje estaría capturando algo distinto de lo confuciano. Seis de los diez miembros de ASEAN ya tienen estrategia nacional de IA.
+
+### Estado de disponibilidad
+
+| País | Documento | Estado |
+|---|---|---|
+| **Vietnam** | Decisión 127/QĐ-TTg (ene 2021), *Estrategia Nacional de I+D y Aplicación de IA hasta 2030* | ⚠️ **Existe y hay versión en inglés, pero no la pude bajar en texto verbatim.** El portal `en.baochinhphu.vn` sirve una nota de prensa con menú de navegación: 27 mil caracteres de los cuales solo 10 son menciones de IA. **No cumple C5.** Hace falta el texto de la decisión, no la nota |
+| Vietnam (actualización) | Estrategia actualizada y primera Ley de IA, anunciadas para fines de 2025 | 🔍 verificar si ya se publicaron |
+| Filipinas | National AI Strategy Roadmap 2.0 (2024-2025) | 🔍 por localizar |
+| Malasia | National AI Roadmap 2021-2025 y directrices AIGE | 🔍 por localizar |
+| Indonesia | Stranas KA | 🔍 por localizar |
+| Tailandia | Estrategia nacional de IA | 🔍 por localizar |
+
+### Advertencia metodológica
+
+Estos países **no entran en la comparación principal de siete**. Entran en el **brazo de control declarado**, igual que Corea, Japón y Singapur en la Fase 6. Esa distinción importa: agregar países al conjunto principal cambiaría el diseño pre-registrado; agregarlos al brazo de control no. Los resultados publicados no se mueven.
+
+---
+
 ## 3. Trabajo pendiente, cuantificado
 
 1. **Reemplazar 4 documentos vencidos o marginales**: EUA, Colombia, Sudáfrica, Australia.

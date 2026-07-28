@@ -60,7 +60,20 @@ En 93 entradas del `.bib` no hay **ninguna** fuente de filosofía china, y el c�
 
 | Referencia | Tipo | Nota |
 |---|---|---|
-| **Stanford Encyclopedia of Philosophy**, entrada "Confucius" | Acceso abierto | [plato.stanford.edu/entries/confucius/](https://plato.stanford.edu/entries/confucius/). Gratis, revisada por pares. **Empieza por aquí.** |
+**Ya descargadas de la Stanford Encyclopedia of Philosophy** (acceso abierto, revisadas por pares). Están en `references/sep/` como texto, con su ficha de cita y la nota de que son copias de consulta.
+
+| Entrada | Autor | Sirve para |
+|---|---|---|
+| *Legalism in Chinese Philosophy* | Yuri Pines (2023) | **El polo fǎ de tu eje.** 24 menciones de castigo, 11 de imparcialidad, 9 de moralidad |
+| *Mencius* | Bryan Van Norden (2024) | Naturaleza humana y cultivo ético |
+| *Xunzi* | Paul R. Goldin (2025) | La otra fuente clásica |
+| *Confucius* | Mark Csikszentmihalyi (2024) | Panorama del pensador |
+
+> **Advertencia sobre la entrada de Confucio.** La revisé y **no cubre tu eje**: tiene 55 menciones de "virtue" pero **cero de "rule by virtue" y cero de "moral education"**. Es sobre Confucio como pensador, no sobre gobierno por la virtud. No cierra la brecha del códebook.
+>
+> **La SEP no tiene entrada de "Confucianism":** existe la URL pero marca "Not Yet Available". La mejor pieza gratuita para tu eje resulta ser la de **Legalismo**, porque documenta el polo opuesto con solvencia.
+
+Sigue faltando, entonces, la fuente que respalde el polo **dézhì**:
 | **El Amine, L.**, *Classical Confucian Political Thought* | Libro, Princeton UP | Reconstrucción del pensamiento político clásico |
 | **Kim, S.**, *Theorizing Confucian Virtue Politics* | Libro, Cambridge UP | Mencio y Xunzi |
 | **Elman, B. (2000)**, *A Cultural History of Civil Examinations in Late Imperial China* | Libro, UC Press | El antecedente histórico de tu interacción país por tema |
