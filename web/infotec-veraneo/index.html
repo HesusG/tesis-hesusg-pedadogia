@@ -169,6 +169,15 @@ footer .mono{font-size:.75rem;opacity:.7;}
   section{padding:3.2rem 0;}
   .container{padding:0 1.1rem;}
 }
+
+/* Pasos de metodología */
+.pasos{display:grid;gap:0;margin-top:2rem;border-top:var(--border);}
+.paso{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;padding:1.3rem 0;border-bottom:var(--border);align-items:start;}
+.paso-n{font-family:var(--font-display);font-weight:800;font-size:1.6rem;line-height:1;min-width:2.2rem;
+  background:var(--yellow);border:var(--border);padding:.35rem .5rem;text-align:center;}
+.paso-t{font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin-bottom:.3rem;}
+.paso-d{margin:0;font-size:.95rem;line-height:1.55;}
+@media(max-width:640px){.paso{grid-template-columns:1fr;gap:.6rem;}.paso-n{justify-self:start;}}
 </style>
 </head>
 <body>
@@ -218,6 +227,47 @@ footer .mono{font-size:.75rem;opacity:.7;}
   </div>
 </section>
 
+<section id="pasos">
+  <div class="container">
+    <p class="eyebrow rv">Metodología</p>
+    <h2 class="rv">Cómo se hizo, paso a paso</h2>
+    <p class="lead rv">Fueron seis pasos. No hace falta saber programar para entenderlos.</p>
+    <div class="pasos rv">
+      <div class="paso">
+        <div class="paso-n">1</div>
+        <div><div class="paso-t">Juntar los documentos</div>
+        <p class="paso-d">Se reunió la política nacional de inteligencia artificial vigente de cada país. Que estuviera vigente fue clave. Al revisar, dos documentos del corpus ya no estaban en vigor. La orden ejecutiva de Estados Unidos fue revocada en 2025. El documento colombiano venció en 2022. Los dos se reemplazaron.</p></div>
+      </div>
+      <div class="paso">
+        <div class="paso-n">2</div>
+        <div><div class="paso-t">Dividirlos en fragmentos</div>
+        <p class="paso-d">Cada documento se dividió en partes de cerca de 500 caracteres. Cada fragmento podía leerse y calificarse de un vistazo. Al final quedaron 2420 fragmentos de siete países.</p></div>
+      </div>
+      <div class="paso">
+        <div class="paso-n">3</div>
+        <div><div class="paso-t">Escribir la rúbrica antes de medir</div>
+        <p class="paso-d">La regla de calificación se redactó y se guardó en el control de versiones antes de ver resultados. Así se evita ajustar la regla para que salga lo esperado. La rúbrica define qué cuenta como un Estado que forma personas y qué queda fuera.</p></div>
+      </div>
+      <div class="paso">
+        <div class="paso-n">4</div>
+        <div><div class="paso-t">Buscar los pasajes clave</div>
+        <p class="paso-d">No se califica el documento completo. En cada país se buscan los diez pasajes que más hablan del papel del Estado. La búsqueda usa la misma consulta para todos. Así ningún país recibe un trato distinto.</p></div>
+      </div>
+      <div class="paso">
+        <div class="paso-n">5</div>
+        <div><div class="paso-t">Calificar dos veces, por rutas distintas</div>
+        <p class="paso-d">Primero se usó el método rápido. Ese método compara textos por parecido de vocabulario. Después se usaron siete modelos de lenguaje. Cada modelo leyó los pasajes con la rúbrica. Comparar ambos resultados muestra dónde falla el primer método.</p></div>
+      </div>
+      <div class="paso">
+        <div class="paso-n">6</div>
+        <div><div class="paso-t">Comprobar antes de confiar</div>
+        <p class="paso-d">Se revisa si los siete modelos coinciden entre sí. También se mide si el origen del modelo cambia sus calificaciones. Luego se prueba si el resultado se sostiene al cambiar los documentos. Cada cifra publicada incluye su margen de error.</p></div>
+      </div>
+    </div>
+    <div class="tk rv" style="margin-top:1.6rem;"><strong>Por qué estar cerca no equivale a ser confuciano.</strong> La tentación es medir qué tan cerca queda cada política del texto confuciano y llamar confuciano a lo cercano. Ahí está el problema. La distancia dice si dos textos usan palabras y temas parecidos. No dice si Confucio influyó en el documento. Son preguntas distintas. Por eso se separan.</div>
+  </div>
+</section>
+
 <section id="metodo">
   <div class="container">
     <p class="eyebrow rv">Los dos caminos</p>
@@ -261,7 +311,7 @@ footer .mono{font-size:.75rem;opacity:.7;}
         <span class="t-num">03</span>
         <h4>Traza reglas de medir</h4>
         <div class="t-cite">Kozlowski et al., 2019 · Geometry of Culture</div>
-        <p>Construye una "carretera" con etiquetas a través del mapa (por ejemplo rico ↔ pobre) y mide cuán lejos avanza cualquier texto en ella. Es la solución para medir "confucianidad" concepto por concepto.</p>
+        <p>Construye una "carretera" con etiquetas a través del mapa (por ejemplo, de rico a pobre) y mide cuán lejos avanza cualquier texto en ella. Es la solución para medir "confucianidad" concepto por concepto.</p>
       </div>
     </div>
 
@@ -275,7 +325,7 @@ footer .mono{font-size:.75rem;opacity:.7;}
       </div>
       <div class="box bad">
         <h4>Trampa del idioma</h4>
-        <p>Las <i>Analectas</i> que usarías están <b>traducidas</b> al inglés. La política china también se traduce (chino → inglés). Dos textos que pasaron por traducción se parecen por el "sabor" de la traducción, no por compartir filosofía. La política alemana, en cambio, está en alemán.</p>
+        <p>Las <i>Analectas</i> que usarías están <b>traducidas</b> al inglés. La política china también se traduce del chino al inglés. Dos textos que pasaron por traducción se parecen por el "sabor" de la traducción, no por compartir filosofía. La política alemana, en cambio, está en alemán.</p>
       </div>
     </div>
     <div class="warn rv"><strong>El remate.</strong> "La política china es la más cercana a las <i>Analectas</i>" podría ser cierto por razones aburridas (es un documento ético, pasó por traducción del chino) que nada tienen que ver con influencia confuciana. Si la distancia cruda no puede responder "¿y eso qué prueba?", no sirve como evidencia.</div>
@@ -318,13 +368,13 @@ footer .mono{font-size:.75rem;opacity:.7;}
         <div class="c-head"><span class="c-zh">义</span><span class="c-pin">yì</span></div>
         <div class="c-name">Rectitud</div>
         <div class="c-mean">Hacer lo correcto sin importar el beneficio o la conveniencia. Lo justo por encima de lo útil.</div>
-        <div class="c-hook"><b>IA:</b> líneas rojas éticas que van más allá de "¿es legal?".</div>
+        <div class="c-hook"><b>IA:</b> Líneas rojas éticas que no se agotan en preguntar si algo es legal.</div>
       </div>
       <div class="concept" style="--accent:var(--xiushen);">
         <div class="c-head"><span class="c-zh">修身</span><span class="c-pin">xiūshēn</span></div>
         <div class="c-name">Cultivo de sí mismo</div>
         <div class="c-mean">Mejora moral continua a lo largo de la vida; "aprender para uno mismo", no para el reconocimiento ajeno.</div>
-        <div class="c-hook"><b>IA:</b> alfabetización digital como formación del carácter, no solo como destreza técnica.</div>
+        <div class="c-hook"><b>IA:</b> Alfabetización digital entendida como formación del carácter. No como simple destreza técnica.</div>
       </div>
       <div class="concept" style="--accent:var(--dezhi);">
         <div class="c-head"><span class="c-zh">德治</span><span class="c-pin">dézhì</span></div>
@@ -336,7 +386,7 @@ footer .mono{font-size:.75rem;opacity:.7;}
         <div class="c-head"><span class="c-zh">和</span><span class="c-pin">hé</span></div>
         <div class="c-name">Armonía</div>
         <div class="c-mean">Concordia social y bien colectivo. Poderoso y peligroso a la vez.</div>
-        <div class="c-hook"><b>IA:</b> bienestar colectivo, pero con un filo: armonía → conformidad → control.</div>
+        <div class="c-hook"><b>IA:</b> Bienestar colectivo, con un riesgo: la armonía puede volverse conformidad y luego control.</div>
       </div>
     </div>
   </div>
@@ -353,17 +403,17 @@ footer .mono{font-size:.75rem;opacity:.7;}
       <div class="pole de">
         <div class="p-zh" style="color:var(--dezhi);">德治 dézhì</div>
         <h4>Gobernar por virtud</h4>
-        <p style="font-size:.92rem;color:#333;margin-top:.4rem;">Ética, estándares y ejemplo moral. El pueblo desarrolla conciencia y se corrige a sí mismo.</p>
+        <p style="font-size:.92rem;color:#333;margin-top:.4rem;">Ética, estándares y ejemplo moral. El pueblo desarrolla conciencia y se corrige solo.</p>
       </div>
       <div class="vs-mid">frente a</div>
       <div class="pole fa">
         <div class="p-zh" style="color:var(--internacional);">法 fǎ</div>
         <h4>Gobernar por ley</h4>
-        <p style="font-size:.92rem;color:#333;margin-top:.4rem;">Reglas vinculantes y castigo. El pueblo evita el delito, pero sin sentido de vergüenza.</p>
+        <p style="font-size:.92rem;color:#333;margin-top:.4rem;">Reglas vinculantes y castigo. La gente evita el delito, pero no desarrolla vergüenza.</p>
       </div>
     </div>
     <p class="lead rv"><i>Analectas</i> 2.3 (parafraseado): gobierna con la ley y el castigo, y la gente evitará el mal pero no sentirá vergüenza; gobierna con la virtud y el ritual, y desarrollará una conciencia moral que la lleve a corregirse sola. Confucio prefiere <b>dézhì</b>.</p>
-    <div class="tk rv"><strong>¿Fortaleza o trampa? Las dos.</strong> El dézhì no tiene control externo sobre quien gobierna: supone que el gobernante es virtuoso. Con un Estado virtuoso, produce una gobernanza de la IA humana y autocorrectiva. Con un Estado sin rendición de cuentas, se vuelve "confíen en nosotros, somos éticos", que es precisamente el camino hacia la vigilancia. El valor es bueno; lo que falta es el control institucional. Es el mismo patrón, por tercera vez.</div>
+    <div class="tk rv"><strong>Fortaleza y trampa al mismo tiempo.</strong> Dézhì no pone control externo sobre quien gobierna. Parte de la idea de que el gobernante es virtuoso. Con un Estado que rinde cuentas, puede producir una gobernanza humana y capaz de corregirse. Con un Estado sin contrapesos, se vuelve una petición de confianza. Ese camino puede llevar a la vigilancia. El valor sirve. Lo que falta es control institucional.</div>
   </div>
 </section>
 
@@ -377,14 +427,14 @@ footer .mono{font-size:.75rem;opacity:.7;}
     <div class="split rv">
       <div class="box good">
         <h4>Lo que Confucio sí enseñó</h4>
-        <p>Aprendizaje unido a la reflexión: analizar, interpretar, evaluar, sintetizar. Sus propias fuentes lo dicen sin rodeos: <i>"Confucio está en contra del aprendizaje pasivo y de la memorización mecánica"</i> (Bahtilla &amp; Xu, 2021). El método era la elicitación: preguntas abiertas para que el estudiante construyera el conocimiento.</p>
+        <p>Aprendizaje unido a reflexión: analizar, interpretar, evaluar. Sus propias fuentes lo dicen con claridad: <i>"Confucio está en contra del aprendizaje pasivo y de la memorización mecánica"</i> (Bahtilla &amp; Xu, 2021). Su método era preguntar para que el estudiante construyera el conocimiento.</p>
       </div>
       <div class="box bad">
         <h4>Lo que hizo la institución</h4>
-        <p>Más de mil años después, el Estado imperial convirtió esa ética en el <b>keju</b>, el examen para el servicio civil, y más tarde en el <b>gaokao</b>. Ahí nacieron la memorización, el cramming y la presión que hoy se critican. El valor era humano; la institución lo distorsionó.</p>
+        <p>Más de mil años después, el Estado imperial convirtió esa ética en el <b>keju</b>, el examen para el servicio civil, y más tarde en el <b>gaokao</b>. De ahí salieron la memorización, el estudio a presión y la carga que hoy se critican. El valor era humano y la institución lo distorsionó.</p>
       </div>
     </div>
-    <div class="warn rv"><strong>Por qué importa para la IA.</strong> Es el mismo patrón: un país puede adoptar valores genuinamente centrados en la persona y luego institucionalizarlos en vigilancia, puntaje social o conformidad. La pregunta útil no es si el confucianismo es bueno o malo. Un valor puede ser bueno y su institucionalización seguir siendo el riesgo. Esa distinción mantiene el análisis lejos de la propaganda.</div>
+    <div class="warn rv"><strong>Por qué importa para la IA.</strong> Un país puede adoptar valores centrados en la persona y luego convertirlos en vigilancia, puntaje social o conformidad. La pregunta útil no es si el confucianismo es bueno o malo. Un valor puede ser bueno y su institucionalización seguir siendo el riesgo. Esa distinción mantiene el análisis lejos de la propaganda.</div>
   </div>
 </section>
 
@@ -392,8 +442,6 @@ footer .mono{font-size:.75rem;opacity:.7;}
   <div class="container">
     <p class="eyebrow rv">Referencias</p>
     <h2 class="rv">Bibliografía</h2>
-    <p class="lead rv">Punto de partida verificable, extraído de las listas de referencias de los tres artículos base más los métodos del pipeline. Las etiquetas indican dónde buscar: <span class="s-tag s-jstor">JSTOR</span> disponible en JSTOR, <span class="s-tag s-doi">DOI</span> con identificador (buscar en JSTOR/editorial), <span class="s-tag s-oa">OA</span> acceso abierto, <span class="s-tag s-primary">FUENTE</span> texto primario para muestrear.</p>
-
     <h3 class="rv" style="margin-top:2rem;">Confucianismo y educación</h3>
     <div class="rv">
       <div class="src"><span class="s-tag s-jstor">JSTOR</span><span class="s-tag s-doi">DOI</span><div class="s-cite"><b>Wilkinson, M., Tamney, J. B. &amp; Chiang, L. H.</b> (2005). Modernization, Globalization, and Confucianism in Chinese Societies. <i>Sociology of Religion, 66</i>(4), 440.</div><div class="s-link">jstor.org/stable/3712397 · doi:10.2307/3712397</div></div>
@@ -429,7 +477,7 @@ footer .mono{font-size:.75rem;opacity:.7;}
     <p style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;margin-bottom:.5rem;">仁 · 礼 · 义 · 修身 · 德治 · 和</p>
     <p class="mono">INFOTEC · Programa de Veraneo en Investigación y Tecnología 2026 (3ª edición)</p>
     <p class="mono">Hesus García Cobos · Supervisión: Dra. Beatriz Juárez Aguilar · Maestría en Pedagogía, UPAEP</p>
-    <p class="mono" style="margin-top:1rem;"><a href="protocolo.html">Protocolo de investigación →</a> &nbsp;·&nbsp; <a href="../index.html">← Sitio de la tesis</a></p>
+    <p class="mono" style="margin-top:1rem;"><a href="protocolo.html">Protocolo de investigación</a> &nbsp;·&nbsp; <a href="../index.html">Sitio de la tesis</a></p>
   </div>
 </footer>
 
@@ -504,7 +552,7 @@ footer .mono{font-size:.75rem;opacity:.7;}
          +'<strong>Método (A/B ganador: anclas '+(md.anchor_mode||'')+' · 6 ejes).</strong> '
          +(md.anchor_note?md.anchor_note+'. ':'')
          +'Orden Analectas &gt; control legal (UE): <b>'+cv.axes_ordered+'</b> ejes. '
-         +'Antipolo dézhì↔fǎ (Analectas&gt;0&gt;UE): <b>'+ap+'</b>. '
+         +'Polos opuestos dézhì y fǎ (Analectas&gt;0&gt;UE): <b>'+ap+'</b>. '
          +(fv.china!=null?'Gobernanza: China <b>'+fv.china.toFixed(2)+'</b> vs Canadá '+fv.canada.toFixed(2)+' en dézhì; UE '+fv.eu.toFixed(2)+' (polo ley). ':'')
          +'Estandarizado en z contra '+md.background_n_chunks+' fragmentos. <b>'+md.status+'</b></div>';
     html+='<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">A/B 3×3 (3 conjuntos × 3 estrategias de ancla): anclar 100% en las Analectas maximiza la separación pero invierte el orden China/Canadá en dézhì (confusor de retórica); por eso gana el híbrido (pasajes de Confucio + paráfrasis moderna).</p>';
@@ -629,7 +677,7 @@ footer .mono{font-size:.75rem;opacity:.7;}
     var cd=d.country_dezhi;
     var order=Object.keys(cd).sort(function(a,b){return cd[b].mean-cd[a].mean;});
     var html='<div class="fp" style="padding:1.4rem;">';
-    html+='<div style="font-family:var(--font-mono);font-size:.68rem;opacity:.55;display:flex;justify-content:space-between;margin-bottom:.7rem;"><span>← derechos limitan al Estado</span><span>neutral</span><span>Estado cultiva/dirige →</span></div>';
+    html+='<div style="font-family:var(--font-mono);font-size:.68rem;opacity:.55;display:flex;justify-content:space-between;margin-bottom:.7rem;"><span>los derechos limitan al Estado</span><span>neutral</span><span>el Estado forma personas</span></div>';
     order.forEach(function(c){
       var m=cd[c].mean, w=Math.max(2,Math.min(98,(m+2)/4*100));
       var color=m>0.1?'var(--dezhi)':(m<-0.1?'var(--li)':'#9a9a9a');
