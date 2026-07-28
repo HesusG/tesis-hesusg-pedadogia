@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>La investigación, explicada · Tesis UPAEP</title>
+<meta name="description" content="Qué mide esta tesis, cómo lo mide y qué encontró. Explicado desde cero, sin jerga." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Bodoni+Moda:wght@500&family=IBM+Plex+Mono:wght@400;600&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/plate.css" />
+</head>
+<body>
+<div class="frame"></div><div class="grain"></div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <span class="brand">La investigación</span>
+    <div class="nav-menu">
+      <a href="#pregunta">La pregunta</a>
+      <a href="#problema">El problema</a>
+      <a href="#metodo">Cómo se mide</a>
+      <a href="#resultado">Qué salió</a>
+      <a href="#prueba">La prueba</a>
+      <a href="#limites">Los límites</a>
+      <a href="../plan-quinquenal/">Plan Quinquenal</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <p class="label" data-reveal>Tesis de Maestría en Pedagogía · UPAEP · explicada desde cero</p>
+  <h1 data-reveal>Cómo se mide una idea que <em>nadie escribe</em>.</h1>
+  <p class="hero-sub" data-reveal>Siete países escribieron políticas de inteligencia artificial. Todas dicen cosas parecidas. Esta investigación construye una forma de detectar lo que las diferencia por debajo de las palabras, y demuestra dónde el método habitual falla.</p>
+</header>
+
+<hr class="rule" />
+
+<section class="section wrap" id="pregunta">
+  <div class="sec-head" data-reveal><span class="idx">FIG. 01</span><h2>La pregunta</h2></div>
+  <div data-reveal>
+    <p>Hay una idea antigua en el pensamiento chino que se llama <b>dézhì</b> (<span class="zh">德治</span>). Significa <b>gobernar por la virtud</b>: la creencia de que la función del Estado es formar moralmente a la gente, y que un pueblo bien formado necesita menos leyes.</p>
+    <p>Del otro lado está la idea liberal: el Estado no forma a nadie, y los derechos del individuo existen justamente para ponerle límites.</p>
+    <p>La pregunta es doble. Primero, la sustantiva: <b>¿las políticas de inteligencia artificial de China piensan al Estado de esa forma, y las de otros países no?</b> Segundo, la que de verdad importa: <b>¿eso se puede medir de manera que otra persona pueda repetirlo y verificarlo?</b></p>
+  </div>
+  <div class="callout" data-reveal>
+    <span class="label">La escala</span>
+    <p>Cada fragmento de texto recibe una calificación de <b>−2 a +2</b>.<br />
+    <b>+2</b> = el texto presenta al Estado formando personas.<br />
+    <b>0</b> = el texto no toca el tema.<br />
+    <b>−2</b> = el texto presenta los derechos como límite al Estado.</p>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section class="section section--surface" id="problema">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><span class="idx">FIG. 02</span><h2>El problema: todas escriben igual</h2></div>
+    <div data-reveal>
+      <p>Si uno abre las estrategias nacionales de inteligencia artificial de siete países distintos, encuentra las mismas frases una y otra vez:</p>
+      <div class="callout">
+        <p style="margin-bottom:0.4rem;">"El Estado liderará el esfuerzo nacional."</p>
+        <p style="margin-bottom:0.4rem;">"Coordinación entre sectores."</p>
+        <p style="margin-bottom:0;">"Plan estratégico de largo plazo."</p>
+      </div>
+      <p>Ese es el problema central. Todos los gobiernos del mundo escriben así, independientemente de lo que crean sobre su propio papel. La superficie del lenguaje converge, aunque las ideas de fondo sean distintas.</p>
+      <p>Entonces, si dos documentos usan las mismas palabras, <b>¿cómo se distingue "el Estado coordina la inversión" de "el Estado forma el carácter moral de los ciudadanos"?</b></p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section class="section wrap" id="metodo">
+  <div class="sec-head" data-reveal><span class="idx">FIG. 03</span><h2>Las dos formas de medir</h2></div>
+  <div data-reveal>
+    <div class="row">
+      <div class="row-k">Vía A<br />embeddings</div>
+      <div class="row-v">
+        <p>La forma estándar. Un modelo convierte cada texto en una lista de números que representa su significado, y luego se mide qué tan cerca están dos textos en ese espacio numérico. Es rápido, barato y reproducible.</p>
+        <p><b>Su límite:</b> mide parecido de superficie. Si dos textos usan vocabulario similar, quedan cerca aunque digan cosas distintas.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-k">Vía B<br />panel de jueces</div>
+      <div class="row-v">
+        <p>Siete modelos de lenguaje distintos leen cada pasaje aplicando una rúbrica escrita de antemano, y cada uno emite una calificación de −2 a +2. Cuatro de los siete modelos son de origen chino y tres occidentales, precisamente para poder detectar si el origen del modelo sesga la lectura.</p>
+        <p><b>Su costo:</b> más caro, más lento, y hay que demostrar que los jueces concuerdan entre sí.</p>
+      </div>
+    </div>
+  </div>
+  <div class="callout" data-reveal>
+    <span class="label">La regla que evita la trampa</span>
+    <p>La rúbrica incluye una regla decisiva: <b>invertir o coordinar no cuenta como dézhì</b>. Que un Estado financie centros de investigación no lo hace confuciano. Lo que cuenta es la dirección de la autoridad: si el Estado se atribuye <b>formar personas</b>.</p>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section class="section section--blue" id="resultado">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><span class="idx">FIG. 04</span><h2>Qué salió</h2></div>
+    <div data-reveal>
+      <p>El resultado se lee en dos partes, y la primera es el hallazgo que sostiene toda la tesis.</p>
+      <h3 style="margin-top:2rem;">Parte 1 · La Vía A no puede separar a China de Canadá</h3>
+      <p>Medidos por embeddings, China y Canadá quedan prácticamente empatados. Y no es coincidencia de dos números cercanos: sus márgenes de error se traslapan, o sea que el método <b>es incapaz</b> de distinguirlos.</p>
+    </div>
+    <div class="stat-grid" data-reveal>
+      <div><div class="big">+0.90</div><div class="big-sub">China · embeddings</div></div>
+      <div><div class="big">+0.88</div><div class="big-sub">Canadá · embeddings</div></div>
+      <div><div class="big">0.02</div><div class="big-sub">diferencia entre ambos</div></div>
+    </div>
+    <div data-reveal>
+      <p>Y hay más. De los <b>seis</b> valores confucianos que se midieron, <b>cinco</b> dan empate entre China y Canadá. Solo uno los separa. O sea que el problema no era de un eje en particular: es del método de embeddings en general.</p>
+      <h3 style="margin-top:2rem;">Parte 2 · La Vía B sí los separa</h3>
+      <p>Con el panel de siete jueces leyendo la rúbrica, China se despega sola. Los demás países quedan en cero.</p>
+    </div>
+    <div id="tabla-resultado" data-reveal><p class="label">Cargando resultados…</p></div>
+    <div class="callout" data-reveal>
+      <span class="label">Por qué los liberales quedan en cero y no en negativo</span>
+      <p>Las democracias liberales no dicen lo contrario de China. Simplemente <b>no plantean el tema</b>: no encuadran al Estado como formador de personas ni afirman explícitamente que los derechos lo limitan. Por eso la escala funciona en la práctica como <b>presencia de estatismo</b>, de 0 a +2, y no como un continuo de un extremo al otro. Eso también es un hallazgo, y hay que reportarlo así.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section class="section wrap" id="prueba">
+  <div class="sec-head" data-reveal><span class="idx">FIG. 05</span><h2>La prueba que el resultado tenía que pasar</h2></div>
+  <div data-reveal>
+    <p>Al revisar el corpus apareció un problema de diseño que podía tumbar todo. A China se le midieron documentos de <b>inteligencia artificial en educación</b>. A los otros seis países, <b>estrategias generales de IA</b>.</p>
+    <p>Y la escala mide "el Estado forma personas". La educación trata, por definición, de formar personas. Entonces cabía una explicación alternativa demoledora:</p>
+    <div class="callout">
+      <p style="margin-bottom:0;"><b>China no salió alta por ser China. Salió alta porque le medimos documentos de educación.</b></p>
+    </div>
+    <p>En vez de asumir que no era así, se midieron tres cosas nuevas con el mismo método:</p>
+  </div>
+
+  <div data-reveal>
+    <div class="row">
+      <div class="row-k">China sin educación</div>
+      <div class="row-v"><p>Su plan general de IA de 2017 da <b>+0.26</b>. Bajó respecto al corpus educativo, pero sigue <b>+0.32 por encima de los otros seis países</b>, con un margen que no toca el cero. <b>El efecto de país es real.</b></p></div>
+    </div>
+    <div class="row">
+      <div class="row-k">Educación sin China</div>
+      <div class="row-v"><p>La política educativa nacional de India da <b>+0.14</b>. La guía de IA en educación de UNESCO da <b>−0.16</b>, o sea negativa. <b>Hablar de educación no sube la calificación por sí solo.</b></p></div>
+    </div>
+    <div class="row">
+      <div class="row-k">Los vecinos</div>
+      <div class="row-v"><p>Corea <b>+0.20</b>, Singapur <b>+0.09</b>, Japón <b>0.00</b> exacto. <b>No es la región de herencia confuciana. Es China.</b></p></div>
+    </div>
+  </div>
+
+  <div data-reveal>
+    <h3 style="margin-top:2.2rem;">Lo que esto significa</h3>
+    <p>Ninguno de los dos factores por separado produce el resultado. Es la <b>combinación</b>:</p>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th></th><th>Documentos de educación</th><th>Estrategias generales de IA</th></tr>
+        <tr class="hi"><td><b>China</b></td><td class="num">+0.94</td><td class="num">+0.26</td></tr>
+        <tr><td><b>Otros países</b></td><td class="num">≈ 0</td><td class="num">≈ 0</td></tr>
+      </table>
+    </div>
+    <p>Y esa combinación cae <b>justo donde la teoría lo predice</b>. Dézhì significa gobernar cultivando moralmente a la gente <b>a través de la educación</b>. Que el encuadre viva ahí no es un defecto del estudio: es la ubicación que el concepto anticipa.</p>
+    <p>El Plan Quinquenal chino de 2026 lo confirma en su propio vocabulario. Su capítulo educativo ordena <span class="zh">立德树人</span>, "establecer la virtud, cultivar a la persona". <a href="../plan-quinquenal/">Ver el Plan Quinquenal explicado →</a></p>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<section class="section section--surface" id="limites">
+  <div class="wrap">
+    <div class="sec-head" data-reveal><span class="idx">FIG. 06</span><h2>Qué se puede afirmar y qué no</h2></div>
+    <div data-reveal>
+      <h3>Sí se puede afirmar</h3>
+      <p>Que el método de parecido semántico no distingue a China de Canadá, y que el método de lectura con rúbrica sí los separa por casi un punto entero de la escala. Esa es la contribución metodológica, y está demostrada sobre el corpus completo.</p>
+      <p>Que el encuadre dézhì se concentra en la política china de IA <b>en educación</b>; que en su estrategia general aparece atenuado pero todavía por encima de las democracias liberales; y que no aparece ni en la política educativa de otros países ni en las estrategias de sus vecinos.</p>
+
+      <h3 style="margin-top:2rem;">Se puede afirmar con reservas</h3>
+      <p>Los siete jueces coinciden exactamente en el <b>83%</b> de los casos y dentro de un punto en el <b>99%</b>. El estadístico de confiabilidad que corrige por azar da <b>0.697</b>, apenas por encima del estándar de 0.667 que marca el mínimo para conclusiones tentativas. O sea: alcanza, pero sin holgura.</p>
+      <p>Ese número mejoró: con el corpus anterior daba 0.60, debajo del umbral. Subió al reemplazar dos documentos que ya no estaban vigentes. <b>Eso mismo indica cuánto depende el resultado de la calidad del corpus</b>, y por qué la regla de selección documentada importa tanto como el método.</p>
+      <p>La lectura prudente sigue siendo la misma: <b>confiar en el promedio de un país antes que en la calificación de un pasaje suelto.</b></p>
+    </div>
+
+    <div class="callout" data-reveal>
+      <span class="label">Un hallazgo que no se buscaba</span>
+      <p>Los modelos occidentales califican todo como algo más estatista que los modelos chinos: una diferencia de <b>+0.058</b>, pequeña pero consistente y estadísticamente sólida (su margen de error no toca el cero). Y aun así coinciden mucho en <b>cuáles</b> pasajes son estatistas: correlación de <b>0.91</b>. O sea, el origen del modelo mete un sesgo pequeño y constante, sin cambiar el orden de las cosas. Eso es un hallazgo metodológico propio.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<footer class="wrap">
+  <p><b>Tesis de Maestría en Pedagogía · UPAEP.</b> Hesus García Cobos. Análisis comparativo de políticas públicas sobre educación en inteligencia artificial en siete países.</p>
+  <p>Los resultados de esta página son preliminares y provienen de un corpus en construcción. Todas las cifras, los intervalos y el código que las produce están versionados y son reproducibles.</p>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('[data-reveal]');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('vis');});}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+    setTimeout(function(){els.forEach(function(e){e.classList.add('vis');});},2500);
+  }
+})();
+
+// Tabla del ranking: se lee del mismo JSON que produce el pipeline, para que la
+// página no se desactualice cuando cambie el corpus.
+(function(){
+  var box=document.getElementById('tabla-resultado');
+  if(!box) return;
+  var N={china:'China',eeuu:'Estados Unidos',canada:'Canadá',colombia:'Colombia',
+         alemania:'Alemania',sudafrica:'Sudáfrica',australia:'Australia'};
+  fetch('../data/dezhi_country_comparison.json').then(function(r){return r.json();}).then(function(d){
+    var cd=d.country_dezhi;
+    var order=Object.keys(cd).sort(function(a,b){return cd[b].mean-cd[a].mean;});
+    var h='<div class="tbl-wrap"><table><tr><th>País</th><th style="text-align:right;">Calificación</th></tr>';
+    order.forEach(function(c){
+      var m=cd[c].mean;
+      h+='<tr'+(c==='china'?' class="hi"':'')+'><td>'+(N[c]||c)+'</td><td class="num">'+(m>=0?'+':'')+m.toFixed(2)+'</td></tr>';
+    });
+    h+='</table></div><p class="label">'+d.n_classifications+' lecturas · '+d.k_passages+' pasajes por país · 7 jueces</p>';
+    box.innerHTML=h;
+  }).catch(function(){
+    box.innerHTML='<p class="label">Los resultados se publican junto con los datos del pipeline.</p>';
+  });
+})();
+</script>
+</body>
+</html>

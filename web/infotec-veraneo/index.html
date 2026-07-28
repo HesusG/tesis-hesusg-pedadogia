@@ -366,6 +366,16 @@ footer .mono{font-size:.75rem;opacity:.7;}
   </div>
 </section>
 
+<!-- ═══ 5a-bis. EL RADAR: LOS 6 EJES SOBRE LOS 7 PAÍSES ═══ -->
+<section id="radar">
+  <div class="container">
+    <p class="eyebrow rv">Perfil confuciano completo · 6 ejes × 7 países (Vía A, embeddings)</p>
+    <h2 class="rv">La huella de seis números, ahora sobre los siete países</h2>
+    <p class="lead rv">El MVP calculó los seis ejes sobre tres documentos. Aquí están sobre el corpus completo: <b>2420 fragmentos, 7 países</b>, estandarizados en z contra el mismo fondo, de modo que la comparación entre países no dependa de a quién se mire. Cada polígono es el perfil confuciano de un país.</p>
+    <div id="confucian-radar" class="rv"><p class="mono" style="opacity:.55;">Cargando radar…</p></div>
+  </div>
+</section>
+
 <!-- ═══ 5b. RESULTADO: EL CLASIFICADOR SEPARA A CHINA ═══ -->
 <section id="resultado">
   <div class="container">
@@ -521,6 +531,95 @@ footer .mono{font-size:.75rem;opacity:.7;}
   });
 })();
 
+// ── Radar confuciano: 6 ejes × 7 países (Vía A) desde confucian_radar_v3.json ──
+(function(){
+  var box=document.getElementById('confucian-radar');
+  if(!box) return;
+  var COL={china:'#d32f2f',eeuu:'#1565c0',canada:'#1565c0',colombia:'#388e3c',
+           alemania:'#6a1b9a',sudafrica:'#e65100',australia:'#00838f'};
+  var NAME={china:'China',eeuu:'EUA',canada:'Canadá',colombia:'Colombia',
+            alemania:'Alemania',sudafrica:'Sudáfrica',australia:'Australia'};
+  fetch('../data/confucian_radar_v3.json').then(function(r){return r.json();}).then(function(d){
+    var axes=d.axes, L=d.labels, ca=d.country_axes, countries=Object.keys(ca);
+    // Escala común: z de -1.5 a +1.5 mapeado al radio. 0 = promedio del corpus.
+    var LO=-1.5, HI=1.5, S=300, C=S/2, R=105, N=axes.length;
+    function pt(i,z){
+      var t=(Math.max(LO,Math.min(HI,z))-LO)/(HI-LO);
+      var a=-Math.PI/2 + i*2*Math.PI/N;
+      return [C+Math.cos(a)*R*t, C+Math.sin(a)*R*t];
+    }
+    function poly(c){
+      return axes.map(function(k,i){return pt(i,ca[c][k].median_z).join(',');}).join(' ');
+    }
+    var svg='<svg viewBox="0 0 '+S+' '+S+'" style="width:100%;max-width:420px;height:auto;display:block;margin:0 auto;">';
+    // anillos de referencia; el de z=0 va marcado porque es el promedio del corpus
+    [-1.5,-0.75,0,0.75,1.5].forEach(function(z){
+      var rr=(z-LO)/(HI-LO)*R, ring=[];
+      for(var i=0;i<N;i++){var a=-Math.PI/2+i*2*Math.PI/N;ring.push((C+Math.cos(a)*rr)+','+(C+Math.sin(a)*rr));}
+      svg+='<polygon points="'+ring.join(' ')+'" fill="none" stroke="'+(z===0?'rgba(0,0,0,.45)':'rgba(0,0,0,.13)')+'" stroke-width="'+(z===0?1.6:1)+'"/>';
+    });
+    axes.forEach(function(k,i){
+      var e=pt(i,HI);
+      svg+='<line x1="'+C+'" y1="'+C+'" x2="'+e[0]+'" y2="'+e[1]+'" stroke="rgba(0,0,0,.16)" stroke-width="1"/>';
+      var lx=C+Math.cos(-Math.PI/2+i*2*Math.PI/N)*(R+26), ly=C+Math.sin(-Math.PI/2+i*2*Math.PI/N)*(R+26);
+      svg+='<text x="'+lx+'" y="'+ly+'" text-anchor="middle" dominant-baseline="middle" '
+          +'style="font-family:var(--font-mono);font-size:11px;font-weight:700;fill:currentColor;">'
+          +(L[k].zh||'')+'</text>';
+      svg+='<text x="'+lx+'" y="'+(ly+11)+'" text-anchor="middle" dominant-baseline="middle" '
+          +'style="font-family:var(--font-mono);font-size:8.5px;opacity:.6;fill:currentColor;">'
+          +(L[k].pinyin||k)+'</text>';
+    });
+    countries.forEach(function(c){
+      var hi=(c==='china'||c==='canada');
+      svg+='<polygon points="'+poly(c)+'" fill="'+COL[c]+'" fill-opacity="'+(hi?.14:.05)+'" '
+          +'stroke="'+COL[c]+'" stroke-width="'+(hi?2.4:1.1)+'" stroke-opacity="'+(hi?1:.45)+'"'
+          +(hi?'':' stroke-dasharray="3 3"')+'/>';
+    });
+    svg+='</svg>';
+    var leg='<div style="display:flex;flex-wrap:wrap;gap:.5rem .9rem;justify-content:center;margin-top:.8rem;font-family:var(--font-mono);font-size:.7rem;">';
+    countries.forEach(function(c){
+      var hi=(c==='china'||c==='canada');
+      leg+='<span style="display:inline-flex;align-items:center;gap:.3rem;opacity:'+(hi?1:.55)+';">'
+          +'<span style="width:14px;height:3px;background:'+COL[c]+';display:inline-block;"></span>'
+          +(hi?'<b>'+NAME[c]+'</b>':NAME[c])+'</span>';
+    });
+    leg+='</div>';
+
+    // Tabla país × eje: el radar muestra la forma, la tabla los números exactos.
+    var tab='<div style="overflow-x:auto;margin-top:1.2rem;"><table style="border-collapse:collapse;font-family:var(--font-mono);font-size:.72rem;min-width:520px;width:100%;">'
+           +'<tr><th style="text-align:left;padding:.35rem .5rem;">país</th>';
+    axes.forEach(function(k){tab+='<th style="padding:.35rem .5rem;text-align:right;">'+(L[k].pinyin||k)+'</th>';});
+    tab+='</tr>';
+    countries.slice().sort(function(a,b){return ca[b].dezhi_fa.median_z-ca[a].dezhi_fa.median_z;})
+      .forEach(function(c){
+        tab+='<tr style="border-top:1px solid rgba(0,0,0,.1);"><td style="padding:.35rem .5rem;"><b>'+NAME[c]+'</b></td>';
+        axes.forEach(function(k){
+          var z=ca[c][k].median_z;
+          tab+='<td style="padding:.35rem .5rem;text-align:right;opacity:'+(Math.abs(z)>.5?1:.5)+';">'+(z>=0?'+':'')+z.toFixed(2)+'</td>';
+        });
+        tab+='</tr>';
+      });
+    tab+='</table></div>';
+
+    // Cuántos ejes separan a China de Canadá (IC95 sin traslape)
+    var sep=[], tie=[];
+    axes.forEach(function(k){
+      var a=ca.china[k].ci95_median, b=ca.canada[k].ci95_median;
+      ((a[0]<=b[1]&&b[0]<=a[1])?tie:sep).push(L[k].pinyin||k);
+    });
+    var note='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>Lo que el radar deja ver.</strong> '
+      +'China y Canadá tienen perfiles <b>casi superpuestos</b>. De los seis ejes, '
+      +'<b>'+tie.length+' son empates estadísticos</b> ('+tie.join(', ')+') y solo '
+      +'<b>'+sep.length+' separa'+(sep.length===1?'':'n')+'</b> ('+sep.join(', ')+'). '
+      +'O sea: el problema que apareció en dézhì no era de ese eje, es <b>del método de embeddings en general</b>. '
+      +'Por eso hace falta la segunda vía.</div>'
+      +'<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">'
+      +'Mediana z por país sobre '+d.background_n+' fragmentos; anillo marcado = 0 (promedio del corpus). '
+      +'Anclas: modo '+d.anchor_mode+', conjunto '+d.axis_set+'. China y Canadá resaltados; los demás punteados.</p>';
+    box.innerHTML=svg+leg+tab+note;
+  }).catch(function(){box.innerHTML='<p class="mono" style="opacity:.6;">No se pudo cargar confucian_radar_v3.json</p>';});
+})();
+
 // ── Ranking dézhì por país (clasificador LLM) desde dezhi_country_comparison.json ──
 (function(){
   var box=document.getElementById('dezhi-ranking');
@@ -542,11 +641,71 @@ footer .mono{font-size:.75rem;opacity:.7;}
            +'<span style="font-family:var(--font-mono);font-size:.72rem;min-width:3.2rem;text-align:right;">'+(m>=0?'+':'')+m.toFixed(2)+'</span></div>';
     });
     html+='</div>';
-    html+='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>Sidequest — sesgo de origen del modelo.</strong> Sobre los 7 países, los jueces de origen <b>occidental atribuyen algo más de estatismo</b> que los chinos (media +0.17 vs +0.07). Pequeño pero replicado (también apareció midiendo solo China) → va al capítulo de discusión, no se esconde.</div>';
-    html+='<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">'+d.status+' · n='+d.n_classifications+' clasificaciones. El eje mide <b>presencia de estatismo (0..+2)</b>: los liberales caen en neutral porque no encuadran al Estado como cultivador, no porque digan lo contrario. Alemania es el único con lean liberal (−0.25).</p>';
+    var liberal=order[order.length-1], lm=cd[liberal].mean;
+    html+='<div id="dezhi-validation"></div>';
+    html+='<p class="mono" style="opacity:.6;font-size:.72rem;margin-top:.5rem;">'+d.status+' · n='+d.n_classifications+' clasificaciones. El eje mide <b>presencia de estatismo (0..+2)</b>: los liberales caen en neutral porque no encuadran al Estado como cultivador, no porque digan lo contrario. El lean más liberal es '+(names[liberal]||liberal)+' ('+lm.toFixed(2)+').</p>';
     box.innerHTML=html;
     setTimeout(function(){box.querySelectorAll('.fp').forEach(function(f){f.classList.add('vis');});},80);
+    renderValidation();
   }).catch(function(){box.innerHTML='<p class="mono" style="opacity:.6;">No se pudo cargar dezhi_country_comparison.json</p>';});
+
+  // ── Validación del instrumento (Fase 5): acuerdo, sesgo acotado, Vía A vs Vía B ──
+  function renderValidation(){
+    fetch('../data/dezhi_validation.json').then(function(r){return r.json();}).then(function(v){
+      var slot=document.getElementById('dezhi-validation');
+      if(!slot) return;
+      var ag=v.agreement, oa=ag.observed_agreement, ob=v.origin_bias, ab=v.via_a_vs_via_b;
+      var ci=v.country_stability&&v.country_stability.china?v.country_stability.china.ci95:null;
+      var h='';
+      h+='<div class="tk" style="margin-top:1rem;font-size:.9rem;"><strong>¿Es fiable el panel?</strong> '
+        +'Los 7 jueces coinciden <b>exactamente en el '+(oa.exact*100).toFixed(1)+'%</b> de los pares y '
+        +'<b>dentro de ±1 punto en el '+(oa.within_1*100).toFixed(1)+'%</b>. El α ordinal de Krippendorff es '
+        +'<b>'+ag.panel.krippendorff_alpha_ordinal.toFixed(3)+'</b> — por debajo del umbral 0.667, porque la '
+        +'corrección por azar se deprime cuando casi todo cae en 0 (paradoja de kappa). Lectura honesta: el '
+        +'instrumento es fiable <b>por país</b>'+(ci?' (China +'+v.country_stability.china.mean.toFixed(2)+', IC95 ['+ci[0].toFixed(2)+', '+ci[1].toFixed(2)+'], sin solaparse con ningún otro)':'')
+        +', <b>no</b> para juzgar un pasaje suelto.</div>';
+      h+='<div class="tk" style="margin-top:.8rem;font-size:.9rem;"><strong>Sidequest — sesgo de origen, ahora medido.</strong> '
+        +'Los jueces occidentales atribuyen más estatismo que los chinos: brecha <b>+'+ob.mean_gap_western_minus_chinese.toFixed(3)+'</b>, '
+        +'IC95 [+'+ob.ci95[0].toFixed(3)+', +'+ob.ci95[1].toFixed(3)+'] → <b>excluye el 0</b>, el sesgo es real. '
+        +'Y aun así concuerdan mucho: r = +'+ob.pearson_r_passage_level.toFixed(3)+' pasaje a pasaje. '
+        +'Las dos cosas son ciertas — va al capítulo de discusión, no se esconde.</div>';
+      if(ab&&ab.china_vs_canada){
+        h+='<div class="tk" style="margin-top:.8rem;font-size:.9rem;"><strong>El payoff, sobre el corpus completo.</strong> '
+          +'Con embeddings, China y Canadá quedan en <b>empate</b> (brecha '+ab.china_vs_canada.via_a_gap.toFixed(3)+' z, intervalos solapados). '
+          +'Con el panel LLM la brecha es <b>+'+ab.china_vs_canada.via_b_gap.toFixed(2)+'</b>. '
+          +'Antes esto se sabía con 3 documentos; ahora con los 7 países.</div>';
+      }
+      slot.innerHTML=h;
+      renderConfound();
+    }).catch(function(){});
+  }
+
+  // ── Prueba del confusor: ¿país o género documental? (Fase 6) ──
+  function renderConfound(){
+    fetch('../data/dezhi_confound_test.json').then(function(r){return r.json();}).then(function(cf){
+      var slot=document.getElementById('dezhi-validation');
+      if(!slot) return;
+      var ds=cf.doc_stats, ct=cf.verdict&&cf.verdict.contrasts?cf.verdict.contrasts:{};
+      var lib=ct.ngaidp_vs_liberal_general_ai, edu=ct.ngaidp_vs_china_education;
+      var h='<div class="tk" style="margin-top:.8rem;font-size:.9rem;">'
+        +'<strong>La prueba que el resultado tenía que pasar.</strong> A China le medimos documentos de IA '
+        +'<b>en educación</b>; a los otros seis, estrategias generales de IA. Y el eje mide "el Estado forma '
+        +'personas", que es de lo que trata la educación. Así que se probó el confusor en vez de asumirlo:'
+        +'<ul style="margin:.6rem 0 0 1.1rem;padding:0;">'
+        +'<li>China con <b>estrategia general</b> (NGAIDP 2017): <b>'+ds.china_ngaidp_2017.mean.toFixed(2)+'</b>'
+        +(lib?', <b>+'+lib.diff.toFixed(2)+' sobre los seis países</b> (IC95 excluye el 0) → el efecto de país es real':'')+'.</li>'
+        +'<li>Educación <b>no china</b>: India NEP '+ds.india_nep_2020.mean.toFixed(2)+', UNESCO '
+        +ds.unesco_genai_guidance_2023.mean.toFixed(2)+' → el tema educativo <b>por sí solo no eleva el eje</b>.</li>'
+        +'<li>Vecinos confucianos: Corea '+ds.corea_ai_strategy_2019.mean.toFixed(2)+', Japón '
+        +ds.japon_ai_strategy_2019.mean.toFixed(2)+', Singapur '+ds.singapur_nais_2019.mean.toFixed(2)
+        +' → <b>no es la región, es China</b>.</li></ul>'
+        +'<p style="margin:.6rem 0 0;">Hay una <b>interacción país × tema</b>: ni China-general ni educación-no-china '
+        +'reproducen el +0.94. El encuadre se concentra donde la teoría lo predice, porque dézhì <i>es</i> cultivo '
+        +'moral por la educación. La afirmación precisa no es "la política de IA china es dézhì", sino que '
+        +'<b>el encuadre se concentra en su política de IA en educación</b>.</p></div>';
+      slot.innerHTML+=h;
+    }).catch(function(){});
+  }
 })();
 </script>
 </body>

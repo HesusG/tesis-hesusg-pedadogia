@@ -1,0 +1,160 @@
+{
+  "design": "2x2 tema × país + brazo vecindario confuciano",
+  "k_passages": 10,
+  "codebook_hash": "1fb19472bbff",
+  "n_classifications": 420,
+  "reference_fase5": {
+    "china_education": 0.943,
+    "liberal_general_ai": 0.0
+  },
+  "doc_stats": {
+    "china_ngaidp_2017": {
+      "mean": 0.2571428571428571,
+      "n_passages": 10,
+      "ci95": [
+        0.05714285714285714,
+        0.5
+      ]
+    },
+    "india_nep_2020": {
+      "mean": 0.14285714285714285,
+      "n_passages": 10,
+      "ci95": [
+        0,
+        0.3142857142857143
+      ]
+    },
+    "unesco_genai_guidance_2023": {
+      "mean": -0.15714285714285714,
+      "n_passages": 10,
+      "ci95": [
+        -0.37142857142857144,
+        -0.014285714285714285
+      ]
+    },
+    "corea_ai_strategy_2019": {
+      "mean": 0.2,
+      "n_passages": 10,
+      "ci95": [
+        0.0,
+        0.44285714285714284
+      ]
+    },
+    "japon_ai_strategy_2019": {
+      "mean": 0,
+      "n_passages": 10,
+      "ci95": [
+        0,
+        0
+      ]
+    },
+    "singapur_nais_2019": {
+      "mean": 0.08571428571428572,
+      "n_passages": 10,
+      "ci95": [
+        -0.14285714285714285,
+        0.32857142857142857
+      ]
+    }
+  },
+  "doc_meta": {
+    "china_ngaidp_2017": {
+      "doc_id": "china_ngaidp_2017",
+      "country": "china",
+      "region": "asia",
+      "genre": "strategy",
+      "language": "en",
+      "year": 2017,
+      "topic": "general_ai",
+      "arm": "china_general",
+      "adopting_body": "State Council of the PRC",
+      "doc_type_official": "New Generation AI Development Plan"
+    },
+    "india_nep_2020": {
+      "doc_id": "india_nep_2020",
+      "country": "india",
+      "region": "asia",
+      "genre": "strategy",
+      "language": "en",
+      "year": 2020,
+      "topic": "education",
+      "arm": "noncn_education",
+      "adopting_body": "Ministry of Education, India",
+      "doc_type_official": "National Education Policy 2020"
+    },
+    "unesco_genai_guidance_2023": {
+      "doc_id": "unesco_genai_guidance_2023",
+      "country": "unesco",
+      "region": "internacional",
+      "genre": "guidance",
+      "language": "en",
+      "year": 2023,
+      "topic": "education",
+      "arm": "noncn_education",
+      "adopting_body": "UNESCO",
+      "doc_type_official": "Guidance for generative AI in education and research"
+    },
+    "corea_ai_strategy_2019": {
+      "doc_id": "corea_ai_strategy_2019",
+      "country": "corea",
+      "region": "asia",
+      "genre": "strategy",
+      "language": "en",
+      "year": 2019,
+      "topic": "general_ai",
+      "arm": "confucian_neighborhood",
+      "adopting_body": "Government of the Republic of Korea",
+      "doc_type_official": "National Strategy for AI"
+    },
+    "japon_ai_strategy_2019": {
+      "doc_id": "japon_ai_strategy_2019",
+      "country": "japon",
+      "region": "asia",
+      "genre": "strategy",
+      "language": "en",
+      "year": 2019,
+      "topic": "general_ai",
+      "arm": "confucian_neighborhood",
+      "adopting_body": "Government of Japan",
+      "doc_type_official": "AI Strategy 2019"
+    },
+    "singapur_nais_2019": {
+      "doc_id": "singapur_nais_2019",
+      "country": "singapur",
+      "region": "asia",
+      "genre": "strategy",
+      "language": "en",
+      "year": 2019,
+      "topic": "general_ai",
+      "arm": "confucian_neighborhood",
+      "adopting_body": "Smart Nation Singapore",
+      "doc_type_official": "National AI Strategy"
+    }
+  },
+  "verdict": {
+    "threshold_verdict": {
+      "p1_china_general_high": false,
+      "p2_education_inflates": false,
+      "p3_regional": false
+    },
+    "contrasts": {
+      "ngaidp_vs_liberal_general_ai": {
+        "diff": 0.32380952380952377,
+        "ci95": [
+          0.11428571428571427,
+          0.5833333333333333
+        ],
+        "excludes_zero": true
+      },
+      "ngaidp_vs_china_education": {
+        "diff": -0.6857142857142857,
+        "ci95": [
+          -0.9857142857142858,
+          -0.3571428571428571
+        ],
+        "excludes_zero": true
+      }
+    },
+    "reading": "INTERACCIÓN país × tema: ni China-general (+0.26) ni educación-no-china (~0) reproducen el +0.94. El encuadre dézhì se concentra donde la teoría confuciana lo predice: la política EDUCATIVA china."
+  }
+}
