@@ -2,36 +2,36 @@
   "agreement": {
     "n_units": 70,
     "observed_agreement": {
-      "exact": 0.7993197278911565,
-      "within_1": 0.9884353741496599,
+      "exact": 0.8306122448979592,
+      "within_1": 0.991156462585034,
       "n_pairs": 1470
     },
     "panel": {
-      "fleiss_kappa": 0.45538324743044895,
-      "krippendorff_alpha_ordinal": 0.5999319932131457,
-      "krippendorff_alpha_interval": 0.6470536697707019,
-      "krippendorff_alpha_nominal": 0.4564947101907948
+      "fleiss_kappa": 0.5444056100730383,
+      "krippendorff_alpha_ordinal": 0.6972227584833932,
+      "krippendorff_alpha_interval": 0.705036694480748,
+      "krippendorff_alpha_nominal": 0.5453353945422772
     },
     "within_western": {
-      "fleiss_kappa": 0.47567065381488777,
-      "krippendorff_alpha_ordinal": 0.5926487568433785
+      "fleiss_kappa": 0.6187450357426529,
+      "krippendorff_alpha_ordinal": 0.7411157260473071
     },
     "within_chinese": {
-      "fleiss_kappa": 0.4495012014854732,
-      "krippendorff_alpha_ordinal": 0.6292652346465604
+      "fleiss_kappa": 0.4964151172681978,
+      "krippendorff_alpha_ordinal": 0.6729018524760607
     }
   },
   "origin_bias": {
     "n_paired_passages": 70,
-    "mean_western": 0.13333333333333333,
-    "mean_chinese": 0.03571428571428571,
-    "mean_gap_western_minus_chinese": 0.0976190476190476,
+    "mean_western": 0.09047619047619047,
+    "mean_chinese": 0.03214285714285714,
+    "mean_gap_western_minus_chinese": 0.05833333333333333,
     "ci95": [
-      0.0369047619047619,
-      0.1619047619047619
+      0.0035714285714285644,
+      0.11785714285714284
     ],
     "excludes_zero": true,
-    "pearson_r_passage_level": 0.8702156054115777,
+    "pearson_r_passage_level": 0.9071245031789563,
     "n_boot": 5000,
     "seed": 42
   },
@@ -45,11 +45,11 @@
       ]
     },
     "eeuu": {
-      "mean": -0.3,
+      "mean": -0.4857142857142857,
       "n_passages": 10,
       "ci95": [
-        -0.7285714285714285,
-        0.0
+        -0.8714285714285714,
+        -0.14285714285714285
       ]
     },
     "canada": {
@@ -61,11 +61,11 @@
       ]
     },
     "colombia": {
-      "mean": -0.02857142857142857,
+      "mean": 0.014285714285714285,
       "n_passages": 10,
       "ci95": [
-        -0.15714285714285714,
-        0.09999999999999999
+        0,
+        0.04285714285714286
       ]
     },
     "alemania": {
@@ -105,27 +105,27 @@
       "australia"
     ],
     "via_a_median_z": {
-      "china": 0.9156566186054602,
-      "eeuu": -0.6539100009854684,
-      "canada": 0.8953521313763403,
-      "colombia": -0.09421272454637455,
-      "alemania": 0.17624781528731637,
-      "sudafrica": 0.13611732651693592,
-      "australia": 0.5381915918525635
+      "china": 0.9025358353170208,
+      "eeuu": -0.024192859448556425,
+      "canada": 0.8812155629051877,
+      "colombia": -0.15599222123801676,
+      "alemania": 0.12613616894959548,
+      "sudafrica": 0.08399804731422306,
+      "australia": 0.5061871314320003
     },
     "via_b_mean_llm": {
       "china": 0.9428571428571428,
-      "eeuu": -0.3,
+      "eeuu": -0.4857142857142857,
       "canada": 0,
-      "colombia": -0.02857142857142857,
+      "colombia": 0.014285714285714285,
       "alemania": -0.1,
       "sudafrica": 0.05714285714285714,
       "australia": -0.02857142857142857
     },
-    "spearman": 0.6666937223947136,
-    "pearson": 0.6620385744157465,
+    "spearman": 0.32142857142857145,
+    "pearson": 0.6292841803752938,
     "china_vs_canada": {
-      "via_a_gap": 0.020304487229119927,
+      "via_a_gap": 0.021320272411833097,
       "via_b_gap": 0.9428571428571428
     }
   },

@@ -15,19 +15,28 @@ from pipeline.ingest import chunk_text
 
 PROC = PROJECT_ROOT / "policies" / "processed"
 
+# SPIKE Fase 7 — vigencia (criterio C4). Dos documentos del corpus original ya no rigen:
+#   · EUA: la Executive Order 14110 fue REVOCADA en enero de 2025.
+#   · Colombia: el CONPES 3975 terminó su vigencia en 2022.
+# Se sustituyen por los vigentes al corte del 30-jun-2026. Los reemplazos además
+# resuelven la marginalidad en C3: el CONPES 4144 tiene 943 menciones de IA contra
+# las 29 del 3975, así que Colombia pasa de "documento que apenas habla de IA" a uno
+# que sí lo hace.
+SUPERSEDED = ["eeuu_eo14110_2023", "colombia_conpes_3975_2019"]
+
 COUNTRIES = [
+    {"doc_id": "eeuu_ai_action_plan_2025", "country": "eeuu", "region": "norteamerica",
+     "genre": "strategy", "language": "en", "year": 2025,
+     "adopting_body": "The White House / OSTP", "doc_type_official": "America's AI Action Plan",
+     "file": "eeuu_ai_action_plan_2025.txt"},
+    {"doc_id": "colombia_conpes_4144_2025", "country": "colombia", "region": "latinoamerica",
+     "genre": "strategy", "language": "es", "year": 2025,
+     "adopting_body": "DNP / CONPES", "doc_type_official": "Documento CONPES 4144",
+     "file": "colombia_conpes_4144_2025.txt"},
     {"doc_id": "canada_pan_canadian_ai_strategy_2017", "country": "canada", "region": "norteamerica",
      "genre": "strategy", "language": "en", "year": 2017,
      "adopting_body": "CIFAR / Gov of Canada", "doc_type_official": "National AI Strategy",
      "file": "canada_pan_canadian_ai_strategy_2017.txt"},
-    {"doc_id": "colombia_conpes_3975_2019", "country": "colombia", "region": "latinoamerica",
-     "genre": "strategy", "language": "es", "year": 2019,
-     "adopting_body": "DNP / CONPES", "doc_type_official": "Documento CONPES",
-     "file": "colombia_conpes_3975_2019.txt"},
-    {"doc_id": "eeuu_eo14110_2023", "country": "eeuu", "region": "norteamerica",
-     "genre": "law", "language": "en", "year": 2023,
-     "adopting_body": "White House (Executive Office)", "doc_type_official": "Executive Order",
-     "file": "eeuu_eo14110_2023.txt"},
     {"doc_id": "alemania_ki_strategie_2020", "country": "alemania", "region": "europa",
      "genre": "strategy", "language": "de", "year": 2020,
      "adopting_body": "Bundesregierung", "doc_type_official": "KI-Strategie",
@@ -47,6 +56,14 @@ def main():
     assert all(d["genre"] in GENRE_VOCAB for d in COUNTRIES), "genre fuera del vocab"
     col = get_collection()
     print(f"politicas_v3 — {col.count()} chunks previos (China ya ingerida)")
+    for pid in SUPERSEDED:
+        try:
+            n = len(col.get(where={"policy_id": pid}, include=[])["ids"])
+            if n:
+                col.delete(where={"policy_id": pid})
+                print(f"  [-] {pid:36s} {n:>4} chunks eliminados (documento derogado)")
+        except Exception:
+            pass
     total = 0
     for d in COUNTRIES:
         pid = d["doc_id"]

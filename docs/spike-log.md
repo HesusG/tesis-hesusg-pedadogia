@@ -304,3 +304,43 @@ Y esa interacción es **exactamente donde la teoría la predice**: dézhì (德�
 **Caveats:** los umbrales binarios que pre-registré (0.25) resultaron demasiado crudos y colapsaban a sí/no lo que es cuestión de grado — se conservan en el JSON por honestidad, pero la lectura buena son los contrastes con IC. UNESCO es un organismo internacional con mandato de derechos, no un Estado. El corpus chino está traducido ZH→EN y la Fase 3 mostró que traducir **atenúa** el dézhì (−0.23), así que el +0.94 es si acaso conservador. K=10 por documento.
 
 **Veredicto:** ✅ el confusor se probó en vez de asumirse, y el resultado obliga a **reformular la afirmación central de forma más precisa** en vez de repetirla. El efecto de país sobrevive; el de tema es real y grande; la interacción es la historia.
+
+---
+
+## SPIKE Fase 7 — vigencia del corpus: dos documentos derogados
+
+**Pregunta:** aplicando el criterio C4 (vigencia al corte del 30-jun-2026), ¿los documentos del corpus siguen rigiendo?
+
+**Hallazgo:** **dos de los siete países estaban representados por textos derogados.**
+- **EUA:** la Executive Order 14110 fue **revocada en enero de 2025**. Sustituida por *America's AI Action Plan* (jul 2025).
+- **Colombia:** el CONPES 3975 **terminó vigencia en 2022**. Sustituido por el **CONPES 4144** (feb 2025).
+
+O sea, la medición de esos dos países describía una postura estatal explícitamente abandonada.
+
+**Los reemplazos además arreglan la marginalidad en C3:** el CONPES 4144 tiene **943 menciones de IA** contra las 29 del 3975. Colombia deja de ser "un documento que apenas habla de IA".
+
+### Resultado tras el reemplazo (490 clasificaciones, mismo método)
+
+**1. La separación de China aguanta el cambio de corpus.** +0.94, IC95 [+0.73, +1.17], sin solaparse con ningún país. Idéntico al valor previo.
+
+**2. El empate de embeddings aguanta.** China +0.903 vs Canadá +0.881, brecha +0.021, intervalos solapados. El hallazgo metodológico central **no depende del corpus**, como debía ser si es una propiedad del método.
+
+**3. El acuerdo inter-juez MEJORÓ y ahora pasa el umbral.**
+
+| | corpus anterior | corpus vigente |
+|---|---|---|
+| acuerdo exacto | 79.9% | **83.1%** |
+| α ordinal | 0.600 (bajo umbral) | **0.697 (pasa .667)** |
+| κ de Fleiss | 0.455 | **0.544** |
+| brecha de origen | +0.098 | +0.058 (IC sigue excluyendo el 0) |
+| correlación inter-origen | r = 0.870 | **r = 0.907** |
+
+La limitación reportada en la Fase 5 (α por debajo del mínimo para conclusiones tentativas) **queda resuelta**, y se resolvió arreglando el corpus, no cambiando el método. Eso mismo mide cuánto dependía el resultado de la calidad documental: es el argumento empírico a favor del criterio de selección.
+
+**4. EUA se mueve fuerte: −0.30 → −0.486.** El *AI Action Plan* de 2025 (desregulatorio, centrado en competitividad) lee mucho menos estatista que la EO 14110 (centrada en derechos y seguridad). Es el cambio de administración visible en la medición, y vale como validez de contenido: el instrumento detecta un giro político real.
+
+**5. La correlación Vía A vs Vía B cae de ρ=0.667 a ρ=0.321.** Las dos vías ahora coinciden menos, sobre todo por EUA (Vía A −0.024 vs Vía B −0.486). Refuerza el argumento de las dos vías: donde el coseno no ve nada, el panel sí.
+
+**Pendiente:** Australia y Sudáfrica tienen reemplazos vigentes localizados (National AI Plan dic-2025; National AI Policy Framework oct-2024) pero **sus portales bloquean la descarga automatizada** (HTTP/2 se cuelga en industry.gov.au; el DCDT sirve un envoltorio Joomla). Quedan documentados en `docs/corpus-objetivo.md` con URL. Faltan también los documentos de IA-en-educación de los países federales, con la salvedad estructural de que Canadá no puede tener uno.
+
+**Veredicto:** ✅ el criterio de selección demostró su valor en la primera aplicación: destapó dos documentos derogados, y arreglarlos subió la confiabilidad del instrumento por encima del umbral. Los hallazgos centrales sobrevivieron el cambio de corpus, que es la prueba de robustez que faltaba.

@@ -11,7 +11,7 @@
     },
     "eeuu": {
       "median": 0.0,
-      "mean": -0.3,
+      "mean": -0.4857142857142857,
       "n": 70
     },
     "canada": {
@@ -21,7 +21,7 @@
     },
     "colombia": {
       "median": 0.0,
-      "mean": -0.02857142857142857,
+      "mean": 0.014285714285714285,
       "n": 70
     },
     "alemania": {
@@ -43,8 +43,8 @@
   "ranking": [
     "china",
     "sudafrica",
-    "canada",
     "colombia",
+    "canada",
     "australia",
     "alemania",
     "eeuu"
@@ -54,8 +54,8 @@
     "chinese": 0.0
   },
   "origin_mean": {
-    "western": 0.13333333333333333,
-    "chinese": 0.03571428571428571
+    "western": 0.09047619047619047,
+    "chinese": 0.03214285714285714
   },
   "judge_coverage": {
     "gpt": {
