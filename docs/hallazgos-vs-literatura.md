@@ -15,8 +15,8 @@
 Este es **el respaldo más directo que existe**, y ya está en tu bibliografía (te falta el PDF). Analizaron las estrategias de IA de China, Estados Unidos, Francia y Alemania y concluyeron que **la construcción narrativa es sorprendentemente parecida entre países**: todas presentan la IA como inevitable y disruptiva, y todas recurren a un legado nacional y a la competencia internacional. Pero **los imaginarios de fondo son muy distintos** y reflejan diferencias culturales y políticas profundas.
 
 Eso es exactamente tu resultado, dicho en términos cualitativos:
-- superficie narrativa uniforme → **los embeddings no pueden separar**
-- imaginarios de fondo distintos → **el panel con rúbrica sí**
+- superficie narrativa uniforme, y por eso **los embeddings no pueden separar**
+- imaginarios de fondo distintos, y por eso **el panel con rúbrica sí**
 
 Tu aporte frente a ellos es que **conviertes esa observación cualitativa en una medición con intervalos**. Ellos afirman que las narrativas convergen; tú demuestras cuánto y dónde exactamente el método superficial se rompe. Esa es la frase con la que conviene posicionar la tesis.
 
@@ -38,7 +38,7 @@ Eso explica el empate. Canadá escribe como **documento de misión estatal e inv
 
 Aquí ocurre algo cómodo: **las críticas metodológicas al método que usamos respaldan nuestra conclusión**, porque nuestra conclusión es que ese método falla en este caso.
 
-✅ **Spirling, A. — *Word Embeddings: What works, what doesn't, and how to tell the difference*.** Revisión de referencia sobre los límites del método en ciencia política.
+✅ **Spirling, A., *Word Embeddings: What works, what doesn't, and how to tell the difference*.** Revisión de referencia sobre los límites del método en ciencia política.
 
 ✅ **Crítica de la "sopa de vectores".** Las operaciones vectoriales con que se construyen dimensiones culturales compuestas pueden propagar errores pequeños y difíciles de detectar a lo largo de todo el análisis, comprometiendo la validez. Tu eje dézhì se construye restando un polo de otro y promediando anclas, así que esta crítica aplica de lleno.
 
@@ -102,7 +102,91 @@ Tu diseño asigna **un valor por país**. Esa literatura dice que un país no ti
 
 ---
 
-## 5. Cómo usar esto
+## 5. La Vía B frente a la literatura de anotación con modelos de lenguaje
+
+**Nuestro diseño.** Siete modelos de lenguaje leen cada pasaje aplicando un códebook pre-registrado y emiten una calificación entera. Se agrega por país y se reporta el acuerdo entre jueces.
+
+El `.bib` no tiene **una sola** referencia de esta literatura, y es la que sostiene toda la Vía B. Esto es lo que hay.
+
+### El precedente: tu diseño ya existe y está publicado
+
+✅ **Gara, T. (2026). "The Model as One Rater Among Several: Measuring Political Positions in Data-Sparse Regions with a Language-Model Panel".** arXiv 2606.23042. *PDF descargado.*
+
+Trata al modelo **no como aparato de medición sino como un evaluador falible dentro de un panel**, del mismo modo que una encuesta de expertos trata a un experto: el valor viene de agregar muchos jueces, no de confiar en uno. Nueve modelos de ocho laboratorios en dos países. **α de Krippendorff de 0.86**, estable al crecer el panel de cinco a nueve evaluadores.
+
+Esto te da respaldo de diseño, pero trae **dos golpes que debes absorber**:
+
+**Golpe 1: la vara.** Su α es 0.86; el tuyo 0.697. Tu explicación defendible es que miden cosas distintas. Ellos ubican posiciones de partidos, donde las categorías se reparten; tú mides un eje donde casi todo cae en cero, y esa concentración deprime α por la paradoja de kappa. Pero **tienes que decirlo antes de que te lo pregunten**, con el acuerdo observado al lado.
+
+**Golpe 2, y es el más serio de todo este documento.** El autor advierte explícitamente que **el acuerdo alto entre modelos entrenados con datos que se traslapan no es validez**, y separa los términos: fiabilidad es la reproducibilidad de una lectura, validez es su corrección.
+
+> Tu argumento de "validez convergente transcultural" descansa en que jueces chinos y occidentales coinciden (r = 0.91). Esta literatura dice que esa coincidencia **puede venir de datos de entrenamiento compartidos**, no de que ambos lean bien. Todos los modelos actuales se entrenan con fracciones grandes del mismo internet.
+
+No puedes refutarlo con los datos que tienes. Lo que sí puedes hacer es **reformular la afirmación**: no digas "validez convergente", di "fiabilidad inter-familia", y reconoce que la validez requiere un ancla externa que hoy no tienes.
+
+### La amenaza directa
+
+✅ **Halterman, A. y Keith, K. (2025). "Codebook LLMs: Evaluating LLMs as Measurement Tools for Political Science Concepts".** *Political Analysis* (Cambridge). arXiv 2407.10747. *PDF descargado.*
+
+Evalúa exactamente tu operación: entregar un códebook real de ciencia política a un modelo y pedirle que mida. Su conclusión es que **los modelos tienen limitaciones para seguir códebooks en modo zero-shot**, y que el ajuste supervisado mejora mucho el desempeño. Añaden una crítica de fondo: este uso de los modelos **está en tensión con conceptos fundacionales de medición en ciencia política**.
+
+**Tu defensa parcial, que es real:** ellos evaluaron modelos **open-weight de 7 a 12 mil millones de parámetros**. Tu panel usa modelos de frontera bastante más grandes: GPT-4o-mini, Gemini 2.5 Flash, Llama 3.3 70B, Qwen3 235B, DeepSeek, GLM-4.6 y Kimi K2. Su hallazgo no se traslada automáticamente a esa escala.
+
+**Lo que sí te aplica y conviene adoptar:** proponen un marco de cinco etapas (preparar el códebook para humanos y máquinas, probar capacidades básicas, evaluar zero-shot, analizar errores, y entrenamiento supervisado). Tú hiciste las etapas 1 y 3, y algo de la 4 con el smoke test del caso fǎ. **Las etapas 2 y 4 completas son mejora concreta y barata.**
+
+### Los apoyos generales
+
+✅ **Gilardi, F., Alizadeh, M. y Kubli, M. (2023). "ChatGPT outperforms crowd workers for text-annotation tasks".** *PNAS*. DOI 10.1073/pnas.2305016120. *PDF descargado.* Sobre 6,183 tuits y notas, ChatGPT supera a trabajadores de plataforma por unos 25 puntos porcentuales, y **su acuerdo entre codificaciones supera al de anotadores entrenados**, a un costo unas treinta veces menor.
+
+✅ **Törnberg, P. (2025). "Large Language Models Outperform Expert Coders and Supervised Classifiers at Annotating Political Social Media Messages".** *Social Science Computer Review*. DOI 10.1177/08944393241286471. GPT-4 supera a codificadores expertos en todos los idiomas y contextos nacionales probados.
+
+✅ **Törnberg, P. (2024). "Best Practices for Text Annotation with Large Language Models".** *Sociologica*. arXiv 2402.05129. *PDF descargado.* Advierte que el campo se volvió "una especie de Viejo Oeste académico" por la falta de normas de calidad y validez. Úsalo para justificar por qué documentaste tanto.
+
+✅ **Ziems, C. et al. (2023). "Can Large Language Models Transform Computational Social Science?"** arXiv 2305.03514. *PDF descargado.*
+
+### Las amenazas de reproducibilidad
+
+✅ **"Large Language Model Hacking: Quantifying the Hidden Risks of Using LLMs for Text Annotation".** arXiv 2509.08825. *PDF descargado.* Cuantifica cuánto cambian las conclusiones según decisiones de implementación aparentemente menores. Es el argumento de por qué tu caché de salidas crudas y tu log de auditoría no son burocracia.
+
+✅ **"To Err Is Human; To Annotate, SILICON? Toward Robust Reproducibility in LLM Annotation".** arXiv 2412.14461. *PDF descargado.*
+
+✅ **Desai, M. et al. (2026). "Validating LLMs in social science: Epistemic threats and emerging norms".** arXiv 2607.07915. *PDF descargado.*
+
+### El camino formal que te falta
+
+✅ **Egami, N., Hinck, M., Stewart, B. y Wei, H. (2023). "Using Imperfect Surrogates for Downstream Inference: Design-based Supervised Learning for Social Science Applications of Large Language Models".** NeurIPS. arXiv 2306.04746. *PDF descargado.* Hay paquete de R, `dsl`.
+
+Es **el método formal para obtener inferencia estadística válida** combinando anotaciones de modelo con una submuestra codificada por humanos: predecir con el modelo, muestrear un subconjunto para anotación experta, y combinar ambos. Tu spec ya lo menciona como trabajo futuro sin citarlo; ahora tiene referencia y código.
+
+Traducido a tu tesis: **si tu directora o tú codifican a mano unos 50 pasajes, dejas de tener medición descriptiva y pasas a tener inferencia válida.** Es el paso más rentable que le queda al trabajo.
+
+### Y sobre la Vía A
+
+✅ **"The Proxy Presumption: From Semantic Embeddings to Valid Social Measures".** arXiv 2605.07409. *PDF descargado.* Trata de frente el supuesto de que un embedding sirve como proxy de una medida social. Es el marco teórico exacto de tu hallazgo de que no basta.
+
+---
+
+## 6. El códebook frente al canon sinológico
+
+Tu códebook define el eje dézhì a partir de un panel de modelos. **En 93 entradas del `.bib` no hay una sola fuente de filosofía china.** Esta es la brecha más seria que queda, porque toca la premisa, no el método.
+
+Lo localizado y verificado:
+
+✅ **Angle, S. (2010). "Debating the Rule of Law and Virtue Politics in China's Twentieth Century".** Trata exactamente el debate 德治 contra 法治. **SSRN devuelve HTML, no PDF directo**, así que hay que bajarlo desde la página del artículo.
+
+✅ **El Amine, L. *Classical Confucian Political Thought*.** Princeton University Press. Reconstrucción del pensamiento político confuciano clásico.
+
+✅ **Kim, S. *Theorizing Confucian Virtue Politics: The Political Philosophy of Mencius and Xunzi*.** Cambridge University Press. Reseñado en *Notre Dame Philosophical Reviews*.
+
+✅ **Elman, B. (2000). *A Cultural History of Civil Examinations in Late Imperial China*.** University of California Press.
+
+✅ **Stanford Encyclopedia of Philosophy, entrada "Confucius".** Acceso abierto, revisada por pares. Es la cita de arranque más barata y legítima que existe para el marco conceptual.
+
+🔍 **La proposición que te sirve.** La literatura descompone la política confuciana en cuatro tesis: la de la virtud, la de la política de la virtud (el carácter moral del gobernante como fundamento), **la de la educación moral (asegurar el cultivo moral del pueblo)** y la de las condiciones materiales. La tercera es literalmente tu eje. Encontrar la fuente primaria de esa taxonomía te da el respaldo teórico del códebook.
+
+---
+
+## 7. Cómo usar esto
 
 **Lo primero que conviene conseguir:** el PDF de Bareis y Katzenbach. Es el trabajo que más te respalda, ya está en tu `.bib` y te da la frase de posicionamiento: ellos observaron cualitativamente la convergencia narrativa, tú la mides y muestras dónde se rompe el método superficial.
 
