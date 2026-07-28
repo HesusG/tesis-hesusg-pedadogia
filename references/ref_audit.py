@@ -109,10 +109,11 @@ def scan_local_pdfs():
         # Extract bibkey: everything before the first underscore-separated description
         # Pattern: author2024keyword_description.pdf -> bibkey = author2024keyword
         parts = fname.rsplit(".pdf", 1)[0]
-        # bibkey is the part before the first underscore that follows the year+keyword
-        bibkey_match = re.match(r"([a-z]+\d{4}[a-z0-9]*)", parts)
-        if bibkey_match:
-            pdfs[bibkey_match.group(1)] = fname
+        # The convention is `bibkey_short-title.pdf`: the description uses hyphens, so
+        # the first underscore is the separator. Splitting on it beats pattern-matching
+        # the key, which failed on bibkeys carrying digits before the year
+        # (`nlp4gov2024` parsed as nothing, so a PDF that WAS on disk read as missing).
+        pdfs[parts.split("_", 1)[0]] = fname
     return pdfs
 
 
