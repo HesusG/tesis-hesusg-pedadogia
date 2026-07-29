@@ -10,6 +10,11 @@ colorSchema: light
 aspectRatio: 16/9
 canvasWidth: 1280
 transition: slide-left
+# Hash y no history: GitHub Pages solo sirve el 404.html de la raíz del sitio,
+# así que con enrutamiento de historial un enlace directo a /defensa/14 o un
+# F5 a media defensa caen en el 404 de GitHub. Con hash siempre resuelve
+# index.html. Las URL quedan .../defensa/#/14
+routerMode: hash
 drawings:
   persist: false
 layout: cover
