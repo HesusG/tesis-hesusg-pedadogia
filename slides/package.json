@@ -1,0 +1,19 @@
+{
+  "name": "tesis-defensa-slides",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build --base /tesis-hesusg-pedadogia/defensa/ --out ../web/defensa",
+    "export": "slidev export --per-slide --wait-until networkidle --output ../output/defensa-tesis-raw.pdf && gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.5 -dPDFSETTINGS=/printer -dNOPAUSE -dQUIET -dBATCH -sOutputFile=../output/defensa-tesis.pdf ../output/defensa-tesis-raw.pdf && rm ../output/defensa-tesis-raw.pdf"
+  },
+  "dependencies": {
+    "@slidev/cli": "^51.4.0",
+    "@slidev/theme-default": "latest",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@unocss/extractor-mdc": "^66.1.0",
+    "playwright-chromium": "^1.62.0"
+  }
+}

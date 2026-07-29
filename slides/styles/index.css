@@ -1,0 +1,293 @@
+/* AcademIAS — PLATE / PROTOCOL, adapted for Slidev (16:9).
+   Off-white paper · electric-blue matte frame · IBM Plex Mono body ·
+   Archivo display · Bodoni wordmark · blue duotone + engravings. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Bodoni+Moda:wght@400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --ac-bg: #FAFCFE;
+  --ac-surface: #F4F7FB;
+  --ac-blue: #023BF2;
+  --ac-press: #032EBB;
+  --ac-inkblue: #022187;
+  --ac-navy: #0B1C45;
+  --ac-ink: #0F1624;
+  --ac-muted: #4D5566;
+  --ac-line: #DADEE6;
+  --ac-yellow: #EDF400;
+  --ac-fw: 8px; /* matte frame width */
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-wordmark: 'Bodoni Moda', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* ---------- base slide ---------- */
+.slidev-layout {
+  font-family: var(--font-mono);
+  color: var(--ac-ink);
+  background: var(--ac-bg);
+  line-height: 1.5;
+  padding: 3rem 3.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* signature electric-blue matte frame on every slide */
+.slidev-layout::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: var(--ac-fw) solid var(--ac-blue);
+  pointer-events: none;
+  z-index: 40;
+}
+
+/* faint paper grain */
+.slidev-layout::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.slidev-layout > * { position: relative; z-index: 2; }
+
+/* ---------- type ---------- */
+.slidev-layout h1,
+.slidev-layout h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0 0 0.6rem;
+  color: var(--ac-ink);
+}
+.slidev-layout h1 { font-size: 3.3rem; }
+.slidev-layout h2 { font-size: 2.4rem; }
+.slidev-layout h3 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.4rem;
+}
+.slidev-layout p,
+.slidev-layout li { font-size: 1.15rem; line-height: 1.5; }
+.slidev-layout p { margin: 0 0 0.8rem; }
+.slidev-layout strong { color: var(--ac-inkblue); font-weight: 600; }
+.slidev-layout em {
+  font-style: normal;
+  background: var(--ac-yellow);
+  color: var(--ac-inkblue);
+  padding: 0 0.22em;
+}
+.slidev-layout a { color: var(--ac-blue); text-decoration: none; border-bottom: 1px solid var(--ac-blue); }
+
+/* uppercase mono kicker */
+.kicker {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--ac-muted);
+}
+
+/* wordmark */
+.wordmark {
+  font-family: var(--font-wordmark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- lists: 7px blue squares ---------- */
+.slidev-layout ul { list-style: none; padding-left: 0; }
+.slidev-layout ul > li { position: relative; padding-left: 1.4rem; margin: 0.35rem 0; }
+.slidev-layout ul > li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.62em;
+  width: 7px; height: 7px;
+  background: var(--ac-blue);
+  border-radius: 1px;
+}
+
+/* ---------- code ---------- */
+.slidev-layout :not(pre) > code {
+  background: var(--ac-surface);
+  color: var(--ac-inkblue);
+  padding: 1px 6px;
+  border: 1px solid var(--ac-line);
+  border-radius: 2px;
+  font-size: 0.85em;
+}
+.slidev-layout pre.shiki,
+.slidev-layout pre.slidev-code {
+  border: 1px solid var(--ac-line);
+  border-radius: 2px;
+  background: var(--ac-surface) !important;
+}
+
+/* ---------- dark (navy) slides ---------- */
+.ac-dark, .ac-dark .slidev-layout { background: var(--ac-navy); }
+.ac-dark, .ac-dark h1, .ac-dark h2, .ac-dark h3, .ac-dark p, .ac-dark li { color: var(--ac-bg); }
+.ac-dark strong { color: var(--ac-yellow); }
+.ac-dark .kicker { color: rgba(255,255,255,0.55); }
+.ac-dark ul > li::before { background: var(--ac-yellow); }
+.ac-dark a { color: var(--ac-yellow); border-color: var(--ac-yellow); }
+
+/* ---------- blue duotone image treatment (grayscale × ultramarine) ---------- */
+.duo { background: var(--ac-blue); overflow: hidden; display: inline-block; }
+.duo img {
+  display: block;
+  filter: grayscale(1) contrast(1.1) brightness(1.05);
+  mix-blend-mode: luminosity;
+  opacity: 0.92;
+}
+/* engraving on paper: multiply so white drops out */
+.engrave img { mix-blend-mode: multiply; filter: grayscale(1) contrast(1.05); }
+.engrave-neg img { mix-blend-mode: screen; filter: grayscale(1) invert(1); }
+
+/* image placeholder (mark spots for better illustrations later) */
+.ph {
+  border: 1.5px dashed var(--ac-blue);
+  background: repeating-linear-gradient(135deg, rgba(2,59,242,0.06), rgba(2,59,242,0.06) 10px, #F4F7FB 10px, #F4F7FB 20px);
+  color: var(--ac-inkblue);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em; padding: 1rem;
+}
+
+/* footnote / source line */
+.src {
+  position: absolute; bottom: 1.1rem; left: 3.5rem; right: 3.5rem;
+  font-family: var(--font-mono); font-size: 0.6rem; color: var(--ac-muted);
+  border-top: 1px solid var(--ac-line); padding-top: 4px; z-index: 3;
+}
+.ac-dark .src { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.15); }
+
+/* slidev default heading anchor tweak */
+.slidev-layout :is(h1,h2,h3) + p { margin-top: 0.2rem; }
+
+/* ---------- hide Slidev on-screen nav (keyboard + presenter still work) ---------- */
+#page-root nav,
+#slidev-goto-dialog,
+.slidev-quick-overview { display: none !important; }
+
+/* ---------- title pinned top; body fills & centers the rest ---------- */
+.slidev-layout.default,
+.slidev-layout.ac-diagram,
+.slidev-layout.ac-agenda,
+.slidev-layout.ac-fact,
+.slidev-layout.ac-split { display: flex; flex-direction: column; justify-content: flex-start; }
+.slide-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; justify-content: center; }
+
+/* round duotone avatar (cover + closing) */
+.duo.round { border-radius: 50%; }
+.duo.round img { border-radius: 50%; }
+
+/* ================= DIAGRAMS — brand line-art (dotted = soft link) ================= */
+.diagram { display: flex; flex-direction: column; align-items: center; gap: 0.9rem; width: 100%; }
+.drow { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: nowrap; }
+.dcol { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; }
+
+.dbox {
+  border: 1.5px solid var(--ac-ink);
+  background: #fff;
+  padding: 0.7rem 1rem;
+  font-family: var(--font-mono);
+  color: var(--ac-ink);
+  text-align: center;
+  line-height: 1.25;
+  border-radius: 2px;
+}
+.dbox .dt { font-weight: 600; font-size: 1.05rem; }
+.dbox .ds { font-size: 0.82rem; color: var(--ac-muted); margin-top: 0.15rem; }
+/* the ONE highlighted element per diagram */
+.dbox-hi { border-color: var(--ac-blue); background: #D6E0FE; }
+.dbox-hi .ds { color: var(--ac-inkblue); }
+
+.dchip {
+  display: inline-block; font-family: var(--font-mono);
+  text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.66rem;
+  border: 1px solid var(--ac-ink); padding: 0.12rem 0.5rem; border-radius: 2px; color: var(--ac-ink);
+}
+.dchip-hi { border-color: var(--ac-blue); background: var(--ac-blue); color: #fff; }
+
+/* horizontal connectors: solid = concrete action, dotted = soft/implied link */
+.darrow { flex: 0 0 auto; width: 56px; height: 1.5px; background: var(--ac-ink); position: relative; margin: 0 2px; }
+.darrow::after { content: ''; position: absolute; right: -2px; top: -4.5px;
+  border-left: 9px solid var(--ac-ink); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.darrow-dot { flex: 0 0 auto; width: 56px; height: 0; border-top: 1.6px dashed var(--ac-blue); position: relative; margin: 0 2px; }
+.darrow-dot::after { content: ''; position: absolute; right: -2px; top: -4.5px;
+  border-left: 9px solid var(--ac-blue); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+
+/* vertical connectors */
+.darrow-down { width: 1.5px; height: 32px; background: var(--ac-ink); position: relative; margin: 2px 0; }
+.darrow-down::after { content: ''; position: absolute; bottom: -2px; left: -4.5px;
+  border-top: 9px solid var(--ac-ink); border-left: 5px solid transparent; border-right: 5px solid transparent; }
+.darrow-down-dot { width: 0; height: 32px; border-left: 1.6px dashed var(--ac-blue); position: relative; margin: 2px 0; }
+.darrow-down-dot::after { content: ''; position: absolute; bottom: -2px; left: -5.5px;
+  border-top: 9px solid var(--ac-blue); border-left: 5px solid transparent; border-right: 5px solid transparent; }
+
+/* micro caption, dotted rule, summary line */
+.dcap { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ac-muted); text-align: center; }
+.dneg { color: var(--ac-muted); font-weight: 600; }
+.drule-dot { width: 100%; border: 0; border-top: 1.5px dashed var(--ac-line); margin: 0.5rem 0; }
+.dsum { font-family: var(--font-mono); font-size: 0.95rem; color: var(--ac-ink); text-align: center; }
+
+/* ---------- comparison table ---------- */
+.actable { width: 100%; border-collapse: collapse; font-family: var(--font-mono); }
+.actable th, .actable td {
+  border: 1px solid var(--ac-line); padding: 0.5rem 0.7rem;
+  text-align: left; vertical-align: top; font-size: 0.95rem; color: var(--ac-ink); line-height: 1.35;
+}
+.actable thead th { background: var(--ac-surface); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.82rem; }
+.actable tbody th { background: #fff; font-weight: 600; width: 22%; }
+.actable td.dim { color: var(--ac-muted); }
+.actable .yes { color: var(--ac-blue); font-weight: 700; }
+.actable .no { color: var(--ac-muted); font-weight: 700; }
+
+/* photo duotone reads a touch brighter than engravings on the paper */
+.duo.photo img { opacity: 1; filter: grayscale(1) contrast(1.05) brightness(1.03); mix-blend-mode: luminosity; }
+
+/* faded background photo on a light content slide (fades to the left so text stays clean) */
+.slidev-layout .bgphoto { position: absolute; inset: 0 0 0 auto; width: 56%; z-index: 0; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 46%); mask-image: linear-gradient(to right, transparent 0%, #000 46%); }
+.slidev-layout .bgphoto img { width: 100%; height: 100%; object-fit: cover; opacity: 0.2; filter: grayscale(0.15) contrast(1.02); }
+/* faint full-bleed diagram behind content (e.g. neural network) */
+.slidev-layout .bgphoto-full { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.slidev-layout .bgphoto-full img { width: 82%; height: 82%; object-fit: contain; opacity: 0.08; }
+/* full-bleed "wow" photo behind a dark statement, darkened left for legible text */
+.slidev-layout .wowbg { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.slidev-layout .wowbg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.42; filter: saturate(0.85); }
+.slidev-layout .wowbg::after { content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--ac-navy) 0%, rgba(11,28,69,0.6) 48%, rgba(11,28,69,0.2) 100%); }
+
+/* ---------- section-hero: full-bleed faded image on navy dividers ---------- */
+.section .section-hero {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 62%;
+  z-index: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center right;
+  filter: grayscale(1) contrast(1.05) brightness(0.95);
+  mix-blend-mode: luminosity;
+  opacity: 0.3;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 38%, #000 100%);
+          mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.55) 38%, #000 100%);
+}
+.section .section-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--ac-navy) 0%, rgba(11,28,69,0.35) 45%, transparent 100%);
+}
+
+/* ---------- key idea: no box, inline yellow highlight (replaces yellow callout) ---------- */
+.keyidea { font-size: 1.3rem; color: var(--ac-ink); max-width: 60ch; }
+.keyidea .lbl { display: block; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.72rem; color: var(--ac-blue); margin-bottom: 0.3rem; }
+
+/* ---------- SVG de datos: fijar la voz tipográfica dentro de los gráficos ---------- */
+.slidev-layout svg text { font-family: var(--font-mono); }

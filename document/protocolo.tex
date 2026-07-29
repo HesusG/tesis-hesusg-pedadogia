@@ -1,0 +1,385 @@
+%% protocolo.tex - Protocolo de investigacion, documento independiente.
+%% Compila solo: no depende de upaep-thesis.cls ni de preamble.tex.
+%%   tectonic -X compile protocolo.tex
+%%   (o pdflatex protocolo && bibtex protocolo && pdflatex x2)
+
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{mathptmx}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+\onehalfspacing
+\setlength{\parskip}{0.4em}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.6em}{}
+
+% ── Terminos chinos ──
+% Pinyin con macros de acento para que compile igual en pdfLaTeX y XeLaTeX.
+\newcommand{\dezhi}{\textit{d\'ezh\`{\i}}}
+\newcommand{\fa}{\textit{f\v{a}}}
+\newcommand{\ejedf}{\dezhi\,$\leftrightarrow$\,\fa}
+
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{xeCJK}
+  \IfFontExistsTF{Droid Sans Fallback}
+    {\setCJKmainfont{Droid Sans Fallback}\newcommand{\zhg}[1]{\,(#1)}}
+    {\newcommand{\zhg}[1]{}}
+\else
+  \newcommand{\zhg}[1]{}
+\fi
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\large\scshape Universidad Popular Autónoma del Estado de Puebla}\\[0.3cm]
+{\normalsize Maestría en Pedagogía}\\[2.5cm]
+
+{\large\bfseries PROTOCOLO DE INVESTIGACIÓN}\\[1.5cm]
+
+{\LARGE\bfseries Gobernar por la virtud\\o gobernar por la norma}\\[0.8cm]
+{\large Medición comparada del encuadre estatal en políticas públicas\\de educación en inteligencia artificial de siete países}\\[3cm]
+
+{\large Hesus García Cobos}\\[0.5cm]
+{\normalsize Director: Dr. Herminio Sánchez de la Barquera y Arroyo}\\[3cm]
+
+{\normalsize Puebla, Puebla \quad$\cdot$\quad 2026}
+
+\vfill
+{\footnotesize
+Libro de códigos, configuración y predicciones registrados en control de versiones\\
+antes de ejecutar la medición. Código y datos abiertos.}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+
+\section{Resumen del proyecto}
+
+Cuando dos gobiernos escriben «formación docente en inteligencia artificial», pueden estar diciendo cosas incompatibles. Uno puede entender la educación en IA como cultivo moral de la población dirigido por el Estado; otro, como una conducta que se regula mediante reglas y límites. Esta investigación mide esa diferencia en las políticas nacionales de siete países, uno por región política del mundo.
+
+El estudio mide el mismo constructo dos veces, por procedimientos que no comparten supuestos, y reporta tanto sus coincidencias como sus desacuerdos. La primera vía proyecta el texto sobre un eje construido con representaciones vectoriales de significado. La segunda entrega un libro de códigos escrito en prosa a un panel de siete modelos de lenguaje de origen cultural mixto y les pide que juzguen pasaje por pasaje.
+
+La duplicación no es redundancia. Es la única forma disponible de someter a prueba un instrumento cuando no existe un patrón de oro contra el cual calibrarlo.
+
+\vspace{0.5em}
+\noindent\textbf{Palabras clave:} educación comparada, política educativa, inteligencia artificial, medición de texto, validez de instrumentos, confucianismo.
+
+
+\section{Planteamiento del problema}
+
+\subsection{Contexto}
+
+Para 2023, al menos 67 países habían formulado o estaban formulando estrategias nacionales de inteligencia artificial~\citep{unesco2023genai}. En la mayoría, la educación aparece como componente de desarrollo de talento para la competitividad económica, no como objeto de política educativa en sí mismo. Formar ingenieros de IA no es lo mismo que preparar a todos los estudiantes para vivir en un mundo transformado por ella.
+
+Esa proliferación produjo un problema de lectura. Los documentos se parecen entre sí. Comparten vocabulario, estructura y hasta secuencia de secciones. \citet{steinerkhamsi2014cross} distingue tres explicaciones posibles para ese parecido: préstamo deliberado de un país a otro, influencia común de un marco internacional, o convergencia funcional entre países que enfrentan el mismo problema sin contacto entre sí. Decidir cuál opera requiere más que leer los documentos uno al lado del otro.
+
+\subsection{La brecha}
+
+La educación comparada ha incorporado herramientas de similitud semántica para analizar corpus multilingües, tratando los textos de política como datos~\citep{grimmer2013text}. Estas herramientas miden cuánto se parecen dos textos en un espacio de significado y permiten comparar sin traducir.
+
+El supuesto implícito es que la similitud detectada por esas herramientas indica convergencia de política. Ese supuesto no ha sido puesto a prueba de manera sistemática. Y hay razones para dudarlo: \citet{bareis2022talking} observaron cualitativamente que las narrativas de las estrategias nacionales de IA son notablemente similares mientras que los imaginarios que expresan son notablemente distintos.
+
+Falta entonces un estudio que mida un constructo teórico definido por adelantado, lo mida por dos caminos independientes, y reporte si coinciden.
+
+\subsection{El objeto de medición}
+
+Esta investigación mide \textbf{a quién le corresponde formar a las personas} según cada documento de política.
+
+La tradición confuciana nombra esa oposición desde hace dos milenios. Gobernar por la virtud, \dezhi\zhg{德治}, sostiene que la autoridad legítima educa con el ejemplo y forma el carácter de los gobernados. Gobernar por la norma, \fa\zhg{法}, sostiene que la autoridad se ejerce mediante reglas públicas iguales para todos, con premio y castigo previsibles~\citep{pines2023legalism}.
+
+La oposición no es exclusiva de China. Es la misma tensión que atraviesa la teoría política occidental entre el Estado formador y el Estado limitado. Lo que la tradición china aporta es un vocabulario preciso para nombrarla y un cuerpo de literatura de dos milenios que la discute.
+
+
+\section{Preguntas de investigación}
+
+\begin{quote}
+\itshape
+¿Las políticas de educación en inteligencia artificial de siete países expresan concepciones distintas sobre quién forma a las personas, y esa diferencia se puede medir de manera reproducible?
+\end{quote}
+
+De la pregunta central se desprenden tres, una por cada cosa que hay que resolver para responderla.
+
+\begin{description}[leftmargin=1.8cm,style=nextline]
+  \item[P1.] \textbf{¿Se puede medir?} ¿Es posible asignar a un pasaje de política pública un valor que exprese cuánto encuadra la educación en IA como cultivo moral dirigido por el Estado, frente a cuánto la encuadra como conducta regulada por normas?
+
+  \item[P2.] \textbf{¿Difieren los países?} ¿Se separan los siete países en ese eje, y la separación sobrevive cuando se controla por la región del documento, por su tema y por el origen cultural del instrumento que mide?
+
+  \item[P3.] \textbf{¿Coinciden los métodos?} ¿Dos procedimientos de medición independientes producen el mismo ordenamiento de países? Si no coinciden, ¿qué revela el desacuerdo?
+\end{description}
+
+P1 es una pregunta de instrumento, P2 de comparación y P3 de validez. Las tres se responden con el mismo corpus.
+
+
+\section{Objetivos}
+
+\subsection{Objetivo general}
+
+Medir en las políticas de educación en inteligencia artificial de siete países el grado en que el Estado se presenta como formador moral de la población frente a regulador de conductas, y evaluar la confiabilidad de esa medición mediante dos procedimientos independientes.
+
+\subsection{Objetivos específicos}
+
+\begin{enumerate}[label=\textbf{OE\arabic*.},leftmargin=1.6cm]
+  \item Construir un corpus de documentos oficiales bajo criterios de inclusión explícitos, verificables y aplicables por un tercero.
+  \item Pre-registrar el libro de códigos del eje \ejedf y las predicciones del estudio antes de ejecutar cualquier medición.
+  \item Medir el eje por proyección bipolar sobre representaciones vectoriales del texto.
+  \item Medir el mismo eje mediante un panel de siete modelos de lenguaje de origen cultural mixto.
+  \item Estimar el acuerdo entre jueces y la magnitud del sesgo atribuible al origen del juez.
+  \item Someter el resultado a tres pruebas de confusión: región, tema del documento y estructura de Estado-partido.
+  \item Contrastar ambas vías y documentar sus coincidencias y desacuerdos.
+\end{enumerate}
+
+
+\section{Hipótesis}
+
+Las cuatro predicciones se registran en el repositorio antes de correr la medición. El registro es la marca de tiempo del \textit{commit} que fija el libro de códigos y la configuración, verificable por cualquier tercero.
+
+\begin{description}[leftmargin=1.4cm,style=nextline]
+  \item[H1.] China puntúa más alto que los seis países de tradición liberal en el eje \ejedf.
+  \item[H2.] La diferencia no se explica por pertenecer a Asia oriental: los vecinos de tradición confuciana sin Estado-partido no reproducen el efecto.
+  \item[H3.] Los jueces de origen chino y los de origen occidental producen puntuaciones equivalentes.
+  \item[H4.] Los dos procedimientos de medición convergen en el mismo ordenamiento de países.
+\end{description}
+
+H4 se plantea como control de rutina. Su eventual rechazo sería el resultado más informativo del estudio, porque delimitaría el alcance de una familia de herramientas de uso creciente en educación comparada.
+
+
+\section{Método}
+
+\subsection{Enfoque}
+
+Estudio comparativo de medición sobre texto de política pública. La unidad de análisis es el pasaje, no el documento ni el país: cada pasaje recibe un valor en un eje declarado por adelantado, y los valores se agregan por país.
+
+\subsection{Corpus}
+
+Un documento entra al corpus si cumple seis condiciones simultáneas.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Criterios de inclusión}
+\begin{tabular}{@{}lp{10.5cm}@{}}
+\toprule
+\textbf{Criterio} & \textbf{Condición} \\
+\midrule
+C1. Autoría estatal   & Adoptado por un órgano con autoridad pública, identificable por nombre \\
+C2. Alcance nacional  & Aplica al conjunto del territorio, salvo documentos subnacionales declarados como tales \\
+C3. Sustancia         & Trata la IA de manera central, no como mención incidental \\
+C4. Vigencia          & Rige a la fecha de corte del estudio \\
+C5. Texto verbatim    & Se dispone del texto oficial completo, no de una nota de prensa \\
+C6. Par documental    & El país aporta una estrategia de IA, un documento educativo, o ambos \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los criterios se redactan antes de revisar la vigencia y se aplican de forma retroactiva al corpus preexistente. Si la aplicación retroactiva expulsa documentos que ya estaban dentro, eso constituye evidencia de que el criterio hizo trabajo real.
+
+Cada documento se divide en fragmentos de 500 caracteres con 50 de traslape y se almacena en una base vectorial con sus metadatos: país, región, año, género discursivo, órgano adoptante e identificador.
+
+\subsection{Muestreo}
+
+Se muestrean diez pasajes por país. El muestreo recupera los fragmentos semánticamente más cercanos a una consulta sobre gobernanza, de modo que la comparación se hace sobre material temáticamente equiparable. Fijar el número por país impide que un documento largo domine la comparación frente a uno breve.
+
+\subsection{El eje de medición}
+
+Escala ordinal de cinco valores, de $-2$ a $+2$.
+
+\begin{itemize}[leftmargin=1.2cm]
+  \item[$+2$] El Estado se presenta como cultivador y director moral de la sociedad: guía, educa, planifica y moviliza hacia metas colectivas que él mismo define. La educación y la tecnología aparecen como instrumentos de formación moral de la población.
+  \item[$+1$] El Estado planifica, dirige y exige alineamiento, pero sin lenguaje de cultivo moral explícito.
+  \item[$\phantom{+}0$] El pasaje no trata la relación entre poder estatal y persona.
+  \item[$-1$] La lógica liberal está presente pero es periférica o no restringe explícitamente al Estado.
+  \item[$-2$] Los derechos individuales operan como límite exigible sobre el propio Estado, con contrapesos institucionales explícitos.
+\end{itemize}
+
+\subsection{Vía A: proyección sobre representaciones vectoriales}
+
+Cada fragmento se convierte en un vector de 384 dimensiones mediante un modelo multilingüe de representación de oraciones~\citep{reimers2019sentencebert}. Para cada eje se redacta un conjunto de frases ancla en cada polo; el eje se define como la diferencia entre los centroides de ambos polos, y la puntuación de un fragmento es su proyección escalar sobre ese eje.
+
+Las proyecciones se estandarizan contra la distribución del corpus completo, de modo que el valor reportado indica cuántas desviaciones típicas se aparta un país del texto de política promedio.
+
+\subsection{Vía B: panel de jueces}
+
+Siete modelos de lenguaje leen los mismos pasajes con el mismo libro de códigos y emiten cada uno una clasificación. Cuatro son de origen chino y tres de origen occidental. La partición permite estimar si el origen cultural del instrumento sesga la medición del constructo cultural.
+
+El panel trata a cada modelo como un evaluador falible dentro de un grupo, del mismo modo que una encuesta de expertos trata a cada experto. El valor no proviene de la infalibilidad de ninguno sino de la agregación de varios.
+
+Cada juez recibe el pasaje, el libro de códigos completo y la instrucción de devolver un valor entero junto con una justificación breve. La temperatura se fija en cero. Las salidas crudas, incluidas las justificaciones, se almacenan en caché y se registran en una bitácora de auditoría.
+
+Los pasajes en idiomas distintos del inglés se traducen antes de entregarse al panel, para que todos los jueces lean en el mismo idioma. Las traducciones se almacenan en caché con clave estable.
+
+
+\section{Plan de análisis}
+
+\subsection{Acuerdo entre jueces}
+
+Se reportan cuatro medidas: acuerdo observado exacto y dentro de un punto, kappa de Fleiss, y alfa de Krippendorff en los niveles nominal, ordinal e intervalar.
+
+El nivel ordinal es el pertinente. Confundir $+2$ con $+1$ es un error menor que confundir $+2$ con $-2$, y solo el alfa ordinal recoge esa asimetría.
+
+Los índices corregidos por azar se deprimen cuando la distribución se concentra en una categoría, aun con acuerdo observado alto. El eje de este estudio produce esa distribución, porque la mayoría de los pasajes de política pública no trata la relación entre poder estatal y persona. Por eso se reportan las cuatro medidas juntas: leer solo el kappa subestima la confiabilidad y leer solo el acuerdo observado la sobreestima.
+
+\subsection{Sesgo de origen}
+
+Para cada pasaje se calcula la media de los jueces occidentales y la de los chinos, y se toma la diferencia. La distribución de esa diferencia se estima por remuestreo con 5{,}000 réplicas y semilla fija.
+
+El remuestreo se hace sobre \textbf{pasajes}, no sobre clasificaciones. Siete jueces que leen el mismo pasaje no son siete observaciones independientes, y tratarlos como tales produciría intervalos artificialmente estrechos.
+
+\subsection{Pruebas de confusión}
+
+Un valor alto en un país podría explicarse por causas ajenas al constructo. Se someten a prueba tres explicaciones alternativas mediante brazos de control declarados.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Brazos de control}
+\begin{tabular}{@{}p{3cm}p{5.2cm}p{5.2cm}@{}}
+\toprule
+\textbf{Explicación} & \textbf{Qué predice} & \textbf{Documentos del brazo} \\
+\midrule
+Región & Los vecinos de tradición confuciana suben & Corea del Sur, Japón, Singapur \\
+Tema & Los documentos educativos no chinos suben & India, UNESCO \\
+Estructura de Estado & Un Estado-partido confuciano no chino sube & Vietnam; Malasia como control \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los brazos de control \textbf{no} se agregan al conjunto principal de siete países. Hacerlo alteraría el diseño registrado. Entran como brazo declarado, y los valores de la comparación principal no se modifican.
+
+\subsection{Criterio de decisión}
+
+Las conclusiones se emiten a partir de contrastes con intervalo de confianza, no de umbrales fijos sobre valores puntuales. Un umbral convierte una cuestión de grado en un sí o un no, y puede producir un veredicto falso a partir de una diferencia que no se distingue de cero.
+
+Un contraste sostiene una afirmación cuando su intervalo excluye el cero. Cuando lo incluye, el resultado se reporta como indistinguible, no como ausencia de efecto.
+
+
+\section{Objeciones anticipadas}
+
+\subsection{El eje trata como opuestos lo que la doctrina china empareja}
+
+La doctrina oficial contemporánea del Partido Comunista de China sostiene que gobernar conforme a la ley\zhg{依法治国} y gobernar por la virtud\zhg{以德治国} son complementarios y se refuerzan mutuamente. El eje bipolar de este estudio los coloca en extremos opuestos.
+
+La objeción es seria y se responde de tres maneras.
+
+Primero, el eje mide encuadre, no doctrina. No pregunta si un Estado cree que ambos principios son compatibles; pregunta cómo se presenta la relación entre poder estatal y persona en un pasaje concreto. Un Estado puede sostener la complementariedad y aun así redactar sus documentos de modo que el ciudadano aparezca como objeto de formación y no como titular de límites exigibles.
+
+Segundo, la complementariedad predice un patrón observable. Si el discurso combinara ambos polos, los documentos jurídicos deberían puntuar cerca de cero mientras los educativos puntúan alto. Esa predicción es contrastable con los datos del estudio.
+
+Tercero, la bipolaridad es una decisión de instrumento, no una tesis sobre China. La proyección bipolar requiere dos anclas contrapuestas; que el instrumento las oponga no implica que el objeto medido las oponga.
+
+\subsection{El acuerdo entre modelos no es validez}
+
+La literatura especializada advierte que el acuerdo alto entre modelos entrenados sobre datos superpuestos no constituye evidencia de que el constructo esté bien medido, y que los modelos tienen limitaciones documentadas para seguir libros de códigos sin ejemplos previos~\citep{halterman2025codebook}.
+
+Este estudio no puede refutar la objeción con su diseño actual. La respuesta es declararla como límite y especificar el procedimiento que la resolvería, descrito en la sección siguiente.
+
+\subsection{El riesgo de esencializar}
+
+Medir el discurso de un Estado en un eje construido desde su propia tradición filosófica corre el riesgo de tratar a ese país como un caso cultural y a los demás como el caso normal.
+
+El diseño responde aplicando el mismo eje a los siete países por igual, incluyendo el brazo de control regional, y reportando si el efecto se extiende o no a los vecinos culturales. Un eje que solo se aplicara a un país describiría al analista, no al objeto.
+
+
+\section{Límites declarados}
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Ausencia de ancla humana.} Ningún codificador humano valida las clasificaciones. Lo que se reporta es acuerdo entre instrumentos automáticos, es decir confiabilidad, no validez. Es la limitación que más restringe las afirmaciones posibles.
+
+  \item \textbf{Asimetría del corpus.} Los documentos varían en dos órdenes de magnitud de extensión. El muestreo por país impide que el volumen domine la comparación, pero no crea evidencia donde no la hay.
+
+  \item \textbf{Heterogeneidad de género.} El corpus mezcla estrategias, planes de acción, reportes de comisión y guías. El género se registra como metadato y se usa como control; no se elimina.
+
+  \item \textbf{Muestra intencional.} Siete casos elegidos por región no permiten generalización estadística a la población de países.
+
+  \item \textbf{Texto, no práctica.} El estudio mide encuadre discursivo en documentos oficiales. No dice nada sobre implementación ni sobre efectos en el aprendizaje.
+\end{enumerate}
+
+
+\section{Trabajo derivado}
+
+El paso que cierra la limitación central tiene nombre y costo estimable. El aprendizaje supervisado basado en diseño permite obtener inferencia estadísticamente válida combinando anotaciones automáticas sobre todo el corpus con una submuestra codificada por humanos, corrigiendo el sesgo del instrumento imperfecto sin renunciar a su cobertura~\citep{egami2023dsl}.
+
+Aplicado a este caso, requiere codificar a mano alrededor de cincuenta pasajes seleccionados al azar con el mismo libro de códigos, y usarlos para corregir las estimaciones del panel. Con dos codificadores independientes es trabajo de semanas.
+
+
+\section{Consideraciones éticas}
+
+Los documentos analizados son públicos y oficiales. No hay sujetos humanos ni datos personales, y la investigación no requiere consentimiento informado ni dictamen de comité de ética.
+
+Tres compromisos de transparencia acompañan el trabajo:
+
+\begin{enumerate}[leftmargin=*]
+  \item El libro de códigos, la configuración y las predicciones son públicos y anteriores a la medición.
+  \item Las clasificaciones crudas, con la justificación de cada juez, quedan versionadas y son auditables.
+  \item Los desacuerdos entre las dos vías se reportan íntegros, no se resuelven eligiendo la vía que produzca el resultado más limpio.
+\end{enumerate}
+
+Se adopta además una regla de higiene bibliográfica: ninguna referencia entra al archivo de citas sin haber consultado el texto completo. El precedente que la justifica es reciente y directo: en abril de 2026 se retiró un borrador de política nacional de inteligencia artificial porque su bibliografía contenía citas inventadas por un modelo de lenguaje.
+
+
+\section{Cronograma}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Fases del proyecto}
+\begin{tabular}{@{}p{1.4cm}p{7.5cm}p{4.5cm}@{}}
+\toprule
+\textbf{Fase} & \textbf{Actividad} & \textbf{Producto} \\
+\midrule
+1 & Construcción del corpus y aplicación de criterios & Corpus versionado, bitácora de bajas \\
+2 & Redacción y registro del libro de códigos & \textit{Commit} de pre-registro \\
+3 & Medición por Vía A sobre los seis ejes & Perfil por país \\
+4 & Medición por Vía B sobre el eje principal & Clasificaciones crudas y agregadas \\
+5 & Acuerdo, sesgo de origen e intervalos & Reporte de confiabilidad \\
+6 & Pruebas de confusión & Contrastes con intervalo \\
+7 & Contraste entre vías y redacción & Capítulos de resultados y discusión \\
+8 & Codificación humana de anclaje & Corrección por diseño supervisado \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Las fases 1 a 7 están concluidas. La fase 8 queda como trabajo derivado.
+
+
+\section{Productos comprometidos}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Productos y formato}
+\begin{tabular}{@{}p{3.6cm}p{4.2cm}p{5.6cm}@{}}
+\toprule
+\textbf{Producto} & \textbf{Formato} & \textbf{Función} \\
+\midrule
+Tesis & \LaTeX{} $\rightarrow$ PDF & Documento de grado \\
+Artículo & \LaTeX{} $\rightarrow$ PDF & Envío a revista arbitrada \\
+Póster & HTML/CSS $\rightarrow$ PDF A0 & Congreso, sesión de carteles \\
+Presentación & Slidev $\rightarrow$ HTML y PDF & Defensa y ponencia \\
+Protocolo & \LaTeX{} $\rightarrow$ PDF & Este documento \\
+Sitio del proyecto & HTML estático & Divulgación y reproducibilidad \\
+Repositorio & Git público & Código, datos, libro de códigos, bitácora \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\bibliography{referencias}
+
+\end{document}

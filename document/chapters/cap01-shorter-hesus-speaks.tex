@@ -1,4 +1,4 @@
-%% cap01-shorter-hesus-speaks.tex — Planteamiento del Problema
+%% cap01-shorter-hesus-speaks.tex, Planteamiento del Problema
 \chapter{Planteamiento del Problema}
 \label{cap:planteamiento}
 
@@ -8,7 +8,7 @@ La inteligencia artificial transforma la manera en que las sociedades producen, 
 
 \citet{thierer2018pacing} identificó el problema del desfase regulatorio entre tecnología y política pública. La tecnología evoluciona de forma exponencial mientras que la regulación avanza de manera lineal. En educación, este desfase se manifiesta en que los gobiernos tardan años en formular políticas que, para cuando llegan al aula, ya no corresponden con la realidad tecnológica que enfrentan los estudiantes. Hacia 2022, pocos países habían desarrollado currículos de IA para educación básica, y menos aún contaban con marcos de capacitación docente. \citet{miao2021guidance} sintetizaron el panorama en cinco brechas de preparación institucional: ausencia de marcos regulatorios, insuficiencia en la formación docente, falta de estándares curriculares, inequidades en infraestructura digital y carencia de directrices éticas. Una profesora en Bogotá y un profesor en Berlín enfrentan hoy estudiantes que usan herramientas de IA generativa, pero las políticas que deberían orientar su trabajo pedagógico fueron redactadas bajo supuestos radicalmente distintos, si es que fueron redactadas.
 
-Siete países permiten observar cómo distintas regiones del mundo han incorporado la IA en sus políticas educativas. Sus documentos de política constituyen el corpus de esta investigación, es decir, el conjunto de textos oficiales que se analizan. El corpus reúne 13 documentos en total: Canadá, Australia, Colombia, Sudáfrica, Alemania y Estados Unidos contribuyen un documento cada uno, mientras que China contribuye siete documentos publicados entre 2017 y 2025, lo que la convierte en un caso particular por su iteración sostenida. En conjunto, estos casos abarcan cuatro familias lingüísticas y contextos que van desde economías avanzadas hasta países del sur global.
+Siete países permiten observar cómo distintas regiones del mundo han incorporado la IA en sus políticas educativas. Sus documentos de política constituyen el corpus de esta investigación, es decir, el conjunto de textos oficiales que se analizan. El corpus reúne 15 documentos: Canadá, Australia, Colombia, Sudáfrica, Alemania y Estados Unidos contribuyen uno cada uno, mientras que China contribuye nueve publicados entre 2025 y 2026, lo que la convierte en un caso particular por su iteración sostenida y por descender del nivel nacional al provincial. En conjunto, estos casos abarcan cuatro familias lingüísticas y contextos que van desde economías avanzadas hasta países del sur global.
 
 Cuando documentos de política de diferentes países utilizan vocabulario similar, surge una pregunta que la lectura individual no puede resolver: ¿la similitud refleja convergencia temática genuina, es decir, que distintos países lleguen a abordar los mismos temas de formas parecidas? ¿O se trata de influencia compartida de un tercer actor, o de convergencia funcional independiente?
 
@@ -17,23 +17,61 @@ Gita Steiner-Khamasi, investigadora de educación comparada, ha estudiado por qu
 En la ciencia política, la idea de tratar los textos de política pública como datos susceptibles de análisis computacional se consolidó a principios de la década de 2010~\citep{grimmer2013text}. En la práctica, esto significa que en lugar de que un investigador lea y clasifique manualmente cada documento, un modelo computacional convierte los textos en representaciones numéricas que permiten medir cuánto se parecen entre sí. Estas técnicas se han aplicado para medir la alineación entre documentos legislativos y estratégicos en ciencia política.
 
 
-\section{Propósito}
+\section{El Objeto de Medición}
 
-El propósito de esta investigación es comprender cómo siete países de distintas regiones del mundo abordan la educación en inteligencia artificial en sus políticas públicas. El estudio responde a la necesidad de complementar los marcos comparativos existentes con un análisis exploratorio capaz de descubrir temas que esos marcos no anticipan.
+Comparar el vocabulario de dos políticas dice poco. Dos gobiernos pueden escribir «formación docente en IA» y querer decir cosas incompatibles. Esta investigación mide algo más específico: \textbf{a quién le corresponde formar a las personas}. Un Estado puede plantear la educación en IA como cultivo moral de la población, donde el gobierno fija la dirección y las escuelas, empresas y familias se alinean a ella. O puede plantearla como regulación de conductas, donde el Estado pone reglas y límites y el resto de los actores decide dentro de ellos.
+
+La tradición confuciana nombra esa oposición desde hace dos milenios. Gobernar por la virtud, \dezhi\zhg{德治}, sostiene que la autoridad legítima educa con el ejemplo y forma el carácter de los gobernados. Gobernar por la norma, \fa\zhg{法}, sostiene que la autoridad se ejerce mediante reglas públicas iguales para todos, con premio y castigo previsibles~\citep{pines2023legalism}. La oposición no es exclusiva de China: es la misma tensión que atraviesa la teoría política occidental entre el Estado formador y el Estado limitado. Lo que China aporta es un vocabulario preciso para nombrarla.
+
+El propósito de esta investigación es medir dónde se sitúa cada política en ese eje, y averiguar si esa medición se sostiene.
 
 
 \section{Preguntas de Investigación}
 
-La pregunta central es: ¿qué temas caracterizan las políticas de educación en inteligencia artificial de siete países, y en qué convergen y divergen entre sí?
+\begin{researchquestion}
+¿Las políticas de educación en inteligencia artificial de siete países expresan concepciones distintas sobre quién forma a las personas, y esa diferencia se puede medir de manera reproducible?
+\end{researchquestion}
 
-De esta pregunta se derivan cuatro preguntas asociadas. Interesa saber qué agrupamientos temáticos emergen cuando se analizan los documentos de los siete países mediante procesamiento de lenguaje natural. También se pregunta qué temas latentes aparecen que marcos existentes como el Consenso de Beijing~\citep{unesco2019beijing} no capturan. Para los pares de países con alta similitud, se examina si comparten pasajes trazables a documentos fuente comunes. Por último, se aborda cómo evolucionaron las políticas de China entre 2017 y 2025.
+De ahí se desprenden tres preguntas, una por cada cosa que hay que resolver para responderla.
+
+\textbf{P1. ¿Se puede medir?} ¿Es posible asignar a un pasaje de política pública un valor que exprese cuánto encuadra la educación en IA como cultivo moral dirigido por el Estado, frente a cuánto la encuadra como conducta regulada por normas?
+
+\textbf{P2. ¿Difieren los países?} ¿Se separan los siete países en ese eje, y la separación sobrevive cuando se controla por la región del documento, por su tema y por el origen cultural del instrumento que mide?
+
+\textbf{P3. ¿Coinciden los métodos?} ¿Dos procedimientos de medición independientes, uno basado en distancias semánticas y otro en juicio de lectura, producen el mismo ordenamiento de países? Si no coinciden, ¿qué revela el desacuerdo?
+
+P1 es una pregunta de instrumento, P2 de comparación y P3 de validez. Las tres se responden con el mismo corpus.
 
 
 \section{Objetivos}
 
-El objetivo general es comparar las políticas de educación en inteligencia artificial de siete países mediante procesamiento de lenguaje natural para identificar los temas que las caracterizan, explorar sus convergencias y divergencias, y verificar que las similitudes detectadas no sean un artefacto del idioma de los documentos.
+\textbf{Objetivo general.} Medir en las políticas de educación en inteligencia artificial de siete países el grado en que el Estado se presenta como formador moral de la población frente a regulador de conductas, y evaluar la confiabilidad de esa medición mediante dos procedimientos independientes.
 
-Los objetivos específicos se organizan en torno a la secuencia analítica. Se parte de la construcción de un corpus de 13 documentos de los siete países: un documento por país más siete documentos longitudinales de China. Sobre este corpus se identifican primero los temas que emergen sin imponer categorías previas. Después se evalúa cada documento en nueve dimensiones derivadas de marcos de la OCDE~\citep{oecd2021epo} y UNESCO~\citep{unesco2019beijing}. El diseño contempla también verificar si el idioma de los documentos infla las similitudes observadas, contrastar los temas emergentes con las dimensiones del marco analítico, y trazar la evolución de las políticas de China entre 2017 y 2025.
+\textbf{Objetivos específicos.}
+
+\begin{enumerate}
+    \item Construir un corpus de documentos oficiales bajo criterios de inclusión explícitos, verificables y aplicables por un tercero.
+    \item Pre-registrar el libro de códigos del eje \ejedf y las predicciones del estudio antes de ejecutar cualquier medición.
+    \item Medir el eje por proyección bipolar sobre representaciones vectoriales del texto (Vía A).
+    \item Medir el mismo eje mediante un panel de siete modelos de lenguaje de origen cultural mixto que aplican el libro de códigos pasaje por pasaje (Vía B).
+    \item Estimar el acuerdo entre jueces y la magnitud del sesgo atribuible al origen del juez.
+    \item Someter el resultado a tres pruebas de confusión: región de Asia oriental, tema del documento y estructura de Estado-partido.
+    \item Contrastar ambas vías y documentar tanto sus coincidencias como sus desacuerdos.
+\end{enumerate}
+
+
+\section{Hipótesis}
+
+Las cuatro predicciones se registraron en el repositorio antes de correr la medición. El registro es la marca de tiempo del commit que fijó el libro de códigos y la configuración.
+
+\begin{description}
+    \item[H1] China puntúa más alto que los seis países de tradición liberal en el eje \ejedf.
+    \item[H2] La diferencia no se explica por pertenecer a Asia oriental: los vecinos de tradición confuciana sin Estado-partido no reproducen el efecto.
+    \item[H3] Los jueces de origen chino y los de origen occidental producen puntuaciones equivalentes.
+    \item[H4] Los dos procedimientos de medición convergen en el mismo ordenamiento de países.
+\end{description}
+
+H4 es la hipótesis que este estudio esperaba confirmar como control de rutina. Su rechazo es el resultado principal, y el capítulo~\ref{cap:resultados} explica por qué.
 
 
 \section{Justificación}
@@ -42,13 +80,21 @@ Esta investigación ofrece un análisis exploratorio de las políticas de educac
 
 Los siete países representan enfoques diversos ante un desafío compartido. Cuando dos políticas de países distintos se parecen, la similitud puede deberse a distintos mecanismos: que un país haya aprendido de la experiencia del otro, que ambos compitan por posicionarse en un área estratégica, que uno emule al otro, o que ambos hayan adoptado un marco internacional común~\citep{shipan2012diffusion}. El trazado de pasajes compartidos entre documentos, que esta investigación realiza, permite evaluar empíricamente cuál de estos mecanismos podría operar entre los países del corpus.
 
-Desde lo metodológico, la contribución reside en dos elementos ausentes en la educación comparada: la secuencia que primero descubre temas y luego los contrasta con un marco predefinido, y la verificación de que el idioma no distorsione las similitudes observadas.
+Desde lo metodológico, la contribución reside en tres elementos poco frecuentes en la educación comparada: medir un constructo teórico declarado por adelantado en vez de describir vocabulario, someter la medición a dos procedimientos independientes en lugar de confiar en uno, y publicar el desacuerdo entre ambos como resultado y no como ruido.
 
 
 \section{Alcances y Limitaciones}
 
-El alcance de este estudio exploratorio se limita a los documentos de política de acceso público de los siete países seleccionados, publicados entre 2017 y 2025 en inglés, español, alemán y chino. La investigación examina el contenido de los documentos, es decir, qué dicen, qué priorizan y qué omiten. No examina el proceso de elaboración ni la implementación.
+El alcance se limita a documentos de política de acceso público de los siete países seleccionados, vigentes al 30 de junio de 2026, en inglés, español, alemán y chino. La investigación examina qué dicen los documentos, qué priorizan y qué omiten. No examina cómo se elaboraron ni cómo se implementan. Medir el encuadre de un texto no dice nada sobre lo que ocurre en las aulas.
 
-Si bien un investigador que no utiliza procesamiento de lenguaje natural tendría dificultades para comparar directamente textos en cuatro idiomas, los modelos de representación semántica multilingüe permiten ubicar textos de diferentes idiomas en un mismo espacio de significado~\citep{reimers2019sentencebert}, lo que habilita la comparación sin requerir traducción previa de todos los documentos al mismo idioma.
+Los modelos de representación semántica multilingüe permiten ubicar textos de idiomas distintos en un mismo espacio de significado~\citep{reimers2019sentencebert}, lo que habilita la comparación sin traducir todo al mismo idioma. Esa capacidad es también el objeto de la pregunta P3: el estudio examina hasta dónde llega.
 
-Las limitaciones principales tienen que ver con la heterogeneidad del corpus: los documentos varían en género discursivo, estatus legal y etapa dentro del ciclo de políticas. El control lingüístico atenúa pero no elimina el sesgo idiomático, y los documentos de China se analizan en traducción al inglés. La muestra de siete casos es intencional y no permite generalización estadística.
+Cuatro limitaciones acotan lo que puede concluirse.
+
+\textbf{Asimetría de tamaño.} Los documentos varían en dos órdenes de magnitud: el de Canadá aporta 15 fragmentos y el de Sudáfrica 1{,}303. El muestreo fija diez pasajes por país para que la comparación no dependa del volumen, pero un documento corto ofrece menos evidencia de la que ofrece uno largo.
+
+\textbf{Heterogeneidad de género.} El corpus mezcla estrategias, planes de acción, reportes de comisión y guías. El género se registra como metadato y se usa como control, no se elimina.
+
+\textbf{Ausencia de ancla humana.} Ningún codificador humano validó las clasificaciones. Se reporta el acuerdo entre jueces automáticos, que es una medida de confiabilidad, no de validez~\citep{halterman2025codebook}. El capítulo de conclusiones detalla el procedimiento que cerraría esta brecha.
+
+\textbf{Muestra intencional.} Siete casos elegidos por región no permiten generalización estadística a la población de países.

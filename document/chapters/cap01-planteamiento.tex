@@ -1,8 +1,8 @@
-%% cap01-planteamiento.tex — Planteamiento del Problema
+%% cap01-planteamiento.tex, Planteamiento del Problema
 \chapter{Planteamiento del Problema}
 \label{cap:planteamiento}
 
-% v2 — 7 países, unsupervised-first, 9 dimensiones en 3 niveles, policy diffusion tracing
+% v2, 7 países, unsupervised-first, 9 dimensiones en 3 niveles, policy diffusion tracing
 
 
 \section{Descripción de la Problemática}
@@ -44,7 +44,11 @@ La investigación más próxima a la presente es la de Kundu y Bej (2025), quien
 \section{Propósito}
 \label{sec:proposito}
 
-¿En qué medida la similitud observada entre políticas de educación en IA de diferentes países refleja convergencia temática genuina, y en qué medida es un artefacto de proximidad lingüística, género discursivo compartido o influencia de marcos internacionales comunes? Esta investigación responde esa pregunta mediante un análisis comparativo de las políticas de siete países, utilizando una metodología \textit{unsupervised-first} que combina modelado de tópicos no supervisado con BERTopic, análisis semántico por dimensiones pre-registradas, control lingüístico y validación cruzada. Las herramientas computacionales no sustituyen la lectura atenta de los documentos; responden una pregunta que la lectura humana por sí sola no puede resolver: ¿qué proporción de la similitud entre dos documentos de política es atribuible al idioma y qué proporción al contenido?
+Comparar el vocabulario de dos políticas dice poco. Dos gobiernos pueden escribir «formación docente en IA» y querer decir cosas incompatibles. Esta investigación mide algo más específico: \textbf{a quién le corresponde formar a las personas}. Un Estado puede plantear la educación en IA como cultivo moral de la población, donde el gobierno fija la dirección y escuelas, empresas y familias se alinean a ella. O puede plantearla como regulación de conductas, donde el Estado pone reglas y límites y el resto de los actores decide dentro de ellos.
+
+La tradición confuciana nombra esa oposición desde hace dos milenios. Gobernar por la virtud, \dezhi\zhg{德治}, sostiene que la autoridad legítima educa con el ejemplo y forma el carácter de los gobernados. Gobernar por la norma, \fa\zhg{法}, sostiene que la autoridad se ejerce mediante reglas públicas iguales para todos, con premio y castigo previsibles~\citep{pines2023legalism}. La oposición no es exclusiva de China: es la misma tensión que atraviesa la teoría política occidental entre el Estado formador y el Estado limitado. Lo que la tradición china aporta es un vocabulario preciso para nombrarla.
+
+El propósito de esta investigación es medir dónde se sitúa cada política en ese eje, y averiguar si esa medición se sostiene.
 
 
 \section{Preguntas de Investigación}
@@ -53,20 +57,22 @@ La investigación más próxima a la presente es la de Kundu y Bej (2025), quien
 \subsection{Pregunta central}
 \label{subsec:pregunta-central}
 
-¿En qué medida las políticas nacionales de educación en IA exhiben evidencia de difusión transfronteriza, y puede el análisis semántico distinguir convergencia temática genuina de similitud lingüística o estructural?
+¿Las políticas de educación en inteligencia artificial de siete países expresan concepciones distintas sobre quién forma a las personas, y esa diferencia se puede medir de manera reproducible?
 
 \subsection{Preguntas derivadas}
 \label{subsec:preguntas-derivadas}
 
+De la pregunta central se desprenden tres, una por cada cosa que hay que resolver para responderla.
+
 \begin{enumerate}
-  \item Cuando documentos de políticas de educación en IA de diferentes familias lingüísticas se representan en el mismo espacio vectorial, ¿los \textit{clusters} no supervisados reflejan alineación temática o proximidad lingüística?
+  \item[\textbf{P1.}] \textbf{¿Se puede medir?} ¿Es posible asignar a un pasaje de política pública un valor que exprese cuánto encuadra la educación en IA como cultivo moral dirigido por el Estado, frente a cuánto la encuadra como conducta regulada por normas?
 
-  \item ¿Qué tópicos latentes emergen del análisis no supervisado del corpus que no son capturados por marcos comparativos existentes como el Consenso de Beijing~\citep{unesco2019beijing} o las dimensiones de \citet{miao2021guidance}?
+  \item[\textbf{P2.}] \textbf{¿Difieren los países?} ¿Se separan los siete países en ese eje, y la separación sobrevive cuando se controla por la región del documento, por su tema y por el origen cultural del instrumento que mide?
 
-  \item Para los pares de países con alta similitud semántica, ¿pueden trazarse pasajes compartidos a documentos fuente comunes (UNESCO, OCDE), lo que sugeriría difusión institucional más que convergencia independiente?
-
-  \item ¿Qué evolución temática se observa en el ecosistema de políticas de educación en IA de China entre 2017 y 2025, y qué revela esta trayectoria sobre las limitaciones de la comparación cross-nacional basada en documentos únicos?
+  \item[\textbf{P3.}] \textbf{¿Coinciden los métodos?} ¿Dos procedimientos de medición independientes, uno basado en distancias semánticas y otro en juicio de lectura, producen el mismo ordenamiento de países? Si no coinciden, ¿qué revela el desacuerdo?
 \end{enumerate}
+
+P1 es una pregunta de instrumento, P2 de comparación y P3 de validez. Las tres se responden con el mismo corpus.
 
 
 \section{Objetivo General y Objetivos Específicos}
@@ -75,24 +81,41 @@ La investigación más próxima a la presente es la de Kundu y Bej (2025), quien
 \subsection{Objetivo general}
 \label{subsec:objetivo-general}
 
-Analizar comparativamente las políticas públicas sobre educación en inteligencia artificial de siete países mediante un enfoque \textit{unsupervised-first} que integre modelado de tópicos, análisis semántico por dimensiones pre-registradas y control lingüístico, con el fin de distinguir convergencia temática genuina de similitud atribuible a factores lingüísticos o estructurales, e identificar tópicos latentes no capturados por los marcos analíticos existentes.
+Medir en las políticas de educación en inteligencia artificial de siete países el grado en que el Estado se presenta como formador moral de la población frente a regulador de conductas, y evaluar la confiabilidad de esa medición mediante dos procedimientos independientes.
 
 \subsection{Objetivos específicos}
 \label{subsec:objetivos-especificos}
 
 \begin{enumerate}
-  \item[\textbf{OE1.}] Construir un corpus documental sistematizado de los documentos de política de educación en IA de siete países, incluyendo siete documentos longitudinales de China (2017--2025), con criterios explícitos de selección, preprocesamiento y segmentación.
+  \item[\textbf{OE1.}] Construir un corpus de documentos oficiales bajo criterios de inclusión explícitos, verificables y aplicables por un tercero.
 
-  \item[\textbf{OE2.}] Ejecutar un análisis no supervisado mediante BERTopic sobre el corpus embebido y documentar los tópicos emergentes antes de aplicar ningún marco analítico previo, siguiendo los principios de la Teoría Fundamentada Computacional~\citep{nelson2020computational}.
+  \item[\textbf{OE2.}] Pre-registrar el libro de códigos del eje \ejedf y las predicciones del estudio antes de ejecutar cualquier medición, utilizando el registro en control de versiones como mecanismo de pre-registro~\citep{nosek2018preregistration}.
 
-  \item[\textbf{OE3.}] Pre-registrar nueve dimensiones analíticas organizadas en tres niveles (contenido, proceso, resultados), derivadas del \textit{Education Policy Outlook} de la OCDE~\citep{oecd2021epo}, el Consenso de Beijing~\citep{unesco2019beijing} y la guía de \citet{miao2021guidance}, y evaluar cada documento mediante \textit{scoring} semántico supervisado, utilizando el registro en control de versiones como mecanismo de pre-registro~\citep{nosek2018preregistration}.
+  \item[\textbf{OE3.}] Medir el eje por proyección bipolar sobre representaciones vectoriales del texto (Vía A).
 
-  \item[\textbf{OE4.}] Cuantificar la proporción de similitud entre documentos atribuible a proximidad lingüística, mediante una línea base monolingüe (traducción al inglés) y la comparación de similitudes intra-familia versus inter-familia lingüística.
+  \item[\textbf{OE4.}] Medir el mismo eje mediante un panel de siete modelos de lenguaje de origen cultural mixto que aplican el libro de códigos pasaje por pasaje (Vía B).
 
-  \item[\textbf{OE5.}] Comparar los hallazgos del análisis supervisado con los del no supervisado para identificar tópicos latentes no capturados por el marco de nueve dimensiones (puntos ciegos del \textit{framework}) y dimensiones pre-registradas que no emergen de los datos (estructura impuesta).
+  \item[\textbf{OE5.}] Estimar el acuerdo entre jueces y la magnitud del sesgo atribuible al origen del juez.
 
-  \item[\textbf{OE6.}] Analizar la evolución temporal de las políticas de educación en IA de China entre 2017 y 2025 como caso longitudinal que permite examinar la trayectoria de un ecosistema de políticas a lo largo del tiempo.
+  \item[\textbf{OE6.}] Someter el resultado a tres pruebas de confusión: región de Asia oriental, tema del documento y estructura de Estado-partido.
+
+  \item[\textbf{OE7.}] Contrastar ambas vías y documentar tanto sus coincidencias como sus desacuerdos.
 \end{enumerate}
+
+
+\section{Hipótesis}
+\label{sec:hipotesis}
+
+Las cuatro predicciones se registraron en el repositorio antes de correr la medición.
+
+\begin{description}
+  \item[H1] China puntúa más alto que los seis países de tradición liberal en el eje \ejedf.
+  \item[H2] La diferencia no se explica por pertenecer a Asia oriental: los vecinos de tradición confuciana sin Estado-partido no reproducen el efecto.
+  \item[H3] Los jueces de origen chino y los de origen occidental producen puntuaciones equivalentes.
+  \item[H4] Los dos procedimientos de medición convergen en el mismo ordenamiento de países.
+\end{description}
+
+H4 se planteó como control de rutina. Su rechazo es el resultado principal, y el capítulo~\ref{cap:resultados} explica por qué.
 
 
 \section{Justificación}

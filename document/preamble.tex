@@ -1,7 +1,7 @@
 %% preamble.tex — Configuración adicional
 
 % ── Thesis metadata ──
-\tesistitle{Análisis Comparativo de Políticas Públicas sobre Educación en Inteligencia Artificial: Un Estudio de 12 Países y 4 Organismos Internacionales mediante Análisis Semántico y Visualización Interactiva}
+\tesistitle{Gobernar por la Virtud o Gobernar por la Norma: Medición Comparada del Encuadre Estatal en Políticas Públicas de Educación en Inteligencia Artificial de Siete Países}
 \tesisauthor{Hesus García Cobos}
 \tesisdirector{Dr. Herminio Sánchez de la Barquera y Arroyo}
 \tesisprograma{Maestría en Pedagogía}
@@ -15,6 +15,7 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{tikz}
+\usetikzlibrary{babel}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
@@ -37,3 +38,31 @@
 \newcommand{\ia}{IA}
 \newcommand{\nlp}{PLN}
 \newcommand{\chromadb}{ChromaDB}
+
+% ── Términos chinos ─────────────────────────────────────────────────
+% El pinyin se escribe con macros de acento (no con glifos Unicode) para que
+% compile igual en pdfLaTeX/Overleaf y en XeLaTeX/Tectonic: ǎ ǐ ū ē no existen
+% en las fuentes Type1 con codificación T1.
+\newcommand{\dezhi}{\textit{d\'ezh\`{\i}}}
+\newcommand{\fa}{\textit{f\v{a}}}
+\newcommand{\ren}{\textit{r\'en}}
+\newcommand{\lipin}{\textit{l\v{\i}}}
+\newcommand{\yi}{\textit{y\`{\i}}}
+\newcommand{\xiushen}{\textit{xi\=ush\=en}}
+\newcommand{\hepin}{\textit{h\'e}}
+\newcommand{\ejedf}{\dezhi\,$\leftrightarrow$\,\fa}
+
+% Glifos chinos: se muestran solo si el motor los soporta. Bajo pdfLaTeX se
+% omite el glifo y queda la transliteración, que es lo que se lee en voz alta.
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{xeCJK}
+  % Droid Sans Fallback es un TTF simple; las Noto CJK vienen como colección
+  % OTC y XeTeX no las carga sin índice, así que se prueba primero la simple.
+  \IfFontExistsTF{Droid Sans Fallback}
+    {\setCJKmainfont{Droid Sans Fallback}\newcommand{\zh}[1]{#1}\newcommand{\zhg}[1]{\,(#1)}}
+    {\newcommand{\zh}[1]{}\newcommand{\zhg}[1]{}}
+\else
+  \newcommand{\zh}[1]{}
+  \newcommand{\zhg}[1]{}
+\fi
