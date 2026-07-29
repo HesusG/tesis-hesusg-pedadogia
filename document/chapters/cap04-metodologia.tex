@@ -40,7 +40,7 @@ Los criterios se redactaron antes de revisar la vigencia y después se aplicaron
 
 \subsection{Composición y bajas}
 
-El corpus final reúne 15 documentos de siete países, para un total de 2{,}900 fragmentos de texto (cuadro~\ref{tab:corpus}).
+El corpus final reúne 15 documentos de siete países, para un total de 3{,}095 fragmentos de texto (cuadro~\ref{tab:corpus}).
 
 \begin{table}[htbp]
 \centering
@@ -56,9 +56,9 @@ Colombia & Latinoamérica & 1 & 764 \\
 Alemania & Europa & 1 & 230 \\
 Australia & Oceanía & 1 & 161 \\
 Estados Unidos & Norteamérica & 1 & 156 \\
-Canadá & Norteamérica & 1 & 15 \\
+Canadá & Norteamérica & 1 & 210 \\
 \hline
-\textbf{Total} & & \textbf{15} & \textbf{2{,}900} \\
+\textbf{Total} & & \textbf{15} & \textbf{3{,}095} \\
 \hline
 \end{tabular}
 \end{table}
@@ -67,7 +67,7 @@ Dos documentos del corpus original fueron dados de baja por el criterio C4. La \
 
 Que dos de siete países estuvieran representados por textos derogados no es un detalle de mantenimiento. Significaba que la medición describía posturas estatales explícitamente abandonadas.
 
-Un tercer documento resultó inadmisible, esta vez por el criterio C5, y no se detectó al construir el corpus sino al analizar los resultados. El texto canadiense es una captura de navegador del sitio de CIFAR, no la estrategia. El capítulo~\ref{cap:resultados} documenta el caso, porque su descubrimiento forma parte del resultado y no solo del procedimiento.
+Un tercer documento resultó inadmisible, esta vez por el criterio C5, y no se detectó al construir el corpus sino al analizar los resultados. El texto canadiense era una captura de navegador del sitio de CIFAR, no la estrategia. Se sustituyó por \textit{Canada's National Artificial Intelligence Strategy: AI for All}, adoptada por el Ministro de Innovación, Ciencia e Industria el 4 de junio de 2026 y por tanto vigente al corte. El texto pasa de 6.5 a 94.7 kilobytes, y la contribución canadiense al corpus de 15 a 210 fragmentos. El capítulo~\ref{cap:resultados} documenta el caso, porque su descubrimiento forma parte del resultado y no solo del procedimiento.
 
 De ahí se desprende un control que este estudio no tenía y debería haber tenido: \textbf{una revisión automatizada de material de navegación de sitio web} sobre los pasajes muestreados, buscando direcciones web, marcas de captura, menús, listas de personal y llamados a la acción. Aplicada de forma retroactiva a los siete países, la revisión marcó cinco de los diez pasajes canadienses, uno de los sudafricanos correspondiente a una URL dentro de una referencia, y ninguno en los cinco países restantes.
 
@@ -83,7 +83,7 @@ La existencia misma de un documento nacional de IA en educación funciona entonc
 
 Cada documento se divide en fragmentos de 500 caracteres con 50 de traslape, y se almacena en una base vectorial junto con sus metadatos: país, región, año, género discursivo, órgano adoptante e identificador de documento.
 
-Para la Vía B se muestrean diez pasajes por país. El muestreo recupera los fragmentos semánticamente más cercanos a una consulta sobre gobernanza, de modo que la comparación se hace sobre material temáticamente equiparable y no sobre secciones arbitrarias. Fijar diez por país impide que un documento de 1{,}303 fragmentos domine la comparación frente a uno de 15.
+Para la Vía B se muestrean diez pasajes por país. El muestreo recupera los fragmentos semánticamente más cercanos a una consulta sobre gobernanza, de modo que la comparación se hace sobre material temáticamente equiparable y no sobre secciones arbitrarias. Fijar diez por país impide que un documento de 1{,}303 fragmentos domine la comparación frente a uno de 156.
 
 El plan quinquenal nacional chino se excluye de la comparación entre países y se reserva para el análisis en profundidad de China. La razón es de simetría: ningún otro país aporta un instrumento equivalente, y dejarlo dentro compararía cosas distintas.
 

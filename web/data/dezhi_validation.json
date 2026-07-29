@@ -2,36 +2,36 @@
   "agreement": {
     "n_units": 70,
     "observed_agreement": {
-      "exact": 0.8306122448979592,
+      "exact": 0.8170068027210884,
       "within_1": 0.991156462585034,
       "n_pairs": 1470
     },
     "panel": {
-      "fleiss_kappa": 0.5444056100730383,
-      "krippendorff_alpha_ordinal": 0.6972227584833932,
-      "krippendorff_alpha_interval": 0.705036694480748,
-      "krippendorff_alpha_nominal": 0.5453353945422772
+      "fleiss_kappa": 0.5223652360452812,
+      "krippendorff_alpha_ordinal": 0.6806052851576037,
+      "krippendorff_alpha_interval": 0.6929193579956938,
+      "krippendorff_alpha_nominal": 0.5233400008696786
     },
     "within_western": {
-      "fleiss_kappa": 0.6187450357426529,
-      "krippendorff_alpha_ordinal": 0.7411157260473071
+      "fleiss_kappa": 0.5908648122091134,
+      "krippendorff_alpha_ordinal": 0.7240406550800205
     },
     "within_chinese": {
-      "fleiss_kappa": 0.4964151172681978,
-      "krippendorff_alpha_ordinal": 0.6729018524760607
+      "fleiss_kappa": 0.48345671913558075,
+      "krippendorff_alpha_ordinal": 0.6619628696633587
     }
   },
   "origin_bias": {
     "n_paired_passages": 70,
-    "mean_western": 0.09047619047619047,
-    "mean_chinese": 0.03214285714285714,
-    "mean_gap_western_minus_chinese": 0.05833333333333333,
+    "mean_western": 0.07619047619047618,
+    "mean_chinese": 0.02857142857142857,
+    "mean_gap_western_minus_chinese": 0.04761904761904761,
     "ci95": [
-      0.0035714285714285644,
-      0.11785714285714284
+      -0.01190476190476191,
+      0.11071428571428571
     ],
-    "excludes_zero": true,
-    "pearson_r_passage_level": 0.9071245031789563,
+    "excludes_zero": false,
+    "pearson_r_passage_level": 0.8979622255035966,
     "n_boot": 5000,
     "seed": 42
   },
@@ -53,10 +53,10 @@
       ]
     },
     "canada": {
-      "mean": 0,
+      "mean": -0.05714285714285714,
       "n_passages": 10,
       "ci95": [
-        0,
+        -0.14285714285714285,
         0
       ]
     },
@@ -105,28 +105,28 @@
       "australia"
     ],
     "via_a_median_z": {
-      "china": 0.9025358353170208,
-      "eeuu": -0.024192859448556425,
-      "canada": 0.8812155629051877,
-      "colombia": -0.15599222123801676,
-      "alemania": 0.12613616894959548,
-      "sudafrica": 0.08399804731422306,
-      "australia": 0.5061871314320003
+      "china": 0.8450601014290294,
+      "eeuu": -0.0721159191922292,
+      "canada": 0.778177679148427,
+      "colombia": -0.20255669959458533,
+      "alemania": 0.07666352492000306,
+      "sudafrica": 0.03495976098533633,
+      "australia": 0.4527969406345835
     },
     "via_b_mean_llm": {
       "china": 0.9428571428571428,
       "eeuu": -0.4857142857142857,
-      "canada": 0,
+      "canada": -0.05714285714285714,
       "colombia": 0.014285714285714285,
       "alemania": -0.1,
       "sudafrica": 0.05714285714285714,
       "australia": -0.02857142857142857
     },
-    "spearman": 0.32142857142857145,
-    "pearson": 0.6292841803752938,
+    "spearman": 0.2857142857142857,
+    "pearson": 0.6167015306188504,
     "china_vs_canada": {
-      "via_a_gap": 0.021320272411833097,
-      "via_b_gap": 0.9428571428571428
+      "via_a_gap": 0.06688242228060248,
+      "via_b_gap": 1.0
     }
   },
   "n_classifications": 490

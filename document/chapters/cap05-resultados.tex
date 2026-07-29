@@ -8,14 +8,14 @@
 
 Este capítulo reporta los resultados en el orden de las tres preguntas. La sección~\ref{sec:res-p1} responde si el constructo se puede medir. La sección~\ref{sec:res-p2} responde si los países difieren y si la diferencia sobrevive a los controles. La sección~\ref{sec:res-p3} responde si los dos procedimientos coinciden, y es donde está el resultado principal.
 
-Todos los valores provienen de 1{,}120 clasificaciones individuales y de la proyección de 2{,}900 fragmentos de texto. Los intervalos son de confianza al 95\% por remuestreo con 5{,}000 réplicas y semilla fija.
+Todos los valores provienen de 1{,}120 clasificaciones individuales y de la proyección de 3{,}095 fragmentos de texto. Los intervalos son de confianza al 95\% por remuestreo con 5{,}000 réplicas y semilla fija.
 
 \section{P1. La Medición es Posible, con una Salvedad}
 \label{sec:res-p1}
 
 \subsection{Acuerdo entre jueces}
 
-Los siete jueces coincidieron de forma exacta en el 83.1\% de los 1{,}470 pares evaluados, y quedaron dentro de un punto de la escala en el 99.1\%. Ese segundo número importa más de lo que parece: significa que prácticamente nunca hubo un desacuerdo de fondo. Ningún par de jueces leyó el mismo pasaje y lo situó en polos contrarios.
+Los siete jueces coincidieron de forma exacta en el 81.7\% de los 1{,}470 pares evaluados, y quedaron dentro de un punto de la escala en el 99.1\%. Ese segundo número importa más de lo que parece: significa que prácticamente nunca hubo un desacuerdo de fondo. Ningún par de jueces leyó el mismo pasaje y lo situó en polos contrarios.
 
 Los índices corregidos por azar aparecen en el cuadro~\ref{tab:acuerdo}.
 
@@ -27,37 +27,39 @@ Los índices corregidos por azar aparecen en el cuadro~\ref{tab:acuerdo}.
 \hline
 \textbf{Medida} & \textbf{Valor} \\
 \hline
-Acuerdo exacto observado & 0.831 \\
+Acuerdo exacto observado & 0.817 \\
 Acuerdo dentro de $\pm 1$ & 0.991 \\
-Kappa de Fleiss & 0.544 \\
-Alfa de Krippendorff, nominal & 0.545 \\
-Alfa de Krippendorff, ordinal & 0.697 \\
-Alfa de Krippendorff, intervalar & 0.705 \\
+Kappa de Fleiss & 0.522 \\
+Alfa de Krippendorff, nominal & 0.523 \\
+Alfa de Krippendorff, ordinal & 0.681 \\
+Alfa de Krippendorff, intervalar & 0.693 \\
 \hline
 \end{tabular}
 \end{table}
 
-El alfa ordinal, que es el nivel de medición pertinente para una escala de $-2$ a $+2$, alcanza 0.697. El umbral convencional para conclusiones tentativas en análisis de contenido se sitúa en 0.667. La medición lo supera, pero no con holgura.
+El alfa ordinal, que es el nivel de medición pertinente para una escala de $-2$ a $+2$, alcanza 0.681. El umbral convencional para conclusiones tentativas en análisis de contenido se sitúa en 0.667. La medición lo supera, pero no con holgura.
 
-La distancia entre el acuerdo observado (0.831) y el kappa (0.544) es la paradoja del kappa operando. La corrección por azar penaliza la concentración de la distribución en el valor cero, que es donde cae la mayoría de los pasajes de política pública porque no tratan la relación entre poder estatal y persona. Reportar solo el kappa haría parecer mediocre una medición en la que casi nunca hubo desacuerdo sustantivo.
+La distancia entre el acuerdo observado (0.817) y el kappa (0.522) es la paradoja del kappa operando. La corrección por azar penaliza la concentración de la distribución en el valor cero, que es donde cae la mayoría de los pasajes de política pública porque no tratan la relación entre poder estatal y persona. Reportar solo el kappa haría parecer mediocre una medición en la que casi nunca hubo desacuerdo sustantivo.
 
 \subsection{El panel no es homogéneo}
 
-Separar el panel por origen revela una diferencia de consistencia interna. Los tres jueces occidentales concuerdan entre sí más que los cuatro chinos: alfa ordinal de 0.741 frente a 0.673.
+Separar el panel por origen revela una diferencia de consistencia interna. Los tres jueces occidentales concuerdan entre sí más que los cuatro chinos: alfa ordinal de 0.724 frente a 0.662.
 
 La lectura obvia sería que los jueces occidentales son mejores instrumentos. No se sostiene. Cuatro jueces producen más pares que tres, y la comparación no está balanceada. Lo que sí puede afirmarse es que la dispersión dentro del subpanel chino es mayor, y que ninguno de los dos subgrupos alcanza por sí solo la confiabilidad del panel completo en el nivel intervalar.
 
-\subsection{Sesgo de origen: pequeño, pero real}
+\subsection{Sesgo de origen: no se distingue de cero}
 
-La pregunta era si el origen cultural del instrumento contamina la medición de un constructo cultural. La respuesta es que sí, en una magnitud pequeña y medible.
+La pregunta era si el origen cultural del instrumento contamina la medición de un constructo cultural.
 
-Los jueces occidentales puntuaron en promedio $+0.090$ y los chinos $+0.032$, sobre los mismos 70 pasajes. La diferencia es de $+0.058$, con intervalo de confianza $[+0.004,\ +0.118]$. El intervalo excluye el cero, apenas.
+Los jueces occidentales puntuaron en promedio $+0.076$ y los chinos $+0.029$, sobre los mismos 70 pasajes. La diferencia es de $+0.048$, con intervalo de confianza $[-0.012,\ +0.111]$. \textbf{El intervalo incluye el cero}, de modo que el sesgo no se distingue del azar de muestreo.
 
-La hipótesis H3, que predecía equivalencia entre subpaneles, queda rechazada.
+La hipótesis H3, que predecía equivalencia entre subpaneles, no queda rechazada.
 
-Ahora bien, dos consideraciones acotan el alcance del rechazo. La primera es la magnitud: $0.058$ puntos en una escala de cinco valores es una fracción de la resolución del instrumento. La segunda es la correlación entre subpaneles a nivel de pasaje, que alcanza $r = 0.907$. Los dos subgrupos ordenan los pasajes casi igual; difieren en un desplazamiento constante y leve, no en el juicio.
+Conviene declarar que este resultado cambió al corregir el corpus. Con el documento canadiense defectuoso la brecha era de $+0.058$ con intervalo $[+0.004,\ +0.118]$, que excluía el cero por muy poco margen y llevaba a rechazar H3. Sustituir un documento movió la conclusión, lo que dice menos sobre el sesgo de origen que sobre la fragilidad de un intervalo cuyo extremo roza el cero. La lectura prudente es que \textbf{si existe un sesgo de origen, es demasiado pequeño para que setenta pasajes lo detecten}.
 
-El signo del sesgo merece atención. Los jueces occidentales, no los chinos, tienden a puntuar más alto en el polo \dezhi. Si el sesgo esperado fuera que los modelos chinos favorecen el encuadre confuciano, el dato lo contradice.
+Dos datos refuerzan esa lectura. La magnitud, $0.048$ puntos en una escala de cinco valores, es una fracción de la resolución del instrumento. Y la correlación entre subpaneles a nivel de pasaje alcanza $r = 0.898$: los dos subgrupos ordenan los pasajes casi igual.
+
+El signo merece atención de todos modos. Son los jueces occidentales, no los chinos, quienes puntúan más alto en el polo \dezhi. Si la sospecha razonable fuera que los modelos de origen chino favorecen el encuadre confuciano, el dato apunta en dirección contraria.
 
 \subsection{Qué queda pendiente}
 
@@ -83,8 +85,8 @@ El cuadro~\ref{tab:paises} presenta la puntuación media de cada país según el
 China & $+0.943$ & $[+0.729,\ +1.171]$ \\
 Sudáfrica & $+0.057$ & $[-0.043,\ +0.214]$ \\
 Colombia & $+0.014$ & $[\phantom{+}0.000,\ +0.043]$ \\
-Canadá & $\phantom{+}0.000$ & $[\phantom{+}0.000,\ \phantom{+}0.000]$ \\
 Australia & $-0.029$ & $[-0.171,\ +0.086]$ \\
+Canadá & $-0.057$ & $[-0.143,\ \phantom{+}0.000]$ \\
 Alemania & $-0.100$ & $[-0.243,\ \phantom{+}0.000]$ \\
 Estados Unidos & $-0.486$ & $[-0.871,\ -0.143]$ \\
 \hline
@@ -95,7 +97,7 @@ China se separa de los seis restantes de forma inequívoca. Su intervalo, que va
 
 Estados Unidos es el único país con puntuación negativa apreciable: su plan de 2025 presenta la política de IA en términos de desregulación y liderazgo de la industria, con el Estado retirándose de la conducción.
 
-Canadá obtiene cero exacto, con unanimidad de los siete jueces en los diez pasajes. Esa unanimidad resultó ser un dato sobre el corpus y no sobre Canadá. La sección~\ref{sec:defecto-canada} lo documenta.
+Canadá obtiene $-0.057$, en el mismo grupo indistinguible de cero donde caen Sudáfrica, Colombia, Australia y Alemania. Ese valor procede de la estrategia nacional vigente, adoptada en junio de 2026. La sección~\ref{sec:defecto-canada} explica por qué hizo falta sustituir el documento anterior y qué se aprendió del proceso.
 
 \subsection{No es la región}
 
@@ -142,43 +144,69 @@ El cuadro~\ref{tab:vias} enfrenta las dos mediciones.
 \hline
 \textbf{País} & \textbf{Vía A ($z$)} & \textbf{Vía B} \\
 \hline
-China & $+0.903$ & $+0.943$ \\
-Canadá & $+0.881$ & $\phantom{+}0.000$ \\
-Australia & $+0.506$ & $-0.029$ \\
-Alemania & $+0.126$ & $-0.100$ \\
-Sudáfrica & $+0.084$ & $+0.057$ \\
-Estados Unidos & $-0.024$ & $-0.486$ \\
-Colombia & $-0.156$ & $+0.014$ \\
+China & $+0.845$ & $+0.943$ \\
+Canadá & $+0.778$ & $-0.057$ \\
+Australia & $+0.453$ & $-0.029$ \\
+Alemania & $+0.077$ & $-0.100$ \\
+Sudáfrica & $+0.035$ & $+0.057$ \\
+Estados Unidos & $-0.072$ & $-0.486$ \\
+Colombia & $-0.203$ & $+0.014$ \\
 \hline
 \end{tabular}
 \end{table}
 
-La correlación de rangos entre ambas columnas es de $\rho = 0.321$. La correlación lineal es de $r = 0.629$. Ninguna de las dos permite tratar los métodos como intercambiables.
+La correlación de rangos entre ambas columnas es de $\rho = 0.286$. La correlación lineal es de $r = 0.617$. Ninguna de las dos permite tratar los métodos como intercambiables.
 
-\subsection{El caso Canadá, y lo que se encontró al abrirlo}
+\subsection{Un desacuerdo que primero destapó un error de datos}
 \label{sec:defecto-canada}
 
-El desacuerdo se concentra en un par. Para la Vía A, China puntúa $+0.903$ y Canadá $+0.881$: una diferencia de $0.021$ desviaciones típicas, con intervalos que se solapan por completo. Para la Vía B, la diferencia entre esos mismos dos países es de $0.943$ puntos completos de escala, y los intervalos no se tocan.
+El desacuerdo se concentra en un par de países, y su investigación ocurrió en dos tiempos que conviene narrar en orden porque el procedimiento forma parte del resultado.
 
-La primera hipótesis fue que el error estaba en el panel de jueces. Verificarla exigía leer el documento canadiense pasaje por pasaje, y esa lectura produjo un hallazgo que el diseño no anticipaba.
+\textbf{Primer tiempo.} En la corrida inicial, la Vía A situaba a Canadá en $+0.881$ y a China en $+0.903$: dos centésimas de diferencia. La Vía B daba a Canadá cero exacto, con unanimidad de los siete jueces. La primera hipótesis fue que el error estaba en el panel. Verificarla exigía leer el documento canadiense pasaje por pasaje.
 
-\textbf{El documento canadiense del corpus no es la estrategia canadiense.} Es una captura de navegador del sitio de CIFAR, fechada el 8 de septiembre de 2018 en el encabezado de cada página. Sus 15 fragmentos incluyen la ruta de navegación del sitio, la lista del comité asesor internacional con el cargo de cada miembro, un botón de donación y el pie de suscripción al boletín. De los diez pasajes muestreados para la medición, \textbf{cinco son material de ese tipo}.
+El documento no era la estrategia canadiense. Era una captura de navegador del sitio de CIFAR, con la fecha del 8 de septiembre de 2018 impresa en el encabezado de cada página. Sus 15 fragmentos incluían la ruta de navegación del sitio, la lista del comité asesor internacional con el cargo de cada miembro, un botón de donación y el pie de suscripción al boletín. De los diez pasajes muestreados, cinco eran material de ese tipo.
 
-Una auditoría de los pasajes muestreados de los siete países confirmó que el problema es exclusivo de Canadá: ningún pasaje de China, Estados Unidos, Colombia, Alemania o Australia contiene material de navegación de sitio web, y Sudáfrica presenta uno solo, correspondiente a una URL dentro de una referencia.
+El panel no se había equivocado. Los siete jueces leyeron un directorio de personal y asignaron cero, que es la respuesta correcta: ese texto no trata la relación entre poder estatal y persona. Quien se equivocó fue la Vía A, que le asignó $+0.881$.
 
-El documento incumple el criterio C5, que exige el texto oficial completo y no una página que hable de él. Es el mismo motivo por el que se rechazó la fuente vietnamita en el brazo de control. La diferencia es que aquel se detectó al construir el corpus y este sobrevivió hasta el análisis final.
+Una auditoría de los pasajes muestreados de los siete países confirmó que el problema era exclusivo de Canadá. Ningún pasaje de China, Estados Unidos, Colombia, Alemania o Australia contenía material de navegación de sitio web, y Sudáfrica presentaba uno solo, correspondiente a una URL dentro de una referencia.
 
-\subsection{El defecto convertido en la mejor demostración}
+\textbf{Segundo tiempo.} El documento se sustituyó por la estrategia nacional vigente, adoptada el 4 de junio de 2026, y se repitió la medición completa. Canadá pasa de 15 a 210 fragmentos, de 6.5 a 94.7 kilobytes de texto oficial.
 
-Corresponde declarar primero lo que este hallazgo invalida.
+La pregunta que importaba era si el empate desaparecía al comparar dos políticas de verdad.
 
-\textbf{Se retira la afirmación} de que el perfil confuciano de China y el de Canadá son estadísticamente indistinguibles en cinco de seis ejes. Esa afirmación describía la relación entre el plan educativo chino y una página web, no entre dos políticas nacionales. Canadá queda fuera de la comparación sustantiva hasta que se incorpore el documento correcto y se repita la medición.
+\textbf{No desaparece.} Con la estrategia canadiense real, la Vía A da China $+0.845$ y Canadá $+0.778$: una brecha de $0.067$ desviaciones típicas, con intervalos que siguen solapándose. La Vía B da China $+0.943$ y Canadá $-0.057$: una brecha de un punto completo de escala, con intervalos que no se tocan.
 
-Lo que el hallazgo \textbf{no} invalida es la conclusión metodológica. Al contrario, la agudiza.
+\subsection{Lo que la corrección cambia, y lo que no}
 
-Los siete jueces leyeron una lista de miembros de un comité asesor y asignaron cero. Es la respuesta correcta: ese pasaje no trata la relación entre poder estatal y persona. La Vía A leyó el mismo material y le asignó $+0.881$, a dos centésimas del plan de inteligencia artificial en educación de China.
+El cuadro~\ref{tab:antes-despues} resume el efecto de sustituir un documento.
 
-El método de proyección sobre vectores no distinguió \textit{un instrumento de política de Estado} de \textit{un directorio de personal con un botón de donación}, porque ambos comparten el vocabulario de la inteligencia artificial, el talento, lo nacional y el liderazgo.
+\begin{table}[htbp]
+\centering
+\caption{Efecto de sustituir el documento canadiense}
+\label{tab:antes-despues}
+\begin{tabular}{lrr}
+\hline
+\textbf{Cantidad} & \textbf{Antes} & \textbf{Después} \\
+\hline
+Canadá, Vía A & $+0.881$ & $+0.778$ \\
+Canadá, Vía B & $\phantom{+}0.000$ & $-0.057$ \\
+Brecha China--Canadá, Vía A & $0.021$ & $0.067$ \\
+Brecha China--Canadá, Vía B & $0.943$ & $1.000$ \\
+Ejes con intervalos solapados & 5 de 6 & 3 de 6 \\
+Alfa de Krippendorff, ordinal & $0.697$ & $0.681$ \\
+Sesgo de origen del juez & $+0.058$ & $+0.048$ \\
+Intervalo del sesgo & excluye 0 & \textbf{incluye 0} \\
+\hline
+\end{tabular}
+\end{table}
+
+Tres lecturas se siguen del cuadro.
+
+\textbf{El hallazgo principal se refuerza.} El empate entre China y Canadá en el eje \dezhi{} no era un artefacto del documento defectuoso. Persiste al enfrentar el plan educativo chino con una estrategia nacional de cincuenta páginas adoptada por un ministro, con ISBN y depósito legal. La Vía A sigue sin poder separarlos; la Vía B los separa por un punto entero.
+
+\textbf{El perfil de seis ejes se afina.} Con el documento real, tres de los seis ejes dejan de solaparse: benevolencia, rectitud y armonía ahora separan a los dos países. Siguen empatados ritual, cultivo de sí y, sobre todo, el propio eje \dezhi. Se retira por tanto la afirmación de que cinco de seis ejes eran empates: eran tres.
+
+\textbf{Una conclusión se vuelve más prudente.} El sesgo de origen del juez pasa de excluir el cero a incluirlo. H3 deja de rechazarse. Que sustituir un solo documento mueva esa conclusión indica que el efecto era demasiado pequeño para el tamaño de muestra disponible, no que el sesgo sea nulo.
 
 \subsection{Por qué ocurre}
 
@@ -186,7 +214,15 @@ El método de proyección mide de qué habla un texto. El constructo de este est
 
 Esa distinción es sintáctica y de rol, no léxica. Un lector la percibe en la primera lectura. Un método de proyección bipolar sobre promedios de vectores no.
 
-El caso canadiense es la versión extrema del mismo fenómeno, y por eso resulta más ilustrativo que un contraste entre dos políticas reales: cuando el texto ni siquiera es una política, el método sigue produciendo un valor alto, un intervalo estrecho y una gráfica presentable.
+La estrategia canadiense es un caso claro. Habla extensamente de formar talento, de preparar a la población para la inteligencia artificial y de soberanía tecnológica. Lo que no hace es presentar al Estado como el sujeto que forma el carácter de los canadienses: financia, habilita y regula. La Vía A registra el vocabulario compartido; la Vía B registra la diferencia de papeles.
+
+\subsection{El episodio como argumento a favor del diseño}
+
+El error de corpus no se detectó revisando el corpus. Se detectó porque \textbf{dos métodos independientes dieron respuestas incompatibles y hubo que averiguar cuál fallaba}.
+
+Con una sola vía de medición, el $+0.881$ habría entrado al capítulo de resultados como el dato de Canadá, con su intervalo de confianza y su lugar en la gráfica. Nadie habría tenido motivo para abrir el archivo.
+
+Ese es el argumento práctico a favor de medir dos veces, y no depende de que las dos mediciones coincidan. Depende de que el desacuerdo obligue a mirar.
 
 \subsection{Qué se sigue de esto}
 
@@ -213,18 +249,20 @@ El cuadro~\ref{tab:radar} presenta el perfil completo de la Vía A. Los valores 
 \hline
 \textbf{País} & \textbf{rén} & \textbf{lǐ} & \textbf{yì} & \textbf{xiūshēn} & \textbf{dézhì} & \textbf{hé} \\
 \hline
-China & $+0.99$ & $+0.18$ & $+1.07$ & $+0.52$ & $+0.90$ & $+0.45$ \\
-Canadá & $+0.98$ & $+0.27$ & $+0.72$ & $+0.49$ & $+0.88$ & $-0.31$ \\
-Australia & $+0.13$ & $+0.07$ & $-0.13$ & $-0.09$ & $+0.51$ & $+0.03$ \\
-Alemania & $+0.09$ & $-0.20$ & $+0.11$ & $-0.03$ & $+0.13$ & $-0.27$ \\
-Sudáfrica & $-0.05$ & $+0.33$ & $-0.13$ & $-0.14$ & $+0.08$ & $+0.45$ \\
-Estados Unidos & $+0.12$ & $-0.80$ & $+0.48$ & $-0.20$ & $-0.02$ & $-0.69$ \\
-Colombia & $-0.37$ & $-0.41$ & $-0.18$ & $+0.39$ & $-0.16$ & $-0.41$ \\
+China & $+0.97$ & $+0.16$ & $+1.07$ & $+0.51$ & $+0.85$ & $+0.47$ \\
+Canadá & $+0.34$ & $+0.39$ & $+0.17$ & $+0.30$ & $+0.78$ & $-0.28$ \\
+Australia & $+0.11$ & $+0.04$ & $-0.13$ & $-0.11$ & $+0.45$ & $+0.05$ \\
+Alemania & $+0.06$ & $-0.23$ & $+0.11$ & $-0.05$ & $+0.08$ & $-0.26$ \\
+Sudáfrica & $-0.07$ & $+0.30$ & $-0.14$ & $-0.16$ & $+0.04$ & $+0.47$ \\
+Estados Unidos & $+0.09$ & $-0.84$ & $+0.48$ & $-0.21$ & $-0.07$ & $-0.68$ \\
+Colombia & $-0.40$ & $-0.44$ & $-0.19$ & $+0.37$ & $-0.20$ & $-0.39$ \\
 \hline
 \end{tabular}
 \end{table}
 
-La fila de Canadá se conserva por transparencia, pero \textbf{no debe leerse como el perfil de la política canadiense}: procede del documento defectuoso descrito en la sección~\ref{sec:defecto-canada}. Que sus seis valores queden a distancia mínima de los de China es el mismo fenómeno de aquella sección, expresado en seis dimensiones en vez de una.
+Leído con los intervalos de confianza, el cuadro dice menos de lo que aparenta para el par China--Canadá. Tres de sus seis celdas son empates estadísticos: ritual, cultivo de sí y el eje \dezhi. Los otros tres separan a los dos países, y con holgura: benevolencia ($+0.97$ frente a $+0.34$), rectitud ($+1.07$ frente a $+0.17$) y armonía ($+0.47$ frente a $-0.28$).
+
+Que el empate persista justamente en el eje sometido a doble medición, y no en los otros, es coherente con la explicación de la sección~\ref{sec:defecto-canada}: ambos documentos hablan de dirigir el desarrollo de la inteligencia artificial en el país, y difieren en si el Estado forma personas o habilita a otros para que lo hagan.
 
 Entre los países cuyo documento sí cumple los criterios, Estados Unidos ofrece el contraste más nítido frente a China en los ejes de ritual ($-0.80$) y armonía ($-0.69$), coherente con un documento que ordena la política en torno a la competencia y la iniciativa privada.
 
@@ -242,10 +280,12 @@ El cuadro~\ref{tab:hipotesis} resume el estado de las cuatro predicciones regist
 \hline
 H1 & China puntúa más alto que los países liberales & Confirmada \\
 H2 & El efecto no es regional & Confirmada \\
-H3 & Los subpaneles chino y occidental son equivalentes & Rechazada \\
+H3 & Los subpaneles chino y occidental son equivalentes & No rechazada \\
 H4 & Las dos vías de medición convergen & Rechazada \\
 \hline
 \end{tabular}
 \end{table}
 
-Dos confirmaciones y dos rechazos. Los rechazos son más informativos que las confirmaciones: el de H3 cuantifica una contaminación que se sospechaba y resultó menor de lo temido; el de H4 identifica un límite concreto de una familia de herramientas que la educación comparada está adoptando sin haberlo delimitado.
+Tres predicciones sobreviven y una se rechaza. El rechazo es el informativo: H4 identifica un límite concreto de una familia de herramientas que la educación comparada está adoptando sin haberlo delimitado.
+
+H3 merece una nota. En la corrida con el corpus defectuoso quedaba rechazada, y al corregir el corpus dejó de estarlo. Reportar ese cambio importa más que reportar cualquiera de los dos veredictos por separado: muestra que el efecto buscado está por debajo de lo que setenta pasajes pueden resolver, y que un intervalo cuyo extremo roza el cero no sostiene una conclusión.

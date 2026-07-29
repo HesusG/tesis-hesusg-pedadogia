@@ -387,3 +387,59 @@ La limitación reportada en la Fase 5 (α por debajo del mínimo para conclusion
 **Caveats.** K=10 por documento. Vietnam aporta un documento; Corea, Japón y Singapur uno cada uno. No hay Estado-partido **no** confuciano en el corpus (Laos y Camboya están redactando sus estrategias), así que la celda que separaría "partido único" de "herencia confuciana" sigue vacía.
 
 **Veredicto:** ✅ el caso que faltaba debilitó una conclusión previa en vez de confirmarla, que es exactamente para lo que sirven los controles. La afirmación central de la tesis, la interacción país × tema, no se movió.
+
+---
+
+## SPIKE Fase 9 — El documento de Canadá no era una política
+
+**Pregunta acotada.** ¿El empate China–Canadá en el eje *dézhì* según embeddings es una propiedad del método, o un artefacto del documento canadiense?
+
+### Cómo apareció el problema
+
+No lo detectó una revisión del corpus. Lo detectó el **desacuerdo entre las dos vías de medición**, al reescribir la presentación de defensa: buscando pasajes reales para abrir con algo concreto, hubo que leer el documento canadiense.
+
+No era la estrategia. Era una captura de navegador de `cifar.ca`, con la fecha `2018/09/08` impresa en el encabezado de cada página. Sus 15 fragmentos incluían la ruta de navegación del sitio, la lista del comité asesor internacional con el cargo de cada miembro, un botón «Donate Now» y el pie de suscripción al boletín. **Cinco de los diez pasajes muestreados eran ese material.**
+
+Incumple C5, el mismo criterio por el que se rechazó la fuente vietnamita en la Fase 8. La diferencia: aquel se detectó al construir el corpus, este sobrevivió hasta el análisis final.
+
+### Control nuevo
+
+Revisión automatizada de ruido de sitio web sobre los pasajes muestreados: direcciones web, marcas de captura, menús, listas de personal, llamados a la acción. Aplicada de forma retroactiva a los siete países:
+
+| País | Pasajes con ruido |
+|---|---|
+| Canadá (documento viejo) | **5 de 10** |
+| Sudáfrica | 1 de 10 (URL dentro de una referencia) |
+| China, EUA, Colombia, Alemania, Australia | 0 de 10 |
+
+Debe correr antes de cada medición.
+
+### Sustitución y nueva corrida
+
+*Canada's National Artificial Intelligence Strategy: AI for All*, adoptada por el Ministro de Innovación, Ciencia e Industria el **4 de junio de 2026**, dentro del corte de vigencia. PDF oficial de 50 páginas, ISBN 978-0-662-35657-8. De 6.5 KB a 94.7 KB; de 15 a 210 fragmentos. Corpus total: 2,900 → 3,095.
+
+Se repitió la medición completa: ingesta, Vía A sobre los seis ejes, Vía B con los siete jueces, acuerdo y validación.
+
+### Resultado
+
+| Cantidad | Antes | Después |
+|---|---|---|
+| Canadá, Vía A | +0.881 | +0.778 |
+| Canadá, Vía B | 0.000 | −0.057 |
+| Brecha China–Canadá, Vía A | 0.021 | **0.067, sigue solapando** |
+| Brecha China–Canadá, Vía B | 0.943 | **1.000, sin solapar** |
+| Ejes con IC solapados | 5 de 6 | 3 de 6 |
+| α Krippendorff ordinal | 0.697 | 0.681 |
+| Acuerdo exacto | 83.1% | 81.7% |
+| Sesgo de origen | +0.058, IC excluye 0 | +0.048, **IC incluye 0** |
+| Spearman entre vías | 0.321 | 0.286 |
+
+### Reflexión
+
+**El hallazgo principal no era un artefacto.** Con una estrategia nacional real de cincuenta páginas, la Vía A sigue sin poder separar a Canadá de China en el eje *dézhì*. Eso es lo que había que comprobar, porque un crítico razonable habría dicho que el método falló porque el dato era basura.
+
+**Tres ejes dejaron de empatar.** Benevolencia, rectitud y armonía ahora separan a los dos países. Siguen empatados ritual, cultivo de sí y el propio *dézhì*. Se retira la afirmación de «cinco de seis»: eran tres.
+
+**Una conclusión se volvió más prudente.** El sesgo de origen del juez pasó de excluir el cero a incluirlo, así que **H3 deja de rechazarse**. Que sustituir un documento mueva un veredicto indica que el efecto está por debajo de lo que setenta pasajes resuelven. Conviene reportar el cambio, no solo el veredicto final.
+
+**Lo más importante del episodio es procedimental.** El diseño de doble medición se adoptó para evaluar validez; sirvió además como **detector de errores de datos**. Con una sola vía, el +0.881 habría entrado al capítulo de resultados con su intervalo y su lugar en la gráfica, y nadie habría tenido motivo para abrir el archivo.

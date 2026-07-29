@@ -1,0 +1,1 @@
+import{o as t,e as o,i as s}from"./modules/vue-CTcyzlkf.js";import{u as a}from"./slidev/context-oqOgaN6d.js";const l={class:"slidev-layout ac-fact h-full flex flex-col"},f={__name:"ac-fact",setup(c){return a(),(e,r)=>(t(),o("div",l,[s(e.$slots,"default")]))}};export{f as _};

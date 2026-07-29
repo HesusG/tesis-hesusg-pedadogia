@@ -6,8 +6,8 @@ const filas = [
   { pais: 'China',          m:  0.943, lo:  0.729, hi:  1.171, hi_lite: true },
   { pais: 'Sudáfrica',      m:  0.057, lo: -0.043, hi:  0.214 },
   { pais: 'Colombia',       m:  0.014, lo:  0.000, hi:  0.043 },
-  { pais: 'Canadá',         m:  0.000, lo:  0.000, hi:  0.000 },
   { pais: 'Australia',      m: -0.029, lo: -0.171, hi:  0.086 },
+  { pais: 'Canadá',         m: -0.057, lo: -0.143, hi:  0.000 },
   { pais: 'Alemania',       m: -0.100, lo: -0.243, hi:  0.000 },
   { pais: 'Estados Unidos', m: -0.486, lo: -0.871, hi: -0.143 },
 ]

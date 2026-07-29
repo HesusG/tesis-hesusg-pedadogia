@@ -15,13 +15,13 @@ const ejes = [
 ]
 
 const datos = {
-  china:     { label: 'China',          color: '#023BF2', v: { ren: 0.99, li: 0.18, yi: 1.07, xiushen: 0.52, dezhi_fa: 0.90, he: 0.45 } },
-  canada:    { label: 'Canadá',         color: '#0B1C45', v: { ren: 0.98, li: 0.27, yi: 0.72, xiushen: 0.49, dezhi_fa: 0.88, he: -0.31 } },
-  eeuu:      { label: 'Estados Unidos', color: '#8A93A6', v: { ren: 0.12, li: -0.80, yi: 0.48, xiushen: -0.20, dezhi_fa: -0.02, he: -0.69 } },
-  alemania:  { label: 'Alemania',       color: '#8A93A6', v: { ren: 0.09, li: -0.20, yi: 0.11, xiushen: -0.03, dezhi_fa: 0.13, he: -0.27 } },
-  australia: { label: 'Australia',      color: '#8A93A6', v: { ren: 0.13, li: 0.07, yi: -0.13, xiushen: -0.09, dezhi_fa: 0.51, he: 0.03 } },
-  sudafrica: { label: 'Sudáfrica',      color: '#8A93A6', v: { ren: -0.05, li: 0.33, yi: -0.13, xiushen: -0.14, dezhi_fa: 0.08, he: 0.45 } },
-  colombia:  { label: 'Colombia',       color: '#8A93A6', v: { ren: -0.37, li: -0.41, yi: -0.18, xiushen: 0.39, dezhi_fa: -0.16, he: -0.41 } },
+  china:     { label: 'China',          color: '#023BF2', v: { ren: 0.97, li: 0.16, yi: 1.07, xiushen: 0.51, dezhi_fa: 0.85, he: 0.47 } },
+  canada:    { label: 'Canadá',         color: '#0B1C45', v: { ren: 0.34, li: 0.39, yi: 0.17, xiushen: 0.30, dezhi_fa: 0.78, he: -0.28 } },
+  eeuu:      { label: 'Estados Unidos', color: '#8A93A6', v: { ren: 0.09, li: -0.84, yi: 0.48, xiushen: -0.21, dezhi_fa: -0.07, he: -0.68 } },
+  alemania:  { label: 'Alemania',       color: '#8A93A6', v: { ren: 0.06, li: -0.23, yi: 0.11, xiushen: -0.05, dezhi_fa: 0.08, he: -0.26 } },
+  australia: { label: 'Australia',      color: '#8A93A6', v: { ren: 0.11, li: 0.04, yi: -0.13, xiushen: -0.11, dezhi_fa: 0.45, he: 0.05 } },
+  sudafrica: { label: 'Sudáfrica',      color: '#8A93A6', v: { ren: -0.07, li: 0.30, yi: -0.14, xiushen: -0.16, dezhi_fa: 0.04, he: 0.47 } },
+  colombia:  { label: 'Colombia',       color: '#8A93A6', v: { ren: -0.40, li: -0.44, yi: -0.19, xiushen: 0.37, dezhi_fa: -0.20, he: -0.39 } },
 }
 
 const S = 300, C = S / 2, RAD = 96

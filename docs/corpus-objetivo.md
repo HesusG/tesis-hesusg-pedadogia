@@ -4,16 +4,35 @@
 
 ---
 
-## 0. Hallazgo previo: el corpus actual tiene documentos derogados
+## 0. Hallazgo previo: el corpus actual tenía documentos inadmisibles
 
-Buscar los documentos vigentes destapó que **dos de los siete países están representados por textos que ya no rigen**:
+Buscar los documentos vigentes destapó que **tres de los siete países estaban representados por textos que no debían estar**:
 
-| País | Documento en el corpus | Problema |
-|---|---|---|
-| **EUA** | Executive Order 14110 (2023) | **REVOCADA** en enero de 2025 |
-| **Colombia** | CONPES 3975 (2019) | **Vigencia terminada en 2022** |
+| País | Documento | Problema | Criterio | Sustituto |
+|---|---|---|---|---|
+| **EUA** | Executive Order 14110 (2023) | **Revocada** en enero de 2025 | C4 | America's AI Action Plan, jul 2025 |
+| **Colombia** | CONPES 3975 (2019) | **Vigencia terminada** en 2022 | C4 | CONPES 4144, feb 2025 |
+| **Canadá** | «Pan-Canadian AI Strategy 2017» | **No era la estrategia** | C5 | AI for All, 4 jun 2026 |
 
-No es un detalle. Significa que la medición de EUA y Colombia describe una postura estatal que fue explícitamente abandonada. Ambos deben reemplazarse antes de la corrida definitiva.
+Los dos primeros describían posturas estatales explícitamente abandonadas. El tercero es de otra naturaleza y merece detalle.
+
+### El caso canadiense
+
+El archivo del corpus no era la estrategia canadiense sino **una captura de navegador del sitio de CIFAR**, con la fecha `2018/09/08` impresa en el encabezado de cada página. Sus 15 fragmentos incluían la ruta de navegación del sitio, la lista del comité asesor internacional con el cargo de cada miembro, un botón «Donate Now» y el pie de suscripción al boletín. **Cinco de los diez pasajes muestreados eran ese material.**
+
+Es el mismo defecto por el que se rechazó la fuente vietnamita: una página *sobre* el documento en vez del documento. La diferencia es que aquel se detectó al construir el corpus y este sobrevivió hasta el análisis final.
+
+**Cómo se detectó.** No por revisión del corpus, sino por el desacuerdo entre las dos vías de medición. La Vía A situaba a Canadá a dos centésimas de China; la Vía B le daba cero con unanimidad de los siete jueces. Investigar esa contradicción obligó a leer el documento.
+
+**Control nuevo, incorporado al procedimiento.** Una revisión automatizada de ruido de sitio web sobre los pasajes muestreados, que busca direcciones web, marcas de captura, menús, listas de personal y llamados a la acción. Aplicada de forma retroactiva:
+
+| País | Pasajes con ruido |
+|---|---|
+| Canadá (documento viejo) | **5 de 10** |
+| Sudáfrica | 1 de 10 (una URL dentro de una referencia) |
+| China, EUA, Colombia, Alemania, Australia | 0 de 10 |
+
+**El sustituto.** *Canada's National Artificial Intelligence Strategy: AI for All*, adoptada por el Ministro de Innovación, Ciencia e Industria y publicada el **4 de junio de 2026**, dentro del corte de vigencia. PDF oficial de 50 páginas con ISBN 978-0-662-35657-8. El texto pasa de 6.5 KB a 94.7 KB, y el corpus de Canadá de 15 a 210 fragmentos.
 
 ---
 

@@ -22,7 +22,18 @@ PROC = PROJECT_ROOT / "policies" / "processed"
 # resuelven la marginalidad en C3: el CONPES 4144 tiene 943 menciones de IA contra
 # las 29 del 3975, así que Colombia pasa de "documento que apenas habla de IA" a uno
 # que sí lo hace.
-SUPERSEDED = ["eeuu_eo14110_2023", "colombia_conpes_3975_2019"]
+#
+# SPIKE Fase 9 — criterio C5 (texto verbatim). El documento canadiense NO era la
+# estrategia: era una captura de navegador de cifar.ca fechada 2018-09-08, con
+# ruta de navegación, la lista del comité asesor, un botón «Donate Now» y el pie
+# de suscripción al boletín. 5 de sus 10 pasajes muestreados eran ese material.
+# Se sustituye por la estrategia nacional oficial publicada el 4-jun-2026, que
+# además es la vigente al corte (C4). 6.5 KB -> 94.7 KB de texto.
+SUPERSEDED = [
+    "eeuu_eo14110_2023",
+    "colombia_conpes_3975_2019",
+    "canada_pan_canadian_ai_strategy_2017",
+]
 
 COUNTRIES = [
     {"doc_id": "eeuu_ai_action_plan_2025", "country": "eeuu", "region": "norteamerica",
@@ -33,10 +44,11 @@ COUNTRIES = [
      "genre": "strategy", "language": "es", "year": 2025,
      "adopting_body": "DNP / CONPES", "doc_type_official": "Documento CONPES 4144",
      "file": "colombia_conpes_4144_2025.txt"},
-    {"doc_id": "canada_pan_canadian_ai_strategy_2017", "country": "canada", "region": "norteamerica",
-     "genre": "strategy", "language": "en", "year": 2017,
-     "adopting_body": "CIFAR / Gov of Canada", "doc_type_official": "National AI Strategy",
-     "file": "canada_pan_canadian_ai_strategy_2017.txt"},
+    {"doc_id": "canada_ai_for_all_2026", "country": "canada", "region": "norteamerica",
+     "genre": "strategy", "language": "en", "year": 2026,
+     "adopting_body": "Minister of Innovation, Science and Industry",
+     "doc_type_official": "Canada's National Artificial Intelligence Strategy: AI for All",
+     "file": "canada_ai_for_all_2026.txt"},
     {"doc_id": "alemania_ki_strategie_2020", "country": "alemania", "region": "europa",
      "genre": "strategy", "language": "de", "year": 2020,
      "adopting_body": "Bundesregierung", "doc_type_official": "KI-Strategie",

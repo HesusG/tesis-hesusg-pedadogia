@@ -306,7 +306,7 @@ layout: section
 
 <div class="slide-body">
 <BarrasPais />
-<div class="mt-2 text-[1.05rem] text-muted">Cada línea negra es el margen de error. Cuando dos líneas no se tocan, la diferencia es real y no del azar.</div>
+<div class="mt-2 text-[1.05rem] text-muted">Cada línea negra es el margen de error. Cuando dos líneas no se tocan, la diferencia es real y no del azar. Los seis de abajo son indistinguibles entre sí.</div>
 </div>
 <div class="src">Siete lectores × diez párrafos × siete países = 490 lecturas.</div>
 
@@ -459,7 +459,7 @@ Reconocerlo antes de que lo encuentren vale más que esconderlo.
 layout: ac-fact
 ---
 
-## Y ahí está el hallazgo
+## Primera reacción: ¿y si el error es mío?
 
 <div class="slide-body">
 <div class="grid grid-cols-2 gap-6">
@@ -474,16 +474,70 @@ layout: ac-fact
     <div class="mt-3 text-[1.1rem] text-muted">Vio las palabras «inteligencia artificial», «talento», «nacional», «liderazgo» y concluyó parecido.</div>
   </div>
 </div>
-<div class="mt-8 keyidea text-[1.35rem]">
-  <span class="lbl">El error de armado del corpus se volvió la mejor demostración</span>
-  El método automático no distingue <em>una política de Estado</em> de <em>un directorio de
-  personal con un botón de donar</em>, si las dos usan el mismo vocabulario.
+<div class="mt-8 keyidea text-[1.3rem]">
+  <span class="lbl">Pero esto no prueba nada todavía</span>
+  Con un documento malo, cualquiera puede fallar. La pregunta de verdad era otra:
+  <em>¿el empate desaparece si comparo dos políticas reales?</em>
 </div>
 </div>
 
 <!--
-23:30-25:00 · Aquí se cierra el arco. Si el jurado se lleva una sola cosa,
-que sea esta lámina.
+23:30-25:00 · Resistir la tentación de cantar victoria aquí. Un critico diria,
+con razon, que el metodo fallo porque el dato era basura. Hay que ir a ver.
+-->
+
+---
+layout: statement
+---
+
+<div class="max-w-4xl">
+  <div class="kicker mb-5">Lo que hice entonces</div>
+  <div class="text-[1.55rem] leading-snug text-ink">
+    Busqué la estrategia oficial de Canadá. Existe, y es reciente:
+    <strong>«AI for All»</strong>, firmada por el Ministro de Innovación, Ciencia e Industria
+    el <strong>4 de junio de 2026</strong>. Cincuenta páginas, con ISBN.
+  </div>
+  <div class="mt-7 text-[1.55rem] leading-snug text-ink">
+    Cambié el documento y <em>volví a correr todo</em>. Canadá pasó de 15 a 210 párrafos.
+  </div>
+  <div class="mt-8 keyidea text-[1.4rem]">
+    <span class="lbl">La pregunta</span>
+    ¿Sigue la computadora sin poder distinguir a Canadá de China?
+  </div>
+</div>
+
+<!--
+25:00-26:00 · Momento de suspenso corto. No adelantar.
+-->
+
+---
+layout: ac-fact
+---
+
+## Sí. El empate aguanta.
+
+<div class="slide-body">
+<table class="actable">
+  <thead><tr><th style="width:34%"></th><th class="text-right" style="width:22%">Antes<br /><span class="dim">página web</span></th><th class="text-right" style="width:22%">Ahora<br /><span class="dim">estrategia real</span></th><th>Qué pasó</th></tr></thead>
+  <tbody>
+    <tr><th>Canadá, computadora</th><td style="text-align:right">+0.88</td><td style="text-align:right">+0.78</td><td class="dim">Bajó poco</td></tr>
+    <tr><th>Canadá, lectores</th><td style="text-align:right">0.00</td><td style="text-align:right">−0.06</td><td class="dim">Sigue en el grupo del cero</td></tr>
+    <tr><th>Distancia con China, computadora</th><td style="text-align:right">0.02</td><td style="text-align:right">0.07</td><td><span class="no">Empate, igual que antes</span></td></tr>
+    <tr><th>Distancia con China, lectores</th><td style="text-align:right">0.94</td><td style="text-align:right" class="yes">1.00</td><td><span class="yes">Un punto entero</span></td></tr>
+  </tbody>
+</table>
+<div class="mt-7 keyidea text-[1.3rem]">
+  <span class="lbl">Este es el resultado, ya sin excusas</span>
+  Una estrategia nacional de cincuenta páginas frente al plan educativo chino.
+  La computadora <em>sigue sin poder separarlos</em>. Los lectores los separan por un punto completo.
+</div>
+</div>
+
+<!--
+26:00-28:00 · La lamina mas importante de la defensa. El hallazgo ya no depende
+de un documento defectuoso: aguanta con dos politicas de verdad.
+Decir tambien lo que SI cambio: de los seis valores, tres dejaron de empatar.
+El que sigue empatado es justo el que mide gobernar por la virtud.
 -->
 
 ---
@@ -564,7 +618,7 @@ layout: ac-fact
 <table class="actable">
   <thead><tr><th style="width:26%">Límite</th><th>Qué significa</th></tr></thead>
   <tbody>
-    <tr><th>Canadá se cae</th><td>Su documento no cumple mi propio criterio de admisión: pedía el texto oficial y entró una página web. <strong>Hay que reemplazarlo y volver a medir.</strong> Lo reporto como defecto, no como resultado sobre Canadá</td></tr>
+    <tr><th>El corpus se me coló</th><td>Un documento defectuoso llegó hasta el análisis final. Ya está sustituido y la medición repetida, pero lo detectó el desacuerdo entre métodos, no mi revisión del corpus. Hace falta un chequeo automático de ruido de página web antes de cada corrida</td></tr>
     <tr><th>Nadie humano revisó</th><td>Los siete lectores son automáticos. Que coincidan entre sí dice que son <strong>consistentes</strong>, no que tengan razón</td></tr>
     <tr><th>Documentos, no aulas</th><td>Mido lo que un Estado <strong>escribe</strong>. No lo que hace, ni lo que pasa con los estudiantes</td></tr>
     <tr><th>Siete casos</th><td>Elegidos uno por región. No permiten generalizar a todos los países del mundo</td></tr>
@@ -597,7 +651,6 @@ que es el más incómodo, es lo que da credibilidad al resto.
   <div>
     <div class="kicker mb-3">Pendientes, en orden</div>
     <ul class="text-[1.1rem]">
-      <li>Reemplazar el documento de Canadá y volver a correr</li>
       <li>Calificación humana de 50 párrafos</li>
       <li>Actualizar Australia y Sudáfrica, que ya tienen versión nueva</li>
       <li>Medir los otros cinco valores con los dos métodos</li>
@@ -623,8 +676,9 @@ dark: true
     y que el lugar donde se separa es justo donde la teoría decía.
   </div>
   <div class="mt-6 text-[1.4rem]" style="color: rgba(255,255,255,0.9)">
-    Y encontré algo que no buscaba: <span class="text-yellow">que la herramienta con la
-    que hoy se comparan políticas no distingue una política de una página web.</span>
+    Y encontré algo que no buscaba: <span class="text-yellow">que la herramienta con la que hoy
+    se comparan políticas no distingue quién forma a quién.</span> Lo descubrí por un documento
+    defectuoso, lo comprobé con dos políticas de verdad.
   </div>
   <div class="mt-10 kicker">Hesus García Cobos · Maestría en Pedagogía · UPAEP 2026</div>
 </div>
@@ -655,30 +709,31 @@ layout: ac-fact
   <table class="actable">
     <thead><tr><th colspan="2">Acuerdo entre los siete lectores</th></tr></thead>
     <tbody>
-      <tr><th>Coincidencia exacta</th><td>0.831</td></tr>
+      <tr><th>Coincidencia exacta</th><td>0.817</td></tr>
       <tr><th>Dentro de ±1 punto</th><td>0.991</td></tr>
-      <tr><th>Kappa de Fleiss</th><td>0.544</td></tr>
-      <tr><th>Alfa de Krippendorff, ordinal</th><td class="yes">0.697</td></tr>
+      <tr><th>Kappa de Fleiss</th><td>0.522</td></tr>
+      <tr><th>Alfa de Krippendorff, ordinal</th><td class="yes">0.681</td></tr>
       <tr><th>Umbral convencional</th><td class="dim">0.667</td></tr>
     </tbody>
   </table>
   <table class="actable">
     <thead><tr><th colspan="2">¿Sesga el origen del lector?</th></tr></thead>
     <tbody>
-      <tr><th>Lectores occidentales</th><td>+0.090</td></tr>
-      <tr><th>Lectores chinos</th><td>+0.032</td></tr>
-      <tr><th>Diferencia</th><td>+0.058</td></tr>
-      <tr><th>Margen de error</th><td class="dim">[+0.004, +0.118]</td></tr>
-      <tr><th>Correlación entre ambos grupos</th><td>0.907</td></tr>
+      <tr><th>Lectores occidentales</th><td>+0.076</td></tr>
+      <tr><th>Lectores chinos</th><td>+0.029</td></tr>
+      <tr><th>Diferencia</th><td>+0.048</td></tr>
+      <tr><th>Margen de error</th><td class="dim">[−0.012, +0.111] · <strong>incluye el cero</strong></td></tr>
+      <tr><th>Correlación entre ambos grupos</th><td>0.898</td></tr>
     </tbody>
   </table>
 </div>
 <div class="mt-5 text-[1.05rem] text-muted">
-Sí hay sesgo, pero es chico y va <strong>al revés</strong> de lo esperado: los lectores occidentales,
-no los chinos, califican más alto en el polo confuciano. Y ordenan los párrafos casi igual.
+El margen de error incluye el cero, así que <strong>no se puede afirmar que haya sesgo</strong>. Y si lo hay,
+va al revés de lo esperado: son los lectores occidentales, no los chinos, quienes califican más alto
+en el polo confuciano. Los dos grupos ordenan los párrafos casi igual.
 </div>
 <div class="mt-3 text-[1.05rem] text-muted">
-El kappa (0.544) sale bajo comparado con el 83% de coincidencia porque castiga que casi todos
+El kappa (0.522) sale bajo comparado con el 82% de coincidencia porque castiga que casi todos
 los párrafos caigan en cero. Es un artefacto conocido, no una falla de la medición.
 </div>
 </div>
@@ -691,10 +746,10 @@ layout: ac-fact
 
 <div class="slide-body">
 <div class="flex items-center justify-center">
-  <RadarConfucio :paises="['china','eeuu']" />
+  <RadarConfucio :paises="['china','canada']" />
 </div>
 <div class="mt-3 text-center text-[1.05rem] text-muted">
-Comparación China–Estados Unidos con el método automático. Canadá se omite por el defecto del documento.
+China frente a Canadá con el método automático, ya con la estrategia canadiense real. Tres de los seis empatan: ritual, cultivo de sí y virtud/norma.
 </div>
 </div>
 <div class="src">Método 1 · medianas contra el promedio de todos los documentos del corpus.</div>
@@ -715,13 +770,13 @@ layout: ac-fact
     <tr><th>Alemania</th><td>1</td><td>230</td><td class="yes">Válido</td></tr>
     <tr><th>Australia</th><td>1</td><td>161</td><td class="dim">Válido; hay versión más nueva</td></tr>
     <tr><th>Estados Unidos</th><td>1</td><td>156</td><td class="yes">Válido, reemplazado durante el estudio</td></tr>
-    <tr><th>Canadá</th><td>1</td><td>15</td><td class="no">Defectuoso: página web, no el documento</td></tr>
+    <tr><th>Canadá</th><td>1</td><td>210</td><td class="yes">Sustituido durante el estudio</td></tr>
   </tbody>
 </table>
 <div class="mt-5 text-[1.05rem] text-muted">
-Estados Unidos y Colombia entraron con documentos que ya estaban derogados y se sustituyeron
-por los vigentes durante el propio estudio. Canadá se detectó al final, al investigar por qué
-los dos métodos no coincidían.
+Tres de los siete documentos originales tuvieron que sustituirse. Estados Unidos y Colombia
+porque estaban derogados; Canadá porque no era la estrategia sino una página web, y eso se
+detectó al final, al investigar por qué los dos métodos no coincidían.
 </div>
 </div>
 
@@ -770,7 +825,7 @@ layout: ac-fact
   <tbody>
     <tr><th>1</th><td class="dim">China sale más alto que los países liberales</td><td class="yes">Se cumplió</td></tr>
     <tr><th>2</th><td class="dim">No es cosa de la región</td><td class="yes">Se cumplió</td></tr>
-    <tr><th>3</th><td class="dim">El origen del lector no cambia la calificación</td><td class="no">Falló</td></tr>
+    <tr><th>3</th><td class="dim">El origen del lector no cambia la calificación</td><td class="yes">Se sostiene</td></tr>
     <tr><th>4</th><td class="dim">Los dos métodos coinciden</td><td class="no">Falló</td></tr>
   </tbody>
 </table>
