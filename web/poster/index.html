@@ -192,8 +192,8 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
 
   <div class="figures">
     <div class="fig"><div class="n">+0.94</div><div class="t">China en el eje <em>dézhì</em>, IC 95% [+0.73, +1.17].<br />Ningún otro país se solapa</div></div>
-    <div class="fig"><div class="n">0.697</div><div class="t">α de Krippendorff ordinal entre 7 jueces.<br />Umbral convencional: 0.667</div></div>
-    <div class="fig"><div class="n">+0.88</div><div class="t">Lo que el método automático asignó a una página web con un botón de donar</div></div>
+    <div class="fig"><div class="n">0.681</div><div class="t">α de Krippendorff ordinal entre 7 jueces.<br />Umbral convencional: 0.667</div></div>
+    <div class="fig"><div class="n">0.07</div><div class="t">Distancia China–Canadá según el método automático. Los intervalos se solapan</div></div>
     <div class="fig"><div class="n">1,120</div><div class="t">Clasificaciones individuales, versionadas y auditables</div></div>
   </div>
 
@@ -327,18 +327,21 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
           <line x1="126" x2="131" y1="66" y2="66" stroke="#0F1624" stroke-width="1.1"/>
           <text x="137" y="70" font-size="8.5" fill="#4D5566">+0.014</text>
 
-          <!-- Canadá -->
-          <text x="118" y="93" text-anchor="end" font-size="9" fill="#0F1624">Canadá</text>
-          <rect x="126" y="83" width="1.5" height="12" fill="#B9C6E8"/>
-          <text x="137" y="93" font-size="8.5" fill="#4D5566">0.000</text>
+          <!-- Australia -0.029, IC [-0.171, +0.086] -->
+          <text x="118" y="93" text-anchor="end" font-size="9" fill="#0F1624">Australia</text>
+          <rect x="123" y="83" width="3" height="12" fill="#B9C6E8"/>
+          <line x1="108" x2="135" y1="89" y2="89" stroke="#0F1624" stroke-width="1.1"/>
+          <line x1="108" x2="108" y1="85" y2="93" stroke="#0F1624" stroke-width="1.1"/>
+          <line x1="135" x2="135" y1="85" y2="93" stroke="#0F1624" stroke-width="1.1"/>
+          <text x="141" y="93" font-size="8.5" fill="#4D5566">−0.029</text>
 
-          <!-- Australia -->
-          <text x="118" y="116" text-anchor="end" font-size="9" fill="#0F1624">Australia</text>
-          <rect x="123" y="106" width="3" height="12" fill="#B9C6E8"/>
-          <line x1="108" x2="135" y1="112" y2="112" stroke="#0F1624" stroke-width="1.1"/>
-          <line x1="108" x2="108" y1="108" y2="116" stroke="#0F1624" stroke-width="1.1"/>
-          <line x1="135" x2="135" y1="108" y2="116" stroke="#0F1624" stroke-width="1.1"/>
-          <text x="141" y="116" font-size="8.5" fill="#4D5566">−0.029</text>
+          <!-- Canadá -0.057, IC [-0.143, 0] -->
+          <text x="118" y="116" text-anchor="end" font-size="9" fill="#0F1624">Canadá</text>
+          <rect x="120.1" y="106" width="5.9" height="12" fill="#B9C6E8"/>
+          <line x1="111" x2="126" y1="112" y2="112" stroke="#0F1624" stroke-width="1.1"/>
+          <line x1="111" x2="111" y1="108" y2="116" stroke="#0F1624" stroke-width="1.1"/>
+          <line x1="126" x2="126" y1="108" y2="116" stroke="#0F1624" stroke-width="1.1"/>
+          <text x="132" y="116" font-size="8.5" fill="#4D5566">−0.057</text>
 
           <!-- Alemania -->
           <text x="118" y="139" text-anchor="end" font-size="9" fill="#0F1624">Alemania</text>
@@ -395,30 +398,37 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
         <table>
           <thead><tr><th></th><th class="num">Computadora</th><th class="num">Lectores</th></tr></thead>
           <tbody>
-            <tr><th>China</th><td class="num">+0.903</td><td class="num yes">+0.943</td></tr>
-            <tr><th>Canadá</th><td class="num">+0.881</td><td class="num">0.000</td></tr>
-            <tr><th>Diferencia</th><td class="num dim">0.021</td><td class="num dim">0.943</td></tr>
+            <tr><th>China</th><td class="num">+0.845</td><td class="num yes">+0.943</td></tr>
+            <tr><th>Canadá</th><td class="num">+0.778</td><td class="num">−0.057</td></tr>
+            <tr><th>Diferencia</th><td class="num dim">0.067</td><td class="num dim">1.000</td></tr>
           </tbody>
         </table>
 
         <p style="margin-top:5mm">Para el método automático los dos textos son
         <em>indistinguibles</em>. Para el panel de jueces están en extremos opuestos.
-        La correlación de rangos entre ambas vías es de <strong>ρ = 0.321</strong>.</p>
+        La correlación de rangos entre ambas vías es de <strong>ρ = 0.286</strong>.</p>
 
         <div class="callout-y">
-          <strong>Al abrir el documento canadiense apareció el motivo.</strong> No es la estrategia
-          de Canadá: es una captura del sitio de CIFAR de septiembre de 2018, con menú de navegación,
-          la lista del comité asesor, un botón de donar y el pie del boletín. Cinco de sus diez
-          pasajes son ese material.
+          <strong>Al abrir el documento canadiense apareció el motivo.</strong> No era la estrategia:
+          era una captura del sitio de CIFAR de septiembre de 2018, con menú de navegación, la lista
+          del comité asesor, un botón de donar y el pie del boletín. Cinco de sus diez pasajes eran
+          ese material. Los siete jueces leyeron un directorio de personal y pusieron cero, que es lo
+          correcto; el método automático puso +0.88.
         </div>
 
-        <p style="margin-top:5mm">Los siete jueces leyeron un directorio de personal y pusieron
-        <strong>cero</strong>, que es lo correcto. El método automático leyó lo mismo y puso
-        <strong>+0.88</strong>, a dos centésimas del plan educativo chino.</p>
+        <p style="margin-top:5mm"><strong>Con un documento malo, cualquiera falla.</strong> Así que se
+        sustituyó por la estrategia nacional vigente, <i>AI for All</i>, adoptada el 4 de junio de 2026,
+        y se repitió la medición completa. Canadá pasó de 15 a 210 fragmentos.</p>
 
-        <p><strong>Lo que se retira:</strong> no puede afirmarse que los perfiles de China y Canadá
-        sean indistinguibles. <strong>Lo que se refuerza:</strong> el método no distingue una política
-        de Estado de una página web, si comparten vocabulario.</p>
+        <div class="card-blue" style="margin-top:5mm">
+          <div class="kicker" style="margin-bottom:2.5mm">El empate aguanta</div>
+          Con dos políticas reales, la distancia China–Canadá según el método automático es de
+          <strong>0.067</strong> y los intervalos siguen solapándose. Según el panel de jueces es de
+          <strong>1.000</strong>, un punto completo de escala, y no se tocan.
+        </div>
+
+        <p style="margin-top:5mm">La corrección sí afinó el perfil: de los seis ejes, tres dejaron de
+        empatar. Los tres que siguen empatados incluyen el propio eje de virtud frente a norma.</p>
       </section>
 
       <section class="block">
@@ -441,11 +451,11 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
 
           <!-- Orden de los vértices, en sentido horario desde arriba:
                rén · yì · dézhì · hé · xiūshēn · lǐ -->
-          <!-- China:  0.99  1.07  0.90  0.45  0.52  0.18 -->
-          <polygon points="150.0,63.2 228.2,104.8 221.8,191.5 150.0,213.3 92.6,183.2 105.4,124.3"
+          <!-- China:  0.97  1.07  0.85  0.47  0.51  0.16 -->
+          <polygon points="150.0,64.0 228.2,104.8 219.9,190.4 150.0,214.1 92.9,182.9 106.2,124.7"
                    fill="#023BF2" fill-opacity="0.09" stroke="#023BF2" stroke-width="2.2"/>
-          <!-- Estados Unidos: 0.12  0.48 -0.02 -0.69 -0.20 -0.80 -->
-          <polygon points="150.0,101.1 205.9,117.7 187.0,171.4 150.0,163.5 119.8,167.5 142.4,145.6"
+          <!-- Canadá (estrategia real 2026): 0.34  0.17  0.78 -0.28  0.30  0.39 -->
+          <polygon points="150.0,91.5 194.2,124.5 217.3,188.8 150.0,181.4 100.9,178.4 97.5,119.7"
                    fill="none" stroke="#0B1C45" stroke-width="1.8" stroke-dasharray="5 3"/>
 
           <g font-size="12" fill="#0F1624" text-anchor="middle">
@@ -461,10 +471,10 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
 
           <g font-size="8">
             <rect x="8" y="286" width="8" height="8" fill="#023BF2"/><text x="21" y="293" fill="#0F1624">China</text>
-            <rect x="66" y="286" width="8" height="8" fill="#0B1C45"/><text x="79" y="293" fill="#0F1624">EE.UU.</text>
+            <rect x="66" y="286" width="8" height="8" fill="#0B1C45"/><text x="79" y="293" fill="#0F1624">Canadá</text>
           </g>
         </svg>
-        <div class="kicker" style="margin-top:1mm">Método automático · China frente a Estados Unidos. Canadá se omite por el defecto del documento</div>
+        <div class="kicker" style="margin-top:1mm">Método automático · China frente a Canadá. Tres de los seis ejes empatan: ritual, cultivo de sí y virtud/norma</div>
       </section>
 
       <section class="block">
@@ -483,7 +493,7 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
         <ul>
           <li><strong>Sin ancla humana.</strong> Se reporta confiabilidad entre jueces, no validez.
           Modelos con datos de entrenamiento superpuestos pueden coincidir en un error compartido.</li>
-          <li><strong>Canadá se cae.</strong> Su documento incumple el criterio de admisión del propio estudio. Hay que reemplazarlo y volver a medir.</li>
+          <li><strong>El corpus se coló.</strong> Un documento defectuoso llegó al análisis final. Ya sustituido, pero lo detectó el desacuerdo entre métodos, no la revisión del corpus.</li>
           <li><strong>Un solo eje por Vía B.</strong> Los otros cinco solo tienen Vía A.</li>
           <li><strong>Texto, no aula.</strong> Se mide encuadre en documentos, no implementación.</li>
         </ul>

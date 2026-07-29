@@ -16,7 +16,7 @@
     },
     "canada": {
       "median": 0.0,
-      "mean": 0,
+      "mean": -0.05714285714285714,
       "n": 70
     },
     "colombia": {
@@ -44,8 +44,8 @@
     "china",
     "sudafrica",
     "colombia",
-    "canada",
     "australia",
+    "canada",
     "alemania",
     "eeuu"
   ],
@@ -54,8 +54,8 @@
     "chinese": 0.0
   },
   "origin_mean": {
-    "western": 0.09047619047619047,
-    "chinese": 0.03214285714285714
+    "western": 0.0761904761904762,
+    "chinese": 0.02857142857142857
   },
   "judge_coverage": {
     "gpt": {
