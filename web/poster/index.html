@@ -193,7 +193,7 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
   <div class="figures">
     <div class="fig"><div class="n">+0.94</div><div class="t">China en el eje <em>dézhì</em>, IC 95% [+0.73, +1.17].<br />Ningún otro país se solapa</div></div>
     <div class="fig"><div class="n">0.697</div><div class="t">α de Krippendorff ordinal entre 7 jueces.<br />Umbral convencional: 0.667</div></div>
-    <div class="fig"><div class="n">0.021</div><div class="t">Distancia China–Canadá según embeddings.<br />Los intervalos se solapan</div></div>
+    <div class="fig"><div class="n">+0.88</div><div class="t">Lo que el método automático asignó a una página web con un botón de donar</div></div>
     <div class="fig"><div class="n">1,120</div><div class="t">Clasificaciones individuales, versionadas y auditables</div></div>
   </div>
 
@@ -209,12 +209,13 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
         no puede decidir si eso indica convergencia real o coincidencia superficial.</p>
 
         <div class="card" style="margin-bottom:4mm">
-          <div class="kicker" style="margin-bottom:2.5mm">China · Plan IA + Educación</div>
+          <div class="kicker" style="margin-bottom:2.5mm">Documento A · China, plan de IA en educación</div>
           «Cultivar talento con valores correctos, elevar la calidad moral y científica de la nación.»
         </div>
         <div class="card">
-          <div class="kicker" style="margin-bottom:2.5mm">Canadá · Pan-Canadian AI Strategy</div>
-          «Formar y retener talento de clase mundial en inteligencia artificial.»
+          <div class="kicker" style="margin-bottom:2.5mm">Documento B · país liberal</div>
+          El gobierno financia centros de investigación y pone reglas de privacidad. Universidades
+          y empresas deciden qué hacer dentro de ellas.
         </div>
 
         <p style="margin-top:5mm">Los dos dicen «formar talento». Solo uno describe al Estado como
@@ -392,23 +393,32 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
         <h2>Los dos métodos no coinciden</h2>
 
         <table>
-          <thead><tr><th></th><th class="num">Vía A</th><th class="num">Vía B</th></tr></thead>
+          <thead><tr><th></th><th class="num">Computadora</th><th class="num">Lectores</th></tr></thead>
           <tbody>
             <tr><th>China</th><td class="num">+0.903</td><td class="num yes">+0.943</td></tr>
             <tr><th>Canadá</th><td class="num">+0.881</td><td class="num">0.000</td></tr>
             <tr><th>Diferencia</th><td class="num dim">0.021</td><td class="num dim">0.943</td></tr>
-            <tr><th>Intervalos</th><td class="dim">se solapan</td><td class="dim">no se tocan</td></tr>
           </tbody>
         </table>
 
-        <p style="margin-top:5mm">Para el método de distancias, los dos documentos son
-        <em>indistinguibles</em>. Para el panel de jueces, están en extremos opuestos. La correlación
-        de rangos entre ambas vías es de <strong>ρ = 0.321</strong>: no son intercambiables.</p>
+        <p style="margin-top:5mm">Para el método automático los dos textos son
+        <em>indistinguibles</em>. Para el panel de jueces están en extremos opuestos.
+        La correlación de rangos entre ambas vías es de <strong>ρ = 0.321</strong>.</p>
 
-        <div class="callout">
-          Al extender la comparación a los seis ejes confucianos, <strong>cinco de seis</strong>
-          siguen siendo empates estadísticos entre China y Canadá. Solo 和 (armonía) los separa.
+        <div class="callout-y">
+          <strong>Al abrir el documento canadiense apareció el motivo.</strong> No es la estrategia
+          de Canadá: es una captura del sitio de CIFAR de septiembre de 2018, con menú de navegación,
+          la lista del comité asesor, un botón de donar y el pie del boletín. Cinco de sus diez
+          pasajes son ese material.
         </div>
+
+        <p style="margin-top:5mm">Los siete jueces leyeron un directorio de personal y pusieron
+        <strong>cero</strong>, que es lo correcto. El método automático leyó lo mismo y puso
+        <strong>+0.88</strong>, a dos centésimas del plan educativo chino.</p>
+
+        <p><strong>Lo que se retira:</strong> no puede afirmarse que los perfiles de China y Canadá
+        sean indistinguibles. <strong>Lo que se refuerza:</strong> el método no distingue una política
+        de Estado de una página web, si comparten vocabulario.</p>
       </section>
 
       <section class="block">
@@ -434,8 +444,8 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
           <!-- China:  0.99  1.07  0.90  0.45  0.52  0.18 -->
           <polygon points="150.0,63.2 228.2,104.8 221.8,191.5 150.0,213.3 92.6,183.2 105.4,124.3"
                    fill="#023BF2" fill-opacity="0.09" stroke="#023BF2" stroke-width="2.2"/>
-          <!-- Canadá: 0.98  0.72  0.88 -0.31  0.49  0.27 -->
-          <polygon points="150.0,63.6 215.0,112.5 221.0,191.0 150.0,180.1 93.7,182.5 102.0,122.3"
+          <!-- Estados Unidos: 0.12  0.48 -0.02 -0.69 -0.20 -0.80 -->
+          <polygon points="150.0,101.1 205.9,117.7 187.0,171.4 150.0,163.5 119.8,167.5 142.4,145.6"
                    fill="none" stroke="#0B1C45" stroke-width="1.8" stroke-dasharray="5 3"/>
 
           <g font-size="12" fill="#0F1624" text-anchor="middle">
@@ -451,10 +461,10 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
 
           <g font-size="8">
             <rect x="8" y="286" width="8" height="8" fill="#023BF2"/><text x="21" y="293" fill="#0F1624">China</text>
-            <rect x="66" y="286" width="8" height="8" fill="#0B1C45"/><text x="79" y="293" fill="#0F1624">Canadá</text>
+            <rect x="66" y="286" width="8" height="8" fill="#0B1C45"/><text x="79" y="293" fill="#0F1624">EE.UU.</text>
           </g>
         </svg>
-        <div class="kicker" style="margin-top:1mm">Vía A · medianas z contra 2,719 fragmentos de fondo</div>
+        <div class="kicker" style="margin-top:1mm">Método automático · China frente a Estados Unidos. Canadá se omite por el defecto del documento</div>
       </section>
 
       <section class="block">
@@ -473,7 +483,7 @@ td.num { text-align: right; font-variant-numeric: tabular-nums; }
         <ul>
           <li><strong>Sin ancla humana.</strong> Se reporta confiabilidad entre jueces, no validez.
           Modelos con datos de entrenamiento superpuestos pueden coincidir en un error compartido.</li>
-          <li><strong>Corpus asimétrico.</strong> Canadá aporta 15 fragmentos y Sudáfrica 1,303.</li>
+          <li><strong>Canadá se cae.</strong> Su documento incumple el criterio de admisión del propio estudio. Hay que reemplazarlo y volver a medir.</li>
           <li><strong>Un solo eje por Vía B.</strong> Los otros cinco solo tienen Vía A.</li>
           <li><strong>Texto, no aula.</strong> Se mide encuadre en documentos, no implementación.</li>
         </ul>

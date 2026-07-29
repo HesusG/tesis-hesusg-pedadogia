@@ -93,7 +93,9 @@ Estados Unidos & $-0.486$ & $[-0.871,\ -0.143]$ \\
 
 China se separa de los seis restantes de forma inequívoca. Su intervalo, que va de $+0.729$ a $+1.171$, no se solapa con ningún otro. La hipótesis H1 queda confirmada.
 
-Dos detalles del cuadro merecen comentario. El primero es Estados Unidos, único país con puntuación negativa apreciable: su plan de 2025 encuadra la política de IA en términos de desregulación y liderazgo de la industria, con el Estado retirándose de la conducción. El segundo es Canadá, cuyo intervalo es exactamente cero: los siete jueces asignaron cero a los diez pasajes. Esa unanimidad no refleja tanto una postura canadiense como la brevedad del documento, que aporta solo 15 fragmentos y no llega a plantear la relación entre poder estatal y persona.
+Estados Unidos es el único país con puntuación negativa apreciable: su plan de 2025 presenta la política de IA en términos de desregulación y liderazgo de la industria, con el Estado retirándose de la conducción.
+
+Canadá obtiene cero exacto, con unanimidad de los siete jueces en los diez pasajes. Esa unanimidad resultó ser un dato sobre el corpus y no sobre Canadá. La sección~\ref{sec:defecto-canada} lo documenta.
 
 \subsection{No es la región}
 
@@ -153,21 +155,38 @@ Colombia & $-0.156$ & $+0.014$ \\
 
 La correlación de rangos entre ambas columnas es de $\rho = 0.321$. La correlación lineal es de $r = 0.629$. Ninguna de las dos permite tratar los métodos como intercambiables.
 
-\subsection{El caso Canadá}
+\subsection{El caso Canadá, y lo que se encontró al abrirlo}
+\label{sec:defecto-canada}
 
-El desacuerdo se concentra en un par. Para la Vía A, China puntúa $+0.903$ y Canadá $+0.881$: una diferencia de $0.021$ desviaciones típicas, con intervalos que se solapan por completo. Los dos documentos son, para el método de proyección sobre vectores, indistinguibles.
+El desacuerdo se concentra en un par. Para la Vía A, China puntúa $+0.903$ y Canadá $+0.881$: una diferencia de $0.021$ desviaciones típicas, con intervalos que se solapan por completo. Para la Vía B, la diferencia entre esos mismos dos países es de $0.943$ puntos completos de escala, y los intervalos no se tocan.
 
-Para la Vía B, la diferencia entre esos mismos dos países es de $0.943$ puntos completos de escala, y los intervalos no se tocan.
+La primera hipótesis fue que el error estaba en el panel de jueces. Verificarla exigía leer el documento canadiense pasaje por pasaje, y esa lectura produjo un hallazgo que el diseño no anticipaba.
 
-El desacuerdo se extiende a los seis ejes confucianos. Al comparar China y Canadá eje por eje con sus intervalos de confianza, cinco de los seis se solapan: benevolencia, ritual, rectitud, cultivo de sí y el propio eje \dezhi. Solo armonía (\textit{hé}) los separa, y ahí China obtiene $+0.449$ frente a $-0.305$ de Canadá.
+\textbf{El documento canadiense del corpus no es la estrategia canadiense.} Es una captura de navegador del sitio de CIFAR, fechada el 8 de septiembre de 2018 en el encabezado de cada página. Sus 15 fragmentos incluyen la ruta de navegación del sitio, la lista del comité asesor internacional con el cargo de cada miembro, un botón de donación y el pie de suscripción al boletín. De los diez pasajes muestreados para la medición, \textbf{cinco son material de ese tipo}.
+
+Una auditoría de los pasajes muestreados de los siete países confirmó que el problema es exclusivo de Canadá: ningún pasaje de China, Estados Unidos, Colombia, Alemania o Australia contiene material de navegación de sitio web, y Sudáfrica presenta uno solo, correspondiente a una URL dentro de una referencia.
+
+El documento incumple el criterio C5, que exige el texto oficial completo y no una página que hable de él. Es el mismo motivo por el que se rechazó la fuente vietnamita en el brazo de control. La diferencia es que aquel se detectó al construir el corpus y este sobrevivió hasta el análisis final.
+
+\subsection{El defecto convertido en la mejor demostración}
+
+Corresponde declarar primero lo que este hallazgo invalida.
+
+\textbf{Se retira la afirmación} de que el perfil confuciano de China y el de Canadá son estadísticamente indistinguibles en cinco de seis ejes. Esa afirmación describía la relación entre el plan educativo chino y una página web, no entre dos políticas nacionales. Canadá queda fuera de la comparación sustantiva hasta que se incorpore el documento correcto y se repita la medición.
+
+Lo que el hallazgo \textbf{no} invalida es la conclusión metodológica. Al contrario, la agudiza.
+
+Los siete jueces leyeron una lista de miembros de un comité asesor y asignaron cero. Es la respuesta correcta: ese pasaje no trata la relación entre poder estatal y persona. La Vía A leyó el mismo material y le asignó $+0.881$, a dos centésimas del plan de inteligencia artificial en educación de China.
+
+El método de proyección sobre vectores no distinguió \textit{un instrumento de política de Estado} de \textit{un directorio de personal con un botón de donación}, porque ambos comparten el vocabulario de la inteligencia artificial, el talento, lo nacional y el liderazgo.
 
 \subsection{Por qué ocurre}
 
-Ambos documentos usan el mismo vocabulario. Hablan de talento, de formación, de estrategia nacional, de instituciones de investigación, de futuro del país. Un método que opera midiendo distancias entre representaciones de significado registra esa coincidencia léxica y concluye que los textos se parecen.
-
-Lo que la proyección no puede registrar es \textit{quién actúa sobre quién}. El documento chino presenta al Estado dirigiendo la formación de la población. El canadiense presenta un programa de financiamiento a centros de investigación. Ambos dicen «formar talento»; solo uno describe al Estado como el sujeto que forma.
+El método de proyección mide de qué habla un texto. El constructo de este estudio depende de quién actúa sobre quién. Las dos cosas se parecen lo suficiente para confundirse y son distintas: «el Estado formará a los estudiantes» y «se formará a especialistas del Estado» comparten casi todo el léxico y dicen cosas opuestas.
 
 Esa distinción es sintáctica y de rol, no léxica. Un lector la percibe en la primera lectura. Un método de proyección bipolar sobre promedios de vectores no.
+
+El caso canadiense es la versión extrema del mismo fenómeno, y por eso resulta más ilustrativo que un contraste entre dos políticas reales: cuando el texto ni siquiera es una política, el método sigue produciendo un valor alto, un intervalo estrecho y una gráfica presentable.
 
 \subsection{Qué se sigue de esto}
 
@@ -205,9 +224,9 @@ Colombia & $-0.37$ & $-0.41$ & $-0.18$ & $+0.39$ & $-0.16$ & $-0.41$ \\
 \end{tabular}
 \end{table}
 
-Leído con los intervalos de confianza, este cuadro dice menos de lo que aparenta. Las dos primeras filas son estadísticamente indistinguibles en cinco de sus seis celdas. El perfil confuciano medido por proyección vectorial no distingue a China de Canadá, y esa es precisamente la constatación de la sección anterior expresada en seis dimensiones en vez de una.
+La fila de Canadá se conserva por transparencia, pero \textbf{no debe leerse como el perfil de la política canadiense}: procede del documento defectuoso descrito en la sección~\ref{sec:defecto-canada}. Que sus seis valores queden a distancia mínima de los de China es el mismo fenómeno de aquella sección, expresado en seis dimensiones en vez de una.
 
-Estados Unidos ofrece el contraste más nítido en los ejes de ritual ($-0.80$) y armonía ($-0.69$), coherente con un documento que ordena la política en torno a competencia e iniciativa privada.
+Entre los países cuyo documento sí cumple los criterios, Estados Unidos ofrece el contraste más nítido frente a China en los ejes de ritual ($-0.80$) y armonía ($-0.69$), coherente con un documento que ordena la política en torno a la competencia y la iniciativa privada.
 
 \section{Síntesis}
 

@@ -19,31 +19,50 @@ El apoyo computacional no convierte al estudio en cuantitativo. Las herramientas
 
 \section{Corpus Documental}
 
-El corpus se compone de 13 documentos de política de siete países, seleccionados para representar regiones, idiomas y niveles de desarrollo distintos. Seis países contribuyen un documento principal cada uno. China contribuye siete documentos publicados entre 2017 y 2025, lo que permite observar cómo evolucionó su política a lo largo de ocho años. La Tabla~\ref{tab:corpus-shorter} presenta el corpus completo.
+El corpus se compone de 12 documentos de política de siete países, seleccionados para representar regiones, idiomas y niveles de desarrollo distintos. Seis países contribuyen un documento principal cada uno. China contribuye seis documentos publicados entre 2017 y 2025, lo que permite observar cómo evolucionó su política a lo largo de ocho años. La Tabla~\ref{tab:corpus-shorter} presenta el corpus para la comparación entre países.
 
 \begin{table}[htbp]
 \centering
-\caption{Corpus documental}
+\caption{Corpus documental: comparación entre países}
 \label{tab:corpus-shorter}
 \small
-\begin{tabular}{lllll}
+\begin{tabular}{p{2.2cm}p{2.5cm}p{5.5cm}cp{2cm}}
 \hline
 \textbf{País} & \textbf{Región} & \textbf{Documento} & \textbf{Año} & \textbf{Idioma} \\
 \hline
-EE.UU. & Norteamérica & Executive Order 14110 & 2023 & EN \\
-Canadá & Norteamérica & Pan-Canadian AI Strategy & 2017 & EN \\
-Colombia & Latinoamérica & CONPES 3975 & 2019 & ES \\
-Alemania & Europa & KI-Strategie (actualización) & 2020 & DE \\
-Sudáfrica & África & PC4IR Report & 2020 & EN \\
-Australia & Oceanía & AI Action Plan & 2021 & EN \\
-China & Asia & 7 documentos (2017--2025) & 2017--2025 & ZH$\rightarrow$EN \\
+EE.UU. & Norteamérica & Executive Order 14110 & 2023 & Inglés \\
+Canadá & Norteamérica & Pan-Canadian AI Strategy & 2017 & Inglés \\
+Colombia & Latinoamérica & CONPES 3975 & 2019 & Español \\
+Alemania & Europa & KI-Strategie (actualización) & 2020 & Alemán \\
+Sudáfrica & África & PC4IR Report & 2020 & Inglés \\
+Australia & Oceanía & AI Action Plan & 2021 & Inglés \\
+China & Asia & K-12 AI Education Guidance & 2024 & Chino (trad.\ inglés) \\
 \hline
 \end{tabular}
 \end{table}
 
-Los criterios de selección fueron cuatro: que el país contara con un documento oficial de IA que incluyera educación, que el conjunto representara diversidad geográfica y lingüística, que los documentos fueran de acceso público, y que hubieran sido publicados entre 2017 y 2025.
+Los criterios de selección fueron cuatro: que el país contara con un documento oficial de IA que incluyera educación, que el conjunto representara diversidad geográfica y lingüística, que los documentos fueran de acceso público, y que hubieran sido publicados entre 2017 y 2025. Los documentos de Alemania se analizan en su versión oficial en alemán. El corpus abarca cuatro familias lingüísticas (inglés, español, alemán y chino), lo que permite observar si el idioma de los documentos influye en las similitudes que el análisis detecta.
 
-Los documentos de China se analizan en traducción al inglés realizada mediante el modelo Qwen 2.5, con revisión manual posterior del investigador. Los documentos de Alemania se analizan en su versión oficial en alemán. El corpus abarca cuatro familias lingüísticas (inglés, español, alemán y chino), lo que permite observar si el idioma de los documentos influye en las similitudes que el análisis detecta.
+Además de la comparación entre países, China es objeto de un análisis longitudinal independiente. Seis documentos publicados entre 2017 y 2025 permiten observar cómo evolucionaron las prioridades de política educativa en IA a lo largo de ocho años. Estos documentos se analizan en traducción al inglés realizada mediante el modelo Qwen 2.5, con revisión manual posterior del investigador. La Tabla~\ref{tab:china-longitudinal} presenta el corpus longitudinal.
+
+\begin{table}[htbp]
+\centering
+\caption{Corpus longitudinal de China (análisis independiente)}
+\label{tab:china-longitudinal}
+\small
+\begin{tabular}{p{8.5cm}cp{2.8cm}}
+\hline
+\textbf{Documento} & \textbf{Año} & \textbf{Idioma} \\
+\hline
+New Generation AI Development Plan & 2017 & Chino (trad.\ inglés) \\
+AI Innovation Action Plan for Higher Education & 2018 & Chino (trad.\ inglés) \\
+Interim Measures for Generative AI Services & 2023 & Chino (trad.\ inglés) \\
+K-12 AI Education Guidance & 2024 & Chino (trad.\ inglés) \\
+Accelerating Education Digitalization & 2025 & Chino (trad.\ inglés) \\
+Smart Education Strategy 2.0 & 2025 & Chino (trad.\ inglés) \\
+\hline
+\end{tabular}
+\end{table}
 
 
 \section{Cómo se Analizan los Textos}

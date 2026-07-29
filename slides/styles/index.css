@@ -291,3 +291,7 @@
 
 /* ---------- SVG de datos: fijar la voz tipográfica dentro de los gráficos ---------- */
 .slidev-layout svg text { font-family: var(--font-mono); }
+
+/* El tema por defecto aplica text-center a .slidev-layout.statement. Aquí las
+   láminas de enunciado llevan prosa alineada a la izquierda, no un lema centrado. */
+.slidev-layout.statement { text-align: left; }
