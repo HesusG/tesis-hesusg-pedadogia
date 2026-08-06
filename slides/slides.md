@@ -33,7 +33,7 @@ layout: cover
 
 <!--
 0:00-1:00 · Saludar y arrancar por la pregunta, no por el método.
-NO adelantar el resultado. La historia funciona si el jurado llega al tropiezo
+NO adelantar el tropiezo de Canadá. La historia funciona si el jurado llega
 conmigo, no si se lo cuento de entrada.
 -->
 
@@ -42,52 +42,288 @@ layout: statement
 ---
 
 <div class="max-w-4xl">
-  <div class="kicker mb-5">De dónde salió esto</div>
-  <div class="text-[1.6rem] leading-snug text-ink">
-    Mientras escribía esta tesis, la <strong>SEP</strong> publicó sus diez líneas de acción sobre
-    inteligencia artificial generativa, y la <strong>ANUIES</strong> su documento de gobernanza
-    de IA para la educación superior.
+  <div class="kicker mb-5">De qué trata esta investigación</div>
+  <div class="text-[1.5rem] leading-snug text-ink">
+    Los gobiernos del mundo están escribiendo, ahora mismo, sus políticas de
+    inteligencia artificial en la escuela. Y para escribirlas <strong>se inspiran en otros países</strong>.
   </div>
-  <div class="mt-8 text-[1.6rem] leading-snug text-ink">
-    Las dos hacen lo mismo que haría cualquiera: <em>mirar qué hicieron otros países</em>
-    y tomar lo que parece funcionar.
+  <div class="mt-7 text-[1.5rem] leading-snug text-ink">
+    Esta tesis construye una <strong>forma de medir</strong> en qué se diferencian esas políticas
+    de verdad, la aplica a siete países, y comprueba si la medición aguanta.
   </div>
-  <div class="mt-9 keyidea text-[1.45rem]">
-    <span class="lbl">Y ahí me quedé atorado</span>
-    Si vas a copiar la política de otro país, ¿cómo sabes qué estás copiando?
+  <div class="mt-9 keyidea text-[1.4rem]">
+    <span class="lbl">La pregunta que me dejó atorado</span>
+    Si te inspiras en la política de otro país, ¿cómo sabes en qué te estás inspirando?
   </div>
 </div>
 
 <!--
-1:00-2:30 · Esta es la lámina de motivación. Decirlo en primera persona.
-El préstamo de políticas es la práctica normal en educación comparada
-(Steiner-Khamsi). No la critico: pregunto cómo se hace bien.
+1:00-2:00 · La lámina de entrada, en primera persona y sin jerga.
+Mencionar en voz alta: mientras escribía esto, la SEP publicó sus diez líneas de
+acción sobre IA generativa y la ANUIES su documento de gobernanza. Las dos miran
+qué hicieron otros. El préstamo de políticas es la práctica normal en educación
+comparada; no la critico, pregunto cómo se hace bien.
 -->
 
 ---
+layout: ac-fact
+---
 
-## El problema práctico
+## Y todos se parecen muchísimo
 
 <div class="slide-body">
-<div class="text-[1.35rem] max-w-4xl">
-Cuando uno se sienta a comparar, se topa con que <strong>todos los documentos se parecen</strong>.
-Hablan de formar talento, de preparar al país, de ética, de capacitar maestros.
+<div class="text-[1.22rem] max-w-4xl mb-6">Cuando uno se sienta a comparar, se topa con que los documentos de países distintos usan
+<strong>casi el mismo vocabulario</strong>.</div>
+<div class="grid grid-cols-3 gap-5">
+  <div class="ac-card p-6 text-[1.1rem]">«Formar talento en inteligencia artificial»</div>
+  <div class="ac-card p-6 text-[1.1rem]">«Preparar a la nación para el futuro»</div>
+  <div class="ac-card p-6 text-[1.1rem]">«Capacitar a los docentes»</div>
 </div>
-<div class="mt-7 grid grid-cols-3 gap-5">
-  <div class="ac-card p-6 text-[1.15rem]">«Formar talento en inteligencia artificial»</div>
-  <div class="ac-card p-6 text-[1.15rem]">«Preparar a la nación para el futuro»</div>
-  <div class="ac-card p-6 text-[1.15rem]">«Capacitar a los docentes»</div>
+<div class="mt-7 keyidea text-[1.15rem]">
+  <span class="lbl">No es una impresión mía</span>
+  Un análisis de las estrategias de China, Estados Unidos, Francia y Alemania encontró que
+  sus narrativas son <em>«sorprendentemente similares»</em>, aunque construyan imaginarios
+  distintos sobre lo que la IA significa.
 </div>
-<div class="mt-8 text-[1.35rem] max-w-4xl">
-Ese parecido puede significar tres cosas muy distintas: que un país copió a otro, que los dos
-copiaron de la UNESCO, o que llegaron por su cuenta a lo mismo porque enfrentan el mismo
-problema. <strong>Leer los documentos uno junto a otro no lo resuelve.</strong>
+<div class="mt-5 text-[1.2rem] max-w-4xl">
+Ese parecido puede significar tres cosas muy distintas: que un país se inspiró en otro,
+que los dos se inspiraron en un marco internacional, o que llegaron por su cuenta a lo
+mismo porque enfrentan el mismo problema. <strong>Leer los documentos uno junto a otro no lo resuelve.</strong>
 </div>
 </div>
-<div class="src">Steiner-Khamsi, G. (2014). Cross-national policy borrowing. Comparative Education, 50(2).</div>
+<div class="src">Steiner-Khamsi, G. (2014). Cross-national policy borrowing: Understanding reception and translation. <i>Asia Pacific Journal of Education, 34</i>(2), 153–167 · Bareis, J., y Katzenbach, C. (2022). Talking AI into being. <i>Science, Technology, &amp; Human Values, 47</i>(5), 855–881.</div>
 
 <!--
-2:30-4:00 · Sembrar que el parecido superficial es engañoso. Todavía sin método.
+2:00-3:30 · Sembrar que el parecido superficial es engañoso, con evidencia y no solo intuición.
+Los tres ejemplos de la izquierda son descripciones mías del tipo de frase, no citas textuales:
+decirlo si preguntan. El hallazgo de Bareis y Katzenbach es real y verificado: analizaron
+las estrategias de cuatro países. Todavía sin método propio en esta lámina.
+-->
+
+---
+layout: ac-fact
+---
+
+## Preguntas de investigación
+
+<div class="slide-body">
+<div class="ac-callout mb-7 text-[1.3rem]">
+  ¿Las políticas de educación en inteligencia artificial de siete países expresan
+  <strong>concepciones distintas sobre quién forma a las personas</strong>, y esa diferencia
+  se puede medir de manera reproducible?
+</div>
+<div class="grid grid-cols-3 gap-5">
+  <div class="ac-card p-6">
+    <div class="kicker mb-3">P1 · ¿Se puede medir?</div>
+    <div class="text-[1.12rem]">¿Se le puede poner a un párrafo un valor que exprese cuánto presenta la educación en IA como cultivo moral dirigido por el Estado, frente a cuánto la presenta como conducta regulada por normas?</div>
+  </div>
+  <div class="ac-card-blue p-6">
+    <div class="kicker mb-3">P2 · ¿Difieren los países?</div>
+    <div class="text-[1.12rem]">¿Se separan los siete países en ese eje? ¿Y la separación sobrevive cuando se controla por la región del documento, por su tema y por la estructura del Estado?</div>
+  </div>
+  <div class="ac-card p-6">
+    <div class="kicker mb-3">P3 · ¿Coinciden los métodos?</div>
+    <div class="text-[1.12rem]">¿Dos procedimientos de medición independientes, uno por proyección vectorial y otro por juicio de lectura, producen el mismo ordenamiento de países? Y dentro del panel de lectores, <strong>¿el origen cultural de cada uno sesga su propia calificación?</strong></div>
+  </div>
+</div>
+<div class="mt-7 text-[1.15rem] text-muted max-w-5xl">
+P1 es una pregunta de instrumento, P2 de comparación y P3 de validez. Las tres se responden
+con el mismo corpus. <strong>La tercera es la que acabó dando el hallazgo principal.</strong>
+</div>
+</div>
+
+<!--
+3:30-5:00 · Leer la pregunta central completa, despacio. Luego las tres, rápido.
+P2 se controla por región, tema y estructura del Estado (los tres brazos de confusión);
+el sesgo de origen del panel es una pregunta distinta, de validez del instrumento, y por
+eso vive en P3. Señalar desde ya que P3 es la que da la sorpresa: siembra el tropiezo
+sin contarlo.
+-->
+
+---
+layout: ac-fact
+---
+
+## Objetivos
+
+<div class="slide-body">
+<div class="ac-callout mb-7 text-[1.25rem]">
+  <span class="kicker block mb-2">Objetivo general</span>
+  Medir en las políticas de educación en IA de siete países <strong>el grado en que el Estado
+  se presenta como formador moral de la población frente a regulador de conductas</strong>,
+  y evaluar la confiabilidad de esa medición mediante dos procedimientos independientes.
+</div>
+<table class="actable">
+  <thead><tr><th style="width:6%"></th><th style="width:46%">Objetivo específico</th><th>Cómo se verifica</th></tr></thead>
+  <tbody>
+    <tr><th class="text-blue">1</th><td>Construir el corpus con criterios de inclusión explícitos, aplicables por un tercero</td><td class="dim">Seis criterios escritos; bitácora pública de documentos dados de baja</td></tr>
+    <tr><th class="text-blue">2</th><td>Pre-registrar la regla de medir y las predicciones antes de medir nada</td><td class="dim">Con fecha en el repositorio, antes de la primera corrida</td></tr>
+    <tr><th class="text-blue">3</th><td>Medir el eje por dos vías independientes entre sí</td><td class="dim">Una automática por similitud, otra por panel de siete lectores</td></tr>
+    <tr><th class="text-blue">4</th><td>Contrastar ambas vías y documentar dónde coinciden y dónde no</td><td class="dim">Acuerdo entre jueces, sesgo de origen, tres pruebas de confusión</td></tr>
+  </tbody>
+</table>
+<div class="mt-6 keyidea text-[1.2rem]">
+  <span class="lbl">El cuarto objetivo es el que importa</span>
+  Sin patrón de oro contra el cual calibrar, <em>el instrumento de esta tesis no es ninguna
+  de las dos vías: es el contraste entre ambas.</em>
+</div>
+</div>
+
+<!--
+5:00-6:30 · Los objetivos van con su verificación al lado a propósito: un objetivo
+que no se puede comprobar no es un objetivo. Cerrar con la keyidea, que es la
+tesis metodológica completa en una frase.
+-->
+
+---
+layout: ac-fact
+---
+
+## Los seis valores con que se describe cada política
+
+<div class="slide-body">
+<table class="actable" style="font-size:0.86rem">
+  <thead><tr>
+    <th style="width:15%">Eje</th><th style="width:23%">Qué opone</th>
+    <th class="text-right">China</th><th class="text-right">Canadá</th><th class="text-right">EUA</th>
+    <th class="text-right">Colombia</th><th class="text-right">Alemania</th><th class="text-right">Sudáfrica</th><th class="text-right">Australia</th>
+  </tr></thead>
+  <tbody>
+    <tr><th>仁 <span class="dim">rén</span><br />Benevolencia</th><td class="dim">La persona · frente a · la eficiencia</td>
+      <td style="text-align:right" class="yes">+0.97</td><td style="text-align:right">+0.34</td><td style="text-align:right">+0.09</td><td style="text-align:right" class="dim">−0.40</td><td style="text-align:right">+0.06</td><td style="text-align:right">−0.07</td><td style="text-align:right">+0.11</td></tr>
+    <tr><th>礼 <span class="dim">lǐ</span><br />Ritual</th><td class="dim">La norma compartida · frente a · su ausencia</td>
+      <td style="text-align:right">+0.16</td><td style="text-align:right" class="yes">+0.39</td><td style="text-align:right" class="dim">−0.84</td><td style="text-align:right">−0.44</td><td style="text-align:right">−0.23</td><td style="text-align:right">+0.30</td><td style="text-align:right">+0.04</td></tr>
+    <tr><th>义 <span class="dim">yì</span><br />Rectitud</th><td class="dim">Lo justo · frente a · el provecho</td>
+      <td style="text-align:right" class="yes">+1.07</td><td style="text-align:right">+0.17</td><td style="text-align:right">+0.48</td><td style="text-align:right" class="dim">−0.19</td><td style="text-align:right">+0.11</td><td style="text-align:right">−0.13</td><td style="text-align:right">−0.13</td></tr>
+    <tr><th>修身 <span class="dim">xiūshēn</span><br />Cultivo de sí</th><td class="dim">Formar el carácter · frente a · sacar el título</td>
+      <td style="text-align:right" class="yes">+0.51</td><td style="text-align:right">+0.30</td><td style="text-align:right" class="dim">−0.21</td><td style="text-align:right">+0.37</td><td style="text-align:right">−0.05</td><td style="text-align:right">−0.16</td><td style="text-align:right">−0.11</td></tr>
+    <tr><th class="text-blue">德治↔法 <span class="dim">dézhì↔fǎ</span><br />Virtud vs. norma</th><td class="dim">El Estado forma · frente a · el Estado pone reglas</td>
+      <td style="text-align:right" class="yes">+0.85</td><td style="text-align:right">+0.78</td><td style="text-align:right" class="dim">−0.07</td><td style="text-align:right">−0.20</td><td style="text-align:right">+0.08</td><td style="text-align:right">+0.03</td><td style="text-align:right">+0.45</td></tr>
+    <tr><th>和 <span class="dim">hé</span><br />Armonía</th><td class="dim">El bien colectivo · frente a · la autonomía</td>
+      <td style="text-align:right" class="yes">+0.47</td><td style="text-align:right">−0.28</td><td style="text-align:right" class="dim">−0.68</td><td style="text-align:right">−0.39</td><td style="text-align:right">−0.26</td><td style="text-align:right" class="yes">+0.47</td><td style="text-align:right">+0.05</td></tr>
+  </tbody>
+</table>
+<div class="mt-5 text-[1.05rem] text-muted max-w-5xl">
+Cada número dice cuántas desviaciones se aparta ese país del documento promedio del corpus.
+<strong>China encabeza cinco de los seis ejes</strong>; el único que no, el ritual, lo encabeza Canadá.
+Sudáfrica empata a China en armonía.
+</div>
+<div class="mt-3 text-[1.05rem] text-muted max-w-5xl">
+Que un mismo país domine casi todo obliga a preguntar si los seis ejes miden seis cosas distintas
+o una sola. Por eso <em>uno de ellos se midió dos veces</em>, con dos métodos independientes:
+el de virtud contra norma, que es el que responde la pregunta de esta tesis.
+</div>
+</div>
+<div class="src">Vía automática · medianas contra el promedio de todos los documentos del corpus.</div>
+
+<!--
+6:30-8:30 · Los seis ejes salen del vocabulario confuciano y se aplican por igual
+a los siete países. Leer la tabla por columnas, no por filas: China arriba en casi
+todo. Ese dominio es justamente lo que obliga a validar. Los cinco primeros ejes
+están medidos solo por la vía automática y son exploratorios; el sexto es el que
+tiene panel de jueces. Decirlo aquí evita que un sinodal lo saque después.
+-->
+
+---
+layout: ac-fact
+---
+
+## El resultado, en un solo mapa
+
+<div class="slide-body">
+<div class="grid grid-cols-[1fr_0.85fr] gap-6 items-center">
+  <div class="flex items-center justify-center">
+    <RadarConfucio :paises="['china','canada']" />
+  </div>
+  <div>
+    <div class="text-[1.2rem]">La misma tabla anterior, dibujada. Cada punta es uno de los seis
+    ejes; mientras más lejos del centro, más presente está ese valor en los textos de ese país.</div>
+    <div class="mt-5 text-[1.2rem]">Puestos uno encima del otro, los dos países que en teoría
+    deberían estar más lejos <strong>casi se enciman</strong>: tres de los seis ejes empatan,
+    y uno de los que empatan es <em>justo el que mide quién forma a quién</em>.</div>
+    <div class="mt-6 ac-callout text-[1.1rem]">
+      Para el método automático, la política china y la canadiense son prácticamente el mismo
+      texto. Guarden esa imagen: la tercera parte de la defensa trata de por qué eso está mal.
+    </div>
+  </div>
+</div>
+</div>
+<div class="src">Vía automática · medianas contra el promedio de todos los documentos del corpus.</div>
+
+<!--
+8:30-9:30 · El mismo dato de la lámina anterior, ahora como figura.
+Explicar cómo se lee un radar, que no todo el jurado lo tiene claro.
+Enseñar el empate ANTES de explicarlo es deliberado: quiero que les extrañe.
+No decir todavía que el empate es un error de la herramienta.
+-->
+
+---
+layout: ac-fact
+---
+
+## Las políticas que se midieron
+
+<div class="slide-body">
+<table class="actable">
+  <thead><tr><th style="width:16%">País</th><th style="width:46%">Documento</th><th style="width:10%">Año</th><th>Fragmentos</th></tr></thead>
+  <tbody>
+    <tr><th>China</th><td>15º Plan Quinquenal <span class="dim">十五五</span> · y ocho documentos más</td><td>2026</td><td class="yes">271</td></tr>
+    <tr><th>Canadá</th><td>AI for All <span class="dim">· sustituido durante el estudio</span></td><td>2026</td><td>210</td></tr>
+    <tr><th>Estados Unidos</th><td>America's AI Action Plan <span class="dim">· sustituido durante el estudio</span></td><td>2025</td><td>156</td></tr>
+    <tr><th>Colombia</th><td>CONPES 4144 <span class="dim">· sustituido durante el estudio</span></td><td>2025</td><td>764</td></tr>
+    <tr><th>Alemania</th><td>KI-Strategie der Bundesregierung</td><td>2020</td><td>230</td></tr>
+    <tr><th>Sudáfrica</th><td>Informe de la Comisión Presidencial 4IR</td><td>2020</td><td>1,303</td></tr>
+    <tr><th>Australia</th><td>AI Action Plan</td><td>2021</td><td>161</td></tr>
+    <tr><th class="text-blue">México</th><td><span class="no">Ningún documento admisible</span> <span class="dim">· ver lámina siguiente</span></td><td class="dim">—</td><td class="no">0</td></tr>
+  </tbody>
+</table>
+<div class="mt-5 text-[1.05rem] text-muted">
+Un país por región política del mundo. <strong>Tres de los siete documentos originales tuvieron
+que sustituirse</strong> a mitad del estudio: el de Estados Unidos y el de Colombia porque estaban
+derogados, y el de Canadá porque no era la estrategia. Cada baja quedó registrada con su motivo.
+</div>
+</div>
+
+<!--
+9:30-10:30 · Nombrar el Plan Quinquenal en voz alta: es la fuente más importante
+del corpus, 140 páginas adoptadas por la Asamblea Popular Nacional en marzo de 2026.
+No detenerse en Canadá todavía, solo dejar sembrado que se sustituyó.
+La fila de México es el puente a la lámina que sigue.
+-->
+
+---
+layout: ac-fact
+---
+
+## Por qué México no está en el corpus
+
+<div class="slide-body">
+<div class="text-[1.2rem] mb-5 max-w-5xl">La respuesta corta es que <strong>no encontré un documento
+mexicano que cumpla los criterios</strong>. Busqué los cinco candidatos posibles y los revisé uno por uno.</div>
+<table class="actable">
+  <thead><tr><th style="width:38%">Candidato</th><th style="width:22%">Quién lo emitió</th><th>Por qué no entra</th></tr></thead>
+  <tbody>
+    <tr><th>Programa Sectorial de Educación 2025-2030</th><td class="dim">SEP · DOF, sep 2025</td><td><span class="no">Cero menciones de IA</span> en 222 páginas</td></tr>
+    <tr><th>Plan Nacional de Desarrollo 2025-2030</th><td class="dim">Presidencia · DOF, abr 2025</td><td><span class="no">Una mención</span> en 79 páginas, y es de pasada</td></tr>
+    <tr><th>Diez acciones sobre IA generativa</th><td class="dim">SEP · abr 2026</td><td>Recomendaciones presentadas en un evento; <span class="no">no hay documento adoptado</span></td></tr>
+    <tr><th>Agenda Nacional de IA 2024-2030</th><td class="dim">Alianza civil y Senado</td><td>Es una <span class="no">propuesta</span>, no una política adoptada</td></tr>
+    <tr><th>Hacia una Estrategia de IA en México</th><td class="dim">C Minds · 2018</td><td>Lo escribió <span class="no">sociedad civil</span>, no un órgano de gobierno</td></tr>
+  </tbody>
+</table>
+<div class="mt-6 keyidea text-[1.25rem]">
+  <span class="lbl">Y esa ausencia es, en sí misma, un resultado</span>
+  El Plan Nacional de Desarrollo mexicano y el Plan Quinquenal chino son <em>el mismo tipo de
+  documento</em>: el instrumento con que un Estado dice qué va a construir en cinco años.
+  El chino menciona la inteligencia artificial <strong>52 veces</strong>. El mexicano, <strong>una</strong>.
+</div>
+</div>
+
+<!--
+10:30-11:30 · Lámina de relevancia nacional, y hay que sostenerla con calma.
+El dato es verificable: los dos PDF están en el DOF, el conteo es reproducible.
+Si preguntan por qué no metí el reporte de encuesta de la SEP sobre IA generativa:
+porque es un diagnóstico, no un curso de acción, y por la misma razón quedó fuera
+el reporte chino equivalente sobre uso docente. El criterio se aplica parejo.
 -->
 
 ---
@@ -101,49 +337,24 @@ layout: section
 ## No es de qué hablan. Es de quién hace qué.
 
 ---
-
-## Dos frases del mismo tema
-
-<div class="slide-body">
-<div class="grid grid-cols-2 gap-6">
-  <div class="ac-card p-7">
-    <div class="kicker mb-3">Documento A</div>
-    <div class="text-[1.3rem]">El Estado <strong>fija el plan</strong>, las escuelas lo aplican, los maestros se capacitan según él, y se mide que la población alcance el nivel esperado.</div>
-  </div>
-  <div class="ac-card p-7">
-    <div class="kicker mb-3">Documento B</div>
-    <div class="text-[1.3rem]">El gobierno <strong>financia centros de investigación</strong> y pone reglas de privacidad. Universidades y empresas deciden qué hacer dentro de ellas.</div>
-  </div>
-</div>
-<div class="mt-8 keyidea text-[1.35rem]">
-  <span class="lbl">Los dos hablan de formar gente para la IA</span>
-  En el primero, el que forma es <em>el Estado</em>. En el segundo, el Estado
-  <em>pone el marco</em> y otros forman. Esa diferencia no está en las palabras.
-</div>
-</div>
-
-<!--
-4:00-6:00 · El corazón de la tesis. Que el jurado vea la diferencia ANTES de
-que le ponga nombre técnico. Si entienden esta lámina, entienden todo.
-Estas dos son descripciones mías, no citas: lo digo en voz alta.
--->
-
----
 layout: ac-split
 ---
 
-## Esa diferencia ya tiene nombre
+## Dos documentos, y el nombre de su diferencia
 
 ::left::
 
-<div class="text-[1.2rem]">
-No la inventé. La discusión sobre si la autoridad <strong>forma el carácter</strong> de la gente
-o solo <strong>pone reglas</strong> tiene más de dos mil años en la tradición china, y también
-atraviesa la teoría política occidental entre el Estado educador y el Estado limitado.
+<div class="ac-card p-5 mb-4">
+  <div class="kicker mb-2">Documento A</div>
+  <div class="text-[1.15rem]">El Estado <strong>fija el plan</strong>, las escuelas lo aplican, los maestros se capacitan según él, y se mide que la población alcance el nivel esperado.</div>
 </div>
-<div class="mt-6 text-[1.2rem]">
-Uso el vocabulario chino por una razón práctica: <em>es el más preciso que encontré</em>.
-Distingue las dos cosas con dos palabras, sin rodeos.
+<div class="ac-card p-5">
+  <div class="kicker mb-2">Documento B</div>
+  <div class="text-[1.15rem]">El gobierno <strong>financia centros de investigación</strong> y pone reglas de privacidad. Universidades y empresas deciden qué hacer dentro de ellas.</div>
+</div>
+<div class="mt-5 text-[1.1rem] text-muted">
+Los dos hablan de formar gente para la IA. En el primero el que forma es el Estado; en el
+segundo el Estado pone el marco y otros forman. <strong>Esa diferencia no está en las palabras.</strong>
 </div>
 
 ::right::
@@ -161,135 +372,59 @@ Distingue las dos cosas con dos palabras, sin rodeos.
 <div class="src">Pines, Y. (2023). Legalism in Chinese Philosophy. Stanford Encyclopedia of Philosophy.</div>
 
 <!--
-6:00-8:00 · Justificar POR QUÉ un marco chino y no uno occidental: por precisión
-del vocabulario, no por exotismo. Y aclarar que se aplica igual a los siete
-países, no solo a China. Eso desarma la acusación de esencializar.
--->
-
----
-layout: statement
-dark: true
----
-
-<div class="max-w-4xl">
-  <div class="kicker mb-4">En pocas palabras, esto hice</div>
-  <div class="text-[1.75rem] leading-snug" style="color: rgba(255,255,255,0.95)">
-    Tomé <strong>siete políticas nacionales</strong> de inteligencia artificial en educación,
-    una por región del mundo.
-  </div>
-  <div class="mt-6 text-[1.75rem] leading-snug" style="color: rgba(255,255,255,0.95)">
-    Le puse a cada párrafo una <strong>calificación del −2 al +2</strong> según si presenta al
-    Estado formando personas o poniendo límites.
-  </div>
-  <div class="mt-6 text-[1.75rem] leading-snug" style="color: rgba(255,255,255,0.95)">
-    Y como no me fiaba de mi propia regla, <span class="text-yellow">la apliqué dos veces,
-    con dos métodos que no se parecen en nada.</span>
-  </div>
-</div>
-
-<!--
-8:00-9:00 · La lámina que faltaba. Si el jurado se distrae y vuelve, con esta
-se reengancha. Decirla despacio, es la tesis en tres frases.
+11:30-13:30 · El corazón conceptual. Que vean la diferencia en los dos documentos
+de la izquierda ANTES de leer los caracteres de la derecha.
+Los documentos A y B son descripciones mías, no citas: decirlo.
+Justificar el vocabulario chino por PRECISIÓN, no por exotismo: distingue las dos
+cosas con dos palabras. Y aclarar que el eje se aplica igual a los siete países,
+no solo a China. Eso desarma la acusación de esencializar.
 -->
 
 ---
 layout: ac-fact
 ---
 
-## La regla de medir
+## Cómo se mide, y con qué
 
 <div class="slide-body">
-<table class="actable">
-  <thead><tr><th style="width:10%">Valor</th><th style="width:42%">Qué tiene que decir el párrafo</th><th>Ejemplo del tipo de frase</th></tr></thead>
-  <tbody>
-    <tr><th class="text-blue">+2</th><td>El Estado dirige la formación moral de la gente</td><td class="dim">«elevar la calidad moral y científica de la nación»</td></tr>
-    <tr><th>+1</th><td>El Estado planea y exige alineamiento, sin hablar de valores</td><td class="dim">«todas las escuelas incorporarán el plan»</td></tr>
-    <tr><th>0</th><td>El párrafo no habla de la relación entre el poder y la persona</td><td class="dim">«se destinarán 125 millones al programa»</td></tr>
-    <tr><th>−1</th><td>Hay lógica de derechos, pero de lado</td><td class="dim">«los proveedores deben proteger datos»</td></tr>
-    <tr><th>−2</th><td>Los derechos limitan al propio Estado, y se pueden exigir</td><td class="dim">«el gobierno no interferirá con la libertad de expresión»</td></tr>
-  </tbody>
-</table>
-<div class="mt-6 keyidea text-[1.2rem]">
-  <span class="lbl">El cero no es «neutro», es «no aplica»</span>
-  La mayoría de los párrafos de una política pública hablan de presupuesto, plazos y
-  organigramas. Esos van a cero, y está bien.
-</div>
-</div>
-
-<!--
-9:00-11:00 · Explicar la escala con ejemplos, no con la definición formal.
-Insistir en el cero: el jurado va a preguntar por qué Canadá dio cero, y esta
-lámina ya deja puesta la respuesta.
--->
-
----
-layout: ac-diagram
----
-
-## Las dos formas de medir
-
-<div class="slide-body">
-<div class="diagram">
-  <div class="drow" style="gap: 3rem">
-    <div class="dcol">
-      <span class="dchip">MÉTODO 1</span>
-      <div class="dbox"><div class="dt">La computadora compara</div><div class="ds">convierte el texto en números<br />y mide qué tan parecido es<br /><span class="dneg">no lee: calcula distancias</span></div></div>
-    </div>
-    <div class="dcol">
-      <span class="dchip dchip-hi">MÉTODO 2</span>
-      <div class="dbox dbox-hi"><div class="dt">Siete lectores automáticos</div><div class="ds">cada uno lee el párrafo con la regla<br />en la mano y pone su calificación<br /><span style="color:var(--ac-inkblue)">4 hechos en China, 3 en Occidente</span></div></div>
-    </div>
-  </div>
-  <div class="darrow-down-dot"></div>
-  <div class="dsum" style="max-width: 62ch">
-    Si los dos dan lo mismo, la medición es creíble.<br />
-    Si dan cosas distintas, algo falla, y el desacuerdo dice dónde.
-  </div>
-</div>
-</div>
-
-<!--
-11:00-13:00 · Traducir sin jerga: "embeddings" = la computadora convierte texto
-en números; "panel de jueces" = siete lectores automáticos.
-Explicar por qué 4 chinos y 3 occidentales: para poder revisar si el origen del
-lector cambia la calificación. Es un control, no adorno.
--->
-
----
-
-## Por qué siete lectores y no uno
-
-<div class="slide-body">
-<div class="grid grid-cols-[1.15fr_1fr] gap-8 items-start">
+<div class="grid grid-cols-[1.15fr_1fr] gap-7 items-start">
   <div>
-    <div class="text-[1.2rem]">Igual que en una encuesta a expertos: <strong>ninguno es infalible</strong>, y por eso se
-    pregunta a varios. Lo que vale no es el juicio de uno, sino que coincidan.</div>
-    <div class="mt-6 text-[1.2rem]">Los puse a leer <strong>diez párrafos por país</strong>, siempre sobre el mismo tema, para que
-    la comparación fuera justa entre un documento largo y uno corto.</div>
-    <div class="mt-6 ac-callout text-[1.1rem]">
-      Cada lector deja escrito <strong>por qué</strong> puso esa calificación. Las 1,120 lecturas,
-      con su justificación, están guardadas y cualquiera puede revisarlas.
-    </div>
-  </div>
-  <div>
-    <div class="kicker mb-3">Y sí coincidieron</div>
+    <div class="kicker mb-3">La regla</div>
     <table class="actable">
       <tbody>
-        <tr><th>Dieron exactamente lo mismo</th><td class="yes">83%</td></tr>
-        <tr><th>Se separaron como mucho un punto</th><td class="yes">99%</td></tr>
-        <tr><th>Se contradijeron de fondo</th><td class="dim">casi nunca</td></tr>
+        <tr><th class="text-blue">+2</th><td>El Estado dirige la formación moral de la gente</td></tr>
+        <tr><th>+1</th><td>El Estado planea y exige alineamiento, sin hablar de valores</td></tr>
+        <tr><th>0</th><td>El párrafo no habla de la relación entre el poder y la persona</td></tr>
+        <tr><th>−1</th><td>Hay lógica de derechos, pero de lado</td></tr>
+        <tr><th>−2</th><td>Los derechos limitan al Estado, y se pueden exigir</td></tr>
       </tbody>
     </table>
-    <div class="mt-4 text-[1.05rem] text-muted">Ese 99% es el dato importante: nunca pasó que uno leyera «el Estado forma» y otro «el Estado se limita» en el mismo párrafo.</div>
+    <div class="mt-4 keyidea text-[1.12rem]">
+      <span class="lbl">El cero no es «neutro», es «no aplica»</span>
+      Casi todo en una política habla de presupuesto y plazos. Eso va a cero, y está bien.
+    </div>
+  </div>
+  <div>
+    <div class="kicker mb-3">Las dos vías</div>
+    <div class="ac-card p-5 mb-4">
+      <div class="text-[1.15rem]"><strong>La computadora compara.</strong></div>
+      <div class="mt-2 text-[1.05rem] text-muted">Convierte el texto en números y mide qué tan parecido es a cada polo. No lee: calcula distancias.</div>
+    </div>
+    <div class="ac-card-blue p-5">
+      <div class="text-[1.15rem]"><strong>Siete lectores automáticos.</strong></div>
+      <div class="mt-2 text-[1.05rem] text-muted">Cada uno lee el párrafo con la regla en la mano y pone su calificación, por escrito. Cuatro hechos en China, tres en Occidente.</div>
+    </div>
+    <div class="mt-4 text-[1.05rem] text-muted">Si las dos dan lo mismo, la medición es creíble. Si dan cosas distintas, algo falla, <strong>y el desacuerdo dice dónde</strong>.</div>
   </div>
 </div>
 </div>
 
 <!--
-13:00-15:00 · Aquí va el acuerdo entre jueces, pero en castellano.
-Si preguntan por los índices formales (Fleiss, Krippendorff) están en el anexo:
-alfa ordinal 0.697, arriba del umbral de 0.667. No los pongo en la línea
-principal porque el público es de pedagogía.
+13:30-15:30 · Traducir sin jerga: "embeddings" = convertir texto en números;
+"panel de jueces" = siete lectores automáticos.
+Insistir en el cero: el jurado va a preguntar por qué Canadá dio cero.
+Explicar por qué 4 chinos y 3 occidentales: es un control del sesgo de origen,
+no adorno. Los números formales del acuerdo están en anexos.
 -->
 
 ---
@@ -308,13 +443,13 @@ layout: section
 <BarrasPais />
 <div class="mt-2 text-[1.05rem] text-muted">Cada línea negra es el margen de error. Cuando dos líneas no se tocan, la diferencia es real y no del azar. Los seis de abajo son indistinguibles entre sí.</div>
 </div>
-<div class="src">Siete lectores × diez párrafos × siete países = 490 lecturas.</div>
+<div class="src">Siete lectores × diez párrafos por país = 490 lecturas.</div>
 
 <!--
-15:00-17:00 · Leer la gráfica en voz alta, no darla por obvia.
+15:30-17:00 · Leer la gráfica en voz alta, no darla por obvia.
 China arriba y su margen no toca a nadie. Estados Unidos abajo: su plan de 2025
 saca al Estado de la conducción a propósito.
-Canadá en cero exacto: NO decir todavía por qué. Se explica en la parte 3.
+Canadá en cero: NO decir todavía por qué. Se explica en la parte 3.
 -->
 
 ---
@@ -344,47 +479,11 @@ layout: ac-fact
 
 <!--
 17:00-19:00 · Este es el argumento fuerte y hay que darle tiempo.
-La conclusión NO es "China es autoritaria". Es que el lenguaje de formar
-personas aparece justo donde la teoría confuciana dice que debe aparecer:
-en la educación. Es una prueba de que el instrumento mide lo que dice medir.
--->
-
----
-
-## El cabo suelto que dejo declarado
-
-<div class="slide-body">
-<div class="grid grid-cols-[1.1fr_1fr] gap-8 items-center">
-  <div>
-    <div class="text-[1.2rem]">Faltaba una cuarta explicación: <strong>¿y si es la forma de gobierno?</strong> China es un
-    Estado de partido único. Vietnam también, y además comparte la herencia cultural.
-    Era el caso que decidía.</div>
-    <div class="mt-6 text-[1.2rem]">Vietnam salió en <strong>+0.20</strong>. Más alto que los países liberales, sí.
-    Pero <em>igual que Corea del Sur</em>, que no es Estado de partido único.</div>
-    <div class="mt-6 ac-callout text-[1.1rem]">
-      La prueba necesitaba dos condiciones y solo se cumplió una.
-      <strong>No puedo concluir nada sobre la forma de gobierno.</strong> Queda abierto.
-    </div>
-  </div>
-  <div>
-    <table class="actable">
-      <tbody>
-        <tr><th>China, educación</th><td class="yes">+0.94</td></tr>
-        <tr><th>China, plan general</th><td>+0.26</td></tr>
-        <tr><th>Corea del Sur</th><td>+0.20</td></tr>
-        <tr><th>Vietnam</th><td>+0.20</td></tr>
-        <tr><th>Malasia</th><td class="dim">+0.13</td></tr>
-        <tr><th>Japón</th><td class="dim">0.00</td></tr>
-        <tr><th>UNESCO</th><td class="dim">−0.16</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-</div>
-
-<!--
-19:00-20:30 · Contar un resultado que NO salió es lo que hace creíble a los que
-sí salieron. Si un sinodal iba a preguntar por Vietnam, ya está contestado.
+La conclusión NO es "China es autoritaria". Es que el lenguaje de formar personas
+aparece justo donde la teoría confuciana dice que debe aparecer: en la educación.
+Es evidencia de que el instrumento mide lo que dice medir.
+Si preguntan por la cuarta explicación (forma de gobierno), está en anexos:
+Vietnam dio +0.20, igual que Corea del Sur, así que queda abierta.
 -->
 
 ---
@@ -412,8 +511,9 @@ layout: section
         <tr><th>Diferencia</th><td style="text-align:right" class="dim">0.02</td><td style="text-align:right" class="dim">0.94</td></tr>
       </tbody>
     </table>
-    <div class="mt-6 text-[1.2rem]">Para la computadora, los documentos de China y Canadá son
-    <em>prácticamente el mismo texto</em>. Para los lectores, están en extremos opuestos.</div>
+    <div class="mt-6 text-[1.2rem]">Es el empate que vieron en el radar, ahora con número.
+    Para la computadora, China y Canadá son <em>prácticamente el mismo texto</em>.
+    Para los lectores, están en extremos opuestos.</div>
   </div>
   <div class="keyidea text-[1.3rem]">
     <span class="lbl">Mi primera reacción</span>
@@ -424,8 +524,9 @@ layout: section
 </div>
 
 <!--
-20:30-22:00 · Contarlo como me pasó: creí que había un bug. La siguiente lámina
-es el giro. No adelantarlo.
+19:00-20:30 · Contarlo como me pasó: creí que había un bug en el panel.
+Amarrar con el radar de la lámina 5: es el mismo empate.
+La siguiente lámina es el giro. No adelantarlo.
 -->
 
 ---
@@ -450,64 +551,12 @@ dark: true
 </div>
 
 <!--
-22:00-23:30 · El giro de la historia. Pausa después de decirlo.
+20:30-22:00 · El giro de la historia. Pausa después de decirlo.
 Ser explícito en que es un error MÍO de armado del corpus, no de nadie más.
 Reconocerlo antes de que lo encuentren vale más que esconderlo.
--->
-
----
-layout: ac-fact
----
-
-## Primera reacción: ¿y si el error es mío?
-
-<div class="slide-body">
-<div class="grid grid-cols-2 gap-6">
-  <div class="ac-card p-7">
-    <div class="kicker mb-3">Los siete lectores</div>
-    <div class="text-[1.2rem]">Leyeron una lista de miembros del consejo asesor y pusieron <strong>cero</strong>.</div>
-    <div class="mt-3 text-[1.1rem] text-muted">Que es exactamente lo correcto: ese párrafo no habla del poder ni de las personas.</div>
-  </div>
-  <div class="ac-card-blue p-7">
-    <div class="kicker mb-3">La computadora</div>
-    <div class="text-[1.2rem]">Leyó lo mismo y le puso <strong>+0.88</strong>, casi idéntico al plan educativo chino.</div>
-    <div class="mt-3 text-[1.1rem] text-muted">Vio las palabras «inteligencia artificial», «talento», «nacional», «liderazgo» y concluyó parecido.</div>
-  </div>
-</div>
-<div class="mt-8 keyidea text-[1.3rem]">
-  <span class="lbl">Pero esto no prueba nada todavía</span>
-  Con un documento malo, cualquiera puede fallar. La pregunta de verdad era otra:
-  <em>¿el empate desaparece si comparo dos políticas reales?</em>
-</div>
-</div>
-
-<!--
-23:30-25:00 · Resistir la tentación de cantar victoria aquí. Un critico diria,
-con razon, que el metodo fallo porque el dato era basura. Hay que ir a ver.
--->
-
----
-layout: statement
----
-
-<div class="max-w-4xl">
-  <div class="kicker mb-5">Lo que hice entonces</div>
-  <div class="text-[1.55rem] leading-snug text-ink">
-    Busqué la estrategia oficial de Canadá. Existe, y es reciente:
-    <strong>«AI for All»</strong>, firmada por el Ministro de Innovación, Ciencia e Industria
-    el <strong>4 de junio de 2026</strong>. Cincuenta páginas, con ISBN.
-  </div>
-  <div class="mt-7 text-[1.55rem] leading-snug text-ink">
-    Cambié el documento y <em>volví a correr todo</em>. Canadá pasó de 15 a 210 párrafos.
-  </div>
-  <div class="mt-8 keyidea text-[1.4rem]">
-    <span class="lbl">La pregunta</span>
-    ¿Sigue la computadora sin poder distinguir a Canadá de China?
-  </div>
-</div>
-
-<!--
-25:00-26:00 · Momento de suspenso corto. No adelantar.
+Aquí va también, en voz alta, la reacción honesta: los siete lectores le pusieron
+cero a una lista de miembros del consejo, que es lo correcto; la computadora le
+puso +0.88. Pero con un documento malo cualquiera falla. Había que ir a ver.
 -->
 
 ---
@@ -517,6 +566,10 @@ layout: ac-fact
 ## Sí. El empate aguanta.
 
 <div class="slide-body">
+<div class="text-[1.18rem] mb-5 max-w-5xl">Busqué la estrategia oficial de Canadá. Existe y es reciente:
+<strong>«AI for All»</strong>, firmada por el Ministro de Innovación, Ciencia e Industria el 4 de junio
+de 2026, cincuenta páginas con ISBN. Cambié el documento, Canadá pasó de 15 a 210 párrafos,
+y <em>volví a correr todo</em>.</div>
 <table class="actable">
   <thead><tr><th style="width:34%"></th><th class="text-right" style="width:22%">Antes<br /><span class="dim">página web</span></th><th class="text-right" style="width:22%">Ahora<br /><span class="dim">estrategia real</span></th><th>Qué pasó</th></tr></thead>
   <tbody>
@@ -526,7 +579,7 @@ layout: ac-fact
     <tr><th>Distancia con China, lectores</th><td style="text-align:right">0.94</td><td style="text-align:right" class="yes">1.00</td><td><span class="yes">Un punto entero</span></td></tr>
   </tbody>
 </table>
-<div class="mt-7 keyidea text-[1.3rem]">
+<div class="mt-6 keyidea text-[1.28rem]">
   <span class="lbl">Este es el resultado, ya sin excusas</span>
   Una estrategia nacional de cincuenta páginas frente al plan educativo chino.
   La computadora <em>sigue sin poder separarlos</em>. Los lectores los separan por un punto completo.
@@ -534,9 +587,9 @@ layout: ac-fact
 </div>
 
 <!--
-26:00-28:00 · La lamina mas importante de la defensa. El hallazgo ya no depende
-de un documento defectuoso: aguanta con dos politicas de verdad.
-Decir tambien lo que SI cambio: de los seis valores, tres dejaron de empatar.
+22:00-24:00 · La lámina más importante de la defensa. El hallazgo ya no depende
+de un documento defectuoso: aguanta con dos políticas de verdad.
+Decir también lo que SÍ cambió: de los seis valores, tres dejaron de empatar.
 El que sigue empatado es justo el que mide gobernar por la virtud.
 -->
 
@@ -560,7 +613,7 @@ en la primera lectura. Un método que promedia palabras, no.
 </div>
 
 <!--
-25:00-26:00 · La explicación mecánica. Corta y en voz alta.
+24:00-25:00 · La explicación mecánica. Corta y en voz alta.
 -->
 
 ---
@@ -581,7 +634,7 @@ layout: ac-fact
 <div class="grid grid-cols-3 gap-5">
   <div class="ac-card p-6">
     <div class="kicker mb-3">Para quien hace política</div>
-    <div class="text-[1.12rem]">Copiar una política porque «dice lo mismo que la nuestra» es copiar a ciegas.
+    <div class="text-[1.12rem]">Inspirarse en una política porque «dice lo mismo que la nuestra» es inspirarse a ciegas.
     La pregunta previa es <strong>quién forma a quién</strong>, y no está en el vocabulario.</div>
   </div>
   <div class="ac-card-blue p-6">
@@ -591,8 +644,9 @@ layout: ac-fact
   </div>
   <div class="ac-card p-6">
     <div class="kicker mb-3">Para México</div>
-    <div class="text-[1.12rem]">SEP y ANUIES están escribiendo ahora. Vale la pena preguntarse
-    qué papel le estamos dando al Estado, <strong>antes</strong> de tomar prestado de nadie.</div>
+    <div class="text-[1.12rem]">SEP y ANUIES están escribiendo ahora, y el país todavía no tiene
+    política de IA. Vale la pena decidir <strong>qué papel le damos al Estado</strong> antes de
+    tomar prestado de nadie.</div>
   </div>
 </div>
 <div class="mt-8 keyidea text-[1.25rem]">
@@ -604,61 +658,55 @@ layout: ac-fact
 </div>
 
 <!--
-26:00-27:30 · El "y qué". Tres públicos, uno por columna.
-La advertencia final es la que da la lección metodológica sin sermonear.
+25:00-26:30 · El "y qué". Tres públicos, uno por columna.
+La columna de México amarra con la lámina 7: no es un hueco del estudio,
+es una decisión pendiente del país.
+La advertencia final da la lección metodológica sin sermonear.
 -->
 
 ---
 layout: ac-fact
 ---
 
-## Lo que no puedo afirmar
+## Lo que no puedo afirmar, y lo que sigue
 
 <div class="slide-body">
-<table class="actable">
-  <thead><tr><th style="width:26%">Límite</th><th>Qué significa</th></tr></thead>
-  <tbody>
-    <tr><th>El corpus se me coló</th><td>Un documento defectuoso llegó hasta el análisis final. Ya está sustituido y la medición repetida, pero lo detectó el desacuerdo entre métodos, no mi revisión del corpus. Hace falta un chequeo automático de ruido de página web antes de cada corrida</td></tr>
-    <tr><th>Nadie humano revisó</th><td>Los siete lectores son automáticos. Que coincidan entre sí dice que son <strong>consistentes</strong>, no que tengan razón</td></tr>
-    <tr><th>Documentos, no aulas</th><td>Mido lo que un Estado <strong>escribe</strong>. No lo que hace, ni lo que pasa con los estudiantes</td></tr>
-    <tr><th>Siete casos</th><td>Elegidos uno por región. No permiten generalizar a todos los países del mundo</td></tr>
-  </tbody>
-</table>
-</div>
-
-<!--
-27:30-29:00 · Decir los límites yo, antes que ellos. Empezar por Canadá,
-que es el más incómodo, es lo que da credibilidad al resto.
--->
-
----
-
-## Lo que sigue, con nombre y costo
-
-<div class="slide-body">
-<div class="grid grid-cols-[1.1fr_1fr] gap-8 items-center">
+<div class="grid grid-cols-[1.25fr_1fr] gap-7 items-start">
   <div>
-    <div class="text-[1.25rem]">La falta más seria es que <strong>ningún humano calificó nada</strong>.
-    Eso tiene solución conocida y barata.</div>
-    <div class="mt-6 keyidea">
-      <span class="lbl">Concretamente</span>
+    <div class="kicker mb-3">Límites</div>
+    <table class="actable">
+      <tbody>
+        <tr><th>El corpus se me coló</th><td>Un documento defectuoso llegó hasta el análisis final. Lo detectó el desacuerdo entre métodos, no mi revisión</td></tr>
+        <tr><th>Nadie humano revisó</th><td>Que los siete lectores coincidan dice que son <strong>consistentes</strong>, no que tengan razón</td></tr>
+        <tr><th>Documentos, no aulas</th><td>Mido lo que un Estado <strong>escribe</strong>. No lo que hace, ni lo que pasa con los estudiantes</td></tr>
+        <tr><th>Siete casos</th><td>Uno por región. No permiten generalizar a todos los países</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <div class="kicker mb-3">Lo que sigue, con costo</div>
+    <div class="keyidea text-[1.12rem]">
+      <span class="lbl">La falta más seria tiene solución barata</span>
       Que <em>dos personas</em> califiquen a mano unos <em>50 párrafos</em> al azar,
       con la misma regla, y usar eso para corregir a los lectores automáticos.
     </div>
-    <div class="mt-6 text-[1.15rem] text-muted">Es la diferencia entre decir «esto es lo que observé»
+    <div class="mt-5 text-[1.08rem] text-muted">Es la diferencia entre decir «esto es lo que observé»
     y poder decir «esto es lo que pasa». Semanas de trabajo, no meses.</div>
-  </div>
-  <div>
-    <div class="kicker mb-3">Pendientes, en orden</div>
-    <ul class="text-[1.1rem]">
-      <li>Calificación humana de 50 párrafos</li>
+    <ul class="mt-4 text-[1.05rem]">
       <li>Actualizar Australia y Sudáfrica, que ya tienen versión nueva</li>
-      <li>Medir los otros cinco valores con los dos métodos</li>
+      <li>Medir los otros cinco valores con las dos vías</li>
+      <li>Chequeo automático de ruido de página web antes de cada corrida</li>
     </ul>
   </div>
 </div>
 </div>
 <div class="src">Egami, Hinck, Stewart y Wei (2023). Design-based supervised learning. NeurIPS.</div>
+
+<!--
+26:30-28:00 · Decir los límites yo, antes que ellos. Empezar por Canadá,
+que es el más incómodo, es lo que da credibilidad al resto.
+Cerrar por el lado de la solución, no del problema.
+-->
 
 ---
 layout: statement
@@ -684,7 +732,7 @@ dark: true
 </div>
 
 <!--
-29:00-30:00 · Cerrar volviendo a la pregunta del principio. Agradecimientos
+28:00-30:00 · Cerrar volviendo a la pregunta del principio. Agradecimientos
 en voz alta, no en lámina.
 -->
 
@@ -697,6 +745,38 @@ layout: section
 # Material de respaldo
 
 ## Para preguntas del jurado.
+
+---
+layout: ac-fact
+---
+
+## Anexo · Por qué siete lectores y no uno
+
+<div class="slide-body">
+<div class="grid grid-cols-[1.15fr_1fr] gap-8 items-start">
+  <div>
+    <div class="text-[1.2rem]">Igual que en una encuesta a expertos: <strong>ninguno es infalible</strong>, y por eso se
+    pregunta a varios. Lo que vale no es el juicio de uno, sino que coincidan.</div>
+    <div class="mt-6 text-[1.2rem]">Los puse a leer <strong>diez párrafos por país</strong>, siempre sobre el mismo tema, para que
+    la comparación fuera justa entre un documento largo y uno corto.</div>
+    <div class="mt-6 ac-callout text-[1.1rem]">
+      Cada lector deja escrito <strong>por qué</strong> puso esa calificación. Las 1,120 lecturas,
+      con su justificación, están guardadas y cualquiera puede revisarlas.
+    </div>
+  </div>
+  <div>
+    <div class="kicker mb-3">Y sí coincidieron</div>
+    <table class="actable">
+      <tbody>
+        <tr><th>Dieron exactamente lo mismo</th><td class="yes">83%</td></tr>
+        <tr><th>Se separaron como mucho un punto</th><td class="yes">99%</td></tr>
+        <tr><th>Se contradijeron de fondo</th><td class="dim">casi nunca</td></tr>
+      </tbody>
+    </table>
+    <div class="mt-4 text-[1.05rem] text-muted">Ese 99% es el dato importante: nunca pasó que uno leyera «el Estado forma» y otro «el Estado se limita» en el mismo párrafo.</div>
+  </div>
+</div>
+</div>
 
 ---
 layout: ac-fact
@@ -742,43 +822,59 @@ los párrafos caigan en cero. Es un artefacto conocido, no una falla de la medic
 layout: ac-fact
 ---
 
-## Anexo · Los seis valores, no solo uno
+## Anexo · El cabo suelto que dejo declarado
 
 <div class="slide-body">
-<div class="flex items-center justify-center">
-  <RadarConfucio :paises="['china','canada']" />
+<div class="grid grid-cols-[1.1fr_1fr] gap-8 items-center">
+  <div>
+    <div class="text-[1.2rem]">Faltaba una cuarta explicación: <strong>¿y si es la forma de gobierno?</strong> China es un
+    Estado de partido único. Vietnam también, y además comparte la herencia cultural.
+    Era el caso que decidía.</div>
+    <div class="mt-6 text-[1.2rem]">Vietnam salió en <strong>+0.20</strong>. Más alto que los países liberales, sí.
+    Pero <em>igual que Corea del Sur</em>, que no es Estado de partido único.</div>
+    <div class="mt-6 ac-callout text-[1.1rem]">
+      La prueba necesitaba dos condiciones y solo se cumplió una.
+      <strong>No puedo concluir nada sobre la forma de gobierno.</strong> Queda abierto.
+    </div>
+  </div>
+  <div>
+    <table class="actable">
+      <tbody>
+        <tr><th>China, educación</th><td class="yes">+0.94</td></tr>
+        <tr><th>China, plan general</th><td>+0.26</td></tr>
+        <tr><th>Corea del Sur</th><td>+0.20</td></tr>
+        <tr><th>Vietnam</th><td>+0.20</td></tr>
+        <tr><th>Malasia</th><td class="dim">+0.13</td></tr>
+        <tr><th>Japón</th><td class="dim">0.00</td></tr>
+        <tr><th>UNESCO</th><td class="dim">−0.16</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<div class="mt-3 text-center text-[1.05rem] text-muted">
-China frente a Canadá con el método automático, ya con la estrategia canadiense real. Tres de los seis empatan: ritual, cultivo de sí y virtud/norma.
 </div>
-</div>
-<div class="src">Método 1 · medianas contra el promedio de todos los documentos del corpus.</div>
+
+<!--
+Contar un resultado que NO salió es lo que hace creíble a los que sí salieron.
+Si un sinodal pregunta por Vietnam, esta es la lámina.
+-->
 
 ---
 layout: ac-fact
 ---
 
-## Anexo · El corpus
+## Anexo · Los seis valores, lado a lado
 
 <div class="slide-body">
-<table class="actable">
-  <thead><tr><th>País</th><th>Documentos</th><th>Fragmentos</th><th>Estado</th></tr></thead>
-  <tbody>
-    <tr><th>China</th><td>9</td><td>271</td><td class="yes">Válido</td></tr>
-    <tr><th>Sudáfrica</th><td>1</td><td>1,303</td><td class="dim">Válido; hay versión más nueva</td></tr>
-    <tr><th>Colombia</th><td>1</td><td>764</td><td class="yes">Válido, reemplazado durante el estudio</td></tr>
-    <tr><th>Alemania</th><td>1</td><td>230</td><td class="yes">Válido</td></tr>
-    <tr><th>Australia</th><td>1</td><td>161</td><td class="dim">Válido; hay versión más nueva</td></tr>
-    <tr><th>Estados Unidos</th><td>1</td><td>156</td><td class="yes">Válido, reemplazado durante el estudio</td></tr>
-    <tr><th>Canadá</th><td>1</td><td>210</td><td class="yes">Sustituido durante el estudio</td></tr>
-  </tbody>
-</table>
-<div class="mt-5 text-[1.05rem] text-muted">
-Tres de los siete documentos originales tuvieron que sustituirse. Estados Unidos y Colombia
-porque estaban derogados; Canadá porque no era la estrategia sino una página web, y eso se
-detectó al final, al investigar por qué los dos métodos no coincidían.
+<div class="flex items-center justify-center">
+  <RadarConfucio :paises="['china','eeuu']" />
+</div>
+<div class="mt-3 text-center text-[1.05rem] text-muted">
+China frente a Estados Unidos, los dos extremos del corpus. Aquí sí hay separación en casi
+todos los ejes: es el contraste que el método automático <strong>sí</strong> detecta.
+Con Canadá, en cambio, tres de los seis empatan.
 </div>
 </div>
+<div class="src">Vía automática · medianas contra el promedio de todos los documentos del corpus.</div>
 
 ---
 layout: ac-fact
@@ -802,8 +898,7 @@ layout: ac-fact
     <div class="text-[1.08rem]">Si fueran complementarios, los textos jurídicos chinos deberían dar cerca de cero y los educativos alto. <strong>Es justo lo que pasó.</strong> La objeción predice mi resultado.</div>
   </div>
   <div class="ac-card p-5">
-    <div class="kicker mb-2">Respuesta 3</div>
-    <div class="text-[1.08rem]">La escala necesita dos extremos para funcionar. Que el instrumento los oponga no significa que China los oponga.</div>
+    <div class="text-[1.08rem]"><div class="kicker mb-2">Respuesta 3</div>La escala necesita dos extremos para funcionar. Que el instrumento los oponga no significa que China los oponga.</div>
   </div>
 </div>
 </div>
@@ -833,5 +928,34 @@ layout: ac-fact
   <span class="lbl">Por qué importa que estuvieran escritas antes</span>
   Quedaron con fecha en el repositorio, junto con la regla de medir, <em>antes</em> de correr nada.
   Cualquiera puede comprobar que no ajusté el método al resultado que quería.
+</div>
+</div>
+
+---
+layout: ac-fact
+---
+
+## Anexo · Los criterios de admisión al corpus
+
+<div class="slide-body">
+<table class="actable">
+  <thead><tr><th style="width:8%"></th><th style="width:30%">Criterio</th><th>Condición</th></tr></thead>
+  <tbody>
+    <tr><th>C1</th><td>Autoría estatal</td><td class="dim">Adoptado por un órgano con autoridad pública, identificable por nombre</td></tr>
+    <tr><th>C2</th><td>Alcance nacional</td><td class="dim">Aplica a todo el territorio, salvo documentos subnacionales declarados como tales</td></tr>
+    <tr><th>C3</th><td>Sustancia</td><td class="dim">La IA es objeto del documento, no mención incidental: en el título, en una sección propia, o ≥50 menciones</td></tr>
+    <tr><th>C4</th><td>Vigencia</td><td class="dim">Rige a la fecha de corte del estudio, 30 de junio de 2026</td></tr>
+    <tr><th>C5</th><td>Texto verbatim</td><td class="dim">Texto oficial completo, no una nota de prensa ni un resumen</td></tr>
+    <tr><th>C6</th><td>Par documental</td><td class="dim">El país aporta una estrategia de IA, un documento educativo, o ambos</td></tr>
+  </tbody>
+</table>
+<div class="mt-6 text-[1.08rem] text-muted max-w-5xl">
+C3 usa conteo absoluto y no densidad de menciones a propósito: <strong>人工智能 ocupa cuatro
+caracteres y «artificial intelligence» ocupa veintitrés</strong>, así que la densidad del chino
+saldría inflada unas cinco veces. Es el tipo de detalle que decide qué entra y qué no.
+</div>
+<div class="mt-3 text-[1.08rem] text-muted max-w-5xl">
+Estos seis criterios son los que dejaron fuera a los cinco candidatos mexicanos, y los que
+expulsaron el documento canadiense defectuoso por C5.
 </div>
 </div>

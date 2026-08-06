@@ -584,7 +584,7 @@ CONFUCIAN_AXES = {
         ],
     },
     "dezhi_fa": {
-        "label": "Gobernar por virtud vs. por ley", "zh": "德治", "pinyin": "dézhì↔fǎ",
+        "label": "Gobernar por virtud vs. por ley", "zh": "德治↔法", "pinyin": "dézhì↔fǎ",
         "pos_pole": "德治 gobierno por virtud", "neg_pole": "法 gobierno por ley",
         "pos_anchors_en": [
             "Governing by moral virtue and example, leading people through ethics and cultivation so they develop conscience and correct themselves.",

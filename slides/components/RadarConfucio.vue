@@ -10,7 +10,9 @@ const ejes = [
   { k: 'li',       zh: '礼',   pin: 'lǐ',      es: 'Ritual' },
   { k: 'yi',       zh: '义',   pin: 'yì',      es: 'Rectitud' },
   { k: 'xiushen',  zh: '修身', pin: 'xiūshēn', es: 'Cultivo de sí' },
-  { k: 'dezhi_fa', zh: '德治', pin: 'dézhì',   es: 'Virtud vs. norma' },
+  // Único eje bipolar de los seis: se etiqueta con sus dos polos. Escribir solo
+  // 德治 lo presentaba como un valor más, igual que 仁 o 礼, y eso es falso.
+  { k: 'dezhi_fa', zh: '德治↔法', pin: 'dézhì↔fǎ', es: 'Virtud vs. norma' },
   { k: 'he',       zh: '和',   pin: 'hé',      es: 'Armonía' },
 ]
 
@@ -20,7 +22,7 @@ const datos = {
   eeuu:      { label: 'Estados Unidos', color: '#8A93A6', v: { ren: 0.09, li: -0.84, yi: 0.48, xiushen: -0.21, dezhi_fa: -0.07, he: -0.68 } },
   alemania:  { label: 'Alemania',       color: '#8A93A6', v: { ren: 0.06, li: -0.23, yi: 0.11, xiushen: -0.05, dezhi_fa: 0.08, he: -0.26 } },
   australia: { label: 'Australia',      color: '#8A93A6', v: { ren: 0.11, li: 0.04, yi: -0.13, xiushen: -0.11, dezhi_fa: 0.45, he: 0.05 } },
-  sudafrica: { label: 'Sudáfrica',      color: '#8A93A6', v: { ren: -0.07, li: 0.30, yi: -0.14, xiushen: -0.16, dezhi_fa: 0.04, he: 0.47 } },
+  sudafrica: { label: 'Sudáfrica',      color: '#8A93A6', v: { ren: -0.07, li: 0.30, yi: -0.13, xiushen: -0.16, dezhi_fa: 0.03, he: 0.47 } },
   colombia:  { label: 'Colombia',       color: '#8A93A6', v: { ren: -0.40, li: -0.44, yi: -0.19, xiushen: 0.37, dezhi_fa: -0.20, he: -0.39 } },
 }
 

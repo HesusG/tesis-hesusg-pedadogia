@@ -67,9 +67,9 @@ De la pregunta central se desprenden tres, una por cada cosa que hay que resolve
 \begin{enumerate}
   \item[\textbf{P1.}] \textbf{¿Se puede medir?} ¿Es posible asignar a un pasaje de política pública un valor que exprese cuánto encuadra la educación en IA como cultivo moral dirigido por el Estado, frente a cuánto la encuadra como conducta regulada por normas?
 
-  \item[\textbf{P2.}] \textbf{¿Difieren los países?} ¿Se separan los siete países en ese eje, y la separación sobrevive cuando se controla por la región del documento, por su tema y por el origen cultural del instrumento que mide?
+  \item[\textbf{P2.}] \textbf{¿Difieren los países?} ¿Se separan los siete países en ese eje, y la separación sobrevive cuando se controla por la región del documento, por su tema y por la estructura del Estado?
 
-  \item[\textbf{P3.}] \textbf{¿Coinciden los métodos?} ¿Dos procedimientos de medición independientes, uno basado en distancias semánticas y otro en juicio de lectura, producen el mismo ordenamiento de países? Si no coinciden, ¿qué revela el desacuerdo?
+  \item[\textbf{P3.}] \textbf{¿Coinciden los métodos?} ¿Dos procedimientos de medición independientes, uno basado en distancias semánticas y otro en juicio de lectura, producen el mismo ordenamiento de países? Si no coinciden, ¿qué revela el desacuerdo? Y dentro del panel de lectores, ¿el origen cultural de cada uno sesga su propia calificación?
 \end{enumerate}
 
 P1 es una pregunta de instrumento, P2 de comparación y P3 de validez. Las tres se responden con el mismo corpus.
@@ -116,6 +116,40 @@ Las cuatro predicciones se registraron en el repositorio antes de correr la medi
 \end{description}
 
 H4 se planteó como control de rutina. Su rechazo es el resultado principal, y el capítulo~\ref{cap:resultados} explica por qué.
+
+
+\section{Por Qué Este Marco y No Otro}
+\label{sec:por-que-confuciano}
+
+Conviene decirlo de frente, porque la alternativa es fingir una neutralidad que no hubo: \textbf{este estudio nace de un interés declarado por el pensamiento político chino aplicado a la educación}.
+
+China es hoy el caso más desarrollado del mundo en política de inteligencia artificial para la educación. Emite planes nacionales firmados por cinco ministerios, los baja al nivel provincial y los itera año con año. Ningún otro país del corpus produce un ecosistema documental comparable. Estudiar ese caso con categorías tomadas de la teoría política occidental habría sido posible, pero habría impuesto sobre el objeto un vocabulario que no es el suyo.
+
+La tradición confuciana ofrece algo distinto: una teoría explícita, con dos milenios de elaboración, sobre \textbf{para qué sirve la educación y quién debe impartirla}. Gobernar por la virtud, \dezhi, sostiene que la autoridad legítima forma el carácter de los gobernados. Gobernar por la norma, \fa, sostiene que la autoridad se ejerce mediante reglas públicas iguales para todos~\citep{pines2023legalism}. Esa oposición es un objeto de estudio pedagógico por derecho propio, no un instrumento de conveniencia.
+
+Ahora bien, un interés declarado no es una justificación metodológica. Hace falta mostrar que el marco \textit{hace trabajo}, y aquí es donde la elección se defiende.
+
+\subsection*{El marco hizo una predicción que un esquema genérico habría fallado}
+
+Un esquema genérico de Estado fuerte frente a Estado limitado predice que un Estado dirigista puntuará alto en cualquier instrumento que publique. Si China es el caso de Estado fuerte, su plan de inteligencia artificial, su ley de contenidos generativos y su plan educativo deberían puntuar alto por igual.
+
+La teoría confuciana predice algo más específico y más exigente. El cultivo moral no es una propiedad difusa del gobierno: tiene un lugar propio, y ese lugar es la educación. Bajo ese marco, el encuadre formativo debería concentrarse en los instrumentos educativos y no aparecer con la misma fuerza en los industriales o regulatorios.
+
+El capítulo~\ref{cap:resultados} reporta lo observado. El plan general de inteligencia artificial de China obtiene $+0.257$ y su plan de inteligencia artificial en educación $+0.943$, con un contraste de $-0.686$ cuyo intervalo de confianza excluye el cero. La ley china de inteligencia artificial generativa quedó en valor neutro.
+
+El esquema genérico habría fallado esa predicción. El confuciano la acertó antes de medir.
+
+\subsection*{El riesgo de esencializar, y su control}
+
+Medir a seis países de tradición liberal con una vara construida desde la filosofía política china puede leerse como tratar a China como caso cultural y a los demás como caso normal.
+
+El diseño responde con un dato y no con una declaración de intenciones. Corea del Sur, Japón y Singapur pertenecen a la esfera cultural confuciana y no acompañan a China; Japón obtiene cero exacto. Si el eje midiera cultura confuciana, habrían subido. No mide cultura: mide encuadre.
+
+\subsection*{Alcance de lo validado}
+
+Corresponde declararlo aquí y no en el capítulo de limitaciones. De los seis ejes que este estudio mide, \textbf{solo \ejedf{} pasó por los dos canales de medición}. Los otros cinco, \ren, \lipin, \yi, \xiushen{} y \hepin, se midieron únicamente por proyección vectorial y tienen carácter \textbf{exploratorio}.
+
+Esa distinción no es formal. El capítulo~\ref{cap:resultados} muestra que la proyección vectorial tiene límites serios precisamente para constructos que dependen de la relación entre actores, y los seis ejes son de ese tipo. El perfil de seis ejes debe leerse entonces como material descriptivo que sugiere hipótesis, nunca como medición validada.
 
 
 \section{Justificación}

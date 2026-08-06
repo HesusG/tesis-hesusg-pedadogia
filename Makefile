@@ -37,6 +37,11 @@ pdf-shorter:
 	cp $(TEX_DIR)/main_shorter.pdf $(OUTPUT_DIR)/tesis_shorter.pdf
 	@echo "✓ PDF Shorter: $(OUTPUT_DIR)/tesis_shorter.pdf"
 
+protocolo:
+	cd $(TEX_DIR) && tectonic -X compile protocolo.tex
+	cp $(TEX_DIR)/protocolo.pdf $(OUTPUT_DIR)/protocolo-investigacion.pdf
+	@echo "✓ Protocolo: $(OUTPUT_DIR)/protocolo-investigacion.pdf"
+
 docx-shorter:
 	cd $(TEX_DIR) && pandoc main_shorter.tex \
 		--from=latex \
@@ -211,6 +216,7 @@ help:
 	@echo "  make status    — Ver progreso por capítulo"
 	@echo "  make chunks    — Exportar chunk_pairs.json para explorador"
 	@echo "  make pdf-cap01 — Compilar PDF solo hasta capítulo 1"
+	@echo "  make protocolo — Compilar protocolo de investigación (tectonic)"
 	@echo "  make refs-audit     — Auditar referencias .bib vs PDFs locales"
 	@echo "  make refs-audit-cap01 — Auditar solo cap01"
 	@echo "  make refs-download  — Descargar PDFs via Unpaywall/URLs"

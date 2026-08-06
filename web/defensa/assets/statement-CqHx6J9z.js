@@ -1,1 +1,0 @@
-import{o as a,e as s,i as l,n as o}from"./modules/vue-DcEScGtc.js";import{u as r}from"./slidev/context-Dh7T7Npb.js";const f={__name:"statement",props:{dark:{type:Boolean,default:!1}},setup(e){return r(),(t,n)=>(a(),s("div",{class:o(["slidev-layout statement h-full flex flex-col justify-center items-start",e.dark?"ac-dark":""])},[l(t.$slots,"default")],2))}};export{f as _};
