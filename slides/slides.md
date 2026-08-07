@@ -1,10 +1,10 @@
 ---
 theme: default
-title: "¿Quién forma a las personas?"
+title: "Los valores confucianos como criterios comparativos en políticas públicas educativas"
 info: |
-  Defensa de tesis. Maestría en Pedagogía, UPAEP.
+  INFOTEC · Programa de Verano 2026.
   Qué dicen siete países sobre el papel del Estado en la educación en IA,
-  y qué pasa cuando intentas medirlo.
+  y qué pasa cuando intentas medirlo con seis valores confucianos.
 highlighter: shiki
 mdc: true
 colorSchema: light
@@ -21,12 +21,10 @@ drawings:
 layout: cover
 ---
 
-# ¿Quién forma<br />a las personas?
-
-## Lo que dicen siete países sobre la inteligencia artificial en la escuela, y qué pasó cuando intenté medirlo.
+# Los valores confucianos como<br />criterios comparativos en<br />políticas públicas educativas
 
 <div class="mt-6 flex gap-3">
-  <span class="ac-chip">Tesis de maestría</span>
+  <span class="ac-chip">INFOTEC · Programa de Verano</span>
   <span class="ac-chip">Educación comparada</span>
   <span class="ac-chip">30 min</span>
 </div>
@@ -104,13 +102,46 @@ las estrategias de cuatro países. Todavía sin método propio en esta lámina.
 layout: ac-fact
 ---
 
+## De dónde salen los seis valores
+
+<div class="slide-body">
+<div class="text-[1.18rem] max-w-4xl mb-5">Uso seis valores de la tradición confuciana como criterios comparativos: <strong>仁 rén</strong> (benevolencia), <strong>礼 lǐ</strong> (ritual), <strong>义 yì</strong> (rectitud), <strong>修身 xiūshēn</strong> (cultivo de sí), <strong>德治↔法</strong> (virtud o norma) y <strong>和 hé</strong> (armonía).</div>
+<div class="grid grid-cols-2 gap-6">
+  <div class="ac-card p-6">
+    <div class="kicker mb-3">Por qué estos y no otros cinco</div>
+    <div class="text-[1.08rem]">No los elegí a mano. Probé tres conjuntos candidatos —el quinteto clásico 仁义礼智信, uno de siete valores educativos, y este de seis— proyectados sobre el mismo corpus, y comparé cuál separaba mejor a los países. <strong>Ganó el de seis</strong>: es una elección empírica, no arbitraria.</div>
+  </div>
+  <div class="ac-card-blue p-6">
+    <div class="kicker mb-3">Qué tan validados están</div>
+    <div class="text-[1.08rem]">Los seis se miden por proyección vectorial. Solo uno, <strong>virtud o norma</strong>, se midió además con un panel de siete lectores. Los otros cinco son <strong>exploratorios</strong>: describen un perfil, no prueban nada por sí solos.</div>
+  </div>
+</div>
+<div class="mt-6 keyidea text-[1.15rem]">
+  <span class="lbl">Por qué virtud o norma es el que se defiende con más fuerza</span>
+  Es el que nombra directamente la pregunta de esta investigación: si el Estado se presenta
+  como quien <em>forma</em> a las personas o como quien les <em>pone límites</em>.
+</div>
+</div>
+<div class="src">Csikszentmihalyi, M. (2024). Confucius. <i>Stanford Encyclopedia of Philosophy</i> · Pines, Y. (2023). Legalism in Chinese Philosophy. <i>Stanford Encyclopedia of Philosophy</i>.</div>
+
+<!--
+3:30-5:00 · Antes no explicaba de dónde salían los seis valores; esta lámina lo cubre.
+Ser honesto sobre el proceso: no es un canon fijo de 2,000 años, es un conjunto afinado
+empíricamente contra tres candidatos (canon5, tuned6, edu7). Eso es una fortaleza
+metodológica, no una debilidad, si se dice así.
+-->
+
+---
+layout: ac-fact
+---
+
 ## Preguntas de investigación
 
 <div class="slide-body">
 <div class="ac-callout mb-7 text-[1.3rem]">
   ¿Las políticas de educación en inteligencia artificial de siete países expresan
-  <strong>concepciones distintas sobre quién forma a las personas</strong>, y esa diferencia
-  se puede medir de manera reproducible?
+  <strong>concepciones distintas sobre quién forma a las personas</strong>, y esos seis valores
+  confucianos permiten medir esa diferencia de manera reproducible?
 </div>
 <div class="grid grid-cols-3 gap-5">
   <div class="ac-card p-6">
@@ -128,12 +159,15 @@ layout: ac-fact
 </div>
 <div class="mt-7 text-[1.15rem] text-muted max-w-5xl">
 P1 es una pregunta de instrumento, P2 de comparación y P3 de validez. Las tres se responden
-con el mismo corpus. <strong>La tercera es la que acabó dando el hallazgo principal.</strong>
+sobre el valor <strong>virtud o norma</strong>, el único con doble medición.
+<strong>La tercera es la que acabó dando el hallazgo principal.</strong>
 </div>
 </div>
 
 <!--
-3:30-5:00 · Leer la pregunta central completa, despacio. Luego las tres, rápido.
+5:00-6:30 · Leer la pregunta central completa, despacio. Luego las tres, rápido.
+Aclarar que P1-P3 se responden sobre el valor virtud-o-norma específicamente, porque
+es el único con panel de jueces; los otros cinco valores no tienen las mismas garantías.
 P2 se controla por región, tema y estructura del Estado (los tres brazos de confusión);
 el sesgo de origen del panel es una pregunta distinta, de validez del instrumento, y por
 eso vive en P3. Señalar desde ya que P3 es la que da la sorpresa: siembra el tropiezo
@@ -149,30 +183,40 @@ layout: ac-fact
 <div class="slide-body">
 <div class="ac-callout mb-7 text-[1.25rem]">
   <span class="kicker block mb-2">Objetivo general</span>
-  Medir en las políticas de educación en IA de siete países <strong>el grado en que el Estado
-  se presenta como formador moral de la población frente a regulador de conductas</strong>,
-  y evaluar la confiabilidad de esa medición mediante dos procedimientos independientes.
+  Medir con seis valores confucianos, y validar con dos procedimientos independientes,
+  <strong>cómo se presenta el Estado frente a la persona</strong> en las políticas de educación
+  en inteligencia artificial de siete países.
 </div>
-<table class="actable">
-  <thead><tr><th style="width:6%"></th><th style="width:46%">Objetivo específico</th><th>Cómo se verifica</th></tr></thead>
-  <tbody>
-    <tr><th class="text-blue">1</th><td>Construir el corpus con criterios de inclusión explícitos, aplicables por un tercero</td><td class="dim">Seis criterios escritos; bitácora pública de documentos dados de baja</td></tr>
-    <tr><th class="text-blue">2</th><td>Pre-registrar la regla de medir y las predicciones antes de medir nada</td><td class="dim">Con fecha en el repositorio, antes de la primera corrida</td></tr>
-    <tr><th class="text-blue">3</th><td>Medir el eje por dos vías independientes entre sí</td><td class="dim">Una automática por similitud, otra por panel de siete lectores</td></tr>
-    <tr><th class="text-blue">4</th><td>Contrastar ambas vías y documentar dónde coinciden y dónde no</td><td class="dim">Acuerdo entre jueces, sesgo de origen, tres pruebas de confusión</td></tr>
-  </tbody>
-</table>
+<div class="grid grid-cols-2 gap-5">
+  <div class="ac-card p-5">
+    <div class="kicker mb-2">1 · Construir el corpus</div>
+    <div class="text-[1.08rem]">Reunir un corpus de políticas oficiales de siete países bajo criterios de inclusión explícitos y verificables por un tercero.</div>
+  </div>
+  <div class="ac-card p-5">
+    <div class="kicker mb-2">2 · Elegir y registrar el criterio</div>
+    <div class="text-[1.08rem]">Seleccionar empíricamente el conjunto de valores confucianos con mayor poder de separación entre países, y pre-registrar la regla de medir antes de correr nada.</div>
+  </div>
+  <div class="ac-card-blue p-5">
+    <div class="kicker mb-2">3 · Medir por dos vías</div>
+    <div class="text-[1.08rem]">Proyectar los seis valores sobre representaciones vectoriales del texto, y validar el valor central con un panel independiente de siete lectores.</div>
+  </div>
+  <div class="ac-card-blue p-5">
+    <div class="kicker mb-2">4 · Contrastar y decidir</div>
+    <div class="text-[1.08rem]">Comparar ambas vías, medir su acuerdo y su sesgo, y determinar si la diferencia entre países sobrevive a los controles.</div>
+  </div>
+</div>
 <div class="mt-6 keyidea text-[1.2rem]">
-  <span class="lbl">El cuarto objetivo es el que importa</span>
-  Sin patrón de oro contra el cual calibrar, <em>el instrumento de esta tesis no es ninguna
-  de las dos vías: es el contraste entre ambas.</em>
+  <span class="lbl">El objetivo que más pesa es el tercero</span>
+  Sin patrón de oro contra el cual calibrar, <em>el instrumento de esta investigación no es
+  ninguna de las dos vías: es el contraste entre ambas.</em>
 </div>
 </div>
 
 <!--
-5:00-6:30 · Los objetivos van con su verificación al lado a propósito: un objetivo
-que no se puede comprobar no es un objetivo. Cerrar con la keyidea, que es la
-tesis metodológica completa en una frase.
+6:30-8:00 · Objetivos reescritos en cuatro tarjetas, sin columna de verificación:
+antes esa columna hacía el trabajo que la propia redacción del objetivo debería hacer.
+Cada objetivo ahora es una acción completa y comprobable por sí sola. Cerrar con la
+keyidea, que es la tesis metodológica completa en una frase.
 -->
 
 ---
@@ -217,7 +261,7 @@ el de virtud contra norma, que es el que responde la pregunta de esta tesis.
 <div class="src">Vía automática · medianas contra el promedio de todos los documentos del corpus.</div>
 
 <!--
-6:30-8:30 · Los seis ejes salen del vocabulario confuciano y se aplican por igual
+8:00-9:30 · Los seis ejes salen del vocabulario confuciano y se aplican por igual
 a los siete países. Leer la tabla por columnas, no por filas: China arriba en casi
 todo. Ese dominio es justamente lo que obliga a validar. Los cinco primeros ejes
 están medidos solo por la vía automática y son exploratorios; el sexto es el que
@@ -251,7 +295,7 @@ layout: ac-fact
 <div class="src">Vía automática · medianas contra el promedio de todos los documentos del corpus.</div>
 
 <!--
-8:30-9:30 · El mismo dato de la lámina anterior, ahora como figura.
+9:30-10:30 · El mismo dato de la lámina anterior, ahora como figura.
 Explicar cómo se lee un radar, que no todo el jurado lo tiene claro.
 Enseñar el empate ANTES de explicarlo es deliberado: quiero que les extrañe.
 No decir todavía que el empate es un error de la herramienta.
@@ -285,7 +329,7 @@ derogados, y el de Canadá porque no era la estrategia. Cada baja quedó registr
 </div>
 
 <!--
-9:30-10:30 · Nombrar el Plan Quinquenal en voz alta: es la fuente más importante
+10:30-11:30 · Nombrar el Plan Quinquenal en voz alta: es la fuente más importante
 del corpus, 140 páginas adoptadas por la Asamblea Popular Nacional en marzo de 2026.
 No detenerse en Canadá todavía, solo dejar sembrado que se sustituyó.
 La fila de México es el puente a la lámina que sigue.
@@ -319,7 +363,7 @@ mexicano que cumpla los criterios</strong>. Busqué los cinco candidatos posible
 </div>
 
 <!--
-10:30-11:30 · Lámina de relevancia nacional, y hay que sostenerla con calma.
+11:30-12:30 · Lámina de relevancia nacional, y hay que sostenerla con calma.
 El dato es verificable: los dos PDF están en el DOF, el conteo es reproducible.
 Si preguntan por qué no metí el reporte de encuesta de la SEP sobre IA generativa:
 porque es un diagnóstico, no un curso de acción, y por la misma razón quedó fuera
@@ -372,7 +416,7 @@ segundo el Estado pone el marco y otros forman. <strong>Esa diferencia no está 
 <div class="src">Pines, Y. (2023). Legalism in Chinese Philosophy. Stanford Encyclopedia of Philosophy.</div>
 
 <!--
-11:30-13:30 · El corazón conceptual. Que vean la diferencia en los dos documentos
+12:30-14:30 · El corazón conceptual. Que vean la diferencia en los dos documentos
 de la izquierda ANTES de leer los caracteres de la derecha.
 Los documentos A y B son descripciones mías, no citas: decirlo.
 Justificar el vocabulario chino por PRECISIÓN, no por exotismo: distingue las dos
@@ -420,7 +464,7 @@ layout: ac-fact
 </div>
 
 <!--
-13:30-15:30 · Traducir sin jerga: "embeddings" = convertir texto en números;
+14:30-16:30 · Traducir sin jerga: "embeddings" = convertir texto en números;
 "panel de jueces" = siete lectores automáticos.
 Insistir en el cero: el jurado va a preguntar por qué Canadá dio cero.
 Explicar por qué 4 chinos y 3 occidentales: es un control del sesgo de origen,
@@ -446,7 +490,7 @@ layout: section
 <div class="src">Siete lectores × diez párrafos por país = 490 lecturas.</div>
 
 <!--
-15:30-17:00 · Leer la gráfica en voz alta, no darla por obvia.
+16:30-18:00 · Leer la gráfica en voz alta, no darla por obvia.
 China arriba y su margen no toca a nadie. Estados Unidos abajo: su plan de 2025
 saca al Estado de la conducción a propósito.
 Canadá en cero: NO decir todavía por qué. Se explica en la parte 3.
@@ -478,7 +522,7 @@ layout: ac-fact
 </div>
 
 <!--
-17:00-19:00 · Este es el argumento fuerte y hay que darle tiempo.
+18:00-20:00 · Este es el argumento fuerte y hay que darle tiempo.
 La conclusión NO es "China es autoritaria". Es que el lenguaje de formar personas
 aparece justo donde la teoría confuciana dice que debe aparecer: en la educación.
 Es evidencia de que el instrumento mide lo que dice medir.
@@ -524,7 +568,7 @@ layout: section
 </div>
 
 <!--
-19:00-20:30 · Contarlo como me pasó: creí que había un bug en el panel.
+20:00-21:30 · Contarlo como me pasó: creí que había un bug en el panel.
 Amarrar con el radar de la lámina 5: es el mismo empate.
 La siguiente lámina es el giro. No adelantarlo.
 -->
@@ -551,7 +595,7 @@ dark: true
 </div>
 
 <!--
-20:30-22:00 · El giro de la historia. Pausa después de decirlo.
+21:30-23:00 · El giro de la historia. Pausa después de decirlo.
 Ser explícito en que es un error MÍO de armado del corpus, no de nadie más.
 Reconocerlo antes de que lo encuentren vale más que esconderlo.
 Aquí va también, en voz alta, la reacción honesta: los siete lectores le pusieron
@@ -587,7 +631,7 @@ y <em>volví a correr todo</em>.</div>
 </div>
 
 <!--
-22:00-24:00 · La lámina más importante de la defensa. El hallazgo ya no depende
+23:00-25:00 · La lámina más importante de la defensa. El hallazgo ya no depende
 de un documento defectuoso: aguanta con dos políticas de verdad.
 Decir también lo que SÍ cambió: de los seis valores, tres dejaron de empatar.
 El que sigue empatado es justo el que mide gobernar por la virtud.
@@ -613,7 +657,7 @@ en la primera lectura. Un método que promedia palabras, no.
 </div>
 
 <!--
-24:00-25:00 · La explicación mecánica. Corta y en voz alta.
+25:00-26:00 · La explicación mecánica. Corta y en voz alta.
 -->
 
 ---
@@ -658,7 +702,7 @@ layout: ac-fact
 </div>
 
 <!--
-25:00-26:30 · El "y qué". Tres públicos, uno por columna.
+26:00-27:30 · El "y qué". Tres públicos, uno por columna.
 La columna de México amarra con la lámina 7: no es un hueco del estudio,
 es una decisión pendiente del país.
 La advertencia final da la lección metodológica sin sermonear.
@@ -703,7 +747,7 @@ layout: ac-fact
 <div class="src">Egami, Hinck, Stewart y Wei (2023). Design-based supervised learning. NeurIPS.</div>
 
 <!--
-26:30-28:00 · Decir los límites yo, antes que ellos. Empezar por Canadá,
+27:30-29:00 · Decir los límites yo, antes que ellos. Empezar por Canadá,
 que es el más incómodo, es lo que da credibilidad al resto.
 Cerrar por el lado de la solución, no del problema.
 -->
@@ -728,11 +772,11 @@ dark: true
     se comparan políticas no distingue quién forma a quién.</span> Lo descubrí por un documento
     defectuoso, lo comprobé con dos políticas de verdad.
   </div>
-  <div class="mt-10 kicker">Hesus García Cobos · Maestría en Pedagogía · UPAEP 2026</div>
+  <div class="mt-10 kicker">Hesus García Cobos · Asesora: María Beatriz Juárez Aguilar · INFOTEC, Programa de Verano 2026</div>
 </div>
 
 <!--
-28:00-30:00 · Cerrar volviendo a la pregunta del principio. Agradecimientos
+29:00-30:00 · Cerrar volviendo a la pregunta del principio. Agradecimientos
 en voz alta, no en lámina.
 -->
 
