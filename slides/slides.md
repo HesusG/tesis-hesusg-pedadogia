@@ -145,7 +145,7 @@ layout: ac-fact
   </div>
   <div class="ac-card p-6">
     <div class="kicker mb-3">P3 · ¿Coinciden los métodos?</div>
-    <div class="text-[1.12rem]">¿Dos procedimientos de medición independientes, uno por proyección vectorial y otro por juicio de lectura, producen el mismo ordenamiento de países? Y dentro del panel de lectores, <strong>¿el origen cultural de cada uno sesga su propia calificación?</strong></div>
+    <div class="text-[1.12rem]">¿Dos procedimientos independientes —proyección vectorial y clasificación por un panel de siete modelos— producen el mismo ordenamiento de países? Y dentro del panel, <strong>¿el origen del modelo sesga su propia calificación?</strong></div>
   </div>
 </div>
 <div class="mt-7 text-[1.15rem] text-muted max-w-5xl">
@@ -192,7 +192,7 @@ layout: ac-fact
   </div>
   <div class="ac-card-blue p-4">
     <div class="kicker mb-1">4 · La validación</div>
-    <div class="text-[0.95rem]">Contrastar la medición automática contra un panel humano independiente.</div>
+    <div class="text-[0.95rem]">Contrastar la proyección vectorial contra un panel de siete modelos de distinto origen.</div>
   </div>
   <div class="ac-card-blue p-4" style="grid-column: span 2">
     <div class="kicker mb-1">5 · El control de confusión</div>
@@ -460,7 +460,7 @@ layout: ac-diagram
   <div class="darrow"></div>
   <div class="dbox" style="padding: 0.55rem 0.85rem">
    <div class="dt"><Ico name="scissors" class="ico ico-blue" /> Chunking</div>
-   <div class="ds">800 caracteres · 200 de traslape</div>
+   <div class="ds">500 caracteres · 50 de traslape</div>
   </div>
   <div class="darrow"></div>
   <div class="dbox-hi" style="padding: 0.55rem 0.85rem">
@@ -526,7 +526,7 @@ layout: ac-diagram
  <div class="dcol" style="gap: 0.6rem">
   <div class="kicker" style="color: var(--ac-blue)">Mecanismo 2 · juicio</div>
   <div class="dbox-hi" style="padding: 0.6rem 0.9rem; max-width: 260px">
-   <div class="dt"><Ico name="cpu" class="ico ico-blue" /> Juicio LLM</div>
+   <div class="dt"><Ico name="cpu" class="ico ico-blue" /> Panel de 7 modelos</div>
    <div class="ds">«¿Tiene sentido comparar esto?»</div>
   </div>
   <div class="darrow-down"></div>
@@ -572,7 +572,7 @@ layout: ac-fact
 <table class="actable">
   <thead><tr><th style="width:16%">País</th><th style="width:46%">Documento</th><th style="width:10%">Año</th><th>Fragmentos</th></tr></thead>
   <tbody>
-    <tr><th>China</th><td>15º Plan Quinquenal <span class="dim">十五五</span> · y ocho documentos más</td><td>2026</td><td class="yes">271</td></tr>
+    <tr><th>China</th><td>15º Plan Quinquenal <span class="dim">十五五</span> · y ocho documentos más</td><td>2026</td><td class="yes">271 <span class="dim">· 90 al radar</span></td></tr>
     <tr><th>Canadá</th><td>AI for All <span class="dim">· sustituido durante el estudio</span></td><td>2026</td><td>210</td></tr>
     <tr><th>Estados Unidos</th><td>America's AI Action Plan <span class="dim">· sustituido durante el estudio</span></td><td>2025</td><td>156</td></tr>
     <tr><th>Colombia</th><td>CONPES 4144 <span class="dim">· sustituido durante el estudio</span></td><td>2025</td><td>764</td></tr>
@@ -582,10 +582,15 @@ layout: ac-fact
     <tr><th class="text-blue">México</th><td><span class="no">Ningún documento admisible</span> <span class="dim">· sin política de IA adoptada por un órgano de gobierno</span></td><td class="dim">—</td><td class="no">0</td></tr>
   </tbody>
 </table>
-<div class="mt-5 text-[1.05rem] text-muted">
+<div class="mt-4 text-[1rem] text-muted">
 Un país por región política del mundo. <strong>Tres de los siete documentos originales tuvieron
 que sustituirse</strong> a mitad del estudio: el de Estados Unidos y el de Colombia porque estaban
 derogados, y el de Canadá porque no era la estrategia. Cada baja quedó registrada con su motivo.
+</div>
+<div class="mt-3 text-[1rem] text-muted">
+China aporta 271 fragmentos, pero al radar entran <strong>90</strong>: el 15º Plan Quinquenal se
+aparta como <em>deep dive</em> para que un solo documento de 140 páginas no defina por sí solo el
+perfil del país. La línea base del corpus queda en 2,914 fragmentos.
 </div>
 </div>
 
@@ -603,29 +608,55 @@ layout: ac-fact
 ## Qué son los resultados
 
 <div class="slide-body">
-<div class="text-[1.2rem] max-w-4xl mb-6">Antes de ver números, hay que dejar claro qué estamos midiendo y qué significa cada número.</div>
-<div class="grid grid-cols-3 gap-5">
-  <div class="ac-card p-6 text-[1.05rem]">
-    <div class="kicker mb-2">Contra qué se compara</div>
-    Cada eje confuciano tiene un anclaje construido a partir de los textos clásicos (Analectas, Mencio). Cada política se proyecta sobre ese eje.
+<div class="text-[1.15rem] max-w-5xl mb-5">Todo se midió <strong>dos veces, por dos vías independientes</strong>. Conviene distinguirlas antes de ver un solo número.</div>
+<div class="grid grid-cols-2 gap-5">
+  <div class="ac-card p-5 text-[1.02rem]">
+    <div class="kicker mb-2">Vía A · proyección vectorial</div>
+    Cada fragmento se vectoriza y se proyecta sobre el eje. El número del país es el <strong>promedio de todos sus fragmentos</strong>, en desviaciones respecto al documento promedio del corpus.
+    <div class="dcap mt-2" style="text-align:left">cubre los seis ejes · exploratoria</div>
   </div>
-  <div class="ac-card p-6 text-[1.05rem]">
-    <div class="kicker mb-2">El promedio</div>
-    El número de cada país es el <strong>promedio de todos sus fragmentos</strong> (chunks) en ese eje, no un solo párrafo elegido a mano.
-  </div>
-  <div class="ac-card-blue p-6 text-[1.05rem]">
-    <div class="kicker mb-2">Qué significa el número</div>
-    Cuántas desviaciones se aparta ese país del <strong>documento promedio del corpus</strong> — no es una escala absoluta, es relativa a los otros seis países.
+  <div class="ac-card-blue p-5 text-[1.02rem]">
+    <div class="kicker mb-2">Vía B · panel de siete modelos</div>
+    Diez pasajes de gobernanza por país, clasificados por siete modelos con un códebook congelado de antemano. El número es la <strong>media del panel</strong>.
+    <div class="dcap mt-2" style="text-align:left">solo el eje virtud-vs-norma · principal</div>
   </div>
 </div>
-<div class="mt-6 keyidea text-[1.15rem]">
-  <span class="lbl">Por qué importa aclararlo antes</span>
-  Un número solo tiene sentido si se sabe contra qué se comparó: aquí, contra el corpus de políticas y contra los textos confucianos que definen cada eje.
+<div class="mt-5 keyidea text-[1.1rem]">
+  <span class="lbl">Cuál manda cuando se contradicen</span>
+  La Vía B es la que sostiene las afirmaciones de esta tesis: es la única con códebook, panel y medida de acuerdo. La Vía A describe un perfil y <em>señala dónde mirar</em>, no prueba por sí sola.
 </div>
 </div>
 
 ---
 layout: ac-fact
+---
+
+## El resultado principal: quién forma, quién regula
+
+<div class="slide-body">
+<div class="text-[1.12rem] max-w-5xl mb-4">Eje <strong>德治 dézhì</strong> (el Estado forma) ↔ <strong>法 fǎ</strong> (el Estado pone reglas), medido por el panel de siete modelos sobre diez pasajes de gobernanza por país.</div>
+<table class="actable" style="font-size:0.9rem">
+ <thead><tr><th style="width:22%">País</th><th style="width:16%">Vía B · panel</th><th style="width:16%">Vía A · vectorial</th><th>Lectura</th></tr></thead>
+ <tbody>
+  <tr><th>China</th><td class="yes">+0.94</td><td>+0.85</td><td class="dim">única que se separa con claridad, y las dos vías coinciden</td></tr>
+  <tr><th>Sudáfrica</th><td>+0.06</td><td>+0.03</td><td class="dim">centro</td></tr>
+  <tr><th>Colombia</th><td>+0.01</td><td>−0.20</td><td class="dim">centro</td></tr>
+  <tr><th>Australia</th><td>−0.03</td><td>+0.45</td><td class="dim">las vías discrepan</td></tr>
+  <tr><th class="text-blue">Canadá</th><td class="no">−0.06</td><td>+0.78</td><td class="dim">discrepancia máxima: la Vía A lo pega a China, el panel no</td></tr>
+  <tr><th>Alemania</th><td>−0.10</td><td>+0.08</td><td class="dim">centro</td></tr>
+  <tr><th>Estados Unidos</th><td class="no">−0.49</td><td>−0.07</td><td class="dim">el más volcado a la norma</td></tr>
+ </tbody>
+</table>
+<div class="mt-4 keyidea text-[1.08rem]">
+  <span class="lbl">Lo que aguanta y lo que no</span>
+  Que China se separe lo confirman las dos vías. Que Canadá se le parezca <em>solo lo dice la Vía A</em>: para el panel, Canadá queda quinto de siete.
+</div>
+</div>
+<div class="src">Vía B · medias del panel de 7 modelos, 10 pasajes por país, códebook 1fb19472 · Vía A · medianas z contra el corpus de fondo.</div>
+
+---
+layout: ac-fact
+class: src-alto
 ---
 
 ## Los seis valores con que se describe cada política
@@ -663,7 +694,7 @@ o una sola. Por eso <em>uno de ellos se midió dos veces</em>, con dos métodos 
 el de virtud contra norma, que es el que responde la pregunta de esta tesis.
 </div>
 </div>
-<div class="src">Vía automática · medianas contra el promedio de todos los documentos del corpus.</div>
+<div class="src">Vía A · medianas z contra el promedio del corpus (2,914 fragmentos) · los seis ejes son exploratorios: solo virtud-vs-norma tiene además medición por panel.</div>
 
 <!--
 2:40-3:10 · Los seis ejes salen del vocabulario confuciano y se aplican por igual
@@ -693,7 +724,7 @@ layout: ac-fact
   </div>
 </div>
 </div>
-<div class="src">Vía automática · medianas contra el promedio de todos los documentos del corpus.</div>
+<div class="src">Vía A · medianas z contra el promedio del corpus (2,914 fragmentos) · los seis ejes son exploratorios: solo virtud-vs-norma tiene además medición por panel.</div>
 
 ---
 layout: ac-fact
@@ -707,19 +738,20 @@ layout: ac-fact
     <RadarConfucio :paises="['china','canada']" />
   </div>
   <div>
-    <div class="text-[1.2rem]">La misma tabla anterior, dibujada. Cada punta es uno de los seis
-    ejes; mientras más lejos del centro, más presente está ese valor en los textos de ese país.</div>
-    <div class="mt-5 text-[1.2rem]">Puestos uno encima del otro, los dos países que en teoría
-    deberían estar más lejos <strong>casi se enciman</strong>: tres de los seis ejes empatan,
-    y uno de los que empatan es <em>justo el que mide quién forma a quién</em>.</div>
-    <div class="mt-6 ac-callout text-[1.1rem]">
-      Para el método automático, la política china y la canadiense son prácticamente el mismo
-      texto. Guarden esa imagen: la tercera parte de la defensa trata de por qué eso está mal.
+    <div class="text-[1.15rem]">Los seis ejes de la Vía A, dibujados. Puestos uno encima del otro,
+    los dos países que en teoría deberían estar más lejos <strong>casi se enciman</strong>: tres de
+    los seis ejes empatan, y uno de ellos es justo el que mide quién forma a quién.</div>
+    <div class="mt-4 text-[1.15rem]">Pero ese empate <strong>no sobrevive al panel</strong>. En el
+    eje virtud-vs-norma, la Vía A da 0.85 y 0.78; la Vía B da <strong>+0.94 y −0.06</strong>.
+    Un punto entero de distancia.</div>
+    <div class="mt-5 ac-callout text-[1.05rem]">
+      Por eso la medición se hace dos veces. Un método solo habría publicado un parecido
+      entre China y Canadá que <em>el otro método desmiente</em>.
     </div>
   </div>
 </div>
 </div>
-<div class="src">Vía automática · medianas contra el promedio de todos los documentos del corpus.</div>
+<div class="src">Radar · Vía A, medianas z contra el corpus de fondo · cifras del eje dézhì–fǎ por ambas vías.</div>
 
 <!--
 9:30-10:30 · El mismo dato de la lámina anterior, ahora como figura.
@@ -751,7 +783,7 @@ layout: ac-fact
   </div>
   <div class="ac-card-blue p-6 text-[1.05rem]">
     <div class="kicker mb-2">Ni siquiera los jueces coinciden del todo</div>
-    El panel de siete lectores alcanzó <strong>α = 0.68</strong> y κ = 0.52 sobre 70 fragmentos: acuerdo aceptable, no alto. La etiqueta humana tampoco es un patrón de oro perfecto.
+    El panel de siete modelos alcanzó <strong>α = 0.68</strong> y κ = 0.52 sobre 70 pasajes: acuerdo aceptable, no alto. El panel tampoco es un patrón de oro perfecto.
   </div>
 </div>
 <div class="mt-6 keyidea text-[1.15rem]">
@@ -769,7 +801,7 @@ class: src-alto
 ## Lo que esto abre: dónde investigar
 
 <div class="slide-body">
-<div class="text-[1.15rem] max-w-5xl mb-5">El método no cierra la pregunta, pero <strong>sí dice dónde buscar</strong>. Señaló a China y Canadá como caso a revisar, y al revisarlo aparecen convergencias reales que la literatura ya documenta.</div>
+<div class="text-[1.12rem] max-w-5xl mb-5">El panel separa a China de Canadá en el eje virtud-vs-norma. Pero el parecido que marcó la Vía A no era ruido puro: al ir a la literatura, China y Canadá <strong>sí convergen — en otra cosa</strong>, en el contenido de sus políticas educativas.</div>
 <div class="grid grid-cols-3 gap-5">
   <div class="ac-card p-5 text-[1rem]">
     <div class="kicker mb-2">Justificación económica</div>
@@ -785,8 +817,8 @@ class: src-alto
   </div>
 </div>
 <div class="mt-5 keyidea text-[1.1rem]">
-  <span class="lbl">Para qué sirve entonces el método</span>
-  Para eso sirve un instrumento exploratorio: no probó que China y Canadá se parezcan, <em>dirigió la lectura al lugar donde el parecido resultó estar</em>.
+  <span class="lbl">Para qué sirve entonces la Vía A</span>
+  No probó que China y Canadá se parezcan en cómo conciben al Estado —el panel dice que no—, pero <em>dirigió la lectura al lugar donde sí había un parecido</em>. Eso es lo que se le puede pedir a un método exploratorio.
 </div>
 </div>
 
@@ -822,8 +854,8 @@ layout: ac-fact
   <div class="dcap" style="text-align:left">desviaciones sobre el promedio del corpus</div>
  </div>
  <div class="ac-card-blue p-5 text-[0.98rem]">
-  <div class="kicker mb-2">Vía B · panel humano</div>
-  Siete lectores clasifican el mismo fragmento en una escala de cinco puntos, con un criterio escrito antes de ver los textos.
+  <div class="kicker mb-2">Vía B · panel de 7 modelos</div>
+  Siete modelos —tres occidentales, cuatro chinos— clasifican el mismo pasaje con un códebook escrito y congelado antes de correr nada.
   <div class="mt-3 font-mono text-[1.4rem] text-blue">6 de 7</div>
   <div class="dcap" style="text-align:left">lo marcaron como «el Estado forma»</div>
  </div>
@@ -843,7 +875,7 @@ layout: ac-fact
 ## Anexo · Qué tan de acuerdo estuvieron los jueces
 
 <div class="slide-body">
-<div class="text-[1.15rem] max-w-5xl mb-5">Siete lectores clasificaron 70 fragmentos, 490 clasificaciones en total.</div>
+<div class="text-[1.12rem] max-w-5xl mb-4">Siete modelos clasificaron 70 pasajes: 490 clasificaciones. <strong>Tres occidentales</strong> (GPT-4o-mini, Gemini 2.5 Flash, Llama 3.3) y <strong>cuatro chinos</strong> (Qwen3, DeepSeek, GLM-4.6, Kimi K2).</div>
 <table class="actable">
  <thead><tr><th style="width:46%">Medida</th><th style="width:18%">Valor</th><th>Cómo leerlo</th></tr></thead>
  <tbody>
@@ -851,13 +883,14 @@ layout: ac-fact
   <tr><th>Coincidencia ±1 categoría</th><td class="yes">99%</td><td class="dim">casi nunca hay desacuerdos grandes</td></tr>
   <tr><th>Krippendorff α (ordinal)</th><td>0.68</td><td class="dim">aceptable para exploración; por debajo de 0.80</td></tr>
   <tr><th>Fleiss κ</th><td>0.52</td><td class="dim">acuerdo moderado</td></tr>
-  <tr><th>α dentro del subgrupo occidental</th><td>0.72</td><td class="dim">más alto que el del panel completo</td></tr>
-  <tr><th>κ dentro del subgrupo chino</th><td class="no">0.48</td><td class="dim">más bajo: el criterio no se lee igual en los dos grupos</td></tr>
+  <tr><th>α entre los modelos occidentales</th><td>0.72</td><td class="dim">más alto que el del panel completo</td></tr>
+  <tr><th>κ entre los modelos chinos</th><td class="no">0.48</td><td class="dim">más bajo: no leen el criterio igual entre sí</td></tr>
+  <tr><th>Sesgo por origen</th><td>+0.048</td><td class="dim">los occidentales puntúan un poco más alto; IC95 [−0.012, +0.111] cruza el cero</td></tr>
  </tbody>
 </table>
-<div class="mt-5 keyidea text-[1.08rem]">
-  <span class="lbl">El dato incómodo está en las dos últimas filas</span>
-  Que el acuerdo cambie según el origen del juez es, en sí mismo, un hallazgo sobre el instrumento.
+<div class="mt-4 keyidea text-[1.05rem]">
+  <span class="lbl">El dato interesante está en las tres últimas filas</span>
+  El sesgo medio por origen no alcanza significancia, pero <em>la cohesión interna sí cambia</em>: los modelos chinos discrepan más entre sí que los occidentales al aplicar el mismo códebook.
 </div>
 </div>
 
@@ -869,18 +902,19 @@ layout: ac-fact
 
 <div class="slide-body">
 <table class="actable" style="font-size:0.92rem">
- <thead><tr><th style="width:26%">Componente</th><th style="width:40%">Qué se usó</th><th>Por qué</th></tr></thead>
+ <thead><tr><th style="width:24%">Componente</th><th style="width:40%">Qué se usó</th><th>Por qué</th></tr></thead>
  <tbody>
-  <tr><th>Embeddings (principal)</th><td class="yes">paraphrase-multilingual-MiniLM-L12-v2</td><td class="dim">384 dimensiones · espacio compartido entre idiomas, sin traducir</td></tr>
-  <tr><th>Embeddings (alterno)</th><td>text-embedding-3-small <span class="dim">· OpenAI</span></td><td class="dim">contraste, para ver si el resultado depende del modelo</td></tr>
-  <tr><th>Almacén vectorial</th><td>ChromaDB <span class="dim">· politicas_ia_educacion_v2</span></td><td class="dim">más dos colecciones: Analectas y bibliografía</td></tr>
-  <tr><th>Fragmentación</th><td>800 caracteres · 200 de traslape</td><td class="dim">tope de 80 fragmentos por país, para que ninguno domine</td></tr>
-  <tr><th>Modelo juez (Vía B)</th><td class="yes">GPT-4o</td><td class="dim">clasifica siguiendo el mismo criterio escrito que los lectores humanos</td></tr>
-  <tr><th>Temas no supervisados</th><td>BERTopic <span class="dim">· UMAP + HDBSCAN</span></td><td class="dim">Fase 1: ver qué temas emergen antes de imponer el marco</td></tr>
+  <tr><th>Embeddings</th><td class="yes">paraphrase-multilingual-MiniLM-L12-v2</td><td class="dim">384 dimensiones · local y reproducible · espacio compartido entre idiomas</td></tr>
+  <tr><th>Almacén vectorial</th><td>ChromaDB <span class="dim">· colección politicas_v3</span></td><td class="dim">más una colección con las Analectas, que ancla los ejes</td></tr>
+  <tr><th>Fragmentación</th><td>500 caracteres · 50 de traslape</td><td class="dim">con blurb de contexto por fragmento (gpt-4o-mini)</td></tr>
+  <tr><th>Panel juez (Vía B)</th><td class="yes">7 modelos vía OpenRouter</td><td class="dim">3 occidentales · 4 chinos · temperatura 0 · 10 pasajes por país</td></tr>
+  <tr><th>Meta-juez</th><td>claude-sonnet-4.5 <span class="dim">· no puntúa</span></td><td class="dim">solo adjudica desacuerdos: Claude orquestó el pipeline y puntuar sería circular</td></tr>
+  <tr><th>Traducción para el panel</th><td>gpt-4o-mini <span class="dim">· ZH/ES/DE → EN</span></td><td class="dim">todos los jueces leen en el mismo idioma; caché con clave estable</td></tr>
+  <tr><th>Exclusión declarada</th><td class="no">cn_national_15fyp_2026</td><td class="dim">el Plan Quinquenal se aparta del radar para que no domine el perfil chino</td></tr>
  </tbody>
 </table>
-<div class="mt-5 keyidea text-[1.05rem]">
+<div class="mt-4 keyidea text-[1.05rem]">
   <span class="lbl">Lo que hace reproducible el procedimiento</span>
-  Los anclajes de los seis ejes se fijaron y se subieron a git <em>antes</em> de correr la medición: el pre-registro es el commit.
+  El códebook y los anclajes se congelaron y se subieron a git <em>antes</em> de correr la medición: el pre-registro es el commit.
 </div>
 </div>
