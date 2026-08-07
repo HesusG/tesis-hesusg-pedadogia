@@ -1,10 +1,11 @@
 %% cap02-marco-teorico.tex — Marco Teórico
-%% v2 — 9 dimensiones, 3 niveles, BERTopic, control lingüístico, pre-registro
+%% v3 — seis ejes confucianos bipolares, selección empírica del conjunto,
+%% anclajes pre-registrados, doble medición del eje dézhì–fǎ.
 
 \chapter{Marco Teórico}
 \label{cap:marco-teorico}
 
-Este capítulo establece las bases conceptuales que sustentan la investigación. Se articula en siete ejes: la teoría de políticas públicas educativas, la transferencia y difusión de políticas entre países, el campo de la inteligencia artificial en educación, los marcos normativos de organismos internacionales, la tradición de la educación comparada, el marco analítico de dimensiones de comparación, y el procesamiento de lenguaje natural como herramienta analítica.
+Este capítulo establece las bases conceptuales que sustentan la investigación. Se articula en siete ejes: la teoría de políticas públicas educativas, la transferencia y difusión de políticas entre países, el campo de la inteligencia artificial en educación, los marcos normativos de organismos internacionales, la tradición de la educación comparada, el marco analítico de seis valores confucianos con que se comparan las políticas, y el procesamiento de lenguaje natural como herramienta analítica.
 
 La investigación se sitúa en la intersección de tres tradiciones académicas: la educación comparada \citep{bray1995levels}, el análisis de textos de política \citep{rizvi2010globalizing} y las ciencias sociales computacionales \citep{grimmer2022text}. De la educación comparada toma el rigor en la selección de casos y la sensibilidad contextual. Del análisis de políticas toma la distinción entre lo que los documentos dicen, cómo lo enmarcan y qué efectos producen. De las ciencias sociales computacionales toma las herramientas para escalar el análisis textual sin sacrificar profundidad interpretativa. La integración de estos ejes permite situar el análisis comparativo de políticas de IA educativa dentro de una perspectiva pedagógica informada por métodos computacionales.
 
@@ -120,7 +121,7 @@ La educación comparada como campo académico se consolidó en la segunda mitad 
 
 \citet{noah1969toward} argumentaron que la educación comparada debía adoptar métodos empíricos más rigurosos, acercándose a las ciencias sociales cuantitativas sin perder la sensibilidad contextual que distingue al campo. \citet{bray1995levels} propusieron un marco tridimensional que cruza niveles geográficos (mundial, regional, nacional, subnacional, escolar), grupos demográficos (edad, género, etnia) y aspectos de la educación (currículo, gobernanza, financiamiento). Este ``cubo'' analítico permite situar cualquier estudio comparativo según las dimensiones que aborda y explicitar las que omite.
 
-La presente investigación opera en el nivel nacional del eje geográfico, abarca siete países seleccionados por región geopolítica sin filtrar por grupo demográfico, y se enfoca en el aspecto de políticas de IA en educación. Las nueve dimensiones de comparación propuestas en la sección~\ref{sec:marco-analitico} desagregan este aspecto en componentes específicos, dialogando con el marco de Bray y Thomas al hacer explícita la selección. Esta investigación no desagrega por grupo demográfico (el segundo eje del cubo); las comparaciones se realizan entre documentos nacionales, no entre cómo las políticas afectan a diferentes poblaciones dentro de un mismo país. Esta delimitación es deliberada: el análisis semántico opera sobre textos de política, no sobre datos de implementación diferenciados por grupo.
+La presente investigación opera en el nivel nacional del eje geográfico, abarca siete países seleccionados por región geopolítica sin filtrar por grupo demográfico, y se enfoca en el aspecto de políticas de IA en educación. Los seis ejes de comparación propuestos en la sección~\ref{sec:marco-analitico} desagregan este aspecto en componentes específicos, dialogando con el marco de Bray y Thomas al hacer explícita la selección. Esta investigación no desagrega por grupo demográfico (el segundo eje del cubo); las comparaciones se realizan entre documentos nacionales, no entre cómo las políticas afectan a diferentes poblaciones dentro de un mismo país. Esta delimitación es deliberada: el análisis semántico opera sobre textos de política, no sobre datos de implementación diferenciados por grupo.
 
 
 \subsection{Tres planos de análisis de política}
@@ -147,84 +148,77 @@ Un vacío persistente en la educación comparada es la escasa adopción de estos
 La brecha entre la sofisticación metodológica de las ciencias sociales computacionales y la tradición cualitativa de la educación comparada motiva la construcción de un marco analítico que conecte ambas. La sección siguiente presenta ese marco.
 
 
-\section{Marco Analítico: Dimensiones de Comparación}
+\section{Marco Analítico: Seis Valores Confucianos como Criterios de Comparación}
 \label{sec:marco-analitico}
 
-Esta sección presenta las nueve dimensiones que estructuran el análisis comparativo. Cada dimensión se deriva de marcos teóricos establecidos y se operacionaliza mediante un párrafo ancla que permite su medición computacional.
+Esta sección presenta el criterio con que se comparan las políticas del corpus: seis valores de la tradición confuciana, operacionalizados como ejes bipolares y medidos sobre el texto. Se justifica primero por qué esa tradición y no otra, después cómo se eligió el conjunto de seis entre varios candidatos, y por último cómo se convierte cada eje en algo medible.
 
 
-\subsection{Fundamento: de los \textit{frameworks} a las dimensiones}
+\subsection{Por qué el confucianismo}
 
-La derivación de dimensiones sigue una cadena explícita: marco teórico, dimensión nombrada, párrafo ancla, vector de \textit{embeddings}. El \textit{Education Policy Outlook} de la OCDE \citep{oecd2021epo} proporciona las categorías generales para políticas educativas (estudiantes, instituciones, sistema). El Consenso de Beijing \citep{unesco2019beijing} y la guía de \citet{miao2021guidance} proporcionan las categorías específicas para IA en educación (gestión de IA, apoyo docente, ética de datos, investigación). Los mecanismos de difusión de \citet{shipan2012diffusion} y el cubo comparativo de \citet{bray1995levels} informan las dimensiones de proceso. La cadena es transparente: cada dimensión puede rastrearse hasta su fuente.
+Los marcos internacionales revisados en las secciones anteriores ---el \textit{Education Policy Outlook} de la OCDE \citep{oecd2021epo}, el Consenso de Beijing \citep{unesco2019beijing}, la guía de \citet{miao2021guidance}--- comparten un problema para el propósito de esta tesis: son los mismos marcos que los países citan al redactar sus políticas. Medir los documentos con las categorías que ellos mismos declaran seguir garantiza convergencia por construcción, que es justamente el parecido superficial que \citet{bareis2022talking} documentan y que esta investigación busca atravesar.
 
-Las dimensiones se organizan en tres niveles siguiendo la distinción de \citet{rizvi2010globalizing} entre texto, discurso y efecto. Las dimensiones de contenido capturan los temas que las políticas abordan. Las dimensiones de proceso capturan lo que las políticas dicen sobre cómo se formulan y quién participa. Las dimensiones de resultados capturan las metas, indicadores y mecanismos de evaluación que las políticas establecen. Los tres niveles operan en el plano del texto y el discurso, no del efecto.
+Se requiere un criterio externo al vocabulario del corpus. La tradición confuciana lo ofrece por una razón que no es exótica sino institucional: durante más de un milenio fue el criterio con que un Estado seleccionó a quienes lo servirían. El sistema de exámenes imperiales, vigente desde el siglo VII hasta 1905, evaluaba el dominio de los clásicos confucianos como vía de acceso a la burocracia \citep{elman2013civil}. Esa continuidad convierte al confucianismo en algo poco común entre los marcos normativos: una doctrina sobre la relación entre el Estado y la persona que fue efectivamente aplicada como política pública, y no solo enunciada.
 
+El contenido de esa doctrina toca directamente la pregunta de esta investigación. El cultivo moral de sí (\textit{xiūshēn}\zhg{修身}) no separa la formación ética individual de la aptitud para gobernar o ser gobernado: cultivarse es la vía hacia la virtud pública \citep{ivanhoe2000confucian}. La benevolencia (\textit{rén}\zhg{仁}) articula cómo debe tratarse a las personas y funciona como núcleo del que se derivan los demás valores \citep{csikszentmihalyi2024confucius}. Y la oposición entre gobernar por virtud (\textit{dézhì}\zhg{德治}) y gobernar por norma (\textit{fǎ}\zhg{法}) es un debate documentado entre la tradición confuciana y la legalista \citep{pines2023legalism} que nombra, en sus propios términos, la pregunta de si el Estado forma personas o regula conductas.
 
-\subsection{Dimensiones de contenido}
-
-\textbf{Currículo.} Derivada de la categoría ``Students'' del OECD Education Policy Outlook y del área 2 del Consenso de Beijing (IA para la gestión educativa). Captura qué se enseña sobre IA en el sistema educativo: si la IA se presenta como materia independiente, herramienta transversal o tema de reflexión crítica; en qué niveles educativos se implementa; y qué competencias se definen. Los marcos de alfabetización en IA de \citet{long2020ailiteracy} y \citet{ng2021ailiteracy}, discutidos en la sección~\ref{sec:ia-educacion}, informan la interpretación de esta dimensión.
-
-\textbf{Formación docente.} Derivada de la categoría ``Institutions'' del OECD EPO y del área 3 del Consenso de Beijing (apoyo a docentes mediante IA). Captura los programas de capacitación, certificaciones y competencias requeridas para que los profesores trabajen con IA en contextos educativos. El marco TPACK \citep{mishra2006technological} proporciona el referente pedagógico para evaluar si las políticas abordan la integración de conocimiento tecnológico, pedagógico y disciplinar.
-
-\textbf{Infraestructura.} Derivada de la categoría ``System'' del OECD EPO y del área 1 del Consenso de Beijing (gestión de IA en educación). Captura la inversión en conectividad, equipamiento, plataformas digitales y servicios tecnológicos necesarios para la integración de IA.
-
-\textbf{Investigación.} Derivada del área 5 del Consenso de Beijing (fomento de investigación en IA educativa). Captura la creación de centros de investigación, programas de financiamiento, vínculos universidad-industria y prioridades de I+D.
+Emplear un marco de origen chino para leer políticas de siete países exige una advertencia. No se afirma que estos valores sean universales ni que los países no chinos ``deban'' medirse con ellos. Se emplean como \emph{criterio comparativo externo}: un conjunto de distinciones ajenas al vocabulario de los documentos, que por eso mismo puede revelar diferencias que el vocabulario compartido oculta. La cuestión de si ese origen sesga la medición no se deja en el terreno de la declaración de intenciones: se somete a prueba empírica mediante el contraste entre jueces de distinto origen que se describe en el Capítulo~\ref{cap:metodologia}.
 
 
-\subsection{Dimensiones de proceso}
+\subsection{Los seis ejes}
 
-\textbf{Gobernanza.} Derivada de la categoría ``Governance'' del OECD EPO e informada por el modelo de ciclo de políticas \citep{lasswell1951policy, howlett2003studying}. Captura qué ministerio u organismo lidera la política, qué marcos regulatorios la enmarcan, y cómo se coordinan los niveles de gobierno.
+Cada valor se operacionaliza como un eje bipolar, no como una categoría presente o ausente. Un eje bipolar exige nombrar aquello a lo que el valor se opone, lo que obliga a hacer explícito el criterio de medición y evita que un eje mida simplemente ``cuánto habla el documento del tema''.
 
-\textbf{Participación de actores.} Derivada del cubo comparativo de \citet{bray1995levels}, que exige explicitar qué actores se incluyen en el análisis, e informada por los mecanismos de difusión de \citet{shipan2012diffusion}, donde los actores (gobiernos, organismos internacionales, sector privado) son los agentes de la difusión. Captura los mecanismos de consulta pública, alianzas público-privadas, y la participación formal de sociedad civil, academia y sindicatos en la formulación de las políticas.
+\textbf{Benevolencia} (\textit{rén}\zhg{仁}) opone la persona como centro de la decisión frente a su tratamiento como instrumento de eficiencia y productividad. \textbf{Ritual y propiedad} (\textit{lǐ}\zhg{礼}) opone la conducta guiada por normas y estándares compartidos frente a la acción improvisada sin reglas. \textbf{Rectitud} (\textit{yì}\zhg{义}) opone lo moralmente correcto frente al provecho como guía de la acción. \textbf{Cultivo de sí} (\textit{xiūshēn}\zhg{修身}) opone la formación del carácter frente a la credencial como fin de la educación. \textbf{Armonía} (\textit{hé}\zhg{和}) opone el bien colectivo frente a la autonomía individual.
 
-
-\subsection{Dimensiones de resultados}
-
-\textbf{Ética y rendición de cuentas.} Derivada de la \textit{Recommendation on the Ethics of AI} \citep{unesco2021ai} y de los Principios de IA de la OCDE \citep{oecd2019ai}. Captura las directrices sobre transparencia, privacidad, sesgo algorítmico, supervisión humana y mecanismos de auditoría.
-
-\textbf{Equidad.} Derivada de la categoría ``Equity'' del OECD EPO y del área 4 del Consenso de Beijing (uso ético y equitativo de datos). Captura las medidas para reducir brechas digitales, atender poblaciones vulnerables y prevenir que la IA reproduzca desigualdades.
-
-\textbf{Metas y evaluación.} Derivada del modelo de ciclo de políticas (fase de evaluación) y de la categoría ``Evaluation and Assessment'' del OECD EPO \citep{howlett2003studying, oecd2021epo}. Captura los objetivos cuantificables, indicadores de desempeño, plazos, cláusulas de revisión y mecanismos de monitoreo que las políticas establecen.
+El sexto eje es de naturaleza distinta y es el que responde la pregunta de investigación. \textbf{Gobernar por virtud frente a gobernar por norma} (\ejedf) no opone un valor a su ausencia, sino \emph{dos concepciones rivales del Estado}, ambas positivas en su propia tradición: un Estado que cultiva moralmente a la población y un Estado que fija reglas y sanciona su incumplimiento. Es el único de los seis que se somete a doble medición.
 
 
-\subsection{Operacionalización: párrafos ancla}
+\subsection{Selección empírica del conjunto}
 
-Cada dimensión se operacionaliza mediante un párrafo ancla de 3 a 5 oraciones que describe qué se observa cuando un documento de política aborda esa dimensión. El modelo de \textit{embeddings} (\texttt{paraphrase-multilingual-MiniLM-L12-v2}) convierte cada párrafo ancla en un vector de 384 dimensiones. La similitud coseno entre este vector y el vector de cada fragmento del corpus produce un \textit{score} por dimensión para cada fragmento. La agregación de estos \textit{scores} por documento produce el perfil dimensional de cada política.
+El conjunto de seis no se fijó por autoridad doctrinal. Se probaron tres conjuntos candidatos contra el mismo corpus: el quinteto clásico \zhg{仁义礼智信} (\textit{canon5}), un conjunto de siete valores con énfasis educativo que añade el aprendizaje \zhg{学} \textit{xué} (\textit{edu7}), y el conjunto de seis finalmente adoptado (\textit{tuned6}). Cada conjunto se evaluó además bajo tres modos de anclaje: anclajes redactados desde la teoría, anclajes extraídos de las Analectas, y un modo híbrido que combina ambos.
 
-Los párrafos ancla se pre-registran en el sistema de control de versiones antes de ejecutar el análisis supervisado. La marca temporal del \textit{commit} funciona como mecanismo de pre-registro \citep{nosek2018preregistration}. El contenido de los párrafos ancla y los procedimientos de \textit{scoring} se detallan en el Capítulo~\ref{cap:metodologia}.
+El criterio de selección se fijó antes de correr las nueve combinaciones y tiene dos niveles. El primero es de validez aparente de gobernanza: un instrumento que pretenda medir la relación entre Estado y persona debe, como mínimo, situar a China por encima de Canadá en el eje \ejedf\ y colocar el marco regulatorio de la Unión Europea del lado de la norma. El segundo, solo entre los conjuntos que pasan el primero, es la capacidad de discriminación entre países.
 
-Esta operacionalización difiere de la codificación temática manual \citep{krippendorff2018content} en que es completamente reproducible: cualquier investigador que ejecute el mismo modelo sobre el mismo corpus con los mismos párrafos ancla obtendrá los mismos \textit{scores}. La reproducibilidad se logra sin sacrificar riqueza semántica, ya que los párrafos ancla capturan vocabulario y contexto, no solo palabras clave aisladas.
+El resultado del contraste es instructivo y conviene reportarlo con sus incomodidades. El quinteto clásico quedó descartado de entrada: no contiene el eje \ejedf, de modo que no puede siquiera someterse a la prueba de gobernanza. El anclaje puramente extraído de las Analectas produjo la mayor discriminación aparente de las nueve combinaciones, pero \emph{falló la prueba de validez}: invirtió el ordenamiento esperado entre China y Canadá. Ese fallo es informativo, porque muestra que maximizar la separación entre países no equivale a medir el constructo pretendido; un instrumento puede separar mucho y separar mal. El conjunto adoptado ---seis ejes con anclaje híbrido--- pasa la prueba de validez y alcanza la mayor separación entre los que la pasan, con una distancia de 2.73 desviaciones frente al corpus de control.
+
+Las pruebas de validez de constructo sobre el conjunto adoptado son satisfactorias en los seis ejes: el ordenamiento respecto a los textos de referencia se cumple en 6 de 6 y los antipolos quedan correctamente situados. Debe consignarse, no obstante, una circularidad parcial: bajo el modo híbrido el polo positivo incorpora texto de las Analectas, de modo que la prueba de autoanclaje ---verificar que los textos confucianos puntúan alto en los ejes confucianos--- es en parte tautológica. Se reporta por transparencia, no como evidencia de validez.
+
+
+\subsection{Operacionalización: anclajes bipolares y proyección}
+
+Cada polo de cada eje se describe mediante enunciados ancla redactados en español e inglés, que el modelo \texttt{paraphrase-multilingual-MiniLM-L12-v2} convierte en vectores de 384 dimensiones. El eje se define como la dirección normalizada que va del centroide de los anclajes negativos al de los positivos. La puntuación de un fragmento en un eje es la proyección de su vector sobre esa dirección, estandarizada contra la distribución del corpus completo. El uso de un modelo multilingüe permite que fragmentos en chino, alemán, español e inglés se proyecten sobre el mismo eje sin traducción previa \citep{reimers2020multilingual}.
+
+Los anclajes, el conjunto de ejes y el códigobook de clasificación se congelan en el sistema de control de versiones antes de ejecutar la medición. La marca temporal del \textit{commit} funciona como mecanismo de pre-registro \citep{nosek2018preregistration}: cualquier modificación posterior obliga a re-versionar y queda registrada. Los procedimientos de agregación y los detalles de implementación se desarrollan en el Capítulo~\ref{cap:metodologia}.
+
+Esta operacionalización difiere de la codificación temática manual \citep{krippendorff2018content} en que es reproducible: la misma configuración sobre el mismo corpus produce las mismas puntuaciones. La reproducibilidad, sin embargo, no es validez. Como advierten \citet{grimmer2022text}, ningún método de texto como dato domina a los demás y la validación contra el juicio externo sigue siendo indispensable. Por eso el eje central no se deja en manos de la proyección vectorial: recibe además una medición independiente por un panel de jueces, cuyo diseño y resultados se presentan en los capítulos siguientes.
 
 
 \subsection{Síntesis del marco analítico}
 
-La Tabla~\ref{tab:dimensiones} resume las nueve dimensiones, su nivel analítico, la fuente teórica principal y lo que cada una captura en los textos de política.
+La Tabla~\ref{tab:ejes} resume los seis ejes, sus polos y el estatuto de la medición de cada uno.
 
 \begin{table}[htbp]
 \centering
-\caption{Nueve dimensiones del marco analítico}
-\label{tab:dimensiones}
+\caption{Seis ejes confucianos del marco analítico}
+\label{tab:ejes}
 \small
-\begin{tabular}{llll}
+\begin{tabular}{p{3.1cm}p{3.3cm}p{3.3cm}p{2.6cm}}
 \hline
-\textbf{Dimensión} & \textbf{Nivel} & \textbf{Fuente principal} & \textbf{Captura en el texto} \\
+\textbf{Eje} & \textbf{Polo positivo} & \textbf{Polo opuesto} & \textbf{Medición} \\
 \hline
-Currículo & Contenido & OECD EPO; Beijing & Qué y cómo se enseña sobre IA \\
-Formación docente & Contenido & OECD EPO; Beijing & Capacitación y competencias docentes \\
-Infraestructura & Contenido & OECD EPO; Beijing & Conectividad, equipamiento, plataformas \\
-Investigación & Contenido & Beijing área 5 & I+D, vínculos universidad-industria \\
+\textit{rén}\zhg{仁} — Benevolencia & La persona al centro & Eficiencia instrumental & Vía A \\
+\textit{lǐ}\zhg{礼} — Ritual y propiedad & Normas compartidas & Ausencia de normas & Vía A \\
+\textit{yì}\zhg{义} — Rectitud & Lo justo & El provecho & Vía A \\
+\textit{xiūshēn}\zhg{修身} — Cultivo de sí & Formación del carácter & La credencial & Vía A \\
+\textit{hé}\zhg{和} — Armonía & El bien colectivo & La autonomía individual & Vía A \\
 \hline
-Gobernanza & Proceso & OECD EPO; Howlett & Liderazgo institucional, coordinación \\
-Participación & Proceso & Bray \& Thomas; Shipan & Consulta pública, alianzas, actores \\
-\hline
-Ética & Resultados & UNESCO Ethics; OECD AI & Transparencia, privacidad, auditoría \\
-Equidad & Resultados & OECD EPO; Beijing & Brechas digitales, poblaciones vulnerables \\
-Metas & Resultados & Howlett; OECD EPO & Indicadores, plazos, revisión \\
+\ejedf & El Estado forma & El Estado pone reglas & Vías A y B \\
 \hline
 \end{tabular}
 \end{table}
 
-Las nueve dimensiones constituyen el instrumento de lectura distante que complementa la lectura cercana cualitativa. Su valor analítico se evaluará en el Capítulo~\ref{cap:resultados} mediante la comparación con los tópicos emergentes del análisis no supervisado.
+Los cinco primeros ejes constituyen un instrumento de lectura distante y su valor es descriptivo: trazan un perfil comparativo y generan hipótesis, pero ningún segundo procedimiento confirma que midan lo que sus etiquetas anuncian. El sexto es el que sostiene las afirmaciones de esta tesis, y lo hace no por la fuerza de una de las dos vías sino por el contraste entre ambas, que se examina en el Capítulo~\ref{cap:resultados}.
 
 
 \section{Procesamiento de Lenguaje Natural como Herramienta de Investigación Pedagógica}
@@ -247,7 +241,7 @@ El modelado de tópicos no supervisado permite descubrir la estructura temática
 
 BERTopic~\citep{grootendorst2022bertopic} representa una alternativa que aprovecha los avances en modelos de lenguaje preentrenados. Su arquitectura sigue una secuencia de tres etapas: (1) reducción de dimensionalidad de los \textit{embeddings} mediante UMAP, (2) agrupación de los vectores reducidos mediante HDBSCAN, y (3) representación de cada tópico mediante c-TF-IDF (\textit{class-based} TF-IDF), un procedimiento que identifica las palabras más distintivas de cada grupo. Esta arquitectura combina la riqueza semántica de los \textit{embeddings} preentrenados con la interpretabilidad de las representaciones léxicas.
 
-En esta investigación, BERTopic se ejecuta sobre los fragmentos del corpus embebidos con \texttt{paraphrase-multilingual-MiniLM-L12-v2}. Al utilizar los mismos \textit{embeddings} que el análisis de similitud supervisado, el modelado de tópicos opera en el mismo espacio semántico, lo que hace comparables los resultados de ambos análisis. Los tópicos resultantes se documentan antes de aplicar el marco de nueve dimensiones pre-registradas, siguiendo los principios de la Teoría Fundamentada Computacional~\citep{nelson2020computational}.
+En esta investigación, BERTopic se ejecuta sobre los fragmentos del corpus embebidos con \texttt{paraphrase-multilingual-MiniLM-L12-v2}. Al utilizar los mismos \textit{embeddings} que el análisis de similitud supervisado, el modelado de tópicos opera en el mismo espacio semántico, lo que hace comparables los resultados de ambos análisis. Los tópicos resultantes se documentan antes de aplicar el marco de seis ejes pre-registrados, siguiendo los principios de la Teoría Fundamentada Computacional~\citep{nelson2020computational}.
 
 La comparación entre los tópicos emergentes y las dimensiones pre-registradas constituye la contribución central del diseño metodológico. Los tópicos que no mapean a ninguna dimensión pre-registrada constituyen ``puntos ciegos'' del marco analítico: temas presentes en el corpus que el investigador no anticipó. Las dimensiones pre-registradas que no corresponden a ningún tópico emergente constituyen ``estructura impuesta'': categorías del marco teórico que no se manifiestan en los datos. Ambos tipos de divergencia son hallazgos.
 
@@ -275,7 +269,7 @@ Este nivel de control lingüístico no tiene precedente en la investigación com
 
 Un problema recurrente en el análisis computacional de textos es la calibración post-hoc de las categorías analíticas. Cuando un investigador define las consultas de un análisis semántico supervisado después de haber leído el corpus, los resultados confirman lo que la lectura humana ya encontró, y el análisis computacional no agrega información nueva~\citep{grimmer2013text}. Este problema, análogo al HARKing (\textit{Hypothesizing After the Results are Known}) en la investigación experimental, invalida la función de descubrimiento que justifica el uso de métodos computacionales.
 
-La solución adoptada en esta investigación es el pre-registro de las dimensiones analíticas. Las nueve dimensiones, junto con sus párrafos ancla y sus definiciones operativas, se registran en el archivo de configuración del \textit{pipeline} y se \textit{commitean} al sistema de control de versiones (Git) antes de ejecutar el análisis supervisado. La marca temporal del \textit{commit} funciona como registro de pre-registro: cualquier observador puede verificar que las categorías analíticas se definieron antes de que los resultados estuvieran disponibles.
+La solución adoptada en esta investigación es el pre-registro de los criterios analíticos. Los seis ejes, junto con sus anclajes bipolares y sus definiciones operativas, se registran en el archivo de configuración del \textit{pipeline} y se \textit{commitean} al sistema de control de versiones (Git) antes de ejecutar el análisis supervisado. La marca temporal del \textit{commit} funciona como registro de pre-registro: cualquier observador puede verificar que las categorías analíticas se definieron antes de que los resultados estuvieran disponibles.
 
 \citet{nosek2018preregistration} argumentaron que el pre-registro en ciencias sociales reduce los grados de libertad del investigador y aumenta la credibilidad de los hallazgos al distinguir entre predicciones y resultados post-hoc. En el contexto del análisis computacional de textos, el pre-registro es particularmente importante porque las decisiones sobre qué consultas utilizar y cómo definir las dimensiones afectan directamente los resultados de \textit{scoring}.
 
@@ -288,7 +282,7 @@ Las bases de datos vectoriales son sistemas diseñados para almacenar, indexar y
 
 ChromaDB es una base de datos vectorial de código abierto que permite almacenar documentos junto con sus \textit{embeddings} y metadatos asociados. En esta investigación, cada fragmento de texto de política se almacena con metadatos que incluyen país de origen, región, año de publicación e idioma. Esto permite realizar consultas semánticas filtradas: por ejemplo, buscar los fragmentos más similares a una consulta sobre ``formación docente en IA'' restringiendo la búsqueda a documentos de un país o periodo específico.
 
-La elección de ChromaDB sobre otras alternativas (Pinecone, Weaviate, Milvus) responde a criterios prácticos: es de código abierto, permite operación local sin dependencia de servicios en la nube, tiene una API sencilla en Python y ofrece integración con los principales proveedores de \textit{embeddings}. Para los fines de esta investigación, las capacidades de ChromaDB son suficientes dado el tamaño del corpus (aproximadamente 13 documentos de política con varios cientos de fragmentos tras la segmentación).
+La elección de ChromaDB sobre otras alternativas (Pinecone, Weaviate, Milvus) responde a criterios prácticos: es de código abierto, permite operación local sin dependencia de servicios en la nube, tiene una API sencilla en Python y ofrece integración con los principales proveedores de \textit{embeddings}. Para los fines de esta investigación, las capacidades de ChromaDB son suficientes dado el tamaño del corpus (15 documentos de política, que tras la segmentación producen algo menos de tres mil fragmentos).
 
 
 \subsection{Aplicaciones de PLN en investigación educativa}

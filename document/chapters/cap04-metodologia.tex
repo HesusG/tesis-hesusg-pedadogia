@@ -44,7 +44,7 @@ Los criterios se redactaron antes de revisar la vigencia y después se aplicaron
 
 \subsection{Composición y bajas}
 
-El corpus final reúne 15 documentos de siete países, para un total de 3{,}095 fragmentos de texto (cuadro~\ref{tab:corpus}).
+El corpus final reúne 15 documentos de siete países, para un total de 3{,}095 fragmentos de texto (cuadro~\ref{tab:corpus}). De ese total, la línea base contra la que se estandarizan las puntuaciones de la Vía A comprende 2{,}914 fragmentos: el 15.\textsuperscript{o} Plan Quinquenal chino queda fuera del cálculo por la razón que se expone abajo, de modo que China aporta 90 fragmentos a la proyección vectorial y no los 271 que tiene en el corpus.
 
 \begin{table}[htbp]
 \centering
@@ -54,7 +54,7 @@ El corpus final reúne 15 documentos de siete países, para un total de 3{,}095 
 \hline
 \textbf{País} & \textbf{Región} & \textbf{Docs.} & \textbf{Frag.} \\
 \hline
-China & Asia & 9 & 271 \\
+China & Asia & 9 & 271$^{\ast}$ \\
 Sudáfrica & África & 1 & 1{,}303 \\
 Colombia & Latinoamérica & 1 & 764 \\
 Alemania & Europa & 1 & 230 \\
@@ -65,6 +65,8 @@ Canadá & Norteamérica & 1 & 210 \\
 \textbf{Total} & & \textbf{15} & \textbf{3{,}095} \\
 \hline
 \end{tabular}
+\vspace{0.3em}
+{\footnotesize\par\noindent$^{\ast}$ De los 271 fragmentos chinos, 181 provienen del 15.\textsuperscript{o} Plan Quinquenal, que se declara documento de análisis en profundidad y se excluye del cálculo de la Vía A (\texttt{DEEP\_DIVE\_DOCS} en la configuración pre-registrada). China entra a la proyección vectorial con 90 fragmentos y la línea base del corpus queda en 2{,}914.}
 \end{table}
 
 Dos documentos del corpus original fueron dados de baja por el criterio C4. La \textit{Executive Order} 14110 de Estados Unidos fue revocada en enero de 2025; se sustituyó por el \textit{America's AI Action Plan} de julio de 2025. El CONPES 3975 de Colombia terminó su vigencia en 2022; se sustituyó por el CONPES 4144 de febrero de 2025. La sustitución colombiana resolvió además un problema de sustancia: el documento derogado mencionaba la inteligencia artificial 29 veces y el vigente la menciona 943.

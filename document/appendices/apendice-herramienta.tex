@@ -4,6 +4,10 @@
 
 Este apéndice documenta la herramienta de análisis semántico desarrollada para esta tesis. El código fuente está disponible en el repositorio del proyecto.
 
+\begin{quote}
+\small\textbf{Advertencia de versión.} Lo que sigue describe el \emph{pipeline} v2 (\texttt{pipeline/}), que corresponde a la fase exploratoria del trabajo. Los resultados reportados en el capítulo~\ref{cap:resultados} provienen del \emph{pipeline} v3 (\texttt{pipeline\_v3/}), cuya configuración pre-registrada difiere en los parámetros que importan: fragmentos de 500 caracteres con 50 de solapamiento (no 800/200), colección \texttt{politicas\_v3}, y un panel de siete modelos vía OpenRouter para la Vía B en lugar de un solo clasificador. El modelo de \emph{embeddings} es el mismo en ambas versiones: \texttt{paraphrase-multilingual-MiniLM-L12-v2}, local. Este apéndice se conserva porque documenta la fase de descubrimiento no supervisado, que no se repitió en v3.
+\end{quote}
+
 \section{Requisitos}
 
 \begin{itemize}
