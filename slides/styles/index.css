@@ -181,6 +181,10 @@
 .slidev-layout.ac-fact,
 .slidev-layout.ac-split { display: flex; flex-direction: column; justify-content: flex-start; }
 .slide-body { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; justify-content: center; }
+/* .src va en absolute con z-index 3, o sea encima del contenido. Un pie de una línea
+   cae fuera de la caja de contenido y no estorba; uno de tres referencias sí invade
+   ~18px, así que sólo esas láminas reservan la franja, con .src-alto en el layout. */
+.slidev-layout.src-alto .slide-body { padding-bottom: 2.2rem; }
 
 /* round duotone avatar (cover + closing) */
 .duo.round { border-radius: 50%; }
@@ -213,6 +217,10 @@
   border: 1px solid var(--ac-ink); padding: 0.12rem 0.5rem; border-radius: 2px; color: var(--ac-ink);
 }
 .dchip-hi { border-color: var(--ac-blue); background: var(--ac-blue); color: #fff; }
+
+/* Ico.vue no trae medidas propias: sin esto el SVG se expande al contenedor. */
+.ico { width: 1.05em; height: 1.05em; display: inline-block; vertical-align: -0.16em; flex: 0 0 auto; }
+.ico-blue { color: var(--ac-blue); }
 
 /* horizontal connectors: solid = concrete action, dotted = soft/implied link */
 .darrow { flex: 0 0 auto; width: 56px; height: 1.5px; background: var(--ac-ink); position: relative; margin: 0 2px; }

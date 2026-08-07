@@ -20,6 +20,11 @@ const stroke = {
   'users': '<circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.5a3 3 0 0 1 0 6M17.5 20a6 6 0 0 0-2-4.2"/>',
   'wrench': '<path d="M15 3a5 5 0 0 0-4 8L4 18l2 2 7-7a5 5 0 0 0 8-4l-3.2 3.2-2.8-.4-.4-2.8z"/>',
   'pen-tool': '<path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z"/>',
+  'file-text': '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/>',
+  'scissors': '<circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M20 4L8.7 15.3M14.6 14.6L20 20M8.7 8.7L11.6 11.6"/>',
+  'database': '<ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.66 3.58 3 8 3s8-1.34 8-3v-13"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/>',
+  'sigma': '<path d="M18 4H6l6 8-6 8h12"/>',
+  'terminal': '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/>',
 }
 // brand marks (filled/stroke approximations, monochrome/neutral)
 const brand = {

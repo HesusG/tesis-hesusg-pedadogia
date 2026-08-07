@@ -1,8 +1,13 @@
 <script setup>
+import { computed } from 'vue'
 // Perfil confuciano en 6 ejes (Vía A, medianas z contra el corpus de fondo).
 // Fuente: web/data/confucian_radar_v3.json
 const props = defineProps({
   paises: { type: Array, default: () => ['china', 'canada'] },
+  // Con 7 series, cinco países comparten el mismo gris y el radar se vuelve papilla.
+  // En modo `resalta` sólo el primer país se dibuja con identidad propia y el resto
+  // funciona como nube de fondo, que es justo lo que afirma esa lámina.
+  resalta: { type: Boolean, default: false },
 })
 
 const ejes = [
@@ -33,6 +38,23 @@ const ang = i => (Math.PI * 2 * i) / ejes.length - Math.PI / 2
 const pt = (v, i) => [C + r(v) * Math.cos(ang(i)), C + r(v) * Math.sin(ang(i))]
 const poly = pais => ejes.map((e, i) => pt(datos[pais].v[e.k], i).join(',')).join(' ')
 const anillos = [-0.5, 0, 0.5, 1.0]
+
+const GRIS_NUBE = '#AEB6C4'
+// En modo resalta se pinta la nube primero y el país destacado al final, para que
+// quede encima; sin resalta se conserva el orden original de dos series.
+const orden = computed(() =>
+  props.resalta ? [...props.paises].slice(1).concat(props.paises[0]) : props.paises
+)
+const esDestacado = p => !props.resalta || p === props.paises[0]
+const trazo = p => (esDestacado(p) ? datos[p].color : GRIS_NUBE)
+const leyenda = computed(() =>
+  props.resalta
+    ? [
+        { label: datos[props.paises[0]].label, color: datos[props.paises[0]].color },
+        { label: `Los otros ${props.paises.length - 1} países`, color: GRIS_NUBE },
+      ]
+    : props.paises.map(p => ({ label: datos[p].label, color: datos[p].color }))
+)
 </script>
 
 <template>
@@ -53,19 +75,20 @@ const anillos = [-0.5, 0, 0.5, 1.0]
       </g>
       <!-- Series. La segunda va punteada a propósito: los perfiles casi coinciden,
            y con dos líneas sólidas del mismo grosor una tapa a la otra. -->
-      <g v-for="(p, k) in props.paises" :key="p">
-        <polygon :points="poly(p)" :stroke="datos[p].color" :stroke-width="k === 0 ? 2 : 1.6"
-                 :stroke-dasharray="k === 0 ? 'none' : '5 3'"
-                 :fill="datos[p].color" :fill-opacity="k === 0 ? 0.08 : 0" />
+      <g v-for="(p, k) in orden" :key="p">
+        <polygon :points="poly(p)" :stroke="trazo(p)"
+                 :stroke-width="esDestacado(p) ? 2.2 : 1"
+                 :stroke-dasharray="!resalta && k > 0 ? '5 3' : 'none'"
+                 :fill="trazo(p)" :fill-opacity="esDestacado(p) && k === (resalta ? orden.length - 1 : 0) ? 0.08 : 0" />
         <circle v-for="(e, i) in ejes" :key="p + e.k" :cx="pt(datos[p].v[e.k], i)[0]"
-                :cy="pt(datos[p].v[e.k], i)[1]" :r="k === 0 ? 3 : 2.2" :fill="datos[p].color" />
+                :cy="pt(datos[p].v[e.k], i)[1]" :r="esDestacado(p) ? 3 : 1.8" :fill="trazo(p)" />
       </g>
     </svg>
 
     <div class="flex flex-col gap-2">
-      <div v-for="p in props.paises" :key="'lg' + p" class="flex items-center gap-2 font-mono text-[0.85rem]">
-        <span :style="{ background: datos[p].color, width: '11px', height: '11px', display: 'inline-block' }" />
-        {{ datos[p].label }}
+      <div v-for="l in leyenda" :key="'lg' + l.label" class="flex items-center gap-2 font-mono text-[0.85rem]">
+        <span :style="{ background: l.color, width: '11px', height: '11px', display: 'inline-block' }" />
+        {{ l.label }}
       </div>
       <div class="kicker mt-2" style="max-width: 15ch; line-height: 1.5">
         Medianas z contra el corpus de fondo
