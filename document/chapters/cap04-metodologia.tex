@@ -1,262 +1,230 @@
-%% cap04-metodologia.tex — Metodología
-%% Iteración 2: revisión triple (/writing + /weakpoints + /proofread)
+%% cap04-metodologia.tex, Metodología
+%% Reescrito para el diseno v3: eje dezhi-fa, dos vias de medicion,
+%% pre-registro, panel de jueces, pruebas de confusión.
 
 \chapter{Metodología}
 \label{cap:metodologia}
 
-Este capítulo describe el diseño metodológico de la investigación. Se presenta el enfoque adoptado, el corpus documental analizado, el marco de siete dimensiones que estructura la comparación, la herramienta de análisis semántico basada en embeddings y ChromaDB, el procedimiento de análisis en tres fases, las consideraciones éticas y la visualización interactiva como producto complementario.
+\section{Enfoque y Diseño}
 
+Este es un estudio comparativo de medición sobre texto de política pública. La unidad de análisis es el pasaje, no el documento ni el país: cada pasaje recibe un valor en un eje declarado por adelantado, y los valores se agregan por país.
 
-\section{Enfoque de la Investigación}
-\label{sec:enfoque}
+El diseño se organiza sobre una decisión que conviene explicitar desde el principio, porque de ella depende todo lo demás. \textbf{El instrumento de este estudio no es ninguna de sus dos vías: es el contraste entre ambas.}
 
-\subsection{Paradigma interpretativo con apoyo computacional}
+La \textbf{Vía A} proyecta el texto sobre un eje construido con vectores de significado y no lee nada: opera con distancias. La \textbf{Vía B} entrega a un panel de lectores automáticos un libro de códigos escrito en prosa y les pide que juzguen pasaje por pasaje. Son independientes en sus supuestos, y por eso su comparación informa; pero no son dos estudios paralelos que casualmente se cotejan al final. Se diseñaron juntas y se ejecutan sobre los mismos pasajes, con el contraste previsto desde el inicio.
 
-Esta investigación se inscribe en el paradigma interpretativo: busca comprender cómo diferentes países y organismos internacionales conceptualizan, priorizan y articulan la relación entre inteligencia artificial y educación en sus documentos de política. El interés no es medir la eficacia de las políticas ni evaluar su implementación, sino analizar el contenido discursivo de los textos oficiales para identificar convergencias, divergencias y patrones temáticos.
+La razón es que ninguna de las dos, por separado, produce un resultado interpretable. La Vía A entrega números sin manera de saber si corresponden al constructo. La Vía B entrega juicios sin manera de saber si el panel comparte un sesgo. Solo el contraste permite decir algo: cuando coinciden, la medición gana crédito; cuando divergen, la divergencia \textbf{localiza} el punto donde una de las dos falla, y el capítulo~\ref{cap:resultados} muestra que además sirvió para detectar un error en los datos que ninguna revisión del corpus había encontrado.
 
-El apoyo computacional no modifica el paradigma ni lo convierte en positivista. Las herramientas de procesamiento de lenguaje natural (PLN) funcionan como amplificadores de la capacidad analítica del investigador, no como sustitutos de su juicio interpretativo \citep{grimmer2013text}. Los embeddings detectan proximidad semántica entre fragmentos de texto; la interpretación de qué significa esa proximidad en términos pedagógicos y de política pública corresponde al investigador. Este principio guía todo el diseño: el análisis cualitativo tiene prioridad, y el computacional lo complementa.
+Esa duplicación no es redundancia ni verificación de cortesía. Es la única forma disponible de someter a prueba un instrumento cuando no existe un patrón de oro contra el cual calibrarlo.
 
-El diseño corresponde a lo que \citet{creswell2018mixed} denominan un enfoque de métodos mixtos con prioridad cualitativa (\textit{QUAL-quan}), donde la fase cualitativa orienta la investigación y la fase cuantitativa (en este caso, computacional) aporta una capa adicional de evidencia. \citet{nelson2020computational} propuso un marco similar bajo el nombre de Teoría Fundamentada Computacional, con tres etapas: detección no supervisada de patrones, refinamiento cualitativo y confirmación computacional. El diseño de esta tesis sigue una secuencia análoga, como se detalla en la Sección~\ref{sec:procedimiento}.
+\subsection{Pre-registro}
 
+Antes de ejecutar cualquier medición se fijaron en el repositorio de control de versiones tres artefactos: el libro de códigos del eje, los parámetros del procedimiento y las cuatro predicciones del estudio. El registro es la marca de tiempo del \textit{commit} correspondiente, verificable por cualquier tercero con acceso al repositorio.
 
-\subsection{Investigación documental comparativa}
+El pre-registro cumple aquí una función concreta. Un eje bipolar admite muchas redacciones, y redacciones distintas del mismo eje producen resultados distintos. Congelar la redacción antes de ver los datos impide el ajuste posterior del instrumento a los resultados deseados.
 
-El tipo de investigación es documental y comparativo. Es documental porque la fuente primaria de datos son textos oficiales: estrategias nacionales de IA, planes de acción, marcos regulatorios y lineamientos de organismos internacionales \citep{bowen2009document}. No se realizan entrevistas, encuestas ni observaciones de campo. Los documentos se analizan tanto como portadores de contenido (qué dicen las políticas) como productos discursivos (cómo lo dicen, qué vocabulario utilizan, qué priorizan y qué omiten).
+Cuando fue necesario modificar la configuración después del registro, la modificación quedó documentada con su causa en la bitácora del proyecto. Dos cambios ocurrieron: la sustitución de un modelo retirado por su proveedor y la ampliación del límite de \textit{tokens} de salida, ambos por fallas técnicas de ejecución, ninguno por conveniencia de resultado.
 
-Es comparativo porque el análisis se estructura según la tradición de la educación comparada. El esquema de \citet{bereday1964comparative} organiza la comparación en cuatro etapas: descripción de cada caso, interpretación contextualizada, yuxtaposición sistemática y comparación propiamente dicha. En esta tesis, la descripción corresponde al Capítulo~\ref{cap:marco-contextual}, la interpretación y yuxtaposición se realizan mediante el marco de siete dimensiones (Sección~\ref{sec:dimensiones}), y la comparación integra los resultados cualitativos y computacionales en el Capítulo~\ref{cap:resultados}.
+\section{Corpus}
 
-Dentro del marco tridimensional de \citet{bray1995levels}, esta investigación opera en el nivel nacional del eje geográfico, aborda el aspecto de políticas educativas sobre IA, y no se restringe a un grupo demográfico específico. Las siete dimensiones de análisis desagregan el aspecto de ``políticas educativas sobre IA'' en componentes observables y comparables.
+\subsection{Criterios de inclusión}
 
+Un documento entra al corpus si cumple seis condiciones simultáneas.
 
-\section{Corpus Documental}
-\label{sec:corpus}
+\begin{description}
+    \item[C1. Autoría estatal.] Adoptado por un órgano con autoridad pública, identificable por nombre.
+    \item[C2. Alcance nacional.] Aplica al conjunto del territorio, salvo los documentos subnacionales chinos, que se declaran como tales.
+    \item[C3. Sustancia.] Trata la inteligencia artificial de manera central, no como mención incidental.
+    \item[C4. Vigencia.] Rige al 30 de junio de 2026.
+    \item[C5. Texto verbatim.] Se dispone del texto oficial completo, no de una nota de prensa ni de un resumen.
+    \item[C6. Par documental.] El país aporta una estrategia de IA, un documento educativo, o ambos.
+\end{description}
 
-\subsection{Criterios de selección}
+Los criterios se redactaron antes de revisar la vigencia y después se aplicaron de forma retroactiva al corpus preexistente. La aplicación retroactiva expulsó documentos que ya estaban dentro, lo que constituye evidencia de que el criterio hizo trabajo real. La sección siguiente documenta esos casos.
 
-El corpus se compone de 22 unidades de análisis: 17 países, la Unión Europea como entidad supranacional y 4 organismos internacionales (UNESCO, OCDE, Foro Económico Mundial y Banco Mundial). La selección responde a los siguientes criterios:
+\subsection{Composición y bajas}
 
-\begin{enumerate}
-  \item \textbf{Existencia de documento oficial.} Cada unidad debe contar con al menos un documento de política que aborde explícitamente la relación entre IA y educación, ya sea una estrategia nacional de IA con sección educativa, un plan de acción sectorial o lineamientos específicos.
-  \item \textbf{Diversidad geográfica.} La muestra incluye representación de tres regiones: Europa (Unión Europea, España, Francia, Alemania, Finlandia, Estonia), Américas (Estados Unidos, Canadá, México, Brasil, Chile, Colombia) y Asia-Pacífico (China, Japón, Corea del Sur, Singapur, India, Australia).
-  \item \textbf{Diversidad de nivel de desarrollo.} La muestra incluye países de ingresos altos (la mayoría), medios-altos (México, Brasil, Colombia) e intermedios (India), lo que permite observar cómo el nivel de recursos condiciona las políticas.
-  \item \textbf{Disponibilidad pública.} Solo se incluyen documentos de acceso público, descargables de sitios oficiales de gobierno u organismos internacionales.
-  \item \textbf{Periodo temporal.} Los documentos deben haber sido publicados entre 2017 y 2024, periodo que abarca desde las primeras estrategias nacionales de IA (Canadá, China, Finlandia, 2017) hasta las respuestas regulatorias más recientes (EU AI Act, 2024).
-\end{enumerate}
-
-La Tabla~\ref{tab:corpus} presenta el listado completo de documentos incluidos en el corpus.
+El corpus final reúne 15 documentos de siete países, para un total de 3{,}095 fragmentos de texto (cuadro~\ref{tab:corpus}).
 
 \begin{table}[htbp]
 \centering
-\caption{Corpus documental: unidades de análisis}
+\caption{Composición del corpus por país}
 \label{tab:corpus}
-\small
-\begin{tabular}{llll}
+\begin{tabular}{llrr}
 \hline
-\textbf{Unidad} & \textbf{Documento principal} & \textbf{Año} & \textbf{Idioma} \\
+\textbf{País} & \textbf{Región} & \textbf{Docs.} & \textbf{Frag.} \\
 \hline
-Unión Europea & AI Act; Digital Education Action Plan & 2020--2024 & EN \\
-España & Estrategia Nacional de IA (ENIA) & 2020 & ES \\
-Francia & Informe Villani (\textit{AI for Humanity}) & 2018 & EN/FR \\
-Alemania & KI-Strategie der Bundesregierung & 2018/2020 & DE \\
-Finlandia & Finland's Age of AI & 2017 & EN \\
-Estonia & Report of Estonia's AI Taskforce & 2019 & EN \\
-Estados Unidos & Executive Order 14110 on AI & 2023 & EN \\
-Canadá & Pan-Canadian AI Strategy & 2017 & EN \\
-México & Hacia una Estrategia de IA en México & 2018 & ES \\
-Brasil & Estratégia Brasileira de IA (EBIA) & 2021 & PT \\
-Chile & Política Nacional de IA & 2021 & ES \\
-Colombia & CONPES 3975 & 2019 & ES \\
-China & New Generation AI Development Plan & 2017 & ZH/EN \\
-Japón & AI Strategy 2019 & 2019 & EN/JA \\
-Corea del Sur & National Strategy for AI & 2019 & EN/KO \\
-Singapur & National AI Strategy (NAIS) & 2019 & EN \\
-India & National Strategy for AI: \#AIForAll & 2018 & EN \\
-Australia & AI Action Plan & 2021 & EN \\
-UNESCO & Beijing Consensus; GenAI Guidance & 2019/2023 & EN \\
-OCDE & AI Principles; Digital Ed.\ Outlook & 2019/2021 & EN \\
-FEM & Future of Jobs Report & 2020 & EN \\
-Banco Mundial & Reimagining Human Connections & 2020 & EN \\
+China & Asia & 9 & 271 \\
+Sudáfrica & África & 1 & 1{,}303 \\
+Colombia & Latinoamérica & 1 & 764 \\
+Alemania & Europa & 1 & 230 \\
+Australia & Oceanía & 1 & 161 \\
+Estados Unidos & Norteamérica & 1 & 156 \\
+Canadá & Norteamérica & 1 & 210 \\
+\hline
+\textbf{Total} & & \textbf{15} & \textbf{3{,}095} \\
 \hline
 \end{tabular}
 \end{table}
 
+Dos documentos del corpus original fueron dados de baja por el criterio C4. La \textit{Executive Order} 14110 de Estados Unidos fue revocada en enero de 2025; se sustituyó por el \textit{America's AI Action Plan} de julio de 2025. El CONPES 3975 de Colombia terminó su vigencia en 2022; se sustituyó por el CONPES 4144 de febrero de 2025. La sustitución colombiana resolvió además un problema de sustancia: el documento derogado mencionaba la inteligencia artificial 29 veces y el vigente la menciona 943.
 
-\subsection{Procedimiento de recopilación}
+Que dos de siete países estuvieran representados por textos derogados no es un detalle de mantenimiento. Significaba que la medición describía posturas estatales explícitamente abandonadas.
 
-Los documentos se recopilaron entre septiembre y noviembre de 2024 mediante búsqueda sistemática en los sitios web oficiales de cada gobierno y organismo. Para los documentos en idiomas distintos del español e inglés, se utilizaron las versiones oficiales en inglés cuando estaban disponibles. En los casos de China, Japón y Corea del Sur, se trabajó con traducciones oficiales al inglés o, en su defecto, con traducciones académicas de referencia (como la traducción del NGAIDP chino realizada por el proyecto DigiChina de la Universidad de Stanford).
+Un tercer documento resultó inadmisible, esta vez por el criterio C5, y no se detectó al construir el corpus sino al analizar los resultados. El texto canadiense era una captura de navegador del sitio de CIFAR, no la estrategia. Se sustituyó por \textit{Canada's National Artificial Intelligence Strategy: AI for All}, adoptada por el Ministro de Innovación, Ciencia e Industria el 4 de junio de 2026 y por tanto vigente al corte. El texto pasa de 6.5 a 94.7 kilobytes, y la contribución canadiense al corpus de 15 a 210 fragmentos. El capítulo~\ref{cap:resultados} documenta el caso, porque su descubrimiento forma parte del resultado y no solo del procedimiento.
 
-Los documentos originales se almacenaron en formato PDF en el directorio \texttt{policies/raw/} del repositorio del proyecto, organizados por país. Los metadatos (país, región, año, idioma, URL de origen) se registraron en un archivo JSON estructurado.
+De ahí se desprende un control que este estudio no tenía y debería haber tenido: \textbf{una revisión automatizada de material de navegación de sitio web} sobre los pasajes muestreados, buscando direcciones web, marcas de captura, menús, listas de personal y llamados a la acción. Aplicada de forma retroactiva a los siete países, la revisión marcó cinco de los diez pasajes canadienses, uno de los sudafricanos correspondiente a una URL dentro de una referencia, y ninguno en los cinco países restantes.
 
+\subsection{Un hallazgo del propio criterio}
 
-\subsection{Preprocesamiento de textos}
+Buscar el documento de IA en educación de cada país reveló algo que el diseño no anticipaba: en los países federales, la educación no es competencia del gobierno nacional. Canadá carece de ministerio federal de educación y no puede tener una política nacional de IA en educación sin reforma constitucional. En Alemania la competencia es de los \textit{Länder}. En Estados Unidos es estatal.
 
-El preprocesamiento convierte los documentos PDF en texto plano segmentado, listo para su representación vectorial. El procedimiento incluye los siguientes pasos:
+China, en cambio, emite un plan nacional de IA en educación firmado por el Ministerio de Educación junto con otros cuatro ministerios, aplicable a todo el sistema.
 
-\begin{enumerate}
-  \item \textbf{Extracción de texto.} Se extrae el contenido textual de cada PDF mediante la biblioteca \texttt{pypdf} de Python. Se eliminan encabezados, pies de página, números de página y elementos gráficos.
-  \item \textbf{Limpieza.} Se normalizan espacios, se corrigen caracteres mal codificados y se eliminan secciones no sustantivas (índices, listas de abreviaturas, agradecimientos).
-  \item \textbf{Segmentación (\textit{chunking}).} El texto se divide en fragmentos de aproximadamente 800 caracteres con un solapamiento de 200 caracteres entre fragmentos consecutivos. Este tamaño se eligió para mantener unidades semánticamente coherentes (aproximadamente un párrafo) sin exceder los límites del modelo de embeddings.
-  \item \textbf{Asignación de metadatos.} Cada fragmento hereda los metadatos del documento de origen: país, región, año, idioma e identificador de política. Se añade un índice secuencial que preserva el orden del fragmento dentro del documento.
-\end{enumerate}
+La existencia misma de un documento nacional de IA en educación funciona entonces como indicador del grado de centralización del Estado en la formación de personas. Se trata como dato, no como casilla vacía que corregir.
 
-El corpus preprocesado produce entre 500 y 2{,}000 fragmentos, dependiendo de la extensión de los documentos. Cada fragmento constituye la unidad mínima de análisis computacional.
+El mismo criterio produce un segundo hallazgo, esta vez sobre México. El país no ocupa la casilla latinoamericana del corpus, que corresponde a Colombia, pero convenía verificar si algún documento mexicano habría sido admisible en caso de haber una segunda plaza. Ninguno lo es. El Programa Sectorial de Educación 2025--2030, publicado en el Diario Oficial en septiembre de 2025, no menciona la inteligencia artificial en sus 222 páginas. El Plan Nacional de Desarrollo 2025--2030 la menciona una vez, y para describirla como herramienta de gestión administrativa, lo que el criterio C3 clasifica expresamente como mención incidental. Las diez acciones sobre inteligencia artificial generativa presentadas por la Secretaría de Educación Pública en abril de 2026 son recomendaciones expuestas en un acto público, sin texto adoptado que satisfaga C1 ni C5. Las dos agendas nacionales disponibles, la de 2018 y la de 2024, fueron elaboradas por organizaciones de la sociedad civil y no por un órgano de gobierno.
 
+La comparación que este resultado habilita no requiere medición alguna. El Plan Nacional de Desarrollo mexicano y el plan quinquenal chino pertenecen al mismo género discursivo y cubren periodos casi idénticos: ambos son el instrumento con que un Estado declara qué se propone construir en un horizonte de cinco años. El chino menciona la inteligencia artificial 52 veces y la educación 100. El mexicano, una y ninguna en relación con la primera. La ausencia de México en el corpus es un dato sobre la política mexicana, no una limitación del muestreo.
 
-\section{Marco Analítico: Dimensiones de Comparación}
-\label{sec:dimensiones}
+\subsection{Fragmentación y muestreo}
 
-El análisis comparativo se estructura en siete dimensiones que cubren los aspectos centrales de la relación entre IA y educación en los documentos de política. Estas dimensiones se derivaron mediante un proceso inductivo-deductivo: una primera lectura exploratoria del corpus identificó los temas recurrentes, que luego se contrastaron con marcos existentes para asegurar cobertura y evitar omisiones. Los marcos de referencia fueron las cinco áreas del Consenso de Beijing \citep{unesco2019beijing}, las recomendaciones de \citet{miao2021guidance}, los ejes del \textit{OECD Digital Education Outlook} \citep{oecd2021digitaloutlook} y las categorías analíticas de \citet{fatima2020aipolicy}. Las dimensiones 1, 3 y 5 tienen correspondencia directa con áreas del Consenso de Beijing (gestión de IA en educación, apoyo a docentes, uso ético de datos). Las dimensiones 2 y 4 se derivan de las recomendaciones de Miao et al.\ sobre currículo e infraestructura. Las dimensiones 6 y 7 integran ejes de la OCDE (investigación) y de la UNESCO (equidad), respectivamente. Las siete dimensiones resultantes son:
+Cada documento se divide en fragmentos de 500 caracteres con 50 de traslape, y se almacena en una base vectorial junto con sus metadatos: país, región, año, género discursivo, órgano adoptante e identificador de documento.
 
-\begin{enumerate}
-  \item \textbf{Gobernanza y regulación.} Estructura institucional para la gestión de la IA en educación: órganos responsables, marcos legales, mecanismos de coordinación entre ministerios, nivel de centralización de las decisiones.
+Para la Vía B se muestrean diez pasajes por país. El muestreo recupera los fragmentos semánticamente más cercanos a una consulta sobre gobernanza, de modo que la comparación se hace sobre material temáticamente equiparable y no sobre secciones arbitrarias. Fijar diez por país impide que un documento de 1{,}303 fragmentos domine la comparación frente a uno de 156.
 
-  \item \textbf{Currículo e integración educativa.} Presencia de la IA como contenido curricular: asignaturas, competencias esperadas, niveles educativos cubiertos, distinción entre IA como objeto de estudio y como herramienta pedagógica.
+El plan quinquenal nacional chino se excluye de la comparación entre países y se reserva para el análisis en profundidad de China. La razón es de simetría: ningún otro país aporta un instrumento equivalente, y dejarlo dentro compararía cosas distintas.
 
-  \item \textbf{Formación docente.} Programas, estrategias o menciones a la capacitación del profesorado en competencias relacionadas con IA: formación inicial, desarrollo profesional continuo, certificaciones, alianzas con universidades o empresas tecnológicas.
+\section{El Eje de Medición}
 
-  \item \textbf{Infraestructura y acceso.} Inversión en infraestructura tecnológica (conectividad, equipamiento, plataformas), acceso equitativo a herramientas de IA, y condiciones materiales para la implementación de las políticas.
+\subsection{Definición}
 
-  \item \textbf{Ética y valores.} Principios éticos mencionados en relación con la IA en educación: privacidad de datos estudiantiles, equidad algorítmica, transparencia, supervisión humana, sesgo, integridad académica.
+El eje \ejedf es una escala ordinal de cinco valores, de $-2$ a $+2$.
 
-  \item \textbf{Investigación e innovación.} Fomento de la investigación en IA educativa: financiamiento, centros de investigación, colaboración academia-industria, desarrollo de soluciones locales, pilotajes y evaluación de impacto.
+El \textbf{polo positivo} ($+2$) corresponde al Estado como cultivador y director moral de la sociedad. El pasaje presenta al gobierno como sujeto que guía, educa, planifica y moviliza hacia metas colectivas que él mismo define; la legitimidad emana de su virtud o su misión histórica, no del consentimiento ni de límites jurídicos; la educación y la tecnología aparecen como instrumentos de formación moral de la población; los derechos, cuando figuran, son bienes que el Estado otorga y administra.
 
-  \item \textbf{Equidad e inclusión.} Atención a brechas de acceso y participación: diferencias urbano-rurales, de género, socioeconómicas y lingüísticas en la adopción de IA educativa; mecanismos compensatorios.
-\end{enumerate}
+El \textbf{polo negativo} ($-2$) corresponde a los derechos individuales como límite del Estado. El pasaje presenta al gobierno como poder acotado cuya función es proteger libertades incluso frente a sí mismo; hay contrapesos institucionales explícitos y exigibles; el liderazgo se cede a mercados, academia o sociedad civil.
 
-Cada dimensión funciona como una lente analítica que se aplica a los 22 documentos del corpus. En la fase cualitativa, el investigador codifica los fragmentos relevantes de cada documento según estas dimensiones. En la fase computacional, se formulan consultas semánticas específicas para cada dimensión y se mide la similitud entre los documentos en cada eje. La intersección de ambos análisis permite construir una matriz de 22 unidades $\times$ 7 dimensiones con puntuaciones tanto cualitativas como computacionales.
+El \textbf{valor cero} indica que el pasaje no trata la relación entre poder estatal y persona. La mayoría de los pasajes de política pública caen aquí, y ese hecho tiene consecuencias estadísticas que la sección~\ref{sec:acuerdo} discute.
 
+\subsection{Una objeción de fondo}
+\label{sec:objecion-eje}
 
-\section{Herramienta de Análisis Semántico}
-\label{sec:herramienta}
+El eje trata \dezhi y \fa como polos opuestos. La doctrina oficial contemporánea del Partido Comunista de China sostiene lo contrario: que gobernar conforme a la ley\zhg{依法治国} y gobernar por la virtud\zhg{以德治国} son complementarios y se refuerzan mutuamente. Xi Jinping lo formuló explícitamente en la primera reunión de la Comisión Central para el Gobierno Integral del País conforme a la Ley, en agosto de 2018.
 
-\subsection{Modelo de embeddings}
+La objeción es seria y hay que responderla, no rodearla.
 
-Los fragmentos del corpus se representan como vectores numéricos mediante el modelo \texttt{text-embedding-3-small} de OpenAI. Este modelo produce vectores de 1{,}536 dimensiones y ha demostrado capacidad multilingüe adecuada para textos en inglés, español, francés, portugués y alemán, los principales idiomas del corpus.
+\textbf{Primera respuesta: el eje mide encuadre, no doctrina.} La escala no pregunta si un Estado cree que ambos principios son compatibles. Pregunta cómo se presenta la relación entre poder estatal y persona en un pasaje concreto. Un Estado puede sostener que virtud y ley se complementan y, aun así, redactar sus documentos de manera que el ciudadano aparezca sistemáticamente como objeto de formación y no como titular de límites exigibles. Eso es lo que el instrumento registra.
 
-La elección de este modelo sobre alternativas de código abierto (como \texttt{paraphrase-multilingual-MiniLM-L12-v2} de Sentence Transformers) responde a tres criterios: mayor dimensionalidad del espacio vectorial (1{,}536 vs.\ 384), mejor desempeño en tareas de similitud semántica multilingüe según benchmarks públicos, y estabilidad de la API para garantizar reproducibilidad \citep{rodriguez2022embeddings}. Como respaldo, el modelo de Sentence Transformers se mantiene disponible para operación sin conexión o en caso de indisponibilidad de la API.
+\textbf{Segunda respuesta: la complementariedad predice un patrón observable, y se observó.} Si el discurso chino combinara ambos polos, se esperaría que sus documentos jurídicos puntúen cerca de cero mientras los educativos puntúan alto. Es exactamente lo que ocurre. La ley china de inteligencia artificial generativa obtuvo valor neutro; el plan de IA en educación obtuvo $+0.94$. La misma doctrina que objeta el eje explica la estructura del resultado.
 
+\textbf{Tercera respuesta: la bipolaridad es una decisión de instrumento, no una tesis sobre China.} La proyección bipolar requiere dos anclas contrapuestas. Que el instrumento las oponga no implica que el objeto medido las oponga. Reconocerlo cambia cómo se leen los valores: un pasaje en $+2$ no es un pasaje que rechace la ley, es un pasaje donde el encuadre formativo domina al encuadre limitativo.
 
-\subsection{Almacenamiento vectorial con ChromaDB}
+La literatura sobre estado de derecho con características chinas documenta ese terreno con detalle y es la referencia obligada para quien quiera discutir el punto a fondo.
 
-Los embeddings generados se almacenan en ChromaDB, una base de datos vectorial de código abierto. Cada registro en ChromaDB contiene tres elementos: el texto del fragmento, su vector de embedding y un diccionario de metadatos (país, región, año, idioma, identificador de política, índice del fragmento).
+\section{Vía A: Proyección sobre Representaciones Vectoriales}
 
-ChromaDB permite dos operaciones centrales para esta investigación:
+\subsection{Procedimiento}
 
-\begin{itemize}
-  \item \textbf{Consulta por similitud.} Dada una consulta textual (por ejemplo, ``programas de formación docente en inteligencia artificial''), ChromaDB devuelve los $k$ fragmentos del corpus más cercanos en el espacio vectorial. Esto permite identificar qué países abordan un tema específico y con qué profundidad.
-  \item \textbf{Filtrado por metadatos.} Las consultas pueden restringirse por país, región, idioma o año, lo que permite comparaciones segmentadas (por ejemplo, solo documentos europeos posteriores a 2020).
-\end{itemize}
+Cada fragmento se convierte en un vector de 384 dimensiones mediante un modelo multilingüe de representación de oraciones~\citep{reimers2019sentencebert}. El modelo ubica textos de idiomas distintos en un mismo espacio, lo que permite comparar sin traducir.
 
-La base de datos se almacena localmente en el directorio del proyecto y se respalda en Chroma Cloud para garantizar persistencia.
+Para cada eje se redacta un conjunto de frases ancla en cada polo. El eje se define como la diferencia entre el centroide del polo positivo y el del polo negativo, siguiendo el procedimiento de proyección bipolar de dimensiones culturales sobre espacios vectoriales. La puntuación de un fragmento es su proyección escalar sobre ese eje.
 
+Las proyecciones crudas no son interpretables por sí solas. Se estandarizan contra la distribución de los 2{,}719 fragmentos del corpus de fondo, de modo que el valor reportado indica cuántas desviaciones típicas se aparta un país del texto de política promedio.
 
-\subsection{Cálculo de similitud semántica}
+\subsection{Los seis ejes}
 
-La similitud entre documentos se mide mediante la distancia del coseno entre sus vectores. Para obtener una representación a nivel de documento (en lugar de fragmento), se calcula el vector promedio de todos los fragmentos de cada documento. La similitud entre dos documentos $A$ y $B$ se define como:
-
-\[
-\text{sim}(A, B) = \frac{\vec{A} \cdot \vec{B}}{||\vec{A}|| \; ||\vec{B}||}
-\]
-
-donde $\vec{A}$ y $\vec{B}$ son los vectores promedio de los fragmentos de cada documento. Valores cercanos a 1 indican alta similitud semántica; valores cercanos a 0 indican contenido semánticamente distante.
-
-Además de la similitud global, se calcula una puntuación de relevancia por dimensión para cada documento. El procedimiento es el siguiente: para cada una de las siete dimensiones, se formula una consulta textual en español que sintetiza los conceptos centrales de esa dimensión. ChromaDB devuelve, para cada documento, los $k$ fragmentos más cercanos a la consulta (con $k = 5$) junto con su puntuación de similitud del coseno. El promedio de estas puntuaciones constituye la relevancia de esa dimensión en ese documento. La Tabla~\ref{tab:consultas} presenta las siete consultas utilizadas.
+La Vía A mide seis ejes de la tradición confuciana, no solo uno (cuadro~\ref{tab:ejes}). El eje \ejedf es el que se somete a la doble medición; los otros cinco aportan el perfil comparativo.
 
 \begin{table}[htbp]
 \centering
-\caption{Consultas semánticas por dimensión de análisis}
-\label{tab:consultas}
-\small
-\begin{tabular}{lp{9cm}}
+\caption{Ejes medidos por la Vía A}
+\label{tab:ejes}
+\begin{tabular}{llp{6.2cm}}
 \hline
-\textbf{Dimensión} & \textbf{Consulta textual} \\
+\textbf{Eje} & \textbf{Pinyin} & \textbf{Contenido} \\
 \hline
-1. Gobernanza & Gobernanza institucional, regulación de inteligencia artificial, marco legal, coordinación ministerial, órganos responsables \\
-2. Currículo & Currículo escolar, integración de IA en asignaturas, competencias digitales, contenido curricular, niveles educativos \\
-3. Formación docente & Capacitación de profesores, formación docente en IA, desarrollo profesional, certificación, competencias pedagógicas digitales \\
-4. Infraestructura & Infraestructura tecnológica, conectividad, equipamiento escolar, plataformas digitales, acceso a internet, inversión \\
-5. Ética & Ética de la inteligencia artificial, privacidad de datos, sesgo algorítmico, transparencia, supervisión humana, integridad académica \\
-6. Investigación & Investigación en IA educativa, innovación, financiamiento, centros de investigación, colaboración academia-industria, pilotaje \\
-7. Equidad & Equidad digital, inclusión, brecha urbano-rural, género, acceso para poblaciones vulnerables, mecanismos compensatorios \\
+\zh{仁} & \ren & Benevolencia; el gobernante como cuidador \\
+\zh{礼} & \lipin & Ritual y propiedad; forma y jerarquía \\
+\zh{义} & \yi & Rectitud; deber por encima del interés \\
+\zh{修身} & \xiushen & Cultivo de sí mismo \\
+\zh{德治} & \ejedf & Gobernar por virtud frente a gobernar por norma \\
+\zh{和} & \hepin & Armonía; estabilidad del conjunto \\
 \hline
 \end{tabular}
 \end{table}
 
-Estas consultas se formularon a partir de las definiciones operativas de cada dimensión (Sección~\ref{sec:dimensiones}) y se refinaron iterativamente comparando los fragmentos recuperados con los codificados cualitativamente para la misma dimensión. Este proceso de calibración asegura que las consultas capturan el vocabulario real de los documentos y no solo los términos esperados por el investigador. El resultado es una matriz de 22 $\times$ 7 puntuaciones de relevancia que complementa la codificación cualitativa.
+\section{Vía B: Panel de Jueces}
 
-Para identificar agrupaciones entre países, se aplica \textit{clustering} jerárquico aglomerativo sobre la matriz de similitud global, utilizando el método de Ward como criterio de enlace. El número de clusters no se fija a priori; se examina el dendrograma resultante y se selecciona el corte que maximiza la coherencia interpretativa de los grupos (es decir, que las agrupaciones tengan sentido a la luz del contexto geopolítico y de los hallazgos cualitativos). Este enfoque privilegia la interpretabilidad sobre la optimización estadística, en consonancia con la prioridad cualitativa del diseño.
+\subsection{Composición del panel}
 
+Siete modelos de lenguaje leen los mismos pasajes con el mismo libro de códigos y emiten cada uno una clasificación. Cuatro son de origen chino y tres de origen occidental. La partición no es decorativa: permite estimar si el origen cultural del instrumento sesga la medición del constructo cultural.
 
-\section{Procedimiento de Análisis}
-\label{sec:procedimiento}
+Cada juez recibe el pasaje, el libro de códigos completo y la instrucción de devolver un valor entero entre $-2$ y $+2$ junto con una justificación breve. La temperatura se fija en cero para minimizar la variación entre ejecuciones. Las salidas crudas, incluidas las justificaciones, se almacenan en caché y se registran en una bitácora de auditoría.
 
-El análisis se organiza en tres fases secuenciales con un momento de triangulación al final. Este diseño se inspira en la Teoría Fundamentada Computacional de \citet{nelson2020computational}, adaptada al contexto de la educación comparada.
+\subsection{Modelo, no aparato}
 
-\subsection{Fase cualitativa: lectura y codificación}
+El panel trata a cada modelo como un evaluador falible dentro de un grupo, del mismo modo que una encuesta de expertos trata a cada experto. El valor no proviene de la infalibilidad de ninguno sino de la agregación de varios. Ese es el diseño que la literatura reciente propone para medir posiciones políticas en regiones con pocos datos, y del que este estudio toma la lógica.
 
-En la primera fase, el investigador realiza una lectura cercana de los 22 documentos del corpus. Cada documento se codifica según las siete dimensiones del marco analítico, identificando:
+Con siete jueces y setenta pasajes se obtienen 490 clasificaciones para la comparación entre países, y 630 adicionales para las pruebas de confusión.
 
-\begin{itemize}
-  \item Presencia o ausencia de cada dimensión en el documento.
-  \item Nivel de detalle: mención general, sección dedicada o plan de acción con indicadores y presupuesto.
-  \item Vocabulario y marcos conceptuales utilizados.
-  \item Omisiones significativas (dimensiones ausentes o tratadas de forma superficial).
-\end{itemize}
+\subsection{Traducción}
 
-Esta fase produce una matriz cualitativa de 22 $\times$ 7 con descripciones textuales y valoraciones ordinales (0 = ausente, 1 = mención, 2 = desarrollo moderado, 3 = desarrollo extenso) para cada celda. Las valoraciones numéricas no pretenden cuantificar con precisión el tratamiento de cada dimensión, sino proporcionar un ordenamiento que permita comparar su distribución entre documentos y contrastarla con las puntuaciones computacionales de la fase siguiente.
+Los pasajes en chino, alemán y español se traducen al inglés antes de entregarse al panel, para que todos los jueces lean en el mismo idioma. Las traducciones se almacenan en caché con clave estable, de modo que una segunda ejecución no genera texto distinto.
 
+Esta decisión introduce un paso intermedio con costo. Se adopta porque la alternativa, dejar que cada juez procese cada idioma con su competencia particular, introduce una fuente de variación mayor y no medible.
 
-\subsection{Fase computacional: análisis semántico}
+\section{Verificación}
+\label{sec:acuerdo}
 
-En la segunda fase, se ejecuta el pipeline de análisis semántico:
+\subsection{Acuerdo entre jueces}
 
-\begin{enumerate}
-  \item \textbf{Ingesta.} Los documentos preprocesados se ingestan en ChromaDB con sus embeddings y metadatos.
-  \item \textbf{Matriz de similitud global.} Se calcula la similitud del coseno entre todos los pares de documentos (22 $\times$ 22 = 231 pares únicos).
-  \item \textbf{Matriz de similitud por dimensión.} Para cada dimensión, se formulan consultas semánticas y se registran las puntuaciones de similitud de cada documento (22 $\times$ 7).
-  \item \textbf{\textit{Clustering}.} Se aplica \textit{clustering} jerárquico sobre la matriz de similitud global para identificar agrupaciones.
-  \item \textbf{Exportación.} Los resultados se exportan en formato JSON para alimentar la visualización interactiva y en formato tabular para su inclusión en la tesis.
-\end{enumerate}
+Se reportan cuatro medidas. El \textbf{acuerdo observado} es la proporción de pares de jueces que coinciden, exacta y dentro de un punto. El \textbf{kappa de Fleiss} corrige por acuerdo esperado al azar. El \textbf{alfa de Krippendorff} se calcula en tres niveles de medición: nominal, ordinal e intervalar.
 
-Esta fase produce tres productos: una matriz de similitud global (22 $\times$ 22), una matriz de relevancia por dimensión (22 $\times$ 7) y un dendrograma de agrupaciones.
+El nivel ordinal es el pertinente. Confundir $+2$ con $+1$ es un error menor que confundir $+2$ con $-2$, y solo el alfa ordinal recoge esa asimetría.
 
+Las funciones de acuerdo se implementaron sin dependencias externas y se contrastaron contra bibliotecas de referencia, con coincidencia exacta en los tres niveles. El código de prueba forma parte del repositorio.
 
-\subsection{Triangulación de resultados}
+\subsection{La paradoja del kappa}
 
-La tercera fase confronta los hallazgos de las dos fases anteriores. La triangulación sigue el principio de que los métodos cualitativos y computacionales iluminan facetas diferentes del mismo corpus \citep{creswell2018mixed}:
+Los índices corregidos por azar se deprimen cuando la distribución se concentra en una categoría, aun con acuerdo observado alto. El eje de este estudio produce exactamente esa distribución: la mayoría de los pasajes de política pública no trata la relación entre poder estatal y persona, y por tanto recibe cero.
 
-\begin{itemize}
-  \item \textbf{Convergencia.} Cuando la codificación cualitativa y la puntuación computacional coinciden en la dirección (por ejemplo, ambos métodos ubican a un país como alto o bajo en una dimensión), el hallazgo se considera robusto. Operativamente, se verifica que los documentos con valoración cualitativa ``extenso'' (3) obtengan puntuaciones de relevancia computacional por encima de la mediana, y viceversa.
-  \item \textbf{Complementariedad.} Cuando el análisis computacional revela patrones no anticipados por la lectura cercana (por ejemplo, alta similitud semántica entre dos países geográficamente distantes), el hallazgo se examina cualitativamente para determinar si refleja una convergencia sustantiva o un artefacto del método.
-  \item \textbf{Divergencia.} Cuando los resultados difieren (por ejemplo, dos documentos obtienen alta similitud semántica pero la codificación cualitativa revela enfoques distintos), la divergencia se analiza como un posible caso de convergencia retórica sin convergencia sustantiva, conforme a la distinción de \citet{ball1998big}. Cada caso de divergencia se documenta y se interpreta a la luz del contexto de política de los países involucrados.
-\end{itemize}
+Se reportan las cuatro medidas juntas por esa razón. Leer solo el kappa subestima la confiabilidad; leer solo el acuerdo observado la sobreestima.
 
-Los resultados triangulados se presentan en el Capítulo~\ref{cap:resultados} organizados por dimensión y por agrupación de países.
+\subsection{Sesgo de origen}
 
+Para cada pasaje se calcula la media de los jueces occidentales y la de los chinos, y se toma la diferencia. La distribución de esa diferencia se estima por remuestreo con 5{,}000 réplicas y semilla fija.
+
+El remuestreo se hace sobre \textbf{pasajes}, no sobre clasificaciones. Siete jueces que leen el mismo pasaje no son siete observaciones independientes, y tratarlos como tales produciría intervalos de confianza artificialmente estrechos.
+
+\subsection{Pruebas de confusión}
+
+Un valor alto en China podría explicarse por causas ajenas al constructo. Se someten a prueba tres explicaciones alternativas mediante brazos de control declarados.
+
+\begin{description}
+    \item[Región.] Si el efecto fuera de Asia oriental, los vecinos de tradición confuciana deberían subir. Se incorporan Corea del Sur, Japón y Singapur.
+    \item[Tema.] Si el efecto fuera del tema educativo, los documentos educativos de países no chinos deberían subir. Se incorporan la política educativa nacional de India y la guía de la UNESCO sobre IA generativa.
+    \item[Estructura de Estado.] Si el efecto fuera de la forma Estado-partido, un Estado-partido confuciano no chino debería subir. Se incorpora Vietnam, único país que comparte con China ambas condiciones. Malasia entra como control confuciano ausente dentro de la misma región.
+\end{description}
+
+Los brazos de control \textbf{no} se agregan al conjunto principal de siete países. Hacerlo alteraría el diseño registrado. Entran como brazo declarado, y los valores de la comparación principal no se modifican.
+
+\subsection{Criterio de decisión}
+
+Las conclusiones se emiten a partir de contrastes con intervalo de confianza, no de umbrales fijos sobre valores puntuales. Un umbral convierte una cuestión de grado en un sí o un no y puede producir un veredicto falso a partir de una diferencia que no se distingue de cero.
+
+Un contraste sostiene una afirmación cuando su intervalo excluye el cero. Cuando lo incluye, el resultado se reporta como indistinguible, no como ausencia de efecto.
 
 \section{Consideraciones Éticas}
-\label{sec:etica}
 
-Esta investigación analiza exclusivamente documentos de política pública de acceso abierto, publicados por gobiernos y organismos internacionales para consumo público. No involucra participantes humanos, datos personales ni información confidencial.
+Los documentos analizados son públicos y oficiales; no hay sujetos humanos ni datos personales. La investigación no requirió consentimiento informado.
 
-Se adoptan tres principios éticos:
+Tres compromisos de transparencia acompañan el trabajo. Primero, el libro de códigos, la configuración y las predicciones son públicos y anteriores a la medición. Segundo, las 1{,}120 clasificaciones crudas con sus justificaciones están versionadas y son auditables; cualquiera puede revisar en qué se apoyó cada juicio. Tercero, los desacuerdos entre las dos vías se reportan íntegros.
 
-\begin{enumerate}
-  \item \textbf{Transparencia.} Todo el código fuente del pipeline de análisis, los parámetros de configuración y los datos intermedios se documentan en un repositorio público. Cualquier investigador puede reproducir los resultados ejecutando el mismo código sobre el mismo corpus.
-  \item \textbf{Reproducibilidad.} Los embeddings se generan con un modelo de versión fija (\texttt{text-embedding-3-small}), los parámetros de chunking son explícitos (800 caracteres, 200 de solapamiento) y los criterios de selección del corpus están documentados. El uso de ChromaDB con almacenamiento local garantiza que los resultados no dependan de servicios externos volátiles.
-  \item \textbf{Honestidad interpretativa.} El análisis computacional no sustituye al juicio del investigador. Las similitudes semánticas se presentan como indicios que requieren interpretación contextualizada, no como conclusiones definitivas. Las limitaciones del método (sesgo idiomático de los embeddings, diferencias en extensión de los documentos, carácter programático vs.\ vinculante de las políticas) se explicitan a lo largo del análisis.
-\end{enumerate}
+Queda una cuestión que conviene nombrar. Medir el discurso de un Estado en un eje construido desde su propia tradición filosófica corre el riesgo de esencializarlo: de tratar a China como un caso cultural y a los países liberales como el caso normal. El diseño responde aplicando el mismo eje a los siete países por igual, incluyendo el brazo de control regional, y reportando que el efecto no se extiende a los vecinos confucianos. Un eje que solo se aplicara a China describiría al analista, no al objeto.
 
+\section{Reproducibilidad}
 
-\section{Visualización Interactiva}
-\label{sec:visualizacion}
+El repositorio contiene el código de ingesta, medición, acuerdo y pruebas de confusión; el libro de códigos con su huella criptográfica; la caché de traducciones y de respuestas del panel; la bitácora de auditoría; y los archivos de resultados que alimentan las visualizaciones.
 
-Como producto complementario de la investigación, se desarrolla una página web interactiva que presenta los resultados del análisis de forma visual y explorable. La visualización cumple tres funciones de investigación:
-
-\begin{enumerate}
-  \item \textbf{Comunicación de resultados complejos.} La matriz de similitud de 22 $\times$ 22 y las puntuaciones por dimensión son difíciles de interpretar en formato tabular. Los mapas de calor, gráficos de radar y dendrogramas interactivos permiten identificar patrones que las tablas ocultan.
-  \item \textbf{Exploración por parte del lector.} La visualización permite al lector filtrar por región, comparar pares de países o explorar dimensiones específicas, lo que extiende el análisis más allá de lo que el texto de la tesis puede cubrir.
-  \item \textbf{Reproducibilidad visual.} Los datos que alimentan la visualización provienen directamente del pipeline de análisis, sin manipulación manual. El archivo \texttt{results.json} que conecta el pipeline con la web constituye un registro auditable.
-\end{enumerate}
-
-La visualización se implementa con tecnologías web estándar (HTML, CSS, JavaScript) y la biblioteca Chart.js 4.x para los gráficos. El diseño sigue un sistema visual neobrutalist coherente con los principios de claridad y accesibilidad. La página se aloja como archivo estático, sin dependencia de servidores, y se incluye como anexo digital de la tesis.
+Una segunda ejecución con la misma caché reproduce los resultados de forma exacta. Una ejecución sin caché reproduce los resultados de la Vía A de forma exacta y los de la Vía B con la variación residual que introducen los proveedores de los modelos, aun a temperatura cero.

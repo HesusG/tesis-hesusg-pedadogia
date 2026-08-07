@@ -1,0 +1,169 @@
+%% cap02-marco-teorico-short.tex — Marco Teórico (versión compacta)
+
+\chapter{Marco Teórico}
+\label{cap:marco-teorico}
+
+Este capítulo establece las bases conceptuales de la investigación. Se articula en siete ejes: la teoría de políticas públicas educativas, la transferencia y difusión de políticas entre países, el campo de la inteligencia artificial en educación, los marcos normativos de organismos internacionales, la tradición de la educación comparada, el marco analítico de dimensiones de comparación, y las herramientas computacionales de análisis textual.
+
+La investigación se sitúa en la intersección de tres tradiciones: la educación comparada~\citep{bray1995levels}, el análisis de textos de política~\citep{rizvi2010globalizing} y las ciencias sociales computacionales~\citep{grimmer2022text}. De la educación comparada toma el rigor en la selección de casos y la sensibilidad contextual. Del análisis de políticas toma la distinción entre lo que los documentos dicen, cómo lo enmarcan y qué efectos producen. De las ciencias sociales computacionales toma las herramientas para escalar el análisis textual sin sacrificar profundidad interpretativa.
+
+
+\section{Políticas Públicas Educativas}
+\label{sec:politicas-publicas}
+
+El estudio sistemático de las políticas públicas como campo académico se remonta a \citet{lasswell1951policy}. \citet{rizvi2010globalizing} definen las políticas educativas como el conjunto de directrices, regulaciones y asignaciones de recursos mediante las cuales los gobiernos organizan y orientan los sistemas de enseñanza. A diferencia de otros ámbitos de la política social, las políticas educativas operan simultáneamente como instrumentos de formación de capital humano, mecanismos de cohesión social y vehículos de transmisión cultural.
+
+Un rasgo recurrente de las políticas de IA en educación es su carácter programático más que legislativo. La mayoría de los documentos analizados son estrategias, planes de acción o lineamientos, no leyes en sentido estricto. Los documentos programáticos expresan intenciones y prioridades gubernamentales sin necesariamente contar con mecanismos vinculantes de implementación~\citep{fatima2020aipolicy}.
+
+Los países del corpus se encuentran en etapas distintas del proceso de políticas. El modelo de ciclo de políticas~\citep{lasswell1951policy,howlett2003studying} describe fases sucesivas: establecimiento de agenda, formulación, adopción, implementación y evaluación. China, con siete documentos entre 2017 y 2025, se encuentra en fases avanzadas de evaluación y reformulación. Sudáfrica, con un informe de comisión, se encuentra en establecimiento de agenda. Esta asimetría exige reconocer que los documentos capturan momentos distintos del proceso. El análisis longitudinal de China (OE6) permite examinar cómo cambia el contenido de una política a medida que un país avanza en el ciclo.
+
+
+\section{Transferencia y Difusión de Políticas Educativas}
+\label{sec:difusion}
+
+La globalización ha intensificado los flujos de ideas sobre política educativa entre países. \citet{dolowitz2000learning} propusieron un marco para entender la transferencia de políticas como un proceso en el que conocimientos de un sistema político se usan para desarrollar políticas en otro. En el campo educativo, \citet{steinerkhamsi2014cross} distingue entre tres explicaciones para la similitud entre políticas: el préstamo genuino, la influencia común de un tercer actor y la convergencia funcional.
+
+\citet{shipan2012diffusion} identificaron cinco mecanismos específicos de difusión: \textit{aprendizaje} (adopción basada en evidencia de resultados), \textit{competencia} (adopción para no quedar rezagados), \textit{emulación} (adopción por prestigio del país de origen), \textit{coerción} (condicionamiento por organismos internacionales) y \textit{contagio social} (propagación por proximidad geográfica o redes profesionales). Estos mecanismos no son mutuamente excluyentes.
+
+La distinción entre estos mecanismos es central para interpretar los resultados del análisis. Cuando se identifica alta similitud entre los documentos de dos países, las posibles explicaciones incluyen las tres categorías de Steiner-Khamsi y los cinco mecanismos de Shipan y Volden. Si dos países de familias lingüísticas diferentes muestran alta similitud y ambos citan extensamente el Consenso de Beijing, la hipótesis más parsimoniosa es la influencia común de un marco internacional. Si dos países angloparlantes muestran alta similitud, debe evaluarse también el componente lingüístico. El control lingüístico propuesto en el Capítulo~\ref{cap:metodologia} permite descomponer estas fuentes de similitud.
+
+
+\section{Inteligencia Artificial en Educación}
+\label{sec:ia-educacion}
+
+El concepto de alfabetización en IA (\textit{AI literacy}) ha emergido como un marco para definir qué debe saber un ciudadano sobre inteligencia artificial. \citet{long2020ailiteracy} la definieron como el conjunto de competencias que permiten evaluar críticamente las tecnologías de IA, comunicarse con sistemas de IA y usarla como herramienta. \citet{ng2021ailiteracy} identificaron cuatro dimensiones: conocer y comprender la IA, usarla, evaluarla y abordar las cuestiones éticas asociadas. Estos marcos convergen en que la alfabetización en IA incluye dimensiones cognitivas, prácticas y éticas, lo que sugiere que las políticas nacionales pueden priorizar aspectos distintos.
+
+\citet{holmes2019aied} distinguieron entre IA como contenido de aprendizaje (los estudiantes aprenden \emph{sobre} IA) y como herramienta para apoyar el aprendizaje (tutores inteligentes, evaluación automatizada, plataformas adaptativas). Una tercera dimensión, presente en las políticas más recientes, es la IA como objeto de regulación dentro del espacio educativo: la irrupción de los modelos generativos obligó a muchos sistemas a definir reglas de uso antes de poder incorporar la IA como contenido o herramienta~\citep{unesco2023genai}.
+
+Estas distinciones se conectan con marcos establecidos de integración tecnológica en educación. \citet{mishra2006technological} propusieron el marco TPACK, que describe el conocimiento docente como la intersección de contenido disciplinar, pedagogía y tecnología. Las competencias de alfabetización en IA pueden mapearse a estos dominios, lo que conecta directamente con la dimensión de formación docente del marco analítico (sección~\ref{sec:marco-analitico}).
+
+
+\section{Marcos Internacionales}
+\label{sec:marcos-internacionales}
+
+Los organismos internacionales han configurado el discurso global sobre IA y educación. Sus marcos, aunque no vinculantes, establecen vocabularios y prioridades que influyen en las estrategias nacionales~\citep{bareis2022talking}. En esta investigación, son relevantes como posibles fuentes de difusión: cuando el análisis identifica alta similitud entre documentos de dos países, la referencia compartida a un marco internacional puede explicarla.
+
+La UNESCO fue pionera con el Consenso de Beijing de 2019, que estableció cinco áreas prioritarias para la IA en educación~\citep{unesco2019beijing}. La \textit{Recommendation on the Ethics of AI} de 2021~\citep{unesco2021ai} amplió la perspectiva ética, y \citet{miao2021guidance} tradujeron estos principios en recomendaciones concretas para sistemas educativos. La \textit{Guidance for Generative AI in Education and Research} de 2023~\citep{unesco2023genai} representó la respuesta más rápida de la UNESCO a un cambio tecnológico.
+
+La OCDE adoptó en 2019 sus Principios sobre IA, centrados en crecimiento inclusivo, equidad, transparencia, robustez y rendición de cuentas~\citep{oecd2019ai}. El \textit{Education Policy Outlook}~\citep{oecd2021epo} ofrece un marco estandarizado para comparar políticas educativas, organizado en seis áreas temáticas, que informa las dimensiones del marco analítico de esta investigación. El Foro Económico Mundial ha enmarcado la educación en IA dentro de una lógica de competitividad económica~\citep{wef2020future}, en tensión con el enfoque de la UNESCO centrado en derechos y equidad.
+
+
+\section{Análisis Comparativo de Políticas Educativas}
+\label{sec:analisis-comparativo}
+
+\citet{bray1995levels} propusieron un marco tridimensional que cruza niveles geográficos, grupos demográficos y aspectos de la educación. La presente investigación opera en el nivel nacional, abarca siete países por región geopolítica y se enfoca en las políticas de IA en educación. Las nueve dimensiones de comparación (sección~\ref{sec:marco-analitico}) desagregan este aspecto en componentes específicos. La investigación no desagrega por grupo demográfico: las comparaciones se realizan entre documentos nacionales, no entre cómo las políticas afectan a diferentes poblaciones.
+
+\citet{rizvi2010globalizing} propusieron una distinción fundamental entre política como \textit{texto} (lo que el documento dice), política como \textit{discurso} (cómo lo enmarca, qué vocabulario elige) y política como \textit{efecto} (qué ocurre cuando se implementa). El análisis computacional de esta investigación opera en los planos de texto y discurso: mide qué dicen los documentos y cómo lo dicen. Las dimensiones de proceso y resultados del marco analítico capturan lo que los documentos \emph{dicen} sobre procesos y metas, no la implementación real.
+
+Los métodos de análisis comparativo de políticas educativas han sido predominantemente cualitativos~\citep{bray2014comparative}. \citet{grimmer2022text} sistematizaron el paradigma de análisis computacional de textos en cuatro principios: todo modelo cuantitativo de texto es incorrecto pero puede ser útil; ningún método domina a los demás; la validación contra el juicio humano es esencial; y los métodos computacionales aumentan la capacidad humana sin reemplazarla. \citet{fatima2020aipolicy} realizaron uno de los pocos estudios que combinó métodos cualitativos y computacionales para analizar estrategias nacionales de IA, pero sin aplicar métodos no supervisados para descubrir estructura temática latente. La educación comparada permanece casi exclusivamente cualitativa; esta tesis aporta evidencia en la dirección computacional.
+
+
+\section{Marco Analítico: Dimensiones de Comparación}
+\label{sec:marco-analitico}
+
+Esta sección presenta las nueve dimensiones que estructuran el análisis comparativo. Cada dimensión se deriva de marcos teóricos establecidos y se operacionaliza para su medición computacional.
+
+
+\subsection{Fundamento: de los \textit{frameworks} a las dimensiones}
+
+La derivación de dimensiones sigue una cadena explícita: marco teórico, dimensión nombrada, párrafo ancla, representación numérica del significado. El \textit{Education Policy Outlook} de la OCDE~\citep{oecd2021epo} proporciona las categorías generales para políticas educativas. El Consenso de Beijing~\citep{unesco2019beijing} y la guía de \citet{miao2021guidance} proporcionan las categorías específicas para IA en educación. Los mecanismos de difusión de \citet{shipan2012diffusion} y el cubo comparativo de \citet{bray1995levels} informan las dimensiones de proceso.
+
+Las dimensiones se organizan en tres niveles siguiendo la distinción de \citet{rizvi2010globalizing}. Las dimensiones de contenido capturan los temas que las políticas abordan. Las de proceso capturan lo que las políticas dicen sobre cómo se formulan y quién participa. Las de resultados capturan las metas, indicadores y mecanismos de evaluación que las políticas establecen. Los tres niveles operan en el plano del texto y el discurso, no del efecto.
+
+
+\subsection{Dimensiones de contenido}
+
+\textbf{Currículo.} Derivada de la categoría ``Students'' del OECD EPO y del Consenso de Beijing. Captura qué se enseña sobre IA: si se presenta como materia independiente, herramienta transversal o tema de reflexión crítica, en qué niveles educativos se implementa y qué competencias se definen.
+
+\textbf{Formación docente.} Derivada de la categoría ``Institutions'' del OECD EPO y del Consenso de Beijing. Captura los programas de capacitación, certificaciones y competencias requeridas para que los profesores trabajen con IA. El marco TPACK~\citep{mishra2006technological} proporciona el referente pedagógico.
+
+\textbf{Infraestructura.} Derivada de la categoría ``System'' del OECD EPO. Captura la inversión en conectividad, equipamiento, plataformas digitales y servicios tecnológicos necesarios para la integración de IA.
+
+\textbf{Investigación.} Derivada del área 5 del Consenso de Beijing. Captura centros de investigación, programas de financiamiento, vínculos universidad-industria y prioridades de I+D.
+
+
+\subsection{Dimensiones de proceso}
+
+\textbf{Gobernanza.} Derivada de la categoría ``Governance'' del OECD EPO e informada por el modelo de ciclo de políticas~\citep{howlett2003studying}. Captura qué ministerio lidera, qué marcos regulatorios existen y cómo se coordinan los niveles de gobierno.
+
+\textbf{Participación de actores.} Derivada del cubo comparativo de \citet{bray1995levels} e informada por los mecanismos de difusión de \citet{shipan2012diffusion}. Captura los mecanismos de consulta pública, alianzas público-privadas y la participación de sociedad civil, academia y sindicatos en la formulación de las políticas.
+
+
+\subsection{Dimensiones de resultados}
+
+\textbf{Ética y rendición de cuentas.} Derivada de la \textit{Recommendation on the Ethics of AI}~\citep{unesco2021ai} y de los Principios de IA de la OCDE~\citep{oecd2019ai}. Captura las directrices sobre transparencia, privacidad, sesgo algorítmico y mecanismos de auditoría.
+
+\textbf{Equidad.} Derivada de la categoría ``Equity'' del OECD EPO y del Consenso de Beijing. Captura las medidas para reducir brechas digitales, atender poblaciones vulnerables y prevenir que la IA reproduzca desigualdades.
+
+\textbf{Metas y evaluación.} Derivada del modelo de ciclo de políticas y del OECD EPO~\citep{howlett2003studying,oecd2021epo}. Captura los objetivos cuantificables, indicadores de desempeño, plazos y mecanismos de monitoreo.
+
+
+\subsection{Operacionalización: párrafos ancla}
+
+Cada dimensión se operacionaliza mediante un párrafo ancla de 3 a 5 oraciones que describe qué se observa cuando un documento de política aborda esa dimensión. Un modelo de análisis semántico multilingüe~\citep{reimers2019sentencebert} convierte cada párrafo ancla en una representación numérica. La afinidad temática entre esta representación y cada segmento del corpus produce una puntuación por dimensión para cada fragmento. La agregación de estas puntuaciones por documento produce el perfil dimensional de cada política.
+
+Los párrafos ancla se registran antes de ejecutar el análisis supervisado. La marca temporal del registro funciona como mecanismo de pre-especificación~\citep{nosek2018preregistration}. Esta operacionalización es completamente reproducible: cualquier investigador que ejecute el mismo modelo sobre el mismo corpus con los mismos párrafos ancla obtendrá los mismos resultados. Los procedimientos detallados se presentan en el Capítulo~\ref{cap:metodologia}.
+
+
+\subsection{Síntesis del marco analítico}
+
+La Tabla~\ref{tab:dimensiones} resume las nueve dimensiones, su nivel analítico, la fuente teórica principal y lo que cada una captura en los textos de política.
+
+\begin{table}[htbp]
+\centering
+\caption{Nueve dimensiones del marco analítico}
+\label{tab:dimensiones}
+\small
+\begin{tabular}{llll}
+\hline
+\textbf{Dimensión} & \textbf{Nivel} & \textbf{Fuente principal} & \textbf{Captura en el texto} \\
+\hline
+Currículo & Contenido & OECD EPO; Beijing & Qué y cómo se enseña sobre IA \\
+Formación docente & Contenido & OECD EPO; Beijing & Capacitación y competencias docentes \\
+Infraestructura & Contenido & OECD EPO; Beijing & Conectividad, equipamiento, plataformas \\
+Investigación & Contenido & Beijing área 5 & I+D, vínculos universidad-industria \\
+\hline
+Gobernanza & Proceso & OECD EPO; Howlett & Liderazgo institucional, coordinación \\
+Participación & Proceso & Bray \& Thomas; Shipan & Consulta pública, alianzas, actores \\
+\hline
+Ética & Resultados & UNESCO Ethics; OECD AI & Transparencia, privacidad, auditoría \\
+Equidad & Resultados & OECD EPO; Beijing & Brechas digitales, poblaciones vulnerables \\
+Metas & Resultados & Howlett; OECD EPO & Indicadores, plazos, revisión \\
+\hline
+\end{tabular}
+\end{table}
+
+Las nueve dimensiones constituyen el instrumento de lectura distante que complementa la lectura cercana cualitativa. Su valor analítico se evaluará en el Capítulo~\ref{cap:resultados} mediante la comparación con los temas emergentes del análisis no supervisado.
+
+
+\section{Herramientas Computacionales de Análisis Textual}
+\label{sec:nlp-pedagogia}
+
+\subsection{Representación semántica de textos}
+
+El análisis computacional de textos permite operar sobre un corpus multilingüe a una escala que la lectura humana individual no puede alcanzar. \citet{grimmer2013text} establecieron el principio rector: los métodos computacionales amplifican la capacidad del investigador pero no reemplazan su juicio.
+
+La técnica central de esta investigación es la representación semántica de textos: cada fragmento de un documento de política se convierte en una representación numérica que captura su significado. Un modelo de análisis semántico multilingüe de código abierto~\citep{reimers2019sentencebert} genera estas representaciones de manera que textos con significado similar quedan próximos en el espacio de análisis, independientemente del idioma en que estén escritos. La afinidad temática entre dos textos se mide como la proximidad entre sus representaciones: valores altos indican similitud de contenido, valores bajos indican contenido distinto.
+
+Esta capacidad multilingüe es la que permite comparar, en un mismo marco de análisis, documentos originalmente escritos en inglés, español, alemán y chino. Sin embargo, la separación entre idiomas no es perfecta~\citep{conneau2020unsupervised}, lo que motiva el control lingüístico descrito más adelante.
+
+
+\subsection{Descubrimiento automático de temas}
+
+El descubrimiento automático de temas permite identificar la estructura temática latente de un corpus sin imponer categorías previas. En esta investigación se emplea un método~\citep{grootendorst2022bertopic} que agrupa los fragmentos del corpus por similitud semántica y luego identifica las palabras más representativas de cada grupo, produciendo temas interpretables.
+
+Este análisis se ejecuta \emph{antes} de aplicar el marco de nueve dimensiones, siguiendo los principios de la Teoría Fundamentada Computacional~\citep{nelson2020computational}: primero se descubren patrones, luego se comparan con las categorías del investigador. Los temas que no corresponden a ninguna dimensión pre-registrada constituyen ``puntos ciegos'' del marco analítico: contenido presente en el corpus que el investigador no anticipó. Las dimensiones sin correspondencia en los temas emergentes constituyen ``estructura impuesta'': categorías teóricas que no se manifiestan en los datos. Ambas divergencias son hallazgos.
+
+
+\subsection{Control lingüístico}
+
+Los modelos de análisis multilingüe no eliminan completamente la señal del idioma en sus representaciones~\citep{conneau2020unsupervised}. Textos en el mismo idioma tienden a aparecer como más similares que textos temáticamente equivalentes en idiomas distantes. Cuando dos países angloparlantes muestran alta similitud, la explicación puede ser temática, lingüística o ambas.
+
+Para aislar este efecto, esta investigación implementa tres estrategias. Primera, una línea base monolingüe: todos los documentos se traducen al inglés y se recalcula la similitud; la diferencia entre ambas mediciones cuantifica el componente lingüístico. Segunda, la comparación por familias: se contrastan las similitudes entre países del mismo idioma con las similitudes entre países de idiomas diferentes. Tercera, un test con un documento disponible en múltiples idiomas (el Consenso de Beijing de la UNESCO) para medir la variación atribuible al idioma. Los procedimientos detallados se describen en el Capítulo~\ref{cap:metodologia}.
+
+
+\subsection{Pre-registro y validación}
+
+Un problema recurrente en el análisis computacional de textos es la calibración post-hoc: cuando un investigador define las categorías de análisis después de leer el corpus, los resultados confirman lo que ya encontró~\citep{grimmer2013text}. La solución adoptada es el pre-registro de las nueve dimensiones analíticas y sus párrafos ancla antes de ejecutar el análisis supervisado. La marca temporal del registro funciona como evidencia de pre-especificación~\citep{nosek2018preregistration}, lo que permite distinguir entre predicciones genuinas y hallazgos post-hoc.
+
+La validación cruzada entre el análisis no supervisado y el supervisado constituye la contribución central del diseño metodológico: permite identificar tanto lo que el marco captura como lo que omite.

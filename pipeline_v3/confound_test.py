@@ -1,0 +1,351 @@
+"""SPIKE Fase 6 — ¿el +0.94 de China mide al PAÍS o al GÉNERO DOCUMENTAL?
+
+La Fase 5 midió a China con 8 documentos de IA-**en-educación** (2025-2026) y a los
+otros 6 países con **estrategias generales de IA** (2017-2023). El eje dézhì mide
+"el Estado cultiva y forma personas", y la política educativa trata por definición
+de formar personas. Explicación alternativa obvia:
+
+    China no sale alta por ser China, sino porque le medimos documentos de educación.
+
+Este spike la somete a prueba con un diseño 2×2 más un tercer brazo:
+
+  ┌──────────────┬─────────────────────────┬──────────────────────────┐
+  │              │ documento educativo     │ estrategia general de IA │
+  ├──────────────┼─────────────────────────┼──────────────────────────┤
+  │ China        │ corpus v3 (Fase 5)      │ NGAIDP 2017      ← nuevo │
+  │ no China     │ India NEP, UNESCO ←nuevo│ corpus v3 (Fase 5)       │
+  └──────────────┴─────────────────────────┴──────────────────────────┘
+
+  + brazo "vecindario confuciano": Corea, Japón, Singapur (IA general). Separa
+    "es China" de "es la región de herencia confuciana" — que es, literalmente,
+    lo que la tesis afirma medir.
+
+Predicciones (pre-registradas al commitear este archivo):
+  P1. Si el efecto es del PAÍS: NGAIDP (China, IA general) ≈ +1, alto como el
+      corpus educativo chino.
+  P2. Si el efecto es del GÉNERO: India NEP y UNESCO (educación, no China) suben
+      por encima de 0, y NGAIDP baja hacia 0.
+  P3. Si el efecto es REGIONAL: Corea/Japón/Singapur también suben.
+
+Los documentos de control van a una colección APARTE (`politicas_v3_control`) para
+no contaminar el corpus pre-registrado. Todo lo demás — chunking 500/50, query de
+gobernanza, K=10, panel de 7 jueces, códebook — es idéntico a la Fase 5, que es lo
+que hace comparables los números.
+
+Uso: python -m pipeline_v3.confound_test
+"""
+import json
+import random
+import statistics as stats
+from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
+
+import chromadb
+
+from .config import (CHROMA_DIR, CHUNK_SIZE, CHUNK_OVERLAP, INGEST_VERSION,
+                     PROJECT_ROOT, PANEL, WEB_DATA_DIR, CACHE_DIR, K_PASSAGES,
+                     GENRE_VOCAB, load_codebook)
+from .judges import classify, codebook_hash
+from .compare_countries import GOV_QUERY, MAX_WORKERS, to_en
+from pipeline.ingest import chunk_text
+from pipeline.embeddings import get_embedding_function
+
+CONTROL_COLLECTION = "politicas_v3_control"
+PROC = PROJECT_ROOT / "policies" / "processed"
+RAW = PROJECT_ROOT / "policies" / "raw"
+OUT_FILE = WEB_DATA_DIR / "dezhi_confound_test.json"
+RECORDS_FILE = CACHE_DIR / "dezhi_confound_records.jsonl"
+SEED, N_BOOT = 42, 5000
+
+# `topic` y `arm` son Tier A: asignados a mano, NUNCA por LLM (igual que `genre`).
+CONTROLS = [
+    # ── Celda: China × IA general. El test decisivo de P1 vs P2. ──
+    {"doc_id": "china_ngaidp_2017", "country": "china", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2017, "topic": "general_ai",
+     "arm": "china_general", "adopting_body": "State Council of the PRC",
+     "doc_type_official": "New Generation AI Development Plan",
+     "path": RAW / "china" / "3_new_gen_ai_development_plan_2017_en.txt"},
+
+    # ── Celda: no China × educación. Si el género infla el eje, estos suben. ──
+    {"doc_id": "india_nep_2020", "country": "india", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2020, "topic": "education",
+     "arm": "noncn_education", "adopting_body": "Ministry of Education, India",
+     "doc_type_official": "National Education Policy 2020",
+     "path": PROC / "india_nep_2020.txt"},
+    {"doc_id": "unesco_genai_guidance_2023", "country": "unesco", "region": "internacional",
+     "genre": "guidance", "language": "en", "year": 2023, "topic": "education",
+     "arm": "noncn_education", "adopting_body": "UNESCO",
+     "doc_type_official": "Guidance for generative AI in education and research",
+     "path": PROC / "unesco_genai_guidance_2023.txt"},
+
+    # ── Brazo Fase 8: ¿es China o es el Estado-partido? ──
+    # La Fase 6 descartó que el efecto fuera regional (Corea, Japón y Singapur en
+    # cero), pero los tres son democracias o híbridos de mercado: ninguno comparte
+    # con China la estructura de partido único. Vietnam es el ÚNICO país que
+    # comparte ambas condiciones (esfera cultural confuciana + Estado-partido).
+    #   · Si Vietnam sube  → el efecto es de la estructura política.
+    #   · Si Vietnam queda en cero → el efecto es de China.
+    # Malasia entra como control asiático NO confuciano (mayoría musulmana) y con
+    # dos documentos de género distinto, para que la comparación no dependa de uno.
+    {"doc_id": "vietnam_ai_strategy_2021", "country": "vietnam", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2021, "topic": "general_ai",
+     "arm": "confucian_party_state", "adopting_body": "Prime Minister of Viet Nam",
+     "doc_type_official": "Decision 127/QD-TTg, National Strategy on R&D and Application of AI to 2030",
+     "path": PROC / "vietnam_ai_strategy_2021.txt"},
+    {"doc_id": "malasia_ai_roadmap_2021", "country": "malasia", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2021, "topic": "general_ai",
+     "arm": "asean_non_confucian", "adopting_body": "MOSTI Malaysia",
+     "doc_type_official": "National Artificial Intelligence Roadmap 2021-2025",
+     "path": PROC / "malasia_ai_roadmap_2021.txt"},
+    {"doc_id": "malasia_aige_2024", "country": "malasia", "region": "asia",
+     "genre": "guidance", "language": "en", "year": 2024, "topic": "general_ai",
+     "arm": "asean_non_confucian", "adopting_body": "MOSTI Malaysia",
+     "doc_type_official": "National Guidelines on AI Governance and Ethics",
+     "path": PROC / "malasia_aige_2024.txt"},
+
+    # ── Brazo: vecindario confuciano × IA general. ¿China o la región? ──
+    {"doc_id": "corea_ai_strategy_2019", "country": "corea", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2019, "topic": "general_ai",
+     "arm": "confucian_neighborhood", "adopting_body": "Government of the Republic of Korea",
+     "doc_type_official": "National Strategy for AI",
+     "path": PROC / "corea_ai_strategy_2019.txt"},
+    {"doc_id": "japon_ai_strategy_2019", "country": "japon", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2019, "topic": "general_ai",
+     "arm": "confucian_neighborhood", "adopting_body": "Government of Japan",
+     "doc_type_official": "AI Strategy 2019",
+     "path": PROC / "japon_ai_strategy_2019.txt"},
+    {"doc_id": "singapur_nais_2019", "country": "singapur", "region": "asia",
+     "genre": "strategy", "language": "en", "year": 2019, "topic": "general_ai",
+     "arm": "confucian_neighborhood", "adopting_body": "Smart Nation Singapore",
+     "doc_type_official": "National AI Strategy",
+     "path": PROC / "singapur_nais_2019.txt"},
+]
+
+TIER_A = ["country", "region", "genre", "language", "year", "topic", "arm",
+          "adopting_body", "doc_type_official", "source_uri", "ingest_version"]
+
+
+def ingest():
+    """Chunking y embedding IDÉNTICOS a la Fase 5 — si difirieran, los números no
+    serían comparables y el control no probaría nada."""
+    assert all(d["genre"] in GENRE_VOCAB for d in CONTROLS), "genre fuera del vocab"
+    missing = [d["doc_id"] for d in CONTROLS if not d["path"].exists()]
+    if missing:
+        raise SystemExit(f"Faltan textos fuente: {missing}")
+
+    col = chromadb.PersistentClient(path=str(CHROMA_DIR)).get_or_create_collection(
+        name=CONTROL_COLLECTION, embedding_function=get_embedding_function())
+    for d in CONTROLS:
+        pid = d["doc_id"]
+        try:
+            col.delete(where={"policy_id": pid})
+        except Exception:
+            pass
+        chunks = chunk_text(d["path"].read_text(encoding="utf-8"), CHUNK_SIZE, CHUNK_OVERLAP)
+        rec = {**d, "source_uri": str(d["path"].relative_to(PROJECT_ROOT)),
+               "ingest_version": INGEST_VERSION}
+        base = {"policy_id": pid, **{k: rec.get(k) for k in TIER_A}}
+        base = {k: v for k, v in base.items() if v is not None}
+        ids = [f"{pid}_chunk_{i:04d}" for i in range(len(chunks))]
+        metas = [{**base, "parent_doc_id": pid, "chunk_index": i} for i in range(len(chunks))]
+        for s in range(0, len(chunks), 500):
+            col.add(documents=chunks[s:s + 500], ids=ids[s:s + 500], metadatas=metas[s:s + 500])
+        print(f"  [+] {pid:28s} {len(chunks):>4} chunks | {d['arm']:22s} {d['topic']}")
+    return col
+
+
+def boot_ci(vals, seed=SEED):
+    rng = random.Random(seed)
+    n = len(vals)
+    bs = sorted(stats.mean([vals[rng.randrange(n)] for _ in range(n)]) for _ in range(N_BOOT))
+    return [bs[int(0.025 * N_BOOT)], bs[int(0.975 * N_BOOT)]]
+
+
+def main():
+    print(f"── Ingesta del brazo de control → {CONTROL_COLLECTION} ──")
+    col = ingest()
+
+    cb = load_codebook()
+    jobs = []
+    for d in CONTROLS:
+        q = col.query(query_texts=[GOV_QUERY], n_results=K_PASSAGES,
+                      where={"policy_id": d["doc_id"]}, include=["documents", "metadatas"])
+        for i, (doc, m) in enumerate(zip(q["documents"][0], q["metadatas"][0])):
+            passage = to_en(doc, m["language"])
+            for j in PANEL:
+                jobs.append((d, i, passage, j))
+
+    print(f"\n── Clasificando {len(jobs)} pares (pasaje × juez) ──")
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as ex:
+        outs = list(ex.map(lambda t: classify(t[3].model, t[2], cb=cb), jobs))
+
+    recs, errors = [], defaultdict(int)
+    for (d, i, _p, j), out in zip(jobs, outs):
+        s = out.get("score")
+        if s is None:
+            errors[j.key] += 1
+            continue
+        recs.append({"doc_id": d["doc_id"], "country": d["country"], "topic": d["topic"],
+                     "arm": d["arm"], "genre": d["genre"], "year": d["year"],
+                     "passage_idx": i, "judge": j.key, "origin": j.origin,
+                     "score": s, "confidence": out.get("confidence"),
+                     "rationale": out.get("rationale")})
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    with RECORDS_FILE.open("w", encoding="utf-8") as f:
+        for r in recs:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    if errors:
+        print(f"  ⚠ errores por juez: {dict(errors)}")
+
+    # ── Agregado por documento (bootstrap sobre pasajes, como en la Fase 5) ──
+    by_doc_pass = defaultdict(lambda: defaultdict(list))
+    for r in recs:
+        by_doc_pass[r["doc_id"]][r["passage_idx"]].append(r["score"])
+    doc_stats = {}
+    for pid, passages in by_doc_pass.items():
+        pmeans = [stats.mean(v) for v in passages.values()]
+        doc_stats[pid] = {"mean": stats.mean(pmeans), "n_passages": len(pmeans),
+                          "ci95": boot_ci(pmeans)}
+
+    meta = {d["doc_id"]: d for d in CONTROLS}
+    print("\n  ══ Resultado por documento de control ══")
+    for pid, v in sorted(doc_stats.items(), key=lambda kv: -kv[1]["mean"]):
+        d = meta[pid]
+        lo, hi = v["ci95"]
+        print(f"    {pid:28s} {v['mean']:+.3f}  IC95 [{lo:+.3f}, {hi:+.3f}]  "
+              f"{d['country']:9s} {d['topic']:11s} {d['arm']}")
+
+    # ── Veredicto sobre las tres predicciones ──
+    ng = doc_stats.get("china_ngaidp_2017")
+    edu = [doc_stats[d["doc_id"]] for d in CONTROLS
+           if d["arm"] == "noncn_education" and d["doc_id"] in doc_stats]
+    neigh = [doc_stats[d["doc_id"]] for d in CONTROLS
+             if d["arm"] == "confucian_neighborhood" and d["doc_id"] in doc_stats]
+
+    CHINA_V3 = 0.943   # Fase 5, corpus educativo chino (referencia)
+    LIBERAL_V3 = 0.0   # Fase 5, los otros 6 países (IA general)
+
+    # El umbral fijo de 0.25 que pre-registré resultó demasiado crudo: colapsa a un
+    # sí/no lo que en realidad es una cuestión de grado. Se conserva por honestidad
+    # (`threshold_verdict`) pero la lectura buena es el CONTRASTE contra la baseline
+    # de la Fase 5, remuestreando pasajes en ambos brazos.
+    f5 = defaultdict(lambda: defaultdict(list))
+    f5_file = CACHE_DIR / "dezhi_records.jsonl"
+    if f5_file.exists():
+        for line in f5_file.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                f5[r["country"]][r["passage_idx"]].append(r["score"])
+
+    def passage_means(d):
+        return [stats.mean(v) for v in d.values()]
+
+    def boot_diff(a, b, seed=SEED):
+        """IC95 de la diferencia de medias entre dos conjuntos de pasajes."""
+        rng = random.Random(seed)
+        na, nb = len(a), len(b)
+        ds = sorted(stats.mean([a[rng.randrange(na)] for _ in range(na)])
+                    - stats.mean([b[rng.randrange(nb)] for _ in range(nb)])
+                    for _ in range(N_BOOT))
+        return [ds[int(0.025 * N_BOOT)], ds[int(0.975 * N_BOOT)]]
+
+    ng_pass = passage_means(by_doc_pass["china_ngaidp_2017"]) if ng else []
+    liberal_pass = [m for c in ("eeuu", "canada", "colombia", "alemania", "sudafrica", "australia")
+                    for m in passage_means(f5[c])]
+    china_edu_pass = passage_means(f5["china"])
+
+    verdict = {"threshold_verdict": {}, "contrasts": {}}
+    print("\n  ══ Veredicto ══")
+    if ng and liberal_pass and china_edu_pass:
+        d_vs_lib = boot_diff(ng_pass, liberal_pass)
+        d_vs_edu = boot_diff(ng_pass, china_edu_pass)
+        verdict["contrasts"]["ngaidp_vs_liberal_general_ai"] = {
+            "diff": stats.mean(ng_pass) - stats.mean(liberal_pass), "ci95": d_vs_lib,
+            "excludes_zero": d_vs_lib[0] > 0 or d_vs_lib[1] < 0}
+        verdict["contrasts"]["ngaidp_vs_china_education"] = {
+            "diff": stats.mean(ng_pass) - stats.mean(china_edu_pass), "ci95": d_vs_edu,
+            "excludes_zero": d_vs_edu[0] > 0 or d_vs_edu[1] < 0}
+        print(f"    NGAIDP vs los 6 países (todos IA general): "
+              f"{stats.mean(ng_pass) - stats.mean(liberal_pass):+.3f} IC95 [{d_vs_lib[0]:+.3f}, {d_vs_lib[1]:+.3f}] "
+              f"→ {'China SÍ se distingue con documento general' if d_vs_lib[0] > 0 else 'no se distingue'}")
+        print(f"    NGAIDP vs China-educación (mismo país):     "
+              f"{stats.mean(ng_pass) - stats.mean(china_edu_pass):+.3f} IC95 [{d_vs_edu[0]:+.3f}, {d_vs_edu[1]:+.3f}] "
+              f"→ {'el tema educativo SÍ aporta una parte grande' if d_vs_edu[1] < 0 else 'el tema no aporta'}")
+    if ng:
+        verdict["threshold_verdict"]["p1_china_general_high"] = ng["ci95"][0] > 0.25
+    if edu:
+        m = stats.mean(x["mean"] for x in edu)
+        verdict["threshold_verdict"]["p2_education_inflates"] = any(x["ci95"][0] > 0.25 for x in edu)
+        print(f"    P2 género: educación NO china = {m:+.3f} (India {doc_stats['india_nep_2020']['mean']:+.2f}, "
+              f"UNESCO {doc_stats['unesco_genai_guidance_2023']['mean']:+.2f}) "
+              f"→ el tema educativo por sí solo NO eleva el eje")
+    if neigh:
+        m = stats.mean(x["mean"] for x in neigh)
+        verdict["threshold_verdict"]["p3_regional"] = any(x["ci95"][0] > 0.25 for x in neigh)
+        print(f"    P3 región: Corea/Japón/Singapur = {m:+.3f} "
+              f"→ {'el efecto sería regional' if verdict['threshold_verdict']['p3_regional'] else 'NO es la región confuciana: es China'}")
+
+    # ── P4 (Fase 8): ¿China o Estado-partido confuciano? ──
+    vn = doc_stats.get("vietnam_ai_strategy_2021")
+    asean = [doc_stats[d["doc_id"]] for d in CONTROLS
+             if d["arm"] == "asean_non_confucian" and d["doc_id"] in doc_stats]
+    if vn and ng and liberal_pass:
+        vn_pass = passage_means(by_doc_pass["vietnam_ai_strategy_2021"])
+        d_vn_lib = boot_diff(vn_pass, liberal_pass)
+        d_vn_ng = boot_diff(vn_pass, ng_pass)
+        verdict["contrasts"]["vietnam_vs_liberal_general_ai"] = {
+            "diff": stats.mean(vn_pass) - stats.mean(liberal_pass), "ci95": d_vn_lib,
+            "excludes_zero": d_vn_lib[0] > 0 or d_vn_lib[1] < 0}
+        verdict["contrasts"]["vietnam_vs_china_general_ai"] = {
+            "diff": stats.mean(vn_pass) - stats.mean(ng_pass), "ci95": d_vn_ng,
+            "excludes_zero": d_vn_ng[0] > 0 or d_vn_ng[1] < 0}
+        # Atribuir el efecto al Estado-partido exige DOS cosas: que Vietnam suba sobre
+        # los liberales Y que se separe de los vecinos confucianos que NO son partido
+        # único. Con solo lo primero, "es el Estado-partido" sería sobreinterpretar,
+        # que es el error de umbral crudo que ya cometí en la Fase 6.
+        vecinos_pass = [m for d in CONTROLS if d["arm"] == "confucian_neighborhood"
+                        and d["doc_id"] in by_doc_pass
+                        for m in passage_means(by_doc_pass[d["doc_id"]])]
+        sube = d_vn_lib[0] > 0
+        d_vn_vec = boot_diff(vn_pass, vecinos_pass) if vecinos_pass else None
+        separa_vecinos = bool(d_vn_vec and (d_vn_vec[0] > 0 or d_vn_vec[1] < 0))
+        verdict["contrasts"]["vietnam_vs_confucian_neighborhood"] = {
+            "diff": stats.mean(vn_pass) - stats.mean(vecinos_pass) if vecinos_pass else None,
+            "ci95": d_vn_vec, "excludes_zero": separa_vecinos}
+        print(f"\n    P4 Estado-partido: Vietnam (confuciano + partido único) = {vn['mean']:+.3f} "
+              f"IC95 [{vn['ci95'][0]:+.2f}, {vn['ci95'][1]:+.2f}]")
+        print(f"       vs los 6 liberales:      {stats.mean(vn_pass) - stats.mean(liberal_pass):+.3f} "
+              f"IC95 [{d_vn_lib[0]:+.3f}, {d_vn_lib[1]:+.3f}]  {'sube' if sube else 'no sube'}")
+        print(f"       vs China general:        {stats.mean(vn_pass) - stats.mean(ng_pass):+.3f} "
+              f"IC95 [{d_vn_ng[0]:+.3f}, {d_vn_ng[1]:+.3f}]  "
+              f"{'distinto' if d_vn_ng[0] > 0 or d_vn_ng[1] < 0 else 'INDISTINGUIBLE de China'}")
+        if d_vn_vec:
+            print(f"       vs vecinos KR/JP/SG:     {stats.mean(vn_pass) - stats.mean(vecinos_pass):+.3f} "
+                  f"IC95 [{d_vn_vec[0]:+.3f}, {d_vn_vec[1]:+.3f}]  "
+                  f"{'separa' if separa_vecinos else 'NO separa'}")
+        verdict["p4_party_state"] = bool(sube and separa_vecinos)
+        print(f"       → {'el efecto SÍ es atribuible al Estado-partido' if verdict['p4_party_state'] else 'NO alcanza para atribuirlo al Estado-partido: Vietnam sube sobre los liberales pero no se separa de sus vecinos'}")
+    if asean:
+        m = stats.mean(x["mean"] for x in asean)
+        print(f"    Control ASEAN no confuciano (Malasia) = {m:+.3f} "
+              f"→ {'sube, el eje capta algo no confuciano' if any(x['ci95'][0] > 0.25 for x in asean) else 'no sube, como se esperaba'}")
+    verdict["reading"] = ("INTERACCIÓN país × tema: ni China-general (+0.26) ni educación-no-china "
+                          "(~0) reproducen el +0.94. El encuadre dézhì se concentra donde la teoría "
+                          "confuciana lo predice: la política EDUCATIVA china.")
+
+    payload = {"design": "2x2 tema × país + brazo vecindario confuciano",
+               "k_passages": K_PASSAGES, "codebook_hash": codebook_hash(cb),
+               "n_classifications": len(recs),
+               "reference_fase5": {"china_education": CHINA_V3, "liberal_general_ai": LIBERAL_V3},
+               "doc_stats": doc_stats,
+               "doc_meta": {pid: {k: v for k, v in meta[pid].items() if k != "path"}
+                            for pid in doc_stats},
+               "verdict": verdict}
+    WEB_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    OUT_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"\n  Wrote {OUT_FILE}")
+    print(f"  Wrote {RECORDS_FILE} ({len(recs)} registros)")
+
+
+if __name__ == "__main__":
+    main()

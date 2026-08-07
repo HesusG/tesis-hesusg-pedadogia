@@ -8,7 +8,7 @@ OUTPUT_DIR := output
 PIPELINE_DIR := pipeline
 WEB_DIR := web
 
-.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies
+.PHONY: all pdf pdf-cap01 docx pipeline web figures setup clean status chunks help refs-audit refs-audit-cap01 refs-download refs-check verify-cap01 ingest-refs factcheck-cap01 compute-advanced download-policies topics language-control validate ingest-analects confucian-mvp dezhi-via-a dezhi-compare dezhi-validate dezhi-confound dezhi-test dezhi-all
 
 all: pdf web
 
@@ -28,6 +28,28 @@ pdf-cap01:
 	cd $(TEX_DIR) && pdflatex main_cap01.tex
 	cp $(TEX_DIR)/main_cap01.pdf $(OUTPUT_DIR)/tesis_cap01.pdf
 	@echo "✓ PDF Cap01: $(OUTPUT_DIR)/tesis_cap01.pdf"
+
+pdf-shorter:
+	cd $(TEX_DIR) && pdflatex main_shorter.tex
+	cd $(TEX_DIR) && bibtex main_shorter || true
+	cd $(TEX_DIR) && pdflatex main_shorter.tex
+	cd $(TEX_DIR) && pdflatex main_shorter.tex
+	cp $(TEX_DIR)/main_shorter.pdf $(OUTPUT_DIR)/tesis_shorter.pdf
+	@echo "✓ PDF Shorter: $(OUTPUT_DIR)/tesis_shorter.pdf"
+
+protocolo:
+	cd $(TEX_DIR) && tectonic -X compile protocolo.tex
+	cp $(TEX_DIR)/protocolo.pdf $(OUTPUT_DIR)/protocolo-investigacion.pdf
+	@echo "✓ Protocolo: $(OUTPUT_DIR)/protocolo-investigacion.pdf"
+
+docx-shorter:
+	cd $(TEX_DIR) && pandoc main_shorter.tex \
+		--from=latex \
+		--to=docx \
+		--bibliography=referencias.bib \
+		--citeproc \
+		-o ../$(OUTPUT_DIR)/tesis_shorter.docx
+	@echo "✓ DOCX Shorter: $(OUTPUT_DIR)/tesis_shorter.docx"
 
 docx: pdf
 	cd $(TEX_DIR) && pandoc $(TEX_MAIN).tex \
@@ -114,12 +136,56 @@ refs-check:
 verify-cap01:
 	python3 -m pipeline.verify_chapter --chapter cap01
 
+# ── v2 Analysis (unsupervised-first) ─────────────────
+topics:
+	python3 -m pipeline.topic_model
+	@echo "✓ BERTopic: temas no supervisados generados"
+
+language-control:
+	python3 -m pipeline.language_control
+	@echo "✓ Análisis de control lingüístico completado"
+
+validate:
+	python3 -m pipeline.validation
+	@echo "✓ Validación pre-registro vs no-supervisado completada"
+
 # ── Fact-check ────────────────────────────────────────
 ingest-refs:
 	python3 -m pipeline.ingest_bibliography
 
 factcheck-cap01:
 	python3 -m pipeline.verify_facts --chapter cap01
+
+# ── Confucian axes MVP (usa .venv por sentence-transformers) ──
+ingest-analects:
+	.venv/bin/python -m pipeline.ingest_analects
+
+confucian-mvp:
+	.venv/bin/python -m pipeline.confucian_axes
+	@echo "✓ Ejes confucianos MVP → web/data/confucian_mvp.json"
+
+# ── Pipeline v3 — instrumento agéntico (dézhì) ────────
+dezhi-via-a:
+	.venv/bin/python -m pipeline_v3.via_a
+	@echo "✓ Vía A (embeddings) 7 países → pipeline_v3/cache/via_a_dezhi.json"
+
+dezhi-compare:
+	.venv/bin/python -m pipeline_v3.compare_countries
+	@echo "✓ Vía B (panel LLM) → web/data/dezhi_country_comparison.json"
+
+dezhi-validate:
+	.venv/bin/python -m pipeline_v3.agreement
+	@echo "✓ Validación (κ, α, sesgo de origen, Vía A vs B) → web/data/dezhi_validation.json"
+
+dezhi-confound:
+	.venv/bin/python -m pipeline_v3.confound_test
+	@echo "✓ Prueba del confusor país×tema → web/data/dezhi_confound_test.json"
+
+dezhi-test:
+	.venv/bin/python -m pipeline_v3.test_agreement
+
+# Cadena completa de la Fase 5. La caché de clasificaciones la hace reanudable.
+dezhi-all: dezhi-via-a dezhi-compare dezhi-validate dezhi-confound
 
 # ── Advanced compute ─────────────────────────────────
 compute-advanced:
@@ -150,6 +216,7 @@ help:
 	@echo "  make status    — Ver progreso por capítulo"
 	@echo "  make chunks    — Exportar chunk_pairs.json para explorador"
 	@echo "  make pdf-cap01 — Compilar PDF solo hasta capítulo 1"
+	@echo "  make protocolo — Compilar protocolo de investigación (tectonic)"
 	@echo "  make refs-audit     — Auditar referencias .bib vs PDFs locales"
 	@echo "  make refs-audit-cap01 — Auditar solo cap01"
 	@echo "  make refs-download  — Descargar PDFs via Unpaywall/URLs"
@@ -157,6 +224,16 @@ help:
 	@echo "  make verify-cap01   — Verificar cap01 semánticamente contra ChromaDB"
 	@echo "  make ingest-refs    — Ingestar PDFs de bibliografía para fact-check"
 	@echo "  make factcheck-cap01 — Fact-check numérico de cap01 (híbrido)"
+	@echo "  make topics     — BERTopic: análisis no supervisado (Fase 1)"
+	@echo "  make language-control — Control lingüístico (Fase 3)"
+	@echo "  make validate   — Validar pre-registro vs no-supervisado"
+	@echo "  make ingest-analects  — Indexar Analectas en ChromaDB (MVP)"
+	@echo "  make confucian-mvp    — Ejes confucianos sobre 3 políticas (MVP)"
+	@echo "  make dezhi-via-a      — Vía A: eje dézhì por embeddings, 7 países"
+	@echo "  make dezhi-compare    — Vía B: panel de 7 jueces LLM, 7 países"
+	@echo "  make dezhi-validate   — Validación: κ/α, sesgo de origen, Vía A vs B"
+	@echo "  make dezhi-confound   — Prueba del confusor país × tema (2×2 + vecindario)"
+	@echo "  make dezhi-all        — Cadena completa de la Fase 5"
 	@echo "  make compute-advanced — Generar datos avanzados (UMAP, Sankey)"
 	@echo "  make download-policies — Descargar PDFs de políticas"
 	@echo "  make clean     — Limpiar archivos auxiliares"

@@ -56,3 +56,8 @@ references/*.pdf
 policies/raw/**/*.pdf
 policies/raw/**/*.docx
 !policies/raw/.gitkeep
+
+# Pipeline v3 — caché de llamadas al panel (regenerable; la provenance versionada
+# vive en pipeline_v3/cache/dezhi_records.jsonl y audit_log.jsonl)
+pipeline_v3/cache/classifications/
+pipeline_v3/cache/translations/

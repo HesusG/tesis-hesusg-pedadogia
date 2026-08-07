@@ -1,0 +1,115 @@
+%% cap01-planteamiento-short.tex — Planteamiento del Problema (versión compacta)
+\chapter{Planteamiento del Problema}
+\label{cap:planteamiento}
+
+
+\section{Descripción de la Problemática}
+\label{sec:problematica}
+
+En 2017, China publicó el primer plan nacional que vinculó explícitamente la inteligencia artificial con la reforma educativa~\citep{china2017ai}. Para 2023, cuando Estados Unidos emitió su orden ejecutiva sobre IA, al menos 67 países habían desarrollado o estaban desarrollando estrategias nacionales de IA~\citep{unesco2023genai}. Sin embargo, la educación figuraba en la mayoría de ellas como un componente de desarrollo de talento para la competitividad económica, no como un objeto de política educativa en sí mismo. La diferencia importa: una cosa es formar ingenieros de IA y otra es preparar a todos los estudiantes para vivir en un mundo transformado por ella. Esta distinción atraviesa toda la investigación.
+
+Esta brecha entre la velocidad de la tecnología y la capacidad de respuesta de las políticas educativas no es accidental. \citet{thierer2018pacing} la describió como el \textit{pacing problem}: la tecnología evoluciona de forma exponencial mientras que la regulación progresa de manera lineal. En el caso de la IA en educación, la brecha es particularmente aguda. Hacia 2022, solo unos 15 países habían desarrollado currículos de IA para educación básica avalados por sus gobiernos, y apenas siete reportaban marcos de capacitación en IA para profesores~\citep{unesco2023genai}. \citet{miao2021guidance} sintetizaron el panorama en cinco brechas concretas de preparación institucional: ausencia de marcos regulatorios, insuficiencia en la formación docente, falta de estándares curriculares, inequidades en infraestructura digital y carencia de directrices éticas para el uso de IA en escuelas.
+
+El problema no es solo de velocidad sino de escala. El cómputo dedicado al entrenamiento de modelos de IA se ha duplicado aproximadamente cada seis meses desde 2010~\citep{sevilla2022compute}. \citet{collingridge1980social} formuló este dilema décadas antes de la IA: cuando una tecnología es nueva, sus impactos son difíciles de predecir; cuando sus impactos son claros, la tecnología ya está arraigada. Lo que esto significa en la práctica es concreto: una profesora en Bogotá y un profesor en Berlín enfrentan hoy estudiantes que usan herramientas de IA generativa, pero las políticas que deberían orientar su trabajo pedagógico fueron redactadas bajo supuestos radicalmente distintos sobre qué significa la alfabetización en IA, si es que fueron redactadas.
+
+
+\section{La Respuesta de los Países}
+\label{sec:respuesta-paises}
+
+Siete países ilustran la diversidad de estas respuestas. China ofrece el caso de iteración sostenida: siete documentos de política publicados entre 2017 y 2025~\citep{china2017ai}. Canadá~\citep{canada2017ai} y Australia~\citep{australia2021aiaction} representan planes estratégicos con componentes educativos. Colombia~\citep{colombia2019conpes} y Sudáfrica~\citep{southafrica2020pc4ir} abordaron la IA en educación dentro de marcos más amplios de desarrollo nacional. Alemania actualizó una estrategia existente para incorporar formación educativa~\citep{germany2020aiupdate}. Estados Unidos optó por la acción ejecutiva~\citep{whitehouse2023aeo}. Estos casos representan un país por región geopolítica, cuatro familias lingüísticas y contextos que van desde economías avanzadas hasta países del sur global.
+
+
+\section{La Pregunta Sin Resolver}
+\label{sec:pregunta}
+
+Cuando los documentos de política de diferentes países utilizan vocabulario similar (``competencias digitales'', ``IA responsable'', ``formación del siglo XXI''), surge una pregunta que la lectura individual de cada documento no puede resolver: ¿la similitud refleja convergencia temática genuina, influencia compartida de un tercer actor, o convergencia funcional independiente?
+
+\citet{steinerkhamsi2014cross} distinguió tres explicaciones posibles para la similitud entre políticas educativas de diferentes países: el préstamo genuino (un país adopta deliberadamente elementos de la política de otro), la influencia común de un tercer actor (marcos internacionales como el Consenso de Beijing y los Principios de IA de la OCDE funcionan como plantillas), y la convergencia funcional (países que enfrentan problemas similares desarrollan soluciones similares sin contacto). Determinar cuál mecanismo opera en cada par de países requiere un análisis que supere la lectura cualitativa de documentos individuales.
+
+
+\section{La Brecha Metodológica}
+\label{sec:brecha}
+
+La ciencia política comenzó a tratar los textos como datos cuantificables a principios de la década de 2010, cuando \citet{grimmer2013text} establecieron los principios fundacionales del enfoque \textit{text-as-data}. Desde entonces, el campo ha madurado: se han aplicado representaciones semánticas para medir alineación de políticas en discursos internacionales y para comparar legislación nacional con directivas supranacionales. La educación comparada no ha seguido esta trayectoria.
+
+Un problema adicional surge al comparar documentos escritos en diferentes idiomas. Los modelos de análisis semántico multilingüe capturan tanto el contenido como la estructura lingüística de los textos~\citep{conneau2020unsupervised}. Dos documentos escritos en el mismo idioma pueden obtener puntuaciones de similitud infladas respecto a documentos temáticamente afines pero lingüísticamente distantes. \citet{grimmer2013text} advirtieron que todo método computacional de análisis textual tiene supuestos que deben explicitarse; el componente lingüístico de la similitud es uno de esos supuestos que los estudios comparativos rara vez cuantifican.
+
+La investigación más próxima es la de Kundu y Bej (2025), quienes compararon políticas de IA en educación escolar de cuatro países mediante análisis temático cualitativo. Sin embargo, no pudieron cuantificar el grado de similitud entre documentos ni separar el componente lingüístico del temático. La presente investigación ocupa un espacio más amplio: es multilingüe, multi-país, emplea una secuencia \textit{unsupervised-first} y cuantifica el sesgo lingüístico.
+
+
+\section{Propósito}
+\label{sec:proposito}
+
+¿En qué medida la similitud observada entre políticas de educación en IA de diferentes países refleja convergencia temática genuina, y en qué medida es un artefacto de proximidad lingüística, género discursivo compartido o influencia de marcos internacionales comunes? Esta investigación responde esa pregunta mediante un análisis comparativo de las políticas de siete países, utilizando una secuencia analítica que combina descubrimiento automático de temas, análisis por dimensiones pre-registradas, control lingüístico y validación cruzada.
+
+
+\section{Preguntas de Investigación}
+\label{sec:preguntas}
+
+\subsection{Pregunta central}
+\label{subsec:pregunta-central}
+
+¿En qué medida las políticas nacionales de educación en IA exhiben evidencia de difusión transfronteriza, y puede el análisis semántico distinguir convergencia temática genuina de similitud lingüística o estructural?
+
+\subsection{Preguntas derivadas}
+\label{subsec:preguntas-derivadas}
+
+\begin{enumerate}
+  \item Cuando documentos de políticas de educación en IA de diferentes familias lingüísticas se representan en el mismo espacio de análisis, ¿los agrupamientos reflejan alineación temática o proximidad lingüística?
+
+  \item ¿Qué temas latentes emergen del análisis no supervisado del corpus que no son capturados por marcos comparativos existentes como el Consenso de Beijing~\citep{unesco2019beijing} o las dimensiones de \citet{miao2021guidance}?
+
+  \item Para los pares de países con alta similitud semántica, ¿pueden trazarse pasajes compartidos a documentos fuente comunes (UNESCO, OCDE), lo que sugeriría difusión institucional más que convergencia independiente?
+
+  \item ¿Qué evolución temática se observa en el ecosistema de políticas de educación en IA de China entre 2017 y 2025, y qué revela esta trayectoria sobre las limitaciones de la comparación basada en documentos únicos?
+\end{enumerate}
+
+
+\section{Objetivo General y Objetivos Específicos}
+\label{sec:objetivos}
+
+\subsection{Objetivo general}
+\label{subsec:objetivo-general}
+
+Analizar comparativamente las políticas públicas sobre educación en inteligencia artificial de siete países mediante un enfoque \textit{unsupervised-first} que integre descubrimiento automático de temas, análisis por dimensiones pre-registradas y control lingüístico, con el fin de distinguir convergencia temática genuina de similitud atribuible a factores lingüísticos o estructurales, e identificar temas latentes no capturados por los marcos analíticos existentes.
+
+\subsection{Objetivos específicos}
+\label{subsec:objetivos-especificos}
+
+\begin{enumerate}
+  \item[\textbf{OE1.}] Construir un corpus documental sistematizado de los documentos de política de educación en IA de siete países, incluyendo siete documentos longitudinales de China (2017--2025), con criterios explícitos de selección, preprocesamiento y segmentación.
+
+  \item[\textbf{OE2.}] Ejecutar un análisis no supervisado sobre el corpus y documentar los temas emergentes antes de aplicar ningún marco analítico previo, siguiendo los principios de la Teoría Fundamentada Computacional~\citep{nelson2020computational}.
+
+  \item[\textbf{OE3.}] Pre-registrar nueve dimensiones analíticas organizadas en tres niveles (contenido, proceso, resultados), derivadas del \textit{Education Policy Outlook} de la OCDE~\citep{oecd2021epo}, el Consenso de Beijing~\citep{unesco2019beijing} y la guía de \citet{miao2021guidance}, y evaluar cada documento mediante análisis semántico supervisado.
+
+  \item[\textbf{OE4.}] Cuantificar la proporción de similitud entre documentos atribuible a proximidad lingüística, mediante una línea base monolingüe y la comparación de similitudes intra-familia versus inter-familia lingüística.
+
+  \item[\textbf{OE5.}] Comparar los hallazgos del análisis supervisado con los del no supervisado para identificar temas latentes no capturados por el marco de nueve dimensiones y dimensiones pre-registradas que no emergen de los datos.
+
+  \item[\textbf{OE6.}] Analizar la evolución temporal de las políticas de educación en IA de China entre 2017 y 2025 como caso longitudinal anidado.
+\end{enumerate}
+
+
+\section{Justificación}
+\label{sec:justificacion}
+
+En el ámbito pedagógico, esta investigación aporta un análisis comparativo del estado actual de las políticas de educación en IA de siete países con la profundidad que permite examinar un representante por región geopolítica y cuatro familias lingüísticas. La educación comparada tiene una larga tradición de análisis de sistemas educativos mediante sus similitudes y diferencias~\citep{milosevic2020methodology}; esta investigación extiende esa tradición incorporando herramientas computacionales que permiten operar sobre corpus multilingües de un modo que la lectura humana individual no puede escalar.
+
+En el ámbito político, los siete países representan enfoques diversos ante un desafío compartido. \citet{shipan2012diffusion} identificaron mecanismos de difusión de políticas (aprendizaje, emulación, coerción, competencia) que son potencialmente observables en el corpus mediante el trazado de pasajes compartidos entre documentos.
+
+En el ámbito metodológico, la contribución reside en la secuencia \textit{unsupervised-first}~\citep{nelson2020computational} y el control lingüístico explícito. La secuencia aborda el problema de la validación circular que afecta a los estudios que definen sus categorías analíticas después de leer el corpus. El control lingüístico aborda un problema específico del análisis multilingüe que los estudios comparativos existentes no cuantifican.
+
+
+\section{Alcances y Limitaciones}
+\label{sec:alcances}
+
+El corpus abarca siete países organizados por región geopolítica, con documentos publicados entre 2017 y 2025 en inglés, español, alemán y chino. China aporta siete documentos que habilitan un análisis de evolución temporal. El marco analítico combina nueve dimensiones pre-registradas~\citep{oecd2021epo,unesco2019beijing,miao2021guidance} con los temas emergentes del análisis no supervisado. La investigación examina el contenido de los documentos de política (qué dicen, qué priorizan y qué omiten), no su proceso de elaboración ni su implementación en el terreno~\citep{rizvi2010globalizing}.
+
+El corpus se limita a documentos de acceso público. Los países se encuentran en etapas diferentes del ciclo de políticas~\citep{howlett2003studying}: China en evaluación y revisión, Sudáfrica en establecimiento de agenda. El control lingüístico atenúa pero no elimina completamente el sesgo idiomático. Los documentos de China se analizan en traducción al inglés, lo que puede alterar la representación semántica. La muestra de siete casos es intencional, no permite generalización estadística.
+
+
+\section{Relevancia para México}
+\label{sec:mexico}
+
+México carece de un marco integral de IA en educación: no existe una estrategia nacional formalmente adoptada ni lineamientos curriculares de IA para educación básica. Las iniciativas existentes, como el Centro Público de Formación en IA~\citep{mexia2025centro} y las diez líneas de acción de la SEP para IA generativa en educación superior~\citep{sep2026ia}, constituyen pasos iniciales pero no una política articulada. Comprender qué han hecho los siete países de este estudio en diferentes etapas de desarrollo ofrece a México una base comparativa concreta. Desde una universidad mexicana como la UPAEP, que forma educadores que enfrentarán la IA en sus aulas, esta investigación contribuye a que esa formación se sustente en evidencia comparativa.

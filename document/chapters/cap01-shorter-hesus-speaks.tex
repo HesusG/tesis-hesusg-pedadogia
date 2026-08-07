@@ -1,0 +1,134 @@
+%% cap01-shorter-hesus-speaks.tex, Planteamiento del Problema
+\chapter{Planteamiento del Problema}
+\label{cap:planteamiento}
+
+\section{Descripción de la Problemática}
+
+La inteligencia artificial transforma la manera en que las sociedades producen, distribuyen y evalúan el conocimiento. La educación, como institución encargada de preparar a las nuevas generaciones, enfrenta la tarea de responder a esta transformación. En 2017, China publicó el primer plan nacional que vinculó explícitamente la inteligencia artificial con la reforma educativa. Para 2023, al menos 67 países habían desarrollado o estaban desarrollando estrategias nacionales de IA~\citep{unesco2023genai}. En la mayoría de ellas, sin embargo, la educación figuraba como un componente de desarrollo de talento para la competitividad económica, no como un objeto de política educativa en sí mismo. Formar ingenieros de IA no es lo mismo que preparar a todos los estudiantes para vivir en un mundo transformado por ella.
+
+\citet{thierer2018pacing} identificó el problema del desfase regulatorio entre tecnología y política pública. La tecnología evoluciona de forma exponencial mientras que la regulación avanza de manera lineal. En educación, este desfase se manifiesta en que los gobiernos tardan años en formular políticas que, para cuando llegan al aula, ya no corresponden con la realidad tecnológica que enfrentan los estudiantes. Hacia 2022, pocos países habían desarrollado currículos de IA para educación básica, y menos aún contaban con marcos de capacitación docente. \citet{miao2021guidance} sintetizaron el panorama en cinco brechas de preparación institucional: ausencia de marcos regulatorios, insuficiencia en la formación docente, falta de estándares curriculares, inequidades en infraestructura digital y carencia de directrices éticas. Una profesora en Bogotá y un profesor en Berlín enfrentan hoy estudiantes que usan herramientas de IA generativa, pero las políticas que deberían orientar su trabajo pedagógico fueron redactadas bajo supuestos radicalmente distintos, si es que fueron redactadas.
+
+Siete países permiten observar cómo distintas regiones del mundo han incorporado la IA en sus políticas educativas. Sus documentos de política constituyen el corpus de esta investigación, es decir, el conjunto de textos oficiales que se analizan. El corpus reúne 15 documentos: Canadá, Australia, Colombia, Sudáfrica, Alemania y Estados Unidos contribuyen uno cada uno, mientras que China contribuye nueve publicados entre 2025 y 2026, lo que la convierte en un caso particular por su iteración sostenida y por descender del nivel nacional al provincial. En conjunto, estos casos abarcan cuatro familias lingüísticas y contextos que van desde economías avanzadas hasta países del sur global.
+
+Cuando documentos de política de diferentes países utilizan vocabulario similar, surge una pregunta que la lectura individual no puede resolver: ¿la similitud refleja convergencia temática genuina, es decir, que distintos países lleguen a abordar los mismos temas de formas parecidas? ¿O se trata de influencia compartida de un tercer actor, o de convergencia funcional independiente?
+
+Gita Steiner-Khamasi, investigadora de educación comparada, ha estudiado por qué las políticas educativas de países distintos terminan pareciéndose. En su análisis de los mecanismos de transferencia entre sistemas educativos, \citet{steinerkhamsi2014cross} distingue tres explicaciones. La primera es el préstamo genuino, donde un país adopta deliberadamente la política de otro. La segunda es la influencia común, en la que un marco internacional funciona como plantilla que múltiples países adaptan. Un ejemplo central de este tipo de influencia es el Consenso de Beijing, un acuerdo impulsado por la UNESCO en 2019 que estableció cinco áreas prioritarias para la integración de la inteligencia artificial en la educación~\citep{unesco2019beijing}. Desde su publicación, el Consenso ha funcionado como referencia para múltiples estrategias nacionales. La tercera explicación es la convergencia funcional, que ocurre cuando países sin contacto entre sí llegan a soluciones similares porque enfrentan problemas parecidos. Determinar cuál mecanismo opera en cada caso requiere un análisis que supere la lectura cualitativa de documentos individuales.
+
+En la ciencia política, la idea de tratar los textos de política pública como datos susceptibles de análisis computacional se consolidó a principios de la década de 2010~\citep{grimmer2013text}. En la práctica, esto significa que en lugar de que un investigador lea y clasifique manualmente cada documento, un modelo computacional convierte los textos en representaciones numéricas que permiten medir cuánto se parecen entre sí. Estas técnicas se han aplicado para medir la alineación entre documentos legislativos y estratégicos en ciencia política.
+
+
+\section{El Objeto de Medición}
+
+Comparar el vocabulario de dos políticas dice poco. Dos gobiernos pueden escribir «formación docente en IA» y querer decir cosas incompatibles. Esta investigación mide algo más específico: \textbf{a quién le corresponde formar a las personas}. Un Estado puede plantear la educación en IA como cultivo moral de la población, donde el gobierno fija la dirección y las escuelas, empresas y familias se alinean a ella. O puede plantearla como regulación de conductas, donde el Estado pone reglas y límites y el resto de los actores decide dentro de ellos.
+
+La tradición confuciana nombra esa oposición desde hace dos milenios. Gobernar por la virtud, \dezhi\zhg{德治}, sostiene que la autoridad legítima educa con el ejemplo y forma el carácter de los gobernados. Gobernar por la norma, \fa\zhg{法}, sostiene que la autoridad se ejerce mediante reglas públicas iguales para todos, con premio y castigo previsibles~\citep{pines2023legalism}. La oposición no es exclusiva de China: es la misma tensión que atraviesa la teoría política occidental entre el Estado formador y el Estado limitado. Lo que China aporta es un vocabulario preciso para nombrarla.
+
+El propósito de esta investigación es medir dónde se sitúa cada política en ese eje, y averiguar si esa medición se sostiene.
+
+
+\section{Preguntas de Investigación}
+
+\begin{researchquestion}
+¿Las políticas de educación en inteligencia artificial de siete países expresan concepciones distintas sobre quién forma a las personas, y esa diferencia se puede medir de manera reproducible?
+\end{researchquestion}
+
+De ahí se desprenden tres preguntas, una por cada cosa que hay que resolver para responderla.
+
+\textbf{P1. ¿Se puede medir?} ¿Es posible asignar a un pasaje de política pública un valor que exprese cuánto encuadra la educación en IA como cultivo moral dirigido por el Estado, frente a cuánto la encuadra como conducta regulada por normas?
+
+\textbf{P2. ¿Difieren los países?} ¿Se separan los siete países en ese eje, y la separación sobrevive cuando se controla por la región del documento, por su tema y por la estructura del Estado?
+
+\textbf{P3. ¿Coinciden los métodos?} ¿Dos procedimientos de medición independientes, uno basado en distancias semánticas y otro en juicio de lectura, producen el mismo ordenamiento de países? Si no coinciden, ¿qué revela el desacuerdo? Y dentro del panel de lectores, ¿el origen cultural de cada uno sesga su propia calificación?
+
+P1 es una pregunta de instrumento, P2 de comparación y P3 de validez. Las tres se responden con el mismo corpus.
+
+
+\section{Objetivos}
+
+\textbf{Objetivo general.} Medir en las políticas de educación en inteligencia artificial de siete países el grado en que el Estado se presenta como formador moral de la población frente a regulador de conductas, y evaluar la confiabilidad de esa medición mediante dos procedimientos independientes.
+
+\textbf{Objetivos específicos.}
+
+\begin{enumerate}
+    \item Construir un corpus de documentos oficiales bajo criterios de inclusión explícitos, verificables y aplicables por un tercero.
+    \item Pre-registrar el libro de códigos del eje \ejedf y las predicciones del estudio antes de ejecutar cualquier medición.
+    \item Medir el eje por proyección bipolar sobre representaciones vectoriales del texto (Vía A).
+    \item Medir el mismo eje mediante un panel de siete modelos de lenguaje de origen cultural mixto que aplican el libro de códigos pasaje por pasaje (Vía B).
+    \item Estimar el acuerdo entre jueces y la magnitud del sesgo atribuible al origen del juez.
+    \item Someter el resultado a tres pruebas de confusión: región de Asia oriental, tema del documento y estructura de Estado-partido.
+    \item Contrastar ambas vías y documentar tanto sus coincidencias como sus desacuerdos.
+\end{enumerate}
+
+
+\section{Hipótesis}
+
+Las cuatro predicciones se registraron en el repositorio antes de correr la medición. El registro es la marca de tiempo del commit que fijó el libro de códigos y la configuración.
+
+\begin{description}
+    \item[H1] China puntúa más alto que los seis países de tradición liberal en el eje \ejedf.
+    \item[H2] La diferencia no se explica por pertenecer a Asia oriental: los vecinos de tradición confuciana sin Estado-partido no reproducen el efecto.
+    \item[H3] Los jueces de origen chino y los de origen occidental producen puntuaciones equivalentes.
+    \item[H4] Los dos procedimientos de medición convergen en el mismo ordenamiento de países.
+\end{description}
+
+H4 es la hipótesis que este estudio esperaba confirmar como control de rutina. Su rechazo es el resultado principal, y el capítulo de resultados explica por qué.
+
+
+\section{Por Qué Este Marco y No Otro}
+\label{sec:por-que-confuciano}
+
+Conviene decirlo de frente, porque la alternativa es fingir una neutralidad que no hubo: \textbf{este estudio nace de un interés declarado por el pensamiento político chino aplicado a la educación}.
+
+China es hoy el caso más desarrollado del mundo en política de inteligencia artificial para la educación. Emite planes nacionales firmados por cinco ministerios, los baja al nivel provincial y los itera año con año. Ningún otro país del corpus produce un ecosistema documental comparable. Estudiar ese caso con categorías tomadas de la teoría política occidental habría sido posible, pero habría impuesto sobre el objeto un vocabulario que no es el suyo.
+
+La tradición confuciana ofrece algo distinto: una teoría explícita, con dos milenios de elaboración, sobre \textbf{para qué sirve la educación y quién debe impartirla}. Gobernar por la virtud, \dezhi, sostiene que la autoridad legítima forma el carácter de los gobernados. Gobernar por la norma, \fa, sostiene que la autoridad se ejerce mediante reglas públicas iguales para todos~\citep{pines2023legalism}. Esa oposición es un objeto de estudio pedagógico por derecho propio, no un instrumento de conveniencia.
+
+Ahora bien, un interés declarado no es una justificación metodológica. Hace falta mostrar que el marco \textit{hace trabajo}, y aquí es donde la elección se defiende.
+
+\subsection*{El marco hizo una predicción que un esquema genérico habría fallado}
+
+Un esquema genérico de Estado fuerte frente a Estado limitado predice que un Estado dirigista puntuará alto en cualquier instrumento que publique. Si China es el caso de Estado fuerte, su plan de inteligencia artificial, su ley de contenidos generativos y su plan educativo deberían puntuar alto por igual.
+
+La teoría confuciana predice algo más específico y más exigente. El cultivo moral no es una propiedad difusa del gobierno: tiene un lugar propio, y ese lugar es la educación. Bajo ese marco, el encuadre formativo debería concentrarse en los instrumentos educativos y no aparecer con la misma fuerza en los industriales o regulatorios.
+
+El capítulo de resultados reporta lo observado. El plan general de inteligencia artificial de China obtiene $+0.257$ y su plan de inteligencia artificial en educación $+0.943$, con un contraste de $-0.686$ cuyo intervalo de confianza excluye el cero. La ley china de inteligencia artificial generativa quedó en valor neutro.
+
+El esquema genérico habría fallado esa predicción. El confuciano la acertó antes de medir.
+
+\subsection*{El riesgo de esencializar, y su control}
+
+Medir a seis países de tradición liberal con una vara construida desde la filosofía política china puede leerse como tratar a China como caso cultural y a los demás como caso normal.
+
+El diseño responde con un dato y no con una declaración de intenciones. Corea del Sur, Japón y Singapur pertenecen a la esfera cultural confuciana y no acompañan a China; Japón obtiene cero exacto. Si el eje midiera cultura confuciana, habrían subido. No mide cultura: mide encuadre.
+
+\subsection*{Alcance de lo validado}
+
+Corresponde declararlo aquí y no en el capítulo de limitaciones. De los seis ejes que este estudio mide, \textbf{solo \ejedf{} pasó por los dos canales de medición}. Los otros cinco, \ren, \lipin, \yi, \xiushen{} y \hepin, se midieron únicamente por proyección vectorial y tienen carácter \textbf{exploratorio}.
+
+Esa distinción no es formal. El capítulo de resultados muestra que la proyección vectorial tiene límites serios precisamente para constructos que dependen de la relación entre actores, y los seis ejes son de ese tipo. El perfil de seis ejes debe leerse entonces como material descriptivo que sugiere hipótesis, nunca como medición validada.
+
+
+\section{Justificación}
+
+Esta investigación ofrece un análisis exploratorio de las políticas de educación en IA de siete países. La educación comparada tiene una larga tradición de análisis mediante similitudes y diferencias, y las herramientas de procesamiento de lenguaje natural permiten extenderla a corpus multilingües.
+
+Los siete países representan enfoques diversos ante un desafío compartido. Cuando dos políticas de países distintos se parecen, la similitud puede deberse a distintos mecanismos: que un país haya aprendido de la experiencia del otro, que ambos compitan por posicionarse en un área estratégica, que uno emule al otro, o que ambos hayan adoptado un marco internacional común~\citep{shipan2012diffusion}. El trazado de pasajes compartidos entre documentos, que esta investigación realiza, permite evaluar empíricamente cuál de estos mecanismos podría operar entre los países del corpus.
+
+Desde lo metodológico, la contribución reside en tres elementos poco frecuentes en la educación comparada: medir un constructo teórico declarado por adelantado en vez de describir vocabulario, someter la medición a dos procedimientos independientes en lugar de confiar en uno, y publicar el desacuerdo entre ambos como resultado y no como ruido.
+
+
+\section{Alcances y Limitaciones}
+
+El alcance se limita a documentos de política de acceso público de los siete países seleccionados, vigentes al 30 de junio de 2026, en inglés, español, alemán y chino. La investigación examina qué dicen los documentos, qué priorizan y qué omiten. No examina cómo se elaboraron ni cómo se implementan. Medir el encuadre de un texto no dice nada sobre lo que ocurre en las aulas.
+
+Los modelos de representación semántica multilingüe permiten ubicar textos de idiomas distintos en un mismo espacio de significado~\citep{reimers2019sentencebert}, lo que habilita la comparación sin traducir todo al mismo idioma. Esa capacidad es también el objeto de la pregunta P3: el estudio examina hasta dónde llega.
+
+Cuatro limitaciones acotan lo que puede concluirse.
+
+\textbf{Asimetría de tamaño.} Los documentos varían en dos órdenes de magnitud: el de Canadá aporta 15 fragmentos y el de Sudáfrica 1{,}303. El muestreo fija diez pasajes por país para que la comparación no dependa del volumen, pero un documento corto ofrece menos evidencia de la que ofrece uno largo.
+
+\textbf{Heterogeneidad de género.} El corpus mezcla estrategias, planes de acción, reportes de comisión y guías. El género se registra como metadato y se usa como control, no se elimina.
+
+\textbf{Ausencia de ancla humana.} Ningún codificador humano validó las clasificaciones. Se reporta el acuerdo entre jueces automáticos, que es una medida de confiabilidad, no de validez~\citep{halterman2025codebook}. El capítulo de conclusiones detalla el procedimiento que cerraría esta brecha.
+
+\textbf{Muestra intencional.} Siete casos elegidos por región no permiten generalización estadística a la población de países.

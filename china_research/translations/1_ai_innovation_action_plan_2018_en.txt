@@ -1,0 +1,278 @@
+Login
+
+Languages
+
+English
+
+Русский
+
+日本語
+
+Deutsch
+
+Français
+
+Español
+
+العربية
+
+Search
+
+Barrier-Free Browsing
+
+Languages
+
+English
+
+Русский
+
+日本語
+
+Deutsch
+
+Français
+
+Español
+
+العربية
+
+Weiyan Education (Ministry of Education's Official Weibo)
+
+Barrier-Free Browsing
+
+Login
+
+|
+
+Register
+
+Individual Login
+
+Legal Entity Login
+
+Individual Registration
+
+Legal Entity Registration
+
+Search
+
+Home
+
+Institutions
+
+News
+
+Open Government Information
+
+Services
+
+Interaction
+
+Documents
+
+Current Location:
+
+Home
+
+>
+
+Open Government Information
+
+Information Title:
+
+Notice of the Ministry of Education on Issuing the "Higher Education Institutions Artificial Intelligence Innovation Action Plan"
+
+Information Index:
+
+360A16-14-2018-0008-1
+
+Creation Date:
+
+2018-04-03
+
+Issuing Authority:
+
+Ministry of Education of the People's Republic of China
+
+Document Number:
+
+Jiao Ke [2018] No. 3
+
+Information Category:
+
+Scientific Research
+
+Content Summary:
+
+The Ministry of Education issues the "Higher Education Institutions Artificial Intelligence Innovation Action Plan."
+
+**Notice of the Ministry of Education on Issuing the "Higher Education Institutions Artificial Intelligence Innovation Action Plan"**
+
+Jiao Ke [2018] No. 3
+
+Education departments (commissions) of all provinces, autonomous regions, and municipalities directly under the Central Government; Education Bureau of Xinjiang Production and Construction Corps; Education departments (bureaus) of relevant departments (units); and all directly affiliated higher education institutions:
+
+To implement the "State Council Notice on Issuing the Development Plan for a New Generation of Artificial Intelligence" (Guo Fa [2017] No. 35), guide higher education institutions to target the global frontiers of science and technology, and continuously enhance capabilities in technological innovation, talent cultivation, and international cooperation and exchange in the field of artificial intelligence, thereby providing strategic support for the development of a new generation of artificial intelligence in China, the "Higher Education Institutions Artificial Intelligence Innovation Action Plan" has been specially formulated. It is hereby issued to you, and you are requested to diligently implement it in accordance with actual conditions.
+
+Ministry of Education
+April 2, 2018
+
+**Higher Education Institutions Artificial Intelligence Innovation Action Plan**
+
+The rapid development of artificial intelligence will profoundly change human social life and the world. To implement the "State Council Notice on Issuing the Development Plan for a New Generation of Artificial Intelligence" (Guo Fa [2017] No. 35) and the spirit of the 2017 National Conference on Science and Technology in Higher Education Institutions, guide higher education institutions to target the global frontiers of science and technology, strengthen basic research, achieve major breakthroughs in forward-looking basic research and leading original achievements, and further enhance the capabilities of higher education institutions in technological innovation, talent cultivation, and serving national needs in the field of artificial intelligence, this Action Plan is specially formulated.
+
+**I. Overall Requirements**
+
+**(A) Basic Situation**
+
+With the continuous development of technologies such as the internet, big data, cloud computing, and the Internet of Things, artificial intelligence is triggering scientific breakthroughs that can produce chain reactions, giving rise to a number of disruptive technologies, accelerating the cultivation of new drivers for economic development, shaping new industrial systems, and leading a new round of scientific and technological revolution and industrial transformation. China is in the decisive stage of comprehensively building a moderately prosperous society. The people's needs for a better life and the requirements for high-quality economic development present broad prospects for the development and application of artificial intelligence in China.
+
+Artificial intelligence, characterized by the high integration of technological and social attributes, is a new engine for economic development and an accelerator for social development. AI capabilities such as big data-driven visual analysis, natural language understanding, and speech recognition are rapidly improving. Commercial intelligent dialogue and recommendation, autonomous driving, smart wearable devices, language translation, automatic navigation, and new economic forecasting are quickly entering the practical stage. Artificial intelligence technology is permeating and reconstructing links in economic activities such as production, distribution, exchange, and consumption, forming new intelligent demands, products, technologies, and business models from macro to micro levels, changing human lifestyles and even social structures, and achieving an overall leap in social productivity. Meanwhile, accelerating the innovative application of artificial intelligence in the field of education, using intelligent technology to support the innovation of talent cultivation models, the reform of teaching methods, and the enhancement of educational governance capabilities, and building an intelligent, networked, personalized, and lifelong education system are important means to promote balanced educational development, promote educational equity, and improve educational quality, and are indispensable drivers and support for achieving educational modernization.
+
+Higher education institutions are at the intersection of science and technology as the primary productive force, talent as the primary resource, and innovation as the primary driver. They have distinct characteristics in research and application of basic theories of artificial intelligence and key technologies such as natural language understanding, computer vision, multimedia, and robotics, and have a solid foundation in talent cultivation and disciplinary development. Facing the opportunities brought by the development of a new generation of artificial intelligence, higher education institutions must further strengthen their advantages in basic research, disciplinary development, and talent cultivation; further strengthen applied basic research and breakthroughs in common key technologies; continuously promote the deep integration of artificial intelligence with the real economy to cultivate new drivers for economic development; continuously promote the deep integration of artificial intelligence with people's needs to provide new pathways for improving people's livelihoods; and continuously promote the deep integration of artificial intelligence with education to provide new methods for educational transformation. Thereby, they will lead technological innovation, talent cultivation, and technology application demonstrations in the field of artificial intelligence in China and drive the overall strength of China's artificial intelligence.
+
+**(B) Guiding Ideology**
+
+Thoroughly implement the spirit of the 19th National Congress of the Communist Party of China, follow the guidance of Xi Jinping Thought on Socialism with Chinese Characteristics for a New Era, implement the new development concepts of innovation, coordination, green development, openness, and sharing, and focus on the implementation of strategies such as invigorating China through science and education, strengthening China through talents, innovation-driven development, and civil-military integration. Accelerate the construction of talent cultivation systems and scientific and technological innovation systems in the field of a new generation of artificial intelligence in higher education institutions. Comprehensively enhance the capabilities of higher education institutions in talent cultivation, scientific research, social service, cultural传承创新 (inheritance and innovation), and international exchange and cooperation in the field of artificial intelligence. Promote the all-round development of artificial intelligence disciplines, talent cultivation, theoretical innovation, technological breakthroughs, and application demonstrations. Provide strategic support for China to gain a first-mover advantage in artificial intelligence development and build an education强国 (power),科技强国 (scientific and technological power), and智能社会 (intelligent society).
+
+**(C) Basic Principles**
+
+Adhere to innovation leadership. Place innovation leadership at the core of artificial intelligence development in higher education institutions. Accurately grasp the global development trends of artificial intelligence. Further optimize the scientific and technological innovation system in the field of artificial intelligence in higher education institutions. Build higher education institutions into important sources of global artificial intelligence scientific and technological innovation.
+
+Adhere to the integration of science and education. Fully implement the fundamental task of fostering virtue through education. Firmly grasp the core point of improving talent cultivation capacity. Promote the mutual integration of talent cultivation, discipline construction, and scientific research. Give play to the important role of research-based education in the connotative development of higher education and the cultivation of high-quality talent. Continuously enhance the national level of independent innovation through the cultivation of innovative talent, and build advantages for sustained innovative development.
+
+Adhere to serving needs. Deepen institutional and mechanism reforms. Strengthen cooperation between higher education institutions and local governments, enterprises, and research institutes. Accelerate the transformation and application of scientific and technological achievements in the field of artificial intelligence in key industries and regions. Enhance the ability of higher education institutions to serve major national strategies, serve regional innovation development, serve economic transformation and upgrading, and serve and safeguard people's livelihoods.
+
+Adhere to civil-military integration. Accurately grasp the direction, laws, and priorities of deep civil-military integration. Leverage the advantages of higher education institutions in basic research and talent cultivation and their characteristic of comprehensive disciplines. Actively integrate into the national civil-military integration system. Continuously promote the two-way transfer and application of military and civilian technologies.
+
+**(D) Main Goals**
+
+By 2020, basically complete the optimization of the layout of the scientific and technological innovation system and discipline system in higher education institutions adapted to the development of a new generation of artificial intelligence. Achieve new breakthroughs in basic theories and key technology research of a new generation of artificial intelligence in higher education institutions. Further enhance the advantages in talent cultivation and scientific research. Promote the wide application of artificial intelligence technology.
+
+By 2025, significantly提升 (enhance) the scientific and technological innovation capability and talent cultivation quality of higher education institutions in the field of a new generation of artificial intelligence. Obtain a number of original achievements with international significant influence. Some theoretical research, innovative technologies, and application demonstrations reach world-leading levels. Effectively support China's industrial upgrading, economic transformation, and the construction of an intelligent society.
+
+By 2030, higher education institutions become the core force in building the world's major artificial intelligence innovation centers and a talent highland leading the development of a new generation of artificial intelligence. Provide scientific and technological support and talent guarantee for China to rank among the forefront of innovative countries.
+
+**II. Key Tasks**
+
+**(A) Optimize the Scientific and Technological Innovation System in the Field of Artificial Intelligence in Higher Education Institutions**
+
+1.  **Strengthen basic theoretical research on a new generation of artificial intelligence.** Focus on major scientific frontier issues in artificial intelligence. Promote deep interdisciplinary integration in fields such as artificial intelligence, brain science, cognitive science, and psychology. Prioritize the advancement of basic theoretical research on big data intelligence, cross-media perception computing, hybrid augmented intelligence, swarm intelligence, autonomous collaborative control and optimization decision-making, advanced machine learning, brain-inspired intelligent computing, and quantum intelligent computing. Provide theoretical support for paradigm shifts in artificial intelligence and lay a solid foundation for major theoretical innovations in a new generation of artificial intelligence.
+
+2.  **Promote innovation in core key technologies of a new generation of artificial intelligence.** Focus on key algorithms, hardware, and systems of a new generation of artificial intelligence. Accelerate research on core key technologies such as machine learning, computer vision, knowledge computing, deep reasoning, swarm intelligence computing, hybrid intelligence, unmanned systems, virtual reality, natural language understanding, and intelligent chips. Achieve major breakthroughs in fields such as brain-inspired intelligence, autonomous intelligence, hybrid intelligence, and swarm intelligence. Form a new generation of artificial intelligence technology system. Based on core algorithms and data, and hardware, focus on enhancing cross-media reasoning capabilities, swarm intelligence analysis capabilities, hybrid intelligence enhancement capabilities, autonomous agent execution capabilities, and human-computer interaction capabilities. Build standardized, open-source, and mature service support capabilities featuring algorithm and chip coordination, software and hardware coordination, and terminal and cloud coordination.
+
+3.  **Accelerate the construction of artificial intelligence scientific and technological innovation bases.** Based on the needs in basic theories, core common key technologies, and public support platforms in the field of artificial intelligence, accelerate the construction of innovation bases such as Ministry of Education Frontier Science Centers, Ministry of Education Key Laboratories, and Ministry of Education Engineering Research Centers. Guided by cross-disciplinary frontier breakthroughs and major national and regional development needs, promote collaborative interaction among innovation entities such as higher education institutions, research institutes, and enterprises, and build collaborative innovation centers. Accelerate the cultivation of various national-level innovation bases such as National Laboratories, National Key Laboratories, National Technology Innovation Centers, National Engineering Research Centers, and National Major Science and Technology Infrastructure. Encourage higher education institutions to build new types of scientific research organizations to conduct interdisciplinary research.
+
+4.  **Accelerate the construction of first-class talent teams and high-level innovation teams.** Support higher education institutions to undertake major national science and technology tasks, and cultivate and produce a number of strategic scientific and technological talents and leading scientific and technological talents with international reputation. Support higher education institutions to form a number of interdisciplinary, comprehensively cross-disciplinary innovation teams and research groups in artificial intelligence, brain science, cognitive science, etc. Support higher education institutions to vigorously cultivate and introduce outstanding young backbone talent through national programs such as the "Thousand Talents Plan," "Ten Thousand Talents Plan," and "Chang Jiang Scholars Program." Strengthen stable support for top-notch talent and excellent innovation teams engaged in basic research and public welfare research.
+
+5.  **Strengthen the construction of high-level scientific and technological think tanks.** Encourage and support higher education institutions to lead or participate in the construction of strategic research bases in the field of artificial intelligence. Conduct strategic research and policy research on major, hot, and forward-looking issues related to the impact of artificial intelligence development on education, economy, employment, law, national security, etc. Form a number of high-level new scientific and technological think tanks.
+
+6.  **Increase international academic exchange and cooperation.** Support higher education institutions to establish a number of new "111 Introduction Base" and international cooperation joint laboratories in the field of artificial intelligence. Cultivate international big science plans and big science projects. Accelerate the introduction of internationally renowned scholars to participate in discipline construction and scientific research. Support the hosting of high-level international academic conferences on artificial intelligence. Promote Chinese scholars to hold important positions in relevant international academic organizations and enhance international influence. Support Chinese scholars to actively participate in the formulation of international rules related to artificial intelligence, and propose "China Initiatives" and "China Standards" at an appropriate time.
+
+**Special Column 1: Frontier Innovation**
+
+1.  **Strengthen artificial intelligence basic theoretical research.** Make important progress in areas such as autonomous learning, intuitive cognition, and comprehensive reasoning. Break through the difficult problems of artificial intelligence methods such as logical deduction, knowledge-driven approaches, and learning from experience. Establish new artificial intelligence theoretical models and methods with strong explainability, flexible data dependency, and strong generalization and transfer capabilities. Form capabilities from data to knowledge and from knowledge to decision-making.
+
+Strengthen research on core key technologies in artificial intelligence. Focus on breakthroughs in core technologies such as knowledge computing, cross-media analysis and reasoning, swarm intelligence, hybrid augmented intelligence, and autonomous unmanned systems. Promote the synergy between specialized AI chips, software, and hardware, and develop collaborative AI service capabilities between terminals and the cloud.
+
+3.  
+Promote the construction of an AI technology system. Building on breakthroughs in core technologies such as brain-like intelligence, autonomous intelligence, hybrid intelligence, and swarm intelligence, prioritize enhancing cross-media reasoning capabilities, swarm intelligence analysis capabilities, hybrid intelligence enhancement capabilities, autonomous system execution capabilities, and human-computer interaction capabilities. Foster the development of a stable and mature AI technology system centered on algorithms and based on data and hardware.
+
+4.  
+Enhance collaborative innovation and strategic research in AI. Promote collaborative innovation in areas such as AI foundational theories, multi-dimensional security, knowledge services, internet finance, disaster reduction and prevention, refined social management, health security and disease prevention, and scientific poverty alleviation. Establish several high-level AI technology think tanks to support major scientific and technological strategy and policy research, providing theoretical support and strategic guidance for socio-economic development and addressing public concerns.
+
+(II) Improve the Talent Development System in the AI Field
+
+7. Optimize Disciplinary Structure. Strengthen the integration of AI with computer science, control science, quantum science, neuroscience, cognitive science, mathematics, psychology, economics, law, sociology, and other related disciplines. Support universities in establishing AI disciplines within computer science and technology, advance the development of AI as a primary discipline, and improve related areas such as AI foundational theories, computer vision and pattern recognition, data analysis and machine learning, natural language processing, knowledge engineering, and intelligent systems. Support universities in increasing investment in AI-related disciplines under the "Double First-Class" initiative to foster the development of interdisciplinary fields.
+
+8. Strengthen Program Development. Accelerate the implementation of the "Excellent Engineer Education and Training Program" (Version 2.0) and promote the development of top-tier programs, undergraduate education, and talent. Given the universal, transferable, and penetrative nature of AI theory and technology, actively integrate student interests and societal needs to advance research and practice in "Emerging Engineering Education." Emphasize the cross-disciplinary integration of AI with computer science, control science, mathematics, statistics, physics, biology, psychology, sociology, law, and other fields. Explore the "AI + X" talent cultivation model. Encourage adjustments and integration of programs such as intelligent science and technology, data science, and big data technology within computer science disciplines, aligning the establishment of AI-related programs with national and regional industrial needs.
+
+9. Enhance Textbook Development. Accelerate the transformation of AI scientific and technological achievements and resources into educational materials. Promote the development of textbooks and online open courses in key AI areas, particularly core courses such as AI fundamentals, machine learning, neural networks, pattern recognition, computer vision, knowledge engineering, and natural language processing. Support the creation of a number of internationally top-tier undergraduate and graduate textbooks and national-level high-quality online open courses. Incorporate AI into university computer science foundational education.
+
+10. Intensify Talent Cultivation. Improve multi-stakeholder collaborative education mechanisms in the AI field. Deepen industry-university cooperation in education, promote the implementation of collaborative education projects in AI, and use the latest industrial and technological advancements to drive educational reform. Support the establishment of industry-university-research alliances for "Emerging Engineering Education" in AI, and build regional shared practical platforms for talent cultivation that integrate education, training, and research. Actively create platforms for teacher internships, industry-university-research cooperation, and engineering skills training in AI. Promote two-way exchange mechanisms between university faculty and industry professionals. Encourage qualified universities to establish AI schools, research institutes, or interdisciplinary research centers to innovate models that combine science and education with industry-education integration, fostering multi-channel cultivation of innovative and entrepreneurial talent in AI. Guide universities to steadily increase enrollment in related disciplines and programs through incremental support and structural adjustments, rationally determining the hierarchy and structure to enhance AI talent cultivation.
+
+11. Promote Popular Science Education. Encourage and support universities to open relevant teaching and research resources to the public, establishing AI popular science service platforms for youth and the general public, and actively participate in science outreach. Support university faculty in engaging in AI popular education and related research in primary and secondary schools. Include AI-related knowledge and skills courses in pre-service teacher training and professional development programs to cultivate teachers' ability to implement AI education. Offer AI courses in non-degree continuing education and training programs at universities.
+
+12. Support Innovation and Entrepreneurship. Encourage national university science parks, innovation and entrepreneurship bases, and others to carry out AI-related innovation and entrepreneurship projects. Designate a number of university innovation and entrepreneurship demonstration parks to support students and faculty in AI-related innovation and entrepreneurship activities. Include AI categories in China's "Internet+" University Student Innovation and Entrepreneurship Competition, and actively promote multi-level and multi-type AI technology competitions such as the National Youth Science and Technology Innovation Contest and the "Challenge Cup" National College Students' Extracurricular Academic Science and Technology Works Competition.
+
+13. Strengthen International Exchanges and Cooperation. Support AI talent cultivation for international students in China through the "Silk Road" Chinese Government Scholarship, training industry leaders and skilled professionals for Belt and Road countries. Encourage and support domestic students to study in countries with strengths in AI, increasing support for AI-related study abroad through various means and channels to leverage international high-quality educational resources. Rely on the "UNESCO China Entrepreneurship Education Alliance" to enhance and promote international exchanges and cooperation in AI innovation and entrepreneurship.
+
+Special Column 2: Talent Cultivation
+
+1. Accelerate Disciplinary Development in AI. Support universities in establishing AI disciplines within computer science and technology, thoroughly deliberating and defining the connotation of AI as a discipline, improving the AI disciplinary system, and promoting the development of AI as a primary discipline.
+
+2. Strengthen Program Development in AI. Advance "Emerging Engineering Education" to form a new "AI + X" composite program cultivation model. By 2020, establish 100 "AI + X" composite characteristic programs. Promote the development of textbooks and online open courses in key areas; by 2020, compile 50 internationally top-tier undergraduate and graduate textbooks and develop 50 national-level high-quality online open courses in AI. Incorporate AI content into vocational college programs related to big data and information management to cultivate technical and skilled talent in AI application fields.
+
+3. Enhance Talent Cultivation in AI. Strengthen the integration of talent cultivation and innovation research bases, improve multi-stakeholder collaborative education mechanisms in AI, and cultivate multi-level AI talent through various forms. By 2020, establish 50 AI schools, research institutes, or interdisciplinary research centers, and guide universities to increase AI talent cultivation through incremental support and structural adjustments.
+
+4. Build a Multi-level AI Education System. Introduce AI popular education at the primary and secondary school levels. Continuously optimize and improve disciplinary and program development to construct a higher education system integrating AI professional education, vocational education, and university foundational education. Encourage and support universities to open relevant teaching and research resources to the public, establishing AI popular science service platforms for youth and the general public, and actively participate in science outreach.
+
+(III) Promote the Transformation and Demonstration Application of AI Scientific and Technological Achievements in Universities
+
+14. Strengthen Application in Key Areas. Implement the "AI +" initiative. Support universities in technology transfer and achievement transformation in fields such as smart education, smart manufacturing, smart healthcare, smart cities, smart agriculture, smart finance, smart justice, and national defense security, and strengthen application demonstrations. Enhance cooperation with relevant industry departments to foster new industries and formats in education, culture, healthcare, transportation, manufacturing, agriculture, forestry, finance, security, defense, and other fields. Cultivate a group of AI technology-leading enterprises and promote the formation of several industrial clusters and demonstration zones.
+
+15. Advance the Development of Smart Education. Drive the transformation of school education and teaching, evolving from digital campuses to smart campuses, creating technology-enabled teaching environments, and exploring new teaching models based on AI. Reconstruct teaching processes, use AI for teaching process monitoring, learning analysis, and academic level diagnosis, and establish multi-dimensional comprehensive intelligent evaluations based on big data to accurately assess teaching and learning performance, enabling personalized education. Promote changes in school governance, supporting schools in using AI technology to transform organizational structures and management systems, optimizing operational mechanisms and service models, achieving refined campus management and personalized services, and comprehensively improving school governance. Promote lifelong online learning, encouraging the development of learner-centered intelligent learning platforms that provide rich personalized learning resources and innovate service delivery models to achieve customized lifelong education.
+
+16. Promote Deep Military-Civilian Integration. Focus on information technology, with AI as a breakthrough, targeting efficient information acquisition, semantic understanding, and information application. Using unmanned systems and human-machine hybrid systems as models, build military-civilian shared AI technology innovation bases, strengthen the cultivation of military-civilian integrated AI innovation research projects, and drive military advantages and information superiority through university technological innovation, achieving "upgrade for military use, downgrade for civilian use."
+
+17. Encourage Innovation Alliance Development and Resource Open Sharing. Encourage and support universities to collaborate with enterprises, industry organizations, and research institutions to build AI industry technology innovation alliances, actively participating in the implementation of major next-generation AI scientific and technological projects and the construction of national AI standard systems and international standard setting. Support universities in actively participating in the construction of AI open-source platforms, encouraging universities to recognize technologies incorporated into the platform as scientific research achievements and consider them in evaluation and rewards.
+
+18. Support Local and Regional Innovation Development. Based on regional economic and industrial characteristics and aligned with major national deployments, strengthen cooperation with regions and localities such as Beijing-Tianjin-Hebei, Xiong'an New Area, the Yangtze River Delta, the Guangdong-Hong Kong-Macao Greater Bay Area, Northeast China, and Central and Western China. Support universities, governments, and enterprises in jointly building collaborative innovation centers, joint laboratories, and other innovation platforms and new R&D institutions in the AI field. Promote the alignment of foundational and original AI research in universities with local and enterprise needs, accelerating local transformation, upgrading, and regional innovation development.
+
+Special Column 3: Transformation and Demonstration Application of Scientific and Technological Achievements
+
+1. Promote Smart Education Application Demonstrations. Accelerate the deep integration and innovative development of AI and education, research development strategies and standards for smart education, and explore paths and methods for integrating AI technology with educational environments, teaching models, content, methods, management, evaluation, and research. Develop intelligent education cloud platforms, encourage new educational formats supported by AI, and comprehensively advance education modernization.
+
+2. Promote Smart Manufacturing Application Demonstrations. Achieve full lifecycle intelligence in the smart manufacturing industry chain, integrating design, production, testing, support, management, and services. Develop new intelligent sensor devices, overcome challenges in intelligent control equipment, deploy smart manufacturing clouds, and build a new ecosystem featuring ubiquitous connectivity, data-driven processes, knowledge guidance, shared services, autonomous intelligence, and mass innovation. Promote the deep integration of next-generation AI and smart manufacturing.
+
+3. Promote Smart Healthcare Application Demonstrations. Address major health issues such as population aging, infectious and chronic diseases, birth defects, and fertility disorders. Break through bottlenecks in the analysis and understanding of multi-modal streaming health big data. Promote the efficient integration of technologies such as comprehensive reasoning under incomplete information, human-computer interaction-assisted diagnosis, and medical knowledge graph construction in healthcare. Facilitate the deep integration of medical big data with big data from other fields. Build intelligent medical AI auxiliary systems and innovative service cloud platforms with functions such as recognition, discrimination, screening, and reasoning to enhance smart healthcare supply capacity.
+
+Promote Smart City Application Demonstrations. Based on ubiquitous convergence and intelligent sensing technologies, achieve comprehensive analysis and deep understanding of urban ecological elements and complex urban systems; utilizing core technologies such as comprehensive reasoning, knowledge computing engines, and collective intelligence, construct typical intelligent application systems for cities, deeply advance high-level decision-making in urban operations management, promote the construction of urban big data platforms, establish a support system for refined management, knowledge discovery, and assisted decision-making in smart cities, and develop domain-specific intelligent products and systems in areas such as environment, governance, and public services.
+
+5.
+
+Promote Smart Agriculture Application Demonstrations. Drive the deep integration of information technologies such as the internet, big data, cloud computing, and the Internet of Things with modern biotechnology, nutrition and health, and intelligent equipment technology. Breakthrough key technologies including agricultural plant and animal information perception, analysis and intelligent recognition, cross-media agricultural data mining and analysis, human-machine hybrid intelligent interaction and virtual reality in agriculture, collective intelligent decision-making in agriculture, and human-machine-object collaboration in agriculture. Collaboratively construct future agricultural models and demonstration bases that are green, efficient, intelligent, and multifunctional.
+
+6.
+
+Promote Smart Finance Application Demonstrations. Address new problems and needs arising from the implementation of the "Internet+" strategy in the financial sector. Based on holographic financial big data, construct macro-financial decision-making models suited to China’s national conditions, and break through the constraints between the intrinsic development laws of finance and the external social environment. Utilizing financial data from banks, securities, networks, and other sources, employ core intelligent technologies such as deep learning for mining and analysis, and build complex financial instruction models based on industries and domains. Leveraging the spatial, temporal, and individual behavioral attributes of financial big data, use models such as knowledge graphs and inference computing to accurately achieve financial risk prevention and control, credit assessment, and situational evolution.
+
+7.
+
+Promote Smart Justice Application Demonstrations. Promote the integration of law schools and related disciplines with artificial intelligence disciplines. Fully apply technologies such as text analysis, speech recognition, machine learning, and knowledge graphs. Based on large-scale historical judicial data, internet data, and other related data, develop smart procuratorial and legal service systems. Research and develop intelligent auxiliary tools including automatic case clue discovery, intelligent conviction and sentencing assistance, automatic document generation, automatic legal Q&A, and intelligent court trials. Conduct application demonstrations in courts and procuratorates to enhance the efficiency of case handlers and improve the standardization and accuracy of case adjudication.
+
+III. Policy Measures
+
+(1) Strengthen Organizational Implementation. The Ministry of Education will establish an Artificial Intelligence Technology Innovation Strategy Expert Committee to guide and coordinate the implementation of the plan; relevant departments will actively study specific implementation measures to ensure all tasks are carried out effectively; education authorities in provinces (autonomous regions, municipalities) and higher education institutions should aim to serve major national needs, integrate various resources, intensify exploration efforts, utilize incremental resources effectively, and revitalize existing resources to support interdisciplinary development, talent cultivation, technological innovation, and the transformation and application of achievements in the field of artificial intelligence.
+
+(2) Optimize Resource Allocation. Appropriately increase postgraduate enrollment quotas to meet major national strategic needs; explore the establishment of a model that leverages national major scientific and technological tasks, national-level innovation platforms, and ministerial-level innovation platforms undertaken by universities in line with national major strategic deployments to strengthen high-level talent cultivation, comprehensively improve the quality of postgraduate education, especially for doctoral students, and provide the necessary talent for the innovation and development of artificial intelligence; increase the inclination toward outstanding talents in the field of artificial intelligence in major national talent projects such as the "Changjiang Scholars Program."
+
+(3) Increase Guidance and Cultivation. Utilize the Ministry of Education’s scientific funding to focus on top-level design and cultivation of major innovation platforms, generation of major scientific and technological projects, and research on major scientific and technological strategies and policies. Accelerate the construction of a number of Ministry of Education innovation platforms, enhance the cultivation of national major scientific and technological projects and national-level scientific and technological innovation platforms, guide universities to conduct interdisciplinary exploratory research, and achieve major breakthroughs in forward-looking basic research and pioneering original achievements.
+
+(4) Strengthen Promotion and Publicity. The Ministry of Education will enhance the promotion and publicity of major scientific and technological achievements of universities through channels such as the China University Scientific and Technological Achievements Fair. Education authorities of provinces (autonomous regions, municipalities) and universities directly under the Ministry of Education should promptly summarize and report on talent cultivation, service to national major projects, new breakthroughs in theory and technology, and the transformation of major scientific and technological achievements in their institutions or regions.
+
+Click the top right corner
+
+Select to open in browser
+
+Release Date: 2018-04-10　Source: Ministry of Education
+
+Download
+
+Save
+
+Responsible Editor: Yao Zhen
+
+Website Statement
+
+Website Map
+
+Contact Us
+
+Copyright: Ministry of Education of the People's Republic of China　Chinese Domain Name: Ministry of Education. Government
+
+Beijing ICP Registration No. 10028400-1
+
+Beijing Public Security Registration No. 11010202007625
+
+Website Identification Code: bm05000001

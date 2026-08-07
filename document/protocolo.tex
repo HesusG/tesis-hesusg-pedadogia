@@ -1,0 +1,529 @@
+%% protocolo.tex - Protocolo de investigacion, documento independiente.
+%% Compila solo: no depende de upaep-thesis.cls ni de preamble.tex.
+%%   tectonic -X compile protocolo.tex
+%%   (o pdflatex protocolo && bibtex protocolo && pdflatex x2)
+
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{mathptmx}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+\onehalfspacing
+\setlength{\parskip}{0.4em}
+
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.6em}{}
+
+% ── Terminos chinos ──
+% Pinyin con macros de acento para que compile igual en pdfLaTeX y XeLaTeX.
+\newcommand{\dezhi}{\textit{d\'ezh\`{\i}}}
+\newcommand{\fa}{\textit{f\v{a}}}
+\newcommand{\ejedf}{\dezhi\,$\leftrightarrow$\,\fa}
+
+\usepackage{iftex}
+\ifXeTeX
+  \usepackage{xeCJK}
+  \IfFontExistsTF{Droid Sans Fallback}
+    {\setCJKmainfont{Droid Sans Fallback}\newcommand{\zhg}[1]{\,(#1)}}
+    {\newcommand{\zhg}[1]{}}
+\else
+  \newcommand{\zhg}[1]{}
+\fi
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\large\scshape Universidad Popular Autónoma del Estado de Puebla}\\[0.3cm]
+{\normalsize Maestría en Pedagogía}\\[2.5cm]
+
+{\large\bfseries PROTOCOLO DE INVESTIGACIÓN}\\[1.5cm]
+
+{\LARGE\bfseries Medir el papel formador\\del Estado}\\[0.8cm]
+{\large Seis ejes confucianos aplicados a políticas públicas\\de educación en inteligencia artificial de siete países}\\[3cm]
+
+{\large Hesus García Cobos}\\[0.5cm]
+{\normalsize Director: Dr. Herminio Sánchez de la Barquera y Arroyo}\\[3cm]
+
+{\normalsize Puebla, Puebla \quad$\cdot$\quad 2026}
+
+\vfill
+{\footnotesize
+Libro de códigos, configuración y predicciones registrados en control de versiones\\
+antes de ejecutar la medición. Código y datos abiertos.}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+
+\section{Resumen del proyecto}
+
+Cuando dos gobiernos escriben «formación docente en inteligencia artificial», pueden estar diciendo cosas incompatibles. Uno puede entender la educación en IA como cultivo moral de la población dirigido por el Estado; otro, como una conducta que se regula mediante reglas y límites. Esta investigación mide esa diferencia en las políticas nacionales de siete países, uno por región política del mundo.
+
+La medición se ejecuta por dos vías independientes entre sí: una proyección del texto sobre un eje construido con representaciones vectoriales de significado, y un panel de siete modelos de lenguaje de origen cultural mixto que aplican un libro de códigos escrito en prosa. El instrumento del estudio no es ninguna de las dos: es el contraste entre ambas.
+
+\vspace{0.5em}
+\noindent\textbf{Palabras clave:} educación comparada, política educativa, inteligencia artificial, medición de texto, validez de instrumentos, confucianismo.
+
+
+\section{Introducción}
+
+Los gobiernos del mundo están escribiendo sus políticas de inteligencia artificial para la escuela, y para escribirlas copian de otros países. Es la práctica normal en educación comparada y no hay nada malo en ella. El problema aparece antes: los documentos de los que se copia se parecen tanto entre sí que leerlos uno al lado del otro no revela en qué se diferencian. Todos hablan de formar talento, capacitar docentes y usar la tecnología con ética.
+
+Debajo de ese vocabulario compartido hay una diferencia que sí importa, y es de reparto de papeles. Un documento puede presentar al Estado fijando el plan que las escuelas aplican y los docentes ejecutan, con la población alcanzando el nivel que el propio Estado definió. Otro puede presentar al Estado financiando investigación y poniendo reglas de privacidad, mientras universidades y empresas deciden qué hacer dentro de ese marco. Los dos dicen que hay que formar gente para la inteligencia artificial. No dicen lo mismo sobre quién forma a quién.
+
+Esta investigación construye una forma de medir esa diferencia, la aplica a las políticas nacionales de siete países, uno por región política del mundo, y comprueba si la medición aguanta. Para nombrar los dos polos usa un vocabulario de la tradición confuciana: gobernar por la virtud, \dezhi\zhg{德治}, frente a gobernar por la norma, \fa\zhg{法}. La elección es por precisión, no por afinidad cultural: esa tradición distingue las dos cosas con dos palabras y las discute desde hace dos milenios. El eje se aplica por igual a los siete países, no solo a China.
+
+La medición se ejecuta dos veces, con procedimientos que no comparten supuestos. Esa duplicación no es redundancia. Ninguna de las dos vías produce por separado un resultado interpretable: la primera entrega números sin manera de confirmar que corresponden al constructo, la segunda entrega juicios sin manera de detectar si el panel comparte un sesgo. Solo el contraste entre ambas permite decidir si la medición es creíble, y cuando las dos discrepan, el desacuerdo señala dónde está el problema. Es la única forma disponible de someter a prueba un instrumento cuando no existe un patrón de oro contra el cual calibrarlo.
+
+
+\section{Planteamiento del problema}
+
+\subsection{Contexto}
+
+Para 2023, al menos 67 países habían formulado o estaban formulando estrategias nacionales de inteligencia artificial~\citep{unesco2023genai}. En la mayoría, la educación aparece como componente de desarrollo de talento para la competitividad económica, no como objeto de política educativa en sí mismo. Formar ingenieros de IA no es lo mismo que preparar a todos los estudiantes para vivir en un mundo transformado por ella.
+
+Esa proliferación produjo un problema de lectura. Los documentos se parecen entre sí. Comparten vocabulario, estructura y hasta secuencia de secciones. \citet{steinerkhamsi2014cross} distingue tres explicaciones posibles para ese parecido: préstamo deliberado de un país a otro, influencia común de un marco internacional, o convergencia funcional entre países que enfrentan el mismo problema sin contacto entre sí. Decidir cuál opera requiere más que leer los documentos uno al lado del otro.
+
+\subsection{La brecha}
+
+La educación comparada ha incorporado herramientas de similitud semántica para analizar corpus multilingües, tratando los textos de política como datos~\citep{grimmer2013text}. Estas herramientas miden cuánto se parecen dos textos en un espacio de significado y permiten comparar sin traducir.
+
+El supuesto implícito es que la similitud detectada por esas herramientas indica convergencia de política. Ese supuesto no ha sido puesto a prueba de manera sistemática. Y hay razones para dudarlo: \citet{bareis2022talking} observaron cualitativamente que las narrativas de las estrategias nacionales de IA son notablemente similares mientras que los imaginarios que expresan son notablemente distintos.
+
+Falta entonces un estudio que mida un constructo teórico definido por adelantado, lo mida por dos caminos independientes, y reporte si coinciden.
+
+\subsection{El objeto de medición}
+
+Esta investigación mide \textbf{a quién le corresponde formar a las personas} según cada documento de política.
+
+La tradición confuciana nombra esa oposición desde hace dos milenios. Gobernar por la virtud, \dezhi\zhg{德治}, sostiene que la autoridad legítima educa con el ejemplo y forma el carácter de los gobernados. Gobernar por la norma, \fa\zhg{法}, sostiene que la autoridad se ejerce mediante reglas públicas iguales para todos, con premio y castigo previsibles~\citep{pines2023legalism}.
+
+La oposición no es exclusiva de China. Es la misma tensión que atraviesa la teoría política occidental entre el Estado formador y el Estado limitado. Lo que la tradición china aporta es un vocabulario preciso para nombrarla y un cuerpo de literatura de dos milenios que la discute.
+
+
+\section{Preguntas de investigación}
+
+\begin{quote}
+\itshape
+¿Las políticas de educación en inteligencia artificial de siete países expresan concepciones distintas sobre quién forma a las personas, y esa diferencia se puede medir de manera reproducible?
+\end{quote}
+
+De la pregunta central se desprenden tres, una por cada cosa que hay que resolver para responderla.
+
+\begin{description}[leftmargin=1.8cm,style=nextline]
+  \item[P1.] \textbf{¿Se puede medir?} ¿Es posible asignar a un pasaje de política pública un valor que exprese cuánto encuadra la educación en IA como cultivo moral dirigido por el Estado, frente a cuánto la encuadra como conducta regulada por normas?
+
+  \item[P2.] \textbf{¿Difieren los países?} ¿Se separan los siete países en ese eje, y la separación sobrevive cuando se controla por la región del documento, por su tema y por la estructura del Estado?
+
+  \item[P3.] \textbf{¿Coinciden los métodos?} ¿Dos procedimientos de medición independientes, uno por proyección vectorial y otro por juicio de lectura, producen el mismo ordenamiento de países? Si no coinciden, ¿qué revela el desacuerdo? Y dentro del panel de lectores, ¿el origen cultural de cada uno sesga su propia calificación?
+\end{description}
+
+P1 es una pregunta de instrumento, P2 de comparación y P3 de validez. Las tres se responden con el mismo corpus.
+
+
+\section{Objetivos}
+
+\subsection{Objetivo general}
+
+Medir en las políticas de educación en inteligencia artificial de siete países el grado en que el Estado se presenta como formador moral de la población frente a regulador de conductas, y evaluar la confiabilidad de esa medición mediante dos procedimientos independientes.
+
+\subsection{Objetivos específicos}
+
+\begin{enumerate}[label=\textbf{OE\arabic*.},leftmargin=1.6cm]
+  \item Construir un corpus de documentos oficiales bajo criterios de inclusión explícitos, verificables y aplicables por un tercero.
+  \item Pre-registrar el libro de códigos del eje \ejedf y las predicciones del estudio antes de ejecutar cualquier medición.
+  \item Medir el eje por proyección bipolar sobre representaciones vectoriales del texto.
+  \item Medir el mismo eje mediante un panel de siete modelos de lenguaje de origen cultural mixto.
+  \item Estimar el acuerdo entre jueces y la magnitud del sesgo atribuible al origen del juez.
+  \item Someter el resultado a tres pruebas de confusión: región, tema del documento y estructura de Estado-partido.
+  \item Contrastar ambas vías y documentar sus coincidencias y desacuerdos.
+\end{enumerate}
+
+
+\section{Hipótesis}
+
+Las cuatro predicciones se registran en el repositorio antes de correr la medición. El registro es la marca de tiempo del \textit{commit} que fija el libro de códigos y la configuración, verificable por cualquier tercero.
+
+\begin{description}[leftmargin=1.4cm,style=nextline]
+  \item[H1.] China puntúa más alto que los seis países de tradición liberal en el eje \ejedf.
+  \item[H2.] La diferencia no se explica por pertenecer a Asia oriental: los vecinos de tradición confuciana sin Estado-partido no reproducen el efecto.
+  \item[H3.] Los jueces de origen chino y los de origen occidental producen puntuaciones equivalentes.
+  \item[H4.] Los dos procedimientos de medición convergen en el mismo ordenamiento de países.
+\end{description}
+
+H4 se plantea como control de rutina. Su eventual rechazo sería el resultado más informativo del estudio, porque delimitaría el alcance de una familia de herramientas de uso creciente en educación comparada.
+
+
+\section{Método}
+
+\subsection{Enfoque}
+
+Estudio comparativo de medición sobre texto de política pública. La unidad de análisis es el pasaje, no el documento ni el país: cada pasaje recibe un valor en un eje declarado por adelantado, y los valores se agregan por país.
+
+\subsection{Corpus}
+
+Un documento entra al corpus si cumple seis condiciones simultáneas.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Criterios de inclusión}
+\begin{tabular}{@{}lp{10.5cm}@{}}
+\toprule
+\textbf{Criterio} & \textbf{Condición} \\
+\midrule
+C1. Autoría estatal   & Adoptado por un órgano con autoridad pública, identificable por nombre \\
+C2. Alcance nacional  & Aplica al conjunto del territorio, salvo documentos subnacionales declarados como tales \\
+C3. Sustancia         & Trata la IA de manera central, no como mención incidental \\
+C4. Vigencia          & Rige a la fecha de corte del estudio \\
+C5. Texto verbatim    & Se dispone del texto oficial completo, no de una nota de prensa \\
+C6. Par documental    & El país aporta una estrategia de IA, un documento educativo, o ambos \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los criterios se redactan antes de revisar la vigencia y se aplican de forma retroactiva al corpus preexistente. Si la aplicación retroactiva expulsa documentos que ya estaban dentro, eso constituye evidencia de que el criterio hizo trabajo real.
+
+Cada documento se divide en fragmentos de 500 caracteres con 50 de traslape y se almacena en una base vectorial con sus metadatos: país, región, año, género discursivo, órgano adoptante e identificador.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Corpus a la fecha de corte}
+\begin{tabular}{@{}llcr@{}}
+\toprule
+\textbf{País} & \textbf{Documento} & \textbf{Año} & \textbf{Frag.} \\
+\midrule
+China          & 15.\textsuperscript{o} Plan Quinquenal\zhg{十五五}, y ocho documentos más & 2026 & 271 \\
+Canadá         & \textit{AI for All}\,$^{\dagger}$                        & 2026 & 210 \\
+Estados Unidos & \textit{America's AI Action Plan}\,$^{\dagger}$          & 2025 & 156 \\
+Colombia       & CONPES 4144\,$^{\dagger}$                                & 2025 & 764 \\
+Alemania       & \textit{KI-Strategie der Bundesregierung}                & 2020 & 230 \\
+Sudáfrica      & Informe de la Comisión Presidencial 4IR                  & 2020 & 1\,303 \\
+Australia      & \textit{AI Action Plan}                                  & 2021 & 161 \\
+\midrule
+México         & Ningún documento admisible (§\,\ref{subsec:mexico})      & ---  & 0 \\
+\bottomrule
+\end{tabular}
+\vspace{0.3em}
+{\footnotesize\par\noindent$^{\dagger}$ Documento sustituido durante el estudio: los de Estados Unidos y Colombia por pérdida de vigencia (C4), el de Canadá por no ser el texto oficial de la estrategia (C5).}
+\end{table}
+
+El Plan Quinquenal chino se incorpora como documento declarado para el análisis en profundidad de ese caso, no como parte del par documental de C6: ningún otro país del corpus dispone de un instrumento equivalente de planeación vinculante a cinco años.
+
+\subsection{El caso de México}
+\label{subsec:mexico}
+
+México no forma parte del corpus. La razón no es de diseño muestral sino documental: ningún documento mexicano satisface los criterios de inclusión. Se revisaron cinco candidatos.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Candidatos mexicanos evaluados}
+\begin{tabular}{@{}p{5.2cm}p{3.4cm}p{5.2cm}@{}}
+\toprule
+\textbf{Documento} & \textbf{Órgano} & \textbf{Criterio que incumple} \\
+\midrule
+Programa Sectorial de Educación 2025--2030 & SEP, DOF sep.\ 2025 & C3: cero menciones de IA en 222 páginas \\
+Plan Nacional de Desarrollo 2025--2030 & Presidencia, DOF abr.\ 2025 & C3: una mención incidental en 79 páginas \\
+Diez acciones sobre IA generativa en educación superior & SEP, abr.\ 2026 & C1 y C5: recomendaciones presentadas en un acto público, sin texto adoptado \\
+Agenda Nacional de IA 2024--2030 & Alianza civil y Senado & C1: propuesta no adoptada por órgano de gobierno \\
+Hacia una Estrategia de IA en México & C~Minds, 2018 & C1: autoría de sociedad civil \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+La única mención de inteligencia artificial en el Plan Nacional de Desarrollo la presenta como herramienta de gestión administrativa («optimizar los servicios y mejorar el diseño de políticas públicas mediante el uso de herramientas analíticas como la inteligencia artificial»), no como objeto de política. C3 exige presencia en el título, sección propia o cincuenta menciones; una mención incidental es precisamente lo que el criterio excluye.
+
+La ausencia es interpretable y conviene declararla como resultado y no como hueco. El Plan Nacional de Desarrollo mexicano y el Plan Quinquenal chino pertenecen al mismo género discursivo: el instrumento con que un Estado fija qué va a construir en un horizonte de cinco años. Cubren periodos casi idénticos. El chino menciona la inteligencia artificial cincuenta y dos veces y la educación cien; el mexicano, una y ninguna en relación con la primera. La comparación no requiere medición: la diferencia está en el conteo.
+
+Por consistencia, tampoco se admite el reporte de resultados de la encuesta nacional sobre uso de IA generativa publicado por la SEP en 2026. Es un diagnóstico, no un curso de acción, y su análogo chino, el reporte de uso docente de generativa del mismo año, quedó fuera por la misma razón al aplicar C3 de forma retroactiva.
+
+\subsection{Muestreo}
+
+Se muestrean diez pasajes por país. El muestreo recupera los fragmentos semánticamente más cercanos a una consulta sobre gobernanza, de modo que la comparación se hace sobre material temáticamente equiparable. Fijar el número por país impide que un documento largo domine la comparación frente a uno breve.
+
+\subsection{Los seis ejes}
+
+El marco no se reduce a una oposición. La tradición confuciana ofrece un vocabulario de virtudes con el que se describe cada documento en seis dimensiones, todas aplicadas por igual a los siete países.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Los seis ejes y lo que oponen}
+\begin{tabular}{@{}llp{7.2cm}@{}}
+\toprule
+\textbf{Eje} & \textbf{Nombre} & \textbf{Polo positivo frente a polo negativo} \\
+\midrule
+\textit{rén}\zhg{仁}          & Benevolencia    & La persona y su dignidad, frente a la eficiencia instrumental \\
+\textit{l\v{i}}\zhg{礼}       & Ritual          & La norma compartida y el estándar, frente a su ausencia \\
+\textit{yì}\zhg{义}           & Rectitud        & Lo moralmente justo, frente a el provecho \\
+\textit{xi\=ush\=en}\zhg{修身} & Cultivo de sí   & La formación del carácter, frente a la credencial instrumental \\
+\ejedf\zhg{德治 / 法}            & Virtud o norma  & El Estado que forma personas, frente a el Estado que pone reglas exigibles \\
+\textit{hé}\zhg{和}           & Armonía         & El bien colectivo, frente a la autonomía individual \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los valores reportados son medianas estandarizadas contra la distribución del corpus completo: indican cuántas desviaciones típicas se aparta cada país del documento de política promedio.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Perfil de los siete países en los seis ejes (Vía A)}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+\textbf{Eje} & \textbf{China} & \textbf{Canadá} & \textbf{EUA} & \textbf{Colombia} & \textbf{Alemania} & \textbf{Sudáfrica} & \textbf{Australia} \\
+\midrule
+Benevolencia  & \textbf{0.97} & 0.34 & 0.09 & $-$0.40 & 0.06 & $-$0.07 & 0.11 \\
+Ritual        & 0.16 & \textbf{0.39} & $-$0.84 & $-$0.44 & $-$0.23 & 0.30 & 0.04 \\
+Rectitud      & \textbf{1.07} & 0.17 & 0.48 & $-$0.19 & 0.11 & $-$0.13 & $-$0.13 \\
+Cultivo de sí & \textbf{0.51} & 0.30 & $-$0.21 & 0.37 & $-$0.05 & $-$0.16 & $-$0.11 \\
+Virtud o norma & \textbf{0.85} & 0.78 & $-$0.07 & $-$0.20 & 0.08 & 0.03 & 0.45 \\
+Armonía       & \textbf{0.47} & $-$0.28 & $-$0.68 & $-$0.39 & $-$0.26 & \textbf{0.47} & 0.05 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+China encabeza cinco de los seis ejes y Sudáfrica la empata en armonía; el único que China no encabeza es el ritual, donde Canadá queda por delante. Que un mismo país domine casi todo el perfil obliga a preguntar si los seis ejes miden seis constructos distintos o uno solo con seis nombres. Esa es la razón de que uno de ellos, y solo uno, se someta a doble medición.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1]
+  % Anillos de referencia: -0.5, 0, 0.5, 1.0 desviaciones típicas.
+  % Radio: r(v) = (v+1.0)/2.2 * 3cm, con v acotado a [-1.0, 1.2].
+  \foreach \r in {0.682, 2.045, 2.727}
+    \draw[gray!35, dashed, line width=0.3pt] (0,0) circle (\r);
+  \draw[black!70, line width=0.6pt] (0,0) circle (1.364);
+  \foreach \a in {90, 30, -30, -90, -150, 150}
+    \draw[gray!35, line width=0.3pt] (0,0) -- (\a:3);
+  % Etiquetas de los ejes
+  \node[font=\scriptsize] at (90:3.45)   {Benevolencia};
+  \node[font=\scriptsize] at (30:3.5)    {Ritual};
+  \node[font=\scriptsize] at (-30:3.5)   {Rectitud};
+  \node[font=\scriptsize] at (-90:3.4)   {Cultivo de sí};
+  \node[font=\scriptsize] at (-150:3.6)  {Virtud o norma};
+  \node[font=\scriptsize] at (150:3.45)  {Armonía};
+  % China: perfil sólido
+  \draw[blue!70!black, line width=1.1pt, fill=blue!70!black, fill opacity=0.07]
+    (90:2.686) -- (30:1.582) -- (-30:2.823) -- (-90:2.059) -- (-150:2.523) -- (150:2.005) -- cycle;
+  % Canadá: perfil punteado. Van superpuestos a propósito: el argumento es que
+  % casi coinciden, y con dos trazos sólidos uno taparia al otro.
+  \draw[black!75, line width=0.9pt, dashed]
+    (90:1.827) -- (30:1.895) -- (-30:1.595) -- (-90:1.773) -- (-150:2.427) -- (150:0.982) -- cycle;
+  % Leyenda
+  \draw[blue!70!black, line width=1.1pt] (2.4,-3.5) -- (2.9,-3.5);
+  \node[font=\scriptsize, anchor=west] at (2.95,-3.5) {China};
+  \draw[black!75, line width=0.9pt, dashed] (2.4,-3.85) -- (2.9,-3.85);
+  \node[font=\scriptsize, anchor=west] at (2.95,-3.85) {Canadá};
+\end{tikzpicture}
+\caption{Perfil confuciano de China y Canadá en los seis ejes (Vía A). El anillo continuo marca el promedio del corpus; los punteados, media desviación típica por debajo y media y una por encima. Los perfiles casi coinciden en tres de los seis ejes, entre ellos el de virtud o norma.}
+\label{fig:radar}
+\end{figure}
+
+Los cinco primeros ejes se miden únicamente por Vía A y su lectura es exploratoria: describen el perfil de cada país y generan hipótesis, pero ningún segundo procedimiento confirma que midan lo que sus etiquetas anuncian. El sexto, \ejedf, es el que responde la pregunta de investigación y el único sometido a las dos vías.
+
+\subsection{El eje de medición}
+
+El eje \ejedf\ recibe además una escala ordinal de cinco valores, de $-2$ a $+2$, que es la que aplica el panel de jueces de la Vía B.
+
+\begin{itemize}[leftmargin=1.2cm]
+  \item[$+2$] El Estado se presenta como cultivador y director moral de la sociedad: guía, educa, planifica y moviliza hacia metas colectivas que él mismo define. La educación y la tecnología aparecen como instrumentos de formación moral de la población.
+  \item[$+1$] El Estado planifica, dirige y exige alineamiento, pero sin lenguaje de cultivo moral explícito.
+  \item[$\phantom{+}0$] El pasaje no trata la relación entre poder estatal y persona.
+  \item[$-1$] La lógica liberal está presente pero es periférica o no restringe explícitamente al Estado.
+  \item[$-2$] Los derechos individuales operan como límite exigible sobre el propio Estado, con contrapesos institucionales explícitos.
+\end{itemize}
+
+\subsection{Vía A: proyección sobre representaciones vectoriales}
+
+Cada fragmento se convierte en un vector de 384 dimensiones mediante un modelo multilingüe de representación de oraciones~\citep{reimers2019sentencebert}. Para cada eje se redacta un conjunto de frases ancla en cada polo; el eje se define como la diferencia entre los centroides de ambos polos, y la puntuación de un fragmento es su proyección escalar sobre ese eje.
+
+Las proyecciones se estandarizan contra la distribución del corpus completo, de modo que el valor reportado indica cuántas desviaciones típicas se aparta un país del texto de política promedio.
+
+\subsection{Vía B: panel de jueces}
+
+Siete modelos de lenguaje leen los mismos pasajes con el mismo libro de códigos y emiten cada uno una clasificación. Cuatro son de origen chino y tres de origen occidental. La partición permite estimar si el origen cultural del instrumento sesga la medición del constructo cultural.
+
+El panel trata a cada modelo como un evaluador falible dentro de un grupo, del mismo modo que una encuesta de expertos trata a cada experto. El valor no proviene de la infalibilidad de ninguno sino de la agregación de varios.
+
+Cada juez recibe el pasaje, el libro de códigos completo y la instrucción de devolver un valor entero junto con una justificación breve. La temperatura se fija en cero. Las salidas crudas, incluidas las justificaciones, se almacenan en caché y se registran en una bitácora de auditoría.
+
+Los pasajes en idiomas distintos del inglés se traducen antes de entregarse al panel, para que todos los jueces lean en el mismo idioma. Las traducciones se almacenan en caché con clave estable.
+
+
+\section{Plan de análisis}
+
+\subsection{Acuerdo entre jueces}
+
+Se reportan cuatro medidas: acuerdo observado exacto y dentro de un punto, kappa de Fleiss, y alfa de Krippendorff en los niveles nominal, ordinal e intervalar.
+
+El nivel ordinal es el pertinente. Confundir $+2$ con $+1$ es un error menor que confundir $+2$ con $-2$, y solo el alfa ordinal recoge esa asimetría.
+
+Los índices corregidos por azar se deprimen cuando la distribución se concentra en una categoría, aun con acuerdo observado alto. El eje de este estudio produce esa distribución, porque la mayoría de los pasajes de política pública no trata la relación entre poder estatal y persona. Por eso se reportan las cuatro medidas juntas: leer solo el kappa subestima la confiabilidad y leer solo el acuerdo observado la sobreestima.
+
+\subsection{Sesgo de origen}
+
+Para cada pasaje se calcula la media de los jueces occidentales y la de los chinos, y se toma la diferencia. La distribución de esa diferencia se estima por remuestreo con 5{,}000 réplicas y semilla fija.
+
+El remuestreo se hace sobre \textbf{pasajes}, no sobre clasificaciones. Siete jueces que leen el mismo pasaje no son siete observaciones independientes, y tratarlos como tales produciría intervalos artificialmente estrechos.
+
+\subsection{Pruebas de confusión}
+
+Un valor alto en un país podría explicarse por causas ajenas al constructo. Se someten a prueba tres explicaciones alternativas mediante brazos de control declarados.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Brazos de control}
+\begin{tabular}{@{}p{3cm}p{5.2cm}p{5.2cm}@{}}
+\toprule
+\textbf{Explicación} & \textbf{Qué predice} & \textbf{Documentos del brazo} \\
+\midrule
+Región & Los vecinos de tradición confuciana suben & Corea del Sur, Japón, Singapur \\
+Tema & Los documentos educativos no chinos suben & India, UNESCO \\
+Estructura de Estado & Un Estado-partido confuciano no chino sube & Vietnam; Malasia como control \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los brazos de control \textbf{no} se agregan al conjunto principal de siete países. Hacerlo alteraría el diseño registrado. Entran como brazo declarado, y los valores de la comparación principal no se modifican.
+
+\subsection{Criterio de decisión}
+
+Las conclusiones se emiten a partir de contrastes con intervalo de confianza, no de umbrales fijos sobre valores puntuales. Un umbral convierte una cuestión de grado en un sí o un no, y puede producir un veredicto falso a partir de una diferencia que no se distingue de cero.
+
+Un contraste sostiene una afirmación cuando su intervalo excluye el cero. Cuando lo incluye, el resultado se reporta como indistinguible, no como ausencia de efecto.
+
+
+\section{Objeciones anticipadas}
+
+\subsection{El eje trata como opuestos lo que la doctrina china empareja}
+
+La doctrina oficial contemporánea del Partido Comunista de China sostiene que gobernar conforme a la ley\zhg{依法治国} y gobernar por la virtud\zhg{以德治国} son complementarios y se refuerzan mutuamente. El eje bipolar de este estudio los coloca en extremos opuestos.
+
+La objeción es seria y se responde de tres maneras.
+
+Primero, el eje mide encuadre, no doctrina. No pregunta si un Estado cree que ambos principios son compatibles; pregunta cómo se presenta la relación entre poder estatal y persona en un pasaje concreto. Un Estado puede sostener la complementariedad y aun así redactar sus documentos de modo que el ciudadano aparezca como objeto de formación y no como titular de límites exigibles.
+
+Segundo, la complementariedad predice un patrón observable. Si el discurso combinara ambos polos, los documentos jurídicos deberían puntuar cerca de cero mientras los educativos puntúan alto. Esa predicción es contrastable con los datos del estudio.
+
+Tercero, la bipolaridad es una decisión de instrumento, no una tesis sobre China. La proyección bipolar requiere dos anclas contrapuestas; que el instrumento las oponga no implica que el objeto medido las oponga.
+
+\subsection{El acuerdo entre modelos no es validez}
+
+La literatura especializada advierte que el acuerdo alto entre modelos entrenados sobre datos superpuestos no constituye evidencia de que el constructo esté bien medido, y que los modelos tienen limitaciones documentadas para seguir libros de códigos sin ejemplos previos~\citep{halterman2025codebook}.
+
+Este estudio no puede refutar la objeción con su diseño actual. La respuesta es declararla como límite y especificar el procedimiento que la resolvería, descrito en la sección siguiente.
+
+\subsection{El riesgo de esencializar}
+
+Medir el discurso de un Estado en un eje construido desde su propia tradición filosófica corre el riesgo de tratar a ese país como un caso cultural y a los demás como el caso normal.
+
+El diseño responde aplicando el mismo eje a los siete países por igual, incluyendo el brazo de control regional, y reportando si el efecto se extiende o no a los vecinos culturales. Un eje que solo se aplicara a un país describiría al analista, no al objeto.
+
+
+\section{Límites declarados}
+
+\begin{enumerate}[leftmargin=*]
+  \item \textbf{Ausencia de ancla humana.} Ningún codificador humano valida las clasificaciones. Lo que se reporta es acuerdo entre instrumentos automáticos, es decir confiabilidad, no validez. Es la limitación que más restringe las afirmaciones posibles.
+
+  \item \textbf{Asimetría del corpus.} Los documentos varían en dos órdenes de magnitud de extensión. El muestreo por país impide que el volumen domine la comparación, pero no crea evidencia donde no la hay.
+
+  \item \textbf{Heterogeneidad de género.} El corpus mezcla estrategias, planes de acción, reportes de comisión y guías. El género se registra como metadato y se usa como control; no se elimina.
+
+  \item \textbf{Muestra intencional.} Siete casos elegidos por región no permiten generalización estadística a la población de países.
+
+  \item \textbf{Texto, no práctica.} El estudio mide encuadre discursivo en documentos oficiales. No dice nada sobre implementación ni sobre efectos en el aprendizaje.
+\end{enumerate}
+
+
+\section{Trabajo derivado}
+
+El paso que cierra la limitación central tiene nombre y costo estimable. El aprendizaje supervisado basado en diseño permite obtener inferencia estadísticamente válida combinando anotaciones automáticas sobre todo el corpus con una submuestra codificada por humanos, corrigiendo el sesgo del instrumento imperfecto sin renunciar a su cobertura~\citep{egami2023dsl}.
+
+Aplicado a este caso, requiere codificar a mano alrededor de cincuenta pasajes seleccionados al azar con el mismo libro de códigos, y usarlos para corregir las estimaciones del panel. Con dos codificadores independientes es trabajo de semanas.
+
+
+\section{Consideraciones éticas}
+
+Los documentos analizados son públicos y oficiales. No hay sujetos humanos ni datos personales, y la investigación no requiere consentimiento informado ni dictamen de comité de ética.
+
+Tres compromisos de transparencia acompañan el trabajo:
+
+\begin{enumerate}[leftmargin=*]
+  \item El libro de códigos, la configuración y las predicciones son públicos y anteriores a la medición.
+  \item Las clasificaciones crudas, con la justificación de cada juez, quedan versionadas y son auditables.
+  \item Los desacuerdos entre las dos vías se reportan íntegros, no se resuelven eligiendo la vía que produzca el resultado más limpio.
+\end{enumerate}
+
+Se adopta además una regla de higiene bibliográfica: ninguna referencia entra al archivo de citas sin haber consultado el texto completo. El precedente que la justifica es reciente y directo: en abril de 2026 se retiró un borrador de política nacional de inteligencia artificial porque su bibliografía contenía citas inventadas por un modelo de lenguaje.
+
+
+\section{Cronograma}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Fases del proyecto}
+\begin{tabular}{@{}p{1.4cm}p{7.5cm}p{4.5cm}@{}}
+\toprule
+\textbf{Fase} & \textbf{Actividad} & \textbf{Producto} \\
+\midrule
+1 & Construcción del corpus y aplicación de criterios & Corpus versionado, bitácora de bajas \\
+2 & Redacción y registro del libro de códigos & \textit{Commit} de pre-registro \\
+3 & Medición por Vía A sobre los seis ejes & Perfil por país \\
+4 & Medición por Vía B sobre el eje principal & Clasificaciones crudas y agregadas \\
+5 & Acuerdo, sesgo de origen e intervalos & Reporte de confiabilidad \\
+6 & Pruebas de confusión & Contrastes con intervalo \\
+7 & Contraste entre vías y redacción & Capítulos de resultados y discusión \\
+8 & Codificación humana de anclaje & Corrección por diseño supervisado \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Las fases 1 a 7 están concluidas. La fase 8 queda como trabajo derivado.
+
+
+\section{Productos comprometidos}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Productos y formato}
+\begin{tabular}{@{}p{3.6cm}p{4.2cm}p{5.6cm}@{}}
+\toprule
+\textbf{Producto} & \textbf{Formato} & \textbf{Función} \\
+\midrule
+Tesis & \LaTeX{} $\rightarrow$ PDF & Documento de grado \\
+Artículo & \LaTeX{} $\rightarrow$ PDF & Envío a revista arbitrada \\
+Póster & HTML/CSS $\rightarrow$ PDF A0 & Congreso, sesión de carteles \\
+Presentación & Slidev $\rightarrow$ HTML y PDF & Defensa y ponencia \\
+Protocolo & \LaTeX{} $\rightarrow$ PDF & Este documento \\
+Sitio del proyecto & HTML estático & Divulgación y reproducibilidad \\
+Repositorio & Git público & Código, datos, libro de códigos, bitácora \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\bibliography{referencias}
+
+\end{document}

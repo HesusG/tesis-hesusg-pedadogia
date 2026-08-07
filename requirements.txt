@@ -5,12 +5,15 @@ openai>=1.12.0
 
 # NLP & Analysis
 umap-learn>=0.5.0
+bertopic>=0.16.0
+hdbscan>=0.8.33
 langchain>=0.1.0
 langchain-openai>=0.0.5
 langchain-community>=0.0.10
 numpy>=1.24.0
 scipy>=1.10.0
 scikit-learn>=1.3.0
+pandas>=2.0.0
 
 # Text Processing
 pypdf>=3.15.0

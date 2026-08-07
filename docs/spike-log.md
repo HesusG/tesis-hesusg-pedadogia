@@ -1,0 +1,445 @@
+# Spike log — Pipeline v3 (build por fases con metodología SPIKE)
+
+Cada fase se desarrolla como un SPIKE: pregunta acotada → prototipo mínimo → verificación → reflexión de *cómo se hizo*. Este log acumula las reflexiones.
+
+---
+
+## SPIKE Fase 1 — Config + esquema + códebook (pre-registrado)
+
+**Pregunta:** ¿podemos materializar toda la config pre-registrada (metadata 2 capas, códebook, panel chino/occidental) en un artefacto limpio y verificable del que cuelgue el pipeline?
+
+**Qué se hizo (cómo):**
+- Se creó el paquete `pipeline_v3/`.
+- Se **rescató el códebook real** que el panel fable generó (workflow `wf_0f696743-1f1`) → `pipeline_v3/codebook.json`. No se inventó: es el artefacto auténtico, con la regla clave *"invertir/coordinar NO es dézhì"*.
+- `pipeline_v3/config.py`: esquema Tier A (manual, incluye `genre` como control) / Tier B (auto-cacheado), vocabulario controlado de `genre`, campos filtrables de baja cardinalidad, y el **panel de jueces con etiqueta de origen** (western/chinese).
+- Verificación: `python -m pipeline_v3.config` imprime todo y detecta jueces disponibles.
+
+**Qué se aprendió / hallazgos:**
+- Los **5 jueces con key están todos disponibles** (GPT, Gemini, Llama = occidentales; Qwen, DeepSeek = chinos). El sidequest transcultural es factible sin bloqueos.
+- **Claude** no tiene key cruda pero entra por el harness → decisión pendiente de *cómo* lo añade el runtime (nota para Fase 4).
+- El códebook existente es **solo para dézhì** (Vía B). Los otros 5 ejes van por Vía A (embeddings). Extender Vía B a más ejes = generar más códebooks (decisión futura, no ahora).
+
+**Riesgos / abiertos surgidos:**
+- `metadata.json` **no tiene `genre`** ni `adopting_body` — hay que llenar Tier A a mano para los 13 docs (tarea de Fase 2). Es el control del confusor: no se automatiza.
+- `CONTEXT_BLURB_MODEL=gpt-4o-mini` exige cachear para reproducibilidad (Fase 2).
+- Los IDs de modelos de Together (Qwen2.5-72B, DeepSeek-V3) hay que **probar que respondan** (smoke test en Fase 4) — definidos ≠ funcionando.
+
+**Qué necesita la Fase 2:** llenar Tier A (genre, adopting_body, doc_type) para los 13 docs; implementar chunk 500/50 → blurb cacheado → embed → colección `politicas_v3`.
+
+**Veredicto del spike:** ✅ la forma del config es la correcta y todo cuelga de aquí. Listo para congelar (pre-registro) y pasar a Fase 2.
+
+---
+
+## SPIKE Fase 2 (pre) — 3 ajustes + smoke test del edge case fǎ/Legalismo
+
+**Ajustes hechos:** (1) panel → **OpenRouter** (una API, 7 jueces: 3 occidentales + **4 chinos** — Qwen, DeepSeek, GLM, Kimi); (2) **Claude = meta-juez** (Sonnet 4.5, adjudica desacuerdos + sintetiza, NO puntúa → sin circularidad); (3) smoke test del edge case.
+
+**Pregunta del spike:** ¿el panel confunde una LEY DE CONTROL china (GenAI Measures 2023, legalista 法家) con "liberal" (polo negativo), por ser texto de "ley"?
+
+**Resultado — contra mi hipótesis, en buen sentido:**
+- **El error temido NO ocurre.** Ningún juez puso la ley en negativo/liberal; la pusieron en **0 (neutral)**. El códebook (Regla 1, dirección de la autoridad) **resiste la trampa fǎ**: no confunde "ley" con "derechos que limitan al Estado".
+- **Mi criterio de test estaba mal especificado:** predije que la ley debía ser POSITIVA, pero un articulado **procedimental** (registro, seguridad, obligaciones a proveedores) es legítimamente **neutral** en el eje dézhì-de-*cultivo* — es Legalista-procedimental, no confuciano-cultivacional. El dézhì vive en el lenguaje **movilizacional** (NGAIDP = **+1**, "movilizar a la nación / rejuvenecimiento"), no en el articulado técnico.
+- **Discriminación correcta:** NGAIDP (plan movilizacional) +1 · ley procedimental 0 · Canadá 0.
+
+**Hallazgo metodológico nuevo (importante):** el **polo negativo (liberal) casi no se activa** — casi todo lo no-estatista cae en 0, no en negativo (igual que el hallazgo previo con embeddings: Canadá no salió claramente liberal). El eje mide *presencia de estatismo* (0..+2 en la práctica), no un continuo limpio estatista↔liberal, porque los documentos rara vez articulan "los derechos limitan al Estado". **Se debe reportar así.**
+
+**Plumbing cazado (para eso era el smoke test):**
+- `qwen`: error de ruteo de proveedor en OpenRouter (`does not support endpoint: completions`) → fix: fijar provider / otra variante.
+- `glm`, `kimi`: errores intermitentes (1-2 de 5) → falta reintento.
+- `gpt`, `gemini`, `llama`, `deepseek`: 100% OK. Panel efectivo: **6/7** (qwen a arreglar).
+
+**Sidequest preliminar:** media occidental **+0.27** vs china **+0.18** — muy cerca (buena señal de convergencia), muestra minúscula, sin significado aún.
+
+**Antes de la Fase 2 completa:** (a) fijar qwen (provider), (b) reintento en glm/kimi, (c) decidir tratar el eje como **0..+2** (presencia de estatismo) en el reporte, (d) opcional: ejemplos al códebook para separar neutral-0 de liberal-negativo.
+
+**Veredicto:** ✅ el edge case que temía no ocurre (códebook robusto a la trampa fǎ); el spike re-especificó el eje, destapó el polo-liberal-poco-activado, y cazó bugs de plumbing — todo antes de gastar en la ingesta completa.
+
+---
+
+## SPIKE Fase 2b — corpus China 2025-2026 de IA-educación (feasibility)
+
+**Pregunta:** ¿podemos recuperar ~10 políticas chinas de IA-educación (2025-2026) con **texto completo verbatim**?
+
+**Hallazgo honesto sobre "10 de 2026":** NO existe. Solo **~5 docs genuinamente 2026** con texto (flagship "IA+Educación" MoE abr-2026, su Q&A, Plan Quinquenal educación jun-2026, guía Guangdong may-2026, reporte docentes). Casi todos los "planes provinciales 2026" citados **son 2025**. Para ~10 se enmarca como **"2025-2026"** (+ capa provincial 2025: Beijing, Shanghai, Zhejiang, Henan, Jiangsu). Decidido con el usuario.
+
+**Feasibility de recuperación (lo que el spike probó):**
+- **curl funciona**: los 2 nacionales 2026 → HTTP 200, texto verbatim UTF-8, `人工智能` presente (flagship 100 menciones = todo IA-educación; Plan Quinquenal 7 = IA es una sección).
+- **WebFetch NO sirve para verbatim**: resume con un modelo chico (el Plan Quinquenal salió *parafraseado*, "简体转述"). El flagship sí salió completo por suerte (doc corto). → **usar curl + extracción de HTML**, no WebFetch.
+
+**Riesgos / abiertos:**
+- URLs exactas de los **provinciales 2025 faltan** (la research dio dominios) → hay que pinearlas una por una.
+- Todo en **chino** → traducir ZH→EN (decisión previa: todos los jueces leen el mismo inglés → contraste de origen limpio). Reusar Qwen/OpenRouter o `china_research/translate.py`.
+- Encoding: eol.cn sin `charset` declarado (asumir UTF-8, verificar); moe.gov.cn utf-8.
+
+**Pipeline confirmado:** `curl → strip HTML → clean → translate ZH→EN → chunk 500/50 → blurb → embed → politicas_v3`.
+
+**Veredicto:** ✅ feasible vía curl. Próximo: `fetch_china.py` (curl+extract) para las URLs confirmadas + pinear provinciales + traducir + ingerir.
+
+---
+
+## SPIKE Fase 2c — fetch_china.py (construir + jalar)
+
+**Qué se hizo:** `pipeline_v3/fetch_china.py` (curl + extracción HTML→texto, solo stdlib) con el **registro pre-registrado de 10 docs** (metadata Tier A: doc_id, genre, scope, adopting_body, year, título) → `china_2026_registry.json`.
+
+**Resultado del run:**
+- ✅ **4/5 con-URL jalados con texto verbatim:** flagship (6.3k chars, 人工智能×96) · Q&A (3.2k, ×59) · **15º Plan Quinquenal (7.9k, ×7) — COMPLETO por curl** (WebFetch lo había parafraseado → vindica "curl, no WebFetch") · reporte docentes (1.4k, ×6).
+- ⚠️ **Guangdong: 0 chars** — el portal `szns.gov.cn` tiene el contenido en un **PDF adjunto**; necesita vía PDF (pypdf, ya en el repo) o la URL del PDF (`jyj.gz.gov.cn/.../10608660.pdf`).
+- ⏳ **5 provinciales 2025: URL exacta pendiente** (Beijing, Zhejiang, Henan, Jiangsu + Consejo de Estado "IA+").
+
+**Hallazgos:**
+- El extractor stdlib (curl + regex, filtra líneas con contenido chino) **funciona para páginas gov/edu HTML estándar**; falla en portales cuyo contenido real es un PDF/iframe → se necesita un segundo camino (PDF).
+- Se amplió `GENRE_VOCAB` con **"guidance"** (Q&A, guía Guangdong).
+
+**Estado corpus China v3: 4 sólidos** (todos 2026 nacionales). Para ~10 faltan: Guangdong (PDF) + 5 provinciales (URLs).
+
+**Next:** (a) pinear URLs provinciales 2025, (b) extraer Guangdong vía PDF, (c) traducir ZH→EN los ~10, (d) chunk+blurb+embed → `politicas_v3`.
+
+---
+
+## SPIKE Fase 2d — cierre del corpus China 2025-2026
+
+**Qué se hizo:** research pineó las 5 URLs provinciales/nacionales 2025 (con línea de apertura confirmada); se cablearon en `fetch_china.py` y se re-corrió.
+
+**Corpus cerrado: 8 documentos sólidos** con texto verbatim (ZH):
+| doc | chars | 人工智能 | año |
+|---|---|---|---|
+| flagship "IA+Educación" | 6.3k | 96 | 2026 |
+| Q&A del MoE | 3.2k | 59 | 2026 |
+| 15º Plan Quinquenal educación | 7.9k | 7 | 2026 |
+| reporte docentes IA-gen | 1.4k | 6 | 2026 |
+| Consejo de Estado "IA+" | 5.6k | 92 | 2025 |
+| Beijing K-12 IA | 4.9k | 96 | 2025 |
+| Zhejiang IA+Educación (mirror) | 4.5k | 86 | 2025 |
+| Henan IA+Educación (mirror) | 4.1k | 77 | 2025 |
+
+**2 pendientes (marcados `needs_review`/`url_pendiente`):**
+- `jiangsu`: página oficial y mirror Nanjing son **JS-dinámicos** (46 chars) → sin mirror estático.
+- `guangdong`: portal 0-chars + PDF **504** (servidor bloquea).
+
+**Hallazgos:**
+- Los sitios gov **provinciales** chinos **geo-bloquean o renderizan por JS** → los **mirrors académicos .edu.cn** (zjnu, zztrc) son la vía confiable para el texto verbatim.
+- El extractor stdlib funciona en HTML servido; falla en JS/PDF (esperado). Umbral <800 chars → `needs_review` (registro honesto, no comitea casi-vacíos).
+
+**Estado:** ✅ corpus China v3 con **8 docs sólidos** (el "gran universo" 2025-2026, mucho más rico que los 7 longitudinales previos). Jiangsu/Guangdong = alternativa futura.
+
+**Next real:** traducir ZH→EN los 8 → chunk 500/50 + blurb → embed → `politicas_v3`.
+
+---
+
+## SPIKE Fase 2e — ingesta del corpus China a `politicas_v3`
+
+**Qué se hizo:** `pipeline_v3/ingest.py` — chunk 500/50 → embed multilingüe (texto chino ORIGINAL) → ChromaDB `politicas_v3` con metadata Tier A. Los 8 docs sólidos → **90 chunks**.
+
+**Hallazgo clave (valida una decisión):** una query en **español** recuperó chunks **chinos** a dist 0.25 → el embedding `multilingual-MiniLM` **puentea idiomas por sí solo**. Por eso **NO se traduce para el store/retrieval** (Vía A); se guarda el original, consistente con los demás países en su idioma. La traducción ZH→EN queda solo para el clasificador (Vía B), como paso posterior cacheado.
+
+**Flagged (mejoras posteriores, no bloquean el corpus):** (a) blurb de contexto Anthropic por chunk; (b) traducción ZH→EN para que los jueces occidentales lean inglés (Vía B).
+
+**Nota:** chunks de 500 chars en chino son densos (~1 char ≈ 1 palabra) → flagship 6.3k = 15 chunks. Aceptable; documentado.
+
+**Estado:** ✅ corpus China 2025-2026 (8 docs / 90 chunks) EN el store, consultable cross-lingual.
+
+**Next:** (a) ingerir los otros 6 países a `politicas_v3`; (b) blurb + traducción; (c) correr el clasificador panel (7 jueces chino/occidental) sobre `politicas_v3`.
+
+---
+
+## SPIKE Fase 3 — experimento de idioma (ZH vs EN × origen chino/occidental)
+
+**Diseño:** 6 pasajes de gobernanza del corpus China v3, clasificados por los 7 jueces en **chino Y en inglés** (traducido con gpt-4o-mini). 2×2: idioma × origen. 79/84 clasificaciones válidas (qwen sigue con errores de ruteo).
+
+**Resultado (score medio, +2 = Estado-dirige/dézhì):**
+| | occidental | chino | fila |
+|---|---|---|---|
+| ZH | 1.33 | 1.14 | 1.23 |
+| EN | 1.11 | 0.91 | 1.00 |
+
+- **Efecto IDIOMA (ZH−EN): +0.23** · **Efecto ORIGEN (chino−occ): −0.20**
+
+**Hallazgos:**
+1. **China=dézhì ROBUSTO:** todas las celdas ~+1 (0.91–1.33). El resultado no depende del idioma ni del origen → validez convergente fuerte.
+2. **Sesgo de origen real (−0.20):** los modelos **chinos puntúan MENOS dézhì que los occidentales** → los occidentales **sobre-atribuyen estatismo**, los chinos lo normalizan. Es el sidequest confirmado: pequeño pero direccional y medible.
+3. **Idioma ≈ origen (~0.2 en escala de 5), direcciones opuestas** → ninguno domina. Traducir amortigua levemente el dézhì (no lo invierte) → **traducir es defendible**; el efecto origen se reporta como hallazgo.
+
+**Decisión de idioma resuelta:** dado que el efecto es chico y la traducción defendible, se usa EN como primario (contraste de origen limpio, comparable entre países) y se reporta el par ZH/EN como chequeo de robustez. El efecto origen entra al capítulo de discusión.
+
+**Caveats:** 6 pasajes / 79 clasificaciones = preliminar; qwen a arreglar (ruteo OpenRouter). Confirmar con corpus completo.
+
+**Estado:** ✅ el edge case de idioma quedó convertido en hallazgo medible; la señal China es robusta; el sidequest chino-vs-occidental tiene sustancia.
+
+---
+
+## SPIKE Fase 2f — ingesta de los 6 países restantes a `politicas_v3`
+
+**Qué se hizo:** `ingest_countries.py` — EUA, Canadá, Colombia, Alemania, Sudáfrica, Australia (texto procesado, idioma original; embed multilingüe) con metadata Tier A y `genre` asignado a mano (control).
+
+**Resultado:** `politicas_v3` = **2420 chunks, 7 países**. Por país: china 90 · canada 15 · colombia 315 · eeuu 306 · alemania 230 · sudafrica 1303 · australia 161.
+
+**Hallazgos:**
+- **Corpus desbalanceado** (Sudáfrica 1303 vs Canadá 15) — real: los docs varían de largo (el PC4IR es un reporte extenso; Canadá una estrategia corta). La **agregación por-documento** (distribución de scores por chunk, no conteo) lo maneja; se reporta.
+- **Genre-control poblado:** strategy 578 · report 1307 · law 319 · action_plan 208 · guidance 8. Permite el matching por género (control del confusor).
+- China está en chino (8 docs edu 2025-2026); los demás en su idioma original → la traducción a EN para el panel (Vía B) se hace en la comparación.
+
+**Estado:** ✅ corpus v3 completo (7 países). Listo para la comparación central China-vs-liberales en dézhì.
+
+---
+
+## SPIKE Fase 4 — comparación cross-country en dézhì (China vs liberales)
+
+**Diseño:** top-3 pasajes de gobernanza por país (7 países) de `politicas_v3` → traducidos a EN → clasificados por el panel de 7 jueces. n=124 clasificaciones válidas.
+
+**Resultado — la afirmación central CONFIRMADA:**
+| país | mediana | media |
+|---|---|---|
+| **China** | **+1.00** | +1.06 |
+| EUA / Canadá / Colombia / Sudáfrica / Australia | 0.00 | ~0.00 |
+| Alemania | 0.00 | **−0.25** (único lean liberal) |
+
+**Hallazgos:**
+1. **China se separa sola** (+1.0 vs todos en 0). El eje aísla el encuadre "Estado cultiva/dirige" que es específico de China. Método validado.
+2. **Los liberales quedan en 0 (no negativo):** no dicen "derechos limitan al Estado" explícitamente; simplemente no encuadran al Estado como cultivador → neutral. Alemania (−0.25) = el único lean liberal (tradición de derechos). Eje = presencia de estatismo (0..+2).
+3. **El payoff del método de dos vías:** con embeddings China≈Canadá (0.83/0.83, empate); con el LLM China +1.0 vs Canadá 0. **El LLM logra lo que el coseno no pudo** — arco narrativo de la tesis demostrado.
+4. **Sidequest replicado:** occidental media +0.17 vs chino +0.07 → los modelos occidentales atribuyen algo más de estatismo, consistente con la Fase 3.
+
+**Caveats:** K=3/país, n=124, preliminar; medianas mayormente 0 (pasajes de gobernanza escasos); China = corpus edu 2025-2026. Salida: `web/data/dezhi_country_comparison.json`.
+
+**Veredicto:** ✅ el instrumento separa a China de los liberales en dézhì donde los embeddings fallaban. La afirmación central de la tesis tiene evidencia reproducible.
+
+---
+
+## SPIKE Fase 5 — robustez y validación del instrumento
+
+**Pregunta:** los números de la Fase 4 salieron con K=3, n=124, panel 6/7 y sin caché. ¿Sobreviven a un panel completo y a K mayor, y **cuánto concuerdan realmente los jueces**? El spec (§5 reproducibilidad, §6 evaluación) exige responder esto antes de que las cifras entren a la tesis.
+
+### El bug que invalidaba parte de la Fase 4
+
+`glm` no fallaba "de forma intermitente" como asumió la Fase 2-pre: fallaba **determinísticamente**. GLM-4.6 es un modelo de razonamiento y el techo de 400 `max_tokens` se agotaba en la cadena de razonamiento antes de emitir el JSON → `finish_reason=length`, `content=None`. A temperatura 0 los 3 reintentos repetían el mismo fallo. Subiendo el techo a 4000 (sin suprimir el razonamiento: cada familia debe leer el códebook como lo haría naturalmente) el panel quedó en **490/490, 7/7 jueces, cero errores**.
+
+Consecuencia honesta: el `n=124` de la Fase 4 tenía un **juez chino sistemáticamente ausente**, justo en el sidequest que mide sesgo occidental-vs-chino. Las cifras de esta fase reemplazan a las de aquella.
+
+**Segundo plumbing:** `qwen/qwen-2.5-72b-instruct` estaba **retirado** de OpenRouter — el error de ruteo de la Fase 2-pre nunca fue del provider. Reemplazo fijado por fecha: `qwen/qwen3-235b-a22b-2507`. Re-versionado consciente del pre-registro, no un cambio silencioso.
+
+### Resultados (K=10, 7 países, 490 clasificaciones, panel completo)
+
+**1. La separación de China se sostiene y ahora tiene intervalo.** Bootstrap sobre *pasajes* (la unidad de muestreo — remuestrear clasificaciones sueltas fingiría independencia entre los 7 jueces que leen el mismo pasaje):
+
+| país | media | IC95 |
+|---|---|---|
+| **China** | **+0.94** | **[+0.73, +1.17]** |
+| Sudáfrica | +0.06 | [−0.04, +0.21] |
+| Canadá | 0.00 | [0.00, 0.00] |
+| Colombia / Australia | −0.03 | [−0.16, +0.10] |
+| Alemania | −0.10 | [−0.24, 0.00] |
+| EUA | −0.30 | [−0.73, 0.00] |
+
+El IC de China **no se solapa con ninguno** → la separación no es un artefacto de K pequeño.
+
+**2. Acuerdo inter-juez — el hallazgo incómodo que hay que reportar.** α ordinal de Krippendorff = **0.600**, κ de Fleiss = 0.455. Eso queda **por debajo del umbral 0.667** que el propio Krippendorff fija como mínimo para conclusiones tentativas. Pero el acuerdo *observado* es alto: **79.9% exacto, 98.8% dentro de ±1 punto** (1470 pares). La brecha es la **paradoja de kappa** (Feinstein & Cicchetti 1990): con la distribución concentrada en 0, la corrección por azar deprime α. Se reportan **ambos**, no uno u otro. Lectura defendible: el instrumento es **fiable a nivel de agregado por país** (ver punto 1), **no** para afirmar nada sobre un pasaje individual.
+
+**3. El sesgo de origen ahora es una medición, no una impresión.** Brecha pareada por pasaje occidental − chino = **+0.098, IC95 [+0.037, +0.162] → excluye el 0**. Los modelos occidentales atribuyen sistemáticamente más estatismo. Y a la vez la correlación pasaje a pasaje es **r = +0.870**: concuerdan mucho, con un desplazamiento sistemático pequeño. Las dos cosas son ciertas y ambas van al capítulo de discusión.
+
+**4. Vía A vs Vía B, ahora sobre los 7 países.** El MVP de embeddings solo cubría 3 documentos; `via_a.py` proyecta el eje ganador (híbrido/tuned6) sobre `politicas_v3` completo:
+
+| país | Vía A (z) | Vía B (LLM) |
+|---|---|---|
+| China | +0.916 | +0.943 |
+| **Canadá** | **+0.895** | **0.000** |
+| Australia | +0.538 | −0.029 |
+| Alemania | +0.176 | −0.100 |
+| Sudáfrica | +0.136 | +0.057 |
+| Colombia | −0.094 | −0.029 |
+| EUA | −0.654 | −0.300 |
+
+Spearman ρ = +0.667 (coinciden en la tendencia general) **pero China − Canadá: Vía A +0.020 vs Vía B +0.943**. Y con IC bootstrap sobre la mediana Vía A, los intervalos de China [+0.64, +1.07] y Canadá [+0.75, +1.44] **se solapan ampliamente**: el empate no es coincidencia de dos puntos, es incapacidad del método. **El arco narrativo de la tesis queda demostrado sobre el corpus completo, no sobre 3 documentos.**
+
+### Reproducibilidad (spec §5, ahora sí)
+
+- Cada salida cruda **cacheada en disco** con hash del códebook → re-correr es *replay*, no re-llamar; si la rúbrica cambia, la caché se invalida sola.
+- **Log de auditoría** JSONL con modelo, timestamp, intento y hash por clasificación.
+- Traducciones ZH/ES/DE→EN cacheadas.
+- `dezhi_records.jsonl`: las 490 clasificaciones crudas, provenance completa para la tesis.
+- κ y α implementados **sin dependencias externas** y **verificados contra `krippendorff` y `statsmodels`** con coincidencia exacta en los 3 niveles (`make dezhi-test`) — la métrica que sostiene el capítulo de validación no depende de mi aritmética.
+
+**Caveats vivos:** K=10 sigue siendo poco (10 pasajes/país); Canadá tiene solo 15 chunks en el corpus, así que su Vía A es ruidosa (de ahí el IC ancho); sin codificación humana no hay ancla externa (trabajo futuro / supervisora); el eje sigue funcionando como **presencia de estatismo (0..+2)**, no como continuo estatista↔liberal.
+
+**Veredicto:** ✅ el instrumento pasa de "resultado preliminar" a "medición con intervalos, acuerdo cuantificado y sesgo acotado". El límite honesto — α por debajo del umbral a nivel pasaje — queda documentado como límite, no escondido.
+
+---
+
+## SPIKE Fase 6 — ¿el +0.94 mide al país o al género documental?
+
+**Pregunta:** la Fase 5 midió a China con 8 documentos de IA-**en-educación** (2025-2026) y a los otros 6 países con **estrategias generales de IA** (2017-2023). Como el eje dézhì mide "el Estado cultiva y forma personas", y la política educativa trata por definición de formar personas, había una explicación alternativa que tumbaba el resultado central: *China no sale alta por ser China, sino porque le medimos documentos de educación.*
+
+**Diseño (pre-registrado en `451aea6`, commiteado ANTES de correr):** 2×2 de tema × país, más un tercer brazo que separa "es China" de "es la región de herencia confuciana". Chunking, query de gobernanza, K, panel y códebook idénticos a la Fase 5 — es lo que hace comparables los números. Los controles fueron a una colección aparte para no contaminar el corpus pre-registrado.
+
+**Resultados (420 clasificaciones):**
+
+| documento | media | IC95 | celda |
+|---|---|---|---|
+| China NGAIDP 2017 | **+0.257** | [+0.057, +0.500] | China × IA general |
+| Corea AI Strategy | +0.200 | [0.000, +0.443] | vecindario confuciano |
+| India NEP 2020 | +0.143 | [0.000, +0.314] | no-China × educación |
+| Singapur NAIS | +0.086 | [−0.143, +0.329] | vecindario confuciano |
+| Japón AI Strategy | 0.000 | [0.000, 0.000] | vecindario confuciano |
+| UNESCO GenAI Guidance | **−0.157** | [−0.371, −0.014] | no-China × educación |
+
+**Contrastes con bootstrap sobre pasajes:**
+- **NGAIDP vs los 6 países (todos IA general): +0.324, IC95 [+0.114, +0.583] → excluye el 0.** China se distingue **aun con un documento general**, no educativo. El efecto de país es real.
+- **NGAIDP vs China-educación: −0.686, IC95 [−0.986, −0.357] → excluye el 0.** Dentro de China, los documentos educativos puntúan muy por encima del plan general. El tema aporta una parte grande.
+
+**Las tres predicciones, evaluadas:**
+1. **P1 (efecto país) — parcialmente confirmada.** China sí se distingue con documento general (+0.32 sobre los liberales), pero solo alcanza ~27% del efecto del corpus educativo.
+2. **P2 (efecto género) — refutada.** El tema educativo **por sí solo no eleva el eje**: India NEP +0.14 (IC toca 0) y UNESCO **−0.157** (lean liberal, IC excluye 0). Y UNESCO es el control topográficamente más parecido al corpus chino — también es IA-en-educación — y sale con signo opuesto.
+3. **P3 (efecto regional) — refutada.** Corea +0.20, Japón exactamente 0, Singapur +0.09. No es la región de herencia confuciana: **es China**.
+
+**Lectura correcta: hay una INTERACCIÓN país × tema.** Ninguno de los dos factores por separado reproduce el +0.94:
+
+|  | educación | IA general |
+|---|---|---|
+| **China** | **+0.94** | +0.26 |
+| **no China** | ~0 (India +0.14, UNESCO −0.16) | ~0 |
+
+Y esa interacción es **exactamente donde la teoría la predice**: dézhì (德治) es el gobierno por la virtud mediante el **cultivo moral a través de la educación**. Que el encuadre se concentre en la política educativa china no es un artefacto que debilite la tesis; es la ubicación que el concepto anticipa. El confusor sospechado resultó ser un hallazgo teóricamente coherente.
+
+**Consecuencia para la redacción:** la afirmación defendible **no** es "la política de IA china tiene encuadre dézhì". Es: *"el encuadre dézhì se concentra en la política china de IA **en educación**; en su estrategia general de IA aparece atenuado pero todavía por encima de las democracias liberales; y no aparece en la política educativa de otros países ni en las estrategias de sus vecinos confucianos."* Más precisa, más falsable y más difícil de atacar.
+
+**Caveats:** los umbrales binarios que pre-registré (0.25) resultaron demasiado crudos y colapsaban a sí/no lo que es cuestión de grado — se conservan en el JSON por honestidad, pero la lectura buena son los contrastes con IC. UNESCO es un organismo internacional con mandato de derechos, no un Estado. El corpus chino está traducido ZH→EN y la Fase 3 mostró que traducir **atenúa** el dézhì (−0.23), así que el +0.94 es si acaso conservador. K=10 por documento.
+
+**Veredicto:** ✅ el confusor se probó en vez de asumirse, y el resultado obliga a **reformular la afirmación central de forma más precisa** en vez de repetirla. El efecto de país sobrevive; el de tema es real y grande; la interacción es la historia.
+
+---
+
+## SPIKE Fase 7 — vigencia del corpus: dos documentos derogados
+
+**Pregunta:** aplicando el criterio C4 (vigencia al corte del 30-jun-2026), ¿los documentos del corpus siguen rigiendo?
+
+**Hallazgo:** **dos de los siete países estaban representados por textos derogados.**
+- **EUA:** la Executive Order 14110 fue **revocada en enero de 2025**. Sustituida por *America's AI Action Plan* (jul 2025).
+- **Colombia:** el CONPES 3975 **terminó vigencia en 2022**. Sustituido por el **CONPES 4144** (feb 2025).
+
+O sea, la medición de esos dos países describía una postura estatal explícitamente abandonada.
+
+**Los reemplazos además arreglan la marginalidad en C3:** el CONPES 4144 tiene **943 menciones de IA** contra las 29 del 3975. Colombia deja de ser "un documento que apenas habla de IA".
+
+### Resultado tras el reemplazo (490 clasificaciones, mismo método)
+
+**1. La separación de China aguanta el cambio de corpus.** +0.94, IC95 [+0.73, +1.17], sin solaparse con ningún país. Idéntico al valor previo.
+
+**2. El empate de embeddings aguanta.** China +0.903 vs Canadá +0.881, brecha +0.021, intervalos solapados. El hallazgo metodológico central **no depende del corpus**, como debía ser si es una propiedad del método.
+
+**3. El acuerdo inter-juez MEJORÓ y ahora pasa el umbral.**
+
+| | corpus anterior | corpus vigente |
+|---|---|---|
+| acuerdo exacto | 79.9% | **83.1%** |
+| α ordinal | 0.600 (bajo umbral) | **0.697 (pasa .667)** |
+| κ de Fleiss | 0.455 | **0.544** |
+| brecha de origen | +0.098 | +0.058 (IC sigue excluyendo el 0) |
+| correlación inter-origen | r = 0.870 | **r = 0.907** |
+
+La limitación reportada en la Fase 5 (α por debajo del mínimo para conclusiones tentativas) **queda resuelta**, y se resolvió arreglando el corpus, no cambiando el método. Eso mismo mide cuánto dependía el resultado de la calidad documental: es el argumento empírico a favor del criterio de selección.
+
+**4. EUA se mueve fuerte: −0.30 → −0.486.** El *AI Action Plan* de 2025 (desregulatorio, centrado en competitividad) lee mucho menos estatista que la EO 14110 (centrada en derechos y seguridad). Es el cambio de administración visible en la medición, y vale como validez de contenido: el instrumento detecta un giro político real.
+
+**5. La correlación Vía A vs Vía B cae de ρ=0.667 a ρ=0.321.** Las dos vías ahora coinciden menos, sobre todo por EUA (Vía A −0.024 vs Vía B −0.486). Refuerza el argumento de las dos vías: donde el coseno no ve nada, el panel sí.
+
+**Pendiente:** Australia y Sudáfrica tienen reemplazos vigentes localizados (National AI Plan dic-2025; National AI Policy Framework oct-2024) pero **sus portales bloquean la descarga automatizada** (HTTP/2 se cuelga en industry.gov.au; el DCDT sirve un envoltorio Joomla). Quedan documentados en `docs/corpus-objetivo.md` con URL. Faltan también los documentos de IA-en-educación de los países federales, con la salvedad estructural de que Canadá no puede tener uno.
+
+**Veredicto:** ✅ el criterio de selección demostró su valor en la primera aplicación: destapó dos documentos derogados, y arreglarlos subió la confiabilidad del instrumento por encima del umbral. Los hallazgos centrales sobrevivieron el cambio de corpus, que es la prueba de robustez que faltaba.
+
+---
+
+## SPIKE Fase 8 — Vietnam y ASEAN: la Fase 6 concluyó de más
+
+**Pregunta.** La Fase 6 concluyó "no es la región confuciana, es China" porque Corea, Japón y Singapur quedaron cerca de cero. Pero los tres son democracias o híbridos de mercado: **ninguno comparte con China la estructura de partido único**. Quedaba una alternativa sin probar.
+
+**Vietnam es el caso decisivo:** único país que comparte con China **ambas** condiciones, esfera cultural confuciana y Estado de partido único. Se añadió Malasia como control asiático **no** confuciano, con dos documentos de género distinto.
+
+**Fuentes.** Vietnam: Decisión 127/QĐ-TTg (2021), texto legal verbatim en inglés vía LuatVietnam, 27,773 caracteres, 143 menciones de IA, con el articulado completo (Artículos 1 a 3, los 17 ministerios y la firma del Viceprimer Ministro). Se recortó la cola de muro de pago. El portal `en.baochinhphu.vn` **no sirve**: entrega una nota de prensa con menú de navegación. Malasia: AI Roadmap 2021-2025 (99 p) y Directrices AIGE 2024 (140 p), ambos PDF oficiales.
+
+**Resultado (630 clasificaciones):**
+
+| documento | media | IC95 |
+|---|---|---|
+| China NGAIDP (IA general) | +0.257 | [+0.06, +0.50] |
+| Corea | +0.200 | [0.00, +0.44] |
+| **Vietnam** | **+0.200** | **[+0.06, +0.34]** |
+| India NEP | +0.143 | [0.00, +0.31] |
+| Malasia Roadmap | +0.129 | [0.00, +0.27] |
+| Singapur | +0.086 | [−0.14, +0.33] |
+| Malasia AIGE / Japón | 0.000 | [0.00, 0.00] |
+| UNESCO | −0.157 | [−0.37, −0.01] |
+
+**Contrastes de Vietnam:**
+- vs los seis liberales: **+0.290, IC95 [+0.126, +0.467] → sube**, el intervalo excluye el cero.
+- vs China general: **−0.057, IC95 [−0.343, +0.186] → INDISTINGUIBLE de China.**
+- vs vecinos Corea/Japón/Singapur: +0.105, IC95 [−0.076, +0.290] → **no separa**.
+- vs Malasia: +0.136, IC95 [−0.029, +0.293] → **no separa**.
+
+### Lo que esto obliga a corregir
+
+**La Fase 6 concluyó de más.** Su afirmación "no es la región confuciana, es China" se apoyaba en que Corea, Japón y Singapur no subían. Con Vietnam en el corpus, **China deja de estar sola** en el nivel de documentos generales: Vietnam alcanza el mismo nivel y su intervalo se traslapa con el de China.
+
+**Pero tampoco alcanza para atribuirlo al Estado-partido.** Atribuir el efecto a esa estructura exigía dos condiciones: que Vietnam subiera sobre los liberales **y** que se separara de los vecinos confucianos que no son partido único. Se cumple la primera, no la segunda. Vietnam tiene el mismo punto que Corea (+0.200).
+
+**Lectura defendible con estos datos:** hay un **gradiente asiático** en los documentos generales de IA. Varios países asiáticos, confucianos y no confucianos, se ubican levemente por encima de las democracias liberales, sin separarse entre sí con la resolución actual. La afirmación fuerte que **sí** sobrevive intacta sigue siendo **la interacción China × educación** (+0.94), que está muy por encima de toda esa banda.
+
+**Error de método repetido y corregido.** El veredicto automático del script decía "SUBE: el efecto es de la estructura de Estado-partido" evaluando solo Vietnam contra los liberales. Es el mismo error de umbral crudo de la Fase 6: una comparación única no basta para atribuir un mecanismo. Se corrigió para exigir ambos contrastes.
+
+**Caveats.** K=10 por documento. Vietnam aporta un documento; Corea, Japón y Singapur uno cada uno. No hay Estado-partido **no** confuciano en el corpus (Laos y Camboya están redactando sus estrategias), así que la celda que separaría "partido único" de "herencia confuciana" sigue vacía.
+
+**Veredicto:** ✅ el caso que faltaba debilitó una conclusión previa en vez de confirmarla, que es exactamente para lo que sirven los controles. La afirmación central de la tesis, la interacción país × tema, no se movió.
+
+---
+
+## SPIKE Fase 9 — El documento de Canadá no era una política
+
+**Pregunta acotada.** ¿El empate China–Canadá en el eje *dézhì* según embeddings es una propiedad del método, o un artefacto del documento canadiense?
+
+### Cómo apareció el problema
+
+No lo detectó una revisión del corpus. Lo detectó el **desacuerdo entre las dos vías de medición**, al reescribir la presentación de defensa: buscando pasajes reales para abrir con algo concreto, hubo que leer el documento canadiense.
+
+No era la estrategia. Era una captura de navegador de `cifar.ca`, con la fecha `2018/09/08` impresa en el encabezado de cada página. Sus 15 fragmentos incluían la ruta de navegación del sitio, la lista del comité asesor internacional con el cargo de cada miembro, un botón «Donate Now» y el pie de suscripción al boletín. **Cinco de los diez pasajes muestreados eran ese material.**
+
+Incumple C5, el mismo criterio por el que se rechazó la fuente vietnamita en la Fase 8. La diferencia: aquel se detectó al construir el corpus, este sobrevivió hasta el análisis final.
+
+### Control nuevo
+
+Revisión automatizada de ruido de sitio web sobre los pasajes muestreados: direcciones web, marcas de captura, menús, listas de personal, llamados a la acción. Aplicada de forma retroactiva a los siete países:
+
+| País | Pasajes con ruido |
+|---|---|
+| Canadá (documento viejo) | **5 de 10** |
+| Sudáfrica | 1 de 10 (URL dentro de una referencia) |
+| China, EUA, Colombia, Alemania, Australia | 0 de 10 |
+
+Debe correr antes de cada medición.
+
+### Sustitución y nueva corrida
+
+*Canada's National Artificial Intelligence Strategy: AI for All*, adoptada por el Ministro de Innovación, Ciencia e Industria el **4 de junio de 2026**, dentro del corte de vigencia. PDF oficial de 50 páginas, ISBN 978-0-662-35657-8. De 6.5 KB a 94.7 KB; de 15 a 210 fragmentos. Corpus total: 2,900 → 3,095.
+
+Se repitió la medición completa: ingesta, Vía A sobre los seis ejes, Vía B con los siete jueces, acuerdo y validación.
+
+### Resultado
+
+| Cantidad | Antes | Después |
+|---|---|---|
+| Canadá, Vía A | +0.881 | +0.778 |
+| Canadá, Vía B | 0.000 | −0.057 |
+| Brecha China–Canadá, Vía A | 0.021 | **0.067, sigue solapando** |
+| Brecha China–Canadá, Vía B | 0.943 | **1.000, sin solapar** |
+| Ejes con IC solapados | 5 de 6 | 3 de 6 |
+| α Krippendorff ordinal | 0.697 | 0.681 |
+| Acuerdo exacto | 83.1% | 81.7% |
+| Sesgo de origen | +0.058, IC excluye 0 | +0.048, **IC incluye 0** |
+| Spearman entre vías | 0.321 | 0.286 |
+
+### Reflexión
+
+**El hallazgo principal no era un artefacto.** Con una estrategia nacional real de cincuenta páginas, la Vía A sigue sin poder separar a Canadá de China en el eje *dézhì*. Eso es lo que había que comprobar, porque un crítico razonable habría dicho que el método falló porque el dato era basura.
+
+**Tres ejes dejaron de empatar.** Benevolencia, rectitud y armonía ahora separan a los dos países. Siguen empatados ritual, cultivo de sí y el propio *dézhì*. Se retira la afirmación de «cinco de seis»: eran tres.
+
+**Una conclusión se volvió más prudente.** El sesgo de origen del juez pasó de excluir el cero a incluirlo, así que **H3 deja de rechazarse**. Que sustituir un documento mueva un veredicto indica que el efecto está por debajo de lo que setenta pasajes resuelven. Conviene reportar el cambio, no solo el veredicto final.
+
+**Lo más importante del episodio es procedimental.** El diseño de doble medición se adoptó para evaluar validez; sirvió además como **detector de errores de datos**. Con una sola vía, el +0.881 habría entrado al capítulo de resultados con su intervalo y su lugar en la gráfica, y nadie habría tenido motivo para abrir el archivo.
