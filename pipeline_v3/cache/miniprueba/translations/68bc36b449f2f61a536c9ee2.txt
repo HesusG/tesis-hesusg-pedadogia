@@ -1,0 +1,4 @@
+sharing and protecting is not a secondary technical issue, but an ethical, political, and legal condition for any public AI system. If the data is incomplete, insecure, outdated, or biased, the systems built upon them will produce equally problematic results, even if they appear to be cloaked in technological precision.
+
+4. Governance for an orderly transformation
+The development of AI requires clear governance that allows for a balance between innovation, accountability

@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "El fragmento aborda los principios de inclusión, gobernanza responsable y sesgos en los sistemas de IA, enfatizando la diversidad en los equipos de diseño y los datos, lo que se alinea con las políticas para el uso equitativo, inclusivo y ético de la IA (6.4), y se refiere a la gobernanza de los sistemas de IA pública que se aplicarían al sector educativo (ai_for_education).",
+  "model": "z-ai/glm-4.6",
+  "ts": "2026-09-26T16:21:28.785432+00:00"
+}

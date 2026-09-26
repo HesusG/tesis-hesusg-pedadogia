@@ -1,0 +1,962 @@
+Plan Nacional de
+
+Inteligencia
+Artificial
+Abril 2026
+
+Plan Nacional de
+
+Inteligencia
+Artificial
+
+Índice
+1. Contexto Internacional ..................................................................4
+2. Una visión de Estado ......................................................................6
+3. Inteligencia Artificial para el Estado mexicano ..........................8
+4. Gobernanza para una transformación ordenada .....................13
+5. Tres pilares para el desarrollo
+de la IA en México.............................................................................14
+5.1 Un marco ético y legal sólido .............................................................. 14
+5.2 Capacidades: talento y software público.......................................... 16
+Centro Público de Formación en IA......................................................................16
+Fábrica de IA ..............................................................................................................17
+
+5.3 Infraestructura estratégica para
+la soberanía tecnológica ............................................................................. 21
+Coatlicue: supercomputadora mexicana.............................................................22
+Inversión en centros de datos ...............................................................................23
+
+Conclusión .........................................................................................26
+Bibliografía ........................................................................................28
+
+1. Contexto Internacional
+La inteligencia artificial (IA) ha dejado de ser una promesa futura para convertirse
+en una tecnología fundamental con implicaciones directas para el desarrollo
+nacional. Su impacto atraviesa sectores estratégicos como la salud, la agricultura, la
+educación, la seguridad y la gestión pública, y su potencial de transformación
+socioeconómica es reconocido por organismos internacionales, gobiernos y actores
+del sector privado en todo el mundo. Para los países en desarrollo, la IA representa
+una oportunidad concreta para acelerar procesos de desarrollo y reducir brechas
+estructurales históricas.
+A nivel internacional, diversos países han avanzado en la formulación de estrategias
+nacionales de IA que articulan visión de largo plazo, prioridades sectoriales,
+desarrollo de capacidades, infraestructura de datos y cómputo, y mecanismos de
+seguridad y gobernanza. Experiencias como las de India, Vietnam, Egipto, Indonesia
+y Singapur muestran que la IA se ha convertido en un componente central de las
+políticas de desarrollo, competitividad y modernización estatal.
+Asimismo, la experiencia comparada muestra que las estrategias más robustas
+combinan distintas dimensiones. India, por ejemplo, ha estructurado su agenda en
+torno al fortalecimiento de capacidades de cómputo, plataformas de datos,
+financiamiento para startups y formación de talento. Vietnam ha vinculado su
+estrategia con metas de competitividad industrial y desarrollo de capacidades,
+mediante reformas curriculares, programas de intercambio y rutas de formación
+para estudiantes y profesionales. Egipto, a su vez, ha avanzado en la priorización de
+casos de uso de alto impacto, como salud y energía, mediante procesos
+estructurados de selección, pilotos y coordinación entre el gobierno y socios
+internacionales.
+También se observa que no existe un único modelo de adopción o regulación.
+Mientras algunos países han privilegiado el desarrollo de capacidades nacionales y
+la construcción de infraestructura estratégica, otros han puesto mayor énfasis en
+marcos regulatorios y arreglos institucionales para supervisar riesgos y proteger
+
+derechos. En Europa, por ejemplo, la implementación del AI Act ha impulsado
+procesos nacionales de designación de autoridades competentes y de definición de
+estructuras de supervisión. Los casos de España, que creó la Agencia Española de
+Supervisión de la IA, y de Finlandia, que ha propuesto un modelo descentralizado
+apoyado en varias autoridades preexistentes, muestran que la gobernanza de la IA
+requiere instituciones concretas, facultades definidas y capacidad efectiva de
+implementación.
+En otros contextos, experiencias como las de Indonesia, Singapur y Arabia Saudita
+muestran rutas distintas de desarrollo institucional. Indonesia ha incorporado
+dimensiones de seguridad y confianza en proyectos de ciudades inteligentes;
+Singapur ha combinado guías prácticas, financiamiento e iniciativas de aceleración;
+y Arabia Saudita ha impulsado estructuras centralizadas de coordinación para
+alinear la IA con sus objetivos nacionales de transformación.
+De manera complementaria, varios países han incorporado a sus estrategias
+nacionales componentes orientados a fortalecer capacidades soberanas en
+infraestructura, lenguaje y desarrollo industrial. España, por ejemplo, ha vinculado
+su estrategia con redes de supercómputo, apoyo a pymes y el desarrollo de
+modelos de lenguaje en castellano y lenguas cooficiales. Brasil, por su parte, ha
+orientado su política de IA hacia la soberanía tecnológica, el desarrollo industrial, la
+capacitación técnica y la construcción de infraestructura propia.
+América Latina y el Caribe enfrentan un momento decisivo: la expansión acelerada
+de las tecnologías de inteligencia artificial abre oportunidades reales para mejorar
+la gestión pública y promover el desarrollo humano, pero también plantea riesgos
+y tensiones que los gobiernos de la región deben atender con inteligencia
+institucional y criterios claros. El Índice Latinoamericano de IA ofrece un panorama
+comparado sobre el estado de adopción y preparación en inteligencia artificial en
+los países de la región. A partir de indicadores sobre madurez institucional, inversión
+tecnológica, desarrollo de talento e infraestructura digital, sus datos permiten
+dimensionar tanto los avances alcanzados como las brechas que aún persisten. Este
+contexto resulta indispensable para comprender el punto de partida desde el cual
+México formula su estrategia nacional, así como las oportunidades que tiene para
+
+impulsar una agenda regional de IA con enfoque soberano, inclusivo y orientado al
+interés público.
+En este contexto global y regional, México adopta una postura activa y soberana. El
+Plan Nacional de IA parte de una convicción central: la tecnología debe estar al
+servicio de las personas y del interés público. Esta visión se ha expresado también
+en foros multilaterales de primer nivel. En la Reunión Ministerial de IA, Datos e
+Innovación del G20, México sostuvo que la tecnología no es un fin en sí mismo, sino
+un medio para acercar a las personas a sus derechos, fortalecer la democracia y
+mejorar el bienestar colectivo. Desde esta perspectiva, el país ha enmarcado la
+transformación digital como un asunto de justicia, soberanía y desarrollo sostenible,
+más allá de la eficiencia tecnológica. Con ello, México contribuye a que la agenda
+global de inteligencia artificial incorpore las prioridades de los países en desarrollo,
+y no únicamente las de las economías más avanzadas.
+
+Fuente: Puntaje total ILIA, índice base 100. Índice Latinoamericano de IA 2025. CEPAL
+
+2. Una visión de Estado
+La inteligencia artificial representa una de las transformaciones más profundas de
+nuestro tiempo y está redefiniendo la manera en que los gobiernos interactúan con
+la ciudadanía, toman decisiones y garantizan derechos. De acuerdo con la OCDE,
+una administración pública proactiva no solo responde a las necesidades
+
+ciudadanas, sino que también puede anticiparse a ellas mediante el uso estratégico
+de tecnologías como la IA. Su adopción permite aumentar la productividad pública,
+fortalecer la detección de fraude, mejorar la toma de decisiones y elevar la calidad
+del trabajo de las personas servidoras públicas. Frente a este cambio, el Gobierno
+de México impulsa un Estado activo, capaz de regular de manera responsable,
+desarrollar herramientas propias orientadas al bienestar general, generar código
+replicable y poner soluciones tecnológicas a disposición de estados y municipios.
+Para que esta agenda tenga impacto real, es necesario avanzar en cuatro
+condiciones habilitantes: una regulación realista, aplicada por las instituciones
+competentes y adaptable al cambio tecnológico; una política sólida de datos,
+centrada en su calidad, estandarización, curaduría y acceso público; mecanismos de
+gobernanza que permitan articular responsabilidades entre el Estado, el sector
+privado, la sociedad civil, la academia y las comunidades técnicas; y esquemas de
+financiamiento que sostengan las acciones en el tiempo.
+El Estado mexicano reconoce que la inteligencia artificial debe estar al servicio de
+las personas y orientarse a objetivos públicos concretos: fortalecer la productividad,
+mejorar los servicios públicos, atender desafíos estructurales y construir
+capacidades tecnológicas nacionales. Para lograrlo, se requiere consolidar un
+ecosistema nacional de innovación con capacidades técnicas, institucionales y
+presupuestarias suficientes para diseñar, implementar y escalar soluciones en los
+ámbitos federal, estatal y municipal.
+Este ecosistema requiere habilitadores básicos. El primero es la formación de
+talento,
+
+mediante
+
+programas
+
+diferenciados
+
+para
+
+especialistas,
+
+sectores
+
+productivos, ciudadanía y personas servidoras públicas responsables de diseñar,
+contratar, supervisar o utilizar sistemas de IA. El segundo es la infraestructura
+estratégica, que incluye datos públicos preparados para su uso en modelos de IA,
+mecanismos seguros de intercambio de información entre instituciones, acceso a
+capacidades de cómputo, entornos controlados de experimentación y esquemas
+robustos de ciberseguridad. Sin estos elementos, la adopción de IA corre el riesgo
+de quedar limitada a proyectos aislados, sin continuidad ni capacidad de escalar.
+
+Finalmente, esta visión debe sustentarse en principios de inclusión y gobernanza
+responsable. Los sistemas de IA no son neutrales: reflejan las experiencias,
+prioridades y supuestos de quienes los diseñan, así como las limitaciones de los
+datos con los que son entrenados. Por ello, el desarrollo de inteligencia artificial
+pública debe incorporar la diversidad de la sociedad mexicana en términos de
+género, origen, lengua, condición económica y contexto territorial. Esta inclusión
+debe estar presente tanto en los equipos que diseñan las soluciones como en los
+datos, categorías y criterios que las alimentan. Solo así será posible construir una IA
+pública capaz de reconocer la complejidad del país y responder de manera efectiva
+a las personas a las que sirve.
+
+3.
+
+Inteligencia Artificial al servicio
+
+del Estado mexicano
+Para el Estado mexicano, la inteligencia artificial debe entenderse como una
+capacidad estratégica para fortalecer la acción pública. Su valor no reside
+únicamente en automatizar procesos o incorporar herramientas tecnológicas a la
+administración pública, sino en ampliar la capacidad del gobierno para tomar
+mejores decisiones, anticipar riesgos, optimizar recursos, coordinar instituciones y
+responder con mayor precisión a las necesidades de la población. Bajo esta lógica,
+la IA puede contribuir a construir un Estado más eficaz, cercano y justo, siempre que
+su desarrollo esté orientado por objetivos públicos y no solo por criterios de
+eficiencia técnica.
+Esta visión exige que el Estado no actúe como usuario pasivo de soluciones
+desarrolladas por terceros. Por el contrario, requiere capacidades propias para
+diseñar, adaptar, evaluar y supervisar sistemas de IA conforme a las prioridades
+nacionales. Esto implica fortalecer equipos técnicos dentro del sector público,
+promover el desarrollo de software público, mejorar la calidad de los datos
+gubernamentales, consolidar infraestructura estratégica y establecer mecanismos
+de colaboración con la academia, la industria, las comunidades técnicas y los
+gobiernos estatales y municipales. La IA al servicio del Estado mexicano debe ser,
+
+por tanto, una política de capacidades públicas, no una simple adopción de
+herramientas aisladas.
+Su implementación debe abarcar todo el ciclo de vida de las políticas públicas: desde
+la identificación de problemas y el análisis de información hasta el diseño de
+intervenciones, la prestación de servicios, el monitoreo de resultados y la evaluación
+de impacto. En este sentido, puede fortalecer áreas como la atención ciudadana, la
+fiscalización, la salud, la educación, la gestión de emergencias, la planeación
+territorial y la mejora regulatoria. Sin embargo, cada uso debe partir de preguntas
+básicas: qué problema público busca resolver, con qué datos opera, quién supervisa
+sus resultados, qué riesgos puede generar y qué mecanismos existen para corregir
+errores o efectos no deseados.
+En este marco se inscriben los Principios de Chapultepec, presentados el 29 de
+enero de 2026 por la Secretaría de Ciencia, Humanidades, Tecnología e Innovación
+y la Agencia de Transformación Digital y Telecomunicaciones. Esta declaración
+constituye el primer marco ético oficial del Gobierno de México para orientar el uso
+y desarrollo de sistemas de inteligencia artificial en el ámbito público. Su relevancia
+no consiste en sustituir la regulación futura ni la política pública sectorial, sino en
+establecer criterios comunes para que las instituciones diseñen, adopten,
+implementen y supervisen estas tecnologías con responsabilidad, inclusión y
+sentido público.
+Los Principios de Chapultepec establecen diez criterios para orientar la acción
+pública en materia de inteligencia artificial:
+1. La IA debe ampliar derechos, nunca reducirlos
+2. Toda decisión apoyada por IA debe tener responsables humanos
+3. Si una decisión no puede explicarse, no debe automatizarse
+4. La IA se gobierno mejor cuando se decide en colectivo
+5. La IA sólo es valiosa si genera bienestar para todas las personas
+6. Antes de automatizar, hay que comprender a quién y a qué afecta
+7. La tecnología estratégica debe responder a las necesidades del país
+8. El desarrollo de la IA requiere fortalecer la educación y el conocimiento en el
+
+país
+9. La IA no puede ser ajena a la diversidad cultural y lingüística del país
+10. Los datos son un bien público que debe cuidarse con responsabilidad
+Estos principios colocan a las personas en el centro del desarrollo tecnológico. Su
+punto de partida es que la IA debe ampliar derechos y no convertirse en una
+herramienta que limite injustificadamente el acceso a servicios, beneficios,
+información o mecanismos de atención. En un país marcado por desigualdades
+sociales, económicas, territoriales y culturales, la adopción de IA debe evitar que los
+sesgos existentes en los datos, en las instituciones o en los criterios de diseño se
+traduzcan en nuevas formas de exclusión.
+Otro criterio fundamental es la responsabilidad humana. Toda decisión apoyada por
+IA debe contar con personas e instituciones claramente responsables. La
+automatización no puede convertirse en una forma de diluir responsabilidades
+públicas ni de ocultar decisiones detrás de sistemas técnicos. Cuando una
+herramienta clasifica, prioriza, recomienda o alerta sobre procesos que afectan a
+personas, debe existir claridad sobre quién la diseñó, quién la implementa, quién la
+supervisa y quién responde por sus efectos. Sin esta cadena de responsabilidad, la
+IA corre el riesgo de debilitar la rendición de cuentas en lugar de fortalecerla.
+De manera complementaria, los principios establecen que ninguna decisión pública
+relevante debe automatizarse si no puede explicarse de manera suficiente. Esta
+exigencia es especialmente importante en el sector público, donde las decisiones
+deben poder justificarse frente a la ciudadanía. No se trata de convertir cada sistema
+en una caja técnica imposible de usar, sino de asegurar que las instituciones
+comprendan los criterios generales con los que opera, los datos que utiliza, los
+riesgos que presenta y las vías disponibles para revisar sus resultados.
+Antes de automatizar un proceso, también es necesario comprender a quién afecta
+y bajo qué condiciones institucionales operará. La implementación de IA en
+programas y políticas públicas debe considerar sus posibles efectos sociales,
+territoriales, ambientales y sobre los derechos de las personas. Esto incluye evaluar
+si una herramienta puede producir impactos diferenciados entre grupos sociales, si
+
+depende de datos incompletos o sesgados, si puede afectar el acceso a servicios
+públicos o si genera costos ambientales asociados al uso intensivo de
+infraestructura tecnológica y energía. La innovación pública no debe trasladar los
+costos del progreso digital a la población ni a su entorno.
+Los Principios de Chapultepec también reconocen que la IA se gobierna mejor
+cuando se decide de manera colectiva. Las decisiones sobre su diseño, adopción y
+supervisión no pueden quedar únicamente en manos de equipos técnicos o
+funcionarios de gabinete. Requieren espacios de diálogo entre el Estado, la
+academia, la industria, las comunidades técnicas, la sociedad civil y los grupos
+potencialmente afectados por estas tecnologías. Esta gobernanza compartida
+permite identificar riesgos que no siempre son visibles desde el diseño técnico,
+mejorar la pertinencia de las soluciones y fortalecer la legitimidad social de las
+políticas públicas basadas en IA.
+La IA pública debe evaluarse, además, por su contribución al bienestar social. Una
+herramienta no debe considerarse exitosa solo porque reduce costos o acelera
+procesos, sino porque mejora la calidad de los servicios, fortalece capacidades
+institucionales y atiende necesidades reales de la población. Este criterio permite
+evitar que la innovación tecnológica se convierta en un fin en sí mismo. La pregunta
+central no es cuántos procesos pueden automatizarse, sino qué problemas públicos
+se resuelven mejor y qué beneficios concretos reciben las personas.
+En el caso mexicano, esta visión también exige atender el problema de la
+dependencia tecnológica. Si las infraestructuras digitales, los modelos de IA y los
+sistemas de procesamiento de datos utilizados por el sector público dependen
+exclusivamente de actores externos, el Estado pierde capacidad real para decidir
+sobre su propio futuro tecnológico. Por ello, la IA al servicio del Estado mexicano
+debe impulsar infraestructuras públicas, capacidades nacionales de investigación y
+desarrollo, y soluciones tecnológicas propias con visión de largo plazo. No se trata
+solo de adquirir tecnología, sino de construir condiciones para comprenderla,
+adaptarla, auditarla y orientarla al interés público.
+
+Finalmente, los datos deben entenderse como un bien público que requiere
+protección y responsabilidad. La IA se alimenta de grandes volúmenes de
+información: registros administrativos, textos, imágenes, bases institucionales y, en
+muchos casos, datos personales. La forma en que estos datos se recopilan,
+almacenan, procesan, comparten y protegen no es un asunto técnico secundario,
+sino una condición ética, política y jurídica para cualquier sistema público de IA. Si
+los datos son incompletos, inseguros, desactualizados o sesgados, los sistemas
+construidos sobre ellos producirán resultados igualmente problemáticos, aunque
+aparezcan revestidos de precisión tecnológica.
+
+4. Gobernanza para una
+transformación ordenada
+El desarrollo de la IA requiere de una gobernanza clara que permita equilibrar
+innovación, responsabilidad y protección de derechos. En este sentido, México
+adopta un modelo de gobernanza que combina rectoría estratégica con
+implementación distribuida, orientado a promover el desarrollo tecnológico al
+tiempo que atiende sus riesgos y efectos sociales. Este modelo parte de tres
+premisas: fortalecer la capacidad institucional del Estado, articular de manera
+coherente marcos ya existentes en materias como datos personales, competencia
+económica y protección al consumidor, y establecer reglas claras para los usos de
+mayor impacto.
+La gobernanza de la IA también requerirá mecanismos de implementación y
+colaboración que permitan traducir principios en prácticas efectivas. Para ello, se
+impulsará la participación del sector privado, la academia y organismos
+internacionales, a fin de aprovechar el conocimiento especializado, compartir
+buenas prácticas y fortalecer el ecosistema nacional. Asimismo, su implementación
+se apoyará en buenas prácticas internacionales que favorezcan la gradualidad, la
+supervisión humana, la transparencia y la evaluación continua.
+
+México cuenta con condiciones jurídicas para consolidar un marco regulatorio en
+materia de IA que establezca los principios para su uso y desarrollo, reconozca los
+derechos de las personas frente a estos sistemas, defina obligaciones para
+desarrolladores, difusores y usuarios, y prevea mecanismos de protección de
+derechos y supervisión regulatoria. Este marco deberá incorporar criterios de
+transparencia, rendición de cuentas y supervisión humana, y al mismo tiempo
+conservar la flexibilidad necesaria para acompañar el ritmo del cambio tecnológico.
+La arquitectura institucional prevista distribuye funciones diferenciadas y
+complementarias entre los distintos actores. Una función de supervisión y vigilancia
+verificará el cumplimiento regulatorio de los sistemas de IA y supervisará su
+operación en los casos que corresponda. Una función de evaluación, designación y
+notificación establecerá y supervisará los procedimientos mediante los cuales se
+acrediten, validen o certifiquen los sistemas y actores obligados. Una función de
+protección de derechos garantizará que, especialmente en usos de alto impacto,
+existan
+
+autoridades
+
+con
+
+facultades
+
+para
+
+requerir
+
+información,
+
+revisar
+
+documentación, investigar posibles afectaciones y actuar en defensa de las
+personas.
+En este arreglo, las instituciones responsables de la supervisión, regulación y
+rectoría de la IA se definirán conforme evolucione el marco normativo en la materia.
+La ATDT jugará un papel central en la conducción de esta agenda, tanto en la
+definición de estándares y lineamientos técnicos como en la coordinación con las
+demás autoridades competentes. Así se asegurará coherencia, se evitarán
+duplicidades y se promoverá un uso más eficiente de los recursos públicos.
+
+5. Tres pilares para el desarrollo
+de la IA en México
+La adopción estratégica de inteligencia artificial en el sector público abre
+oportunidades relevantes para México. Su implementación puede fortalecer la
+atención ciudadana, mejorar la eficiencia de trámites y servicios digitales, reducir
+
+costos operativos, ampliar la disponibilidad de canales de atención y aumentar la
+trazabilidad de las solicitudes. También puede apoyar la toma de decisiones
+públicas, optimizar procesos internos y facilitar el análisis de grandes volúmenes de
+información. Sin embargo, estos beneficios no son automáticos: su despliegue exige
+atender, desde el diseño institucional, riesgos como la generación de respuestas
+incorrectas o discriminatorias, la falta de integración con sistemas públicos
+existentes, la baja calidad de los datos disponibles, la ciberseguridad y la
+desigualdad de capacidades entre niveles de gobierno.
+Frente a este escenario, la estrategia nacional se estructura en tres pilares
+complementarios, cada uno orientado a atender una dimensión clave del desarrollo
+público de la IA:
+1. Un marco ético y legal sólido
+2. Capacidades, talento y software público
+3. Infraestructura estratégica para la soberanía tecnológica
+
+5.1 Un marco ético y legal sólido
+El desarrollo y adopción de la IA en México debe sustentarse en un marco ético y
+legal claro, consistente y orientado a la protección de derechos. Este pilar parte del
+reconocimiento de que la confianza pública en estas tecnologías depende de la
+existencia de reglas precisas, instituciones capaces de hacerlas cumplir y
+mecanismos efectivos de supervisión, evaluación y corrección. Un entorno
+normativo sólido no solo brinda certeza a las personas usuarias, a las instituciones
+públicas y a los actores del ecosistema tecnológico, sino que también crea las
+condiciones para una adopción responsable, segura y socialmente útil de la IA.
+En este sentido, el Plan Nacional de IA plantea definir lineamientos para el uso
+responsable de la IA en el sector público, crear mecanismos de evaluación de
+impacto y armonizar el marco normativo aplicable, con el fin de asegurar coherencia
+entre disposiciones sectoriales, evitar vacíos regulatorios y promover la adopción de
+estándares internacionales compatibles con el contexto nacional.
+
+Para que este marco sea efectivo, deberá sustentarse en tres elementos centrales:
+la transparencia algorítmica, que exige que los sistemas que impactan la vida de las
+personas puedan explicarse y auditarse; la responsabilidad pública, que implica que,
+cuando una decisión automatizada afecte derechos o intereses legítimos, existan
+vías claras para identificar responsables, impugnar la decisión; solicitar su revisión
+y, en su caso, reparar el daño; y la inclusión, que supone que la IA se diseñe e
+implemente considerando la diversidad social, cultural, lingüística y territorial del
+país. Para ello, será necesario incorporar procesos participativos que permitan
+escuchar a las comunidades potencialmente afectadas, así como promover el
+desarrollo de sistemas sensibles a las desigualdades estructurales y a los distintos
+contextos de uso.
+Como parte de este esfuerzo, se propone expedir un marco legal a nivel federal en
+materia de IA que establezca las bases para el desarrollo, uso, supervisión y
+gobernanza de estos sistemas en México. Esta regulación se articulará en torno a
+seis principios rectores: transparencia y explicabilidad de los sistemas; licitud y uso
+ético; no discriminación; proporcionalidad; supervisión humana efectiva; y
+corresponsabilidad entre quienes desarrollan, distribuyen y utilizan la IA. A partir de
+estos principios, la regulación reconocerá derechos concretos para las personas y
+establecerá obligaciones claras para los distintos actores que integran el ecosistema
+de la IA.
+El desarrollo y adopción de la IA plantea desafíos inéditos para la protección de
+derechos. Los sistemas de IA pueden incidir de manera significativa en decisiones
+que afectan el acceso a servicios, las condiciones laborales, la privacidad y el ejercicio
+de libertades fundamentales. Por ello, el marco normativo deberá garantizar que las
+personas cuenten con información, control y mecanismos de protección frente a
+estos sistemas, especialmente en aquellos usos de mayor impacto.
+La definición precisa de estos derechos y obligaciones corresponderá al proceso
+legislativo que habrá de desarrollarse próximamente. No obstante, dicho proceso
+deberá establecer un marco que defina las condiciones de integración de la
+inteligencia artificial a la vida pública y asegure que su evolución responda a una
+visión de largo plazo centrada en derechos, equidad y soberanía tecnológica.
+
+5.2 Capacidades: talento y software público
+El segundo pilar se orienta al desarrollo de capacidades nacionales en IA,
+entendidas en una doble dimensión: por un lado, como la formación de talento
+humano altamente especializado; por otro, como la capacidad del Estado para
+desarrollar, adaptar e implementar soluciones tecnológicas propias. En este marco,
+se trata de una apuesta estratégica para fortalecer las capacidades productivas del
+país, cerrar brechas en formación y capital humano, y vincular el desarrollo
+tecnológico con la empleabilidad, la consolidación de un mercado interno robusto
+y la inserción de México en los circuitos globales de innovación.
+Para ello, se impulsará una estrategia integral orientada a cerrar la brecha entre
+educación y empleo, mediante el fortalecimiento de competencias directamente
+aplicables en servicios tecnológicos. Esta política de formación estará acompañada
+por una estrategia de certificación y desarrollo de habilidades transversales,
+particularmente en inglés técnico, así como por el impulso a un ecosistema nacional
+de servicios tecnológicos que incluya software, infraestructura en la nube,
+ciberseguridad, procesos de negocio e IA. Con ello, se busca generar trayectorias
+laborales de alta especialización, fortalecer la empleabilidad, y asegurar que el
+conocimiento producido en el país pueda traducirse en innovación tangible,
+capacidades públicas y soluciones estratégicas para el desarrollo nacional.
+
+Centro Público de Formación en IA
+El Centro Público de Formación en IA (CPFIA) es una iniciativa nacional de formación
+y reconversión profesional diseñada para orientar el talento en áreas STEM hacia
+campos especializados de IA. El programa ofrece formación gratuita y de alta
+calidad a estudiantes de bachillerato y educación superior en áreas clave como IA,
+ciberseguridad, programación y análisis de datos, con el propósito de posicionar a
+México como referente en innovación tecnológica y cerrar la brecha entre la
+formación académica tradicional y las exigencias de una economía digital global
+altamente competitiva.
+
+El CPFIA opera a través de alianzas con 14 empresas tecnológicas líderes —
+Accenture, AWS, Axity, Ericsson, Google, IBM, Kyndryl, Meta, Microsoft, Oracle,
+Salesforce, SAP, Softtek y TCS— que han contribuido al desarrollo de una plataforma
+de aprendizaje híbrida que combina instrucción asíncrona y sincrónica. El programa
+se estructura en torno a cinco áreas de especialización: inteligencia artificial, análisis
+de datos, programación en Java, cómputo en la nube y ciberseguridad, en un
+formato intensivo de cinco meses. Las empresas participan activamente en la
+mentoría, orientación y validación de los contenidos curriculares para asegurar su
+pertinencia con las necesidades del mercado.
+La primera generación concluyó en 2026 exitosamente su curso propedéutico y se
+encuentra avanzando en sus rutas de especialización, con acceso a más de 100
+expertos de la industria. Los egresados obtendrán una doble certificación: una
+expedida por las empresas participantes y otra por las autoridades educativas
+mexicanas, además de oportunidades de inserción laboral.
+El CPFIA se ha consolidado como un programa escalable y orientado a resultados,
+respaldado por alianzas público-privadas sólidas, infraestructura digital robusta y
+un modelo educativo probado. La primera generación cuenta con 10,000
+estudiantes, con una capacidad proyectada de certificación anual de 25,000
+personas, contribuyendo al desarrollo de una creciente base de profesionales
+altamente calificados en IA en México.
+La segunda generación del programa, proyectada para el segundo semestre de
+2026, tiene por objetivo profundizar el modelo de formación continua y ampliar la
+base de profesionales especializados disponibles tanto para el sector público como
+para la industria tecnológica nacional. Los egresados del CPFIA podrán incorporarse
+a iniciativas como la Fábrica de IA, estableciendo así un circuito virtuoso entre la
+formación de talento y su aplicación directa en proyectos de interés público.
+
+Fábrica de IA
+De manera complementaria, se ha puesto en marcha la Fábrica de IA, el motor de
+desarrollo de soluciones tecnológicas del gobierno. Este espacio articula equipos
+
+multidisciplinarios que trabajan en proyectos concretos alineados con las
+prioridades nacionales y tiene como propósito establecer metodologías, estándares
+y buenas prácticas para la implementación de IA en el sector público. Integrada por
+100 expertos especializados, la Fábrica provee soluciones de software e IA tanto al
+sector público como al privado, bajo un modelo de escalamiento progresivo,
+formación continua y consolidación de servicios especializados de largo plazo.
+La Fábrica combina formación continua con la consolidación de servicios
+especializados de largo plazo, su portafolio abarca tanto el desarrollo de agentes
+conversacionales orientados a la atención ciudadana como modelos avanzados de
+predicción de riesgos para funciones de política pública. Esta doble orientación,
+hacia el servicio y hacia la toma de decisiones basada en evidencia, define su
+carácter como unidad estratégica del Estado y no simplemente como un área de
+soporte tecnológico.
+En su evolución, la Fábrica de IA podrá incorporar líneas de trabajo vinculadas con
+la supervisión y certificación de sistemas de alto riesgo, el análisis prospectivo de
+tendencias globales, la cooperación internacional y la promoción de criterios de
+inclusión y ética en el desarrollo tecnológico.
+Entre los proyectos desarrollados por la Fábrica de IA durante su primer año de
+operación destacan seis iniciativas que ilustran el alcance y la diversidad de
+aplicaciones que la IA puede tener al servicio del Estado.
+●
+
+Semáforo Aduanal: herramienta de análisis de riesgo desarrollada para la
+Agencia Nacional de Aduanas de México (ANAM), orientada a priorizar
+inspecciones con base en información histórica, criterios institucionales y la
+capacidad operativa de cada aduana. Su objetivo es fortalecer la gestión de
+riesgos sin saturar la operación, al dirigir las revisiones hacia los casos con
+mayor probabilidad de incidencia y evitar inspecciones indiscriminadas. Además
+de su utilidad operativa, genera información analítica para identificar patrones
+recurrentes, zonas de vulnerabilidad y áreas de mejora en los procesos
+aduanales.
+
+●
+
+Ventanilla 24/7: agente conversacional que orienta a la ciudadanía en la
+localización de trámites federales a partir del lenguaje natural de las personas
+usuarias del portal gob.mx.
+Técnicamente, el sistema utiliza una arquitectura de procesamiento de lenguaje
+natural orientada a interpretar consultas en lenguaje abierto y vincularlas con el
+trámite más pertinente dentro del catálogo disponible. Para ello, transforma
+tanto la información de los trámites como la consulta de la persona usuaria en
+representaciones
+
+semánticas
+
+comparables,
+
+lo
+
+que
+
+permite
+
+identificar
+
+coincidencias por significado y no solo por palabras clave. Esto mejora la
+precisión de las respuestas y facilita que las personas encuentren el trámite
+adecuado aun cuando no conozcan su nombre exacto o la terminología
+institucional correspondiente. Este diseño garantiza que incluso consultas
+formuladas en lenguaje cotidiano, sin tecnicismos administrativos, sean
+correctamente vinculadas con el trámite federal correspondiente.
+Desde su lanzamiento el 9 de enero de 2026, el agente ha alcanzado a más de
+280,000 personas usuarias, consolidándose como uno de los canales digitales
+de mayor crecimiento en el portal gob.mx. Esta adopción refleja tanto la
+pertinencia del servicio como el potencial de la IA para reducir fricciones en el
+acceso a trámites, particularmente entre personas usuarias poco familiarizadas
+con la navegación en sistemas administrativos digitales.
+●
+
+Kuúl: asistente turístico desarrollado para la Secretaría de Turismo que
+recomienda destinos a partir de las consultas de las personas usuarias y de la
+base oficial de sitios turísticos disponible en español e inglés. Al operar en
+ambos idiomas, Kuúl amplía el alcance del servicio tanto para la ciudadanía
+nacional como para visitantes internacionales, al ofrecer información turística
+oficial en lenguaje natural y de manera permanente. Además, contribuye a
+fortalecer la promoción digital de destinos y comunidades con menor presencia
+en plataformas turísticas tradicionales, favoreciendo una difusión más amplia de
+la diversidad cultural, territorial y lingüística del país. En este sentido, Kuúl no
+solo mejora el acceso a información turística confiable, sino que también
+
+funciona como una herramienta de inclusión digital y promoción del patrimonio
+nacional.
+●
+
+OCR y Clasificación de Patentes: plataforma desarrollada para el IMPI que
+digitaliza documentos de patente, automatiza su clasificación y facilita
+búsquedas avanzadas para apoyar el examen técnico-jurídico.
+La plataforma contempla la conversión de documentos en formatos PDF y TIFF
+a texto estructurado mediante reconocimiento óptico de caracteres, seguida de
+la asignación automática de clases conforme a la Clasificación Internacional de
+Patentes (CIP). El contenido extraído se organiza por secciones clave del
+documento de patente, habilitando búsquedas avanzadas en bases de datos
+internas y externas.
+Con ello, se reducen significativamente los tiempos del examen de fondo y se
+permite que las personas examinadoras concentren su trabajo en el análisis
+técnico-jurídico de mayor valor, en lugar de tareas de clasificación y localización
+documental.
+
+●
+
+Modelo de Grafos contra Factureras: sistema analítico diseñado para
+identificar redes de riesgo y patrones de operación vinculados con facturación
+simulada, con el fin de fortalecer los procesos de auditoría y fiscalización.
+El modelo representa a cada contribuyente como un nodo y cada transacción o
+deducción fiscal como una arista dentro de un grafo de gran escala. Además,
+incorpora el padrón de contribuyentes publicado conforme al artículo 69-B del
+Código Fiscal de la Federación, lo que permite analizar vínculos directos e
+indirectos entre posibles EFOS y EDOS, es decir, empresas que facturan
+operaciones simuladas o que las deducen. A partir de esta arquitectura, el
+sistema identifica subgrafos, comunidades, ciclos y rutas de propagación de
+riesgo, revelando esquemas de operación coordinada que difícilmente podrían
+detectarse mediante análisis transaccionales convencionales.
+El sistema está diseñado para escalar a millones de nodos y aristas,
+manteniendo consistencia con la base de datos transaccional y capacidad
+
+operativa para apoyar procesos avanzados de fiscalización y auditoría del
+Servicio de Administración Tributaria. De este modo, amplía la capacidad del
+Estado para detectar redes de defraudación fiscal que operan de manera
+fragmentada y buscan evadir los mecanismos tradicionales de supervisión.
+●
+
+Gestor Inteligente de Desastres: herramienta que integra información de
+distintas fuentes para consolidar, en tiempo real, registros de personas
+desaparecidas, hospitalizadas o fallecidas durante situaciones de emergencia.
+El agente procesa simultáneamente tres modalidades de información: reportes
+textuales; imágenes compartidas por las autoridades; y mensajes de audio o
+notas de voz. A partir de estas fuentes heterogéneas, el sistema genera y
+actualiza en tiempo real una base de datos centralizada con el estatus de cada
+persona reportada como desaparecida, hospitalizada o fallecida, conforme
+llegan nuevos reportes de las entidades responsables de la atención de la
+emergencia. Esta capacidad multimodal representa un avance significativo en la
+coordinación de respuesta humanitaria, donde la velocidad y precisión de la
+información pueden resultar determinantes.
+
+5.3 Infraestructura estratégica
+para la soberanía tecnológica
+El tercer pilar reconoce que la IA requiere de una infraestructura robusta para su
+desarrollo y operación, y concibe dicha infraestructura como un motor estratégico
+para el desarrollo nacional. Esto implica no solo ampliar las capacidades de cómputo
+y almacenamiento, sino también garantizar su disponibilidad, seguridad y eficiencia
+a largo plazo. Asimismo, supone fortalecer la autonomía tecnológica del país,
+reduciendo dependencias externas y habilitando el desarrollo de soluciones propias
+alineadas con las prioridades nacionales.
+En este sentido, México impulsará una estrategia nacional de supercómputo, con
+proyectos como Coatlicue, la supercomputadora más poderosa de América Latina,
+y colaboraciones internacionales con centros de excelencia como el Barcelona
+
+Supercomputing
+
+Center.
+
+Estas
+
+capacidades
+
+permitirán
+
+entrenar
+
+modelos
+
+avanzados y atender necesidades estratégicas del país.
+Asimismo, se promoverá el desarrollo de un ecosistema de centros de datos, tanto
+públicos como privados. Por ello, el Estado desempeñará un rol activo como
+facilitador de inversiones, para generar condiciones favorables y acompañar a los
+actores interesados en desarrollar infraestructura en el país. Esta estrategia
+permitirá posicionar a México como un hub regional en materia de datos y
+tecnología.
+
+Coatlicue: supercomputadora mexicana
+El Gobierno de México, a través de la ATDT y la SECIHTI, está desarrollando
+Coatlicue, la primera supercomputadora de carácter público del país. Su
+denominación hace referencia a la diosa madre de la cosmovisión azteca, símbolo
+del poder creador y origen de la vida.
+El proyecto contempla una inversión pública de aproximadamente 6,000 millones
+de pesos mexicanos, con inicio de construcción en enero de 2026 y colocación de
+la primera piedra en junio de ese año, en un horizonte de implementación de 24
+meses. Su desarrollo se lleva a cabo en colaboración con el Barcelona
+Supercomputing Center (BSC), centro de referencia mundial en cómputo de alto
+desempeño, cuya participación abarca asesoría técnica en infraestructura física,
+arquitectura de redes, operación de sistemas y formación especializada de
+capacidades humanas. El proyecto se articula, asimismo, con el Clúster Nacional de
+Supercómputo, red conformada por universidades y Centros Públicos de
+Investigación distribuidos a lo largo del territorio nacional.
+Con una capacidad de procesamiento de 314 petaflops, equivalentes a 314 mil
+billones de operaciones por segundo, Coatlicue se posicionará como la
+infraestructura de cómputo de alto desempeño más potente de América Latina, con
+una capacidad aproximadamente siete veces superior a la de la mayor
+supercomputadora actualmente en operación en la región. Su arquitectura
+contempla 14,480 unidades de procesamiento gráfico (GPU), distribuidas en 7,500
+
+chasis y 200 gabinetes. La instalación tendrá su sede en el campus Zacatenco del
+Instituto Politécnico Nacional, en la Ciudad de México.
+Coatlicue está concebida como un bien público estratégico destinado a fortalecer
+las capacidades nacionales de investigación, análisis y toma de decisiones basada
+en evidencia. Su modelo de acceso refleja esta vocación pública y abierta:
+investigadores, universidades y centros de investigación del país y de América Latina
+podrán acceder a una capacidad de procesamiento de clase mundial. En paralelo,
+la infraestructura se pondrá al servicio de la industria nacional mediante la renta de
+tiempo de cómputo, convirtiendo a Coatlicue en un activo productivo que genera
+retornos para el Estado y amplía el acceso del sector privado a tecnología de
+frontera.
+Sus aplicaciones prioritarias abarcan algunos de los desafíos más urgentes del país:
+
+●
+
+Predicciones climatológicas de alta precisión y modelado de escenarios de
+desastres naturales.
+
+●
+
+Planeación agrícola para la optimización de cosechas y la gestión de la
+seguridad alimentaria.
+
+●
+
+Procesamiento de imágenes del suelo y subsuelo orientado a la exploración y
+producción sustentable de hidrocarburos.
+
+●
+
+Simulación y planificación del consumo energético para promover la eficiencia y
+el ahorro.
+
+●
+
+Análisis de grandes volúmenes de datos fiscales y aduanales para fortalecer la
+transparencia y combatir la evasión.
+
+●
+
+Investigación de frontera en salud, movilidad, IA y ciencias básicas.
+
+Inversión en centros de datos
+El Gobierno de México impulsa el desarrollo de una red nacional de centros de datos
+como infraestructura estratégica para garantizar la soberanía tecnológica, la
+continuidad operativa y la seguridad de la información pública. Esta red proveerá
+servicios de hospedaje, nube privada, almacenamiento, respaldo, conectividad y
+servicios administrados para las dependencias del gobierno federal, con el objetivo
+
+de consolidar progresivamente los servicios digitales del Estado en una plataforma
+nacional soberana. Sus tres objetivos estratégicos son garantizar la soberanía
+tecnológica y la protección de la información pública; habilitar la operación de
+servicios públicos digitales; y consolidar en una nube nacional los servicios del
+gobierno federal.
+Como parte de esta estrategia, se han realizado inversiones para modernizar y
+ampliar las capacidades de los centros existentes. El Centro de Datos de
+Aguascalientes, nodo central de esta red, recibió una inversión de 7 millones de
+dólares para expandir su capacidad operativa y extender sus servicios a múltiples
+instituciones públicas federales. Este esfuerzo se complementará con el Centro de
+Datos de Tulancingo, actualmente en proceso de habilitación, que incorporará
+capacidades de cómputo de gran escala, almacenamiento masivo y conectividad de
+alta capacidad. En conjunto, ambos centros conformarán una infraestructura de alto
+rendimiento
+
+orientada
+
+al
+
+autoabastecimiento
+
+tecnológico
+
+del
+
+Estado,
+
+la
+
+redundancia operativa y la protección de los activos de información del gobierno.
+Asimismo, esta política incorporará mecanismos de colaboración público-privada
+orientados a fortalecer capacidades nacionales. Entre ellos se contemplan esquemas
+de transferencia tecnológica, capacitación continua de personal público vinculado con
+la operación, mantenimiento, seguridad y escalabilidad de centros de datos, y la
+promoción de componentes y servicios con mayor participación nacional en rubros
+como infraestructura eléctrica, enfriamiento y cableado estructurado.
+
+Conclusión
+El Plan Nacional de Inteligencia Artificial establece una ruta de acción pública para
+que México aproveche esta tecnología con sentido estratégico, responsabilidad
+institucional y orientación social. En un contexto global marcado por la aceleración
+tecnológica, la concentración de capacidades y la competencia por infraestructura,
+datos y talento, contar con una política nacional de IA no es una opción secundaria:
+es una condición para evitar que el país permanezca como receptor pasivo de
+
+tecnologías desarrolladas bajo lógicas ajenas a sus prioridades, necesidades y
+capacidades.
+La inteligencia artificial debe servir a las personas y al interés público. Para ello, su
+adopción no puede reducirse a la incorporación aislada de herramientas digitales,
+sino que debe formar parte de una política integral de capacidades públicas. La IA
+puede mejorar la productividad, fortalecer los servicios públicos, apoyar la toma de
+decisiones, anticipar riesgos y atender problemas estructurales; sin embargo, para
+lograrlo requiere instituciones capaces de diseñarla, supervisarla, evaluarla y
+adaptarla a los contextos concretos en los que será utilizada.
+La efectividad del Plan depende de la coherencia entre sus tres pilares. La
+infraestructura tecnológica requiere talento especializado para traducirse en
+soluciones públicas sostenibles; el desarrollo de capacidades necesita reglas claras
+para generar confianza y certidumbre; y el marco ético y legal debe acompañarse
+de capacidades institucionales que aseguren su aplicación efectiva.
+Esta articulación permite que la agenda nacional de IA avance más allá de proyectos
+aislados o respuestas coyunturales. Su propósito es construir capacidades
+duraderas para que el Estado pueda desarrollar soluciones propias, fortalecer
+servicios públicos, proteger derechos, mejorar la toma de decisiones y reducir
+brechas institucionales. En ese sentido, la soberanía tecnológica no se limita a
+contar con infraestructura o herramientas nacionales, sino que implica disponer de
+conocimiento, reglas, instituciones y recursos suficientes para orientar el desarrollo
+tecnológico conforme al interés público.
+La implementación del Plan requerirá mecanismos permanentes de seguimiento,
+evaluación y actualización. La velocidad del cambio tecnológico hace inviable un
+enfoque estático: las prioridades, indicadores e instrumentos deberán revisarse
+periódicamente a partir de los resultados obtenidos, los riesgos identificados y las
+transformaciones
+
+del
+
+entorno
+
+global.
+
+En
+
+este
+
+proceso,
+
+la
+
+Agencia
+
+de
+
+Transformación Digital y Telecomunicaciones tendrá un papel central de
+coordinación transversal, tanto para articular a las instituciones responsables de
+
+cada componente como para asegurar coherencia, evitar duplicidades y promover
+un uso eficiente de los recursos públicos.
+Con ello, el Plan Nacional de Inteligencia Artificial representa un punto de inflexión
+en la relación del Estado mexicano con la tecnología. Su éxito dependerá de
+convertir sus principios y proyectos en capacidades institucionales concretas,
+sostenidas y evaluables. Solo así la inteligencia artificial podrá consolidarse como
+una herramienta legítima para fortalecer la acción pública, mejorar la calidad de los
+servicios, reducir brechas estructurales y contribuir a un modelo de desarrollo
+tecnológico centrado en las personas, el interés público y la soberanía nacional.
+
+Bibliografía
+ANIA (Alianza Nacional de IA). 2024. "Propuesta de Agenda Nacional de la IA para
+México
+
+2024-2030."
+
+https://www.ania.org.mx/propuestadeagendanacionaldeia.
+Bright, J., Enock, F. E., Esnaashari, S., Francis, J., Hashem, Y., & Morgan, D. (2024).
+
+Generative
+
+AI
+
+is
+
+already
+
+widespread
+
+in
+
+the
+
+public
+
+sector.
+
+https://arxiv.org/abs/2401.01291
+Diario Jurídico. 2024. "Agenda Nacional de la IA para México 2024-2030." Mayo 16.
+https://www.diariojuridico.com/mexico-agenda-nacional-de-la-inteligenciaartificial-para-2024-2030/.
+
+Future of Life Institute. (2025). Overview of all AI Act National Implementation Plans.
+EU
+
+Artificial
+
+Intelligence
+
+Act.
+
+https://artificialintelligenceact.eu/national-implementation-plans/
+Government Digital Service & Central Digital and Data Office. (2021, actualizado
+2025).
+
+The
+
+Technology
+
+Code
+
+of
+
+Practice.
+
+UK
+
+Government.
+
+https://www.gov.uk/guidance/the-technology-code-of-practice
+Instituto Nacional de Estadística y Geografía. (2026). Encuesta Nacional de
+
+Ocupación y Empleo (ENOE). INEGI.
+México, Presidencia de la República. (2021, 6 de septiembre). Acuerdo por el que se
+
+emiten las políticas y disposiciones para impulsar el uso y aprovechamiento
+de la informática, el gobierno digital, las tecnologías de la información y
+comunicación, y la seguridad de la información en la Administración Pública
+Federal. Diario Oficial de la Federación.
+OECD. (2025). EC-OECD STIP Compass. Recuperado el 25 de abril de 2026, de:
+https://stip.oecd.org/stip/interactive-dashboards/policyinitiatives/2025%2Fdata%2FpolicyInitiatives%2F26590
+OECD. (2020). The OECD Digital Government Policy Framework: Six Dimensions of a
+
+Digital
+
+Government.
+
+OECD
+
+Publishing.
+
+https://www.oecd.org/en/publications/the-oecd-digital-government-policyframework_f64fed2a-en.html
+OECD & CAF. (2022). The strategic and responsible use of artificial intelligence in the
+
+public sector of Latin America and the Caribbean. OECD Public Governance
+Reviews. OECD Publishing. https://doi.org/10.1787/1f334543-en
+OECD. (2018). Open government data in Mexico: The way forward. OECD Publishing.
+https://doi.org/10.1787/9789264297944-en
+OECD & ADB. (2025). Government at a glance: Southeast Asia 2025. OECD
+Publishing. https://doi.org/10.1787/bc89cb32-en
+
+Oxford Insights. (2026). Government AI Readiness Index. Consultado el 18 de abril
+de 2026 en: https://oxfordinsights.com/ai-readiness/
+Quintana Ruidías, H. D. (2025). Transformación digital en la administración pública y
+la gestión de gobierno de una municipalidad distrital en Piura. Revista
+
+InveCom, 5(2), artículo e502034. https://doi.org/10.5281/zenodo.13256575
+Soto, Á., Durán, R., Moreno, A., Adasme, S., Rovira, S., Jordán, V., y Poveda, L.
+(Coords.). (2025). Índice Latinoamericano de IA (ILIA) 2025. Comisión
+Económica para América Latina y el Caribe (CEPAL) y Centro Nacional de IA.
+https://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf
+
+Straub, V. J., Morgan, D., Bright, J., & Margetts, H. (2022). Artificial intelligence in
+
+government:
+
+Concepts,
+
+standards,
+
+and
+
+a
+
+unified
+
+framework.
+
+https://arxiv.org/abs/2210.17218
+Secretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI) y la Agencia
+de Transformación Digital y Telecomunicaciones (ATDT). (2026), Principios de
+
+Chapultepec. Declaración de ética y buenas prácticas para el uso y desarrollo
+de la IA, Consultado el 27 de marzo de 2026 en:
+https://secihti.mx/wpcontent/uploads/2026/02/Principios_Chapultepec_F.pdf
+World Bank. (2026). GovTech Maturity Index (GTMI) Data Explorer. Consultado el 19
+de
+
+abril
+
+de
+
+2026
+
+en:
+
+https://www.worldbank.org/en/data/interactive/2022/11/10/govtechmaturity-index-gtmi-data-explorer

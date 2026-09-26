@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses a system-wide vision of AI in education by situating AI as a fundamental technology with implications for national development, including education, but does not go into specific educational applications or policies.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T16:20:33.903941+00:00"
+}

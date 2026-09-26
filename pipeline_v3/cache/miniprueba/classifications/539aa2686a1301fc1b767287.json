@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment emphasizes ethical, political, and legal conditions for data use in public AI systems, focusing on data protection, bias, and responsibility, which aligns with policies for equitable and ethical AI use in education.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T16:20:25.329452+00:00"
+}

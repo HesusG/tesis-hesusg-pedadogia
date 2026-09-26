@@ -1,0 +1,155 @@
+%% cap01-planteamiento.tex — Planteamiento del problema (versión sept-2026)
+
+\chapter{Planteamiento del problema}
+\label{cap:planteamiento}
+
+\section{Contexto}
+\label{sec:contexto}
+
+En pocos años, la inteligencia artificial pasó a formar parte de la agenda educativa de
+muchos gobiernos. Para 2021, más de treinta países habían publicado estrategias nacionales
+de inteligencia artificial, y en ellas la educación aparece de manera casi constante
+\citep[p.~527]{schiff2022education}. Desde entonces se han sumado planes de acción,
+lineamientos y programas dedicados a la educación, como los que el gobierno chino y varias
+de sus provincias publicaron entre 2025 y 2026.
+
+Estos documentos no son todos del mismo tipo. La mayoría son estrategias generales de
+inteligencia artificial en las que la educación ocupa algunas secciones, junto a la
+industria, la salud o la seguridad. Otros son planes dedicados por completo a la educación.
+En ambos casos, lo que un gobierno escribe sobre educación establece qué espera que se
+enseñe sobre esta tecnología, cómo quiere que se use en las escuelas y qué pide a los
+docentes.
+
+Al leer varios de estos documentos, lo primero que se nota es que se parecen. Hablan de
+competencias para el futuro, de ética, de formación docente, de innovación y de reducir
+brechas. Ese parecido tiene explicaciones posibles: los gobiernos leen los documentos de
+otros gobiernos, siguen las recomendaciones de los organismos internacionales y enfrentan
+presiones parecidas. Lo que no dice ese parecido es si detrás de las mismas palabras hay
+las mismas prioridades.
+
+\section{Problema de investigación}
+\label{sec:problema}
+
+Usar el mismo lenguaje no significa proponer lo mismo. Los estudios que han comparado
+políticas de inteligencia artificial lo muestran de dos maneras. En los principios éticos,
+los documentos coinciden en unos cuantos términos, como transparencia, justicia o
+privacidad, pero difieren en cómo los interpretan y en cómo piensan aplicarlos
+\citep{jobin2019landscape, fjeld2020principled}. En educación, \citet{schiff2022education}
+analizó 24 estrategias nacionales y encontró que todas hablaban de educación, pero casi
+siempre para referirse a formar expertos y preparar a la fuerza laboral. Solo nueve
+trataban con alguna profundidad el uso de la inteligencia artificial para enseñar y
+aprender \citep[p.~535]{schiff2022education}.
+
+Saber qué tan parecidas o distintas son estas propuestas exige compararlas tema por tema,
+y las comparaciones disponibles tienen límites que impiden hacerlo. Comparan pocos casos,
+entre dos y cuatro países \citep{kundu2025aipolicies, martinezrojas2026regulacion,
+lara2026gobernanza}. Trabajan con documentos en inglés o traducidos al inglés, y sus
+autores reconocen el sesgo que eso introduce \citep{jobin2019landscape,
+schiff2022education}. Cada estudio usa categorías propias. Y la codificación la hace una
+sola persona, de modo que no se puede saber cuánto dependen los resultados de quien leyó
+\citep[p.~533]{schiff2022education}.
+
+El problema de esta tesis es, entonces, que no sabemos qué tan parecido es lo que proponen
+para la educación las políticas de inteligencia artificial de distintos países cuando se
+comparan tema por tema, en sus idiomas originales y con un procedimiento que otra persona
+pueda repetir.
+
+\section{Preguntas de investigación}
+\label{sec:preguntas}
+
+\subsection{Pregunta central}
+
+¿Qué tan parecido es lo que proponen para la educación las políticas de inteligencia
+artificial de distintos países cuando se comparan tema por tema?
+
+\subsection{Preguntas específicas}
+
+\begin{enumerate}
+  \item[\textbf{P1.}] ¿Qué temas educativos proponen las políticas de cada país, y plantean
+  la educación como formación para la inteligencia artificial o como uso de la inteligencia
+  artificial para enseñar y aprender?
+  \item[\textbf{P2.}] Dentro de un mismo tema, ¿qué países proponen cosas cercanas y cuáles
+  se alejan?
+  \item[\textbf{P3.}] ¿Esas cercanías y distancias se mantienen cuando se controla el idioma
+  de los documentos y el grado de acuerdo entre los modelos que los clasifican?
+\end{enumerate}
+
+La primera pregunta describe lo que propone cada política. La segunda compara esas
+propuestas entre países. La tercera revisa si la comparación depende del idioma o del
+instrumento con que se hizo.
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+\subsection{Objetivo general}
+
+Comparar lo que proponen para la educación las políticas de inteligencia artificial de
+distintos países, tema por tema, mediante procesamiento de lenguaje natural y un panel de
+modelos de lenguaje multilingües.
+
+\subsection{Objetivos específicos}
+
+\begin{enumerate}
+  \item[\textbf{OE1.}] Identificar los temas educativos que propone cada política y
+  clasificarlos como formación para la inteligencia artificial o como uso de la
+  inteligencia artificial para enseñar y aprender (P1).
+  \item[\textbf{OE2.}] Medir, dentro de cada tema, la distancia entre lo que proponen los
+  distintos países (P2).
+  \item[\textbf{OE3.}] Contrastar esas distancias con un control de idioma y con el grado de
+  acuerdo entre los modelos del panel (P3).
+\end{enumerate}
+
+\section{Justificación}
+\label{sec:justificacion}
+
+La justificación pedagógica está en el objeto de estudio. Lo que una política dice sobre
+educación orienta decisiones concretas: qué contenidos de inteligencia artificial entran al
+currículo, para qué niveles, qué se espera de los docentes y si la tecnología se piensa
+como materia de estudio o como herramienta para enseñar. Comparar esas decisiones entre
+países permite ver que no hay una sola manera de tomarlas.
+
+La justificación metodológica está en el procedimiento. El procesamiento de lenguaje
+natural permite comparar muchos documentos en sus idiomas originales, fragmento por
+fragmento, algo que la lectura manual de una sola persona no puede hacer con consistencia.
+Usar un panel de modelos en lugar de un solo codificador permite medir cuánto coinciden y,
+con ello, cuánto confiar en cada resultado. Esta postura sigue a
+\citet{grimmer2013text}: los métodos automáticos amplían la capacidad del analista, pero no
+sustituyen la interpretación y deben validarse. El panel responde además a un riesgo
+documentado: que la elección de un modelo o de una instrucción determine la conclusión
+\citep{baumann2025llmhacking}.
+
+La tesis también parte de mi trabajo. Diseño currículo de cursos sobre inteligencia
+artificial en DeepLearning.AI, y estoy por concluir la edición 2026 del Programa regional
+de formación en planeamiento y gestión de políticas educativas del IIPE UNESCO
+\citep{iipe2026prf}. En el primer trabajo decido qué deben aprender las personas sobre esta
+tecnología; en el segundo aprendo a analizar las políticas que orientan esas decisiones.
+Esta tesis está en el punto donde ambos se cruzan.
+
+\section{Alcances y limitaciones}
+\label{sec:alcances}
+
+El corpus reúne 16 documentos oficiales de ocho países: Alemania, Australia, Canadá, China,
+Colombia, Estados Unidos, México y Sudáfrica. Están publicados entre 2020 y 2026 en alemán,
+chino, español e inglés, y se analizan en su idioma original, divididos en 3{,}211
+fragmentos. Siete de los países aportan un documento general de inteligencia artificial,
+como estrategias nacionales, planes de acción o, en Sudáfrica, el informe de una comisión
+presidencial; en el caso de México es el Plan Nacional de Inteligencia Artificial de abril de 2026
+\citep{atdt2026plan}. China aporta nueve documentos, la mayoría dedicados a la educación.
+Para que China no pese más que los demás en las comparaciones, se excluye de ellas su
+15.º Plan Quinquenal, y esa exclusión se declara en cada resultado. Como el corpus mezcla
+estrategias generales y planes educativos, lo que se compara son los fragmentos que tratan
+de educación, y el tipo de documento del que proviene cada uno se registra y se reporta.
+
+El estudio es exploratorio. Describe en qué se parecen y en qué se distinguen las
+propuestas; no prueba por qué. Analiza lo que los documentos dicen, no si los gobiernos lo
+cumplen: trabaja en el plano del texto y del discurso, no en el de los efectos
+\citep{rizvi2010globalizing}. Con ocho casos no hay generalización estadística posible. En
+Alemania, Australia, Canadá y Estados Unidos la educación depende en buena medida de los
+estados o provincias, de modo que el documento nacional no equivale a la política que rige
+en sus escuelas \citep{bray1995levels}.
+
+Las categorías con las que se comparan los temas provienen de un marco internacional para
+responsables de política (capítulo~\ref{cap:acercamiento}). Algunos países pudieron
+redactar sus documentos siguiendo ese mismo marco. Por eso la tesis no mide cuánto se apega
+cada país a él, sino qué tan lejos quedan los países entre sí dentro de cada tema: dos
+países pueden tratar el mismo tema y proponer cosas muy distintas.

@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment focuses on data protection, security, bias, and ethical/legal conditions for AI systems in public contexts, which aligns with equity, inclusion and ethics of AI in education; while it mentions 'sistema público de IA' generally, the surrounding context about education policy and the emphasis on data as a public good with ethical safeguards points to 6.4.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T16:20:27.118348+00:00"
+}

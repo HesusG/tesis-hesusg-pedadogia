@@ -1,0 +1,137 @@
+%% cap03-acercamiento.tex — Nuevo acercamiento con la realidad (diseño del procedimiento)
+%% Parámetros técnicos leídos de pipeline_v3/config.py. Los resultados se agregan al correr
+%% el pipeline con las categorías UNESCO.
+
+\providecommand{\pendiente}[1]{\textbf{[Pendiente: #1]}}
+
+\chapter{Nuevo acercamiento con la realidad}
+\label{cap:acercamiento}
+
+Este capítulo describe cómo se acerca la tesis a su objeto: los documentos de política. El
+procedimiento es automático de principio a fin y funciona como una sola cadena, de modo que
+cada etapa usa la salida de la anterior y todo el proceso puede repetirse con los mismos
+parámetros. Sigue la secuencia de la educación comparada \citep{bereday1964comparative,
+adick2018bereday}: los documentos se describen y se interpretan en su contexto, se
+yuxtaponen por categoría y se comparan. \textit{Este capítulo presenta el diseño; los
+resultados se agregarán cuando se ejecute el procedimiento con las categorías de UNESCO.}
+
+\section{Corpus}
+\label{sec:corpus}
+
+El corpus reúne 16 documentos oficiales de ocho países, publicados entre 2020 y 2026
+(tabla~\ref{tab:corpus}). El criterio general es un documento nacional por país, emitido o
+adoptado por el gobierno y vigente al 30 de junio de 2026, que trate la inteligencia
+artificial y la educación. China es la excepción: aporta nueve documentos nacionales,
+provinciales y municipales, porque su política se expresa en varios instrumentos. Para que
+China no pese más que los demás países en las comparaciones de distancia, se excluye de
+ellas el 15.º Plan Quinquenal, que por sí solo suma 181 fragmentos; con esa exclusión China
+entra con 90 fragmentos y no con 271. México entra con el Plan Nacional de Inteligencia
+Artificial que publicó en abril de 2026 \citep{atdt2026plan}.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Documentos del corpus por país}
+\label{tab:corpus}
+\begin{tabular}{llllr}
+\hline
+País & Documento & Idioma & Año & Fragmentos \\
+\hline
+Alemania & Estrategia de IA del Gobierno Federal & alemán & 2020 & 230 \\
+Australia & AI Action Plan & inglés & 2021 & 161 \\
+Canadá & Estrategia de IA & inglés & 2026 & 210 \\
+China & Nueve documentos (nacionales y locales) & chino & 2025--2026 & 271 \\
+Colombia & CONPES 4144 & español & 2025 & 764 \\
+Estados Unidos & AI Action Plan & inglés & 2025 & 156 \\
+México & Plan Nacional de Inteligencia Artificial & español & 2026 & 116 \\
+Sudáfrica & Comisión Presidencial 4IR & inglés & 2020 & 1{,}303 \\
+\hline
+\multicolumn{4}{l}{Total} & 3{,}211 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Categorías}
+\label{sec:categorias}
+
+Las categorías se fijan antes de correr el análisis y no se ajustan después. Son dos
+familias. La primera son los siete apartados de la sección 6 de la guía de UNESCO
+\citep{miao2021guidance}: visión sistémica y prioridades estratégicas; principio rector;
+planeación interdisciplinaria y gobernanza intersectorial; políticas y regulación para un
+uso equitativo, inclusivo y ético; planes maestros para la gestión, la enseñanza, el
+aprendizaje y la evaluación; pilotaje, monitoreo y evaluación; y fomento de innovaciones
+locales. La segunda es la distinción de \citet{schiff2022education} entre educación para la
+inteligencia artificial e inteligencia artificial para la educación. Cada categoría se
+describe en un libro de códigos con su definición y los criterios de inclusión y exclusión,
+tomados del texto de la guía. Un fragmento puede no pertenecer a ninguna categoría.
+
+\section{El procedimiento}
+\label{sec:procedimiento}
+
+\subsection*{1. Fragmentación y almacenamiento}
+
+Cada documento se conserva en su idioma original y se divide en fragmentos de 500
+caracteres con un traslape de 50. Cada fragmento se guarda en una base de datos vectorial
+junto con sus metadatos (país, documento, idioma, año y tipo de documento), de modo que
+puede recuperarse por país. La representación vectorial se obtiene con el modelo
+multilingüe \texttt{paraphrase-multilingual-MiniLM-L12-v2}, que se ejecuta de manera local
+y produce vectores de 384 dimensiones comparables por similitud del coseno
+\citep{reimers2019sentencebert}.
+
+\subsection*{2. Recuperación por categoría y país}
+
+Para cada categoría y cada país se recuperan de la base los fragmentos más cercanos a la
+descripción de la categoría. La recuperación funciona como un filtro amplio: reúne
+candidatos, y la decisión de si un fragmento pertenece o no a la categoría la toma el panel
+en el paso siguiente. El número de candidatos por categoría y país se fija antes de la corrida completa; en la miniprueba fue de cinco.
+
+\subsection*{3. Clasificación por el panel de modelos}
+
+Cada fragmento candidato se entrega al panel junto con el fragmento anterior y el
+posterior del mismo documento, para que el modelo lea el pasaje en su contexto y no aislado.
+El panel está formado por siete modelos de lenguaje multilingües, tres de origen occidental
+(\texttt{gpt-4o-mini}, \texttt{gemini-2.5-flash} y \texttt{llama-3.3-70b-instruct}) y cuatro
+de origen chino (\texttt{qwen3-235b-a22b-2507}, \texttt{deepseek-chat}, \texttt{glm-4.6} y
+\texttt{kimi-k2}), consultados con temperatura cero. Cada modelo decide, con el libro de
+códigos, a qué categoría pertenece el fragmento y si trata de educación para la inteligencia
+artificial o de inteligencia artificial para la educación. Un octavo modelo,
+\texttt{claude-sonnet-4.5}, no clasifica: solo adjudica los desacuerdos del panel. Se
+excluye de la clasificación porque se usó para construir el procedimiento, y hacerlo
+clasificar sería circular. Usar un panel y no un solo modelo responde al riesgo de que la
+elección de un modelo o de una instrucción determine el resultado
+\citep{baumann2025llmhacking}.
+
+\subsection*{4. Bases vectoriales por categoría}
+
+Los fragmentos que el panel asigna a una categoría forman una base vectorial propia de esa
+categoría, dividida por país. Al final del paso hay siete bases, una por apartado de la
+guía, y en cada una los fragmentos de cada país conservan su etiqueta de educación para o
+con la inteligencia artificial.
+
+\subsection*{5. Distancias entre países dentro de cada categoría}
+
+Dentro de cada base se calcula la distancia semántica entre los fragmentos de cada par de
+países. El resultado es, para cada categoría, una matriz de distancias entre los ocho
+países, que muestra cuáles quedan cerca y cuáles lejos al hablar del mismo tema. Comparar
+las siete matrices responde a la segunda parte de P2: si el acomodo de los países cambia
+de una categoría a otra.
+
+\subsection*{6. Control de idioma y acuerdo del panel}
+
+Dos pruebas ponen a prueba las distancias (P3). La primera controla el idioma: las
+distancias se recalculan con todos los fragmentos traducidos a una misma lengua, y se
+compara si el acomodo de los países se mantiene. Si dos países solo quedan cerca en sus
+idiomas originales, su cercanía se debía al idioma y no al contenido. La segunda mide el
+acuerdo entre los siete modelos del panel sobre cada fragmento, en total y separando los
+modelos de origen occidental de los de origen chino. Una distancia construida sobre
+fragmentos en los que el panel no se pone de acuerdo se reporta con esa advertencia.
+
+\section{Validación}
+\label{sec:validacion}
+
+El procedimiento sigue el principio de validar cada paso \citep{grimmer2013text}. Las
+categorías y las instrucciones se registran en el repositorio antes de correr el análisis,
+de modo que la fecha de registro prueba que no se ajustaron a los resultados. Todas las
+respuestas de los modelos se guardan tal como llegaron. Y la lectura de los resultados
+vuelve a los textos: para cada distancia llamativa se examinan los fragmentos que la
+producen, como pide el paso de refinamiento de \citet{nelson2020computational}.

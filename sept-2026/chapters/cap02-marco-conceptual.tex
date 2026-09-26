@@ -1,0 +1,608 @@
+%% cap02-marco-conceptual.tex — Marco conceptual
+%% Rejilla de comparación: los siete apartados de la sección 6 de Miao et al. (2021).
+%% Sustituye a cap02-marco-teorico.tex (seis ejes confucianos) cuando el cambio de
+%% marco quede aprobado. Mientras tanto no se incluye en main.tex.
+
+\providecommand{\pendiente}[1]{\textbf{[Pendiente: #1]}}
+
+\chapter{Marco conceptual}
+\label{cap:marco-conceptual}
+
+Este capítulo tiene dos partes que responden a preguntas distintas. El estado del arte
+(sección~\ref{sec:estado-arte}) reúne las investigaciones recientes que compararon
+políticas de inteligencia artificial y, en particular, las que se ocuparon de la educación:
+qué problemas estudiaron, cómo los definieron, con qué evidencia y a qué resultados
+llegaron. El marco teórico (sección~\ref{sec:marco-teorico}) expone las posturas desde las
+cuales analizo esas políticas: la educación comparada, los marcos internacionales de
+inteligencia artificial y educación, y la competencia docente en inteligencia artificial.
+Sigo en esta división a \citet{londono2014guia}, que distinguen el estado del arte, dirigido
+a dar cuenta de las investigaciones recientes sobre las categorías de análisis, del marco
+teórico, que analiza las posturas disciplinares sobre esas mismas categorías.
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section{Antecedentes: estado del arte}
+\label{sec:estado-arte}
+
+\subsection{El análisis comparado de estrategias nacionales de inteligencia artificial}
+\label{subsec:ea-estrategias}
+
+La primera ola de estudios comparados no trató las estrategias nacionales como tales, sino
+los documentos de principios éticos que gobiernos, empresas y organismos publicaron a partir
+de 2016. \citet{jobin2019landscape} reunieron 84 documentos con principios o directrices
+éticas para la inteligencia artificial y encontraron una convergencia en torno a cinco
+principios: transparencia, justicia y equidad, no maleficencia, responsabilidad y
+privacidad. La convergencia, sin embargo, era de vocabulario. Los autores documentaron una
+divergencia sustantiva en cuatro frentes: cómo se interpreta cada principio, por qué se
+considera importante, a qué asuntos y actores se aplica y cómo debería llevarse a la
+práctica. Ningún principio aparecía en todo el corpus.
+
+El mismo estudio dejó ver un sesgo de origen que importa para esta tesis. Estados Unidos y
+Reino Unido aportaban más de un tercio de los documentos, África y América del Sur no
+estaban representadas de forma independiente, y los autores advirtieron que los países
+económicamente más desarrollados estaban dando forma a un debate que se presentaba como
+global \citep{jobin2019landscape}. Su búsqueda se limitó a documentos en inglés, alemán,
+francés, italiano y griego, y ellos mismos reconocieron que un sesgo de idioma pudo inclinar
+el corpus hacia los resultados en inglés.
+
+\citet{fjeld2020principled} llegaron a una conclusión parecida por otra vía. Con una
+muestra intencional de 36 documentos influyentes, buscando la máxima variación entre
+autores (gobiernos, organismos intergubernamentales, empresas, asociaciones profesionales
+y organizaciones civiles), agruparon 47 principios en ocho temas: privacidad, rendición de
+cuentas, seguridad, transparencia y explicabilidad, equidad y no discriminación, control
+humano de la tecnología, responsabilidad profesional y promoción de valores humanos
+\citep[pp.~4, 14--15]{fjeld2020principled}. Los documentos más recientes tendían a cubrir
+los ocho temas, lo que sugería una convergencia; pero los autores advirtieron que cubrir más
+temas no hace mejor a un documento, porque el contexto importa, y que entre los conceptos y
+su puesta en práctica queda una brecha amplia \citep[pp.~5, 66]{fjeld2020principled}. Su
+corpus incluyó documentos en inglés, chino, francés, alemán y español, y aun así no
+encontraron ninguno de África \citep[pp.~14--15]{fjeld2020principled}. Dejaron fuera,
+además, las estrategias nacionales que piden crear principios sin proponer ninguno
+\citep[pp.~12--13]{fjeld2020principled}, de modo que su mapa de consensos éticos no
+describe todavía lo que los gobiernos se proponen hacer.
+
+La educación ocupaba un lugar marginal en estos estudios. En el corpus de
+\citet{jobin2019landscape} no figura como principio; aparece como medio para generar
+confianza en la tecnología o como propuesta de introducir la ética en la formación
+científica y tecnológica. Cuando la guía de UNESCO para responsables de política revisó el
+panorama, registró, con datos de la OCDE, más de trescientas iniciativas de política de inteligencia artificial en
+sesenta países, la mayoría con alguna referencia a la educación, y las clasificó según
+trataran la educación como política independiente, integrada en una estrategia general o
+temática \citep[p.~28]{miao2021guidance}. El paso siguiente fue preguntar qué dicen
+exactamente las estrategias nacionales cuando hablan de educación.
+
+\subsection{La educación en las estrategias nacionales: el estudio de Schiff}
+\label{subsec:ea-schiff}
+
+\citet{schiff2022education} hizo esa pregunta de manera sistemática. Partió de 76
+documentos del sector público, aplicó criterios de exclusión (documentos incompletos,
+documentos de organismos intergubernamentales, documentos no disponibles en inglés y
+duplicados de un mismo país) y llegó a una muestra de 24 estrategias nacionales publicadas
+entre mediados de 2016 y principios de 2020, con cerca de 1{,}491 páginas en total
+\citep[pp.~531--532, 552]{schiff2022education}. La muestra incluye a China y a México, este
+último con el documento \textit{Towards an AI Strategy in Mexico}
+\citep[p.~535]{schiff2022education}.
+
+Su procedimiento es el antecedente metodológico más cercano a esta tesis. Construyó un
+códebook preliminar de once categorías, lo probó sobre cinco documentos elegidos al azar y
+lo depuró hasta siete códigos: cinco temas y dos categorías de contexto
+\citep[pp.~533, 553--554]{schiff2022education}. Los cinco temas se agrupan en dos dominios.
+El primero, \textit{educación para la inteligencia artificial}, reúne la formación de
+expertos, la preparación de la fuerza laboral y la alfabetización pública en inteligencia
+artificial. El segundo, \textit{inteligencia artificial para la educación}, reúne las
+herramientas de enseñanza y aprendizaje y las herramientas administrativas
+\citep[p.~534]{schiff2022education}. Cada documento se codificó por presencia o ausencia de
+cada tema, con una categoría intermedia para los casos dudosos.
+
+El resultado dio título al artículo. La educación era tema prioritario en 21 de las 24
+estrategias, y las 24 trataban al menos uno de los temas de educación para la inteligencia
+artificial; solo nueve abordaban con alguna profundidad la inteligencia artificial para la
+educación, y solo cinco (China, India, Kenia, Malta y España) trataban los dos temas de ese
+dominio \citep[p.~535]{schiff2022education}. Schiff concluyó que los responsables de
+política ven la educación sobre todo como un instrumento para desarrollar la fuerza laboral
+y formar expertos \citep[p.~550]{schiff2022education}. La ética de la inteligencia
+artificial en educación aparecía tan poco que no alcanzó a constituirse como código
+\citep[p.~534]{schiff2022education}.
+
+El propio autor declaró tres límites que esta tesis atiende de forma directa. La
+codificación la hizo un solo investigador, de modo que no fue posible estimar la
+confiabilidad entre codificadores \citep[p.~533]{schiff2022education}. El corpus se
+restringió a documentos en inglés por el dominio de idiomas del autor
+\citep[p.~552]{schiff2022education}. Y las estrategias nacionales de inteligencia artificial
+reflejan solo una parte del discurso sobre educación, porque los organismos educativos
+pueden tener planteamientos más detallados que no aparecen en ellas
+\citep[p.~550]{schiff2022education}. Su distinción entre educación para la inteligencia
+artificial e inteligencia artificial para la educación organiza una de mis preguntas de
+investigación.
+
+\subsection{Rejillas de comparación aplicadas a políticas escolares de inteligencia artificial}
+\label{subsec:ea-rejillas}
+
+Si Schiff mostró qué lugar ocupa la educación en las estrategias generales de inteligencia
+artificial, otros estudios compararon directamente las políticas educativas. \citet{kundu2025aipolicies}
+analizaron cinco documentos de gobierno sobre la integración de la inteligencia artificial
+en la educación escolar de China, Singapur, Finlandia y Estados Unidos. Para Estados Unidos
+usaron dos documentos estatales, de California y Massachusetts, y no uno federal. Los
+examinaron con los criterios SMART y con un marco de nueve componentes operativos que
+construyeron los propios autores. Del análisis surgieron nueve proposiciones temáticas,
+entre ellas la integración del currículo y la ética, la formación docente dinámica, el
+financiamiento equitativo, las alianzas entre actores y el monitoreo adaptativo.
+Encontraron que Finlandia y Singapur tienen políticas con un fuerte componente ético y
+centrado en las personas, mientras que China y Estados Unidos se inclinan hacia la
+innovación y el desarrollo de la fuerza laboral, y que la implementación enfrenta en los
+cuatro casos brechas de equidad, falta de preparación docente y desajustes de
+contexto.\footnote{Para este estudio solo tuve acceso al resumen publicado; la descripción
+de sus nueve componentes deberá verificarse contra el texto completo.}
+
+El trabajo demuestra que una rejilla de componentes sirve para comparar políticas
+escolares de países con sistemas políticos muy distintos. Su límite, para los fines de esta
+tesis, está en el origen de la rejilla: la construyeron los autores, de modo que otro
+investigador con otros componentes podría llegar a otro ordenamiento de los países. Y su
+caso estadounidense ilustra la advertencia de \citet{bray1995levels} sobre los sistemas
+federales, porque lo que se compara de Estados Unidos no es una política nacional sino dos
+estatales.
+
+\subsection{El análisis comparado en español y en América Latina}
+\label{subsec:ea-latam}
+
+En la educación comparada de lengua española el tema es reciente y se ha concentrado en la
+educación superior. \citet{martinezrojas2026regulacion} compararon las normas sobre
+inteligencia artificial de seis universidades, tres de España (Universidad Autónoma de
+Madrid, UNED y Universitat Oberta de Catalunya) y tres de Estados Unidos (Harvard, Stanford
+y Pennsylvania), elegidas entre las más influyentes de cada país que ya contaban con
+regulación específica \citep[pp.~423--424]{martinezrojas2026regulacion}. Partieron de
+categorías previas tomadas de la Comisión Europea y de UNESCO, dos autores revisaron las
+fuentes de manera independiente y el análisis produjo tres temas (recomendaciones
+generales, de docencia y de investigación) con doce subtemas
+\citep[pp.~425--426]{martinezrojas2026regulacion}. Encontraron un propósito común, reducir
+los daños posibles sin impedir el uso, y una diferencia de énfasis: las universidades
+españolas son más prescriptivas en la enseñanza y las estadounidenses dan más orientación
+sobre investigación y datos \citep[pp.~431, 436]{martinezrojas2026regulacion}. Concluyeron
+que la cultura institucional puede pesar más que la política nacional, y pidieron
+políticas guiadas por necesidades pedagógicas y no solo por imperativos tecnológicos
+\citep[pp.~435--436]{martinezrojas2026regulacion}. Advierten, además, que no buscaban
+jerarquizar países ni universidades, sino entender cómo los factores locales moldean la
+adopción de la inteligencia artificial \citep[p.~424]{martinezrojas2026regulacion}.
+
+\citet{lara2026gobernanza} compararon México y Costa Rica con un enfoque cuantitativo
+basado en datos oficiales secundarios de 2019 a 2023. Relacionaron el índice de desarrollo
+humano con el gasto en educación superior, la matrícula terciaria, la proporción de
+empresas que usan inteligencia artificial y un índice de cooperación entre universidad e
+industria. Costa Rica presentó valores promedio superiores en todos los indicadores, y la
+vinculación entre universidad y empresa fue la variable con mayor peso en su modelo. Su
+tesis es que el principal desafío que enfrentan ambos países no es tecnológico sino
+institucional, y que la inteligencia artificial amplifica las capacidades o las
+limitaciones de los sistemas que ya existen. El estudio es valioso porque trata la
+inteligencia artificial como objeto de gobernanza y porque incluye a México, pero su
+modelo estadístico descansa en datos agregados de solo dos países durante cinco años, un
+número de observaciones reducido para estimar cinco predictores, y sus propios autores
+reconocen que la información agregada limita el análisis de las dinámicas institucionales.
+
+Los dos trabajos comparten dos rasgos. Estudian dos casos cada uno, y se ocupan de la
+educación superior y no de la política educativa nacional en su conjunto. Ninguno compara
+más de dos países ni emplea una rejilla tomada de un organismo internacional como esquema de
+codificación.
+
+\subsection{La crítica a la orientación de los organismos internacionales}
+\label{subsec:ea-critica}
+
+La rejilla que adopto no es neutral, y la literatura lo ha documentado.
+\citet{mochizuki2025ethics} analizaron las dos guías de UNESCO sobre inteligencia
+artificial en educación, la de responsables de política de 2021 y la de inteligencia
+artificial generativa de 2023. Combinaron el análisis del discurso, siguiendo la pregunta
+de Bacchi sobre cómo se representa el problema, con un análisis de redes de las 190 obras
+que las dos guías citan y de sus autores \citep[pp.~2--4]{mochizuki2025ethics}.
+
+Sus hallazgos se dirigen a la fuente misma de mi criterio de comparación. En la guía de
+2021 la ética ocupa el primer plano, pero se despliega para presentar la regulación y la
+formación de capacidades como condiciones previas para aprovechar los beneficios de la
+tecnología, lo que evita preguntar si la inteligencia artificial es necesaria o deseable en
+educación \citep[pp.~5, 8]{mochizuki2025ethics}. En el apartado 6.5, el problema que se
+representa es un conjunto de deficiencias del sistema educativo sin relación con las
+preocupaciones éticas del resto del documento, y el efecto es presentar como inevitable la
+adopción de la inteligencia artificial y producir la figura de docentes y estudiantes que
+necesitan desarrollar competencias \citep[p.~11]{mochizuki2025ethics}. El análisis de redes
+mostró que la guía descansa sobre todo en literatura angloestadounidense, que entre las
+afiliaciones más citadas figuran empresas como McKinsey, OpenAI y Google Health, y que el
+consultor que participó en la redacción de ambas guías ocupa el centro de la red
+\citep[pp.~12--15]{mochizuki2025ethics}. Los autores concluyen que, para UNESCO, la ética
+de la inteligencia artificial y el tecno-solucionismo no compiten entre sí, y señalan la
+ausencia de voces del Sur Global \citep[pp.~17--18]{mochizuki2025ethics}.
+
+Esta crítica no invalida la rejilla como instrumento de comparación, pero obliga a declarar
+de dónde viene. Uso los siete apartados como categorías para describir qué atiende y qué
+omite cada política, no como un programa normativo que suscribo ni como el estándar que los
+países deberían cumplir.
+
+\subsection{Síntesis: coincidencias, diferencias, tendencias y contradicciones}
+\label{subsec:ea-sintesis}
+
+Leídos en conjunto, estos estudios coinciden en que las políticas de inteligencia
+artificial pueden compararse con rejillas de categorías, y en que el vocabulario común
+esconde diferencias de fondo. \citet{jobin2019landscape} y \citet{fjeld2020principled}
+encontraron convergencia en los principios y divergencia en su interpretación y puesta en
+práctica; \citet{schiff2022education} encontró que las estrategias hablan mucho de
+educación, pero casi siempre como formación de fuerza laboral.
+
+Difieren en el origen de la rejilla. Jobin y sus colaboradores, Fjeld y sus colaboradores y
+Schiff derivaron sus categorías del propio corpus, por codificación inductiva o por
+depuración de un códebook preliminar. \citet{kundu2025aipolicies} construyeron la suya
+como autores. \citet{martinezrojas2026regulacion} partieron de categorías de la Comisión
+Europea y de UNESCO, pero las aplicaron a normas universitarias y no a políticas
+nacionales. Ninguno de los estudios revisados toma una lista cerrada de un organismo
+internacional y la aplica como esquema de codificación a las políticas educativas de un
+conjunto de países.
+
+Se advierten tres tendencias. La primera es la comparación de pocos casos: dos en los
+estudios de lengua española y cuatro en el de Kundu y Bej. La segunda es un sesgo de idioma
+y de origen que los propios autores reconocen: corpus restringidos al inglés o a unas
+cuantas lenguas europeas y ausencia de África y de buena parte de América Latina
+\citep{jobin2019landscape, fjeld2020principled, schiff2022education}. La tercera es el
+tránsito de los principios éticos generales hacia la política educativa concreta, primero
+en la educación superior y después en la educación escolar.
+
+La contradicción más visible está entre el uso creciente de los marcos de UNESCO como
+referencia para diseñar y comparar políticas y la crítica documentada a su orientación
+tecno-solucionista y a la base angloestadounidense y empresarial de sus fuentes
+\citep{mochizuki2025ethics}. Esta tesis se ubica en ese punto: usa la rejilla de UNESCO
+porque es la lista más completa y específica de educación disponible, y declara sus sesgos
+en lugar de ignorarlos. Los vacíos que atiende son tres: comparar ocho países en lugar de
+dos a cuatro, incluir documentos en su lengua original y no solo en inglés, y medir el
+acuerdo en la codificación, que Schiff no pudo estimar por haber trabajado como único
+codificador.
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\section{Marco teórico}
+\label{sec:marco-teorico}
+
+\subsection{La política educativa como objeto de comparación}
+\label{subsec:mt-comparacion}
+
+\subsubsection*{a) El método comparativo de Bereday}
+
+El método comparativo clásico en educación organiza el trabajo en cuatro etapas:
+descripción, interpretación, yuxtaposición y comparación. La comunidad de comparatistas lo
+atribuye sobre todo a \citet{bereday1964comparative}, aunque la tradición alemana lo
+atribuye a Franz Hilker, y ambos autores se citaron mutuamente en varias ocasiones
+\citep{adick2018bereday}. Las cuatro etapas gozan de aceptación entre los comparatistas,
+aunque desarrollos teóricos posteriores las matizan y amplían
+\citep[p.~25]{senent2016iniciacion}.
+
+La secuencia estructura esta tesis. En la descripción se presenta cada documento en su
+propio contexto nacional. En la interpretación se leen los documentos a la luz de ese
+contexto. En la yuxtaposición se colocan los casos lado a lado, en cuadros organizados por
+criterios de comparación, como lo hacen \citet[p.~25]{senent2016iniciacion}; aquí esos
+criterios son los siete apartados de la guía de UNESCO. En la comparación se formulan las
+semejanzas y diferencias que la yuxtaposición hizo visibles. La rejilla de UNESCO entra,
+por tanto, en la tercera etapa, y no sustituye a la lectura contextual de las dos primeras.
+
+\subsubsection*{b) Los niveles de comparación de Bray y Thomas}
+
+\citet{bray1995levels} criticaron que la educación comparada se hubiera concentrado en
+países y regiones del mundo, porque esa concentración ignora las diferencias entre
+estados, distritos, escuelas, aulas e individuos. Para ordenar el campo propusieron un
+cubo de tres dimensiones. La primera es geográfica y tiene siete niveles: regiones del
+mundo, países, estados o provincias, distritos, escuelas, aulas e individuos. La segunda
+agrupa a la población por rasgos no geográficos, como etnia, religión, edad o género, o la
+toma completa. La tercera recoge los aspectos de la educación y de la sociedad que se
+comparan, entre ellos el currículo, los métodos de enseñanza, el financiamiento y las
+estructuras de gestión. Todo estudio comparado, sostienen, ocupa una o varias celdas de ese
+cubo \citep[p.~474]{bray1995levels}.
+
+El marco me obliga a decir dónde se ubica este trabajo. Comparo en el nivel de país, sobre
+la población completa y sin desagregar por grupo, y en el aspecto de la política de
+inteligencia artificial en educación. Bray y Thomas piden a quien trabaja en un solo nivel
+que declare los límites de esa elección \citep[p.~488]{bray1995levels}, y el límite aquí es
+concreto: advierten que en Australia, Canadá, Alemania y Estados Unidos las autoridades
+estatales o provinciales pueden controlar la estructura de la educación, al grado de que
+resulta difícil hablar de un sistema educativo nacional \citep[p.~479]{bray1995levels}.
+Cuatro de los ocho países de esta tesis son federales en ese sentido. Por eso el documento
+nacional de cada uno debe leerse como la declaración del gobierno federal, no como la
+política que efectivamente rige en sus escuelas.
+
+\subsubsection*{c) La política como texto, discurso y efecto}
+
+\citet{rizvi2010globalizing} parten de la definición de Easton, para quien la política es
+la asignación autoritativa de valores, y sostienen que las políticas
+son normativas: expresan fines y medios para orientar la conducta de las personas
+\citep[pp.~4, 7]{rizvi2010globalizing}. Retoman de Ball la idea de que la política es a la
+vez texto y acción, lo que se enuncia y lo que se lleva a cabo, y de que la investigación
+sobre políticas examina tres planos: los textos, los discursos que los enmarcan y sus
+efectos \citep[pp.~4--5, 12]{rizvi2010globalizing}. Los textos de política, añaden, suelen
+coser intereses en competencia, de modo que un documento puede reunir valores que no se
+concilian del todo \citep[p.~6]{rizvi2010globalizing}.
+
+Dos precisiones de estos autores delimitan lo que puedo afirmar. La primera es que una
+política puede ser simbólica: se anuncia sin compromiso real de implementación y sin
+financiamiento asignado \citep[p.~9]{rizvi2010globalizing}. La segunda es que los docentes
+interpretan la política y la traducen a la práctica, de modo que lo escrito no llega
+intacto al aula \citep[pp.~5--6]{rizvi2010globalizing}. Mi análisis opera en los planos del
+texto y del discurso y no mide efectos. Lo que encuentre en un documento es lo que ese
+gobierno declara, no lo que ocurre en sus escuelas.
+
+Los mismos autores sitúan el análisis en un contexto de globalización: las políticas
+nacionales se vinculan con discursos globalizados y con la presión de organismos como la
+Unión Europea, la OCDE y la UNESCO, pero esas presiones se manifiestan de forma vernácula,
+según la cultura, la historia y la política de cada país
+\citep[pp.~x, xii]{rizvi2010globalizing}. Esa tensión entre un vocabulario común y su
+traducción nacional es justamente lo que una comparación con rejilla internacional puede
+hacer visible.
+
+\subsection{Los marcos internacionales de inteligencia artificial y educación}
+\label{subsec:mt-marcos}
+
+\subsubsection*{a) El Consenso de Beijing}
+
+El Consenso de Beijing es el documento final de la Conferencia Internacional sobre
+Inteligencia Artificial y Educación que UNESCO organizó en mayo de 2019, con cincuenta
+ministros y viceministros y cerca de quinientos representantes de más de cien Estados
+miembros \citep[párr.~1]{unesco2019beijing}. Sus recomendaciones a los gobiernos se
+organizan en diez áreas: la planeación de la inteligencia artificial en las políticas
+educativas; la gestión y prestación de la educación; el empoderamiento de la enseñanza y de
+los docentes; el aprendizaje y su evaluación; los valores y competencias para la vida y el
+trabajo; el aprendizaje a lo largo de la vida; el uso equitativo e inclusivo; la equidad de
+género; el uso ético, transparente y auditable de los datos y algoritmos educativos; y el
+monitoreo, la evaluación y la investigación. Una undécima área, sobre financiamiento y
+cooperación internacional, se dirige a los organismos internacionales
+\citep[párrs.~8--38]{unesco2019beijing}.
+
+El documento reafirma un enfoque humanista: la inteligencia artificial debe estar bajo
+control humano y centrada en las personas \citep[párrs.~6--7]{unesco2019beijing}. Para esta
+tesis importan dos de sus compromisos. Sobre los docentes, afirma que la interacción entre
+docentes y estudiantes debe seguir en el centro de la educación, que las máquinas no pueden
+desplazar a los docentes y que sus funciones y competencias deben revisarse para prepararlos
+a trabajar en entornos con inteligencia artificial \citep[párrs.~12--13]{unesco2019beijing}.
+Sobre la comparación, pide fomentar la investigación comparada entre países
+\citep[párr.~31]{unesco2019beijing}. El Consenso no es vinculante: invita a los gobiernos a
+considerar sus recomendaciones de acuerdo con su legislación y sus prácticas
+\citep[p.~4]{unesco2019beijing}.
+
+\subsubsection*{b) La Recomendación sobre la ética de la inteligencia artificial}
+
+La Recomendación sobre la ética de la inteligencia artificial, adoptada por la Conferencia
+General de UNESCO el 23 de noviembre de 2021, da el piso ético sobre el que se leen los
+demás marcos. Se organiza en cuatro
+valores, diez principios y once ámbitos de acción política \citep{unesco2021ai}. Los
+valores son el respeto de los derechos humanos y la dignidad humana, la prosperidad del
+medio ambiente y los ecosistemas, la diversidad y la inclusión, y la vida en sociedades
+pacíficas, justas e interconectadas (párrs.~13--24). Los principios los hacen más
+concretos (párr.~10) e incluyen la proporcionalidad, la equidad y no discriminación, la
+protección de datos, la supervisión humana, la transparencia, la rendición de cuentas y,
+de manera expresa, la sensibilización y la educación (párrs.~25--47).
+
+La educación aparece dos veces. Es una de las esferas de competencia de UNESCO que la
+Recomendación atiende en especial, porque vivir en sociedades digitalizadas exige nuevas
+prácticas educativas, reflexión ética, pensamiento crítico y nuevas competencias
+(párr.~3). Y es el octavo ámbito de acción política, ``Educación e investigación''
+(párrs.~101--111). Ese ámbito pide alfabetización en inteligencia artificial para toda la
+población (párr.~101); investigación sobre el uso responsable de la inteligencia artificial
+en la enseñanza y en la formación de docentes, con la advertencia de que debe apoyar el
+aprendizaje sin reducir las capacidades cognitivas y sin recabar información sensible
+(párr.~104); y planes de estudio sobre ética de la inteligencia artificial para todos los
+niveles, de acuerdo con las tradiciones educativas de cada país y en las lenguas locales
+(párr.~106). Para esta tesis, la Recomendación funciona como referencia para el apartado 6.4
+de la guía, el de equidad, inclusión y ética, y como contrapeso a su lectura
+tecno-solucionista.
+
+\subsubsection*{c) Los siete apartados de la guía de UNESCO como criterio de comparación}
+
+El Consenso de Beijing encargó a UNESCO elaborar lineamientos para apoyar a los Estados
+miembros en el diseño de políticas \citep[párr.~40]{unesco2019beijing}. La respuesta fue
+\textit{AI and Education: Guidance for Policy-makers} \citep{miao2021guidance}, que se
+presenta como una guía para desarrollar políticas de inteligencia artificial y educación y
+ofrece recomendaciones para planear políticas en contextos locales
+\citep[p.~1]{miao2021guidance}. Su sección 6 reúne esas recomendaciones en siete
+apartados\footnote{Los títulos en español son traducción propia de la versión en inglés.}
+\citep[pp.~31--37]{miao2021guidance}:
+
+\begin{enumerate}[label=6.\arabic*]
+  \item \textbf{Visión sistémica y prioridades estratégicas.} Definir una visión de la
+  inteligencia artificial en todo el sistema educativo, evaluar la preparación del sistema
+  y elegir prioridades. Propone cuatro metas: uso inclusivo y equitativo, mejora de la
+  educación y el aprendizaje, desarrollo de competencias para la vida en la era de la
+  inteligencia artificial, y uso transparente y auditable de los datos educativos.
+  \item \textbf{Principio rector.} Adoptar un enfoque humanista, con la inteligencia
+  artificial bajo control humano y al servicio de las personas, y mantener a las personas
+  en el centro de la educación.
+  \item \textbf{Planeación interdisciplinaria y gobernanza intersectorial.} Movilizar
+  expertos de varias disciplinas y sectores, formar a quienes deciden y establecer
+  mecanismos de coordinación con un enfoque de todo el gobierno.
+  \item \textbf{Políticas y regulación para un uso equitativo, inclusivo y ético.} Fijar
+  metas de inclusión, leyes de protección de datos que hagan los datos educativos visibles
+  y auditables para docentes, estudiantes y familias, y revisar sesgos, incluido el de
+  género.
+  \item \textbf{Planes maestros para la gestión, la enseñanza, el aprendizaje y la
+  evaluación.} Es el apartado más extenso. Incluye la gestión escolar, el aprendizaje
+  centrado en el estudiante, el empoderamiento de los docentes, el aprendizaje a lo largo
+  de la vida y los valores y competencias para la vida y el trabajo.
+  \item \textbf{Pilotaje, monitoreo y evaluación, y construcción de evidencia.} Adoptar
+  tecnología según prioridades educativas y no por novedad, verificar las afirmaciones de
+  los proveedores y financiar investigación independiente.
+  \item \textbf{Fomento de innovaciones locales.} Promover el desarrollo local de
+  tecnologías de inteligencia artificial para la educación.
+\end{enumerate}
+
+Conviene precisar qué hace la guía y qué hago yo con ella. UNESCO no llama a estos
+apartados ``siete áreas de política''. Los ordena como una visión (6.1), un principio
+rector (6.2) y cinco grupos de recomendaciones (6.3 a 6.7) \citep[p.~31]{miao2021guidance}.
+La decisión de tratarlos como siete categorías de comparación es mía, y la justifico por
+tres razones. Primero, forman una lista cerrada y numerada, específica de educación, que
+no construí a partir de mi propio corpus. Segundo, la guía se escribió para que los
+gobiernos diseñaran sus políticas con ella, así que preguntar cuánto de cada apartado
+aparece en un documento nacional es usarla en la dirección que sus autores previeron.
+Tercero, la guía reconoce que la relación entre inteligencia artificial y educación se
+desarrollará de maneras muy distintas según las circunstancias nacionales
+\citep[p.~5]{miao2021guidance}, lo que abre la puerta a comparar esas diferencias sin
+suponer que todos los países deban llegar al mismo lugar.
+
+La guía también propone una distinción útil para leer los apartados 6.5 y 6.1: aprender
+\textit{con} inteligencia artificial, aprender \textit{sobre} inteligencia artificial y
+aprender para la colaboración entre humanos e inteligencia artificial
+\citep[p.~13]{miao2021guidance}. Esta distinción se corresponde con la de
+\citet{schiff2022education}: aprender con inteligencia artificial es inteligencia
+artificial para la educación; aprender sobre ella y para colaborar con ella es educación
+para la inteligencia artificial.
+
+\subsection{La competencia docente en inteligencia artificial}
+\label{subsec:mt-docente}
+
+\subsubsection*{a) La alfabetización en inteligencia artificial}
+
+\citet{long2020ailiteracy} definen la alfabetización en inteligencia artificial como un
+conjunto de competencias que permite a las personas evaluar críticamente las tecnologías de
+inteligencia artificial, comunicarse y colaborar con ellas de manera eficaz y usarlas como
+herramienta en línea, en casa y en el trabajo. Llegaron a esa definición mediante una
+revisión exploratoria de 150 documentos, y organizaron diecisiete competencias en torno a
+cinco preguntas: qué es la inteligencia artificial, qué puede hacer, cómo funciona, cómo
+debería usarse y cómo la percibe la gente. Ellos mismos presentan el marco como un punto de
+partida para la conversación, no como un resumen exhaustivo del campo.
+
+\citet{ng2021ailiteracy} revisaron treinta artículos publicados entre 2016 y 2021 y
+organizaron la alfabetización en inteligencia artificial en cuatro aspectos inspirados en
+la taxonomía de Bloom: conocer y comprender, usar y aplicar, evaluar y crear, y las
+cuestiones éticas. No propusieron una definición propia; adoptaron la de Long y Magerko.
+Su revisión mostró que casi todos los estudios se habían hecho con estudiantes de primaria
+y secundaria, y que solo dos se ocupaban de docentes como población
+\citep[p.~3]{ng2021ailiteracy}.
+
+Para la educación básica, el grupo de trabajo conjunto de la Association for the
+Advancement of Artificial Intelligence y la Computer Science Teachers Association propuso
+cinco grandes ideas: las computadoras perciben el mundo mediante sensores; los agentes
+mantienen modelos del mundo y los usan para razonar; las computadoras pueden aprender de
+datos; lograr que los agentes interactúen con naturalidad con los humanos es un reto
+considerable; y las aplicaciones de inteligencia artificial pueden tener efectos positivos
+y negativos en la sociedad \citep[pp.~9797--9798]{touretzky2019k12ai}. El grupo no
+elaboró un currículo propio, sino lineamientos que los currículos futuros deberían
+cumplir \citep[p.~9798]{touretzky2019k12ai}.
+
+Los tres trabajos comparten un rasgo que importa para esta tesis: definen qué debe saber
+quien aprende, pero no qué necesita un docente para enseñarlo. El Consenso de Beijing
+reconoce esa brecha cuando pide a UNESCO integrar las competencias en inteligencia
+artificial a los marcos de competencias docentes \citep[párr.~42]{unesco2019beijing}.
+
+\subsubsection*{b) El Marco de Competencias de IA para Docentes}
+
+El Marco de competencias para docentes en materia de IA de UNESCO responde a esa brecha.
+Se publicó en inglés en 2024 y en español en 2025, y se presenta como el primer marco
+mundial de su tipo \citep[p.~6]{unesco2024aicft}. Parte de un diagnóstico: en 2022 solo
+siete países habían desarrollado marcos o programas sobre inteligencia artificial para
+docentes \citep[p.~13]{unesco2024aicft}.
+
+El marco es una matriz de cinco ámbitos por tres niveles de progresión, que da quince
+bloques de competencias \citep[p.~21]{unesco2024aicft}. Los ámbitos son una forma de
+pensar centrada en el ser humano, la ética de la inteligencia artificial, los fundamentos y
+las aplicaciones de la inteligencia artificial, la pedagogía de la inteligencia artificial y
+la inteligencia artificial para el desarrollo profesional. Los niveles son adquirir,
+profundizar y crear \citep[pp.~21--22]{unesco2024aicft}. El primer nivel equivale a una
+alfabetización básica en inteligencia artificial para docentes \citep[pp.~24--25]{unesco2024aicft},
+lo que conecta el marco con los trabajos de \citet{long2020ailiteracy} y
+\citet{ng2021ailiteracy}. El marco advierte que el desarrollo de competencias depende del
+contexto y no es jerárquico ni lineal: un docente puede estar en el nivel de profundizar en
+un ámbito y en el de adquirir en otro \citep[pp.~21, 25]{unesco2024aicft}.
+
+Tres de sus principios importan para la intervención. El primero protege el lugar del
+docente: las herramientas de inteligencia artificial nunca deberían diseñarse para
+reemplazar su responsabilidad legítima \citep[p.~18]{unesco2024aicft}. El segundo reparte
+responsabilidades: los reguladores, los proveedores y las instituciones deben asumir la
+gobernanza antes de exigir a los docentes que apliquen principios
+\citep[p.~17]{unesco2024aicft}. El tercero reconoce que el marco no basta por sí solo,
+porque su uso depende de la infraestructura, la regulación de datos, las políticas y el
+desarrollo profesional \citep[p.~22]{unesco2024aicft}.
+
+Para esta tesis el marco cumple una función precisa. La competencia docente es una de las
+cosas que la guía de 2021 pide atender dentro del apartado 6.5, y el marco de 2024 da el
+vocabulario con el que una política puede tratarla: ámbitos, niveles y bloques de
+competencias. Cuando el análisis encuentre pasajes sobre formación docente, este vocabulario
+permite distinguir si una política se limita a pedir capacitación o si describe qué
+competencias espera y en qué nivel. Lo tomo con la misma reserva que la guía: proviene de la
+misma institución y comparte autor principal con ella, y la crítica de
+\citet{mochizuki2025ethics} a la figura del docente que necesita desarrollar competencias
+se aplica también aquí.
+
+\subsection{Revisión de estudios sobre formación docente en inteligencia artificial}
+\label{subsec:mt-formacion}
+
+La investigación sobre la formación docente en inteligencia artificial es todavía escasa, y
+esa escasez es en sí misma un hallazgo. \citet{zawacki2019systematic} revisaron 146
+artículos sobre aplicaciones de inteligencia artificial en la educación superior publicados
+entre 2007 y 2018, seleccionados de 2{,}656 identificados inicialmente. Encontraron que la
+mayoría provenía de las ciencias de la computación y de las disciplinas científicas y
+tecnológicas, que casi no había reflexión crítica sobre los riesgos, y que la conexión con
+perspectivas pedagógicas era débil. El subtítulo de su revisión resume el problema: dónde
+están los educadores.
+
+La revisión de \citet{ng2021ailiteracy} llegó a una conclusión parecida desde la
+alfabetización en inteligencia artificial. De los treinta estudios que analizaron, la
+mayoría se hizo con estudiantes de primaria y secundaria y solo dos tuvieron a docentes como
+población \citep[p.~3]{ng2021ailiteracy}. Cuatro artículos discutieron cómo los programas
+de formación podrían preparar a docentes sin conocimientos previos para incorporar la
+alfabetización en inteligencia artificial al currículo \citep[p.~7]{ng2021ailiteracy}.
+
+Cuando se preguntó a los docentes, los resultados apuntaron en la misma dirección.
+\citet{chounta2022teachers} encuestaron a 140 docentes de educación básica y media de
+Estonia, un país que encabezaba entre 27 países europeos un índice de preparación para el
+aprendizaje digital a lo largo de la vida. Encontraron que los docentes tenían un
+conocimiento limitado sobre la inteligencia artificial y sobre cómo podría apoyarlos en su
+práctica, pero la percibían como una oportunidad para la educación. Identificaron además
+necesidades ligadas al contexto: los docentes veían en la inteligencia artificial una
+herramienta para acceder a contenido en varias lenguas y adaptarlo
+\citep[p.~725]{chounta2022teachers}. Si en uno de los sistemas educativos mejor preparados
+de Europa el conocimiento docente sobre inteligencia artificial era limitado, no hay razón
+para suponer que en México sea mayor.
+
+La política internacional reconoció esta brecha antes de que la investigación la llenara.
+El Consenso de Beijing pidió revisar las funciones y competencias docentes y desarrollar
+programas para prepararlos a trabajar en entornos con inteligencia artificial
+\citep[párr.~13]{unesco2019beijing}. La guía de 2021 pidió definir las habilidades que los
+docentes necesitan, actualizar sus marcos y programas de formación, y ofrecer capacitación
+y apoyo continuo \citep[p.~35]{miao2021guidance}. Y el Marco de competencias de UNESCO
+partió de constatar que en 2022 solo siete países contaban con marcos o programas de
+inteligencia artificial para docentes \citep[p.~13]{unesco2024aicft}.
+
+De esta revisión se desprenden dos conclusiones para la tesis. La primera es que la
+formación docente en inteligencia artificial es un campo más prescrito que estudiado: los
+organismos internacionales la recomiendan, pero la evidencia empírica sobre cómo formar a
+los docentes es reducida y se concentra en países con sistemas educativos de alto
+desempeño. La segunda es que, si la investigación no ofrece todavía modelos probados, lo que
+las políticas nacionales dicen sobre los docentes adquiere más peso: son el lugar donde cada
+país decide, por ahora sin mucha evidencia, qué espera de ellos. Por eso la formación
+docente es uno de los temas que el análisis sigue dentro del apartado 6.5.
+
+\subsection{El análisis computacional de textos de política}
+\label{subsec:mt-computacional}
+
+Leer quince documentos de política en cuatro idiomas y compararlos fragmento por fragmento
+excede lo que un investigador puede hacer a mano con consistencia. Por eso el análisis
+recurre a métodos computacionales, y conviene exponer desde qué postura se usan.
+
+\citet{grimmer2013text} formularon cuatro principios para el análisis cuantitativo de
+textos: todos los modelos cuantitativos del lenguaje son incorrectos, pero algunos son
+útiles; los métodos amplifican los recursos del investigador y aumentan su capacidad, no la
+sustituyen; no existe un método automático que sea el mejor para todos los casos; y hay que
+validar, validar y validar. Advierten además que los métodos automáticos no reemplazan la
+reflexión cuidadosa ni la lectura atenta, y que exigen una validación extensa y específica
+para cada problema. \citet{nelson2020computational} propuso una secuencia de tres pasos,
+que llamó teoría fundamentada computacional: detectar patrones con técnicas
+computacionales, refinarlos mediante una lectura interpretativa de los textos y
+confirmarlos con pruebas adicionales. Ambos trabajos sostienen la misma idea, que esta
+tesis adopta: la computadora encuentra patrones, pero su sentido se establece con
+interpretación y validación.
+
+La comparación entre países descansa en representaciones vectoriales del texto.
+\citet{reimers2019sentencebert} desarrollaron redes que producen representaciones de
+oraciones que pueden compararse por similitud del coseno, lo que permite buscar pasajes
+semánticamente cercanos y agruparlos de manera eficiente. \citet{conneau2020unsupervised}
+mostraron que un modelo entrenado con texto en cien idiomas puede alcanzar un desempeño
+alto en tareas de comprensión entre lenguas. Esta capacidad multilingüe es la que permite
+comparar un documento chino con uno alemán sin traducirlos primero, aunque también
+introduce un riesgo: que la cercanía entre dos textos refleje su idioma y no su contenido.
+Por eso el diseño controla el idioma de manera explícita.
+
+La clasificación de los fragmentos la hacen modelos de lenguaje, y ese uso tiene riesgos
+documentados. \citet{baumann2025llmhacking} replicaron 37 tareas de anotación de 21
+estudios publicados en ciencias sociales y encontraron que las decisiones de
+configuración, como la elección del modelo o la redacción de la instrucción, pueden llevar
+a conclusiones incorrectas, incluso cuando se siguen prácticas estándar. Llamaron a este
+fenómeno \textit{LLM hacking}. Dos decisiones de esta tesis responden a ese riesgo: las
+categorías y las instrucciones se fijan antes de correr el análisis, y la clasificación no
+la hace un solo modelo sino un panel de siete modelos de distinto origen, cuyo grado de
+acuerdo se reporta.

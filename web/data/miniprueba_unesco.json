@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-26T13:33:10.085773+00:00",
+ "generated": "2026-09-26T16:21:34.485896+00:00",
  "params": {
   "k_per_cell": 5,
   "targets": [
@@ -117,53 +117,53 @@
    "The fragment may be in any language; code it in its original language without translating."
   ]
  },
- "n_fragments": 94,
- "n_classifications": 658,
+ "n_fragments": 105,
+ "n_classifications": 735,
  "agreement": {
   "panel": {
-   "fleiss_kappa": 0.514,
-   "alpha_nominal": 0.515,
-   "pct_exact": 0.661
+   "fleiss_kappa": 0.519,
+   "alpha_nominal": 0.519,
+   "pct_exact": 0.656
   },
   "western": {
-   "fleiss_kappa": 0.447,
-   "alpha_nominal": 0.449,
-   "pct_exact": 0.599
+   "fleiss_kappa": 0.454,
+   "alpha_nominal": 0.456,
+   "pct_exact": 0.597
   },
   "chinese": {
-   "fleiss_kappa": 0.514,
-   "alpha_nominal": 0.516,
-   "pct_exact": 0.672
+   "fleiss_kappa": 0.526,
+   "alpha_nominal": 0.527,
+   "pct_exact": 0.671
   }
  },
  "per_model": {
   "gpt": {
    "origin": "western",
-   "agree_with_majority": 0.894
+   "agree_with_majority": 0.874
   },
   "gemini": {
    "origin": "western",
-   "agree_with_majority": 0.718
+   "agree_with_majority": 0.737
   },
   "llama": {
    "origin": "western",
-   "agree_with_majority": 0.812
+   "agree_with_majority": 0.789
   },
   "qwen": {
    "origin": "chinese",
-   "agree_with_majority": 0.741
+   "agree_with_majority": 0.726
   },
   "deepseek": {
    "origin": "chinese",
-   "agree_with_majority": 0.859
+   "agree_with_majority": 0.842
   },
   "glm": {
    "origin": "chinese",
-   "agree_with_majority": 0.835
+   "agree_with_majority": 0.842
   },
   "kimi": {
    "origin": "chinese",
-   "agree_with_majority": 0.894
+   "agree_with_majority": 0.905
   }
  },
  "coverage": {
@@ -202,6 +202,14 @@
    "6.3": 1,
    "6.4": 1,
    "6.5": 1
+  },
+  "mexico": {
+   "6.2": 2,
+   "6.3": 1,
+   "6.1": 1,
+   "no_consensus": 1,
+   "none": 4,
+   "6.4": 2
   },
   "sudafrica": {
    "no_consensus": 4,
@@ -243,6 +251,10 @@
    "neither": 11,
    "ai_for_education": 1
   },
+  "mexico": {
+   "neither": 10,
+   "education_for_ai": 1
+  },
   "sudafrica": {
    "education_for_ai": 4,
    "neither": 7,
@@ -261,20 +273,29 @@
      "china": 0,
      "colombia": 3,
      "eeuu": 1,
+     "mexico": 1,
      "sudafrica": 0
     },
     "dist_original": {
      "countries": [
       "colombia",
-      "eeuu"
+      "eeuu",
+      "mexico"
      ],
      "matrix": [
       [
        0.0,
-       0.2777
+       0.2777,
+       0.2553
       ],
       [
        0.2777,
+       0.0,
+       0.2949
+      ],
+      [
+       0.2553,
+       0.2949,
        0.0
       ]
      ]
@@ -282,15 +303,23 @@
     "dist_english": {
      "countries": [
       "colombia",
-      "eeuu"
+      "eeuu",
+      "mexico"
      ],
      "matrix": [
       [
        0.0,
-       0.2828
+       0.2828,
+       0.3237
       ],
       [
        0.2828,
+       0.0,
+       0.3311
+      ],
+      [
+       0.3237,
+       0.3311,
        0.0
       ]
      ]
@@ -298,28 +327,34 @@
     "spearman_original_vs_english": null,
     "pca": [
      {
-      "x": 0.6727,
-      "y": 0.2107,
+      "x": -0.9429,
+      "y": 0.5974,
       "country": "colombia",
       "id": "colombia_conpes_4144_2025_chunk_0676"
      },
      {
-      "x": 0.213,
-      "y": -1.384,
+      "x": -0.2472,
+      "y": -0.9421,
       "country": "colombia",
       "id": "colombia_conpes_4144_2025_chunk_0011"
      },
      {
-      "x": 0.8585,
-      "y": 0.845,
+      "x": -0.948,
+      "y": 0.3927,
       "country": "colombia",
       "id": "colombia_conpes_4144_2025_chunk_0505"
      },
      {
-      "x": -1.7443,
-      "y": 0.3282,
+      "x": 1.4931,
+      "y": 0.865,
       "country": "eeuu",
       "id": "eeuu_ai_action_plan_2025_chunk_0078"
+     },
+     {
+      "x": 0.645,
+      "y": -0.9129,
+      "country": "mexico",
+      "id": "mexico_plan_nacional_ia_2026_chunk_0037"
      }
     ]
    },
@@ -332,6 +367,7 @@
      "china": 6,
      "colombia": 4,
      "eeuu": 1,
+     "mexico": 2,
      "sudafrica": 0
     },
     "dist_original": {
@@ -340,7 +376,8 @@
       "canada",
       "china",
       "colombia",
-      "eeuu"
+      "eeuu",
+      "mexico"
      ],
      "matrix": [
       [
@@ -348,35 +385,48 @@
        0.2537,
        0.2351,
        0.1927,
-       0.3203
+       0.3203,
+       0.1812
       ],
       [
        0.2537,
        -0.0,
        0.3927,
        0.2898,
-       0.3607
+       0.3607,
+       0.3214
       ],
       [
        0.2351,
        0.3927,
        0.0,
        0.1446,
-       0.3086
+       0.3086,
+       0.2285
       ],
       [
        0.1927,
        0.2898,
        0.1446,
        -0.0,
-       0.2885
+       0.2885,
+       0.1293
       ],
       [
        0.3203,
        0.3607,
        0.3086,
        0.2885,
-       -0.0
+       -0.0,
+       0.3132
+      ],
+      [
+       0.1812,
+       0.3214,
+       0.2285,
+       0.1293,
+       0.3132,
+       0.0
       ]
      ]
     },
@@ -386,7 +436,8 @@
       "canada",
       "china",
       "colombia",
-      "eeuu"
+      "eeuu",
+      "mexico"
      ],
      "matrix": [
       [
@@ -394,123 +445,148 @@
        0.2517,
        0.3392,
        0.2287,
-       0.308
+       0.308,
+       0.219
       ],
       [
        0.2517,
        0.0,
        0.4836,
        0.3118,
-       0.3607
+       0.3607,
+       0.3597
       ],
       [
        0.3392,
        0.4836,
        -0.0,
        0.2206,
-       0.3678
+       0.3678,
+       0.2926
       ],
       [
        0.2287,
        0.3118,
        0.2206,
        0.0,
-       0.3032
+       0.3032,
+       0.2288
       ],
       [
        0.308,
        0.3607,
        0.3678,
        0.3032,
+       0.0,
+       0.32
+      ],
+      [
+       0.219,
+       0.3597,
+       0.2926,
+       0.2288,
+       0.32,
        0.0
       ]
      ]
     },
-    "spearman_original_vs_english": 0.806,
+    "spearman_original_vs_english": 0.857,
     "pca": [
      {
-      "x": -0.473,
-      "y": 0.8955,
+      "x": -0.4828,
+      "y": 0.369,
       "country": "china",
       "id": "cn_ai_edu_action_2026_chunk_0011"
      },
      {
-      "x": -0.0899,
-      "y": 0.4611,
+      "x": -0.1013,
+      "y": 0.2222,
       "country": "china",
       "id": "cn_statecouncil_aiplus_2025_chunk_0011"
      },
      {
-      "x": 0.1107,
-      "y": 0.3386,
+      "x": 0.0969,
+      "y": 0.1321,
       "country": "colombia",
       "id": "colombia_conpes_4144_2025_chunk_0675"
      },
      {
-      "x": 0.0023,
-      "y": -0.3244,
+      "x": -0.0139,
+      "y": 0.273,
       "country": "alemania",
       "id": "alemania_ki_strategie_2020_chunk_0165"
      },
      {
-      "x": 1.544,
-      "y": 0.7054,
+      "x": 1.5314,
+      "y": 0.2824,
       "country": "alemania",
       "id": "alemania_ki_strategie_2020_chunk_0188"
      },
      {
-      "x": 1.5242,
-      "y": 0.2103,
+      "x": 1.5061,
+      "y": 0.1345,
       "country": "canada",
       "id": "canada_ai_for_all_2026_chunk_0100"
      },
      {
-      "x": -0.6924,
-      "y": -0.3899,
+      "x": -0.7218,
+      "y": -0.682,
       "country": "china",
       "id": "cn_beijing_k12_ai_2025_chunk_0010"
      },
      {
-      "x": -0.1133,
-      "y": -0.6491,
+      "x": -0.1514,
+      "y": -0.7485,
       "country": "china",
       "id": "cn_ai_edu_qa_2026_chunk_0003"
      },
      {
-      "x": -1.0494,
-      "y": -0.4813,
+      "x": -1.0844,
+      "y": -0.5567,
       "country": "china",
       "id": "cn_zhejiang_ai_edu_2025_chunk_0003"
      },
      {
-      "x": -1.4001,
-      "y": 0.1602,
+      "x": -1.4103,
+      "y": 0.088,
       "country": "china",
       "id": "cn_zhejiang_ai_edu_2025_chunk_0009"
      },
      {
-      "x": -0.0039,
-      "y": 0.2685,
+      "x": 0.004,
+      "y": 0.4755,
       "country": "colombia",
       "id": "colombia_conpes_4144_2025_chunk_0093"
      },
      {
-      "x": -0.183,
-      "y": 0.2707,
+      "x": -0.1761,
+      "y": 0.4301,
       "country": "colombia",
       "id": "colombia_conpes_4144_2025_chunk_0102"
      },
      {
-      "x": -0.1004,
-      "y": 0.1956,
+      "x": -0.1054,
+      "y": 0.2905,
       "country": "colombia",
       "id": "colombia_conpes_4144_2025_chunk_0677"
      },
      {
-      "x": 0.9242,
-      "y": -1.6612,
+      "x": 0.8816,
+      "y": -1.7526,
       "country": "eeuu",
       "id": "eeuu_ai_action_plan_2025_chunk_0030"
+     },
+     {
+      "x": 0.2235,
+      "y": 0.5315,
+      "country": "mexico",
+      "id": "mexico_plan_nacional_ia_2026_chunk_0022"
+     },
+     {
+      "x": 0.0039,
+      "y": 0.5111,
+      "country": "mexico",
+      "id": "mexico_plan_nacional_ia_2026_chunk_0042"
      }
     ]
    },
@@ -523,6 +599,7 @@
      "china": 7,
      "colombia": 3,
      "eeuu": 1,
+     "mexico": 0,
      "sudafrica": 2
     },
     "dist_original": {
@@ -3143,6 +3220,409 @@
    "text_en": "nteragency coordination and collaboration on AI adoption. T hrough the  CAIOC, \ninitiate strategic coordination and collaboration with relevant Federal executive \ncouncils, to include: the  President’s Management Council, Chief Data Officer Council, \nChief Information Officer Council, Interagency Council on Statistical Policy, Chief \nHuman Capital Officer Council, and Federal Privacy Council. \n• Create a talent -exchange program designed to allow rapid details of Federal  staff to \nother agencie"
   },
   {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0030",
+   "text": "ientar la acción\npública en materia de inteligencia artificial:\n1. La IA debe ampliar derechos, nunca reducirlos\n2. Toda decisión apoyada por IA debe tener responsables humanos\n3. Si una decisión no puede explicarse, no debe automatizarse\n4. La IA se gobierno mejor cuando se decide en colectivo\n5. La IA sólo es valiosa si genera bienestar para todas las personas\n6. Antes de automatizar, hay que comprender a quién y a qué afecta\n7. La tecnología estratégica debe responder a las necesidades del pa",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 30,
+   "retrieved_for": [
+    {
+     "category": "6.3",
+     "distance": 0.3108
+    },
+    {
+     "category": "6.4",
+     "distance": 0.4563
+    },
+    {
+     "category": "6.5",
+     "distance": 0.3689
+    }
+   ],
+   "prev": "del Gobierno de México para orientar el uso\ny desarrollo de sistemas de inteligencia artificial en el ámbito público. Su relevancia\nno consiste en sustituir la regulación futura ni la política pública sectorial, sino en\nestablecer criterios comunes para que las instituciones diseñen, adopten,\nimplementen y supervisen estas tecnologías con responsabilidad, inclusión y\nsentido público.\nLos Principios de Chapultepec establecen diez criterios para orientar la acción\npública en materia de inteligenci",
+   "next": "stratégica debe responder a las necesidades del país\n8. El desarrollo de la IA requiere fortalecer la educación y el conocimiento en el\n\npaís\n9. La IA no puede ser ajena a la diversidad cultural y lingüística del país\n10. Los datos son un bien público que debe cuidarse con responsabilidad\nEstos principios colocan a las personas en el centro del desarrollo tecnológico. Su\npunto de partida es que la IA debe ampliar derechos y no convertirse en una\nherramienta que limite injustificadamente el acces",
+   "votes": {
+    "gpt": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment outlines principles for the responsible use of AI in public action, emphasizing human rights and collective decision-making, but does not specifically address education or training.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:18.079361+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment outlines principles for the ethical and responsible use of AI in the public sector, focusing on human rights, accountability, and societal well-being, without specific mention of education.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:18.357933+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses the overarching principle of a humanistic approach to AI, emphasizing the importance of human rights, responsibility, and collective decision-making in the development and use of AI.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:20.205845+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The target fragment articulates overarching humanistic principles for AI in public action, emphasizing human responsibility, rights, and collective decision-making, which aligns with a humanistic approach.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:24.475692+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment outlines principles for AI that emphasize a humanistic approach, focusing on human rights and collective decision-making, but does not specifically address education or training.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:20.423982+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment outlines overarching human-centric and rights-based principles for AI (human control, expanding rights, well-being), which aligns with a humanistic approach, but it does not explicitly address education or training applications.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:20:55.949179+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment lists general AI principles for public action (human responsibility, explainability, collective governance, wellbeing) that establish a humanistic approach, but these are not specifically applied to education; principle 8 mentions education but is not the focus of this fragment.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:19.886865+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "6.2",
+   "majority_n": 6,
+   "n_votes": 7,
+   "schiff_majority": "neither"
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0037",
+   "text": "entorno.\nLos Principios de Chapultepec también reconocen que la IA se gobierna mejor\ncuando se decide de manera colectiva. Las decisiones sobre su diseño, adopción y\nsupervisión no pueden quedar únicamente en manos de equipos técnicos o\nfuncionarios de gabinete. Requieren espacios de diálogo entre el Estado, la\nacademia, la industria, las comunidades técnicas, la sociedad civil y los grupos\npotencialmente afectados por estas tecnologías. Esta gobernanza compartida\npermite identificar riesgos que",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 37,
+   "retrieved_for": [
+    {
+     "category": "6.3",
+     "distance": 0.3554
+    }
+   ],
+   "prev": "itoriales, ambientales y sobre los derechos de las personas. Esto incluye evaluar\nsi una herramienta puede producir impactos diferenciados entre grupos sociales, si\n\ndepende de datos incompletos o sesgados, si puede afectar el acceso a servicios\npúblicos o si genera costos ambientales asociados al uso intensivo de\ninfraestructura tecnológica y energía. La innovación pública no debe trasladar los\ncostos del progreso digital a la población ni a su entorno.\nLos Principios de Chapultepec también rec",
+   "next": "ernanza compartida\npermite identificar riesgos que no siempre son visibles desde el diseño técnico,\nmejorar la pertinencia de las soluciones y fortalecer la legitimidad social de las\npolíticas públicas basadas en IA.\nLa IA pública debe evaluarse, además, por su contribución al bienestar social. Una\nherramienta no debe considerarse exitosa solo porque reduce costos o acelera\nprocesos, sino porque mejora la calidad de los servicios, fortalece capacidades\ninstitucionales y atiende necesidades reale",
+   "votes": {
+    "gpt": {
+     "category": "6.3",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the governance of AI, emphasizing collective decision-making and dialogue among various stakeholders, but does not specifically address AI in education.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:17.958528+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "6.3",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the governance of AI through collective decision-making involving multiple stakeholders, which aligns with interdisciplinary planning and inter-sectoral governance.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:17.927855+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "6.3",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses the importance of collective decision-making and shared governance in the development and implementation of AI, involving various stakeholders and sectors.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:19.795631+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.3",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses inter-sectoral governance and collective decision-making for AI, involving multiple stakeholders, which aligns with category 6.3, but does not focus on education specifically, so Schiff label is neither.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:21.264495+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "6.3",
+     "schiff": "neither",
+     "rationale": "The fragment mainly discusses governance and coordination of AI policy across various stakeholders, aligning with UNESCO category 6.3, but does not specifically address education or training.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:20.565337+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "6.3",
+     "schiff": "neither",
+     "rationale": "El fragmento aborda principalmente la gobernanza intersectorial y el diálogo multistakeholder para la toma de decisiones sobre IA, sin mencionar específicamente el ámbito educativo.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:20:18.669345+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "6.3",
+     "schiff": "neither",
+     "rationale": "El fragmento aborda la gobernanza compartida de IA con participación de múltiples actores (Estado, academia, industria, sociedad civil), pero no menciona específicamente el sector educativo ni la formación de personas en IA.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:19.995881+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "6.3",
+   "majority_n": 7,
+   "n_votes": 7,
+   "schiff_majority": "neither",
+   "text_en": "environment. The Chapultepec Principles also recognize that AI is best governed when decisions are made collectively. Decisions regarding its design, adoption, and oversight cannot be left solely in the hands of technical teams or cabinet officials. They require spaces for dialogue between the state, academia, industry, technical communities, civil society, and groups potentially affected by these technologies. This shared governance allows for the identification of risks that"
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0059",
+   "text": "ones corresponderá al proceso\nlegislativo que habrá de desarrollarse próximamente. No obstante, dicho proceso\ndeberá establecer un marco que defina las condiciones de integración de la\ninteligencia artificial a la vida pública y asegure que su evolución responda a una\nvisión de largo plazo centrada en derechos, equidad y soberanía tecnológica.\n\n5.2 Capacidades: talento y software público\nEl segundo pilar se orienta al desarrollo de capacidades nacionales en IA,\nentendidas en una doble dimensión:",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 59,
+   "retrieved_for": [
+    {
+     "category": "6.3",
+     "distance": 0.3571
+    }
+   ],
+   "prev": "derechos. Los sistemas de IA pueden incidir de manera significativa en decisiones\nque afectan el acceso a servicios, las condiciones laborales, la privacidad y el ejercicio\nde libertades fundamentales. Por ello, el marco normativo deberá garantizar que las\npersonas cuenten con información, control y mecanismos de protección frente a\nestos sistemas, especialmente en aquellos usos de mayor impacto.\nLa definición precisa de estos derechos y obligaciones corresponderá al proceso\nlegislativo que habr",
+   "next": "cionales en IA,\nentendidas en una doble dimensión: por un lado, como la formación de talento\nhumano altamente especializado; por otro, como la capacidad del Estado para\ndesarrollar, adaptar e implementar soluciones tecnológicas propias. En este marco,\nse trata de una apuesta estratégica para fortalecer las capacidades productivas del\npaís, cerrar brechas en formación y capital humano, y vincular el desarrollo\ntecnológico con la empleabilidad, la consolidación de un mercado interno robusto\ny la i",
+   "votes": {
+    "gpt": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the need for a regulatory framework that ensures the integration of AI in public life with a focus on rights, equity, and technological sovereignty, but does not specifically address education or training.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:19.211749+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "6.1",
+     "schiff": "neither",
+     "rationale": "The fragment discusses establishing a framework for AI integration into public life with a long-term vision centered on rights, equity, and technological sovereignty, which aligns with defining a system-wide vision and strategic priorities for AI, but does not specifically mention education.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:18.025074+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment mainly discusses the legislative process and the integration of artificial intelligence into public life, with a focus on rights, equity, and technological sovereignty, without specifically addressing AI in education.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:21.545786+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.1",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses the need for a legislative framework that integrates AI into public life with a long-term vision centered on rights, equity, and technological sovereignty, which aligns with a system-wide vision and strategic priorities.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:20.685591+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the legislative process for integrating AI into public life but does not specifically address education or training.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:21.110075+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "6.1",
+     "schiff": "education_for_ai",
+     "rationale": "The fragment establishes a long-term vision for AI centered on rights and equity, and introduces a strategic priority (pillar) for developing national capacities and talent, aligning with a system-wide vision and strategic priorities.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:21:13.170334+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "6.1",
+     "schiff": "neither",
+     "rationale": "The fragment discusses establishing a legislative framework for AI integration into public life with a long-term vision centered on rights, equity and technological sovereignty, which aligns with defining a system-wide vision and strategic priorities for AI, but does not specifically address education; the mention of 'talento' in the section heading is not developed in this fragment.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:21.621069+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "6.1",
+   "majority_n": 4,
+   "n_votes": 7,
+   "schiff_majority": "neither"
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0107",
+   "text": "así la inteligencia artificial podrá consolidarse como\nuna herramienta legítima para fortalecer la acción pública, mejorar la calidad de los\nservicios, reducir brechas estructurales y contribuir a un modelo de desarrollo\ntecnológico centrado en las personas, el interés público y la soberanía nacional.\n\nBibliografía\nANIA (Alianza Nacional de IA). 2024. \"Propuesta de Agenda Nacional de la IA para\nMéxico\n\n2024-2030.\"\n\nhttps://www.ania.org.mx/propuestadeagendanacionaldeia.\nBright, J., Enock, F. E.,",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 107,
+   "retrieved_for": [
+    {
+     "category": "6.3",
+     "distance": 0.361
+    }
+   ],
+   "prev": "tanto para articular a las instituciones responsables de\n\ncada componente como para asegurar coherencia, evitar duplicidades y promover\nun uso eficiente de los recursos públicos.\nCon ello, el Plan Nacional de Inteligencia Artificial representa un punto de inflexión\nen la relación del Estado mexicano con la tecnología. Su éxito dependerá de\nconvertir sus principios y proyectos en capacidades institucionales concretas,\nsostenidas y evaluables. Solo así la inteligencia artificial podrá consolidarse",
+   "next": "stadeagendanacionaldeia.\nBright, J., Enock, F. E., Esnaashari, S., Francis, J., Hashem, Y., & Morgan, D. (2024).\n\nGenerative\n\nAI\n\nis\n\nalready\n\nwidespread\n\nin\n\nthe\n\npublic\n\nsector.\n\nhttps://arxiv.org/abs/2401.01291\nDiario Jurídico. 2024. \"Agenda Nacional de la IA para México 2024-2030.\" Mayo 16.\nhttps://www.diariojuridico.com/mexico-agenda-nacional-de-la-inteligenciaartificial-para-2024-2030/.\n\nFuture of Life Institute. (2025). Overview of all AI Act National Implementation Plans.\nEU\n\nArtificial",
+   "votes": {
+    "gpt": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the role of artificial intelligence in strengthening public action and improving services, focusing on a human-centered approach, but does not specifically address education.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:19.655492+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "6.1",
+     "schiff": "ai_for_education",
+     "rationale": "The fragment discusses how AI can strengthen public action, improve service quality, reduce structural gaps, and contribute to a people-centered development model, which aligns with a system-wide vision and strategic priorities for AI's use in society, including education.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:20.370122+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the general use of artificial intelligence in the public sector, but does not specifically address AI and education policy.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:22.011787+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.2",
+     "schiff": "ai_for_education",
+     "rationale": "The fragment emphasizes a human-centered, public-interest-driven approach to AI as a tool for strengthening public services, aligning with the humanistic principle in education; it implies use of AI in public service delivery including education.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:21.628710+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses AI as a tool for public action and development but does not specifically address education or training.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:21.362760+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "El fragmento describe el impacto general de la IA en la acción pública y el desarrollo tecnológico, sin mencionar específicamente la educación, la formación o el aprendizaje.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:20:22.251139+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment states AI should become a legitimate tool for public action that is people-centered, serving public interest and national sovereignty, which aligns with the humanistic approach principle, but it does not specifically address education.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:22.723136+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "no_consensus",
+   "majority_n": 3,
+   "n_votes": 7,
+   "schiff_majority": "neither"
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0023",
+   "text": "presente tanto en los equipos que diseñan las soluciones como en los\ndatos, categorías y criterios que las alimentan. Solo así será posible construir una IA\npública capaz de reconocer la complejidad del país y responder de manera efectiva\na las personas a las que sirve.\n\n3.\n\nInteligencia Artificial al servicio\n\ndel Estado mexicano\nPara el Estado mexicano, la inteligencia artificial debe entenderse como una\ncapacidad estratégica para fortalecer la acción pública. Su valor no reside\núnicamente en",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 23,
+   "retrieved_for": [
+    {
+     "category": "6.3",
+     "distance": 0.3806
+    },
+    {
+     "category": "6.5",
+     "distance": 0.4566
+    }
+   ],
+   "prev": "rincipios de inclusión y gobernanza\nresponsable. Los sistemas de IA no son neutrales: reflejan las experiencias,\nprioridades y supuestos de quienes los diseñan, así como las limitaciones de los\ndatos con los que son entrenados. Por ello, el desarrollo de inteligencia artificial\npública debe incorporar la diversidad de la sociedad mexicana en términos de\ngénero, origen, lengua, condición económica y contexto territorial. Esta inclusión\ndebe estar presente tanto en los equipos que diseñan las solu",
+   "next": "acción pública. Su valor no reside\núnicamente en automatizar procesos o incorporar herramientas tecnológicas a la\nadministración pública, sino en ampliar la capacidad del gobierno para tomar\nmejores decisiones, anticipar riesgos, optimizar recursos, coordinar instituciones y\nresponder con mayor precisión a las necesidades de la población. Bajo esta lógica,\nla IA puede contribuir a construir un Estado más eficaz, cercano y justo, siempre que\nsu desarrollo esté orientado por objetivos públicos y",
+   "votes": {
+    "gpt": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment addresses the need for inclusion and ethical considerations in the development of AI, focusing on equity and representation, which aligns with policies for equitable, inclusive, and ethical use of AI.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:22.164867+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the design and application of AI in the Mexican state, emphasizing inclusivity and effectiveness, but does not specifically address AI in education or education for AI.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:21.859342+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses the need for inclusive and diverse development of public intelligence artificial, ensuring it reflects the complexity of the country and serves its people effectively.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:23.347143+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "El fragmento aborda la inclusión y diversidad en el diseño y datos de los sistemas de IA, enfocándose en equidad y ética, pero no se refiere específicamente al ámbito educativo.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:22.726810+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses AI as a strategic capability for the Mexican state but does not specifically address education, training, or learning.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:24.188667+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "El fragmento se centra en la IA como una capacidad estratégica para fortalecer la acción pública del Estado mexicano y la inclusión en el diseño de IA pública, sin hacer mención específica a la educación, enseñanza o aprendizaje.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:20:56.209025+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses AI as a strategic capacity for the Mexican State to strengthen public action and government decision-making, but does not specifically address education, training, or learning contexts.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:23.770189+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "none",
+   "majority_n": 4,
+   "n_votes": 7,
+   "schiff_majority": "neither"
+  },
+  {
    "id": "sudafrica_4ir_2020_chunk_1057",
    "text": "legislate the establishment of an Artificial Intelligence (AI) Institute (possibly situated in the \nCentre for Advanced Computing?) which will comprise a public-private partnership. It will be responsible to \nkeep abreast of and support capacity building in:\n• Neural networks\n• Natural Language Processing (see annexure B)\n• Computer vision\nThe AI institute will partner with TensorFlow and be part of all the current and future global initiatives of AI. As a \nresult, the AI institute will be resp",
    "country": "sudafrica",
@@ -5747,6 +6227,324 @@
    "schiff_majority": "neither"
   },
   {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0022",
+   "text": "rincipios de inclusión y gobernanza\nresponsable. Los sistemas de IA no son neutrales: reflejan las experiencias,\nprioridades y supuestos de quienes los diseñan, así como las limitaciones de los\ndatos con los que son entrenados. Por ello, el desarrollo de inteligencia artificial\npública debe incorporar la diversidad de la sociedad mexicana en términos de\ngénero, origen, lengua, condición económica y contexto territorial. Esta inclusión\ndebe estar presente tanto en los equipos que diseñan las solu",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 22,
+   "retrieved_for": [
+    {
+     "category": "6.4",
+     "distance": 0.4334
+    },
+    {
+     "category": "6.5",
+     "distance": 0.4565
+    }
+   ],
+   "prev": "ura\nestratégica, que incluye datos públicos preparados para su uso en modelos de IA,\nmecanismos seguros de intercambio de información entre instituciones, acceso a\ncapacidades de cómputo, entornos controlados de experimentación y esquemas\nrobustos de ciberseguridad. Sin estos elementos, la adopción de IA corre el riesgo\nde quedar limitada a proyectos aislados, sin continuidad ni capacidad de escalar.\n\nFinalmente, esta visión debe sustentarse en principios de inclusión y gobernanza\nresponsable. L",
+   "next": "presente tanto en los equipos que diseñan las soluciones como en los\ndatos, categorías y criterios que las alimentan. Solo así será posible construir una IA\npública capaz de reconocer la complejidad del país y responder de manera efectiva\na las personas a las que sirve.\n\n3.\n\nInteligencia Artificial al servicio\n\ndel Estado mexicano\nPara el Estado mexicano, la inteligencia artificial debe entenderse como una\ncapacidad estratégica para fortalecer la acción pública. Su valor no reside\núnicamente en",
+   "votes": {
+    "gpt": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment addresses the principles of inclusion and responsible governance in the context of AI, focusing on equity and diversity, but does not specifically relate to education or training.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:22.989493+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the importance of inclusion and responsible governance in AI development, emphasizing that AI systems are not neutral and should reflect the diversity of Mexican society in terms of gender, origin, language, economic condition, and territorial context, which aligns with ethical considerations for AI.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:22.743295+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses principles of inclusion and responsible governance in the development of public intelligence artificial, which is related to policies and regulations for equitable, inclusive and ethical use of AI in education.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:24.962149+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.4",
+     "schiff": "ai_for_education",
+     "rationale": "The fragment mainly addresses equitable, inclusive and ethical use of AI by emphasizing the need to incorporate societal diversity in AI development, particularly in data and design teams, which aligns with ethical and inclusion principles in education contexts.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:27.042116+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment focuses on principles of inclusion and responsible governance in AI development, emphasizing diversity in design teams and data, which aligns with policies for equitable, inclusive, and ethical use of AI in education.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:25.799610+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "6.4",
+     "schiff": "ai_for_education",
+     "rationale": "El fragmento aborda los principios de inclusión, gobernanza responsable y sesgos en los sistemas de IA, enfatizando la diversidad en los equipos de diseño y los datos, lo que se alinea con las políticas para el uso equitativo, inclusivo y ético de la IA (6.4), y se refiere a la gobernanza de los sistemas de IA pública que se aplicarían al sector educativo (ai_for_education).",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:21:28.785432+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment discusses inclusion, diversity, and responsible governance of AI systems in general (gender, origin, language, economic condition, territorial context) for public AI development, not specifically AI in education; it mentions neither education/training nor using AI for teaching/learning.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:24.837896+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "6.4",
+   "majority_n": 7,
+   "n_votes": 7,
+   "schiff_majority": "neither",
+   "text_en": "Principles of inclusion and responsible governance. AI systems are not neutral: they reflect the experiences, priorities, and assumptions of those who design them, as well as the limitations of the data with which they are trained. Therefore, the development of public artificial intelligence must incorporate the diversity of Mexican society in terms of gender, origin, language, economic condition, and territorial context. This inclusion must be present both in the teams that design the solutions."
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0042",
+   "text": "comparten y protegen no es un asunto técnico secundario,\nsino una condición ética, política y jurídica para cualquier sistema público de IA. Si\nlos datos son incompletos, inseguros, desactualizados o sesgados, los sistemas\nconstruidos sobre ellos producirán resultados igualmente problemáticos, aunque\naparezcan revestidos de precisión tecnológica.\n\n4. Gobernanza para una\ntransformación ordenada\nEl desarrollo de la IA requiere de una gobernanza clara que permita equilibrar\ninnovación, responsabil",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 42,
+   "retrieved_for": [
+    {
+     "category": "6.4",
+     "distance": 0.4362
+    }
+   ],
+   "prev": "adquirir tecnología, sino de construir condiciones para comprenderla,\nadaptarla, auditarla y orientarla al interés público.\n\nFinalmente, los datos deben entenderse como un bien público que requiere\nprotección y responsabilidad. La IA se alimenta de grandes volúmenes de\ninformación: registros administrativos, textos, imágenes, bases institucionales y, en\nmuchos casos, datos personales. La forma en que estos datos se recopilan,\nalmacenan, procesan, comparten y protegen no es un asunto técnico secu",
+   "next": "ara que permita equilibrar\ninnovación, responsabilidad y protección de derechos. En este sentido, México\nadopta un modelo de gobernanza que combina rectoría estratégica con\nimplementación distribuida, orientado a promover el desarrollo tecnológico al\ntiempo que atiende sus riesgos y efectos sociales. Este modelo parte de tres\npremisas: fortalecer la capacidad institucional del Estado, articular de manera\ncoherente marcos ya existentes en materias como datos personales, competencia\neconómica y pr",
+   "votes": {
+    "gpt": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment addresses the ethical, political, and legal conditions necessary for a public AI system, focusing on data protection and bias, which aligns with equitable and ethical use of AI in education.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:23.893760+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the ethical, political, and legal conditions for public AI systems, focusing on data protection, privacy, and bias, which aligns with policies and regulations for ethical use of AI.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:23.651472+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses the ethical, political, and legal conditions for any public IA system, focusing on data protection and responsibility, which falls under policies and regulations for equitable, inclusive, and ethical use of AI.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:24.533446+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.4",
+     "schiff": "ai_for_education",
+     "rationale": "The fragment emphasizes ethical, political, and legal conditions for data use in public AI systems, focusing on data protection, bias, and responsibility, which aligns with policies for equitable and ethical AI use in education.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:25.329452+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses ethical, political, and legal conditions for public AI systems but does not specifically address education, training, or learning.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:26.348664+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the ethical, legal, and data-related conditions for public AI systems, focusing on bias and protection, which aligns with policies for equitable and ethical use, but it does not address education.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:20:58.870065+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "6.4",
+     "schiff": "ai_for_education",
+     "rationale": "The fragment focuses on data protection, security, bias, and ethical/legal conditions for AI systems in public contexts, which aligns with equity, inclusion and ethics of AI in education; while it mentions 'sistema público de IA' generally, the surrounding context about education policy and the emphasis on data as a public good with ethical safeguards points to 6.4.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:27.118348+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "6.4",
+   "majority_n": 6,
+   "n_votes": 7,
+   "schiff_majority": "neither",
+   "text_en": "sharing and protecting is not a secondary technical issue, but an ethical, political, and legal condition for any public AI system. If the data is incomplete, insecure, outdated, or biased, the systems built upon them will produce equally problematic results, even if they appear to be cloaked in technological precision.\n\n4. Governance for an orderly transformation\nThe development of AI requires clear governance that allows for a balance between innovation, accountability"
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0057",
+   "text": "os sistemas; licitud y uso\nético; no discriminación; proporcionalidad; supervisión humana efectiva; y\ncorresponsabilidad entre quienes desarrollan, distribuyen y utilizan la IA. A partir de\nestos principios, la regulación reconocerá derechos concretos para las personas y\nestablecerá obligaciones claras para los distintos actores que integran el ecosistema\nde la IA.\nEl desarrollo y adopción de la IA plantea desafíos inéditos para la protección de\nderechos. Los sistemas de IA pueden incidir de man",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 57,
+   "retrieved_for": [
+    {
+     "category": "6.4",
+     "distance": 0.4534
+    }
+   ],
+   "prev": "tencialmente afectadas, así como promover el\ndesarrollo de sistemas sensibles a las desigualdades estructurales y a los distintos\ncontextos de uso.\nComo parte de este esfuerzo, se propone expedir un marco legal a nivel federal en\nmateria de IA que establezca las bases para el desarrollo, uso, supervisión y\ngobernanza de estos sistemas en México. Esta regulación se articulará en torno a\nseis principios rectores: transparencia y explicabilidad de los sistemas; licitud y uso\nético; no discriminació",
+   "next": "derechos. Los sistemas de IA pueden incidir de manera significativa en decisiones\nque afectan el acceso a servicios, las condiciones laborales, la privacidad y el ejercicio\nde libertades fundamentales. Por ello, el marco normativo deberá garantizar que las\npersonas cuenten con información, control y mecanismos de protección frente a\nestos sistemas, especialmente en aquellos usos de mayor impacto.\nLa definición precisa de estos derechos y obligaciones corresponderá al proceso\nlegislativo que habr",
+   "votes": {
+    "gpt": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment addresses policies and regulations for the ethical use of AI, focusing on rights and obligations without directly relating to education.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:25.705422+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses ethical principles, non-discrimination, human oversight, and accountability for AI systems, as well as the protection of rights in the context of AI, without specific mention of education.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:25.185671+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses policies and regulations for equitable, inclusive and ethical use of AI, focusing on principles such as transparency, non-discrimination, and human supervision.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:28.383318+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses policies and regulations for ethical use of AI, including non-discrimination and human oversight, but does not specifically focus on education or training.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:28.866812+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses general principles for AI regulation but does not specifically address education or training.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:26.998779+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment outlines general ethical principles and regulations for a federal AI framework (ethical use, non-discrimination, human oversight, rights) without specifically mentioning education, training, or learning.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:21:16.687682+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses general AI regulation principles (transparency, ethical use, non-discrimination, human oversight) for Mexico's federal legal framework, but does not specifically address education, learning, or training contexts.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:27.668066+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "none",
+   "majority_n": 4,
+   "n_votes": 7,
+   "schiff_majority": "neither"
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0115",
+   "text": "tepec. Declaración de ética y buenas prácticas para el uso y desarrollo\nde la IA, Consultado el 27 de marzo de 2026 en:\nhttps://secihti.mx/wpcontent/uploads/2026/02/Principios_Chapultepec_F.pdf\nWorld Bank. (2026). GovTech Maturity Index (GTMI) Data Explorer. Consultado el 19\nde\n\nabril\n\nde\n\n2026\n\nen:\n\nhttps://www.worldbank.org/en/data/interactive/2022/11/10/govtechmaturity-index-gtmi-data-explorer",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 115,
+   "retrieved_for": [
+    {
+     "category": "6.4",
+     "distance": 0.4549
+    }
+   ],
+   "prev": "tro Nacional de IA.\nhttps://indicelatam.cl/wp-content/uploads/2025/10/Documento_ILIA_2025.pdf\n\nStraub, V. J., Morgan, D., Bright, J., & Margetts, H. (2022). Artificial intelligence in\n\ngovernment:\n\nConcepts,\n\nstandards,\n\nand\n\na\n\nunified\n\nframework.\n\nhttps://arxiv.org/abs/2210.17218\nSecretaría de Ciencia, Humanidades, Tecnología e Innovación (SECIHTI) y la Agencia\nde Transformación Digital y Telecomunicaciones (ATDT). (2026), Principios de\n\nChapultepec. Declaración de ética y buenas prácticas par",
+   "next": "",
+   "votes": {
+    "gpt": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses ethical principles and good practices for the use and development of AI but does not specifically address AI in education.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:26.260819+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment refers to a declaration of ethics and good practices for the use and development of AI, but it does not specify its application to education policy.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:26.949528+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "6.4",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses the declaration of ethics and good practices for the use and development of AI, which relates to policies and regulations for equitable, inclusive, and ethical use of AI.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:26.357266+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment only references a declaration on ethics and best practices for AI use and development without specifying education or learning contexts.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:28.371767+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment mentions ethical principles for AI use and development but does not specifically address education, training, or learning.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:28.020061+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment is a bibliographic citation and does not contain any policy text related to AI in education.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:20:50.154134+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment is only a bibliographic citation to a document titled 'Principles of Chapultepec: Declaration of ethics and good practices for the use and development of AI' with a URL, containing no substantive content about AI and education policy.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:29.946125+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "none",
+   "majority_n": 6,
+   "n_votes": 7,
+   "schiff_majority": "neither"
+  },
+  {
    "id": "sudafrica_4ir_2020_chunk_0375",
    "text": "n, dissemination, and analysis of data, understanding that key economic advantages are \ncontained within it, but perhaps more importantly, that fundamental human rights are now intertwined with \nthe protection of data. On a commercial level, the questions we should therefore ask are not merely about \nthe integration of technologies into production processes, but of the ownership of critical intellectual property \nand data rights that are intertwined with technology use. Appreciating that machine",
    "country": "sudafrica",
@@ -7943,6 +8741,162 @@
    "majority_n": 7,
    "n_votes": 7,
    "schiff_majority": "neither"
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0003",
+   "text": "..23\n\nConclusión .........................................................................................26\nBibliografía ........................................................................................28\n\n1. Contexto Internacional\nLa inteligencia artificial (IA) ha dejado de ser una promesa futura para convertirse\nen una tecnología fundamental con implicaciones directas para el desarrollo\nnacional. Su impacto atraviesa sectores estratégicos como la salud, la agricultura, la\neducación, l",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 3,
+   "retrieved_for": [
+    {
+     "category": "6.5",
+     "distance": 0.3553
+    }
+   ],
+   "prev": "................................................................................................17\n\n5.3 Infraestructura estratégica para\nla soberanía tecnológica ............................................................................. 21\nCoatlicue: supercomputadora mexicana.............................................................22\nInversión en centros de datos ...............................................................................23\n\nConclusión .................................",
+   "next": "cos como la salud, la agricultura, la\neducación, la seguridad y la gestión pública, y su potencial de transformación\nsocioeconómica es reconocido por organismos internacionales, gobiernos y actores\ndel sector privado en todo el mundo. Para los países en desarrollo, la IA representa\nuna oportunidad concreta para acelerar procesos de desarrollo y reducir brechas\nestructurales históricas.\nA nivel internacional, diversos países han avanzado en la formulación de estrategias\nnacionales de IA que artic",
+   "votes": {
+    "gpt": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the implications of AI for various sectors but does not specifically address AI in education policy.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:27.970554+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment broadly discusses AI's impact across various sectors, including education, but does not specify any policy related to AI in education.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:27.815762+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment discusses the impact of AI on national development and its potential for socioeconomic transformation, but does not specifically address AI and education policy.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:29.620512+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.1",
+     "schiff": "ai_for_education",
+     "rationale": "The fragment mainly addresses a system-wide vision of AI in education by situating AI as a fundamental technology with implications for national development, including education, but does not go into specific educational applications or policies.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:33.903941+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment mentions AI's impact on education among other sectors but does not address specific AI and education policy.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:30.078556+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment provides a general introduction to AI's strategic importance across multiple sectors, including education, but does not detail any specific education policy or action.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:20:31.210118+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "none",
+     "schiff": "neither",
+     "rationale": "The fragment is a table of contents and section header mentioning AI's impact across sectors including education, but does not address any specific AI and education policy category; it merely lists education as one of many affected sectors without policy content.",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:30.704906+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "none",
+   "majority_n": 6,
+   "n_votes": 7,
+   "schiff_majority": "neither"
+  },
+  {
+   "id": "mexico_plan_nacional_ia_2026_chunk_0031",
+   "text": "stratégica debe responder a las necesidades del país\n8. El desarrollo de la IA requiere fortalecer la educación y el conocimiento en el\n\npaís\n9. La IA no puede ser ajena a la diversidad cultural y lingüística del país\n10. Los datos son un bien público que debe cuidarse con responsabilidad\nEstos principios colocan a las personas en el centro del desarrollo tecnológico. Su\npunto de partida es que la IA debe ampliar derechos y no convertirse en una\nherramienta que limite injustificadamente el acces",
+   "country": "mexico",
+   "policy_id": "mexico_plan_nacional_ia_2026",
+   "language": "es",
+   "chunk_index": 31,
+   "retrieved_for": [
+    {
+     "category": "6.5",
+     "distance": 0.433
+    }
+   ],
+   "prev": "ientar la acción\npública en materia de inteligencia artificial:\n1. La IA debe ampliar derechos, nunca reducirlos\n2. Toda decisión apoyada por IA debe tener responsables humanos\n3. Si una decisión no puede explicarse, no debe automatizarse\n4. La IA se gobierno mejor cuando se decide en colectivo\n5. La IA sólo es valiosa si genera bienestar para todas las personas\n6. Antes de automatizar, hay que comprender a quién y a qué afecta\n7. La tecnología estratégica debe responder a las necesidades del pa",
+   "next": "herramienta que limite injustificadamente el acceso a servicios, beneficios,\ninformación o mecanismos de atención. En un país marcado por desigualdades\nsociales, económicas, territoriales y culturales, la adopción de IA debe evitar que los\nsesgos existentes en los datos, en las instituciones o en los criterios de diseño se\ntraduzcan en nuevas formas de exclusión.\nOtro criterio fundamental es la responsabilidad humana. Toda decisión apoyada por\nIA debe contar con personas e instituciones claramen",
+   "votes": {
+    "gpt": {
+     "category": "6.2",
+     "schiff": "education_for_ai",
+     "rationale": "The fragment emphasizes the need to strengthen education and knowledge in relation to AI, highlighting a human-centered approach.",
+     "model": "openai/gpt-4o-mini",
+     "ts": "2026-09-26T16:20:30.137457+00:00",
+     "origin": "western"
+    },
+    "gemini": {
+     "category": "6.2",
+     "schiff": "education_for_ai",
+     "rationale": "The fragment emphasizes that AI development requires strengthening education and knowledge in the country, and that AI must be human-centered and expand rights, aligning with the humanistic approach principle.",
+     "model": "google/gemini-2.5-flash",
+     "ts": "2026-09-26T16:20:29.426754+00:00",
+     "origin": "western"
+    },
+    "llama": {
+     "category": "6.2",
+     "schiff": "neither",
+     "rationale": "The fragment mainly addresses the overarching principle of a humanistic approach to AI development and its impact on society, without specifically mentioning education or training.",
+     "model": "meta-llama/llama-3.3-70b-instruct",
+     "ts": "2026-09-26T16:20:33.831275+00:00",
+     "origin": "western"
+    },
+    "qwen": {
+     "category": "6.1",
+     "schiff": "education_for_ai",
+     "rationale": "The target fragment mainly addresses a system-wide vision by linking AI development to strengthening education and knowledge in the country, which aligns with strategic priorities for AI in education.",
+     "model": "qwen/qwen3-235b-a22b-2507",
+     "ts": "2026-09-26T16:20:32.527534+00:00",
+     "origin": "chinese"
+    },
+    "deepseek": {
+     "category": "6.1",
+     "schiff": "education_for_ai",
+     "rationale": "The fragment emphasizes strengthening education and knowledge as a requirement for AI development, aligning with strategic priorities for AI in education.",
+     "model": "deepseek/deepseek-chat",
+     "ts": "2026-09-26T16:20:32.551780+00:00",
+     "origin": "chinese"
+    },
+    "glm": {
+     "category": "6.1",
+     "schiff": "education_for_ai",
+     "rationale": "El fragmento establece una prioridad estratégica nacional de fortalecer la educación y el conocimiento como requisito para el desarrollo de la IA.",
+     "model": "z-ai/glm-4.6",
+     "ts": "2026-09-26T16:20:32.744191+00:00",
+     "origin": "chinese"
+    },
+    "kimi": {
+     "category": "6.2",
+     "schiff": "education_for_ai",
+     "rationale": "The fragment states a principle that AI development requires strengthening education and knowledge in the country, which is a humanistic/human-centred approach to AI policy, and specifically about preparing people for AI (education for AI).",
+     "model": "moonshotai/kimi-k2",
+     "ts": "2026-09-26T16:20:33.052109+00:00",
+     "origin": "chinese"
+    }
+   },
+   "majority": "6.2",
+   "majority_n": 4,
+   "n_votes": 7,
+   "schiff_majority": "education_for_ai"
   },
   {
    "id": "sudafrica_4ir_2020_chunk_0390",

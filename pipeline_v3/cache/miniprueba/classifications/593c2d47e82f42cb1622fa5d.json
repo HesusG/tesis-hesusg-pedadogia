@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment mainly addresses the declaration of ethics and good practices for the use and development of AI, which relates to policies and regulations for equitable, inclusive, and ethical use of AI.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T16:20:26.357266+00:00"
+}

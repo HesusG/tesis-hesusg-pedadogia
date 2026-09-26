@@ -61,6 +61,13 @@ COUNTRIES = [
      "genre": "action_plan", "language": "en", "year": 2021,
      "adopting_body": "Australian Government", "doc_type_official": "AI Action Plan",
      "file": "australia_ai_action_plan_2021.txt"},
+    # Sept 2026: Mexico published its national AI plan in April 2026 (in force at the
+    # 30-jun-2026 cut, criterion C4), so it is no longer excluded from the corpus.
+    {"doc_id": "mexico_plan_nacional_ia_2026", "country": "mexico", "region": "latinoamerica",
+     "genre": "strategy", "language": "es", "year": 2026,
+     "adopting_body": "Agencia de Transformación Digital y Telecomunicaciones (ATDT)",
+     "doc_type_official": "Plan Nacional de Inteligencia Artificial",
+     "file": "mexico_plan_nacional_ia_2026.txt"},
 ]
 
 

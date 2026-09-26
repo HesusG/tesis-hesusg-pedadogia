@@ -34,7 +34,7 @@ from .judges import client, _parse
 
 K_PER_CELL = 5
 TARGETS = ["6.3", "6.4", "6.5"]
-COUNTRIES = ["alemania", "australia", "canada", "china", "colombia", "eeuu", "sudafrica"]
+COUNTRIES = ["alemania", "australia", "canada", "china", "colombia", "eeuu", "mexico", "sudafrica"]
 MAJORITY = 4  # of 7 judges
 
 CODEBOOK_FILE = PROJECT_ROOT / "pipeline_v3" / "unesco_codebook.json"
