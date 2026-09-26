@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment mainly addresses overarching ethical regulations, governance mechanisms, and data policies for AI across multiple sectors including education, fitting category 6.4, but it does not specifically describe using AI inside education or training people for AI.",
+  "model": "z-ai/glm-4.6",
+  "ts": "2026-09-26T13:29:54.103789+00:00"
+}

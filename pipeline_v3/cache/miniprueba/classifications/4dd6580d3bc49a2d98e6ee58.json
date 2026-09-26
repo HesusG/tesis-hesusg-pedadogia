@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on integrating AI and ML into formal education and developing bridging courses to prepare graduates for AI proficiency, which aligns with master plans for using AI in education and preparing the workforce.",
+  "model": "deepseek/deepseek-chat",
+  "ts": "2026-09-26T13:30:48.655024+00:00"
+}

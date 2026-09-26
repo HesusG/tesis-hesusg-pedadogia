@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment discusses the need for integrating AI competencies into educational curricula, focusing on developing theoretical and practical skills related to AI.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:30:36.671651+00:00"
+}

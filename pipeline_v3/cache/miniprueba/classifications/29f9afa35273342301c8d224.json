@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "both",
+  "rationale": "The fragment discusses using AI applications to empower citizens in teaching and learning processes (ai_for_education) and mentions an online course aimed at public AI literacy (education_for_ai).",
+  "model": "deepseek/deepseek-chat",
+  "ts": "2026-09-26T13:30:02.090513+00:00"
+}

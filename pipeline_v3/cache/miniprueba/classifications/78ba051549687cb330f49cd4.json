@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "both",
+  "rationale": "The fragment mainly details concrete plans for AI curricula and skills across all education stages (6.5), while also containing a significant section on ethical use, safety, and equity (6.4); it covers both AI for education and education for AI.",
+  "model": "z-ai/glm-4.6",
+  "ts": "2026-09-26T13:30:27.987453+00:00"
+}

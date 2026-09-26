@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses the use of AI in education management, teaching, learning, and assessment, such as exploring the application of AI and big data technology to empower education evaluation reform.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:29:18.126641+00:00"
+}

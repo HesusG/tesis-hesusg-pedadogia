@@ -1,0 +1,7 @@
+{
+  "category": "6.3",
+  "schiff": "neither",
+  "rationale": "The fragment mainly addresses inter-agency coordination and governance of AI adoption in government, not specifically in education, and does not discuss using AI in education or educating for AI.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:30:43.097186+00:00"
+}

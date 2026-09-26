@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "ai_for_education",
+  "rationale": "The target fragment outlines a system-wide vision and strategic priorities for AI in education through the 'Artificial Intelligence+' action, setting national targets for AI integration in various sectors including education.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:03.734475+00:00"
+}

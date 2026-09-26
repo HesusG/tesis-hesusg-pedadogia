@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses a system-wide vision and strategic priorities for AI, including adoption in public entities and other sectors, with education mentioned as one of the participating ministries.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:11.575710+00:00"
+}

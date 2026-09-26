@@ -1,0 +1,7 @@
+{
+  "category": "6.3",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses interdisciplinary planning and collaboration between AI researchers and other domains, which falls under inter-sectoral governance, and focuses on education and research collaboration to prepare people for AI.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:41.565472+00:00"
+}

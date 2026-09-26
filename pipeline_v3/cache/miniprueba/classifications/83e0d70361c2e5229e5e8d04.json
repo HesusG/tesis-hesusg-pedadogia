@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses data security, privacy protection, and safety regulations for AI in education (data classification, encryption, personal information protection, AI service approval mechanisms, model/algorithm/content safety controls), which falls under equitable, inclusive and ethical use of AI policies.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:30:25.238178+00:00"
+}

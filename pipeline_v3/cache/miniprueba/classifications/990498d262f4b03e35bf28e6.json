@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses master plans for using AI in education management, teaching, learning and assessment, including curriculum construction, teacher training, and talent cultivation.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:29:10.220769+00:00"
+}

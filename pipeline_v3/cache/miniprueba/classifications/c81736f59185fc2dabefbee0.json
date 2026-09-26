@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses concrete plans for using AI in teaching and learning, specifically focusing on AI tools to support teachers in their instructional processes across the teaching cycle.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:30:30.561164+00:00"
+}

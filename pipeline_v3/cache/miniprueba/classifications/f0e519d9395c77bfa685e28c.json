@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment mainly addresses ethical and sustainable design principles for AI, which relates to ethical use and governance, falling under category 6.4, but does not specifically address education or training in or for AI.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:27:41.120725+00:00"
+}

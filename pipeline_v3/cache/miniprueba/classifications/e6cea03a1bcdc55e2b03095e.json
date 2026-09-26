@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment addresses the ethical training related to AI systems in education, focusing on mitigating adverse effects.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:28:14.039116+00:00"
+}

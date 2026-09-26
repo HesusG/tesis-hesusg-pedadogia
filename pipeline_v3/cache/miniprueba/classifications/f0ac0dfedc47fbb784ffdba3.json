@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses using AI in higher education to improve its quality and performance, such as AI-supported development of university courses and design of learning settings.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:30:09.379848+00:00"
+}

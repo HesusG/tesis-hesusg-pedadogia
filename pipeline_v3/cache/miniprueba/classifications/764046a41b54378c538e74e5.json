@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment discusses risks of AI (black box, hallucination, algorithmic discrimination) and calls for compliance, transparency, trustworthiness, monitoring, risk warning, and emergency response systems, which aligns with ethical regulation and transparency of AI; while it mentions AI broadly, the context is the \"AI+\" action plan that includes education applications, and the specific concerns about algorithmic discrimination and transparency directly relate to ethical governance of AI in education.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:28:05.279942+00:00"
+}

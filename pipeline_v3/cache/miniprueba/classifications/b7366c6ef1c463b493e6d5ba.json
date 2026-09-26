@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment addresses concerns about privacy, fairness, and safety related to AI but does not specifically relate to education or training.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:29:01.396126+00:00"
+}

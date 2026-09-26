@@ -1,0 +1,36 @@
+{
+  "version": "unesco-v1-pilot",
+  "source": "Miao, Holmes, Huang & Zhang (2021), AI and Education: Guidance for Policy-makers, UNESCO, section 6 (pp. 31-37); Schiff (2022), p. 534.",
+  "registered": "2026-09-26",
+  "categories": [
+    {"id": "6.1", "name": "A system-wide vision and strategic priorities", "name_es": "Visión sistémica y prioridades estratégicas",
+     "definition": "Defines a system-wide vision of AI in education, assesses readiness, sets strategic priorities or national targets for AI and education (e.g., inclusive use, enhancing learning, skills for life in the AI era, transparent use of education data).",
+     "retrieval_query": "national vision and strategic priorities for artificial intelligence in the education system, readiness assessment and goals"},
+    {"id": "6.2", "name": "Overarching principle: humanistic approach", "name_es": "Principio rector (enfoque humanista)",
+     "definition": "States the overarching principle that AI in education must be human-centred and human-controlled, protect human rights, and keep people and human interaction at the core of education.",
+     "retrieval_query": "human-centred artificial intelligence in education, human rights, human control, people at the core of education"},
+    {"id": "6.3", "name": "Interdisciplinary planning and inter-sectoral governance", "name_es": "Planeación interdisciplinaria y gobernanza intersectorial",
+     "definition": "Governance and coordination of AI and education policy across ministries, sectors and stakeholders: whole-of-government approach, coordination bodies, multistakeholder expertise, capacity building of policy-makers, iterative planning cycles.",
+     "retrieval_query": "inter-ministerial coordination and governance of artificial intelligence policy, whole-of-government approach, stakeholders, coordination body for education and AI"},
+    {"id": "6.4", "name": "Policies and regulations for equitable, inclusive and ethical use of AI", "name_es": "Políticas y regulación para un uso equitativo, inclusivo y ético",
+     "definition": "Equity, inclusion and ethics of AI in education: inclusion targets, gender equality, bias, data protection and privacy of learners, transparency and auditability of education data, informed consent, ethical regulation.",
+     "retrieval_query": "ethical and inclusive use of artificial intelligence, equity, bias, gender, data protection and privacy of students, regulation"},
+    {"id": "6.5", "name": "Master plans for using AI in education management, teaching, learning and assessment", "name_es": "Planes maestros para la gestión, la enseñanza, el aprendizaje y la evaluación",
+     "definition": "Concrete plans for AI in education itself: education management systems, learner-centred use of AI for learning and assessment, empowering and training teachers, lifelong learning, AI literacy and curricula, values and skills for life and work in the AI era.",
+     "retrieval_query": "artificial intelligence in teaching, learning and assessment, teacher training, AI literacy curriculum in schools and universities, skills for the AI era"},
+    {"id": "6.6", "name": "Pilot testing, monitoring and evaluation, and building an evidence base", "name_es": "Pilotaje, monitoreo y evaluación, y construcción de evidencia",
+     "definition": "Piloting AI in education, monitoring and evaluation, building an evidence base, verifying vendors' claims, research on AI and education.",
+     "retrieval_query": "pilot projects, monitoring and evaluation of artificial intelligence in education, evidence base and research"},
+    {"id": "6.7", "name": "Fostering local AI innovations for education", "name_es": "Fomento de innovaciones locales",
+     "definition": "Promoting local development of AI technologies and tools for education: funding, start-ups and incubation, investment, local innovation ecosystems, international collaboration for local development.",
+     "retrieval_query": "funding and fostering local innovation, start-ups and industry developing artificial intelligence tools for education"}
+  ],
+  "schiff": "education_for_ai = education or training that prepares people for AI (training AI experts, preparing the workforce, public AI literacy). ai_for_education = using AI inside education (teaching and learning tools, administrative tools). both = the fragment clearly does both. neither = neither applies.",
+  "decision_rules": [
+    "Judge the TARGET fragment only; the context helps you understand it but is not coded.",
+    "Choose the single category the fragment MAINLY addresses; if two apply, choose the one most of the text is about.",
+    "A fragment about AI in general (economy, industry, defence) that says nothing about education, training or learning is 'none' unless it is about governance or ethics of AI that the text applies to education.",
+    "Do not infer intentions that the text does not state.",
+    "The fragment may be in any language; code it in its original language without translating."
+  ]
+}

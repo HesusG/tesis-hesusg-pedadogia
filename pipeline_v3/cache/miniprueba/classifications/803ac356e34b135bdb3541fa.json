@@ -1,0 +1,7 @@
+{
+  "category": "6.2",
+  "schiff": "neither",
+  "rationale": "The fragment mainly addresses the overarching principle of a humanistic approach to AI, considering ethics as a dynamic base for evaluation and guidance of AI technologies, focusing on human dignity, well-being, and prevention of harm.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:29:30.396563+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "both",
+  "rationale": "The fragment discusses using AI and big data to empower education evaluation reform and also outlines an 'AI+Education' action plan to transform educational concepts, models, assessments, and governance, while also mentioning building an AI (education) application pilot base and strengthening AI ethics and security regulation.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:29:16.562387+00:00"
+}

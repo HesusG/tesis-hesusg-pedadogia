@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly discusses using AI in education management, teaching, learning, and assessment, such as integrating AI into various subjects and promoting AI-driven student development.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:30:30.594025+00:00"
+}

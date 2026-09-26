@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses the integration of AI in education, specifically in the formation of students and teachers, and the inclusion of ethical formation in programs related to AI.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:29:22.539550+00:00"
+}

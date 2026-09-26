@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses a system-wide vision for education in the AI era, emphasizing competencies like critical thinking and creativity, interdisciplinary learning (STEM and arts), and the role of technology in education, aligning with a strategic shift in skills for the 4IR.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:29:54.235066+00:00"
+}

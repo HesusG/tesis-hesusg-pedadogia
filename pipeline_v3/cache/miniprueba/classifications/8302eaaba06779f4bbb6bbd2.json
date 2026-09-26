@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment details concrete plans for integrating AI education into primary, secondary, and higher education, including curriculum development, teacher training, and fostering interdisciplinary learning to prepare students for the AI era.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:30:30.729806+00:00"
+}

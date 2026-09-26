@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses policies and regulations for equitable, inclusive and ethical use of AI in education, such as security measures and risk prevention.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:27:58.814726+00:00"
+}

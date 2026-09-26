@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment details concrete plans for using AI to empower teachers in their teaching, manage education, and improve educational governance, covering various aspects from lesson preparation to assessment and administrative tasks.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:30:29.436123+00:00"
+}

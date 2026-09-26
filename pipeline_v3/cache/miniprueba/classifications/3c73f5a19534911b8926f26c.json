@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses investing in digital skills training, including AI, for youth and educators, which is about preparing people for AI.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:29:06.766876+00:00"
+}

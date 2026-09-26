@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment outlines concrete applications of AI to enhance teaching, learning, student assessment, health monitoring, and home-school collaboration, aligning directly with category 6.5 on master plans for using AI in education management, teaching, learning and assessment.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:30:44.209546+00:00"
+}

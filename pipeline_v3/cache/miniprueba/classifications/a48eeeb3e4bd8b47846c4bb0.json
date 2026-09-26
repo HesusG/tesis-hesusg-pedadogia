@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on skills and competencies needed for the 4IR/AI era (creativity, critical thinking, STEM and humanities education, digital skills), which is about preparing people for life and work with AI rather than using AI in education itself.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:30:25.342657+00:00"
+}

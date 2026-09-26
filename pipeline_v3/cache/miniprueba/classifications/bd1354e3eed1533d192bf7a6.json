@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on identifying workforce skills and talent development programs for leveraging AI in the Department of Defense, which is about preparing the workforce for AI rather than using AI in education.",
+  "model": "deepseek/deepseek-chat",
+  "ts": "2026-09-26T13:28:43.152672+00:00"
+}

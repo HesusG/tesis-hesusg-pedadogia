@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses introducing AI and ML in schools and developing bridging courses to acquire AI proficiency, which is about preparing people for AI.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:30:47.603226+00:00"
+}

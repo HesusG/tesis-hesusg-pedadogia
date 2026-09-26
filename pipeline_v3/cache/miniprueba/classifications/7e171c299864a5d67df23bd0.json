@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment describes concrete plans for training K-12 teachers to educate students on AI literacy and ethical reasoning, and also mentions training energy workers in AI skills, which falls under AI literacy and curricula.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:30:22.698434+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment discusses the integration of AI into education through teacher training and curriculum development, focusing on enhancing teaching and learning processes.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:30:26.126692+00:00"
+}

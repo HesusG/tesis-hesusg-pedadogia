@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on concrete plans for integrating AI into formal education (schools and higher education) through curriculum recommendations like introducing AI/ML in schools and developing bridging courses for graduates to acquire AI proficiency.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:30:48.810100+00:00"
+}

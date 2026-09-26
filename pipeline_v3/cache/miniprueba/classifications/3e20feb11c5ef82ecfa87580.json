@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses policies for ethical use of AI in education by mentioning the development of education programs around AI ethics, which falls under ethical regulation and inclusion in AI policy.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:29:25.190067+00:00"
+}

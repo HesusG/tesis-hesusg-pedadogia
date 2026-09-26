@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment discusses the impact of improved user interfaces and algorithms built on big data on education and how it is taught, which directly relates to concrete plans for using AI in education.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:29:49.701874+00:00"
+}

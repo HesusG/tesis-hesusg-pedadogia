@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment focuses on establishing a robust governance framework for AI, including risk assessment, monitoring, and ethical considerations like preventing algorithmic discrimination, which aligns with policies and regulations for equitable, inclusive, and ethical use of AI.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:28:00.984794+00:00"
+}

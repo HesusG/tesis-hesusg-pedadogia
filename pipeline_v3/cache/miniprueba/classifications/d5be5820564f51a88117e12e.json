@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on training AI graduates and developing AI solutions, which aligns with education_for_ai, but does not specifically address AI in education policy.",
+  "model": "deepseek/deepseek-chat",
+  "ts": "2026-09-26T13:30:16.450479+00:00"
+}

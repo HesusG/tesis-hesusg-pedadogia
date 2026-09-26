@@ -1,0 +1,7 @@
+{
+  "category": "6.3",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses inter-sectoral governance through the establishment of a public-private AI Institute for capacity building, and focuses on education and training for AI rather than AI use in education.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:37.645446+00:00"
+}

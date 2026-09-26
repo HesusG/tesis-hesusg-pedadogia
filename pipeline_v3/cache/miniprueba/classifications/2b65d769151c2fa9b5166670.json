@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment discusses the integration of AI technologies into educational practices and the development of AI-driven evaluation systems, focusing on enhancing teaching and learning.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:30:28.162222+00:00"
+}

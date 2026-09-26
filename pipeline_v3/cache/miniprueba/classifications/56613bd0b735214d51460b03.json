@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses a system-wide vision for AI, including its role in education ('at school'), and emphasizes trust and values, aligning with strategic priorities for AI in education.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:27:53.105411+00:00"
+}

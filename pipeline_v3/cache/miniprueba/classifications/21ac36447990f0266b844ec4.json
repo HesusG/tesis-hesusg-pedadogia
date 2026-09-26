@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly discusses a system-wide vision of AI in education, including empowering citizens and making AI mechanisms comprehensible to the population through online courses.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:30:08.869647+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses training education managers in AI application and strategic management, which is part of preparing educators and leaders for AI, falling under education_for_ai.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:01.559616+00:00"
+}

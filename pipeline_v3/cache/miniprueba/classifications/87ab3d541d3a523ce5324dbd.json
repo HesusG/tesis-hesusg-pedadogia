@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment addresses the risks and governance of AI applications, focusing on compliance, transparency, and ethical considerations, but does not specifically relate to education or training.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:28:00.479894+00:00"
+}

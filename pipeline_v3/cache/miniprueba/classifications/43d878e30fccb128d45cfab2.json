@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly describes concrete plans for using AI in education to support student development, health, and talent cultivation, focusing on AI integration in teaching, learning, and assessment.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:30:30.063766+00:00"
+}

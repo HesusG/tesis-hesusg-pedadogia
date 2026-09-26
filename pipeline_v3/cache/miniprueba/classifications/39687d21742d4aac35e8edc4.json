@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "neither",
+  "rationale": "The fragment describes general EU AI policy documents (Ethics Guidelines, White Paper on AI) that address AI across the economy and society, with no specific mention of education, learning, or training contexts.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:28:57.195803+00:00"
+}

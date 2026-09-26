@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment states the AI institute will deal with arising ethical issues and references universities' role in basic research, aligning with ethical regulation (6.4), but it does not explicitly address using AI in education or training people for AI.",
+  "model": "z-ai/glm-4.6",
+  "ts": "2026-09-26T13:31:32.292657+00:00"
+}

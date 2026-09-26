@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses creating an AI competency curriculum and supporting general AI literacy, which falls under education or training that prepares people for AI.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:30:19.730310+00:00"
+}

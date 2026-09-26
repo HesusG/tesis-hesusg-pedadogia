@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses ethical and safe use of AI in education, covering data security, privacy protection, risk prevention, legal compliance, and ethical challenges, which falls under equitable, inclusive and ethical use policies; it is about using AI within education (teaching/learning context) rather than training people for AI careers.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:29:11.702378+00:00"
+}

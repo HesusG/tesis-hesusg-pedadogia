@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment discusses preventing bias and discrimination in AI development by promoting social diversity in development teams, which is an ethical consideration for AI, and also implies training or education for those developing AI.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:28:52.248747+00:00"
+}

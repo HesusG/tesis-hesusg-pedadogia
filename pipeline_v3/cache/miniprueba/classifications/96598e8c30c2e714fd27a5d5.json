@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "both",
+  "rationale": "The fragment mainly addresses concrete plans for using AI in education management, teaching, learning, and assessment, including pilot programs and integration across education levels, while also covering education for AI through AI literacy and workforce preparation.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:07.975493+00:00"
+}

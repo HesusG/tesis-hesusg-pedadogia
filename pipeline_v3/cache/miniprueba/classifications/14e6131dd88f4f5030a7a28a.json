@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses concrete plans for integrating AI into education and training, such as introducing AI/ML in schools and developing bridging courses for non-AI graduates, which aligns with preparing people for AI.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:30:46.995769+00:00"
+}

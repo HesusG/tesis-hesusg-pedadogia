@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment focuses on utilizing AI to enhance teaching processes and improve educational outcomes for both teachers and students.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:30:29.637189+00:00"
+}

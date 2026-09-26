@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on building AI education curricula and courses for primary and secondary students, including regional/school-specific extension courses, university-enterprise collaboration courses, and advanced innovation courses for cultivating AI talent, which aligns with master plans for AI literacy and curricula in education.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:30:29.415957+00:00"
+}

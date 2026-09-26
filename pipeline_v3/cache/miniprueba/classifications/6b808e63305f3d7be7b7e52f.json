@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment addresses the establishment of mechanisms for data security and ethical governance in AI education, focusing on compliance and evaluation rather than the use of AI in education or preparing individuals for AI.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:29:14.638559+00:00"
+}

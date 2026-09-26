@@ -508,13 +508,15 @@ gobernanza antes de exigir a los docentes que apliquen principios
 porque su uso depende de la infraestructura, la regulación de datos, las políticas y el
 desarrollo profesional \citep[p.~22]{unesco2024aicft}.
 
-De este marco derivo el instrumento de autoevaluación que aplicaré antes y después de la
-intervención con docentes. Lo tomo con la misma reserva que la guía de 2021: proviene de la
-misma institución y comparte autor principal con la guía, y la crítica de
+Para esta tesis el marco cumple una función precisa. La competencia docente es una de las
+cosas que la guía de 2021 pide atender dentro del apartado 6.5, y el marco de 2024 da el
+vocabulario con el que una política puede tratarla: ámbitos, niveles y bloques de
+competencias. Cuando el análisis encuentre pasajes sobre formación docente, este vocabulario
+permite distinguir si una política se limita a pedir capacitación o si describe qué
+competencias espera y en qué nivel. Lo tomo con la misma reserva que la guía: proviene de la
+misma institución y comparte autor principal con ella, y la crítica de
 \citet{mochizuki2025ethics} a la figura del docente que necesita desarrollar competencias
-se aplica también aquí. Por eso el instrumento medirá la competencia que el docente
-reconoce en sí mismo, y no la tomará como prueba de que la adopción de la inteligencia
-artificial sea deseable.
+se aplica también aquí.
 
 \subsection{Revisión de estudios sobre formación docente en inteligencia artificial}
 \label{subsec:mt-formacion}
@@ -556,14 +558,51 @@ y apoyo continuo \citep[p.~35]{miao2021guidance}. Y el Marco de competencias de 
 partió de constatar que en 2022 solo siete países contaban con marcos o programas de
 inteligencia artificial para docentes \citep[p.~13]{unesco2024aicft}.
 
-De esta revisión se desprenden tres conclusiones para la tesis. La primera es que la
+De esta revisión se desprenden dos conclusiones para la tesis. La primera es que la
 formación docente en inteligencia artificial es un campo más prescrito que estudiado: los
 organismos internacionales la recomiendan, pero la evidencia empírica sobre cómo formar a
 los docentes es reducida y se concentra en países con sistemas educativos de alto
-desempeño. La segunda es que los estudios disponibles miden sobre todo percepciones y
-conocimientos, no el cambio en la competencia después de una intervención, lo que justifica
-un diseño con medición previa y posterior. La tercera es que la investigación sobre
-inteligencia artificial en educación se ha hecho con poca participación de los docentes y
-con poco sustento pedagógico, de modo que una intervención diseñada desde la pedagogía y
-con los docentes como protagonistas atiende un vacío documentado.
-%% TODO: ampliar con estudios de intervención en formación docente (América Latina).
+desempeño. La segunda es que, si la investigación no ofrece todavía modelos probados, lo que
+las políticas nacionales dicen sobre los docentes adquiere más peso: son el lugar donde cada
+país decide, por ahora sin mucha evidencia, qué espera de ellos. Por eso la formación
+docente es uno de los temas que el análisis sigue dentro del apartado 6.5.
+
+\subsection{El análisis computacional de textos de política}
+\label{subsec:mt-computacional}
+
+Leer quince documentos de política en cuatro idiomas y compararlos fragmento por fragmento
+excede lo que un investigador puede hacer a mano con consistencia. Por eso el análisis
+recurre a métodos computacionales, y conviene exponer desde qué postura se usan.
+
+\citet{grimmer2013text} formularon cuatro principios para el análisis cuantitativo de
+textos: todos los modelos cuantitativos del lenguaje son incorrectos, pero algunos son
+útiles; los métodos amplifican los recursos del investigador y aumentan su capacidad, no la
+sustituyen; no existe un método automático que sea el mejor para todos los casos; y hay que
+validar, validar y validar. Advierten además que los métodos automáticos no reemplazan la
+reflexión cuidadosa ni la lectura atenta, y que exigen una validación extensa y específica
+para cada problema. \citet{nelson2020computational} propuso una secuencia de tres pasos,
+que llamó teoría fundamentada computacional: detectar patrones con técnicas
+computacionales, refinarlos mediante una lectura interpretativa de los textos y
+confirmarlos con pruebas adicionales. Ambos trabajos sostienen la misma idea, que esta
+tesis adopta: la computadora encuentra patrones, pero su sentido se establece con
+interpretación y validación.
+
+La comparación entre países descansa en representaciones vectoriales del texto.
+\citet{reimers2019sentencebert} desarrollaron redes que producen representaciones de
+oraciones que pueden compararse por similitud del coseno, lo que permite buscar pasajes
+semánticamente cercanos y agruparlos de manera eficiente. \citet{conneau2020unsupervised}
+mostraron que un modelo entrenado con texto en cien idiomas puede alcanzar un desempeño
+alto en tareas de comprensión entre lenguas. Esta capacidad multilingüe es la que permite
+comparar un documento chino con uno alemán sin traducirlos primero, aunque también
+introduce un riesgo: que la cercanía entre dos textos refleje su idioma y no su contenido.
+Por eso el diseño controla el idioma de manera explícita.
+
+La clasificación de los fragmentos la hacen modelos de lenguaje, y ese uso tiene riesgos
+documentados. \citet{baumann2025llmhacking} replicaron 37 tareas de anotación de 21
+estudios publicados en ciencias sociales y encontraron que las decisiones de
+configuración, como la elección del modelo o la redacción de la instrucción, pueden llevar
+a conclusiones incorrectas, incluso cuando se siguen prácticas estándar. Llamaron a este
+fenómeno \textit{LLM hacking}. Dos decisiones de esta tesis responden a ese riesgo: las
+categorías y las instrucciones se fijan antes de correr el análisis, y la clasificación no
+la hace un solo modelo sino un panel de siete modelos de distinto origen, cuyo grado de
+acuerdo se reporta.

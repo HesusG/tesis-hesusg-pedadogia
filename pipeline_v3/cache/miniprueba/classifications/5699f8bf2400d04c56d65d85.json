@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on training K-12 teachers to help students critically evaluate AI through ethical reasoning, which aligns with AI literacy and curricula under category 6.5.",
+  "model": "deepseek/deepseek-chat",
+  "ts": "2026-09-26T13:30:24.202737+00:00"
+}

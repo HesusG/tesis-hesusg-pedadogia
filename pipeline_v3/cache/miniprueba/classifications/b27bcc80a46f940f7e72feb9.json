@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses a system-wide vision and strategic priorities for AI in Canada, including providing access to free AI literacy training and increasing AI transparency, which aligns with category 6.1 and education_for_ai.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:29:10.868161+00:00"
+}

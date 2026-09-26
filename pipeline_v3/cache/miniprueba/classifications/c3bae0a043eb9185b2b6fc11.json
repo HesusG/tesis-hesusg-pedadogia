@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses the development of a system-wide vision and strategic priorities for AI in education, specifically focusing on training education management leaders in AI application and management capabilities.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:28:02.603279+00:00"
+}

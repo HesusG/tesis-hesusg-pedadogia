@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment describes training K-12 teachers to help students develop AI literacy and critical evaluation skills, which is concrete planning for AI literacy curricula and skills for life in the AI era.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:30:25.045977+00:00"
+}

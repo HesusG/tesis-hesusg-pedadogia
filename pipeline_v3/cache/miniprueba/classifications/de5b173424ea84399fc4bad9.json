@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly discusses the need for individuals to develop critical thinking skills and self-learning abilities to solve problems, which is related to preparing people for AI, but does not directly address AI and education policy.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:29:55.868277+00:00"
+}

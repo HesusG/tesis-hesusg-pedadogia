@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly details concrete plans for applying AI in education, such as building AI teaching environments, developing AI teaching tools, and upgrading platforms with intelligent services (Items 4 & 5), alongside security measures for these applications (Item 3).",
+  "model": "z-ai/glm-4.6",
+  "ts": "2026-09-26T13:29:52.954063+00:00"
+}

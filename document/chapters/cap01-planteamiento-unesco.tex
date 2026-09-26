@@ -1,0 +1,200 @@
+%% cap01-planteamiento-unesco.tex — Planteamiento del problema (diseño UNESCO, exploratorio)
+%% Sustituye a cap01-planteamiento.tex (eje confuciano) cuando se integre a main.tex.
+
+\providecommand{\pendiente}[1]{\textbf{[Pendiente: #1]}}
+
+\chapter{Planteamiento del problema}
+\label{cap:planteamiento}
+
+\section{Situación de la práctica profesional}
+\label{sec:practica}
+
+Mi trabajo consiste en diseñar currículo de cursos sobre inteligencia artificial en
+DeepLearning.AI, una organización de educación en línea sobre esta tecnología. En paralelo
+estoy por concluir la edición 2026 del Programa regional de formación ``Planeamiento y
+gestión de políticas educativas en América Latina y el Caribe'', del IIPE UNESCO
+\citep{iipe2026prf}, cuyos cursos cubren el análisis situacional, la formulación, la
+implementación y el monitoreo de políticas educativas.
+
+Las dos actividades se tocan en un punto. Quien diseña un currículo de inteligencia
+artificial decide qué deben aprender las personas sobre esta tecnología, y esas decisiones
+no ocurren en el vacío: las políticas nacionales ya declaran qué competencias esperan, para
+quién y con qué propósito. Quien analiza esas políticas, a su vez, necesita saber qué dicen,
+qué callan y en qué se parecen a las de otros países. Mi práctica de diseño curricular me
+coloca como usuario de esas políticas; mi formación en el IIPE, como su analista.
+
+En esa práctica encuentro una dificultad concreta. El análisis de políticas que aprendo y
+aplico descansa en la lectura de documentos completos, uno por uno, con categorías que el
+analista define para cada ejercicio. Funciona bien para un documento o para dos, pero no
+escala. Cuando la pregunta es cómo tratan siete países un mismo tema, en cuatro idiomas y
+con documentos de decenas o cientos de páginas, la lectura manual obliga a elegir: o se
+reduce el número de casos, o se reduce la profundidad, o se lee todo en traducción al
+inglés. Cada una de esas salidas cambia el resultado antes de empezar.
+
+La situación que quiero transformar es esa forma de analizar políticas públicas: pasar de
+una lectura manual, limitada a pocos casos y a una lengua, a un procedimiento que pueda
+aplicarse con criterios fijos a muchos documentos en su idioma original, y cuyos resultados
+otra persona pueda revisar y repetir.
+
+\section{Situación problemática}
+\label{sec:problematica}
+
+La inteligencia artificial llegó a la agenda educativa de los gobiernos en pocos años.
+UNESCO convocó en 2019 una conferencia internacional sobre el tema cuyo documento final, el
+Consenso de Beijing, recomienda a los Estados planear la inteligencia artificial en sus
+políticas educativas \citep{unesco2019beijing}, y en 2021 publicó una guía para que los
+responsables de política diseñaran esas políticas \citep{miao2021guidance}. Desde entonces
+los países han publicado estrategias, planes de acción e informes que comparten buena parte
+de su vocabulario.
+
+Ese vocabulario común plantea el problema de esta tesis. Cuando dos países escriben sobre
+``competencias para la era de la inteligencia artificial'' o sobre ``uso ético de los
+datos'', no es evidente si dicen lo mismo, si repiten la fórmula de un organismo
+internacional o si usan las mismas palabras para propósitos distintos. Los estudios que
+han comparado estas políticas lo muestran: la convergencia en el vocabulario convive con
+una divergencia en la interpretación y en la puesta en práctica
+\citep{jobin2019landscape, fjeld2020principled}, y cuando las estrategias hablan de
+educación, suelen referirse a formar fuerza laboral más que a transformar la enseñanza
+\citep{schiff2022education}.
+
+La forma en que se han hecho esas comparaciones limita lo que se puede concluir de ellas.
+El estado del arte (sección~\ref{subsec:ea-sintesis}) muestra cuatro rasgos recurrentes. Se
+comparan pocos casos, entre dos y cuatro países. Se trabaja con documentos en inglés o
+traducidos al inglés, y los propios autores reconocen el sesgo que eso introduce. Las
+categorías de comparación se derivan del corpus o las construyen los autores, de modo que
+cada estudio usa una rejilla distinta. Y la codificación la hace una sola persona, sin
+medida de acuerdo, como reconoce \citet{schiff2022education}.
+
+México vive esta situación desde afuera. La primera propuesta de estrategia nacional de
+inteligencia artificial fue una agenda de 2018 impulsada fuera del gobierno, que no se
+convirtió en política pública \citep{cminds2018iamexico}. En abril de 2026 la SEP presentó
+líneas de acción para el uso ético y crítico de la inteligencia artificial generativa en la
+educación superior, con carácter de recomendación \citep{sep2026ia}, y la ANUIES publicó en
+2024 un informe sobre gobernanza de la inteligencia artificial \citep{anuies2024gobernanza}.
+Pero el país no tiene todavía un documento de política nacional que pueda compararse con los
+de otros países; por eso México queda fuera del corpus, y esa ausencia se reporta como
+resultado. Cuando ese documento exista, hará falta un procedimiento para compararlo con lo
+que otros países ya publicaron.
+
+\section{Preguntas de investigación}
+\label{sec:preguntas}
+
+\subsection{Pregunta central}
+
+Cuando las políticas de educación en inteligencia artificial de siete países se leen con las
+siete categorías de la guía de UNESCO para responsables de política, ¿qué tan cercanas o
+lejanas están entre sí dentro de cada categoría, y qué muestra esa distancia sobre la forma
+en que cada país traduce un vocabulario internacional común?
+
+\subsection{Preguntas derivadas}
+
+\begin{enumerate}
+  \item[\textbf{P1.}] \textbf{Cobertura.} ¿Qué categorías de la guía de UNESCO atiende cada
+  política y cuáles omite, y cuánto peso tiene en cada una la educación \textit{para} la
+  inteligencia artificial frente a la inteligencia artificial \textit{para} la educación?
+
+  \item[\textbf{P2.}] \textbf{Distancia.} Dentro de una misma categoría, ¿qué países quedan
+  cerca y cuáles lejos en un espacio semántico multilingüe, y ese acomodo cambia de una
+  categoría a otra?
+
+  \item[\textbf{P3.}] \textbf{Robustez.} ¿Las distancias entre países se sostienen cuando se
+  controla el idioma de los documentos y cuando se considera el grado de acuerdo del panel de
+  modelos que los clasifica?
+\end{enumerate}
+
+P1 describe qué dice cada política, P2 compara cómo lo dice y P3 pone a prueba si la
+comparación depende del idioma o del instrumento.
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+\subsection{Objetivo general}
+
+Comparar, de manera exploratoria y reproducible, las políticas de educación en inteligencia
+artificial de siete países dentro de cada una de las siete categorías de la guía de UNESCO,
+mediante un procedimiento automático de procesamiento de lenguaje natural y un panel de
+modelos de lenguaje multilingües.
+
+\subsection{Objetivos específicos}
+
+\begin{enumerate}
+  \item[\textbf{OE1.}] Construir un corpus de documentos oficiales de política con criterios
+  de inclusión explícitos, conservados en su idioma original y divididos en fragmentos
+  recuperables por país.
+  \item[\textbf{OE2.}] Clasificar cada fragmento, con su contexto inmediato, en las siete
+  categorías de UNESCO y en la distinción entre educación para la inteligencia artificial e
+  inteligencia artificial para la educación, mediante un panel de siete modelos de lenguaje
+  de distinto origen (responde a P1).
+  \item[\textbf{OE3.}] Estimar, dentro de cada categoría, la distancia semántica entre los
+  fragmentos de cada par de países (responde a P2).
+  \item[\textbf{OE4.}] Contrastar las distancias con un control de idioma y con el acuerdo
+  entre los modelos del panel (responde a P3).
+  \item[\textbf{OE5.}] Proponer una herramienta abierta que permita a otros analistas aplicar
+  el mismo procedimiento a nuevos documentos de política.
+\end{enumerate}
+
+\section{Supuestos}
+\label{sec:supuestos}
+
+El estudio es exploratorio, por lo que no plantea hipótesis que se acepten o rechacen. Parte
+de tres supuestos que se declaran para que puedan discutirse.
+
+\begin{description}
+  \item[S1.] Los siete apartados de la sección 6 de la guía de UNESCO pueden usarse como
+  categorías de comparación, aunque la guía no los presente así
+  (sección~\ref{subsec:mt-marcos}).
+  \item[S2.] La cercanía entre fragmentos en un espacio semántico multilingüe refleja, al
+  menos en parte, cercanía de contenido y no solo de idioma. P3 pone a prueba este supuesto.
+  \item[S3.] Un panel de modelos de distinto origen, con categorías fijadas de antemano,
+  reduce el riesgo de que la clasificación dependa de la elección de un solo modelo
+  \citep{baumann2025llmhacking}.
+\end{description}
+
+\section{Justificación}
+\label{sec:justificacion}
+
+La justificación pedagógica está en el objeto. Las políticas de educación en inteligencia
+artificial deciden qué se enseña sobre la tecnología, cómo se usa en las aulas y qué se
+espera de los docentes. Quien diseña currículo trabaja dentro de esas decisiones, y
+compararlas con las de otros países permite ver que no son las únicas posibles.
+
+La justificación metodológica está en el procedimiento. Los estudios revisados comparan
+pocos casos, en inglés y con rejillas propias (sección~\ref{subsec:ea-sintesis}). Esta tesis
+compara siete países, en su idioma original y con una rejilla tomada de un organismo
+internacional, y en lugar de un solo codificador usa un panel de modelos cuyo acuerdo se
+mide. El procedimiento sigue la postura de \citet{grimmer2013text}: los métodos automáticos
+amplían la capacidad del analista pero no sustituyen la interpretación, y sus resultados
+deben validarse.
+
+La justificación práctica está en México. Cuando el país publique su política de
+inteligencia artificial en educación, contar con un procedimiento abierto para compararla
+con la de otros países permitirá discutirla con evidencia y no solo con referencias
+generales a lo que recomiendan los organismos internacionales.
+
+\section{Alcances y limitaciones}
+\label{sec:alcances}
+
+El corpus reúne 15 documentos de siete países: Alemania, Australia, Canadá, China,
+Colombia, Estados Unidos y Sudáfrica, publicados entre 2020 y 2026, en alemán, chino,
+español e inglés, divididos en 3{,}095 fragmentos. China aporta nueve documentos; el resto de
+los países, uno cada uno. El 15.º Plan Quinquenal chino, por su extensión, se excluye de las
+comparaciones de distancia para que China no pese más que los demás países, y esa exclusión
+se declara en cada resultado.
+
+El estudio es exploratorio. Describe cómo se parecen y en qué se distinguen las políticas; no
+prueba por qué. Analiza lo que los documentos dicen, no si los gobiernos lo cumplen: opera en
+los planos del texto y del discurso, no en el de los efectos \citep{rizvi2010globalizing}.
+Con siete casos no hay generalización estadística posible. En cuatro de los países
+(Alemania, Australia, Canadá y Estados Unidos) la educación depende en buena medida de los
+estados o provincias, de modo que el documento nacional no equivale a la política que rige
+en sus escuelas \citep{bray1995levels}.
+
+Hay una limitación que la rejilla misma introduce. Si los países redactaron sus políticas
+siguiendo las recomendaciones de UNESCO, medirlas con las categorías de UNESCO podría
+producir convergencia por construcción. Por eso la tesis no mide cuánto se apega cada país a
+la guía, sino cuán lejos quedan los países entre sí dentro de cada categoría: dos países
+pueden atender la misma categoría y hacerlo de maneras muy distintas.
+
+La tesis se inspira en la investigación-acción, pero no incluye una intervención. Su aporte
+a la práctica es un procedimiento y una herramienta abierta para analizar políticas; su uso
+con otros analistas ocurrirá después de concluido este estudio.

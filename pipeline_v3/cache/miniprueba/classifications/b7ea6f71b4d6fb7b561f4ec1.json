@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "both",
+  "rationale": "The fragment discusses using AI for teacher professional development (ai_for_education) and the low enrollment in STEM and AI-specific programs in higher education (education_for_ai), making it 'both'.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:30:33.756092+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on training the next generation of industry-ready AI graduates, which aligns with preparing people for AI.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:30:12.212900+00:00"
+}

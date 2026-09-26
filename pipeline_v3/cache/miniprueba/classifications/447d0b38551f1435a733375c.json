@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses concrete plans for using AI in higher education, such as AI-supported course development and learning settings, which falls under master plans for AI in teaching and learning.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:30:04.227668+00:00"
+}

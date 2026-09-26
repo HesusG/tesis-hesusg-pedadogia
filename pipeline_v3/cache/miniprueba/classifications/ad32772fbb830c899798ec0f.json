@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "neither",
+  "rationale": "The fragment mainly discusses the use of AI in the public sector to improve government operations and service delivery, with no direct mention of education or training.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:27:52.667155+00:00"
+}

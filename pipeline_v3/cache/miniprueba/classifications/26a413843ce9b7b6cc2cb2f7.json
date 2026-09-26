@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment addresses the identification of talent and skills required for the workforce to leverage AI, indicating a focus on education and training for AI.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:28:21.630759+00:00"
+}

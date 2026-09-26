@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "both",
+  "rationale": "The fragment mainly addresses a system-wide vision and strategic priorities for AI in education and broader societal goals, including AI literacy training and access to AI tools in education, while also preparing the workforce for AI-related jobs.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:29:09.272232+00:00"
+}

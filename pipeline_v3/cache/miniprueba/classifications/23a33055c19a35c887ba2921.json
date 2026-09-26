@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses concrete plans for integrating AI into education through curriculum development, teacher training, and student skill building across all levels, focusing on preparing people for the AI era.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:30:31.713432+00:00"
+}

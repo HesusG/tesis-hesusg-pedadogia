@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "education_for_ai",
+  "rationale": "The target fragment mainly addresses ethical training in AI design within higher education to mitigate adverse effects, which falls under ethical use and governance of AI in education.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:17.570434+00:00"
+}

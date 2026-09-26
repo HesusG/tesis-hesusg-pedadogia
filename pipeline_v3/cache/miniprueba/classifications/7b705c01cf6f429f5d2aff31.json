@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "neither",
+  "rationale": "The target fragment only mentions the title of Canada’s National Artificial Intelligence Strategy and does not address any specific policy related to AI in education or education for AI.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:27:56.377232+00:00"
+}

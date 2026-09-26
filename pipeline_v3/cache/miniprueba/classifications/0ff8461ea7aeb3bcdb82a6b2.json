@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "neither",
+  "rationale": "The fragment mainly addresses the development, design, and application of AI in general, without specifically focusing on education or training.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:30:00.670835+00:00"
+}

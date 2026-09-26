@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses equitable and inclusive AI development, focusing on addressing systemic barriers for marginalized groups, which aligns with ethical and inclusive use of AI in education.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:29:08.691498+00:00"
+}

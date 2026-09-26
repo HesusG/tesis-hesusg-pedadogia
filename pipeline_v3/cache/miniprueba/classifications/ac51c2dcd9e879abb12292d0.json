@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment discusses policy actions related to data quality standards and privacy protections for scientific data used in AI model training, which directly relates to ethical use of AI and data protection.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:29:31.310598+00:00"
+}

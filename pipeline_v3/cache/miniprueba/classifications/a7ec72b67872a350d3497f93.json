@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "both",
+  "rationale": "The fragment addresses both using AI for teacher professional development (ai_for_education) and the need for more STEM/AI higher education programs (education_for_ai), with roughly equal emphasis on both aspects.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:30:36.628367+00:00"
+}

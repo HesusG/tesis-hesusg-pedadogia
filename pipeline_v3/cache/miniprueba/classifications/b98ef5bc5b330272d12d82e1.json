@@ -1,0 +1,7 @@
+{
+  "category": "6.6",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment describes developing and testing AI solutions in operational practice, accompanied by research, which aligns with piloting and building an evidence base for AI use.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:27:39.702496+00:00"
+}

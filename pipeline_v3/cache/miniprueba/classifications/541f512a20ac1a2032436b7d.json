@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses the establishment of an AI Institute for capacity building in AI areas, which aligns with defining a system-wide vision and strategic priorities for AI in education.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:28:36.884564+00:00"
+}

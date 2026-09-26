@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on requiring higher education institutions to include ethical training in AI-related degree programs to address adverse effects of AI systems, which concerns ethical regulation and inclusion in education (6.4), and prepares people for AI through specialized training.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:28:18.860479+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment emphasizes the professional development of teachers in relation to AI, which aligns with preparing the workforce for AI in education.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:30:34.020540+00:00"
+}

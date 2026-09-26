@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses the development of digital talent and capacity to develop, implement and manage AI solutions, which is related to preparing the workforce for AI.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:30:35.268929+00:00"
+}

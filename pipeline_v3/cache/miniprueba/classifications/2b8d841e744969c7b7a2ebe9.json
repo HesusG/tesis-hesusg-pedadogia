@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment focuses on improving higher education quality and performance through the use of AI in developing courses and learning settings.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:30:01.687143+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment focuses on integrating AI education into the curriculum and developing high-level talent for the AI era.",
+  "model": "openai/gpt-4o-mini",
+  "ts": "2026-09-26T13:30:30.468539+00:00"
+}

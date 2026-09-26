@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mainly addresses creating an AI competency curriculum and supporting AI literacy for educators and students, which falls under concrete plans for using AI in education and training.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:30:20.416478+00:00"
+}

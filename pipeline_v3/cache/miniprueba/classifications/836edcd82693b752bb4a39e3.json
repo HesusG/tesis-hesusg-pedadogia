@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment emphasizes self-learning and the development of skills like critical thinking and multidisciplinary problem-solving, which aligns with preparing individuals for the AI era through education, mainly focusing on learner empowerment rather than using AI in education.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:29:56.111027+00:00"
+}

@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment details concrete K-12 curriculum integration, teaching methodologies, and student competency development in AI literacy and innovation, aligning with category 6.5, and focuses on preparing students with AI knowledge and skills, corresponding to the education_for_ai label.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:30:44.070489+00:00"
+}

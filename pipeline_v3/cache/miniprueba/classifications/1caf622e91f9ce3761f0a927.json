@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment describes concrete plans for using AI within higher education, such as AI-supported development of university courses, design of learning settings, and transfer of AI research into regular university operations.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:30:02.581216+00:00"
+}

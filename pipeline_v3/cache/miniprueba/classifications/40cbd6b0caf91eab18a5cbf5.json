@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment primarily focuses on establishing security mechanisms, data protection, privacy, and ethical controls for AI in education, including data classification, encryption, and auditing mechanisms for AI services in schools.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:29:12.042298+00:00"
+}

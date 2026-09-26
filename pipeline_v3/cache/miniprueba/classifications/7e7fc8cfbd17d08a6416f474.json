@@ -1,0 +1,7 @@
+{
+  "category": "none",
+  "schiff": "neither",
+  "rationale": "The fragment addresses AI-ready scientific datasets and data quality standards for AI model training in general scientific domains (biological, materials science, chemical, physical data), with no mention of education, teaching, learning, or training.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:29:35.643765+00:00"
+}

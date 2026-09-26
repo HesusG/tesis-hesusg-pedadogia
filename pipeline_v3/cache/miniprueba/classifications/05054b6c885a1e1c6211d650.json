@@ -1,0 +1,7 @@
+{
+  "category": "6.5",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly discusses the use of IA in education, specifically for teacher professional development and incorporation into the educational ecosystem.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:30:35.454941+00:00"
+}

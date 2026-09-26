@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The target fragment mainly discusses ethics guidelines and policy recommendations for trustworthy AI, which pertain to ethical and regulatory frameworks, but does not specifically address education or training in AI.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:55.448456+00:00"
+}

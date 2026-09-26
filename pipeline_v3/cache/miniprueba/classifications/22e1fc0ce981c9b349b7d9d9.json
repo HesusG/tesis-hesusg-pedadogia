@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "ai_for_education",
+  "rationale": "The fragment mainly addresses ethical use of AI, including adherence to privacy, data sharing, and AI Ethics Principles, which falls under equitable and ethical use; although the context is broader than education, the target fragment's focus on ethics in AI solutions aligns with education policy when applied to learning environments.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:59.011698+00:00"
+}

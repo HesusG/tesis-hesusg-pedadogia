@@ -1,0 +1,7 @@
+{
+  "category": "6.1",
+  "schiff": "education_for_ai",
+  "rationale": "The fragment mentions a 'Strategic Vision' and an 'AI Action Plan' for the development and adoption of AI, which aligns with defining a system-wide vision and strategic priorities for AI, and the context indicates this is about preparing the workforce for AI.",
+  "model": "google/gemini-2.5-flash",
+  "ts": "2026-09-26T13:27:45.541663+00:00"
+}

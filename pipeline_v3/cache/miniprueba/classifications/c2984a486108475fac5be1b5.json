@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment addresses ethical principles for AI use in public administration (transparency, fairness, non-discrimination, data protection, traceability), not specifically education; while these principles could apply to education, the text focuses on general public administration without mentioning education or learning contexts.",
+  "model": "moonshotai/kimi-k2",
+  "ts": "2026-09-26T13:28:54.376313+00:00"
+}

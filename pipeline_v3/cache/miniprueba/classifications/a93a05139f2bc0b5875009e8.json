@@ -1,0 +1,7 @@
+{
+  "category": "6.4",
+  "schiff": "neither",
+  "rationale": "The fragment mainly addresses ethical and regulatory principles for AI use in public administration, including data protection, transparency, and non-discrimination, but does not specifically discuss education or training.",
+  "model": "qwen/qwen3-235b-a22b-2507",
+  "ts": "2026-09-26T13:28:50.639735+00:00"
+}

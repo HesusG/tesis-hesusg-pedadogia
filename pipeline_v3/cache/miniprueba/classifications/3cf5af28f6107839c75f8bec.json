@@ -1,0 +1,7 @@
+{
+  "category": "6.3",
+  "schiff": "neither",
+  "rationale": "The fragment mainly addresses interdisciplinary planning and inter-sectoral governance of AI policy across ministries, sectors, and stakeholders.",
+  "model": "meta-llama/llama-3.3-70b-instruct",
+  "ts": "2026-09-26T13:28:13.395312+00:00"
+}
