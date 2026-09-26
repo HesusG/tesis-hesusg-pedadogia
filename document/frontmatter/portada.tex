@@ -1,43 +1,51 @@
-%% portada.tex — Portada UPAEP
+%% portada.tex — Portada UPAEP (formato Maestría en Pedagogía, Decanato de Artes y Humanidades)
 \makeatletter
 \begin{titlepage}
-\begin{center}
+\begin{tikzpicture}[remember picture,overlay]
+  % Cuatro filetes verticales bajo el escudo, como en el formato institucional
+  \foreach \x/\w in {0/1.2pt, 0.28/0.6pt, 0.56/0.6pt, 0.84/0.6pt}
+    \draw[line width=\w] ([xshift=3.3cm+\x cm,yshift=-7.1cm]current page.north west)
+      -- ([xshift=3.3cm+\x cm,yshift=4.6cm]current page.south west);
+\end{tikzpicture}%
+\noindent
+\begin{minipage}[t]{0.20\textwidth}
+  \vspace{-1.2cm}
+  \includegraphics[width=\linewidth]{figures/static/upaep-escudo.jpg}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.78\textwidth}
+  \vspace{-0.6cm}
+  \centering
+  {\large\bfseries UNIVERSIDAD POPULAR AUTÓNOMA DEL\\ESTADO DE PUEBLA}\par
+  \vspace{2pt}
+  \rule{\linewidth}{0.8pt}\\[-9pt]\rule{\linewidth}{0.8pt}\par
+  \vspace{0.6cm}
+  {\small\bfseries MAESTRÍA EN PEDAGOGÍA}\par
+\end{minipage}
 
-\vspace*{1cm}
-
-{\Large\bfseries UNIVERSIDAD POPULAR AUTÓNOMA\\DEL ESTADO DE PUEBLA}
-
-\vspace{0.5cm}
-
-{\large Facultad de Educación}
-
-\vspace{0.5cm}
-
-{\large \@tesisprograma}
-
-\vspace{2cm}
-
-{\LARGE\bfseries \@tesistitle}
-
-\vspace{2cm}
-
-Tesis que para obtener el grado de\\
-\textbf{Maestro en Pedagogía}\\
-presenta:
-
+\vspace{0.9cm}
+\hspace*{0.18\textwidth}%
+\begin{minipage}{0.80\textwidth}
+\centering
+{\large\bfseries Decanato de Posgrados en Artes y Humanidades}\par
+\vspace{0.9cm}
+{\large\bfseries TESIS}\par
+\vspace{1.3cm}
+{\large\bfseries\MakeUppercase{\@tesistitle}}\par
 \vspace{1cm}
-
-{\Large\bfseries \@tesisauthor}
-
-\vspace{1.5cm}
-
-Director de tesis:\\
-\textbf{\@tesisdirector}
-
-\vfill
-
-{\large \@tesisciudad \hfill \@tesisfecha}
-
-\end{center}
+{\small COMO REQUISITO PARCIAL PARA OBTENER EL TÍTULO DE}\par
+\vspace{0.9cm}
+{\Large\bfseries MAESTRÍA EN PEDAGOGÍA}\par
+\vspace{1cm}
+{\small PRESENTA:}\par
+\vspace{0.3cm}
+{\small\MakeUppercase{\@tesisauthor}}\par
+\vspace{0.8cm}
+{\small\MakeUppercase{\@tesisasesorrol}:}\par
+\vspace{0.3cm}
+{\small\MakeUppercase{\@tesisasesor}}\par
+\vspace{1.4cm}
+{\small PUEBLA \hfill \MakeUppercase{\@tesisperiodo}.}\par
+\end{minipage}
 \end{titlepage}
 \makeatother

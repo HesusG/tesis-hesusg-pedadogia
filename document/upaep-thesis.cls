@@ -93,6 +93,8 @@
 \newcommand{\tesisprograma}[1]{\def\@tesisprograma{#1}}
 \newcommand{\tesisfecha}[1]{\def\@tesisfecha{#1}}
 \newcommand{\tesisciudad}[1]{\def\@tesisciudad{#1}}
+\newcommand{\tesisasesor}[2]{\def\@tesisasesorrol{#1}\def\@tesisasesor{#2}}  % {ASESORA}{Nombre}
+\newcommand{\tesisperiodo}[1]{\def\@tesisperiodo{#1}}
 
 % Defaults
 \tesistitle{Título de la tesis}
@@ -101,5 +103,7 @@
 \tesisprograma{Maestría en Pedagogía}
 \tesisfecha{\the\year}
 \tesisciudad{Puebla, Puebla}
+\tesisasesor{Asesora}{Nombre de la asesora}
+\tesisperiodo{\the\year}
 
 \endinput
